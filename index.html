@@ -6,35 +6,36 @@
 <title>ECOBET · Match Analysis Archive</title>
 <style>
 :root{
-  --bg:#07100d;--panel:#0b1712;--panel2:#12221b;--panel3:#152920;
-  --line:#294238;--line-soft:rgba(41,66,56,.55);--text:#edf7f1;
-  --muted:#9cb1a7;--dim:#6d8479;--accent:#65f29a;--blue:#71c7ff;
-  --warn:#ffd166;--bad:#ff7d7d;--prime:#2dd4bf;--counter:#a78bfa;
+  --bg:#081015;--panel:#0e1a21;--panel2:#13232c;--panel3:#10242d;
+  --line:#25404c;--line-soft:rgba(37,64,76,.68);--text:#e9f2f5;
+  --muted:#91a7b1;--dim:#6f8791;--accent:#31e6a1;--blue:#39bdf8;
+  --warn:#ffc857;--bad:#ff6577;--prime:#31e6a1;--counter:#b99cff;
   --shadow:0 18px 48px rgba(0,0,0,.30);
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box}
 .hidden{display:none!important}
 html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(circle at 82% -12%,rgba(101,242,154,.09),transparent 34rem),var(--bg);
+body{margin:0;background:radial-gradient(circle at 18% -10%,#12313b 0,transparent 32%),var(--bg);
   color:var(--text);font:14px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 button,input{font:inherit}
-.wrap{width:min(1400px,94vw);margin:auto}
+.wrap{width:min(1520px,94vw);margin:auto}
 .mono{font-family:var(--mono)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
 
-header.hero{padding:43px 0 28px;border-bottom:1px solid var(--line)}
+header.hero{padding:48px 0 28px;border-bottom:1px solid var(--line)}
 .eyebrow{color:var(--accent);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
-h1{font-size:clamp(28px,4.6vw,50px);line-height:1.02;margin:12px 0;letter-spacing:-.04em;font-weight:800}
+h1{font-size:clamp(2rem,5vw,4.7rem);line-height:.96;margin:.5rem 0 1rem;letter-spacing:-.04em;font-weight:850}
 h1 em{font-style:normal;color:var(--accent)}
 .lede{max-width:760px;color:#bfd3ca;font-size:15px;margin:0}
 
-nav.tabs{position:sticky;top:0;z-index:40;background:rgba(7,16,13,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-nav.tabs .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 0}
-nav.tabs button{white-space:nowrap;border:1px solid transparent;border-radius:10px;padding:9px 15px;background:transparent;
+nav.tabs{position:sticky;top:0;z-index:40;background:rgba(8,16,21,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:8px;align-items:center;overflow-x:auto;padding:12px 0}
+.brand{font-weight:900;color:var(--accent);margin-right:auto;letter-spacing:.05em}
+nav.tabs button{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:7px 12px;background:#10222a;
   color:var(--muted);font-weight:650;font-size:13px;cursor:pointer}
 nav.tabs button:hover{color:var(--text)}
-nav.tabs button.active{color:#06120d;background:var(--accent)}
+nav.tabs button.active{color:var(--accent);border-color:var(--accent);background:#10222a}
 
 main{padding:32px 0 80px;min-height:60vh}
 .view{display:none}.view.active{display:block}
@@ -62,24 +63,25 @@ main{padding:32px 0 80px;min-height:60vh}
 .empty .path{display:inline-block;margin-top:14px;color:var(--accent);background:rgba(101,242,154,.07);border:1px solid rgba(101,242,154,.2);padding:5px 11px;border-radius:8px;font:12px var(--mono)}
 
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:11px;margin-bottom:13px}
-.kpi{border:1px solid var(--line);background:linear-gradient(180deg,rgba(18,34,27,.92),rgba(13,24,20,.92));border-radius:16px;box-shadow:var(--shadow);padding:15px 16px}
+.kpi{border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:14px;box-shadow:var(--shadow);padding:15px 16px}
 .kpi span,.meta-item span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em}
 .kpi strong{display:block;font-size:25px;margin-top:6px;font-weight:800;letter-spacing:-.02em}
 .kpi small{display:block;color:var(--dim);font-size:11px;margin-top:3px}.kpi.dim{opacity:.55}.kpi.good strong{color:var(--accent)}.kpi.warn strong{color:var(--warn)}
-.run-meta{border:1px solid var(--line);border-radius:14px;background:rgba(11,23,18,.88);margin-bottom:22px;overflow:hidden}
+.run-meta{border:1px solid var(--line);border-radius:20px;background:rgba(14,26,33,.92);box-shadow:var(--shadow);margin-bottom:24px;overflow:hidden}
 .run-meta summary{list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:12px 15px;cursor:pointer;color:var(--muted);font-size:12px}
 .run-meta summary::-webkit-details-marker{display:none}.run-meta summary::after{content:'+';color:var(--accent);font-size:17px}.run-meta[open] summary::after{content:'–'}
 .run-meta summary b{color:var(--text);font-family:var(--mono);font-weight:650}
 .meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;border-top:1px solid var(--line);background:var(--line-soft)}
-.meta-item{background:var(--panel);padding:12px 15px;min-width:0}.meta-item b{display:block;margin-top:5px;font-size:12px;overflow-wrap:anywhere}.meta-item .list{color:var(--muted)}
+.meta-item{background:linear-gradient(180deg,var(--panel2),var(--panel));padding:14px 15px;min-width:0}.meta-item b{display:block;margin-top:5px;font-size:12px;overflow-wrap:anywhere}.meta-item .list{color:var(--muted)}
+.run-meta-section{padding:18px;border-top:1px solid var(--line)}.run-meta-section h3{font-size:.9rem;margin:0 0 11px}.run-meta-section h3 span{color:var(--dim);font-size:.7rem;font-weight:500;margin-left:6px}.run-meta-section .meta-grid{border:1px solid var(--line);border-radius:14px;overflow:hidden}
 
 .league{margin-bottom:24px}.league-head{display:flex;align-items:baseline;gap:11px;margin:0 0 9px;padding-bottom:8px;border-bottom:1px solid var(--line-soft)}
 .league-head h3{margin:0;font-size:15px;font-weight:700}.league-head .group-tag{color:var(--accent);font:700 9px var(--mono);letter-spacing:.08em;text-transform:uppercase}
 .league-head .count{color:var(--dim);font:12px var(--mono)}
-.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#09130f}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
 table{width:100%;border-collapse:collapse;min-width:1000px}th,td{padding:11px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line-soft);font-size:13px}
-th{background:#102019;color:#b3c9be;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}tr:last-child td{border-bottom:0}
-tbody tr.match-row:hover{background:rgba(101,242,154,.035)}td.match{font-weight:650}td.band{font:12px var(--mono);color:var(--muted)}
+th{background:#12242d;color:#b9ccd4;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}tr:last-child td{border-bottom:0}
+tbody tr.match-row:hover{background:#10222b}td.match{font-weight:650}td.band{font:12px var(--mono);color:var(--muted)}td.flag-cell{max-width:240px;color:var(--muted);font-size:11px}
 .subline{color:var(--dim);font-weight:400;font-size:11px}
 .chip{display:inline-block;border:1px solid transparent;border-radius:999px;padding:3px 9px;font-size:10px;font-weight:800;letter-spacing:.04em;white-space:nowrap}
 .chip.green{color:var(--accent);background:rgba(101,242,154,.09);border-color:rgba(101,242,154,.3)}
@@ -112,6 +114,32 @@ tbody tr.match-row.open td.match::after{content:'–';color:var(--accent)}tr.det
 .audit-wrap{border:1px solid var(--line);border-radius:12px;overflow:auto;background:var(--panel)}.audit-table{min-width:720px}.audit-table th{background:#0e1c16}.audit-table td{font:12px var(--mono)}
 .repair-list{display:grid;gap:8px}.repair-item{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:12px 14px}.repair-item b{font-size:12px}.repair-item p{margin:5px 0 0;color:var(--muted);font-size:12px}.src-line{display:flex;gap:8px;flex-wrap:wrap}.src-line span{border:1px solid var(--line);border-radius:8px;padding:5px 9px;color:var(--muted);font-size:11px}
 
+/* Expanded match report: visual hierarchy follows the supplied ECOBET run HTML. */
+.detail.match-report{display:block;padding:0;border:1px solid var(--line);border-left:1px solid var(--line);border-radius:20px;background:rgba(14,26,33,.96);box-shadow:var(--shadow);overflow:hidden}
+.match-report.nsp-detail{border-color:rgba(255,101,119,.55)}
+.report-match-header{padding:22px 24px;background:linear-gradient(110deg,#132b34,#0d1920);border-bottom:1px solid var(--line)}
+.report-match-header-top{display:flex;gap:12px;color:var(--muted);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em}
+.report-match-index{color:var(--accent);font-weight:900}.match-report.nsp-detail .report-match-index{color:var(--bad)}
+.report-match-header h3{font-size:clamp(1.5rem,3vw,2.55rem);line-height:1.08;margin:8px 0;letter-spacing:-.025em}.report-match-header h3 em{font-style:normal;color:var(--muted)}
+.report-match-meta{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;color:var(--muted)}.report-match-meta .fixture{font-family:var(--mono);font-size:11px}
+.report-subsection{padding:22px 24px;border-bottom:1px solid var(--line)}.report-subsection:last-of-type{border-bottom:0}.report-subsection h4{font-size:1.02rem;margin:0 0 14px}.report-subsection h4 span{color:var(--dim);font-weight:500;font-size:.78rem;margin-left:7px}
+.report-status-grid,.report-score-grid,.report-path-grid,.report-decision-grid{display:grid;gap:12px}
+.report-status-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.report-status-grid>div,.report-score-grid>div,.report-path-grid>div,.report-decision-grid>div{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:14px;min-width:0}
+.report-status-grid small,.report-score-grid small,.report-path-grid small,.report-decision-grid small{display:block;color:var(--muted);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}.report-status-grid strong{overflow-wrap:anywhere}
+.gate-strip{margin-top:14px;padding:12px;border-left:3px solid var(--accent);background:#0a171c}.gate-strip.nsp{border-left-color:var(--bad);background:rgba(255,101,119,.05)}
+.gate-strip .tag-list{margin-top:9px}
+.report-anchor{display:flex;gap:14px;align-items:flex-start;background:#0b171d;border:1px solid var(--line);border-radius:16px;padding:16px}.report-anchor p{margin:0;font-size:1.04rem}.report-anchor .chip{flex:0 0 auto}
+.report-worlds{display:grid;grid-template-columns:1fr 1fr;gap:14px}.report-world{background:#0b171d;border:1px solid var(--line);border-radius:16px;padding:17px}.report-world.prime{border-color:rgba(49,230,161,.55)}.report-world.counter{border-color:rgba(185,156,255,.55)}.report-world small{display:block;color:var(--muted);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}.report-world h5{font-size:1.05rem;margin:.55rem 0 0;line-height:1.55}.report-world.counter small{color:var(--counter)}.report-world.prime small{color:var(--accent)}
+.report-score-grid{grid-template-columns:1fr 2fr 1.5fr}.report-score-grid strong{font-size:1rem}.report-score-grid .cluster-chips{margin-top:2px}.report-score-grid .cluster-chip{font-size:1.25rem;font-weight:900;color:var(--accent);background:#071318}
+.report-path-grid{grid-template-columns:repeat(3,1fr);margin-bottom:14px}.report-path-grid strong{font-size:1.06rem;overflow-wrap:anywhere}.report-path-grid>div:nth-child(1){border-top-color:var(--blue)}.report-path-grid>div:nth-child(2){border-top-color:var(--accent)}.report-path-grid>div:nth-child(3){border-top-color:var(--warn)}
+.report-decision-grid{grid-template-columns:2fr 1.2fr 1.2fr .65fr}.report-decision-grid>div:first-child{border-color:var(--accent)}.report-decision-grid strong{font-size:1.08rem;overflow-wrap:anywhere}.report-decision-grid.nsp>div:first-child{border-color:var(--bad)}.report-decision-grid.nsp>div:first-child strong{color:var(--bad)}
+.model-note{color:var(--muted);font-size:.8rem;margin:12px 0 0}
+.locked-panel{border:1px solid rgba(255,101,119,.55);background:rgba(255,101,119,.05);border-radius:15px;padding:18px}.locked-panel strong{display:block;color:var(--bad);font-size:1.05rem}.locked-panel p{color:var(--muted);margin:7px 0 0}
+.report-audit .audit-wrap{margin-top:4px}.report-audit .audit-table{min-width:760px}.report-audit .audit-table th{background:#12242d}
+.report-repair-list{display:grid;gap:9px}.report-repair-item{background:#0a171c;border:1px solid var(--line);border-radius:11px;padding:11px 13px}.report-repair-item p{margin:5px 0 0;color:var(--muted);font-size:.8rem}
+.report-sources{display:grid;gap:9px}.report-source{display:flex;flex-direction:column;background:#0a171c;border:1px solid var(--line);border-radius:11px;padding:10px 12px}.report-source strong{color:var(--blue)}.report-source span{color:var(--muted);font-size:.78rem;margin-top:3px}
+.report-footer{display:flex;justify-content:space-between;gap:15px;padding:14px 24px;background:#09151b;color:var(--muted);font-size:.78rem}.report-footer b{color:var(--accent)}
+
 .drift{border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:8px;background:linear-gradient(155deg,rgba(255,209,102,.045),rgba(13,24,20,.95) 45%)}
 .drift h3{margin:0 0 5px;font-size:17px}.drift .sub{margin:0 0 20px;color:var(--muted);font-size:13px;max-width:700px}.drift-day{margin-bottom:22px}.drift-day:last-child{margin-bottom:0}
 .drift-day-head{display:flex;align-items:baseline;gap:10px;margin-bottom:11px;flex-wrap:wrap}.drift-day-head b{font:13px var(--mono)}.drift-day-head span{color:var(--dim);font-size:12px}
@@ -120,19 +148,20 @@ tbody tr.match-row.open td.match::after{content:'–';color:var(--accent)}tr.det
 .drift-item .fx{font-size:12.5px;font-weight:600}.drift-item .fx em{display:block;font-style:normal;color:var(--dim);font-size:10.5px;font-weight:400;margin-top:2px}.vals{display:flex;gap:6px;flex-wrap:wrap}.val{border:1px solid var(--line);border-radius:7px;padding:5px 9px;font:11px var(--mono);background:rgba(7,16,13,.6);white-space:nowrap}.val.nsp{color:var(--dim);border-style:dashed}.val.changed{border-color:rgba(255,125,125,.45);color:#ffb3b3}
 footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);font-size:12px}
 
-@media(max-width:980px){.detail{position:sticky;left:0;width:calc(94vw - 2px);max-width:calc(94vw - 2px)}.decision-card{grid-template-columns:repeat(2,1fr)}.decision-cell{border-bottom:1px solid var(--line-soft)}.decision-cell.primary{grid-column:1/-1}.strategy-grid,.evidence-grid{grid-template-columns:1fr}.world-grid{grid-template-columns:1fr}.detail-id{text-align:left}.detail-header{display:grid}}
-@media(max-width:760px){header.hero{padding-top:32px}.toolbar{align-items:stretch;flex-direction:column}.pill-group{width:100%}.pill{flex:1 1 auto}.filter-group{align-items:flex-start}.filter-group-label{width:100%}.drift-item{grid-template-columns:1fr;gap:9px}.drift-legend{margin-left:0}.detail{padding:17px 14px}.decision-card{grid-template-columns:1fr}.decision-cell.primary{grid-column:auto}.nsp-note{grid-column:auto}.meta-grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1050px){.detail{position:sticky;left:0;width:calc(94vw - 2px);max-width:calc(94vw - 2px)}.decision-card{grid-template-columns:repeat(2,1fr)}.decision-cell{border-bottom:1px solid var(--line-soft)}.decision-cell.primary{grid-column:1/-1}.strategy-grid,.evidence-grid{grid-template-columns:1fr}.world-grid{grid-template-columns:1fr}.detail-id{text-align:left}.detail-header{display:grid}.report-status-grid{grid-template-columns:repeat(2,1fr)}.report-decision-grid{grid-template-columns:repeat(2,1fr)}.report-score-grid{grid-template-columns:1fr 2fr}.report-score-grid>div:last-child{grid-column:1/-1}}
+@media(max-width:760px){header.hero{padding-top:30px}.toolbar{align-items:stretch;flex-direction:column}.pill-group{width:100%}.pill{flex:1 1 auto}.filter-group{align-items:flex-start}.filter-group-label{width:100%}.drift-item{grid-template-columns:1fr;gap:9px}.drift-legend{margin-left:0}.detail{padding:17px 14px}.detail.match-report{padding:0}.decision-card{grid-template-columns:1fr}.decision-cell.primary{grid-column:auto}.nsp-note{grid-column:auto}.meta-grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.report-match-header,.report-subsection{padding:18px 14px}.report-worlds,.report-path-grid{grid-template-columns:1fr}.report-status-grid,.report-score-grid,.report-decision-grid{grid-template-columns:1fr 1fr}.report-score-grid>div:last-child{grid-column:auto}.report-footer{flex-direction:column;padding:14px}.report-anchor{display:block}.report-anchor .chip{margin-bottom:9px}}
 @media(max-width:430px){.wrap{width:min(94vw,1400px)}.kpis{grid-template-columns:1fr 1fr}.kpi strong{font-size:21px}.decision-cell{border-right:0}}
 </style>
 </head>
 <body>
 <header class="hero"><div class="wrap">
-  <div class="eyebrow">ECOBET Master · Match Analysis Archive</div>
-  <h1>Läufe im Überblick.<br><em>Matchtiefe auf Abruf.</em></h1>
-  <p class="lede">Jeder Lauf bleibt unverändert archiviert. Öffne eine Matchzeile für Decision Paths, World-Szenarien, Evidence und Datenqualität aus dem jeweiligen run_record.</p>
+  <div class="eyebrow">ECOBET MASTER 2.0 · Interactive Run Archive</div>
+  <h1>Prediction Archive<br><em>Match Analysis by Run</em></h1>
+  <p class="lede">Deterministischer Football-Prediction-Core. Spielverlauf zuerst, Markt-Abbildung danach. Jeder Lauf bleibt unverändert; die mehrstufige Matchanalyse wird direkt aus dem jeweiligen run_record aufgebaut.</p>
 </div></header>
 
 <nav class="tabs" aria-label="Hauptnavigation"><div class="wrap">
+  <span class="brand">ECOBET</span>
   <button type="button" data-view="runs" class="active">Läufe</button>
   <button type="button" data-view="settlement">Settlement</button>
   <button type="button" data-view="replay">Replay &amp; Audit</button>
@@ -141,7 +170,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);fon
 
 <main class="wrap">
 <section id="view-runs" class="view active">
-  <div class="title"><div><div class="eyebrow">01 · Runs</div><h2>Läufe nach Datum</h2></div><p>Nach Wettbewerb gruppiert und nach Anstoß sortiert. Matchzeilen lassen sich öffnen.</p></div>
+  <div class="title"><div><div class="eyebrow">01 · Run &amp; Scope</div><h2>Läufe nach Datum</h2></div><p>Kalender, Snapshot-Auswahl und Competition-Filter erweitern die Darstellungslogik des vollständigen ECOBET Run-Reports.</p></div>
   <div class="toolbar">
     <input type="date" id="run-date" aria-label="Datum wählen">
     <button class="btn" id="run-go" type="button">Anzeigen</button>
@@ -231,10 +260,11 @@ function buildCompetitionPills(run){
 
 function runMeta(run){
   const r=run.run||{};const p=run.proof_of_work||{};const norms=r.norm_versions||{};
-  const fields=[['Run ID',r.run_id],['Snapshot ID',r.snapshot_id],['Snapshot Time',r.snapshot_time],['Datum',r.date],['Status',r.run_status],['Build Mode',r.build_mode],['Audit Mode',boolLabel(r.audit_mode)],['Run Integrity',r.run_integrity],['Output Integrity',r.output_integrity],['Scope',arr(r.scope).join(' · ')]];
-  Object.keys(p).forEach(key=>fields.push(['Proof · '+key.replaceAll('_',' '),typeof p[key]==='boolean'?boolLabel(p[key]):p[key]]));
-  Object.keys(norms).forEach(key=>fields.push(['Norm · '+key.replaceAll('_',' '),norms[key]]));
-  return `<details class="run-meta"><summary><span>Technische Run-Metadaten</span><b>${show(r.run_id)}</b></summary><div class="meta-grid">${fields.map(([label,value])=>`<div class="meta-item"><span>${esc(label)}</span><b class="${label==='Scope'?'list':''}">${show(value)}</b></div>`).join('')}</div></details>`;
+  const core=[['Run ID',r.run_id],['Snapshot ID',r.snapshot_id],['Snapshot Time',r.snapshot_time],['Datum',r.date],['Scope',arr(r.scope).join(' · ')],['Build / Audit',`${present(r.build_mode)?r.build_mode:'—'} / ${boolLabel(r.audit_mode)}`],['Run Status',r.run_status],['Run Integrity',r.run_integrity],['Output Integrity',r.output_integrity]];
+  const proof=Object.keys(p).map(key=>[key.replaceAll('_',' '),typeof p[key]==='boolean'?boolLabel(p[key]):p[key]]);
+  const normFields=Object.keys(norms).map(key=>[key.replaceAll('_',' '),norms[key]]);
+  const grid=fields=>`<div class="meta-grid">${fields.map(([label,value])=>`<div class="meta-item"><span>${esc(label)}</span><b class="${label==='Scope'?'list':''}">${show(value)}</b></div>`).join('')}</div>`;
+  return `<details class="run-meta" open><summary><span>Run Report · Metadatenebenen</span><b>${show(r.run_id)}</b></summary><section class="run-meta-section"><h3>Run Identity &amp; Scope <span>vorhandene run-Felder</span></h3>${grid(core)}</section>${proof.length?`<section class="run-meta-section"><h3>Proof of Work <span>vorhandene proof_of_work-Felder</span></h3>${grid(proof)}</section>`:''}${normFields.length?`<section class="run-meta-section"><h3>Normative Versions <span>vorhandene norm_versions-Felder</span></h3>${grid(normFields)}</section>`:''}</details>`;
 }
 
 function paintRun(run){
@@ -242,8 +272,8 @@ function paintRun(run){
   let html=`<div class="kpis"><div class="kpi"><span>Snapshot</span><strong style="font-size:15px">${timeLabel(r.snapshot_time)}</strong><small>${show(r.snapshot_id)}</small></div><div class="kpi"><span>Fixtures</span><strong>${all.length}</strong></div><div class="kpi good"><span>Freigaben</span><strong>${released}</strong></div><div class="kpi warn"><span>NSP</span><strong>${all.length-released}</strong><small>reguläre Entscheidungen</small></div><div class="kpi"><span>Run Integrity</span><strong style="font-size:17px">${show(r.run_integrity)}</strong><small>Output ${show(r.output_integrity)}</small></div></div>${runMeta(run)}`;
   if(!shown.length){box.innerHTML=html+empty('Keine Matches für diesen Filter.','Wähle einen anderen Wettbewerb.');return}
   catalog.forEach(comp=>{const rows=shownRecords.map(({m,i})=>({m,i,c:competitionInfo(m,i)})).filter(x=>x.c.key===comp.key).sort((a,b)=>String(a.m.kickoff||'').localeCompare(String(b.m.kickoff||'')));
-    html+=`<div class="league"><div class="league-head">${comp.group?`<span class="group-tag">${esc(comp.group)}</span>`:''}<h3>${esc(comp.name)}</h3><span class="count">${rows.length} Spiele</span></div><div class="table-wrap"><table><thead><tr><th>KO</th><th>Match</th><th>World Type</th><th>Safe</th><th>Balanced</th><th>Aggressive</th><th>Favourite</th><th>Band</th><th>Ampel</th><th>Data</th></tr></thead><tbody>`;
-    rows.forEach(({m,i})=>{const rid=`detail-${i}`;html+=`<tr class="match-row" role="button" tabindex="0" aria-expanded="false" aria-controls="${rid}" data-index="${i}" data-target="${rid}"><td class="mono">${show(m.kickoff)}</td><td class="match">${show(m.home)} – ${show(m.away)}<br><span class="subline">${show(m.phase)}</span></td><td class="subline">${show(m.world_type)}</td><td>${show(m.safe)}</td><td>${show(m.balanced)}</td><td>${show(m.aggressive)}</td><td><b>${favCell(m.favourite)}</b></td><td class="band">${show(m.model_probability_band)}<br>${show(m.model_price_band)}</td><td>${ampelChip(m.ampel)}</td><td><span class="chip muted">${show(m.data_readiness)}</span></td></tr><tr class="detail-row hidden" id="${rid}"><td colspan="10"></td></tr>`});
+    html+=`<div class="league"><div class="league-head">${comp.group?`<span class="group-tag">${esc(comp.group)}</span>`:''}<h3>${esc(comp.name)}</h3><span class="count">${rows.length} Spiele</span></div><div class="table-wrap"><table><thead><tr><th>KO</th><th>Match</th><th>World Type</th><th>Safe</th><th>Balanced</th><th>Aggressive</th><th>Favourite</th><th>Band</th><th>Ampel</th><th>Flags / Codes</th><th>Data</th></tr></thead><tbody>`;
+    rows.forEach(({m,i})=>{const rid=`detail-${i}`;const rowTags=[...arr(m.flags),...arr(m.nsp_codes)];html+=`<tr class="match-row" role="button" tabindex="0" aria-expanded="false" aria-controls="${rid}" data-index="${i}" data-target="${rid}"><td class="mono">${show(m.kickoff)}</td><td class="match">${show(m.home)} – ${show(m.away)}<br><span class="subline">${show(m.phase)}</span></td><td class="subline">${show(m.world_type)}</td><td>${show(m.safe)}</td><td>${show(m.balanced)}</td><td>${show(m.aggressive)}</td><td><b>${favCell(m.favourite)}</b></td><td class="band">${show(m.model_probability_band)}<br>${show(m.model_price_band)}</td><td>${ampelChip(m.ampel)}</td><td class="flag-cell">${rowTags.length?esc(rowTags.join(', ')):'—'}</td><td><span class="chip muted">${show(m.data_readiness)}</span></td></tr><tr class="detail-row hidden" id="${rid}"><td colspan="11"></td></tr>`});
     html+='</tbody></table></div></div>';
   });
   box.innerHTML=html;
@@ -254,25 +284,63 @@ function toggleMatch(row,box){
   const detailRow=document.getElementById(row.dataset.target);const cell=detailRow.querySelector('td');const isOpen=row.classList.contains('open');
   if(isOpen){row.classList.remove('open');row.setAttribute('aria-expanded','false');detailRow.classList.add('hidden');cell.innerHTML='';return}
   box.querySelectorAll('tr.match-row.open').forEach(open=>{open.classList.remove('open');open.setAttribute('aria-expanded','false');const old=document.getElementById(open.dataset.target);old.classList.add('hidden');old.querySelector('td').innerHTML=''})
-  const match=arr(CURRENT_RUN&&CURRENT_RUN.matches)[Number(row.dataset.index)];cell.innerHTML=renderMatchDetail(match);row.classList.add('open');row.setAttribute('aria-expanded','true');detailRow.classList.remove('hidden');
+  const matchIndex=Number(row.dataset.index);const match=arr(CURRENT_RUN&&CURRENT_RUN.matches)[matchIndex];cell.innerHTML=renderMatchDetail(match,matchIndex);row.classList.add('open');row.setAttribute('aria-expanded','true');detailRow.classList.remove('hidden');
 }
 
-function renderMatchDetail(m){
+function renderMatchDetail(m,matchIndex=0){
   if(!m)return '';
   const nsp=m.favourite===NSP;const c=competitionInfo(m,0);const cluster=arr(m.four_score_cluster);const candidates=arr(m.candidates);const repairs=arr(m.repair_summary);const sources=arr(m.sources);const flags=arr(m.flags);const codes=arr(m.nsp_codes);
   const hasWorld=present(m.prime_world)||present(m.counterworld);const hasEvidence=present(m.anchor)||present(m.modal_score)||cluster.length||present(m.score_band);
   const candidateRows=candidates.map(item=>`<tr><td>${show(item.expression)}</td><td>${show(item.axis)}</td><td>${show(item.cluster_coverage)}</td><td>${show(item.W)} / ${show(item.F)} / ${show(item.R)} / ${show(item.D)}</td><td>${show(item.score_total)}</td><td>${show(item.status)}</td></tr>`).join('');
-  return `<div class="detail ${nsp?'nsp-detail':''}">
-    <header class="detail-header"><div><div class="detail-kicker">${nsp?'NO_STABLE_PREDICTION':'ECOBET Match Detail'}</div><h3>${show(m.home)} – ${show(m.away)}</h3><p>${esc(c.name)}${present(m.phase)?' · '+esc(m.phase):''}${present(m.kickoff)?' · '+esc(m.kickoff):''}</p></div><div class="detail-id">fixture_id<br>${show(m.fixture_id)}${c.id?`<br>competition_id · ${esc(c.id)}`:''}${c.type?`<br>${esc(c.type)}`:''}</div></header>
-    <section class="detail-section"><div class="section-label">ECOBET Decision</div><div class="decision-card ${nsp?'nsp-card':''}"><div class="decision-cell primary"><span>Favourite</span><strong>${nsp?'NO_STABLE_PREDICTION':show(m.favourite)}</strong></div><div class="decision-cell"><span>Probability Band</span><strong class="mono">${show(m.model_probability_band)}</strong></div><div class="decision-cell"><span>Price Band</span><strong class="mono">${show(m.model_price_band)}</strong></div><div class="decision-cell"><span>Ampel</span><strong>${ampelChip(m.ampel)}</strong></div><div class="decision-cell"><span>Data Readiness</span><strong>${show(m.data_readiness)}</strong></div>${nsp?'<div class="nsp-note">Reguläre ECOBET-Entscheidung: Für dieses Match wurde in diesem Lauf keine stabile Prediction freigegeben.</div>':''}</div></section>
-    <section class="detail-section"><div class="section-label">Strategy Paths</div><div class="strategy-grid"><div class="strategy safe"><span>SAFE</span><strong>${show(m.safe)}</strong></div><div class="strategy balanced"><span>BALANCED</span><strong>${show(m.balanced)}</strong></div><div class="strategy aggressive"><span>AGGRESSIVE</span><strong>${show(m.aggressive)}</strong></div></div></section>
-    <section class="detail-section"><div class="section-label">World / Robustness</div><div class="quality-grid"><div class="quality-box"><span>World Type</span><b>${show(m.world_type)}</b></div><div class="quality-box"><span>Match Core Status</span><b>${show(m.match_core_status)}</b></div></div>${hasWorld?`<div class="world-grid">${present(m.prime_world)?`<div class="world-box"><b>Prime World</b><p>${esc(m.prime_world)}</p></div>`:''}${present(m.counterworld)?`<div class="world-box counter"><b>Counterworld</b><p>${esc(m.counterworld)}</p></div>`:''}</div>`:''}${flags.length||codes.length?`<div class="tag-list">${flags.map(flag=>`<span class="tag">${esc(flag)}</span>`).join('')}${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</section>
-    ${hasEvidence?`<section class="detail-section"><div class="section-label">Evidence</div>${present(m.anchor)?`<div class="anchor-box"><span>ANCHOR / BEGRÜNDUNG</span><p>${esc(m.anchor)}</p></div>`:''}<div class="evidence-grid"><div class="evidence-box"><span>Modal Score</span><b class="mono">${show(m.modal_score)}</b></div><div class="evidence-box"><span>Four-Score Cluster</span><div class="cluster-chips">${cluster.length?cluster.map(score=>`<span class="cluster-chip">${esc(score)}</span>`).join(''):'—'}</div></div><div class="evidence-box"><span>Score Band</span><b class="mono">${show(m.score_band)}</b></div></div></section>`:''}
-    <section class="detail-section"><div class="section-label">Data Quality</div><div class="quality-grid"><div class="quality-box"><span>Data Readiness</span><b>${show(m.data_readiness)}</b></div><div class="quality-box"><span>Match Core</span><b>${show(m.match_core_status)}</b></div><div class="quality-box"><span>Flags</span><b>${flags.length?flags.length:'0'}</b></div><div class="quality-box"><span>NSP Codes</span><b>${codes.length?codes.length:'0'}</b></div></div>${codes.length?`<div class="tag-list">${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</section>
-    ${candidates.length?`<section class="detail-section"><div class="section-label">Kandidaten-Audit · vorhandene Records</div><div class="audit-wrap"><table class="audit-table"><thead><tr><th>Ausdruck</th><th>Achse</th><th>Coverage</th><th>W / F / R / D</th><th>Score</th><th>Status</th></tr></thead><tbody>${candidateRows}</tbody></table></div></section>`:''}
-    ${repairs.length?`<section class="detail-section"><div class="section-label">Repair Summary</div><div class="repair-list">${repairs.map(item=>`<div class="repair-item"><b>${show(item.field)} · ${show(item.result)}</b><p>${arr(item.routes).length?esc(arr(item.routes).join(' → ')):'—'}${present(item.note)?' · '+esc(item.note):''}</p></div>`).join('')}</div></section>`:''}
-    ${sources.length?`<section class="detail-section"><div class="section-label">Source Lineage</div><div class="src-line">${sources.map(source=>`<span>${show(source.name)} · ${show(source.trust)}</span>`).join('')}</div></section>`:''}
-  </div>`;
+  const matchLabel='M'+String(matchIndex+1).padStart(2,'0');
+  const readinessClass=m.data_readiness==='NOT_READY'?'red':m.data_readiness==='CONDITIONAL'?'yellow':'green';
+  const coreClass=m.match_core_status==='RESTRICTED'?'red':m.match_core_status==='PARTIAL'?'yellow':'green';
+  const allTags=[...flags,...codes];
+  return `<article class="detail match-report ${nsp?'nsp-detail':''}">
+    <header class="report-match-header">
+      <div class="report-match-header-top"><span class="report-match-index">${matchLabel}</span><span>${esc(c.name)}${present(m.phase)?' · '+esc(m.phase):''}</span></div>
+      <h3>${show(m.home)} <em>–</em> ${show(m.away)}</h3>
+      <div class="report-match-meta"><b>${show(m.kickoff)}</b><span class="fixture">Fixture ${show(m.fixture_id)}</span><span class="chip ${readinessClass}">${show(m.data_readiness)}</span><span class="chip ${coreClass}">${show(m.match_core_status)}</span>${c.id?`<span class="fixture">Competition ${esc(c.id)}</span>`:''}</div>
+    </header>
+
+    <section class="report-subsection">
+      <h4>Data Gate &amp; Field Status <span>verfügbare run_record-Felder</span></h4>
+      <div class="report-status-grid">
+        <div><small>Competition</small><strong>${esc(c.name)}</strong></div>
+        <div><small>Phase</small><strong>${show(m.phase)}</strong></div>
+        <div><small>World Type</small><strong>${show(m.world_type)}</strong></div>
+        <div><small>Ampel</small><strong>${ampelChip(m.ampel)}</strong></div>
+        <div><small>Data Readiness</small><strong>${show(m.data_readiness)}</strong></div>
+        <div><small>Match Core Status</small><strong>${show(m.match_core_status)}</strong></div>
+        <div><small>Model Probability</small><strong class="mono">${show(m.model_probability_band)}</strong></div>
+        <div><small>Model Price</small><strong class="mono">${show(m.model_price_band)}</strong></div>
+      </div>
+      <div class="gate-strip ${nsp?'nsp':''}"><b>Gate:</b> ${show(m.data_readiness)} · MATCH_CORE_STATUS ${show(m.match_core_status)}${allTags.length?`<div class="tag-list">${flags.map(flag=>`<span class="tag">${esc(flag)}</span>`).join('')}${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</div>
+    </section>
+
+    ${present(m.anchor)?`<section class="report-subsection"><h4>MATCH_EBOOK_EVIDENCE · Anchor</h4><div class="report-anchor"><span class="chip green">${show(m.world_type)}</span><p>${esc(m.anchor)}</p></div></section>`:''}
+
+    ${hasWorld?`<section class="report-subsection"><h4>World Analysis</h4><div class="report-worlds">${present(m.prime_world)?`<div class="report-world prime"><small>PRIME_WORLD</small><h5>${esc(m.prime_world)}</h5></div>`:''}${present(m.counterworld)?`<div class="report-world counter"><small>COUNTERWORLD</small><h5>${esc(m.counterworld)}</h5></div>`:''}</div></section>`:''}
+
+    ${hasEvidence&&(!nsp)?`<section class="report-subsection"><h4>Score Distribution</h4><div class="report-score-grid"><div><small>Modal Score</small><strong class="mono">${show(m.modal_score)}</strong></div><div><small>Four-Score Cluster</small><div class="cluster-chips">${cluster.length?cluster.map(score=>`<span class="cluster-chip">${esc(score)}</span>`).join(''):'—'}</div></div><div><small>Score Band</small><strong class="mono">${show(m.score_band)}</strong></div></div></section>`:''}
+
+    ${nsp?`<section class="report-subsection"><h4>Gate-Entscheid &amp; Sperrzustand</h4><div class="locked-panel"><strong>NO_STABLE_PREDICTION</strong><p>Reguläre ECOBET-Entscheidung: In diesem Lauf wurde keine stabile Prediction freigegeben. Sichtbar sind ausschließlich die vorhandenen Gate-, Flag- und NSP-Code-Felder.</p>${codes.length?`<div class="tag-list">${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</div></section>`:''}
+
+    <section class="report-subsection">
+      <h4>${nsp?'Decision Lock':'Decision Paths & Favourite'}</h4>
+      <div class="report-path-grid"><div><small>Safe</small><strong>${show(m.safe)}</strong></div><div><small>Balanced</small><strong>${show(m.balanced)}</strong></div><div><small>Aggressive</small><strong>${show(m.aggressive)}</strong></div></div>
+      <div class="report-decision-grid ${nsp?'nsp':''}"><div><small>Favourite Prediction</small><strong>${nsp?'NO_STABLE_PREDICTION':show(m.favourite)}</strong></div><div><small>Model Probability Band</small><strong class="mono">${show(m.model_probability_band)}</strong></div><div><small>Model Price Band</small><strong class="mono">${show(m.model_price_band)}</strong></div><div><small>Ampel</small><strong>${ampelChip(m.ampel)}</strong></div></div>
+      <p class="model-note">Modellbänder werden unverändert aus dem run_record dargestellt. Es werden keine zusätzlichen Quoten ergänzt.</p>
+    </section>
+
+    ${candidates.length?`<section class="report-subsection report-audit"><h4>Kandidaten-Audit <span>nur vorhandene candidate-Records</span></h4><div class="audit-wrap"><table class="audit-table"><thead><tr><th>Ausdruck</th><th>Achse</th><th>Coverage</th><th>W / F / R / D</th><th>Score</th><th>Status</th></tr></thead><tbody>${candidateRows}</tbody></table></div></section>`:''}
+
+    ${repairs.length?`<section class="report-subsection"><h4>Repair Summary &amp; Search Exhaustion</h4><div class="report-repair-list">${repairs.map(item=>`<div class="report-repair-item"><b>${show(item.field)} · ${show(item.result)}</b><p>${arr(item.routes).length?esc(arr(item.routes).join(' → ')):'—'}${present(item.note)?' · '+esc(item.note):''}</p></div>`).join('')}</div></section>`:''}
+
+    ${sources.length?`<section class="report-subsection"><h4>Source Lineage</h4><div class="report-sources">${sources.map(source=>`<div class="report-source"><strong>${show(source.name)}</strong><span>Trust · ${show(source.trust)}</span></div>`).join('')}</div></section>`:''}
+
+    <footer class="report-footer"><span>RUN_RECORD MATCH</span><b>${nsp?'NO_STABLE_PREDICTION':show(m.favourite)}</b><span>${show(m.fixture_id)}</span></footer>
+  </article>`;
 }
 
 document.getElementById('settlement-content').innerHTML=empty('Noch keine Settlement-Daten.','Es werden keine Settlement-Felder angenommen. Die Ansicht bleibt leer, bis entsprechende Dateien und das definierte Schema vorliegen.','runs/<run_id>.settlement.json');
