@@ -139,6 +139,12 @@ tbody tr.match-row.open td.match::after{content:'–';color:var(--accent)}tr.det
 .report-repair-list{display:grid;gap:9px}.report-repair-item{background:#0a171c;border:1px solid var(--line);border-radius:11px;padding:11px 13px}.report-repair-item p{margin:5px 0 0;color:var(--muted);font-size:.8rem}
 .report-sources{display:grid;gap:9px}.report-source{display:flex;flex-direction:column;background:#0a171c;border:1px solid var(--line);border-radius:11px;padding:10px 12px}.report-source strong{color:var(--blue)}.report-source span{color:var(--muted);font-size:.78rem;margin-top:3px}
 .report-footer{display:flex;justify-content:space-between;gap:15px;padding:14px 24px;background:#09151b;color:var(--muted);font-size:.78rem}.report-footer b{color:var(--accent)}
+.availability-table{overflow:auto;border:1px solid var(--line);border-radius:14px}.availability-table table{min-width:760px}.availability-table code{color:var(--blue)}
+.availability-table .missing-row td{color:var(--dim)}.availability-table .missing-row td:nth-child(3){color:var(--bad)}
+.report-team-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.report-team-card{background:#0b171d;border:1px solid var(--line);border-radius:16px;padding:17px}.report-team-card h5{font-size:1.2rem;margin:0 0 14px}.report-team-card dl{margin:0;display:grid;grid-template-columns:145px 1fr;gap:8px 12px}.report-team-card dt{color:var(--muted);font-size:.78rem;font-weight:750}.report-team-card dd{margin:0;font-size:.84rem;color:var(--dim)}
+.unavailable-note{background:rgba(57,189,248,.06);border:1px solid rgba(57,189,248,.35);padding:14px;border-radius:14px;color:#c8dbe2}.unavailable-note b{color:var(--blue)}
+.report-axis-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:14px}.report-axis-grid>div{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:14px}.report-axis-grid small{display:block;color:var(--muted);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}.report-axis-grid strong{color:var(--dim)}
+.prediction-map{overflow:auto;border:1px solid var(--line);border-radius:14px}.prediction-map table{min-width:760px}.prediction-map td:first-child{font-weight:750}.prediction-map .path-name{color:var(--accent);font-family:var(--mono);font-size:11px}
 
 .drift{border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:8px;background:linear-gradient(155deg,rgba(255,209,102,.045),rgba(13,24,20,.95) 45%)}
 .drift h3{margin:0 0 5px;font-size:17px}.drift .sub{margin:0 0 20px;color:var(--muted);font-size:13px;max-width:700px}.drift-day{margin-bottom:22px}.drift-day:last-child{margin-bottom:0}
@@ -148,8 +154,8 @@ tbody tr.match-row.open td.match::after{content:'–';color:var(--accent)}tr.det
 .drift-item .fx{font-size:12.5px;font-weight:600}.drift-item .fx em{display:block;font-style:normal;color:var(--dim);font-size:10.5px;font-weight:400;margin-top:2px}.vals{display:flex;gap:6px;flex-wrap:wrap}.val{border:1px solid var(--line);border-radius:7px;padding:5px 9px;font:11px var(--mono);background:rgba(7,16,13,.6);white-space:nowrap}.val.nsp{color:var(--dim);border-style:dashed}.val.changed{border-color:rgba(255,125,125,.45);color:#ffb3b3}
 footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);font-size:12px}
 
-@media(max-width:1050px){.detail{position:sticky;left:0;width:calc(94vw - 2px);max-width:calc(94vw - 2px)}.decision-card{grid-template-columns:repeat(2,1fr)}.decision-cell{border-bottom:1px solid var(--line-soft)}.decision-cell.primary{grid-column:1/-1}.strategy-grid,.evidence-grid{grid-template-columns:1fr}.world-grid{grid-template-columns:1fr}.detail-id{text-align:left}.detail-header{display:grid}.report-status-grid{grid-template-columns:repeat(2,1fr)}.report-decision-grid{grid-template-columns:repeat(2,1fr)}.report-score-grid{grid-template-columns:1fr 2fr}.report-score-grid>div:last-child{grid-column:1/-1}}
-@media(max-width:760px){header.hero{padding-top:30px}.toolbar{align-items:stretch;flex-direction:column}.pill-group{width:100%}.pill{flex:1 1 auto}.filter-group{align-items:flex-start}.filter-group-label{width:100%}.drift-item{grid-template-columns:1fr;gap:9px}.drift-legend{margin-left:0}.detail{padding:17px 14px}.detail.match-report{padding:0}.decision-card{grid-template-columns:1fr}.decision-cell.primary{grid-column:auto}.nsp-note{grid-column:auto}.meta-grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.report-match-header,.report-subsection{padding:18px 14px}.report-worlds,.report-path-grid{grid-template-columns:1fr}.report-status-grid,.report-score-grid,.report-decision-grid{grid-template-columns:1fr 1fr}.report-score-grid>div:last-child{grid-column:auto}.report-footer{flex-direction:column;padding:14px}.report-anchor{display:block}.report-anchor .chip{margin-bottom:9px}}
+@media(max-width:1050px){.detail{position:sticky;left:0;width:calc(94vw - 2px);max-width:calc(94vw - 2px)}.decision-card{grid-template-columns:repeat(2,1fr)}.decision-cell{border-bottom:1px solid var(--line-soft)}.decision-cell.primary{grid-column:1/-1}.strategy-grid,.evidence-grid{grid-template-columns:1fr}.world-grid{grid-template-columns:1fr}.detail-id{text-align:left}.detail-header{display:grid}.report-status-grid{grid-template-columns:repeat(2,1fr)}.report-decision-grid{grid-template-columns:repeat(2,1fr)}.report-score-grid{grid-template-columns:1fr 2fr}.report-score-grid>div:last-child{grid-column:1/-1}.report-axis-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){header.hero{padding-top:30px}.toolbar{align-items:stretch;flex-direction:column}.pill-group{width:100%}.pill{flex:1 1 auto}.filter-group{align-items:flex-start}.filter-group-label{width:100%}.drift-item{grid-template-columns:1fr;gap:9px}.drift-legend{margin-left:0}.detail{padding:17px 14px}.detail.match-report{padding:0}.decision-card{grid-template-columns:1fr}.decision-cell.primary{grid-column:auto}.nsp-note{grid-column:auto}.meta-grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.report-match-header,.report-subsection{padding:18px 14px}.report-worlds,.report-path-grid,.report-team-grid{grid-template-columns:1fr}.report-status-grid,.report-score-grid,.report-decision-grid,.report-axis-grid{grid-template-columns:1fr 1fr}.report-score-grid>div:last-child{grid-column:auto}.report-footer{flex-direction:column;padding:14px}.report-anchor{display:block}.report-anchor .chip{margin-bottom:9px}.report-team-card dl{grid-template-columns:1fr}}
 @media(max-width:430px){.wrap{width:min(94vw,1400px)}.kpis{grid-template-columns:1fr 1fr}.kpi strong{font-size:21px}.decision-cell{border-right:0}}
 </style>
 </head>
@@ -200,6 +206,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);fon
 
 <footer><div class="wrap">ECOBET Master · statisches Archiv · keine reale Quote, keine Tickets · Europe/Zurich</div></footer>
 
+<script src="runs/local_fallback.js"></script>
 <script>
 /* runs/ enthält ausschließlich ECOBET-Output. data/ wird bewusst nicht visualisiert. */
 const RUNS='runs/';
@@ -213,7 +220,12 @@ const show=v=>present(v)?esc(v):'—';
 const arr=v=>Array.isArray(v)?v:[];
 const boolLabel=v=>v===true?'Ja':v===false?'Nein':'—';
 
-async function loadJSON(path){try{const response=await fetch(path,{cache:'no-store'});return response.ok?await response.json():null}catch{return null}}
+async function loadJSON(path){
+  const local=globalThis.ECOBET_LOCAL_DATA||{};
+  if(location.protocol==='file:'&&Object.prototype.hasOwnProperty.call(local,path))return local[path];
+  try{const response=await fetch(path,{cache:'no-store'});if(response.ok)return await response.json()}catch{}
+  return Object.prototype.hasOwnProperty.call(local,path)?local[path]:null;
+}
 async function getIndex(){if(!INDEX)INDEX=await loadJSON(RUNS+'index.json');return INDEX}
 const todayISO=()=>new Date().toISOString().slice(0,10);
 
@@ -292,6 +304,23 @@ function renderMatchDetail(m,matchIndex=0){
   const nsp=m.favourite===NSP;const c=competitionInfo(m,0);const cluster=arr(m.four_score_cluster);const candidates=arr(m.candidates);const repairs=arr(m.repair_summary);const sources=arr(m.sources);const flags=arr(m.flags);const codes=arr(m.nsp_codes);
   const hasWorld=present(m.prime_world)||present(m.counterworld);const hasEvidence=present(m.anchor)||present(m.modal_score)||cluster.length||present(m.score_band);
   const candidateRows=candidates.map(item=>`<tr><td>${show(item.expression)}</td><td>${show(item.axis)}</td><td>${show(item.cluster_coverage)}</td><td>${show(item.W)} / ${show(item.F)} / ${show(item.R)} / ${show(item.D)}</td><td>${show(item.score_total)}</td><td>${show(item.status)}</td></tr>`).join('');
+  const pathEntries=[['Safe',m.safe],['Balanced',m.balanced],['Aggressive',m.aggressive]];
+  const predictionRows=pathEntries.map(([path,expression])=>{const candidate=candidates.find(item=>item.expression===expression)||{};return `<tr><td>${show(expression)}</td><td class="path-name">${esc(path)}</td><td>${show(candidate.axis)}</td><td>${show(candidate.cluster_coverage)}</td><td>${show(candidate.score_total)}</td><td>${show(candidate.status)}</td></tr>`}).join('');
+  const availabilityRow=(id,family,status,fields,available=true)=>`<tr class="${available?'':'missing-row'}"><td><code>${esc(id)}</code></td><td>${esc(family)}</td><td><span class="chip ${available?'green':'red'}">${esc(status)}</span></td><td>${esc(fields)}</td></tr>`;
+  const availabilityRows=[
+    availabilityRow('RR01','Fixture Identity & Kickoff','VORHANDEN','fixture_id · kickoff · home · away'),
+    availabilityRow('RR02','Wettbewerb & Phase','VORHANDEN','competition · phase'),
+    availabilityRow('RR03','Decision Paths & Favourite','VORHANDEN','safe · balanced · aggressive · favourite'),
+    availabilityRow('RR04','Model Bands & Ampel','VORHANDEN','model_probability_band · model_price_band · ampel'),
+    availabilityRow('RR05','Data Gate & Failure Codes','VORHANDEN','data_readiness · match_core_status · flags · nsp_codes'),
+    availabilityRow('RR06','Worlds & Score Distribution','VORHANDEN','world_type · anchor · prime_world · counterworld · score fields'),
+    availabilityRow('RR07','Kandidaten-Audit',candidates.length?'VORHANDEN':'NICHT IM RUN_RECORD',candidates.length?'candidates':'keine candidates für dieses Match',candidates.length>0),
+    availabilityRow('RR08','Repair Summary',repairs.length?'VORHANDEN':'NICHT IM RUN_RECORD',repairs.length?'repair_summary':'keine repair_summary für dieses Match',repairs.length>0),
+    availabilityRow('RR09','Source Lineage',sources.length?'VORHANDEN':'NICHT IM RUN_RECORD',sources.length?'sources':'keine sources für dieses Match',sources.length>0),
+    availabilityRow('RR10','Team-E-Books · RAW Summary','NICHT IM RUN_RECORD','keine Teamprofile, Form- oder Process-Felder',false),
+    availabilityRow('RR11','Quantitative Evidence · Form · H2H','NICHT IM RUN_RECORD','keine strukturierten Evidence-, Form- oder H2H-Felder',false),
+    availabilityRow('RR12','Interpretation Axes & Game States','NICHT IM RUN_RECORD','kein Control/Chaos/Tempo/Draw-Gravity/Game-State-Objekt',false)
+  ].join('');
   const matchLabel='M'+String(matchIndex+1).padStart(2,'0');
   const readinessClass=m.data_readiness==='NOT_READY'?'red':m.data_readiness==='CONDITIONAL'?'yellow':'green';
   const coreClass=m.match_core_status==='RESTRICTED'?'red':m.match_core_status==='PARTIAL'?'yellow':'green';
@@ -302,6 +331,11 @@ function renderMatchDetail(m,matchIndex=0){
       <h3>${show(m.home)} <em>–</em> ${show(m.away)}</h3>
       <div class="report-match-meta"><b>${show(m.kickoff)}</b><span class="fixture">Fixture ${show(m.fixture_id)}</span><span class="chip ${readinessClass}">${show(m.data_readiness)}</span><span class="chip ${coreClass}">${show(m.match_core_status)}</span>${c.id?`<span class="fixture">Competition ${esc(c.id)}</span>`:''}</div>
     </header>
+
+    <section class="report-subsection">
+      <h4>Feldstatus-Übersicht <span>run_record-Verfügbarkeit</span></h4>
+      <div class="availability-table"><table><thead><tr><th>ID</th><th>Datenfamilie</th><th>Status</th><th>Tatsächliche Felder / Begrenzung</th></tr></thead><tbody>${availabilityRows}</tbody></table></div>
+    </section>
 
     <section class="report-subsection">
       <h4>Data Gate &amp; Field Status <span>verfügbare run_record-Felder</span></h4>
@@ -318,13 +352,29 @@ function renderMatchDetail(m,matchIndex=0){
       <div class="gate-strip ${nsp?'nsp':''}"><b>Gate:</b> ${show(m.data_readiness)} · MATCH_CORE_STATUS ${show(m.match_core_status)}${allTags.length?`<div class="tag-list">${flags.map(flag=>`<span class="tag">${esc(flag)}</span>`).join('')}${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</div>
     </section>
 
-    ${present(m.anchor)?`<section class="report-subsection"><h4>MATCH_EBOOK_EVIDENCE · Anchor</h4><div class="report-anchor"><span class="chip green">${show(m.world_type)}</span><p>${esc(m.anchor)}</p></div></section>`:''}
+    <section class="report-subsection">
+      <h4>Team-E-Books · RAW Summary</h4>
+      <div class="report-team-grid">
+        ${[m.home,m.away].map(team=>`<article class="report-team-card"><h5>${show(team)}</h5><dl><dt>Strength Baseline</dt><dd>— · nicht im run_record</dd><dt>Form / Current</dt><dd>— · nicht im run_record</dd><dt>Process</dt><dd>— · nicht im run_record</dd><dt>Tor-/Rollenprofil</dt><dd>— · nicht im run_record</dd><dt>Availability / Load</dt><dd>— · nicht im run_record</dd><dt>Completeness</dt><dd>— · nicht im run_record</dd></dl></article>`).join('')}
+      </div>
+      <p class="unavailable-note"><b>Warum leer?</b> Die Referenz-HTML enthält Team-E-Books, die bereitgestellten run_records enthalten dafür keine strukturierten Felder. Es werden keine HTML-Werte als JSON-Daten ausgegeben.</p>
+    </section>
+
+    <section class="report-subsection">
+      <h4>MATCH_EBOOK_EVIDENCE · Anchor Candidates</h4>
+      ${present(m.anchor)?`<div class="report-anchor"><span class="chip green">${show(m.world_type)}</span><p>${esc(m.anchor)}</p></div>`:'<div class="unavailable-note"><b>Anchor:</b> nicht im run_record verfügbar.</div>'}
+      <p class="unavailable-note"><b>Quantitative Evidence, Form und H2H:</b> nicht als strukturierte Matchfelder im run_record vorhanden.</p>
+    </section>
+
+    ${!nsp?`<section class="report-subsection"><h4>Football Interpretation</h4>${present(m.anchor)?`<div class="report-anchor"><span class="chip green">${show(m.world_type)}</span><p>${esc(m.anchor)}</p></div>`:''}<div class="report-axis-grid">${['Control','Chaos','Goal Profile','Tempo','Phase Structure','Draw Gravity'].map(axis=>`<div><small>${esc(axis)}</small><strong>— · nicht im run_record</strong></div>`).join('')}</div><p class="unavailable-note"><b>Game-State-Reaktionen:</b> kein strukturiertes Game-State-Objekt im run_record vorhanden.</p></section>`:''}
 
     ${hasWorld?`<section class="report-subsection"><h4>World Analysis</h4><div class="report-worlds">${present(m.prime_world)?`<div class="report-world prime"><small>PRIME_WORLD</small><h5>${esc(m.prime_world)}</h5></div>`:''}${present(m.counterworld)?`<div class="report-world counter"><small>COUNTERWORLD</small><h5>${esc(m.counterworld)}</h5></div>`:''}</div></section>`:''}
 
     ${hasEvidence&&(!nsp)?`<section class="report-subsection"><h4>Score Distribution</h4><div class="report-score-grid"><div><small>Modal Score</small><strong class="mono">${show(m.modal_score)}</strong></div><div><small>Four-Score Cluster</small><div class="cluster-chips">${cluster.length?cluster.map(score=>`<span class="cluster-chip">${esc(score)}</span>`).join(''):'—'}</div></div><div><small>Score Band</small><strong class="mono">${show(m.score_band)}</strong></div></div></section>`:''}
 
     ${nsp?`<section class="report-subsection"><h4>Gate-Entscheid &amp; Sperrzustand</h4><div class="locked-panel"><strong>NO_STABLE_PREDICTION</strong><p>Reguläre ECOBET-Entscheidung: In diesem Lauf wurde keine stabile Prediction freigegeben. Sichtbar sind ausschließlich die vorhandenen Gate-, Flag- und NSP-Code-Felder.</p>${codes.length?`<div class="tag-list">${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</div></section>`:''}
+
+    ${!nsp?`<section class="report-subsection"><h4>Prediction Map</h4><div class="prediction-map"><table><thead><tr><th>Kandidat</th><th>Pfad</th><th>Achse</th><th>Cluster Coverage</th><th>Audit Score</th><th>Status</th></tr></thead><tbody>${predictionRows}</tbody></table></div>${candidates.length?'':'<p class="unavailable-note"><b>Auditwerte:</b> Safe, Balanced und Aggressive stammen aus dem run_record. Achse, Coverage und Audit-Score fehlen, weil für dieses Match kein candidates-Objekt vorhanden ist.</p>'}</section>`:''}
 
     <section class="report-subsection">
       <h4>${nsp?'Decision Lock':'Decision Paths & Favourite'}</h4>
@@ -333,11 +383,11 @@ function renderMatchDetail(m,matchIndex=0){
       <p class="model-note">Modellbänder werden unverändert aus dem run_record dargestellt. Es werden keine zusätzlichen Quoten ergänzt.</p>
     </section>
 
-    ${candidates.length?`<section class="report-subsection report-audit"><h4>Kandidaten-Audit <span>nur vorhandene candidate-Records</span></h4><div class="audit-wrap"><table class="audit-table"><thead><tr><th>Ausdruck</th><th>Achse</th><th>Coverage</th><th>W / F / R / D</th><th>Score</th><th>Status</th></tr></thead><tbody>${candidateRows}</tbody></table></div></section>`:''}
+    ${!nsp?`<section class="report-subsection report-audit"><h4>Kandidaten-Audit <span>candidate-Records</span></h4>${candidates.length?`<div class="audit-wrap"><table class="audit-table"><thead><tr><th>Ausdruck</th><th>Achse</th><th>Coverage</th><th>W / F / R / D</th><th>Score</th><th>Status</th></tr></thead><tbody>${candidateRows}</tbody></table></div>`:'<div class="unavailable-note"><b>Nicht im run_record:</b> Für dieses Match ist kein candidates-Objekt vorhanden.</div>'}</section>`:''}
 
-    ${repairs.length?`<section class="report-subsection"><h4>Repair Summary &amp; Search Exhaustion</h4><div class="report-repair-list">${repairs.map(item=>`<div class="report-repair-item"><b>${show(item.field)} · ${show(item.result)}</b><p>${arr(item.routes).length?esc(arr(item.routes).join(' → ')):'—'}${present(item.note)?' · '+esc(item.note):''}</p></div>`).join('')}</div></section>`:''}
+    <section class="report-subsection"><h4>Repair Summary &amp; Search Exhaustion</h4>${repairs.length?`<div class="report-repair-list">${repairs.map(item=>`<div class="report-repair-item"><b>${show(item.field)} · ${show(item.result)}</b><p>${arr(item.routes).length?esc(arr(item.routes).join(' → ')):'—'}${present(item.note)?' · '+esc(item.note):''}</p></div>`).join('')}</div>`:'<div class="unavailable-note"><b>Nicht im run_record:</b> Für dieses Match ist keine repair_summary vorhanden.</div>'}</section>
 
-    ${sources.length?`<section class="report-subsection"><h4>Source Lineage</h4><div class="report-sources">${sources.map(source=>`<div class="report-source"><strong>${show(source.name)}</strong><span>Trust · ${show(source.trust)}</span></div>`).join('')}</div></section>`:''}
+    <section class="report-subsection"><h4>Source Lineage</h4>${sources.length?`<div class="report-sources">${sources.map(source=>`<div class="report-source"><strong>${show(source.name)}</strong><span>Trust · ${show(source.trust)}</span></div>`).join('')}</div>`:'<div class="unavailable-note"><b>Nicht im run_record:</b> Für dieses Match ist kein sources-Objekt vorhanden.</div>'}</section>
 
     <footer class="report-footer"><span>RUN_RECORD MATCH</span><b>${nsp?'NO_STABLE_PREDICTION':show(m.favourite)}</b><span>${show(m.fixture_id)}</span></footer>
   </article>`;
