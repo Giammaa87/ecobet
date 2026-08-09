@@ -58,7 +58,80 @@
         "1:2",
         "0:2"
       ],
-      "score_band": "1–3"
+      "score_band": "1–3",
+      "candidates": [
+        {
+          "expression": "X2",
+          "axis": "DIRECTION",
+          "cluster_coverage": "3/4",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "score_total": 9,
+          "status": "VALID"
+        },
+        {
+          "expression": "Über 1.5 Tore",
+          "axis": "TOTAL",
+          "cluster_coverage": "2/4",
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "score_total": 8,
+          "status": "VALID"
+        },
+        {
+          "expression": "Slovan über 0.5 Teamtore",
+          "axis": "TEAM_GOALS",
+          "cluster_coverage": "3/4",
+          "W": 2,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "score_total": 7,
+          "status": "VALID"
+        }
+      ],
+      "repair_summary": [
+        {
+          "field": "DF07 Recent-xG",
+          "routes": [
+            "FootyStats",
+            "FotMob",
+            "SofaScore",
+            "Matchlog-Aggregation",
+            "Open Search"
+          ],
+          "result": "PARTIAL",
+          "note": "Kein konsistentes L5 für beide Teams."
+        },
+        {
+          "field": "DF11 Events",
+          "routes": [
+            "Offizielle Clubseiten",
+            "Transfermarkt",
+            "Open Search"
+          ],
+          "result": "PARTIAL",
+          "note": "Kein unabhängig bestätigtes kritisches Ereignis."
+        }
+      ],
+      "sources": [
+        {
+          "name": "UEFA.com",
+          "trust": "HIGH"
+        },
+        {
+          "name": "FootyStats",
+          "trust": "HIGH"
+        },
+        {
+          "name": "FotMob/SofaScore Matchlogs",
+          "trust": "MEDIUM"
+        }
+      ]
     },
     {
       "fixture_id": "UEFA-2049103",
@@ -195,7 +268,52 @@
         "2:1",
         "1:1"
       ],
-      "score_band": "1–3"
+      "score_band": "1–3",
+      "candidates": [
+        {
+          "expression": "1X",
+          "axis": "DIRECTION",
+          "cluster_coverage": "4/4",
+          "W": 3,
+          "F": 3,
+          "R": 3,
+          "D": 2,
+          "score_total": 11,
+          "status": "VALID"
+        },
+        {
+          "expression": "Dinamo über 0.5 Teamtore",
+          "axis": "TEAM_GOALS",
+          "cluster_coverage": "4/4",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "score_total": 10,
+          "status": "VALID"
+        }
+      ],
+      "repair_summary": [
+        {
+          "field": "DF08 Shots gegen",
+          "routes": [
+            "FotMob",
+            "FootyStats"
+          ],
+          "result": "FOUND",
+          "note": "Vollständig über zwei Quellen bestätigt."
+        }
+      ],
+      "sources": [
+        {
+          "name": "UEFA.com",
+          "trust": "HIGH"
+        },
+        {
+          "name": "FotMob",
+          "trust": "HIGH"
+        }
+      ]
     },
     {
       "fixture_id": "UEFA-2049106",

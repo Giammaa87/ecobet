@@ -9,10 +9,12 @@
   --bg:#07100d; --panel2:#12221b; --line:#294238; --line-soft:rgba(41,66,56,.55);
   --text:#edf7f1; --muted:#9cb1a7; --dim:#6d8479;
   --accent:#65f29a; --blue:#71c7ff; --warn:#ffd166; --bad:#ff6b6b;
+  --prime:#2dd4bf; --counter:#a78bfa;
   --shadow:0 18px 48px rgba(0,0,0,.30);
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box}
+.hidden{display:none}
 html{scroll-behavior:smooth}
 body{margin:0;background:radial-gradient(circle at 82% -12%,rgba(101,242,154,.09),transparent 34rem),var(--bg);
   color:var(--text);font:14px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
@@ -98,6 +100,42 @@ td.band{font-family:var(--mono);font-size:12px;color:var(--muted)}
 .chip.yellow{color:var(--warn);background:rgba(255,209,102,.09);border-color:rgba(255,209,102,.3)}
 .chip.red{color:var(--bad);background:rgba(255,107,107,.09);border-color:rgba(255,107,107,.3)}
 .chip.muted{color:var(--muted);background:rgba(156,177,167,.05);border-color:var(--line)}
+
+/* match detail */
+tbody tr.match-row{cursor:pointer}
+tbody tr.match-row td.match::after{content:'+';float:right;color:var(--dim);font-weight:400;font-size:15px;margin-left:8px}
+tbody tr.match-row.open td.match::after{content:'–';color:var(--accent)}
+tr.detail-row td{padding:0;border-bottom:1px solid var(--line-soft);background:#070f0c}
+.detail{padding:20px 18px 22px;display:grid;gap:14px}
+.detail-worlds{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.world-box{border:1px solid var(--line);border-left:3px solid var(--prime);border-radius:11px;padding:13px 15px;background:#0a1511}
+.world-box.counter{border-left-color:var(--counter)}
+.world-box b{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.world-box.prime b{color:var(--prime)} .world-box.counter b{color:var(--counter)}
+.world-box p{margin:0;font-size:13px;color:#d7e6de;line-height:1.55}
+.detail-row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.mini-box{border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:#0a1511}
+.mini-box span{display:block;color:var(--dim);font-size:10px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.cluster-chips{display:flex;gap:6px;flex-wrap:wrap}
+.cluster-chip{border:1px solid var(--line);border-radius:8px;padding:5px 9px;font-family:var(--mono);font-size:12px;background:#09130f}
+.fav-box{border:1px solid rgba(101,242,154,.35);border-radius:13px;padding:15px 17px;
+  background:linear-gradient(150deg,rgba(101,242,154,.09),rgba(13,24,20,.9));display:grid;
+  grid-template-columns:1fr auto auto;gap:16px;align-items:center}
+.fav-box .name{font-size:16px;font-weight:800;color:var(--accent)}
+.fav-box .sub{color:var(--dim);font-size:10px;text-transform:uppercase;letter-spacing:.07em}
+.fav-box .band-val{font-family:var(--mono);font-size:14px}
+.audit-table{width:100%;border-collapse:collapse;font-size:12px}
+.audit-table th{background:transparent;color:var(--dim);font-size:9.5px;padding:4px 8px;text-align:left;border-bottom:1px solid var(--line-soft)}
+.audit-table td{padding:6px 8px;border-bottom:1px solid var(--line-soft);font-family:var(--mono)}
+.audit-table tr:last-child td{border-bottom:0}
+.shock{display:inline-block;border-radius:6px;padding:2px 6px;font-size:10.5px;margin-right:4px}
+.shock.holds{background:rgba(101,242,154,.12);color:var(--accent)}
+.shock.bends{background:rgba(255,209,102,.12);color:var(--warn)}
+.shock.breaks{background:rgba(255,107,107,.12);color:var(--bad)}
+.repair-box{border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:#0a1511;font-size:12.5px;color:var(--muted)}
+.repair-box b{color:var(--text);display:block;margin-bottom:5px;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.src-line{display:flex;gap:8px;flex-wrap:wrap;font-size:11.5px;color:var(--dim)}
+.src-line span{border:1px solid var(--line);border-radius:7px;padding:3px 8px}
 
 .drift{border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:8px;
   background:linear-gradient(155deg,rgba(255,209,102,.045),rgba(13,24,20,.95) 45%)}
@@ -330,7 +368,8 @@ function paintRun(run){
         <th>Aggressive</th><th>Favourite</th><th>Band</th><th>Ampel</th><th>Data</th>
       </tr></thead><tbody>`;
     rows.forEach(m=>{
-      html += `<tr>
+      const rid = 'd_'+m.fixture_id;
+      html += `<tr class="match-row" data-fixture="${esc(m.fixture_id)}" data-target="${rid}">
         <td class="mono">${esc(m.kickoff)}</td>
         <td class="match">${esc(m.home)} – ${esc(m.away)}<br><span style="color:var(--dim);font-weight:400;font-size:11px">${esc(m.phase||'')}</span></td>
         <td style="font-size:11.5px;color:var(--muted)">${esc(m.world_type)}</td>
@@ -341,12 +380,82 @@ function paintRun(run){
         <td class="band">${esc(m.model_probability_band)}<br>${esc(m.model_price_band)}</td>
         <td>${ampelChip(m.ampel)}</td>
         <td><span class="chip muted">${esc(m.data_readiness)}</span></td>
-      </tr>`;
+      </tr>
+      <tr class="detail-row hidden" id="${rid}"><td colspan="10"></td></tr>`;
     });
     html += `</tbody></table></div></div>`;
   });
 
   box.innerHTML = html;
+
+  box.querySelectorAll('tr.match-row').forEach(function(tr){
+    tr.addEventListener('click', function(){
+      const targetRow = document.getElementById(tr.dataset.target);
+      const cell = targetRow.querySelector('td');
+      const isOpen = tr.classList.contains('open');
+      if(isOpen){
+        tr.classList.remove('open');
+        targetRow.classList.add('hidden');
+        cell.innerHTML = '';
+        return;
+      }
+      // andere offene Zeilen schliessen
+      box.querySelectorAll('tr.match-row.open').forEach(function(o){
+        o.classList.remove('open');
+        const t = document.getElementById(o.dataset.target);
+        t.classList.add('hidden'); t.querySelector('td').innerHTML='';
+      });
+      const m = (CURRENT_RUN.matches||[]).find(x=>x.fixture_id===tr.dataset.fixture);
+      cell.innerHTML = renderMatchDetail(m);
+      tr.classList.add('open');
+      targetRow.classList.remove('hidden');
+    });
+  });
+}
+
+function renderMatchDetail(m){
+  if(!m) return '';
+  const cluster = (m.four_score_cluster||[]);
+  const cands = (m.candidates||[]);
+  const shock = m.shock_test||{};
+  const shockCls = v => v==='HOLDS'?'holds':v==='BENDS'?'bends':v==='BREAKS'?'breaks':'';
+  const repairs = m.repair_summary||[];
+  const sources = m.sources||[];
+
+  let candRows = '';
+  cands.forEach(c=>{
+    candRows += `<tr><td>${esc(c.expression)}</td><td>${esc(c.axis||'')}</td>
+      <td>${esc(c.cluster_coverage||'')}</td>
+      <td>${c.W ?? '—'}/${c.F ?? '—'}/${c.R ?? '—'}/${c.D ?? '—'}</td>
+      <td>${c.score_total ?? '—'}</td><td>${esc(c.status||'')}</td></tr>`;
+  });
+
+  return `<div class="detail">
+    <div class="detail-worlds">
+      <div class="world-box prime"><b>Prime World</b><p>${esc(m.prime_world)}</p></div>
+      <div class="world-box counter"><b>Counterworld</b><p>${esc(m.counterworld)}</p></div>
+    </div>
+    <div class="mini-box"><span>Anchor</span>${esc(m.anchor)}</div>
+    <div class="detail-row3">
+      <div class="mini-box"><span>Modal Score · Score Band</span>${esc(m.modal_score)} · ${esc(m.score_band)}</div>
+      <div class="mini-box"><span>Four-Score Cluster</span>
+        <div class="cluster-chips">${cluster.length? cluster.map(s=>`<span class="cluster-chip">${esc(s)}</span>`).join('') : '<span style="color:var(--dim)">—</span>'}</div>
+      </div>
+      <div class="mini-box"><span>Shock-Test</span>
+        ${['S1','S2','S3'].map(k=>shock[k]?`<span class="shock ${shockCls(shock[k])}">${k} ${esc(shock[k])}</span>`:'').join('') || '<span style="color:var(--dim)">—</span>'}
+      </div>
+    </div>
+    <div class="fav-box">
+      <div><div class="sub">Favourite Prediction</div><div class="name">${favCell(m.favourite)}</div></div>
+      <div><div class="sub">Model Probability</div><div class="band-val">${esc(m.model_probability_band)}</div></div>
+      <div><div class="sub">Model Price</div><div class="band-val">${esc(m.model_price_band)}</div></div>
+    </div>
+    ${cands.length ? `<div class="mini-box"><span>Kandidaten-Audit · W/F/R/D</span>
+      <table class="audit-table"><thead><tr><th>Ausdruck</th><th>Achse</th><th>Coverage</th><th>W/F/R/D</th><th>Score</th><th>Status</th></tr></thead>
+      <tbody>${candRows}</tbody></table></div>` : ''}
+    ${repairs.length ? `<div class="repair-box"><b>Repair Summary</b>${repairs.map(r=>`${esc(r.field)}: ${esc((r.routes||[]).join(' → '))} → ${esc(r.result)}${r.note?' · '+esc(r.note):''}`).join('<br>')}</div>` : ''}
+    ${sources.length ? `<div class="src-line">${sources.map(s=>`<span>${esc(s.name)} · ${esc(s.trust||'')}</span>`).join('')}</div>` : ''}
+  </div>`;
 }
 
 /* ---------- Settlement und Replay: warten auf Schema aus der Norm ---------- */
