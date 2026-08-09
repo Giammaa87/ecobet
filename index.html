@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ECOBET · Prediction Archive</title>
+<style>
+:root{
+  --bg:#07100d; --panel2:#12221b; --line:#294238; --line-soft:rgba(41,66,56,.55);
+  --text:#edf7f1; --muted:#9cb1a7; --dim:#6d8479;
+  --accent:#65f29a; --blue:#71c7ff; --warn:#ffd166; --bad:#ff6b6b;
+  --shadow:0 18px 48px rgba(0,0,0,.30);
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 82% -12%,rgba(101,242,154,.09),transparent 34rem),var(--bg);
+  color:var(--text);font:14px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{width:min(1400px,94vw);margin:auto}
+.mono{font-family:var(--mono)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+header.hero{padding:46px 0 30px;border-bottom:1px solid var(--line)}
+.eyebrow{color:var(--accent);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+h1{font-size:clamp(28px,4.6vw,50px);line-height:1.02;margin:12px 0 12px;letter-spacing:-.04em;font-weight:800}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{max-width:720px;color:#bfd3ca;font-size:15px;margin:0}
+
+nav.tabs{position:sticky;top:0;z-index:40;background:rgba(7,16,13,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 0}
+nav.tabs button{white-space:nowrap;border:1px solid transparent;border-radius:10px;padding:9px 15px;background:transparent;
+  color:var(--muted);font:600 13px/1 inherit;cursor:pointer;transition:background .15s,color .15s}
+nav.tabs button:hover{color:var(--text)}
+nav.tabs button.active{color:#06120d;background:var(--accent)}
+
+main{padding:32px 0 80px;min-height:60vh}
+.view{display:none}
+.view.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.view.active{animation:none}}
+
+.title{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:18px;flex-wrap:wrap}
+.title h2{font-size:23px;margin:6px 0 0;letter-spacing:-.02em}
+.title p{max-width:620px;color:var(--muted);margin:0;font-size:13px}
+
+.kpi{border:1px solid var(--line);background:linear-gradient(180deg,rgba(18,34,27,.92),rgba(13,24,20,.92));
+  border-radius:16px;box-shadow:var(--shadow)}
+
+.toolbar{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.toolbar input[type=date]{background:var(--panel2);border:1px solid var(--line);color:var(--text);
+  border-radius:10px;padding:9px 12px;font:inherit}
+.btn{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:10px;padding:9px 15px;
+  cursor:pointer;font:600 13px/1 inherit;transition:border-color .15s,color .15s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.pill-group{display:flex;gap:7px;flex-wrap:wrap}
+.pill{border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:12px;color:var(--muted);
+  cursor:pointer;background:transparent;font-family:inherit;transition:.15s;text-align:left}
+.pill:hover{color:var(--text)}
+.pill.active{border-color:var(--accent);color:var(--accent);background:rgba(101,242,154,.06)}
+.pill small{display:block;font-size:10px;color:var(--dim);margin-top:2px}
+.pill.active small{color:var(--accent);opacity:.75}
+
+.empty{border:1px dashed var(--line);border-radius:16px;padding:38px 26px;text-align:center;color:var(--muted)}
+.empty strong{display:block;color:var(--text);font-size:15px;margin-bottom:8px;font-weight:700}
+.empty p{margin:0 auto;max-width:520px;font-size:13px;line-height:1.6}
+.empty .path{display:inline-block;margin-top:14px;color:var(--accent);background:rgba(101,242,154,.07);
+  border:1px solid rgba(101,242,154,.2);padding:5px 11px;border-radius:8px;font-size:12px;font-family:var(--mono)}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:11px;margin-bottom:22px}
+.kpi{padding:15px 16px}
+.kpi span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+.kpi strong{display:block;font-size:25px;margin-top:6px;font-weight:800;letter-spacing:-.02em}
+.kpi small{display:block;color:var(--dim);font-size:11px;margin-top:3px}
+.kpi.dim{opacity:.5}
+.kpi.good strong{color:var(--accent)}
+.kpi.warn strong{color:var(--warn)}
+
+.league{margin-bottom:22px}
+.league-head{display:flex;align-items:baseline;gap:11px;margin:0 0 9px;padding-bottom:8px;border-bottom:1px solid var(--line-soft)}
+.league-head h3{margin:0;font-size:15px;font-weight:700;letter-spacing:-.01em}
+.league-head .count{color:var(--dim);font-size:12px;font-family:var(--mono)}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#09130f}
+table{width:100%;border-collapse:collapse;min-width:900px}
+th,td{padding:11px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line-soft);font-size:13px}
+th{background:#102019;color:#b3c9be;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+tr:last-child td{border-bottom:0}
+tbody tr:hover{background:rgba(101,242,154,.028)}
+td.match{font-weight:600}
+td.band{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+.chip{display:inline-block;border:1px solid transparent;border-radius:999px;padding:3px 9px;font-size:10px;
+  font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.chip.green{color:var(--accent);background:rgba(101,242,154,.09);border-color:rgba(101,242,154,.3)}
+.chip.yellow{color:var(--warn);background:rgba(255,209,102,.09);border-color:rgba(255,209,102,.3)}
+.chip.red{color:var(--bad);background:rgba(255,107,107,.09);border-color:rgba(255,107,107,.3)}
+.chip.muted{color:var(--muted);background:rgba(156,177,167,.05);border-color:var(--line)}
+
+.drift{border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:8px;
+  background:linear-gradient(155deg,rgba(255,209,102,.045),rgba(13,24,20,.95) 45%)}
+.drift h3{margin:0 0 5px;font-size:17px;letter-spacing:-.01em}
+.drift .sub{margin:0 0 20px;color:var(--muted);font-size:13px;max-width:660px;line-height:1.6}
+.drift-day{margin-bottom:22px}
+.drift-day:last-child{margin-bottom:0}
+.drift-day-head{display:flex;align-items:baseline;gap:10px;margin-bottom:11px;flex-wrap:wrap}
+.drift-day-head b{font-family:var(--mono);font-size:13px}
+.drift-day-head span{color:var(--dim);font-size:12px}
+.drift-legend{margin-left:auto;display:flex;gap:12px;font-size:11px;color:var(--dim)}
+.drift-legend i{font-style:normal;display:inline-flex;align-items:center;gap:5px}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.dot.s{background:var(--accent)} .dot.u{background:var(--bad)}
+.drift-grid{display:grid;gap:7px}
+.drift-item{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:14px;align-items:center;
+  border:1px solid var(--line-soft);border-radius:11px;padding:10px 13px;background:#09130f}
+.drift-item.unstable{border-color:rgba(255,107,107,.32);background:rgba(255,107,107,.035)}
+.drift-item .fx{font-size:12.5px;font-weight:600}
+.drift-item .fx em{display:block;font-style:normal;color:var(--dim);font-size:10.5px;font-weight:400;margin-top:2px}
+.vals{display:flex;gap:6px;flex-wrap:wrap}
+.val{border:1px solid var(--line);border-radius:7px;padding:5px 9px;font-size:11px;background:rgba(7,16,13,.6);
+  font-family:var(--mono);white-space:nowrap}
+.val.nsp{color:var(--dim);border-style:dashed}
+.val.changed{border-color:rgba(255,107,107,.45);color:#ffb3b3}
+
+footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);font-size:12px}
+
+@media(max-width:760px){
+  .toolbar{align-items:stretch;flex-direction:column}
+  .drift-item{grid-template-columns:1fr;gap:9px}
+  .drift-legend{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">ECOBET Master · Prediction Archive</div>
+  <h1>Läufe, Settlement<br>und <em>Drift</em> an einem Ort.</h1>
+  <p class="lede">Jeder Lauf wird so archiviert, wie er erzeugt wurde — ohne rückwirkende Änderung. Ein Datum kann mehrere Läufe enthalten; keiner ersetzt den anderen.</p>
+</div></header>
+
+<nav class="tabs"><div class="wrap">
+  <button data-view="runs" class="active">Läufe</button>
+  <button data-view="settlement">Settlement</button>
+  <button data-view="replay">Replay &amp; Audit</button>
+  <button data-view="dashboard">Dashboard</button>
+</div></nav>
+
+<main class="wrap">
+
+<section id="view-runs" class="view active">
+  <div class="title">
+    <div><div class="eyebrow">01 · Runs</div><h2>Läufe nach Datum</h2></div>
+    <p>Nach Wettbewerb gruppiert, innerhalb der Gruppe nach Anstoß sortiert.</p>
+  </div>
+  <div class="toolbar">
+    <input type="date" id="run-date" aria-label="Datum wählen">
+    <button class="btn" id="run-go">Anzeigen</button>
+    <div class="pill-group" id="run-pills"></div>
+  </div>
+  <div class="toolbar" id="league-filter-bar" style="display:none">
+    <div class="pill-group" id="league-pills"></div>
+  </div>
+  <div id="runs-content"></div>
+</section>
+
+<section id="view-settlement" class="view">
+  <div class="title">
+    <div><div class="eyebrow">02 · Settlement</div><h2>Ergebnisse gegen Predictions</h2></div>
+    <p>Full-Time nach 90 Minuten inkl. Nachspielzeit.</p>
+  </div>
+  <div id="settlement-content"></div>
+</section>
+
+<section id="view-replay" class="view">
+  <div class="title">
+    <div><div class="eyebrow">03 · Replay &amp; Audit</div><h2>World Verdicts und Failure-Tags</h2></div>
+    <p>Findings sind Kalibrierungsdiagnosen, keine automatische Normänderung.</p>
+  </div>
+  <div id="replay-content"></div>
+</section>
+
+<section id="view-dashboard" class="view">
+  <div class="title">
+    <div><div class="eyebrow">04 · Dashboard</div><h2>Über alle Läufe hinweg</h2></div>
+    <p>Quoten immer mit Nenner. Unter zehn Fällen ausgegraut — zu wenig Daten für eine Aussage.</p>
+  </div>
+  <div id="dashboard-content"></div>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+  ECOBET Master · Prediction Archive · statisch erzeugt · keine reale Quote, keine Tickets · Europe/Zurich
+</div></footer>
+
+<script>
+/* ============================================================
+   runs/   OUTPUT von ECOBET
+     index.json                 { "dates": { "<YYYY-MM-DD>": ["<run_id>", ...] } }
+     <run_id>.json              run_record
+     <run_id>.settlement.json   settlement_record  (Schema folgt aus der Norm)
+     <run_id>.replay.json       replay_record      (Schema folgt aus der Norm)
+
+   data/   INPUT für ECOBET — Daily Snapshots von Claude Code
+     <YYYY-MM-DD>/latest.json
+     <YYYY-MM-DD>/<snapshot_id>.json
+     Wird hier bewusst nicht dargestellt, nur öffentlich bereitgestellt.
+   ============================================================ */
+
+const RUNS = 'runs/';
+const NSP  = 'NO_STABLE_PREDICTION';
+let INDEX = null, CURRENT_RUN = null, LEAGUE_FILTER = 'ALL';
+
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+async function loadJSON(p){
+  try { const r = await fetch(p,{cache:'no-store'}); return r.ok ? await r.json() : null; }
+  catch { return null; }
+}
+async function getIndex(){ if(!INDEX) INDEX = await loadJSON(RUNS+'index.json'); return INDEX; }
+const todayISO = () => new Date().toISOString().slice(0,10);
+
+function empty(title, text, path){
+  return `<div class="empty"><strong>${esc(title)}</strong><p>${esc(text)}</p>
+    ${path ? `<div class="path">${esc(path)}</div>` : ''}</div>`;
+}
+function ampelChip(a){
+  const k = {GREEN:'green',YELLOW:'yellow',RED:'red'}[a] || 'muted';
+  return `<span class="chip ${k}">${esc(a||'—')}</span>`;
+}
+function favCell(v){
+  return (!v || v===NSP) ? `<span class="chip yellow">NSP</span>` : esc(v);
+}
+
+/* ---------- Läufe ---------- */
+async function renderRuns(date){
+  const idx = await getIndex();
+  const box = document.getElementById('runs-content');
+  const pills = document.getElementById('run-pills');
+  pills.innerHTML = '';
+  document.getElementById('league-filter-bar').style.display = 'none';
+
+  if(!idx || !idx.dates || !idx.dates[date] || !idx.dates[date].length){
+    box.innerHTML = empty('Für dieses Datum liegt kein Lauf vor.',
+      'Sobald ein run_record im Ordner runs/ liegt und in runs/index.json eingetragen ist, erscheint er hier automatisch.',
+      'runs/index.json');
+    return;
+  }
+
+  const ids = idx.dates[date];
+  ids.forEach((id,i) => {
+    const b = document.createElement('button');
+    b.className = 'pill' + (i===0 ? ' active' : '');
+    b.type = 'button';
+    b.innerHTML = esc(id.split('_')[1] || id) + '<small>Snapshot</small>';
+    b.onclick = () => {
+      Array.from(pills.children).forEach(c=>c.classList.remove('active'));
+      b.classList.add('active'); showRun(id);
+    };
+    pills.appendChild(b);
+  });
+  showRun(ids[0]);
+
+  async function showRun(id){
+    const run = await loadJSON(RUNS+id+'.json');
+    if(!run){
+      box.innerHTML = empty('Lauf-Datei fehlt.','Die Datei ist im Index eingetragen, aber nicht vorhanden.',`runs/${id}.json`);
+      return;
+    }
+    CURRENT_RUN = run; LEAGUE_FILTER = 'ALL';
+    buildLeaguePills(run);
+    paintRun(run);
+  }
+}
+
+function buildLeaguePills(run){
+  const bar = document.getElementById('league-filter-bar');
+  const pills = document.getElementById('league-pills');
+  const matches = run.matches || [];
+  const comps = [];
+  matches.forEach(m => { if(comps.indexOf(m.competition)===-1) comps.push(m.competition); });
+  if(comps.length < 2){ bar.style.display='none'; return; }
+  bar.style.display='flex';
+  pills.innerHTML='';
+  function mk(label,val,n){
+    const b=document.createElement('button');
+    b.type='button';
+    b.className='pill'+(val===LEAGUE_FILTER?' active':'');
+    b.innerHTML=esc(label)+'<small>'+n+' Spiele</small>';
+    b.onclick=function(){
+      LEAGUE_FILTER=val;
+      Array.from(pills.children).forEach(c=>c.classList.remove('active'));
+      b.classList.add('active');
+      paintRun(CURRENT_RUN);
+    };
+    pills.appendChild(b);
+  }
+  mk('Alle Wettbewerbe','ALL',matches.length);
+  comps.forEach(c => mk(c,c,matches.filter(m=>m.competition===c).length));
+}
+
+function paintRun(run){
+  const box = document.getElementById('runs-content');
+  const r = run.run || {};
+  const all = run.matches || [];
+  const released = all.filter(m=>m.favourite && m.favourite!==NSP).length;
+
+  let html = `<div class="kpis">
+    <div class="kpi"><span>Snapshot</span><strong style="font-size:15px">${esc((r.snapshot_time||'—').replace('T',' ').slice(0,16))}</strong><small>${esc(r.build_mode||'')}</small></div>
+    <div class="kpi"><span>Fixtures</span><strong>${all.length}</strong></div>
+    <div class="kpi good"><span>Freigaben</span><strong>${released}</strong></div>
+    <div class="kpi warn"><span>NO_STABLE_PREDICTION</span><strong>${all.length-released}</strong></div>
+    <div class="kpi"><span>Run Integrity</span><strong style="font-size:17px">${esc(r.run_integrity||'—')}</strong></div>
+  </div>`;
+
+  const shown = LEAGUE_FILTER==='ALL' ? all : all.filter(m=>m.competition===LEAGUE_FILTER);
+  const comps = [];
+  shown.forEach(m => { if(comps.indexOf(m.competition)===-1) comps.push(m.competition); });
+
+  comps.forEach(comp => {
+    const rows = shown.filter(m=>m.competition===comp)
+      .sort((a,b)=>String(a.kickoff||'').localeCompare(String(b.kickoff||'')));
+    html += `<div class="league">
+      <div class="league-head"><h3>${esc(comp)}</h3><span class="count">${rows.length} Spiele</span></div>
+      <div class="table-wrap"><table><thead><tr>
+        <th>KO</th><th>Match</th><th>World Type</th><th>Safe</th><th>Balanced</th>
+        <th>Aggressive</th><th>Favourite</th><th>Band</th><th>Ampel</th><th>Data</th>
+      </tr></thead><tbody>`;
+    rows.forEach(m=>{
+      html += `<tr>
+        <td class="mono">${esc(m.kickoff)}</td>
+        <td class="match">${esc(m.home)} – ${esc(m.away)}<br><span style="color:var(--dim);font-weight:400;font-size:11px">${esc(m.phase||'')}</span></td>
+        <td style="font-size:11.5px;color:var(--muted)">${esc(m.world_type)}</td>
+        <td>${esc(m.safe)}</td>
+        <td>${esc(m.balanced)}</td>
+        <td>${esc(m.aggressive)}</td>
+        <td><b>${favCell(m.favourite)}</b></td>
+        <td class="band">${esc(m.model_probability_band)}<br>${esc(m.model_price_band)}</td>
+        <td>${ampelChip(m.ampel)}</td>
+        <td><span class="chip muted">${esc(m.data_readiness)}</span></td>
+      </tr>`;
+    });
+    html += `</tbody></table></div></div>`;
+  });
+
+  box.innerHTML = html;
+}
+
+/* ---------- Settlement und Replay: warten auf Schema aus der Norm ---------- */
+document.getElementById('settlement-content').innerHTML = empty(
+  'Settlement-Ansicht wartet auf das Schema.',
+  'Die Feldnamen für settlement_record werden aus Kapitel 29 und 30 der Output-Norm abgeleitet, nicht hier erfunden. Sobald das Schema steht und Dateien vorliegen, wird diese Ansicht dagegen gebaut.',
+  'runs/<run_id>.settlement.json');
+
+document.getElementById('replay-content').innerHTML = empty(
+  'Replay-Ansicht wartet auf das Schema.',
+  'replay_record folgt Kapitel 40 der Output-Norm. Bis dahin bleibt diese Ansicht bewusst leer, damit keine Felder entstehen, die es in der Norm nicht gibt.',
+  'runs/<run_id>.replay.json');
+
+/* ---------- Dashboard ---------- */
+async function renderDashboard(){
+  const box = document.getElementById('dashboard-content');
+  const idx = await getIndex();
+  if(!idx || !idx.dates || !Object.keys(idx.dates).length){
+    box.innerHTML = empty('Noch keine Läufe im Archiv.','Das Dashboard aggregiert automatisch, sobald runs/index.json Einträge enthält.','runs/index.json');
+    return;
+  }
+
+  const dates = Object.keys(idx.dates).sort();
+  let totalRuns = 0;
+  dates.forEach(d => totalRuns += idx.dates[d].length);
+  const multi = dates.filter(d=>idx.dates[d].length>1);
+
+  const loaded = {};
+  for(const d of dates){
+    const arr = await Promise.all(idx.dates[d].map(id=>loadJSON(RUNS+id+'.json')));
+    loaded[d] = arr.filter(Boolean);
+  }
+  let relCount = 0;
+  Object.keys(loaded).forEach(d => loaded[d].forEach(r =>
+    (r.matches||[]).forEach(m => { if(m.favourite && m.favourite!==NSP) relCount++; })));
+
+  let html = `<div class="kpis">
+    <div class="kpi"><span>Tage im Archiv</span><strong>${dates.length}</strong></div>
+    <div class="kpi"><span>Läufe gesamt</span><strong>${totalRuns}</strong></div>
+    <div class="kpi"><span>Prediction-Instanzen</span><strong>${relCount}</strong><small>über alle Läufe</small></div>
+    <div class="kpi ${multi.length?'':'dim'}"><span>Tage mit &gt;1 Lauf</span><strong>${multi.length}</strong></div>
+    <div class="kpi dim"><span>Settlement-Quote</span><strong>—</strong><small>wartet auf Settlement-Daten</small></div>
+  </div>`;
+
+  html += `<div class="drift">
+    <h3>Run Drift</h3>
+    <p class="sub">Hat ein Tag mehrere Läufe, sollten identische Eingangsdaten zu identischen Entscheidungen führen. Weicht die Favourite Prediction desselben Fixtures zwischen Läufen ab, ist das Interpretations-Drift — kein Datenmangel.</p>`;
+
+  if(!multi.length){
+    html += empty('Noch kein Tag mit mehreren Läufen.','Sobald an einem Datum zwei oder mehr Läufe im Index stehen, wird hier pro Fixture verglichen.');
+  } else {
+    multi.forEach(function(d){
+      const runs = loaded[d];
+      const byFx = {};
+      runs.forEach(function(run,i){
+        (run.matches||[]).forEach(function(m){
+          if(!byFx[m.fixture_id]){
+            byFx[m.fixture_id] = {label:m.home+' – '+m.away, comp:m.competition, vals:new Array(runs.length).fill(null)};
+          }
+          byFx[m.fixture_id].vals[i] = m.favourite || NSP;
+        });
+      });
+      const items = Object.keys(byFx).map(k=>byFx[k]);
+      const unstable = items.filter(f => new Set(f.vals.filter(Boolean)).size > 1).length;
+
+      html += `<div class="drift-day">
+        <div class="drift-day-head">
+          <b>${esc(d)}</b><span>${runs.length} Läufe · ${unstable} von ${items.length} Fixtures abweichend</span>
+          <div class="drift-legend"><i><span class="dot s"></span>stabil</i><i><span class="dot u"></span>abweichend</i></div>
+        </div><div class="drift-grid">`;
+      items.forEach(function(f){
+        const isUnstable = new Set(f.vals.filter(Boolean)).size > 1;
+        html += `<div class="drift-item ${isUnstable?'unstable':''}">
+          <div class="fx">${esc(f.label)}<em>${esc(f.comp)}</em></div><div class="vals">`;
+        f.vals.forEach(function(v){
+          const isNsp = !v || v===NSP;
+          html += `<span class="val ${isNsp?'nsp':''} ${isUnstable&&!isNsp?'changed':''}">${isNsp?'NSP':esc(v)}</span>`;
+        });
+        html += `</div></div>`;
+      });
+      html += `</div></div>`;
+    });
+  }
+  html += `</div>`;
+  box.innerHTML = html;
+}
+
+/* ---------- Tabs ---------- */
+document.querySelectorAll('nav.tabs button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('nav.tabs button').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById('view-'+b.dataset.view).classList.add('active');
+  });
+});
+
+/* ---------- Init ---------- */
+(async function init(){
+  const idx = await getIndex();
+  const dates = (idx && idx.dates) ? Object.keys(idx.dates).sort() : [];
+  const start = dates.length ? dates[dates.length-1] : todayISO();
+  document.getElementById('run-date').value = start;
+  document.getElementById('run-go').onclick = function(){
+    renderRuns(document.getElementById('run-date').value || todayISO());
+  };
+  await renderRuns(start);
+  await renderDashboard();
+})();
+</script>
+</body>
+</html>
