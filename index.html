@@ -259,8 +259,20 @@ function matchesFilter(match,index){const c=competitionInfo(match,index);if(COMP
 
 async function renderRuns(date){
   const idx=await getIndex();const box=document.getElementById('runs-content');const pills=document.getElementById('run-pills');
-  pills.innerHTML='';document.getElementById('league-filter-bar').hidden=true;
-  if(!idx||!idx.dates||!Array.isArray(idx.dates[date])||!idx.dates[date].length){box.innerHTML=empty('Für dieses Datum liegt kein Lauf vor.','Sobald ein run_record in runs/index.json eingetragen ist, erscheint er hier automatisch.','runs/index.json');return}
+  const leagueBar=document.getElementById('league-filter-bar');
+  const leaguePills=document.getElementById('league-pills');
+
+  // Bei jedem Datumswechsel zuerst den kompletten alten UI-Zustand leeren.
+  pills.innerHTML='';
+  leaguePills.innerHTML='';
+  leagueBar.hidden=true;
+  CURRENT_RUN=null;
+  COMP_FILTER={kind:'all',value:'ALL'};
+
+  if(!idx||!idx.dates||!Array.isArray(idx.dates[date])||!idx.dates[date].length){
+    box.innerHTML=empty('Für dieses Datum liegt kein Lauf vor.','Sobald ein run_record in runs/index.json eingetragen ist, erscheint er hier automatisch.','runs/index.json');
+    return;
+  }
   const ids=idx.dates[date];
   ids.forEach((id,index)=>{const button=document.createElement('button');button.type='button';button.className='pill'+(index===0?' active':'');button.innerHTML=esc(id.split('_')[1]||id)+'<small>Snapshot</small>';
     button.onclick=()=>{Array.from(pills.children).forEach(child=>child.classList.remove('active'));button.classList.add('active');showRun(id)};pills.appendChild(button)});
