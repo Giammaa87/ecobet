@@ -1,0 +1,569 @@
+{
+  "schema_version": "ECOBET_DAILY_DATA_V1",
+  "snapshot_id": "snap_20260811_214217",
+  "date": "2026-08-11",
+  "generated_at": "2026-08-09T21:42:17.441223+02:00",
+  "data_cutoff": "2026-08-09T21:42:17.441223+02:00",
+  "db_updated_at": "2026-08-09T12:33:50",
+  "scope": "ECOBET_DAILY_DATA_V1",
+  "source": "ECOBET_DATA_FABRIC",
+  "data_hash": "sha256:b7f5d8dcd07fbafe01bff0f6b0f0c70138edea4522c7348f63356d9b7cba7c3b",
+  "missing_fields": [],
+  "fixtures": [
+    {
+      "fixture_id": "UCL2627_3ae20c18756c",
+      "kickoff": "2026-08-11T00:00:00",
+      "competition_id": "UEFA-Champions League",
+      "competition_name": "UEFA Champions League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 100,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "uefa_fc_kairat",
+      "away_team_id": "uefa_levski_sofia",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "uefa_fc_kairat",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 1.2,
+          "goals_for_avg": 1.4,
+          "goals_against_avg": 1.8,
+          "competitions_included": [
+            "UEFA-Champions League"
+          ]
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_levski_sofia",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 4,
+          "ppg": 2.0,
+          "goals_for_avg": 2.0,
+          "goals_against_avg": 0.75,
+          "competitions_included": [
+            "UEFA-Champions League"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "UCL2627_3bb871bdf3f0",
+      "kickoff": "2026-08-11T00:00:00",
+      "competition_id": "UEFA-Champions League",
+      "competition_name": "UEFA Champions League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 100,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "uefa_sabah_fk",
+      "away_team_id": "uefa_agf",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "uefa_sabah_fk",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 4,
+          "ppg": 3.0,
+          "goals_for_avg": 1.75,
+          "goals_against_avg": 0.25,
+          "competitions_included": [
+            "UEFA-Champions League"
+          ]
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_agf",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 2,
+          "ppg": 1.5,
+          "goals_for_avg": 2.5,
+          "goals_against_avg": 2.5,
+          "competitions_included": [
+            "UEFA-Champions League"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "UCL2627_a2cf47bce57c",
+      "kickoff": "2026-08-11T00:00:00",
+      "competition_id": "UEFA-Champions League",
+      "competition_name": "UEFA Champions League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 100,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "uefa_kauno_zalgiris",
+      "away_team_id": "uefa_dinamo_zagreb",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "uefa_kauno_zalgiris",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 4,
+          "ppg": 2.0,
+          "goals_for_avg": 1.25,
+          "goals_against_avg": 0.75,
+          "competitions_included": [
+            "UEFA-Champions League"
+          ]
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_dinamo_zagreb",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 1.0,
+          "goals_for_avg": 1.6,
+          "goals_against_avg": 2.2,
+          "competitions_included": [
+            "UEFA-Champions League",
+            "UEFA-Europa League"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "UCL2627_b3713cc40cc5",
+      "kickoff": "2026-08-11T18:00:00",
+      "competition_id": "UEFA-Champions League",
+      "competition_name": "UEFA Champions League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 100,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "uefa_bodo_glimt",
+      "away_team_id": "uefa_union_sg",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "uefa_bodo_glimt",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 2.4,
+          "goals_for_avg": 2.0,
+          "goals_against_avg": 1.6,
+          "competitions_included": [
+            "UEFA-Champions League"
+          ]
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_union_sg",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 1.2,
+          "goals_for_avg": 1.0,
+          "goals_against_avg": 1.6,
+          "competitions_included": [
+            "UEFA-Champions League"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "UCL2627_c71974b8866c",
+      "kickoff": "2026-08-11T19:30:00",
+      "competition_id": "UEFA-Champions League",
+      "competition_name": "UEFA Champions League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 100,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "uefa_nec_nijmegen",
+      "away_team_id": "uefa_olympiacos",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "uefa_nec_nijmegen",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 0,
+          "ppg": null,
+          "goals_for_avg": null,
+          "goals_against_avg": null,
+          "competitions_included": []
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_olympiacos",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 2.0,
+          "goals_for_avg": 1.0,
+          "goals_against_avg": 0.6,
+          "competitions_included": [
+            "UEFA-Champions League"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "UCL2627_045d6fc114eb",
+      "kickoff": "2026-08-11T20:00:00",
+      "competition_id": "UEFA-Champions League",
+      "competition_name": "UEFA Champions League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 100,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "uefa_red_star",
+      "away_team_id": "uefa_h_be_er_sheva",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "uefa_red_star",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 2.0,
+          "goals_for_avg": 2.2,
+          "goals_against_avg": 0.6,
+          "competitions_included": [
+            "UEFA-Champions League",
+            "UEFA-Europa League"
+          ]
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_h_be_er_sheva",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 2,
+          "ppg": 1.5,
+          "goals_for_avg": 1.5,
+          "goals_against_avg": 1.0,
+          "competitions_included": [
+            "UEFA-Champions League"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "UCL2627_8d66e4255987",
+      "kickoff": "2026-08-11T20:15:00",
+      "competition_id": "UEFA-Champions League",
+      "competition_name": "UEFA Champions League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 100,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "uefa_slovan_bratislava",
+      "away_team_id": "uefa_mjallby",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "uefa_slovan_bratislava",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 2.0,
+          "goals_for_avg": 1.2,
+          "goals_against_avg": 0.8,
+          "competitions_included": [
+            "UEFA-Champions League",
+            "UEFA-Conference League"
+          ]
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_mjallby",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 2,
+          "ppg": 2.0,
+          "goals_for_avg": 1.5,
+          "goals_against_avg": 0.0,
+          "competitions_included": [
+            "UEFA-Champions League"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "UCL2627_b761e85467ef",
+      "kickoff": "2026-08-11T20:15:00",
+      "competition_id": "UEFA-Champions League",
+      "competition_name": "UEFA Champions League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 100,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "uefa_nk_celje",
+      "away_team_id": "uefa_ararat_armenia",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "uefa_nk_celje",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 1.6,
+          "goals_for_avg": 2.0,
+          "goals_against_avg": 2.2,
+          "competitions_included": [
+            "UEFA-Champions League",
+            "UEFA-Conference League"
+          ]
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_ararat_armenia",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 4,
+          "ppg": 1.5,
+          "goals_for_avg": 1.75,
+          "goals_against_avg": 1.25,
+          "competitions_included": [
+            "UEFA-Champions League"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "UCL2627_650dea757e62",
+      "kickoff": "2026-08-11T20:30:00",
+      "competition_id": "UEFA-Champions League",
+      "competition_name": "UEFA Champions League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 100,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "uefa_sturm_graz",
+      "away_team_id": "uefa_fenerbahce",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "uefa_sturm_graz",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 1.8,
+          "goals_for_avg": 1.4,
+          "goals_against_avg": 0.8,
+          "competitions_included": [
+            "UEFA-Champions League",
+            "UEFA-Europa League"
+          ]
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_fenerbahce",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 1.6,
+          "goals_for_avg": 1.0,
+          "goals_against_avg": 1.2,
+          "competitions_included": [
+            "UEFA-Champions League",
+            "UEFA-Europa League"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "UCL2627_fa1964e757e1",
+      "kickoff": "2026-08-11T21:00:00",
+      "competition_id": "UEFA-Champions League",
+      "competition_name": "UEFA Champions League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 100,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "ligue_1_lyon",
+      "away_team_id": "uefa_sparta_prague",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "ligue_1_lyon",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 1.8,
+          "goals_for_avg": 2.0,
+          "goals_against_avg": 2.2,
+          "competitions_included": [
+            "FRA-Ligue 1"
+          ]
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_sparta_prague",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 1.8,
+          "goals_for_avg": 1.4,
+          "goals_against_avg": 1.4,
+          "competitions_included": [
+            "UEFA-Conference League"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "UEL2627_c7106fa207ad",
+      "kickoff": "2026-08-11T00:00:00",
+      "competition_id": "UEFA-Europa League",
+      "competition_name": "UEFA Europa League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 110,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "uefa_iberia_1999",
+      "away_team_id": "uefa_larne_fc",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "uefa_iberia_1999",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 1.2,
+          "goals_for_avg": 1.2,
+          "goals_against_avg": 1.4,
+          "competitions_included": [
+            "UEFA-Champions League",
+            "UEFA-Europa League"
+          ]
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_larne_fc",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 1.4,
+          "goals_for_avg": 0.6,
+          "goals_against_avg": 2.0,
+          "competitions_included": [
+            "UEFA-Champions League",
+            "UEFA-Europa League"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "UECL2627_911901b860d5",
+      "kickoff": "2026-08-11T00:00:00",
+      "competition_id": "UEFA-Conference League",
+      "competition_name": "UEFA Conference League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 120,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "uefa_apollon_limassol",
+      "away_team_id": "uefa_brann",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "uefa_apollon_limassol",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 3,
+          "ppg": 3.0,
+          "goals_for_avg": 2.6666666666666665,
+          "goals_against_avg": 0.0,
+          "competitions_included": [
+            "UEFA-Conference League"
+          ]
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_brann",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 0.8,
+          "goals_for_avg": 1.0,
+          "goals_against_avg": 1.2,
+          "competitions_included": [
+            "UEFA-Conference League",
+            "UEFA-Europa League"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "UECL2627_b88bddd4c963",
+      "kickoff": "2026-08-11T00:00:00",
+      "competition_id": "UEFA-Conference League",
+      "competition_name": "UEFA Conference League",
+      "competition_type": "uefa_club_competition",
+      "competition_group": "UEFA",
+      "display_order": 120,
+      "season": "2026-2027",
+      "status": "SCHEDULED",
+      "home_team_id": "uefa_cska_1948",
+      "away_team_id": "uefa_panathinaikos",
+      "already_played": false,
+      "home_pre_match_state": {
+        "team_id": "uefa_cska_1948",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 3,
+          "ppg": 1.0,
+          "goals_for_avg": 0.3333333333333333,
+          "goals_against_avg": 0.3333333333333333,
+          "competitions_included": [
+            "UEFA-Conference League"
+          ]
+        }
+      },
+      "away_pre_match_state": {
+        "team_id": "uefa_panathinaikos",
+        "domestic_form": null,
+        "note": "UEFA-Fixture: nur all_competitions_last5 verfuegbar in dieser Version",
+        "all_competitions_last5": {
+          "n": 5,
+          "ppg": 1.6,
+          "goals_for_avg": 1.2,
+          "goals_against_avg": 1.6,
+          "competitions_included": [
+            "UEFA-Conference League",
+            "UEFA-Europa League"
+          ]
+        }
+      }
+    }
+  ],
+  "n_fixtures": 13
+}
