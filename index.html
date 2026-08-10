@@ -157,6 +157,16 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);fon
 @media(max-width:1050px){.detail{position:sticky;left:0;width:calc(94vw - 2px);max-width:calc(94vw - 2px)}.decision-card{grid-template-columns:repeat(2,1fr)}.decision-cell{border-bottom:1px solid var(--line-soft)}.decision-cell.primary{grid-column:1/-1}.strategy-grid,.evidence-grid{grid-template-columns:1fr}.world-grid{grid-template-columns:1fr}.detail-id{text-align:left}.detail-header{display:grid}.report-status-grid{grid-template-columns:repeat(2,1fr)}.report-decision-grid{grid-template-columns:repeat(2,1fr)}.report-score-grid{grid-template-columns:1fr 2fr}.report-score-grid>div:last-child{grid-column:1/-1}.report-axis-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:760px){header.hero{padding-top:30px}.toolbar{align-items:stretch;flex-direction:column}.pill-group{width:100%}.pill{flex:1 1 auto}.filter-group{align-items:flex-start}.filter-group-label{width:100%}.drift-item{grid-template-columns:1fr;gap:9px}.drift-legend{margin-left:0}.detail{padding:17px 14px}.detail.match-report{padding:0}.decision-card{grid-template-columns:1fr}.decision-cell.primary{grid-column:auto}.nsp-note{grid-column:auto}.meta-grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.report-match-header,.report-subsection{padding:18px 14px}.report-worlds,.report-path-grid,.report-team-grid{grid-template-columns:1fr}.report-status-grid,.report-score-grid,.report-decision-grid,.report-axis-grid{grid-template-columns:1fr 1fr}.report-score-grid>div:last-child{grid-column:auto}.report-footer{flex-direction:column;padding:14px}.report-anchor{display:block}.report-anchor .chip{margin-bottom:9px}.report-team-card dl{grid-template-columns:1fr}}
 @media(max-width:430px){.wrap{width:min(94vw,1400px)}.kpis{grid-template-columns:1fr 1fr}.kpi strong{font-size:21px}.decision-cell{border-right:0}}
+
+.status-line{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 6px}
+.st{border:1px solid var(--line,#294238);border-radius:7px;padding:4px 9px;font-size:11.5px;white-space:nowrap;background:rgba(9,19,15,.6)}
+.st b{margin-left:5px;font-family:ui-monospace,Menlo,monospace}
+.st.ok b{color:#65f29a} .st.no{opacity:.5} .st.no b{color:#ff6b6b}
+.status-legend{margin:4px 0 0;font-size:11px;color:#6d8479}
+.pmap-line{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0}
+.pm{border:1px solid rgba(101,242,154,.3);background:rgba(101,242,154,.06);color:#65f29a;
+  border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600}
+.prediction-map h5{margin:14px 0 8px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#9cb1a7}
 </style>
 </head>
 <body>
@@ -276,19 +286,19 @@ function runMeta(run){
   const proof=Object.keys(p).map(key=>[key.replaceAll('_',' '),typeof p[key]==='boolean'?boolLabel(p[key]):p[key]]);
   const normFields=Object.keys(norms).map(key=>[key.replaceAll('_',' '),norms[key]]);
   const grid=fields=>`<div class="meta-grid">${fields.map(([label,value])=>`<div class="meta-item"><span>${esc(label)}</span><b class="${label==='Scope'?'list':''}">${show(value)}</b></div>`).join('')}</div>`;
-  return `<details class="run-meta" open><summary><span>Run Report · Metadatenebenen</span><b>${show(r.run_id)}</b></summary><section class="run-meta-section"><h3>Run Identity &amp; Scope <span>vorhandene run-Felder</span></h3>${grid(core)}</section>${proof.length?`<section class="run-meta-section"><h3>Proof of Work <span>vorhandene proof_of_work-Felder</span></h3>${grid(proof)}</section>`:''}${normFields.length?`<section class="run-meta-section"><h3>Normative Versions <span>vorhandene norm_versions-Felder</span></h3>${grid(normFields)}</section>`:''}</details>`;
+  return `<details class="run-meta"><summary><span>Run Identity · Proof of Work · Normative Versions</span><b>${show(r.run_id)}</b></summary><section class="run-meta-section"><h3>Run Identity &amp; Scope <span>vorhandene run-Felder</span></h3>${grid(core)}</section>${proof.length?`<section class="run-meta-section"><h3>Proof of Work <span>vorhandene proof_of_work-Felder</span></h3>${grid(proof)}</section>`:''}${normFields.length?`<section class="run-meta-section"><h3>Normative Versions <span>vorhandene norm_versions-Felder</span></h3>${grid(normFields)}</section>`:''}</details>`;
 }
 
 function paintRun(run){
   const box=document.getElementById('runs-content');const r=run.run||{};const all=arr(run.matches);const released=all.filter(m=>present(m.favourite)&&m.favourite!==NSP).length;const shownRecords=all.map((m,i)=>({m,i})).filter(({m,i})=>matchesFilter(m,i));const shown=shownRecords.map(item=>item.m);const catalog=competitionCatalog(shown);
-  let html=`<div class="kpis"><div class="kpi"><span>Snapshot</span><strong style="font-size:15px">${timeLabel(r.snapshot_time)}</strong><small>${show(r.snapshot_id)}</small></div><div class="kpi"><span>Fixtures</span><strong>${all.length}</strong></div><div class="kpi good"><span>Freigaben</span><strong>${released}</strong></div><div class="kpi warn"><span>NSP</span><strong>${all.length-released}</strong><small>reguläre Entscheidungen</small></div><div class="kpi"><span>Run Integrity</span><strong style="font-size:17px">${show(r.run_integrity)}</strong><small>Output ${show(r.output_integrity)}</small></div></div>${runMeta(run)}`;
+  let html=`<div class="kpis"><div class="kpi"><span>Snapshot</span><strong style="font-size:15px">${timeLabel(r.snapshot_time)}</strong><small>${show(r.snapshot_id)}</small></div><div class="kpi"><span>Fixtures</span><strong>${all.length}</strong></div><div class="kpi good"><span>Freigaben</span><strong>${released}</strong></div><div class="kpi warn"><span>NSP</span><strong>${all.length-released}</strong><small>reguläre Entscheidungen</small></div><div class="kpi"><span>Run Integrity</span><strong style="font-size:17px">${show(r.run_integrity)}</strong><small>Output ${show(r.output_integrity)}</small></div></div>`;
   if(!shown.length){box.innerHTML=html+empty('Keine Matches für diesen Filter.','Wähle einen anderen Wettbewerb.');return}
   catalog.forEach(comp=>{const rows=shownRecords.map(({m,i})=>({m,i,c:competitionInfo(m,i)})).filter(x=>x.c.key===comp.key).sort((a,b)=>String(a.m.kickoff||'').localeCompare(String(b.m.kickoff||'')));
     html+=`<div class="league"><div class="league-head">${comp.group?`<span class="group-tag">${esc(comp.group)}</span>`:''}<h3>${esc(comp.name)}</h3><span class="count">${rows.length} Spiele</span></div><div class="table-wrap"><table><thead><tr><th>KO</th><th>Match</th><th>World Type</th><th>Safe</th><th>Balanced</th><th>Aggressive</th><th>Favourite</th><th>Band</th><th>Ampel</th><th>Flags / Codes</th><th>Data</th></tr></thead><tbody>`;
     rows.forEach(({m,i})=>{const rid=`detail-${i}`;const rowTags=[...arr(m.flags),...arr(m.nsp_codes)];html+=`<tr class="match-row" role="button" tabindex="0" aria-expanded="false" aria-controls="${rid}" data-index="${i}" data-target="${rid}"><td class="mono">${show(m.kickoff)}</td><td class="match">${show(m.home)} – ${show(m.away)}<br><span class="subline">${show(m.phase)}</span></td><td class="subline">${show(m.world_type)}</td><td>${show(m.safe)}</td><td>${show(m.balanced)}</td><td>${show(m.aggressive)}</td><td><b>${favCell(m.favourite)}</b></td><td class="band">${show(m.model_probability_band)}<br>${show(m.model_price_band)}</td><td>${ampelChip(m.ampel)}</td><td class="flag-cell">${rowTags.length?esc(rowTags.join(', ')):'—'}</td><td><span class="chip muted">${show(m.data_readiness)}</span></td></tr><tr class="detail-row hidden" id="${rid}"><td colspan="11"></td></tr>`});
     html+='</tbody></table></div></div>';
   });
-  box.innerHTML=html;
+  html+=runMeta(run);box.innerHTML=html;
   box.querySelectorAll('tr.match-row').forEach(row=>{const toggle=()=>toggleMatch(row,box);row.addEventListener('click',toggle);row.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();toggle()}})});
 }
 
@@ -305,8 +315,10 @@ function renderMatchDetail(m,matchIndex=0){
   const hasWorld=present(m.prime_world)||present(m.counterworld);const hasEvidence=present(m.anchor)||present(m.modal_score)||cluster.length||present(m.score_band);
   const candidateRows=candidates.map(item=>`<tr><td>${show(item.expression)}</td><td>${show(item.axis)}</td><td>${show(item.cluster_coverage)}</td><td>${show(item.W)} / ${show(item.F)} / ${show(item.R)} / ${show(item.D)}</td><td>${show(item.score_total)}</td><td>${show(item.status)}</td></tr>`).join('');
   const pathEntries=[['Safe',m.safe],['Balanced',m.balanced],['Aggressive',m.aggressive]];
-  const predictionRows=pathEntries.map(([path,expression])=>{const candidate=candidates.find(item=>item.expression===expression)||{};return `<tr><td>${show(expression)}</td><td class="path-name">${esc(path)}</td><td>${show(candidate.axis)}</td><td>${show(candidate.cluster_coverage)}</td><td>${show(candidate.score_total)}</td><td>${show(candidate.status)}</td></tr>`}).join('');
-  const availabilityRow=(id,family,status,fields,available=true)=>`<tr class="${available?'':'missing-row'}"><td><code>${esc(id)}</code></td><td>${esc(family)}</td><td><span class="chip ${available?'green':'red'}">${esc(status)}</span></td><td>${esc(fields)}</td></tr>`;
+  const predictionRows=pathEntries.map(([path,expression])=>{const candidate=candidates.find(item=>item.expression===expression)||{};const wfrd=[candidate.W,candidate.F,candidate.R,candidate.D].every(v=>v!==undefined&&v!==null)?`${candidate.W}/${candidate.F}/${candidate.R}/${candidate.D}`:null;return `<tr><td>${show(expression)}</td><td class="path-name">${esc(path)}</td><td>${show(candidate.axis)}</td><td>${show(candidate.cluster_coverage)}</td><td>${show(wfrd)}</td><td>${show(candidate.score_total)}</td><td>${show(candidate.status)}</td></tr>`}).join('');
+  const pmapSet=[...new Set([...pathEntries.map(([,e])=>e),...candidates.map(c=>c.expression)].filter(present))];
+  const pmapLine=pmapSet.length?pmapSet.map(e=>`<span class="pm">${esc(e)}</span>`).join(''):'<span class="unavailable-note">Keine Kandidaten im run_record.</span>';
+  const availabilityRow=(id,family,status,fields,available=true)=>`<span class="st ${available?'ok':'no'}" title="${esc(family)} · ${esc(fields)}">${esc(family)} <b>${available?'V':'—'}</b></span>`;
   const availabilityRows=[
     availabilityRow('RR01','Fixture Identity & Kickoff','VORHANDEN','fixture_id · kickoff · home · away'),
     availabilityRow('RR02','Wettbewerb & Phase','VORHANDEN','competition · phase'),
@@ -321,6 +333,7 @@ function renderMatchDetail(m,matchIndex=0){
     availabilityRow('RR11','Quantitative Evidence · Form · H2H','NICHT IM RUN_RECORD','keine strukturierten Evidence-, Form- oder H2H-Felder',false),
     availabilityRow('RR12','Interpretation Axes & Game States','NICHT IM RUN_RECORD','kein Control/Chaos/Tempo/Draw-Gravity/Game-State-Objekt',false)
   ].join('');
+  const availabilityLine=availabilityRows;
   const matchLabel='M'+String(matchIndex+1).padStart(2,'0');
   const readinessClass=m.data_readiness==='NOT_READY'?'red':m.data_readiness==='CONDITIONAL'?'yellow':'green';
   const coreClass=m.match_core_status==='RESTRICTED'?'red':m.match_core_status==='PARTIAL'?'yellow':'green';
@@ -333,9 +346,7 @@ function renderMatchDetail(m,matchIndex=0){
     </header>
 
     <section class="report-subsection">
-      <h4>Feldstatus-Übersicht <span>run_record-Verfügbarkeit</span></h4>
-      <div class="availability-table"><table><thead><tr><th>ID</th><th>Datenfamilie</th><th>Status</th><th>Tatsächliche Felder / Begrenzung</th></tr></thead><tbody>${availabilityRows}</tbody></table></div>
-    </section>
+      <h4>Feldstatus <span>run_record-Verfügbarkeit</span></h4><div class="status-line">${availabilityLine}</div><p class="status-legend">V = im run_record vorhanden · — = für dieses Match nicht enthalten</p></section>
 
     <section class="report-subsection">
       <h4>Data Gate &amp; Field Status <span>verfügbare run_record-Felder</span></h4>
@@ -374,7 +385,7 @@ function renderMatchDetail(m,matchIndex=0){
 
     ${nsp?`<section class="report-subsection"><h4>Gate-Entscheid &amp; Sperrzustand</h4><div class="locked-panel"><strong>NO_STABLE_PREDICTION</strong><p>Reguläre ECOBET-Entscheidung: In diesem Lauf wurde keine stabile Prediction freigegeben. Sichtbar sind ausschließlich die vorhandenen Gate-, Flag- und NSP-Code-Felder.</p>${codes.length?`<div class="tag-list">${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</div></section>`:''}
 
-    ${!nsp?`<section class="report-subsection"><h4>Prediction Map</h4><div class="prediction-map"><table><thead><tr><th>Kandidat</th><th>Pfad</th><th>Achse</th><th>Cluster Coverage</th><th>Audit Score</th><th>Status</th></tr></thead><tbody>${predictionRows}</tbody></table></div>${candidates.length?'':'<p class="unavailable-note"><b>Auditwerte:</b> Safe, Balanced und Aggressive stammen aus dem run_record. Achse, Coverage und Audit-Score fehlen, weil für dieses Match kein candidates-Objekt vorhanden ist.</p>'}</section>`:''}
+    ${!nsp?`<section class="report-subsection"><h4>Prediction Map</h4><div class="pmap-line">${pmapLine}</div><p class="status-legend">Cluster dient als Modellkorridor, nicht als Exact-Score-Tipp.</p>${candidates.length?`<div class="prediction-map"><h5>Kandidaten-Audit</h5><table><thead><tr><th>Kandidat</th><th>Pfad</th><th>Achse</th><th>Coverage</th><th>W/F/R/D</th><th>Score</th><th>Status</th></tr></thead><tbody>${predictionRows}</tbody></table></div>`:''}${candidates.length?'':'<p class="unavailable-note"><b>Auditwerte:</b> Safe, Balanced und Aggressive stammen aus dem run_record. Achse, Coverage und Audit-Score fehlen, weil für dieses Match kein candidates-Objekt vorhanden ist.</p>'}</section>`:''}
 
     <section class="report-subsection">
       <h4>${nsp?'Decision Lock':'Decision Paths & Favourite'}</h4>
