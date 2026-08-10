@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ECOBET · Match Analysis Archive</title>
+<style>
+:root{
+  --bg:#081015;--panel:#0e1a21;--panel2:#13232c;--panel3:#10242d;
+  --line:#25404c;--line-soft:rgba(37,64,76,.68);--text:#e9f2f5;
+  --muted:#91a7b1;--dim:#6f8791;--accent:#31e6a1;--blue:#39bdf8;
+  --warn:#ffc857;--bad:#ff6577;--prime:#31e6a1;--counter:#b99cff;
+  --shadow:0 18px 48px rgba(0,0,0,.30);
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+.hidden{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 18% -10%,#12313b 0,transparent 32%),var(--bg);
+  color:var(--text);font:14px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button,input{font:inherit}
+.wrap{width:min(1520px,94vw);margin:auto}
+.mono{font-family:var(--mono)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+header.hero{padding:48px 0 28px;border-bottom:1px solid var(--line)}
+.eyebrow{color:var(--accent);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+h1{font-size:clamp(2rem,5vw,4.7rem);line-height:.96;margin:.5rem 0 1rem;letter-spacing:-.04em;font-weight:850}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{max-width:760px;color:#bfd3ca;font-size:15px;margin:0}
+
+nav.tabs{position:sticky;top:0;z-index:40;background:rgba(8,16,21,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:8px;align-items:center;overflow-x:auto;padding:12px 0}
+.brand{font-weight:900;color:var(--accent);margin-right:auto;letter-spacing:.05em}
+nav.tabs button{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:7px 12px;background:#10222a;
+  color:var(--muted);font-weight:650;font-size:13px;cursor:pointer}
+nav.tabs button:hover{color:var(--text)}
+nav.tabs button.active{color:var(--accent);border-color:var(--accent);background:#10222a}
+
+main{padding:32px 0 80px;min-height:60vh}
+.view{display:none}.view.active{display:block}
+.title{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:18px;flex-wrap:wrap}
+.title h2{font-size:23px;margin:6px 0 0;letter-spacing:-.02em}
+.title p{max-width:620px;color:var(--muted);margin:0;font-size:13px}
+
+.toolbar{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.toolbar-label{color:var(--dim);font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.toolbar input[type=date]{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:9px 12px}
+.btn{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:10px;padding:10px 15px;cursor:pointer;font-weight:650;font-size:13px}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.pill-group{display:flex;gap:7px;flex-wrap:wrap}
+.pill{border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:12px;color:var(--muted);
+  cursor:pointer;background:transparent;text-align:left}
+.pill:hover{color:var(--text)}
+.pill.active{border-color:var(--accent);color:var(--accent);background:rgba(101,242,154,.06)}
+.pill small{display:block;font-size:10px;color:var(--dim);margin-top:2px}.pill.active small{color:var(--accent);opacity:.75}
+.filter-tree{display:grid;gap:10px;width:100%}
+.filter-group{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.filter-group-label{min-width:74px;color:var(--dim);font:800 10px/1 var(--mono);letter-spacing:.08em}
+
+.empty{border:1px dashed var(--line);border-radius:16px;padding:38px 26px;text-align:center;color:var(--muted)}
+.empty strong{display:block;color:var(--text);font-size:15px;margin-bottom:8px}.empty p{margin:0 auto;max-width:560px;font-size:13px;line-height:1.6}
+.empty .path{display:inline-block;margin-top:14px;color:var(--accent);background:rgba(101,242,154,.07);border:1px solid rgba(101,242,154,.2);padding:5px 11px;border-radius:8px;font:12px var(--mono)}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:11px;margin-bottom:13px}
+.kpi{border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:14px;box-shadow:var(--shadow);padding:15px 16px}
+.kpi span,.meta-item span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+.kpi strong{display:block;font-size:25px;margin-top:6px;font-weight:800;letter-spacing:-.02em}
+.kpi small{display:block;color:var(--dim);font-size:11px;margin-top:3px}.kpi.dim{opacity:.55}.kpi.good strong{color:var(--accent)}.kpi.warn strong{color:var(--warn)}
+.run-meta{border:1px solid var(--line);border-radius:20px;background:rgba(14,26,33,.92);box-shadow:var(--shadow);margin-bottom:24px;overflow:hidden}
+.run-meta summary{list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:12px 15px;cursor:pointer;color:var(--muted);font-size:12px}
+.run-meta summary::-webkit-details-marker{display:none}.run-meta summary::after{content:'+';color:var(--accent);font-size:17px}.run-meta[open] summary::after{content:'–'}
+.run-meta summary b{color:var(--text);font-family:var(--mono);font-weight:650}
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;border-top:1px solid var(--line);background:var(--line-soft)}
+.meta-item{background:linear-gradient(180deg,var(--panel2),var(--panel));padding:14px 15px;min-width:0}.meta-item b{display:block;margin-top:5px;font-size:12px;overflow-wrap:anywhere}.meta-item .list{color:var(--muted)}
+.run-meta-section{padding:18px;border-top:1px solid var(--line)}.run-meta-section h3{font-size:.9rem;margin:0 0 11px}.run-meta-section h3 span{color:var(--dim);font-size:.7rem;font-weight:500;margin-left:6px}.run-meta-section .meta-grid{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+
+.league{margin-bottom:24px}.league-head{display:flex;align-items:baseline;gap:11px;margin:0 0 9px;padding-bottom:8px;border-bottom:1px solid var(--line-soft)}
+.league-head h3{margin:0;font-size:15px;font-weight:700}.league-head .group-tag{color:var(--accent);font:700 9px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.league-head .count{color:var(--dim);font:12px var(--mono)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+table{width:100%;border-collapse:collapse;min-width:1000px}th,td{padding:11px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line-soft);font-size:13px}
+th{background:#12242d;color:#b9ccd4;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}tr:last-child td{border-bottom:0}
+tbody tr.match-row:hover{background:#10222b}td.match{font-weight:650}td.band{font:12px var(--mono);color:var(--muted)}td.flag-cell{max-width:240px;color:var(--muted);font-size:11px}
+.subline{color:var(--dim);font-weight:400;font-size:11px}
+.chip{display:inline-block;border:1px solid transparent;border-radius:999px;padding:3px 9px;font-size:10px;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.chip.green{color:var(--accent);background:rgba(101,242,154,.09);border-color:rgba(101,242,154,.3)}
+.chip.yellow{color:var(--warn);background:rgba(255,209,102,.09);border-color:rgba(255,209,102,.3)}
+.chip.red{color:var(--bad);background:rgba(255,125,125,.08);border-color:rgba(255,125,125,.3)}
+.chip.muted{color:var(--muted);background:rgba(156,177,167,.05);border-color:var(--line)}
+.chip.nsp{color:var(--warn);background:rgba(255,209,102,.09);border-color:rgba(255,209,102,.3)}
+
+tbody tr.match-row{cursor:pointer}tbody tr.match-row td.match::after{content:'+';float:right;color:var(--dim);font-size:16px;margin-left:8px}
+tbody tr.match-row.open td.match::after{content:'–';color:var(--accent)}tr.detail-row td{padding:0;background:#070f0c}
+.detail{padding:22px;display:grid;gap:22px;border-left:3px solid var(--accent)}.detail.nsp-detail{border-left-color:var(--warn)}
+.detail-header{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;flex-wrap:wrap}
+.detail-kicker{color:var(--accent);font:800 10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.nsp-detail .detail-kicker{color:var(--warn)}
+.detail-header h3{font-size:clamp(19px,3vw,27px);line-height:1.15;margin:6px 0 5px;letter-spacing:-.025em}.detail-header p{margin:0;color:var(--muted)}
+.detail-id{text-align:right;color:var(--dim);font:11px/1.6 var(--mono);overflow-wrap:anywhere;max-width:300px}
+.detail-section{display:grid;gap:11px}.section-label{display:flex;align-items:center;gap:10px;color:var(--muted);font:800 10px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.section-label::after{content:'';height:1px;background:var(--line-soft);flex:1}
+.decision-card{border:1px solid rgba(101,242,154,.34);border-radius:15px;background:linear-gradient(145deg,rgba(101,242,154,.09),rgba(13,24,20,.96));display:grid;grid-template-columns:minmax(220px,2fr) repeat(4,minmax(105px,1fr));overflow:hidden}
+.decision-card.nsp-card{border-color:rgba(255,209,102,.34);background:linear-gradient(145deg,rgba(255,209,102,.08),rgba(13,24,20,.96))}
+.decision-cell{padding:15px 16px;border-right:1px solid var(--line-soft);min-width:0}.decision-cell:last-child{border-right:0}.decision-cell span{display:block;color:var(--dim);font-size:9.5px;text-transform:uppercase;letter-spacing:.08em}.decision-cell strong{display:block;margin-top:7px;font-size:14px;overflow-wrap:anywhere}.decision-cell.primary strong{font-size:18px;color:var(--accent)}.nsp-card .decision-cell.primary strong{color:var(--warn)}
+.nsp-note{grid-column:1/-1;border-top:1px solid rgba(255,209,102,.2);padding:10px 16px;color:#e9d797;font-size:12px}
+.strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.strategy{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:14px 15px;min-width:0}
+.strategy span{display:block;font:800 10px var(--mono);letter-spacing:.09em;color:var(--dim)}.strategy strong{display:block;margin-top:8px;font-size:14px;overflow-wrap:anywhere}.strategy.safe{border-top:2px solid var(--blue)}.strategy.balanced{border-top:2px solid var(--accent)}.strategy.aggressive{border-top:2px solid var(--warn)}
+.world-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.world-box{border:1px solid var(--line);border-left:3px solid var(--prime);border-radius:12px;padding:14px 15px;background:var(--panel)}
+.world-box.counter{border-left-color:var(--counter)}.world-box b{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px;color:var(--prime)}.world-box.counter b{color:var(--counter)}.world-box p{margin:0;color:#d7e6de;line-height:1.55}
+.anchor-box{border:1px solid var(--line);border-radius:12px;padding:14px 15px;background:var(--panel)}.anchor-box span{display:block;color:var(--dim);font:800 10px var(--mono);letter-spacing:.08em;margin-bottom:7px}.anchor-box p{margin:0}
+.evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.evidence-box{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:13px 14px}.evidence-box span{display:block;color:var(--dim);font-size:10px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px}
+.cluster-chips,.tag-list{display:flex;gap:6px;flex-wrap:wrap}.cluster-chip,.tag{border:1px solid var(--line);border-radius:8px;padding:5px 9px;font:12px var(--mono);background:#09130f}.tag{font-size:10.5px;color:var(--muted)}.tag.reason{border-color:rgba(255,209,102,.3);color:var(--warn)}
+.quality-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.quality-box{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:12px 14px}.quality-box span{display:block;color:var(--dim);font-size:9.5px;text-transform:uppercase;letter-spacing:.07em}.quality-box b{display:block;margin-top:6px;font:12px var(--mono);overflow-wrap:anywhere}
+.audit-wrap{border:1px solid var(--line);border-radius:12px;overflow:auto;background:var(--panel)}.audit-table{min-width:720px}.audit-table th{background:#0e1c16}.audit-table td{font:12px var(--mono)}
+.repair-list{display:grid;gap:8px}.repair-item{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:12px 14px}.repair-item b{font-size:12px}.repair-item p{margin:5px 0 0;color:var(--muted);font-size:12px}.src-line{display:flex;gap:8px;flex-wrap:wrap}.src-line span{border:1px solid var(--line);border-radius:8px;padding:5px 9px;color:var(--muted);font-size:11px}
+
+/* Expanded match report: visual hierarchy follows the supplied ECOBET run HTML. */
+.detail.match-report{display:block;padding:0;border:1px solid var(--line);border-left:1px solid var(--line);border-radius:20px;background:rgba(14,26,33,.96);box-shadow:var(--shadow);overflow:hidden}
+.match-report.nsp-detail{border-color:rgba(255,101,119,.55)}
+.report-match-header{padding:22px 24px;background:linear-gradient(110deg,#132b34,#0d1920);border-bottom:1px solid var(--line)}
+.report-match-header-top{display:flex;gap:12px;color:var(--muted);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em}
+.report-match-index{color:var(--accent);font-weight:900}.match-report.nsp-detail .report-match-index{color:var(--bad)}
+.report-match-header h3{font-size:clamp(1.5rem,3vw,2.55rem);line-height:1.08;margin:8px 0;letter-spacing:-.025em}.report-match-header h3 em{font-style:normal;color:var(--muted)}
+.report-match-meta{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;color:var(--muted)}.report-match-meta .fixture{font-family:var(--mono);font-size:11px}
+.report-subsection{padding:22px 24px;border-bottom:1px solid var(--line)}.report-subsection:last-of-type{border-bottom:0}.report-subsection h4{font-size:1.02rem;margin:0 0 14px}.report-subsection h4 span{color:var(--dim);font-weight:500;font-size:.78rem;margin-left:7px}
+.report-status-grid,.report-score-grid,.report-path-grid,.report-decision-grid{display:grid;gap:12px}
+.report-status-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.report-status-grid>div,.report-score-grid>div,.report-path-grid>div,.report-decision-grid>div{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:14px;min-width:0}
+.report-status-grid small,.report-score-grid small,.report-path-grid small,.report-decision-grid small{display:block;color:var(--muted);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}.report-status-grid strong{overflow-wrap:anywhere}
+.gate-strip{margin-top:14px;padding:12px;border-left:3px solid var(--accent);background:#0a171c}.gate-strip.nsp{border-left-color:var(--bad);background:rgba(255,101,119,.05)}
+.gate-strip .tag-list{margin-top:9px}
+.report-anchor{display:flex;gap:14px;align-items:flex-start;background:#0b171d;border:1px solid var(--line);border-radius:16px;padding:16px}.report-anchor p{margin:0;font-size:1.04rem}.report-anchor .chip{flex:0 0 auto}
+.report-worlds{display:grid;grid-template-columns:1fr 1fr;gap:14px}.report-world{background:#0b171d;border:1px solid var(--line);border-radius:16px;padding:17px}.report-world.prime{border-color:rgba(49,230,161,.55)}.report-world.counter{border-color:rgba(185,156,255,.55)}.report-world small{display:block;color:var(--muted);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}.report-world h5{font-size:1.05rem;margin:.55rem 0 0;line-height:1.55}.report-world.counter small{color:var(--counter)}.report-world.prime small{color:var(--accent)}
+.report-score-grid{grid-template-columns:1fr 2fr 1.5fr}.report-score-grid strong{font-size:1rem}.report-score-grid .cluster-chips{margin-top:2px}.report-score-grid .cluster-chip{font-size:1.25rem;font-weight:900;color:var(--accent);background:#071318}
+.report-path-grid{grid-template-columns:repeat(3,1fr);margin-bottom:14px}.report-path-grid strong{font-size:1.06rem;overflow-wrap:anywhere}.report-path-grid>div:nth-child(1){border-top-color:var(--blue)}.report-path-grid>div:nth-child(2){border-top-color:var(--accent)}.report-path-grid>div:nth-child(3){border-top-color:var(--warn)}
+.report-decision-grid{grid-template-columns:2fr 1.2fr 1.2fr .65fr}.report-decision-grid>div:first-child{border-color:var(--accent)}.report-decision-grid strong{font-size:1.08rem;overflow-wrap:anywhere}.report-decision-grid.nsp>div:first-child{border-color:var(--bad)}.report-decision-grid.nsp>div:first-child strong{color:var(--bad)}
+.model-note{color:var(--muted);font-size:.8rem;margin:12px 0 0}
+.locked-panel{border:1px solid rgba(255,101,119,.55);background:rgba(255,101,119,.05);border-radius:15px;padding:18px}.locked-panel strong{display:block;color:var(--bad);font-size:1.05rem}.locked-panel p{color:var(--muted);margin:7px 0 0}
+.report-audit .audit-wrap{margin-top:4px}.report-audit .audit-table{min-width:760px}.report-audit .audit-table th{background:#12242d}
+.report-repair-list{display:grid;gap:9px}.report-repair-item{background:#0a171c;border:1px solid var(--line);border-radius:11px;padding:11px 13px}.report-repair-item p{margin:5px 0 0;color:var(--muted);font-size:.8rem}
+.report-sources{display:grid;gap:9px}.report-source{display:flex;flex-direction:column;background:#0a171c;border:1px solid var(--line);border-radius:11px;padding:10px 12px}.report-source strong{color:var(--blue)}.report-source span{color:var(--muted);font-size:.78rem;margin-top:3px}
+.report-footer{display:flex;justify-content:space-between;gap:15px;padding:14px 24px;background:#09151b;color:var(--muted);font-size:.78rem}.report-footer b{color:var(--accent)}
+.availability-table{overflow:auto;border:1px solid var(--line);border-radius:14px}.availability-table table{min-width:760px}.availability-table code{color:var(--blue)}
+.availability-table .missing-row td{color:var(--dim)}.availability-table .missing-row td:nth-child(3){color:var(--bad)}
+.report-team-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.report-team-card{background:#0b171d;border:1px solid var(--line);border-radius:16px;padding:17px}.report-team-card h5{font-size:1.2rem;margin:0 0 14px}.report-team-card dl{margin:0;display:grid;grid-template-columns:145px 1fr;gap:8px 12px}.report-team-card dt{color:var(--muted);font-size:.78rem;font-weight:750}.report-team-card dd{margin:0;font-size:.84rem;color:var(--dim)}
+.unavailable-note{background:rgba(57,189,248,.06);border:1px solid rgba(57,189,248,.35);padding:14px;border-radius:14px;color:#c8dbe2}.unavailable-note b{color:var(--blue)}
+.report-axis-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:14px}.report-axis-grid>div{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:14px}.report-axis-grid small{display:block;color:var(--muted);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}.report-axis-grid strong{color:var(--dim)}
+.prediction-map{overflow:auto;border:1px solid var(--line);border-radius:14px}.prediction-map table{min-width:760px}.prediction-map td:first-child{font-weight:750}.prediction-map .path-name{color:var(--accent);font-family:var(--mono);font-size:11px}
+
+.drift{border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:8px;background:linear-gradient(155deg,rgba(255,209,102,.045),rgba(13,24,20,.95) 45%)}
+.drift h3{margin:0 0 5px;font-size:17px}.drift .sub{margin:0 0 20px;color:var(--muted);font-size:13px;max-width:700px}.drift-day{margin-bottom:22px}.drift-day:last-child{margin-bottom:0}
+.drift-day-head{display:flex;align-items:baseline;gap:10px;margin-bottom:11px;flex-wrap:wrap}.drift-day-head b{font:13px var(--mono)}.drift-day-head span{color:var(--dim);font-size:12px}
+.drift-legend{margin-left:auto;display:flex;gap:12px;font-size:11px;color:var(--dim)}.drift-legend i{font-style:normal;display:inline-flex;align-items:center;gap:5px}.dot{width:8px;height:8px;border-radius:50%;display:inline-block}.dot.s{background:var(--accent)}.dot.u{background:var(--bad)}
+.drift-grid{display:grid;gap:7px}.drift-item{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:14px;align-items:center;border:1px solid var(--line-soft);border-radius:11px;padding:10px 13px;background:#09130f}.drift-item.unstable{border-color:rgba(255,125,125,.32);background:rgba(255,125,125,.035)}
+.drift-item .fx{font-size:12.5px;font-weight:600}.drift-item .fx em{display:block;font-style:normal;color:var(--dim);font-size:10.5px;font-weight:400;margin-top:2px}.vals{display:flex;gap:6px;flex-wrap:wrap}.val{border:1px solid var(--line);border-radius:7px;padding:5px 9px;font:11px var(--mono);background:rgba(7,16,13,.6);white-space:nowrap}.val.nsp{color:var(--dim);border-style:dashed}.val.changed{border-color:rgba(255,125,125,.45);color:#ffb3b3}
+footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);font-size:12px}
+
+@media(max-width:1050px){.detail{position:sticky;left:0;width:calc(94vw - 2px);max-width:calc(94vw - 2px)}.decision-card{grid-template-columns:repeat(2,1fr)}.decision-cell{border-bottom:1px solid var(--line-soft)}.decision-cell.primary{grid-column:1/-1}.strategy-grid,.evidence-grid{grid-template-columns:1fr}.world-grid{grid-template-columns:1fr}.detail-id{text-align:left}.detail-header{display:grid}.report-status-grid{grid-template-columns:repeat(2,1fr)}.report-decision-grid{grid-template-columns:repeat(2,1fr)}.report-score-grid{grid-template-columns:1fr 2fr}.report-score-grid>div:last-child{grid-column:1/-1}.report-axis-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){header.hero{padding-top:30px}.toolbar{align-items:stretch;flex-direction:column}.pill-group{width:100%}.pill{flex:1 1 auto}.filter-group{align-items:flex-start}.filter-group-label{width:100%}.drift-item{grid-template-columns:1fr;gap:9px}.drift-legend{margin-left:0}.detail{padding:17px 14px}.detail.match-report{padding:0}.decision-card{grid-template-columns:1fr}.decision-cell.primary{grid-column:auto}.nsp-note{grid-column:auto}.meta-grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.report-match-header,.report-subsection{padding:18px 14px}.report-worlds,.report-path-grid,.report-team-grid{grid-template-columns:1fr}.report-status-grid,.report-score-grid,.report-decision-grid,.report-axis-grid{grid-template-columns:1fr 1fr}.report-score-grid>div:last-child{grid-column:auto}.report-footer{flex-direction:column;padding:14px}.report-anchor{display:block}.report-anchor .chip{margin-bottom:9px}.report-team-card dl{grid-template-columns:1fr}}
+@media(max-width:430px){.wrap{width:min(94vw,1400px)}.kpis{grid-template-columns:1fr 1fr}.kpi strong{font-size:21px}.decision-cell{border-right:0}}
+
+.status-line{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 6px}
+.st{border:1px solid var(--line,#294238);border-radius:7px;padding:4px 9px;font-size:11.5px;white-space:nowrap;background:rgba(9,19,15,.6)}
+.st b{margin-left:5px;font-family:ui-monospace,Menlo,monospace}
+.st.ok b{color:#65f29a} .st.no{opacity:.5} .st.no b{color:#ff6b6b}
+.status-legend{margin:4px 0 0;font-size:11px;color:#6d8479}
+.pmap-line{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0}
+.pm{border:1px solid rgba(101,242,154,.3);background:rgba(101,242,154,.06);color:#65f29a;
+  border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600}
+.prediction-map h5{margin:14px 0 8px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#9cb1a7}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">ECOBET MASTER 2.0 · Interactive Run Archive</div>
+  <h1>Prediction Archive<br><em>Match Analysis by Run</em></h1>
+  <p class="lede">Deterministischer Football-Prediction-Core. Spielverlauf zuerst, Markt-Abbildung danach. Jeder Lauf bleibt unverändert; die mehrstufige Matchanalyse wird direkt aus dem jeweiligen run_record aufgebaut.</p>
+</div></header>
+
+<nav class="tabs" aria-label="Hauptnavigation"><div class="wrap">
+  <span class="brand">ECOBET</span>
+  <button type="button" data-view="runs" class="active">Läufe</button>
+  <button type="button" data-view="settlement">Settlement</button>
+  <button type="button" data-view="replay">Replay &amp; Audit</button>
+  <button type="button" data-view="dashboard">Dashboard</button>
+</div></nav>
+
+<main class="wrap">
+<section id="view-runs" class="view active">
+  <div class="title"><div><div class="eyebrow">01 · Run &amp; Scope</div><h2>Läufe nach Datum</h2></div><p>Kalender, Snapshot-Auswahl und Competition-Filter erweitern die Darstellungslogik des vollständigen ECOBET Run-Reports.</p></div>
+  <div class="toolbar">
+    <input type="date" id="run-date" aria-label="Datum wählen">
+    <button class="btn" id="run-go" type="button">Anzeigen</button>
+    <div class="pill-group" id="run-pills" aria-label="Lauf auswählen"></div>
+  </div>
+  <div class="toolbar" id="league-filter-bar" hidden>
+    <div class="filter-tree" id="league-pills" aria-label="Wettbewerb filtern"></div>
+  </div>
+  <div id="runs-content" aria-live="polite"></div>
+</section>
+
+<section id="view-settlement" class="view">
+  <div class="title"><div><div class="eyebrow">02 · Settlement</div><h2>Ergebnisse gegen Predictions</h2></div><p>Full-Time nach 90 Minuten inklusive Nachspielzeit.</p></div>
+  <div id="settlement-content"></div>
+</section>
+
+<section id="view-replay" class="view">
+  <div class="title"><div><div class="eyebrow">03 · Replay &amp; Audit</div><h2>World Verdicts und Failure-Tags</h2></div><p>Findings sind Kalibrierungsdiagnosen, keine automatische Normänderung.</p></div>
+  <div id="replay-content"></div>
+</section>
+
+<section id="view-dashboard" class="view">
+  <div class="title"><div><div class="eyebrow">04 · Dashboard</div><h2>Über alle Läufe hinweg</h2></div><p>Run Drift vergleicht die Favourite Prediction identischer fixture_ids zwischen Läufen eines Datums.</p></div>
+  <div id="dashboard-content"></div>
+</section>
+</main>
+
+<footer><div class="wrap">ECOBET Master · statisches Archiv · keine reale Quote, keine Tickets · Europe/Zurich</div></footer>
+
+<script src="runs/local_fallback.js"></script>
+<script>
+/* runs/ enthält ausschließlich ECOBET-Output. data/ wird bewusst nicht visualisiert. */
+const RUNS='runs/';
+const NSP='NO_STABLE_PREDICTION';
+const NA='NOT_AVAILABLE';
+let INDEX=null,CURRENT_RUN=null,COMP_FILTER={kind:'all',value:'ALL'};
+
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const present=v=>v!==undefined&&v!==null&&v!==''&&v!==NA;
+const show=v=>present(v)?esc(v):'—';
+const arr=v=>Array.isArray(v)?v:[];
+const boolLabel=v=>v===true?'Ja':v===false?'Nein':'—';
+
+async function loadJSON(path){
+  const local=globalThis.ECOBET_LOCAL_DATA||{};
+  if(location.protocol==='file:'&&Object.prototype.hasOwnProperty.call(local,path))return local[path];
+  try{const response=await fetch(path,{cache:'no-store'});if(response.ok)return await response.json()}catch{}
+  return Object.prototype.hasOwnProperty.call(local,path)?local[path]:null;
+}
+async function getIndex(){if(!INDEX)INDEX=await loadJSON(RUNS+'index.json');return INDEX}
+const todayISO=()=>new Date().toISOString().slice(0,10);
+
+function empty(title,text,path){return `<div class="empty"><strong>${esc(title)}</strong><p>${esc(text)}</p>${path?`<div class="path">${esc(path)}</div>`:''}</div>`}
+function ampelChip(value){const cls={GREEN:'green',YELLOW:'yellow',RED:'red'}[value]||'muted';return `<span class="chip ${cls}">${show(value)}</span>`}
+function favCell(value){return !present(value)||value===NSP?'<span class="chip nsp">NSP</span>':esc(value)}
+function timeLabel(value){if(!present(value))return '—';return esc(String(value).replace('T',' ').slice(0,16))}
+
+function competitionInfo(match,index){
+  const hasOrder=Number.isFinite(Number(match.display_order))&&match.display_order!==''&&match.display_order!==null&&match.display_order!==undefined;
+  const name=present(match.competition_name)?String(match.competition_name):(present(match.competition)?String(match.competition):'Nicht verfügbar');
+  const id=present(match.competition_id)?String(match.competition_id):null;
+  return {id,name,group:present(match.competition_group)?String(match.competition_group):null,type:present(match.competition_type)?String(match.competition_type):null,order:hasOrder?Number(match.display_order):Number.MAX_SAFE_INTEGER,index,key:id?'id:'+id:'legacy:'+name};
+}
+function competitionCatalog(matches){
+  const map=new Map();
+  matches.forEach((match,index)=>{const c=competitionInfo(match,index);if(!map.has(c.key))map.set(c.key,c)});
+  return Array.from(map.values()).sort((a,b)=>a.order-b.order||a.index-b.index||a.name.localeCompare(b.name,'de'));
+}
+function matchesFilter(match,index){const c=competitionInfo(match,index);if(COMP_FILTER.kind==='all')return true;if(COMP_FILTER.kind==='group')return c.group===COMP_FILTER.value;return c.key===COMP_FILTER.value}
+
+async function renderRuns(date){
+  const idx=await getIndex();const box=document.getElementById('runs-content');const pills=document.getElementById('run-pills');
+  pills.innerHTML='';document.getElementById('league-filter-bar').hidden=true;
+  if(!idx||!idx.dates||!Array.isArray(idx.dates[date])||!idx.dates[date].length){box.innerHTML=empty('Für dieses Datum liegt kein Lauf vor.','Sobald ein run_record in runs/index.json eingetragen ist, erscheint er hier automatisch.','runs/index.json');return}
+  const ids=idx.dates[date];
+  ids.forEach((id,index)=>{const button=document.createElement('button');button.type='button';button.className='pill'+(index===0?' active':'');button.innerHTML=esc(id.split('_')[1]||id)+'<small>Snapshot</small>';
+    button.onclick=()=>{Array.from(pills.children).forEach(child=>child.classList.remove('active'));button.classList.add('active');showRun(id)};pills.appendChild(button)});
+  await showRun(ids[0]);
+  async function showRun(id){const run=await loadJSON(RUNS+id+'.json');if(!run){CURRENT_RUN=null;box.innerHTML=empty('Lauf-Datei fehlt.','Die Datei ist im Index eingetragen, aber nicht vorhanden.',`runs/${id}.json`);return}CURRENT_RUN=run;COMP_FILTER={kind:'all',value:'ALL'};buildCompetitionPills(run);paintRun(run)}
+}
+
+function buildCompetitionPills(run){
+  const bar=document.getElementById('league-filter-bar');const root=document.getElementById('league-pills');const matches=arr(run.matches);const catalog=competitionCatalog(matches);
+  if(catalog.length<2){bar.hidden=true;root.innerHTML='';return}
+  bar.hidden=false;root.innerHTML='';
+  const addButton=(parent,label,filter,count)=>{const b=document.createElement('button');b.type='button';b.className='pill'+(COMP_FILTER.kind===filter.kind&&COMP_FILTER.value===filter.value?' active':'');b.innerHTML=esc(label)+`<small>${count} Spiele</small>`;b.onclick=()=>{COMP_FILTER=filter;root.querySelectorAll('.pill').forEach(x=>x.classList.remove('active'));b.classList.add('active');paintRun(CURRENT_RUN)};parent.appendChild(b)};
+  const allRow=document.createElement('div');allRow.className='filter-group';const allLabel=document.createElement('span');allLabel.className='filter-group-label';allLabel.textContent='FILTER';allRow.appendChild(allLabel);addButton(allRow,'Alle Wettbewerbe',{kind:'all',value:'ALL'},matches.length);root.appendChild(allRow);
+  const hasGroups=catalog.some(c=>c.group);
+  if(!hasGroups){const row=document.createElement('div');row.className='filter-group';const label=document.createElement('span');label.className='filter-group-label';label.textContent='WETTBEWERB';row.appendChild(label);catalog.forEach(c=>addButton(row,c.name,{kind:'competition',value:c.key},matches.filter((m,i)=>competitionInfo(m,i).key===c.key).length));root.appendChild(row);return}
+  const groups=[];catalog.forEach(c=>{const group=c.group||'OHNE GRUPPE';if(!groups.includes(group))groups.push(group)});
+  groups.forEach(group=>{const row=document.createElement('div');row.className='filter-group';const label=document.createElement('span');label.className='filter-group-label';label.textContent=group;row.appendChild(label);const grouped=catalog.filter(c=>(c.group||'OHNE GRUPPE')===group);if(group!=='OHNE GRUPPE')addButton(row,'Alle '+group,{kind:'group',value:group},matches.filter((m,i)=>competitionInfo(m,i).group===group).length);grouped.forEach(c=>addButton(row,c.name,{kind:'competition',value:c.key},matches.filter((m,i)=>competitionInfo(m,i).key===c.key).length));root.appendChild(row)});
+}
+
+function runMeta(run){
+  const r=run.run||{};const p=run.proof_of_work||{};const norms=r.norm_versions||{};
+  const core=[['Run ID',r.run_id],['Snapshot ID',r.snapshot_id],['Snapshot Time',r.snapshot_time],['Datum',r.date],['Scope',arr(r.scope).join(' · ')],['Build / Audit',`${present(r.build_mode)?r.build_mode:'—'} / ${boolLabel(r.audit_mode)}`],['Run Status',r.run_status],['Run Integrity',r.run_integrity],['Output Integrity',r.output_integrity]];
+  const proof=Object.keys(p).map(key=>[key.replaceAll('_',' '),typeof p[key]==='boolean'?boolLabel(p[key]):p[key]]);
+  const normFields=Object.keys(norms).map(key=>[key.replaceAll('_',' '),norms[key]]);
+  const grid=fields=>`<div class="meta-grid">${fields.map(([label,value])=>`<div class="meta-item"><span>${esc(label)}</span><b class="${label==='Scope'?'list':''}">${show(value)}</b></div>`).join('')}</div>`;
+  return `<details class="run-meta"><summary><span>Run Identity · Proof of Work · Normative Versions</span><b>${show(r.run_id)}</b></summary><section class="run-meta-section"><h3>Run Identity &amp; Scope <span>vorhandene run-Felder</span></h3>${grid(core)}</section>${proof.length?`<section class="run-meta-section"><h3>Proof of Work <span>vorhandene proof_of_work-Felder</span></h3>${grid(proof)}</section>`:''}${normFields.length?`<section class="run-meta-section"><h3>Normative Versions <span>vorhandene norm_versions-Felder</span></h3>${grid(normFields)}</section>`:''}</details>`;
+}
+
+function paintRun(run){
+  const box=document.getElementById('runs-content');const r=run.run||{};const all=arr(run.matches);const released=all.filter(m=>present(m.favourite)&&m.favourite!==NSP).length;const shownRecords=all.map((m,i)=>({m,i})).filter(({m,i})=>matchesFilter(m,i));const shown=shownRecords.map(item=>item.m);const catalog=competitionCatalog(shown);
+  let html=`<div class="kpis"><div class="kpi"><span>Snapshot</span><strong style="font-size:15px">${timeLabel(r.snapshot_time)}</strong><small>${show(r.snapshot_id)}</small></div><div class="kpi"><span>Fixtures</span><strong>${all.length}</strong></div><div class="kpi good"><span>Freigaben</span><strong>${released}</strong></div><div class="kpi warn"><span>NSP</span><strong>${all.length-released}</strong><small>reguläre Entscheidungen</small></div><div class="kpi"><span>Run Integrity</span><strong style="font-size:17px">${show(r.run_integrity)}</strong><small>Output ${show(r.output_integrity)}</small></div></div>`;
+  if(!shown.length){box.innerHTML=html+empty('Keine Matches für diesen Filter.','Wähle einen anderen Wettbewerb.');return}
+  catalog.forEach(comp=>{const rows=shownRecords.map(({m,i})=>({m,i,c:competitionInfo(m,i)})).filter(x=>x.c.key===comp.key).sort((a,b)=>String(a.m.kickoff||'').localeCompare(String(b.m.kickoff||'')));
+    html+=`<div class="league"><div class="league-head">${comp.group?`<span class="group-tag">${esc(comp.group)}</span>`:''}<h3>${esc(comp.name)}</h3><span class="count">${rows.length} Spiele</span></div><div class="table-wrap"><table><thead><tr><th>KO</th><th>Match</th><th>World Type</th><th>Safe</th><th>Balanced</th><th>Aggressive</th><th>Favourite</th><th>Band</th><th>Ampel</th><th>Flags / Codes</th><th>Data</th></tr></thead><tbody>`;
+    rows.forEach(({m,i})=>{const rid=`detail-${i}`;const rowTags=[...arr(m.flags),...arr(m.nsp_codes)];html+=`<tr class="match-row" role="button" tabindex="0" aria-expanded="false" aria-controls="${rid}" data-index="${i}" data-target="${rid}"><td class="mono">${show(m.kickoff)}</td><td class="match">${show(m.home)} – ${show(m.away)}<br><span class="subline">${show(m.phase)}</span></td><td class="subline">${show(m.world_type)}</td><td>${show(m.safe)}</td><td>${show(m.balanced)}</td><td>${show(m.aggressive)}</td><td><b>${favCell(m.favourite)}</b></td><td class="band">${show(m.model_probability_band)}<br>${show(m.model_price_band)}</td><td>${ampelChip(m.ampel)}</td><td class="flag-cell">${rowTags.length?esc(rowTags.join(', ')):'—'}</td><td><span class="chip muted">${show(m.data_readiness)}</span></td></tr><tr class="detail-row hidden" id="${rid}"><td colspan="11"></td></tr>`});
+    html+='</tbody></table></div></div>';
+  });
+  html+=runMeta(run);box.innerHTML=html;
+  box.querySelectorAll('tr.match-row').forEach(row=>{const toggle=()=>toggleMatch(row,box);row.addEventListener('click',toggle);row.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();toggle()}})});
+}
+
+function toggleMatch(row,box){
+  const detailRow=document.getElementById(row.dataset.target);const cell=detailRow.querySelector('td');const isOpen=row.classList.contains('open');
+  if(isOpen){row.classList.remove('open');row.setAttribute('aria-expanded','false');detailRow.classList.add('hidden');cell.innerHTML='';return}
+  box.querySelectorAll('tr.match-row.open').forEach(open=>{open.classList.remove('open');open.setAttribute('aria-expanded','false');const old=document.getElementById(open.dataset.target);old.classList.add('hidden');old.querySelector('td').innerHTML=''})
+  const matchIndex=Number(row.dataset.index);const match=arr(CURRENT_RUN&&CURRENT_RUN.matches)[matchIndex];cell.innerHTML=renderMatchDetail(match,matchIndex);row.classList.add('open');row.setAttribute('aria-expanded','true');detailRow.classList.remove('hidden');
+}
+
+function renderMatchDetail(m,matchIndex=0){
+  if(!m)return '';
+  const nsp=m.favourite===NSP;const c=competitionInfo(m,0);const cluster=arr(m.four_score_cluster);const candidates=arr(m.candidates);const repairs=arr(m.repair_summary);const sources=arr(m.sources);const flags=arr(m.flags);const codes=arr(m.nsp_codes);
+  const hasWorld=present(m.prime_world)||present(m.counterworld);const hasEvidence=present(m.anchor)||present(m.modal_score)||cluster.length||present(m.score_band);
+  const candidateRows=candidates.map(item=>`<tr><td>${show(item.expression)}</td><td>${show(item.axis)}</td><td>${show(item.cluster_coverage)}</td><td>${show(item.W)} / ${show(item.F)} / ${show(item.R)} / ${show(item.D)}</td><td>${show(item.score_total)}</td><td>${show(item.status)}</td></tr>`).join('');
+  const pathEntries=[['Safe',m.safe],['Balanced',m.balanced],['Aggressive',m.aggressive]];
+  const predictionRows=pathEntries.map(([path,expression])=>{const candidate=candidates.find(item=>item.expression===expression)||{};const wfrd=[candidate.W,candidate.F,candidate.R,candidate.D].every(v=>v!==undefined&&v!==null)?`${candidate.W}/${candidate.F}/${candidate.R}/${candidate.D}`:null;return `<tr><td>${show(expression)}</td><td class="path-name">${esc(path)}</td><td>${show(candidate.axis)}</td><td>${show(candidate.cluster_coverage)}</td><td>${show(wfrd)}</td><td>${show(candidate.score_total)}</td><td>${show(candidate.status)}</td></tr>`}).join('');
+  const pmapSet=[...new Set([...pathEntries.map(([,e])=>e),...candidates.map(c=>c.expression)].filter(present))];
+  const pmapLine=pmapSet.length?pmapSet.map(e=>`<span class="pm">${esc(e)}</span>`).join(''):'<span class="unavailable-note">Keine Kandidaten im run_record.</span>';
+  const availabilityRow=(id,family,status,fields,available=true)=>`<span class="st ${available?'ok':'no'}" title="${esc(family)} · ${esc(fields)}">${esc(family)} <b>${available?'V':'—'}</b></span>`;
+  const availabilityRows=[
+    availabilityRow('RR01','Fixture Identity & Kickoff','VORHANDEN','fixture_id · kickoff · home · away'),
+    availabilityRow('RR02','Wettbewerb & Phase','VORHANDEN','competition · phase'),
+    availabilityRow('RR03','Decision Paths & Favourite','VORHANDEN','safe · balanced · aggressive · favourite'),
+    availabilityRow('RR04','Model Bands & Ampel','VORHANDEN','model_probability_band · model_price_band · ampel'),
+    availabilityRow('RR05','Data Gate & Failure Codes','VORHANDEN','data_readiness · match_core_status · flags · nsp_codes'),
+    availabilityRow('RR06','Worlds & Score Distribution','VORHANDEN','world_type · anchor · prime_world · counterworld · score fields'),
+    availabilityRow('RR07','Kandidaten-Audit',candidates.length?'VORHANDEN':'NICHT IM RUN_RECORD',candidates.length?'candidates':'keine candidates für dieses Match',candidates.length>0),
+    availabilityRow('RR08','Repair Summary',repairs.length?'VORHANDEN':'NICHT IM RUN_RECORD',repairs.length?'repair_summary':'keine repair_summary für dieses Match',repairs.length>0),
+    availabilityRow('RR09','Source Lineage',sources.length?'VORHANDEN':'NICHT IM RUN_RECORD',sources.length?'sources':'keine sources für dieses Match',sources.length>0),
+    availabilityRow('RR10','Team-E-Books · RAW Summary','NICHT IM RUN_RECORD','keine Teamprofile, Form- oder Process-Felder',false),
+    availabilityRow('RR11','Quantitative Evidence · Form · H2H','NICHT IM RUN_RECORD','keine strukturierten Evidence-, Form- oder H2H-Felder',false),
+    availabilityRow('RR12','Interpretation Axes & Game States','NICHT IM RUN_RECORD','kein Control/Chaos/Tempo/Draw-Gravity/Game-State-Objekt',false)
+  ].join('');
+  const availabilityLine=availabilityRows;
+  const matchLabel='M'+String(matchIndex+1).padStart(2,'0');
+  const readinessClass=m.data_readiness==='NOT_READY'?'red':m.data_readiness==='CONDITIONAL'?'yellow':'green';
+  const coreClass=m.match_core_status==='RESTRICTED'?'red':m.match_core_status==='PARTIAL'?'yellow':'green';
+  const allTags=[...flags,...codes];
+  return `<article class="detail match-report ${nsp?'nsp-detail':''}">
+    <header class="report-match-header">
+      <div class="report-match-header-top"><span class="report-match-index">${matchLabel}</span><span>${esc(c.name)}${present(m.phase)?' · '+esc(m.phase):''}</span></div>
+      <h3>${show(m.home)} <em>–</em> ${show(m.away)}</h3>
+      <div class="report-match-meta"><b>${show(m.kickoff)}</b><span class="fixture">Fixture ${show(m.fixture_id)}</span><span class="chip ${readinessClass}">${show(m.data_readiness)}</span><span class="chip ${coreClass}">${show(m.match_core_status)}</span>${c.id?`<span class="fixture">Competition ${esc(c.id)}</span>`:''}</div>
+    </header>
+
+    <section class="report-subsection">
+      <h4>Feldstatus <span>run_record-Verfügbarkeit</span></h4><div class="status-line">${availabilityLine}</div><p class="status-legend">V = im run_record vorhanden · — = für dieses Match nicht enthalten</p></section>
+
+    <section class="report-subsection">
+      <h4>Data Gate &amp; Field Status <span>verfügbare run_record-Felder</span></h4>
+      <div class="report-status-grid">
+        <div><small>Competition</small><strong>${esc(c.name)}</strong></div>
+        <div><small>Phase</small><strong>${show(m.phase)}</strong></div>
+        <div><small>World Type</small><strong>${show(m.world_type)}</strong></div>
+        <div><small>Ampel</small><strong>${ampelChip(m.ampel)}</strong></div>
+        <div><small>Data Readiness</small><strong>${show(m.data_readiness)}</strong></div>
+        <div><small>Match Core Status</small><strong>${show(m.match_core_status)}</strong></div>
+        <div><small>Model Probability</small><strong class="mono">${show(m.model_probability_band)}</strong></div>
+        <div><small>Model Price</small><strong class="mono">${show(m.model_price_band)}</strong></div>
+      </div>
+      <div class="gate-strip ${nsp?'nsp':''}"><b>Gate:</b> ${show(m.data_readiness)} · MATCH_CORE_STATUS ${show(m.match_core_status)}${allTags.length?`<div class="tag-list">${flags.map(flag=>`<span class="tag">${esc(flag)}</span>`).join('')}${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</div>
+    </section>
+
+    <section class="report-subsection">
+      <h4>Team-E-Books · RAW Summary</h4>
+      <div class="report-team-grid">
+        ${[m.home,m.away].map(team=>`<article class="report-team-card"><h5>${show(team)}</h5><dl><dt>Strength Baseline</dt><dd>— · nicht im run_record</dd><dt>Form / Current</dt><dd>— · nicht im run_record</dd><dt>Process</dt><dd>— · nicht im run_record</dd><dt>Tor-/Rollenprofil</dt><dd>— · nicht im run_record</dd><dt>Availability / Load</dt><dd>— · nicht im run_record</dd><dt>Completeness</dt><dd>— · nicht im run_record</dd></dl></article>`).join('')}
+      </div>
+      <p class="unavailable-note"><b>Warum leer?</b> Die Referenz-HTML enthält Team-E-Books, die bereitgestellten run_records enthalten dafür keine strukturierten Felder. Es werden keine HTML-Werte als JSON-Daten ausgegeben.</p>
+    </section>
+
+    <section class="report-subsection">
+      <h4>MATCH_EBOOK_EVIDENCE · Anchor Candidates</h4>
+      ${present(m.anchor)?`<div class="report-anchor"><span class="chip green">${show(m.world_type)}</span><p>${esc(m.anchor)}</p></div>`:'<div class="unavailable-note"><b>Anchor:</b> nicht im run_record verfügbar.</div>'}
+      <p class="unavailable-note"><b>Quantitative Evidence, Form und H2H:</b> nicht als strukturierte Matchfelder im run_record vorhanden.</p>
+    </section>
+
+    ${!nsp?`<section class="report-subsection"><h4>Football Interpretation</h4>${present(m.anchor)?`<div class="report-anchor"><span class="chip green">${show(m.world_type)}</span><p>${esc(m.anchor)}</p></div>`:''}<div class="report-axis-grid">${['Control','Chaos','Goal Profile','Tempo','Phase Structure','Draw Gravity'].map(axis=>`<div><small>${esc(axis)}</small><strong>— · nicht im run_record</strong></div>`).join('')}</div><p class="unavailable-note"><b>Game-State-Reaktionen:</b> kein strukturiertes Game-State-Objekt im run_record vorhanden.</p></section>`:''}
+
+    ${hasWorld?`<section class="report-subsection"><h4>World Analysis</h4><div class="report-worlds">${present(m.prime_world)?`<div class="report-world prime"><small>PRIME_WORLD</small><h5>${esc(m.prime_world)}</h5></div>`:''}${present(m.counterworld)?`<div class="report-world counter"><small>COUNTERWORLD</small><h5>${esc(m.counterworld)}</h5></div>`:''}</div></section>`:''}
+
+    ${hasEvidence&&(!nsp)?`<section class="report-subsection"><h4>Score Distribution</h4><div class="report-score-grid"><div><small>Modal Score</small><strong class="mono">${show(m.modal_score)}</strong></div><div><small>Four-Score Cluster</small><div class="cluster-chips">${cluster.length?cluster.map(score=>`<span class="cluster-chip">${esc(score)}</span>`).join(''):'—'}</div></div><div><small>Score Band</small><strong class="mono">${show(m.score_band)}</strong></div></div></section>`:''}
+
+    ${nsp?`<section class="report-subsection"><h4>Gate-Entscheid &amp; Sperrzustand</h4><div class="locked-panel"><strong>NO_STABLE_PREDICTION</strong><p>Reguläre ECOBET-Entscheidung: In diesem Lauf wurde keine stabile Prediction freigegeben. Sichtbar sind ausschließlich die vorhandenen Gate-, Flag- und NSP-Code-Felder.</p>${codes.length?`<div class="tag-list">${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</div></section>`:''}
+
+    ${!nsp?`<section class="report-subsection"><h4>Prediction Map</h4><div class="pmap-line">${pmapLine}</div><p class="status-legend">Cluster dient als Modellkorridor, nicht als Exact-Score-Tipp.</p>${candidates.length?`<div class="prediction-map"><h5>Kandidaten-Audit</h5><table><thead><tr><th>Kandidat</th><th>Pfad</th><th>Achse</th><th>Coverage</th><th>W/F/R/D</th><th>Score</th><th>Status</th></tr></thead><tbody>${predictionRows}</tbody></table></div>`:''}${candidates.length?'':'<p class="unavailable-note"><b>Auditwerte:</b> Safe, Balanced und Aggressive stammen aus dem run_record. Achse, Coverage und Audit-Score fehlen, weil für dieses Match kein candidates-Objekt vorhanden ist.</p>'}</section>`:''}
+
+    <section class="report-subsection">
+      <h4>${nsp?'Decision Lock':'Decision Paths & Favourite'}</h4>
+      <div class="report-path-grid"><div><small>Safe</small><strong>${show(m.safe)}</strong></div><div><small>Balanced</small><strong>${show(m.balanced)}</strong></div><div><small>Aggressive</small><strong>${show(m.aggressive)}</strong></div></div>
+      <div class="report-decision-grid ${nsp?'nsp':''}"><div><small>Favourite Prediction</small><strong>${nsp?'NO_STABLE_PREDICTION':show(m.favourite)}</strong></div><div><small>Model Probability Band</small><strong class="mono">${show(m.model_probability_band)}</strong></div><div><small>Model Price Band</small><strong class="mono">${show(m.model_price_band)}</strong></div><div><small>Ampel</small><strong>${ampelChip(m.ampel)}</strong></div></div>
+      <p class="model-note">Modellbänder werden unverändert aus dem run_record dargestellt. Es werden keine zusätzlichen Quoten ergänzt.</p>
+    </section>
+
+    ${!nsp?`<section class="report-subsection report-audit"><h4>Kandidaten-Audit <span>candidate-Records</span></h4>${candidates.length?`<div class="audit-wrap"><table class="audit-table"><thead><tr><th>Ausdruck</th><th>Achse</th><th>Coverage</th><th>W / F / R / D</th><th>Score</th><th>Status</th></tr></thead><tbody>${candidateRows}</tbody></table></div>`:'<div class="unavailable-note"><b>Nicht im run_record:</b> Für dieses Match ist kein candidates-Objekt vorhanden.</div>'}</section>`:''}
+
+    <section class="report-subsection"><h4>Repair Summary &amp; Search Exhaustion</h4>${repairs.length?`<div class="report-repair-list">${repairs.map(item=>`<div class="report-repair-item"><b>${show(item.field)} · ${show(item.result)}</b><p>${arr(item.routes).length?esc(arr(item.routes).join(' → ')):'—'}${present(item.note)?' · '+esc(item.note):''}</p></div>`).join('')}</div>`:'<div class="unavailable-note"><b>Nicht im run_record:</b> Für dieses Match ist keine repair_summary vorhanden.</div>'}</section>
+
+    <section class="report-subsection"><h4>Source Lineage</h4>${sources.length?`<div class="report-sources">${sources.map(source=>`<div class="report-source"><strong>${show(source.name)}</strong><span>Trust · ${show(source.trust)}</span></div>`).join('')}</div>`:'<div class="unavailable-note"><b>Nicht im run_record:</b> Für dieses Match ist kein sources-Objekt vorhanden.</div>'}</section>
+
+    <footer class="report-footer"><span>RUN_RECORD MATCH</span><b>${nsp?'NO_STABLE_PREDICTION':show(m.favourite)}</b><span>${show(m.fixture_id)}</span></footer>
+  </article>`;
+}
+
+document.getElementById('settlement-content').innerHTML=empty('Noch keine Settlement-Daten.','Es werden keine Settlement-Felder angenommen. Die Ansicht bleibt leer, bis entsprechende Dateien und das definierte Schema vorliegen.','runs/<run_id>.settlement.json');
+document.getElementById('replay-content').innerHTML=empty('Noch keine Replay-Daten.','Es werden keine Replay-Felder angenommen. Die Ansicht bleibt leer, bis entsprechende Dateien und das definierte Schema vorliegen.','runs/<run_id>.replay.json');
+
+async function renderDashboard(){
+  const box=document.getElementById('dashboard-content');const idx=await getIndex();if(!idx||!idx.dates||!Object.keys(idx.dates).length){box.innerHTML=empty('Noch keine Läufe im Archiv.','Das Dashboard aggregiert automatisch, sobald runs/index.json Einträge enthält.','runs/index.json');return}
+  const dates=Object.keys(idx.dates).sort();let totalRuns=0;dates.forEach(date=>totalRuns+=arr(idx.dates[date]).length);const multi=dates.filter(date=>arr(idx.dates[date]).length>1);const loaded={};
+  for(const date of dates){const records=await Promise.all(arr(idx.dates[date]).map(id=>loadJSON(RUNS+id+'.json')));loaded[date]=records.filter(Boolean)}
+  let releaseCount=0;Object.values(loaded).forEach(runs=>runs.forEach(run=>arr(run.matches).forEach(match=>{if(present(match.favourite)&&match.favourite!==NSP)releaseCount++})));
+  let html=`<div class="kpis"><div class="kpi"><span>Tage im Archiv</span><strong>${dates.length}</strong></div><div class="kpi"><span>Läufe gesamt</span><strong>${totalRuns}</strong></div><div class="kpi"><span>Prediction-Instanzen</span><strong>${releaseCount}</strong><small>über alle Läufe</small></div><div class="kpi ${multi.length?'':'dim'}"><span>Tage mit &gt;1 Lauf</span><strong>${multi.length}</strong></div><div class="kpi dim"><span>Settlement-Quote</span><strong>—</strong><small>keine Settlement-Daten</small></div></div><div class="drift"><h3>Run Drift</h3><p class="sub">Die Favourite Prediction derselben fixture_id wird zwischen allen Läufen eines Datums verglichen. NSP bleibt dabei ein regulärer Wert.</p>`;
+  if(!multi.length){html+=empty('Noch kein Tag mit mehreren Läufen.','Sobald an einem Datum zwei oder mehr Läufe im Index stehen, wird hier pro fixture_id verglichen.')}else{
+    multi.forEach(date=>{const runs=loaded[date];const byFixture={};runs.forEach((run,runIndex)=>arr(run.matches).forEach((match,matchIndex)=>{const key=present(match.fixture_id)?String(match.fixture_id):`__missing_${runIndex}_${matchIndex}`;if(!byFixture[key])byFixture[key]={label:(match.home||'—')+' – '+(match.away||'—'),comp:competitionInfo(match,matchIndex).name,vals:new Array(runs.length).fill(null)};byFixture[key].vals[runIndex]=match.favourite||NSP}));
+      const items=Object.values(byFixture);const unstable=items.filter(item=>new Set(item.vals.filter(Boolean)).size>1).length;html+=`<div class="drift-day"><div class="drift-day-head"><b>${esc(date)}</b><span>${runs.length} Läufe · ${unstable} von ${items.length} Fixtures abweichend</span><div class="drift-legend"><i><span class="dot s"></span>stabil</i><i><span class="dot u"></span>abweichend</i></div></div><div class="drift-grid">`;
+      items.forEach(item=>{const isUnstable=new Set(item.vals.filter(Boolean)).size>1;html+=`<div class="drift-item ${isUnstable?'unstable':''}"><div class="fx">${esc(item.label)}<em>${esc(item.comp)}</em></div><div class="vals">${item.vals.map(value=>{const isNsp=!value||value===NSP;return `<span class="val ${isNsp?'nsp':''} ${isUnstable&&!isNsp?'changed':''}">${isNsp?'NSP':esc(value)}</span>`}).join('')}</div></div>`});html+='</div></div>'});
+  }
+  box.innerHTML=html+'</div>';
+}
+
+document.querySelectorAll('nav.tabs button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('nav.tabs button').forEach(item=>item.classList.remove('active'));document.querySelectorAll('.view').forEach(view=>view.classList.remove('active'));button.classList.add('active');document.getElementById('view-'+button.dataset.view).classList.add('active')}));
+
+(async function init(){const idx=await getIndex();const dates=idx&&idx.dates?Object.keys(idx.dates).sort():[];const start=dates.length?dates[dates.length-1]:todayISO();document.getElementById('run-date').value=start;const goToDate=()=>renderRuns(document.getElementById('run-date').value||todayISO());document.getElementById('run-go').onclick=goToDate;document.getElementById('run-date').addEventListener('change',goToDate);await renderRuns(start);await renderDashboard()})();
+</script>
+</body>
+</html>
