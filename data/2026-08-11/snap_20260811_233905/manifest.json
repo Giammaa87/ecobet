@@ -1,0 +1,169 @@
+{
+  "schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+  "snapshot_id": "snap_20260811_233905",
+  "date": "2026-08-11",
+  "generated_at": "2026-08-10T23:39:05.574045+02:00",
+  "data_cutoff": "2026-08-10T23:39:05.574045+02:00",
+  "db_updated_at": "2026-08-10T23:30:25",
+  "scope": "ECOBET_DAILY_DATA_FULL",
+  "source": "ECOBET_DATA_FABRIC",
+  "snapshot_source_layer": "LOCAL_ECOBET_SOCCERDATA_PIPELINE",
+  "transport_layer": "GITHUB_PAGES",
+  "data_hash": "sha256:99649506ece2edb7296c1165e73602b8278af45801a0e37990db26365f705747",
+  "bundle_layout": {
+    "manifest": "manifest.json",
+    "fixtures": "fixtures.json",
+    "teams": "teams/<team_id>.json"
+  },
+  "parts": [
+    {
+      "path": "fixtures.json",
+      "sha256": "sha256:1ac0ec82775d080d85d787a2835b7eef77626314d4d0f2f9ba9d863ae27d2262",
+      "bytes": 11896
+    },
+    {
+      "path": "teams/ligue_1_lyon.json",
+      "sha256": "sha256:6810d9355581f97c9100072ec3f67ff61be5f21b63690ceb7274a6a403515398",
+      "bytes": 106116
+    },
+    {
+      "path": "teams/uefa_agf.json",
+      "sha256": "sha256:970c24713f9df1ce08f17f8a5f09e0c6eefbe1da9439324ac3ed6529bdbf1a6d",
+      "bytes": 10556
+    },
+    {
+      "path": "teams/uefa_apollon_limassol.json",
+      "sha256": "sha256:44aa8a4791729e3552f27a2424a00abd6731ce0edc07a7bdc8c1299dd5561496",
+      "bytes": 10612
+    },
+    {
+      "path": "teams/uefa_ararat_armenia.json",
+      "sha256": "sha256:ed6752d2850c338ce4c3e3f571f8c0f2a4a12992463ded317d2d8cc1eac45144",
+      "bytes": 10582
+    },
+    {
+      "path": "teams/uefa_bodo_glimt.json",
+      "sha256": "sha256:e392c02974853fe689280cc81cab65a441efb021488e629d96f6f4104c7a2c5d",
+      "bytes": 10575
+    },
+    {
+      "path": "teams/uefa_brann.json",
+      "sha256": "sha256:d6136313c77df4cf2a437f284a09254b2bb705bf238637ad6ac3eccbf053a216",
+      "bytes": 10563
+    },
+    {
+      "path": "teams/uefa_cska_1948.json",
+      "sha256": "sha256:10e7b5c5b68c5843cf4c73c97be38e1726f0d0924f07e91ba82becb6dec23d3c",
+      "bytes": 10628
+    },
+    {
+      "path": "teams/uefa_dinamo_zagreb.json",
+      "sha256": "sha256:575ec3707e5476ec7481619cd2c25ea3b5d69e1d477b7dc318a344860f523a88",
+      "bytes": 10579
+    },
+    {
+      "path": "teams/uefa_fc_kairat.json",
+      "sha256": "sha256:944bd27c3bb01a6541bb57d466dbfefe6352a54d9f8b6d0f4474f30d4686e2d4",
+      "bytes": 10571
+    },
+    {
+      "path": "teams/uefa_fenerbahce.json",
+      "sha256": "sha256:91ea9c1b62228c923c7a1e7dfa49d2acffc0cf3c1af51d1eacf0240bcbe68c16",
+      "bytes": 10574
+    },
+    {
+      "path": "teams/uefa_h_be_er_sheva.json",
+      "sha256": "sha256:5431f046f89aa8c10dbedfdc74b35eb1cfaa514a434ccada5da6654db8c48fb9",
+      "bytes": 10577
+    },
+    {
+      "path": "teams/uefa_iberia_1999.json",
+      "sha256": "sha256:556f798545d7fab8e0a7d53b289cf2b662f6978cf43b1c487717d0a894a39e07",
+      "bytes": 10571
+    },
+    {
+      "path": "teams/uefa_kauno_zalgiris.json",
+      "sha256": "sha256:66a5946e704f56ebfe3dabccddfdd062e77760306345400b81661bd76a2afd37",
+      "bytes": 10583
+    },
+    {
+      "path": "teams/uefa_larne_fc.json",
+      "sha256": "sha256:d27aeef462c0fae1ed33b20d1bb1b48032b20a35565f0e11d55e67f14dda72c7",
+      "bytes": 10568
+    },
+    {
+      "path": "teams/uefa_levski_sofia.json",
+      "sha256": "sha256:6a0dbfcf8b9c3b2ea164920a24592ebc38af8a3e648f456bd98616da3ccb5dd2",
+      "bytes": 10576
+    },
+    {
+      "path": "teams/uefa_mjallby.json",
+      "sha256": "sha256:dfbdb911f0ed3be219c62d4c18652a124049d216e179e61377559c7e150db0a7",
+      "bytes": 10565
+    },
+    {
+      "path": "teams/uefa_nec_nijmegen.json",
+      "sha256": "sha256:4efbf80e3b23adf7145b798767dfce11829b532e039ab9823c6efdf96a27d115",
+      "bytes": 716
+    },
+    {
+      "path": "teams/uefa_nk_celje.json",
+      "sha256": "sha256:a00ff2597ced65b4ac2a8dc29216ed5b95a6b78ff2f84ae76a98b8122488480a",
+      "bytes": 10569
+    },
+    {
+      "path": "teams/uefa_olympiacos.json",
+      "sha256": "sha256:bff7adfebf7b190a28fd14637edcb3bf1c9d6b57eb75d96df7525c89d3e3b238",
+      "bytes": 10574
+    },
+    {
+      "path": "teams/uefa_panathinaikos.json",
+      "sha256": "sha256:7c3d577480c24a251f200b091c7d83260810a961ae132ca886adb0fdd7c1cc78",
+      "bytes": 10579
+    },
+    {
+      "path": "teams/uefa_red_star.json",
+      "sha256": "sha256:888037eb0ac14a1aa160ebcad4962b53a8378089beaac9ce00ebf23d3fa76023",
+      "bytes": 10569
+    },
+    {
+      "path": "teams/uefa_sabah_fk.json",
+      "sha256": "sha256:11fff0458b286d805471a64031f91b53468a37d0dcaa5614f405844728ca8bef",
+      "bytes": 10570
+    },
+    {
+      "path": "teams/uefa_slovan_bratislava.json",
+      "sha256": "sha256:634d264d9518ec0242fafebfd80bf7e91bd368492fc614e0a3d94ba603a05179",
+      "bytes": 10587
+    },
+    {
+      "path": "teams/uefa_sparta_prague.json",
+      "sha256": "sha256:e8891691bce58e6f9f6911c80a170c769706844870fb3c40c3a9fab957e0c091",
+      "bytes": 10580
+    },
+    {
+      "path": "teams/uefa_sturm_graz.json",
+      "sha256": "sha256:fe3475d30d7faf3644f10992022d4b912d4d1f8981ff6dece6a1bfa09489443f",
+      "bytes": 10573
+    },
+    {
+      "path": "teams/uefa_union_sg.json",
+      "sha256": "sha256:58ee18c3f440c0f883e499ff5487af5469dd08cc83bdeb42ee7259e8c9cf4082",
+      "bytes": 10570
+    }
+  ],
+  "n_fixtures": 13,
+  "n_teams": 26,
+  "feature_count_min": 0,
+  "feature_count_max": 1000,
+  "feature_count_avg": 108.6,
+  "missing_fields": [
+    {
+      "fixture_id": "UCL2627_3c35e5df45bf",
+      "side": "home",
+      "team_id": "uefa_nec_nijmegen",
+      "reason": "kein Feature-Store-Eintrag"
+    }
+  ],
+  "immutability": "Der gesamte Verbund unter <snapshot_id>/ ist unveraenderlich. Ein geaenderter Datenstand erzeugt einen neuen snapshot_id."
+}
