@@ -131,6 +131,87 @@
           "name": "FotMob/SofaScore Matchlogs",
           "trust": "MEDIUM"
         }
+      ],
+      "team_ebook": {
+        "home": "14 Sp. · 4–5–5 · 20:19 · Heim 2–1–3 / 6:5 · xG/xGA 1.58/1.60 (Heim 1.77/1.27) · 13.64 Schüsse / 4.9 SOT · L5: D-D-L-D-L",
+        "away": "2 Sp. · 2–0–0 · 7:0 · Ausw. 1–0–0 / 4:0 · xG/xGA 1.79/1.09 (ausw. 1.56/1.12) · 16.50 Schüsse / 5.4 SOT · L5: W-W"
+      },
+      "field_status": {
+        "DF01": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF03": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF04": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF05": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "MEDIUM"
+        },
+        "DF06": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF07": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF08": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF09": {
+          "home": "FOUND",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF10": {
+          "home": "DERIVED",
+          "away": "DERIVED",
+          "trust": "HIGH"
+        },
+        "DF11": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        },
+        "DF12": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        }
+      },
+      "axes": {
+        "CONTROL": "MEDIUM",
+        "CHAOS": "MEDIUM",
+        "GOAL_PROFILE": "MEDIUM",
+        "TEMPO": "MEDIUM",
+        "PHASE": "LATE_OPENING",
+        "DRAW_GRAVITY": "MEDIUM"
+      },
+      "game_state": {
+        "1:0": "Slovan erhöht die Breite, Match öffnet in Übergängen.",
+        "0:1": "Mjällby schiebt höher, verliert Heim-Suppression.",
+        "1:1": "Beide behalten einen zweiten Torpfad."
+      },
+      "world_stability": "STABLE",
+      "robustness": "MEDIUM",
+      "prediction_map": [
+        "X2",
+        "Slovan über 0.5 Teamtore",
+        "Slovan Sieg"
       ]
     },
     {
@@ -165,7 +246,83 @@
         "1:2",
         "2:2"
       ],
-      "score_band": "2–4"
+      "score_band": "2–4",
+      "team_ebook": {
+        "home": "4 UEFA-Sp. · 7:5 · xG/xGA nicht definitionskonsistent · Sample VERY_LOW",
+        "away": "2 Sp. · 0–2–0 · 3:3 · xG/xGA 1.15/1.13 · 14.0 Schüsse · Sample VERY_LOW"
+      },
+      "field_status": {
+        "DF01": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF03": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF04": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF05": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "MEDIUM"
+        },
+        "DF06": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF07": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF08": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF09": {
+          "home": "FOUND",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF10": {
+          "home": "DERIVED",
+          "away": "DERIVED",
+          "trust": "HIGH"
+        },
+        "DF11": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        },
+        "DF12": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        }
+      },
+      "axes": {
+        "CONTROL": "MEDIUM",
+        "CHAOS": "HIGH",
+        "GOAL_PROFILE": "HIGH",
+        "TEMPO": "HIGH",
+        "PHASE": "OSCILLATING",
+        "DRAW_GRAVITY": "LOW"
+      },
+      "world_stability": "STABLE",
+      "robustness": "MEDIUM",
+      "prediction_map": [
+        "Über 1.5 Tore",
+        "BTTS Ja",
+        "Über 2.5 Tore"
+      ]
     },
     {
       "fixture_id": "UEFA-2049101",
@@ -200,7 +357,88 @@
         "2:0",
         "0:1"
       ],
-      "score_band": "1–3"
+      "score_band": "1–3",
+      "team_ebook": {
+        "home": "3 Sp. · 3–0–0 · 7:2 · Heim 2–0–0 / 5:1 · xG/xGA 2.35/0.97 (Heim 2.67/0.94) · Sample LOW",
+        "away": "20 Sp. · 13–6–1 · 39:14 · Ausw. 7–3–1 / 19:10 · xG/xGA 1.77/1.06 (ausw. 1.64/1.08) · L5: W-W-W-W-W"
+      },
+      "field_status": {
+        "DF01": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF03": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF04": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF05": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "MEDIUM"
+        },
+        "DF06": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF07": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF08": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF09": {
+          "home": "FOUND",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF10": {
+          "home": "DERIVED",
+          "away": "DERIVED",
+          "trust": "HIGH"
+        },
+        "DF11": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        },
+        "DF12": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        }
+      },
+      "axes": {
+        "CONTROL": "MEDIUM",
+        "CHAOS": "LOW",
+        "GOAL_PROFILE": "LOW",
+        "TEMPO": "MEDIUM",
+        "PHASE": "STABLE",
+        "DRAW_GRAVITY": "HIGH"
+      },
+      "game_state": {
+        "1:0": "Levski kann tiefer kontrollieren.",
+        "0:1": "Levski muss öffnen, Kairat gewinnt Raum.",
+        "1:1": "Maximale Draw-Gravitation."
+      },
+      "world_stability": "STABLE",
+      "robustness": "MEDIUM",
+      "prediction_map": [
+        "Unter 3.5 Tore",
+        "1X",
+        "Levski DNB"
+      ]
     },
     {
       "fixture_id": "UEFA-2049104",
@@ -234,7 +472,83 @@
         "0:2",
         "1:2"
       ],
-      "score_band": "1–3"
+      "score_band": "1–3",
+      "team_ebook": {
+        "home": "Liga-Sample 0 Sp. = NOT_EXPECTED · aktuelle Sequenz L-L-W-W-D · Prozessprofil nach Repair PARTIAL",
+        "away": "2 Sp. · 2–0–0 · 8:1 · xG/xGA 2.22/0.31 (Heim 2.72/0.81) · 24 Schüsse / 10.5 SOT"
+      },
+      "field_status": {
+        "DF01": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF03": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF04": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF05": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "MEDIUM"
+        },
+        "DF06": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF07": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF08": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF09": {
+          "home": "FOUND",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF10": {
+          "home": "DERIVED",
+          "away": "DERIVED",
+          "trust": "HIGH"
+        },
+        "DF11": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        },
+        "DF12": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        }
+      },
+      "axes": {
+        "CONTROL": "MEDIUM",
+        "CHAOS": "MEDIUM",
+        "GOAL_PROFILE": "MEDIUM",
+        "TEMPO": "MEDIUM",
+        "PHASE": "LATE_OPENING",
+        "DRAW_GRAVITY": "MEDIUM"
+      },
+      "world_stability": "STABLE",
+      "robustness": "MEDIUM",
+      "prediction_map": [
+        "X2",
+        "Crvena Zvezda über 0.5 Teamtore",
+        "Crvena Zvezda Sieg"
+      ]
     },
     {
       "fixture_id": "UEFA-2049105",
@@ -313,6 +627,87 @@
           "name": "FotMob",
           "trust": "HIGH"
         }
+      ],
+      "team_ebook": {
+        "home": "2 Sp. · 2–0–0 · 6:1 · Heim 1–0–0 / 4:0 · xG/xGA 2.10/0.72 · 18.5 Schüsse / 7.5 SOT · L5: W-W",
+        "away": "3 Sp. · 1–1–1 · 4:5 · Ausw. 0–1–1 / 1:4 · xG/xGA 0.94/1.88 · 9.3 Schüsse / 3.0 SOT · L5: W-D-L"
+      },
+      "field_status": {
+        "DF01": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF03": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF04": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF05": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "MEDIUM"
+        },
+        "DF06": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF07": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF08": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF09": {
+          "home": "FOUND",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF10": {
+          "home": "DERIVED",
+          "away": "DERIVED",
+          "trust": "HIGH"
+        },
+        "DF11": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        },
+        "DF12": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        }
+      },
+      "axes": {
+        "CONTROL": "HIGH",
+        "CHAOS": "LOW",
+        "GOAL_PROFILE": "MEDIUM",
+        "TEMPO": "MEDIUM",
+        "PHASE": "STABLE",
+        "DRAW_GRAVITY": "LOW"
+      },
+      "game_state": {
+        "1:0": "Vollständige Kontrolle, Dinamo verwaltet.",
+        "0:1": "Kurzfristiger Schock, Heimkante bleibt.",
+        "1:1": "Dinamo beschleunigt wieder."
+      },
+      "world_stability": "VERY_STABLE",
+      "robustness": "HIGH",
+      "prediction_map": [
+        "1X",
+        "Dinamo über 0.5 Teamtore",
+        "Dinamo Sieg"
       ]
     },
     {
@@ -344,7 +739,68 @@
       "counterworld": "NOT_AVAILABLE",
       "modal_score": "NOT_AVAILABLE",
       "four_score_cluster": [],
-      "score_band": "NOT_AVAILABLE"
+      "score_band": "NOT_AVAILABLE",
+      "team_ebook": {
+        "home": "Saison 2026/27 noch nicht begonnen · Prozessdaten nach Search Exhaustion RESTRICTED",
+        "away": "Saison 2026/27 noch nicht begonnen · Prozessdaten nach Search Exhaustion RESTRICTED"
+      },
+      "field_status": {
+        "DF01": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF03": {
+          "home": "PARTIAL",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF04": {
+          "home": "PARTIAL",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF05": {
+          "home": "PARTIAL",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF06": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "LOW"
+        },
+        "DF07": {
+          "home": "RESTRICTED",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF08": {
+          "home": "RESTRICTED",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF09": {
+          "home": "RESTRICTED",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF10": {
+          "home": "DERIVED",
+          "away": "DERIVED",
+          "trust": "HIGH"
+        },
+        "DF11": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        },
+        "DF12": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        }
+      }
     },
     {
       "fixture_id": "UEFA-2049107",
@@ -378,7 +834,88 @@
         "1:2",
         "2:2"
       ],
-      "score_band": "2–4"
+      "score_band": "2–4",
+      "team_ebook": {
+        "home": "2 Sp. · 1–1–0 · 5:3 · xG/xGA 1.84/1.21 · 15.5 Schüsse / 6.0 SOT · L5: W-D",
+        "away": "18 Sp. · 12–4–2 · 44:19 · Ausw. 5–2–2 / 18:11 · xG/xGA 2.05/1.04 · 17.2 Schüsse / 6.8 SOT"
+      },
+      "field_status": {
+        "DF01": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF03": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF04": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF05": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "MEDIUM"
+        },
+        "DF06": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF07": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF08": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF09": {
+          "home": "FOUND",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF10": {
+          "home": "DERIVED",
+          "away": "DERIVED",
+          "trust": "HIGH"
+        },
+        "DF11": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        },
+        "DF12": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        }
+      },
+      "axes": {
+        "CONTROL": "MEDIUM",
+        "CHAOS": "HIGH",
+        "GOAL_PROFILE": "HIGH",
+        "TEMPO": "HIGH",
+        "PHASE": "OSCILLATING",
+        "DRAW_GRAVITY": "LOW"
+      },
+      "game_state": {
+        "1:0": "Gegner muss öffnen, Räume entstehen.",
+        "0:1": "Union erhöht Risiko sofort.",
+        "1:1": "Beide Seiten offen, hohe Tail-Exposure."
+      },
+      "world_stability": "STABLE",
+      "robustness": "MEDIUM",
+      "prediction_map": [
+        "Über 1.5 Tore",
+        "BTTS Ja",
+        "Über 2.5 Tore"
+      ]
     },
     {
       "fixture_id": "UEFA-2049108",
@@ -408,7 +945,68 @@
       "counterworld": "NOT_AVAILABLE",
       "modal_score": "NOT_AVAILABLE",
       "four_score_cluster": [],
-      "score_band": "NOT_AVAILABLE"
+      "score_band": "NOT_AVAILABLE",
+      "team_ebook": {
+        "home": "Prozessdaten für 2026/27 nach Repair RESTRICTED · Vorjahres-Prior separat geführt",
+        "away": "Liga-Sample 0 Sp. = NOT_EXPECTED · Vorjahres-Prior 2.31 GF / 1.02 GA"
+      },
+      "field_status": {
+        "DF01": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF03": {
+          "home": "PARTIAL",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF04": {
+          "home": "PARTIAL",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF05": {
+          "home": "PARTIAL",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF06": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "LOW"
+        },
+        "DF07": {
+          "home": "RESTRICTED",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF08": {
+          "home": "RESTRICTED",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF09": {
+          "home": "RESTRICTED",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF10": {
+          "home": "DERIVED",
+          "away": "DERIVED",
+          "trust": "HIGH"
+        },
+        "DF11": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        },
+        "DF12": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        }
+      }
     },
     {
       "fixture_id": "UEFA-2149201",
@@ -439,7 +1037,68 @@
       "counterworld": "NOT_AVAILABLE",
       "modal_score": "NOT_AVAILABLE",
       "four_score_cluster": [],
-      "score_band": "NOT_AVAILABLE"
+      "score_band": "NOT_AVAILABLE",
+      "team_ebook": {
+        "home": "Entity-/Wettbewerbszuordnung ungelöst · Kernblöcke RESTRICTED",
+        "away": "Entity-/Wettbewerbszuordnung ungelöst · Kernblöcke RESTRICTED"
+      },
+      "field_status": {
+        "DF01": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF03": {
+          "home": "PARTIAL",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF04": {
+          "home": "PARTIAL",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF05": {
+          "home": "PARTIAL",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF06": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "LOW"
+        },
+        "DF07": {
+          "home": "RESTRICTED",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF08": {
+          "home": "RESTRICTED",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF09": {
+          "home": "RESTRICTED",
+          "away": "RESTRICTED",
+          "trust": "LOW"
+        },
+        "DF10": {
+          "home": "DERIVED",
+          "away": "DERIVED",
+          "trust": "HIGH"
+        },
+        "DF11": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        },
+        "DF12": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        }
+      }
     },
     {
       "fixture_id": "UEFA-2149202",
@@ -473,7 +1132,88 @@
         "2:2",
         "1:2"
       ],
-      "score_band": "2–4"
+      "score_band": "2–4",
+      "team_ebook": {
+        "home": "16 Sp. · 10–3–3 · 31:16 · Heim 6–1–1 / 18:7 · xG/xGA 1.72/1.05 (Heim 1.95/0.88) · 15.1 Schüsse / 5.9 SOT",
+        "away": "3 Sp. · 1–1–1 · 5:5 · Ausw. 0–1–1 / 1:3 · xG/xGA 1.18/1.61 · 10.4 Schüsse / 3.7 SOT"
+      },
+      "field_status": {
+        "DF01": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF03": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF04": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF05": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "MEDIUM"
+        },
+        "DF06": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF07": {
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH"
+        },
+        "DF08": {
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF09": {
+          "home": "FOUND",
+          "away": "PARTIAL",
+          "trust": "MEDIUM"
+        },
+        "DF10": {
+          "home": "DERIVED",
+          "away": "DERIVED",
+          "trust": "HIGH"
+        },
+        "DF11": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        },
+        "DF12": {
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM"
+        }
+      },
+      "axes": {
+        "CONTROL": "HIGH",
+        "CHAOS": "MEDIUM",
+        "GOAL_PROFILE": "MEDIUM",
+        "TEMPO": "MEDIUM",
+        "PHASE": "ASYMMETRIC",
+        "DRAW_GRAVITY": "LOW"
+      },
+      "game_state": {
+        "1:0": "Shamrock kontrolliert weiter.",
+        "0:1": "Shamrock muss früh öffnen.",
+        "1:1": "Partie bleibt offen bis spät."
+      },
+      "world_stability": "STABLE",
+      "robustness": "MEDIUM",
+      "prediction_map": [
+        "Über 1.5 Tore",
+        "BTTS Ja",
+        "Über 2.5 Tore"
+      ]
     }
   ],
   "proof_of_work": {
