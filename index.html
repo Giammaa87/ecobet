@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ECOBET MASTER 3.0</title>
+<title>ECOBET MASTER 3.0 · FULL Run Archive</title>
 <style>
 :root{
   --bg:#081015;--panel:#0e1a21;--panel2:#13232c;--panel3:#10242d;
@@ -298,10 +298,15 @@ const boolLabel=v=>v===true?'Ja':v===false?'Nein':'—';
 async function loadJSON(path){
   const local=globalThis.ECOBET_LOCAL_DATA||{};
   if(location.protocol==='file:'&&Object.prototype.hasOwnProperty.call(local,path))return local[path];
-  try{const response=await fetch(path,{cache:'no-store'});if(response.ok)return await response.json()}catch{}
+  try{
+    const sep=path.includes('?')?'&':'?';
+    const url=location.protocol==='file:'?path:`${path}${sep}_ecobet=${Date.now()}`;
+    const response=await fetch(url,{cache:'no-store'});
+    if(response.ok)return await response.json();
+  }catch{}
   return Object.prototype.hasOwnProperty.call(local,path)?local[path]:null;
 }
-async function getIndex(){if(!INDEX)INDEX=await loadJSON(RUNS+'index.json');return INDEX}
+async function getIndex(force=false){if(force||!INDEX)INDEX=await loadJSON(RUNS+'index.json');return INDEX}
 function todayISO(){
   const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Zurich',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
   const get=type=>parts.find(part=>part.type===type)?.value||'';
@@ -340,7 +345,7 @@ async function renderRuns(date){
   pills.innerHTML='';leaguePills.innerHTML='';leagueBar.hidden=true;CURRENT_RUN=null;COMP_FILTER={kind:'all',value:'ALL'};
   box.innerHTML=empty('Lauf wird geladen …','Index und Run-Datei werden für das gewählte Datum geprüft.');
 
-  const idx=await getIndex();
+  const idx=await getIndex(true);
   if(renderToken!==RUN_RENDER_TOKEN||date!==ACTIVE_RUN_DATE)return;
 
   if(!idx||!idx.dates||!Array.isArray(idx.dates[date])||!idx.dates[date].length){
@@ -381,9 +386,10 @@ function buildCompetitionPills(run){
 
 function runMeta(run){
   const r=run.run||{};const p=run.proof_of_work||{};const norms=r.norm_versions||{};
-  const core=[['Run ID',r.run_id],['Snapshot ID',r.snapshot_id],['Snapshot Time',r.snapshot_time],['Datum',r.date],['Scope',arr(r.scope).join(' · ')],['Build / Audit',`${present(r.build_mode)?r.build_mode:'—'} / ${boolLabel(r.audit_mode)}`],['Run Status',r.run_status],['Run Integrity',r.run_integrity],['Output Integrity',r.output_integrity]];
-  const proof=Object.keys(p).map(key=>[key.replaceAll('_',' '),typeof p[key]==='boolean'?boolLabel(p[key]):p[key]]);
-  const normFields=Object.keys(norms).map(key=>[key.replaceAll('_',' '),norms[key]]);
+  const scopeValue=Array.isArray(r.scope)?r.scope.join(' · '):r.scope;
+  const core=[['Run ID',r.run_id],['Snapshot ID',r.snapshot_id],['Snapshot Time',r.snapshot_time],['Datum',r.date],['Scope',scopeValue],['Build / Audit',`${present(r.build_mode)?r.build_mode:'—'} / ${boolLabel(r.audit_mode)}`],['Run Status',r.run_status],['Run Integrity',r.run_integrity],['Output Integrity',r.output_integrity],['Data Snapshot Status',r.data_snapshot_status],['Data Source',r.data_snapshot_status==='UNREACHABLE'?'WEB_FALLBACK':r.data_snapshot_status]];
+  const proof=Object.keys(p).map(key=>[key.replaceAll('_',' '),typeof p[key]==='boolean'?boolLabel(p[key]):typeof p[key]==='object'?JSON.stringify(p[key]):p[key]]);
+  const normFields=Array.isArray(norms)?norms.map((value,index)=>[`Norm ${index+1}`,value]):Object.keys(norms).map(key=>[key.replaceAll('_',' '),norms[key]]);
   const grid=fields=>`<div class="meta-grid">${fields.map(([label,value])=>`<div class="meta-item"><span>${esc(label)}</span><b class="${label==='Scope'?'list':''}">${show(value)}</b></div>`).join('')}</div>`;
   return `<details class="run-meta"><summary><span>Run Identity · Proof of Work · Normative Versions</span><b>${show(r.run_id)}</b></summary><section class="run-meta-section"><h3>Run Identity &amp; Scope <span>vorhandene run-Felder</span></h3>${grid(core)}</section>${proof.length?`<section class="run-meta-section"><h3>Proof of Work <span>vorhandene proof_of_work-Felder</span></h3>${grid(proof)}</section>`:''}${normFields.length?`<section class="run-meta-section"><h3>Normative Versions <span>vorhandene norm_versions-Felder</span></h3>${grid(normFields)}</section>`:''}</details>`;
 }
@@ -414,45 +420,100 @@ function toggleMatch(row,box){
 
 function renderMatchDetail(m,matchIndex=0){
   if(!m)return '';
-  const nsp=m.favourite===NSP;const c=competitionInfo(m,0);const cluster=arr(m.four_score_cluster);const candidates=arr(m.candidates);const repairs=arr(m.repair_summary);const sources=arr(m.sources);const flags=arr(m.flags);const codes=arr(m.nsp_codes);
-  const hasWorld=present(m.prime_world)||present(m.counterworld);const hasEvidence=present(m.anchor)||present(m.modal_score)||cluster.length||present(m.score_band);
-  const candidateRows=candidates.map(item=>`<tr><td>${show(item.expression)}</td><td>${show(item.axis)}</td><td>${show(item.cluster_coverage)}</td><td>${show(item.W)} / ${show(item.F)} / ${show(item.R)} / ${show(item.D)}</td><td>${show(item.score_total)}</td><td>${show(item.status)}</td></tr>`).join('');
+  const nsp=m.favourite===NSP;
+  const c=competitionInfo(m,0);
+  const cluster=arr(m.four_score_cluster).length?arr(m.four_score_cluster):arr(m.score_distribution&&m.score_distribution.four_score_cluster);
+  const candidates=arr(m.candidates).length?arr(m.candidates):arr(m.prediction_map);
+  const repairs=arr(m.repair_summary).length?arr(m.repair_summary):arr(m.flags_detail&&m.flags_detail.repair_summary);
+  const sources=arr(m.sources).length?arr(m.sources):(arr(m.source_lineage).length?arr(m.source_lineage):arr(m.flags_detail&&m.flags_detail.source_lineage));
+  const flags=arr(m.flags);const codes=arr(m.nsp_codes);
+  const teamEbook=m.team_ebook&&typeof m.team_ebook==='object'?m.team_ebook:null;
+  const axes=m.axes&&typeof m.axes==='object'?m.axes:null;
+  const gameState=m.game_state&&typeof m.game_state==='object'?m.game_state:null;
+  const shock=m.shock_test_detail&&typeof m.shock_test_detail==='object'?m.shock_test_detail:(m.shock_test&&typeof m.shock_test==='object'?m.shock_test:null);
+  const primeDetail=m.prime_world_detail&&typeof m.prime_world_detail==='object'?m.prime_world_detail:null;
+  const counterDetail=m.counterworld_detail&&typeof m.counterworld_detail==='object'?m.counterworld_detail:null;
+  const scoreDist=m.score_distribution&&typeof m.score_distribution==='object'?m.score_distribution:null;
+  const evidence=m.match_ebook_evidence&&typeof m.match_ebook_evidence==='object'?m.match_ebook_evidence:null;
+  const hasWorld=present(m.prime_world)||present(m.counterworld)||primeDetail||counterDetail;
+  const hasEvidence=present(m.anchor)||present(m.modal_score)||cluster.length||present(m.score_band)||scoreDist;
+
+  const candidateName=item=>present(item&&item.expression)?item.expression:(present(item&&item.prediction)?item.prediction:null);
+  const candidateRows=candidates.map(item=>`<tr><td>${show(candidateName(item))}</td><td>${show(item.axis)}</td><td>${show(item.world)}</td><td>${show(item.cluster_coverage)}</td><td>${show(item.p_raw)}</td><td>${show(item.W)} / ${show(item.F)} / ${show(item.R)} / ${show(item.D)}</td><td>${show(item.score_total)}</td><td>${show(item.robustness)}</td><td>${arr(item.penalties).length?esc(arr(item.penalties).join(', ')):'—'}</td><td>${show(item.status)}</td></tr>`).join('');
+
   const pathEntries=[['Safe',m.safe],['Balanced',m.balanced],['Aggressive',m.aggressive]];
-  const predictionRows=pathEntries.map(([path,expression])=>{const candidate=candidates.find(item=>item.expression===expression)||{};const wfrd=[candidate.W,candidate.F,candidate.R,candidate.D].every(v=>v!==undefined&&v!==null)?`${candidate.W}/${candidate.F}/${candidate.R}/${candidate.D}`:null;return `<tr><td>${show(expression)}</td><td class="path-name">${esc(path)}</td><td>${show(candidate.axis)}</td><td>${show(candidate.cluster_coverage)}</td><td>${show(wfrd)}</td><td>${show(candidate.score_total)}</td><td>${show(candidate.status)}</td></tr>`}).join('');
-  const pmapSet=[...new Set([...pathEntries.map(([,e])=>e),...candidates.map(c=>c.expression)].filter(present))];
+  const predictionRows=pathEntries.map(([path,expression])=>{
+    const candidate=candidates.find(item=>candidateName(item)===expression)||{};
+    const wfrd=[candidate.W,candidate.F,candidate.R,candidate.D].every(v=>v!==undefined&&v!==null)?`${candidate.W}/${candidate.F}/${candidate.R}/${candidate.D}`:(present(candidate.W_F_R_D)?candidate.W_F_R_D:null);
+    return `<tr><td>${show(expression)}</td><td class="path-name">${esc(path)}</td><td>${show(candidate.axis)}</td><td>${show(candidate.cluster_coverage)}</td><td>${show(wfrd)}</td><td>${show(candidate.score_total)}</td><td>${show(candidate.robustness)}</td><td>${show(candidate.status)}</td></tr>`;
+  }).join('');
+
+  const pmapSet=[...new Set([...pathEntries.map(([,e])=>e),...candidates.map(candidateName)].filter(present))];
   const pmapLine=pmapSet.length?pmapSet.map(e=>`<span class="pm">${esc(e)}</span>`).join(''):'<span class="unavailable-note">Keine Kandidaten im run_record.</span>';
-  const availabilityRow=(id,family,status,fields,available=true)=>`<span class="st ${available?'ok':'no'}" title="${esc(family)} · ${esc(fields)}">${esc(family)} <b>${available?'V':'—'}</b></span>`;
-  const availabilityRows=[
-    availabilityRow('RR01','Fixture Identity & Kickoff','VORHANDEN','fixture_id · kickoff · home · away'),
-    availabilityRow('RR02','Wettbewerb & Phase','VORHANDEN','competition · phase'),
-    availabilityRow('RR03','Decision Paths & Favourite','VORHANDEN','safe · balanced · aggressive · favourite'),
-    availabilityRow('RR04','Model Bands & Ampel','VORHANDEN','model_probability_band · model_price_band · ampel'),
-    availabilityRow('RR05','Data Gate & Failure Codes','VORHANDEN','data_readiness · match_core_status · flags · nsp_codes'),
-    availabilityRow('RR06','Worlds & Score Distribution','VORHANDEN','world_type · anchor · prime_world · counterworld · score fields'),
-    availabilityRow('RR07','Kandidaten-Audit',candidates.length?'VORHANDEN':'NICHT IM RUN_RECORD',candidates.length?'candidates':'keine candidates für dieses Match',candidates.length>0),
-    availabilityRow('RR08','Repair Summary',repairs.length?'VORHANDEN':'NICHT IM RUN_RECORD',repairs.length?'repair_summary':'keine repair_summary für dieses Match',repairs.length>0),
-    availabilityRow('RR09','Source Lineage',sources.length?'VORHANDEN':'NICHT IM RUN_RECORD',sources.length?'sources':'keine sources für dieses Match',sources.length>0),
-    availabilityRow('RR10','Team-E-Books · RAW Summary','NICHT IM RUN_RECORD','keine Teamprofile, Form- oder Process-Felder',false),
-    availabilityRow('RR11','Quantitative Evidence · Form · H2H','NICHT IM RUN_RECORD','keine strukturierten Evidence-, Form- oder H2H-Felder',false),
-    availabilityRow('RR12','Interpretation Axes & Game States','NICHT IM RUN_RECORD','kein Control/Chaos/Tempo/Draw-Gravity/Game-State-Objekt',false)
+
+  const availabilityRow=(family,available)=>`<span class="st ${available?'ok':'no'}">${esc(family)} <b>${available?'V':'—'}</b></span>`;
+  const availabilityLine=[
+    availabilityRow('Fixture Identity & Kickoff',true),
+    availabilityRow('Wettbewerb & Phase',true),
+    availabilityRow('Decision Paths & Favourite',true),
+    availabilityRow('Model Bands & Ampel',true),
+    availabilityRow('Data Gate & Failure Codes',true),
+    availabilityRow('Worlds & Score Distribution',hasWorld||hasEvidence),
+    availabilityRow('Kandidaten-Audit',candidates.length>0),
+    availabilityRow('Repair Summary',repairs.length>0),
+    availabilityRow('Source Lineage',sources.length>0),
+    availabilityRow('Team-E-Books · RAW Summary',!!teamEbook),
+    availabilityRow('Interpretation Axes',!!axes),
+    availabilityRow('Game States',!!gameState),
+    availabilityRow('Shock Test',!!shock)
   ].join('');
-  const availabilityLine=availabilityRows;
+
+  const renderTeam=(side,label)=>{
+    const team=teamEbook&&teamEbook[side];
+    if(!team)return `<article class="report-team-card"><h5>${show(label)}</h5><p class="unavailable-note">Nicht im run_record vorhanden.</p></article>`;
+    const fields=team.fields&&typeof team.fields==='object'?Object.values(team.fields):[];
+    return `<article class="report-team-card"><h5>${show(team.team||label)}</h5><dl>${fields.map(field=>`<dt>${show(field.label)}</dt><dd><b>${show(field.value)}</b><span class="team-field-meta">${show(field.status)} · Trust ${show(field.trust)}</span></dd>`).join('')}</dl>${present(team.role)?`<p class="status-legend">Rolle: ${esc(team.role)}</p>`:''}</article>`;
+  };
+
+  const axisOrder=[['CONTROL','Control'],['CHAOS','Chaos'],['GOAL_PROFILE','Goal Profile'],['TEMPO','Tempo'],['PHASE_STRUCTURE','Phase Structure'],['DRAW_GRAVITY','Draw Gravity'],['TAIL_RISK','Tail Risk']];
+  const axisHtml=axes?axisOrder.map(([key,label])=>`<div><small>${esc(label)}</small><strong>${show(axes[key])}</strong></div>`).join(''):'';
+
+  const stateRows=gameState?Object.entries(gameState).map(([key,value])=>{
+    if(value&&typeof value==='object'){
+      const text=present(value.result)?value.result:(present(value.status)?value.status:(present(value.description)?value.description:null));
+      const note=present(value.reason)?` · ${value.reason}`:'';
+      return `<div><small>${esc(key.replaceAll('_',' '))}</small><strong>${show(text)}${present(note)?esc(note):''}</strong></div>`;
+    }
+    return `<div><small>${esc(key.replaceAll('_',' '))}</small><strong>${show(value)}</strong></div>`;
+  }).join(''):'';
+
+  const shockKeys=['S1','S2','S3'];
+  const shockHtml=shock?shockKeys.map(key=>{
+    const value=shock[key];
+    if(value&&typeof value==='object')return `<div><small>${esc(key)}${present(value.definition)?' · '+esc(value.definition):''}</small><strong>${show(value.result)}</strong></div>`;
+    return `<div><small>${esc(key)}</small><strong>${show(value)}</strong></div>`;
+  }).join(''):'';
+
   const matchLabel='M'+String(matchIndex+1).padStart(2,'0');
   const readinessClass=m.data_readiness==='NOT_READY'?'red':m.data_readiness==='CONDITIONAL'?'yellow':'green';
   const coreClass=m.match_core_status==='RESTRICTED'?'red':m.match_core_status==='PARTIAL'?'yellow':'green';
   const allTags=[...flags,...codes];
+
   return `<article class="detail match-report ${nsp?'nsp-detail':''}">
     <header class="report-match-header">
       <div class="report-match-header-top"><span class="report-match-index">${matchLabel}</span><span>${esc(c.name)}${present(m.phase)?' · '+esc(m.phase):''}</span></div>
       <h3>${show(m.home)} <em>–</em> ${show(m.away)}</h3>
-      <div class="report-match-meta"><b>${show(m.kickoff)}</b><span class="fixture">Fixture ${show(m.fixture_id)}</span><span class="chip ${readinessClass}">${show(m.data_readiness)}</span><span class="chip ${coreClass}">${show(m.match_core_status)}</span>${c.id?`<span class="fixture">Competition ${esc(c.id)}</span>`:''}</div>
+      <div class="report-match-meta"><b>${show(m.kickoff)}</b><span class="fixture">Fixture ${show(m.fixture_id)}</span><span class="chip ${readinessClass}">${show(m.data_readiness)}</span><span class="chip ${coreClass}">${show(m.match_core_status)}</span>${present(m.world_stability)?`<span class="fixture">World ${show(m.world_stability)}</span>`:''}</div>
     </header>
 
     <section class="report-subsection">
-      <h4>Feldstatus <span>run_record-Verfügbarkeit</span></h4><div class="status-line">${availabilityLine}</div><p class="status-legend">V = im run_record vorhanden · — = für dieses Match nicht enthalten</p></section>
+      <h4>Feldstatus <span>run_record-Verfügbarkeit</span></h4>
+      <div class="status-line">${availabilityLine}</div>
+      <p class="status-legend">V = im aktuellen run_record vorhanden · — = nicht enthalten</p>
+    </section>
 
     <section class="report-subsection">
-      <h4>Data Gate &amp; Field Status <span>verfügbare run_record-Felder</span></h4>
+      <h4>Data Gate &amp; Match Snapshot</h4>
       <div class="report-status-grid">
         <div><small>Competition</small><strong>${esc(c.name)}</strong></div>
         <div><small>Phase</small><strong>${show(m.phase)}</strong></div>
@@ -462,48 +523,62 @@ function renderMatchDetail(m,matchIndex=0){
         <div><small>Match Core Status</small><strong>${show(m.match_core_status)}</strong></div>
         <div><small>Model Probability</small><strong class="mono">${show(m.model_probability_band)}</strong></div>
         <div><small>Model Price</small><strong class="mono">${show(m.model_price_band)}</strong></div>
+        <div><small>Data Source</small><strong>${show(m.data_source_mode||m.match_snapshot?.data_source)}</strong></div>
+        <div><small>Aggregate State</small><strong>${show(m.match_snapshot?.aggregate_state||gameState?.aggregate_state_before_kickoff)}</strong></div>
+        <div><small>Commit</small><strong>${show(m.commit_status)}</strong></div>
+        <div><small>Validation</small><strong>${show(m.match_validation)}</strong></div>
       </div>
       <div class="gate-strip ${nsp?'nsp':''}"><b>Gate:</b> ${show(m.data_readiness)} · MATCH_CORE_STATUS ${show(m.match_core_status)}${allTags.length?`<div class="tag-list">${flags.map(flag=>`<span class="tag">${esc(flag)}</span>`).join('')}${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</div>
     </section>
 
     <section class="report-subsection">
       <h4>Team-E-Books · RAW Summary</h4>
-      <div class="report-team-grid">
-        ${[m.home,m.away].map(team=>`<article class="report-team-card"><h5>${show(team)}</h5><dl><dt>Strength Baseline</dt><dd>— · nicht im run_record</dd><dt>Form / Current</dt><dd>— · nicht im run_record</dd><dt>Process</dt><dd>— · nicht im run_record</dd><dt>Tor-/Rollenprofil</dt><dd>— · nicht im run_record</dd><dt>Availability / Load</dt><dd>— · nicht im run_record</dd><dt>Completeness</dt><dd>— · nicht im run_record</dd></dl></article>`).join('')}
-      </div>
-      <p class="unavailable-note"><b>Warum leer?</b> Die Referenz-HTML enthält Team-E-Books, die bereitgestellten run_records enthalten dafür keine strukturierten Felder. Es werden keine HTML-Werte als JSON-Daten ausgegeben.</p>
+      <div class="report-team-grid">${renderTeam('home',m.home)}${renderTeam('away',m.away)}</div>
     </section>
 
     <section class="report-subsection">
       <h4>MATCH_EBOOK_EVIDENCE · Anchor Candidates</h4>
-      ${present(m.anchor)?`<div class="report-anchor"><span class="chip green">${show(m.world_type)}</span><p>${esc(m.anchor)}</p></div>`:'<div class="unavailable-note"><b>Anchor:</b> nicht im run_record verfügbar.</div>'}
-      <p class="unavailable-note"><b>Quantitative Evidence, Form und H2H:</b> nicht als strukturierte Matchfelder im run_record vorhanden.</p>
+      ${present(m.anchor)?`<div class="report-anchor"><span class="chip green">${show(m.world_type)}</span><p>${esc(m.anchor)}</p></div>`:'<div class="unavailable-note"><b>Anchor:</b> nicht verfügbar.</div>'}
+      ${evidence&&present(evidence.ko_state)?`<div class="report-repair-item"><b>KO State</b><p>${esc(evidence.ko_state)}</p></div>`:''}
+      ${evidence&&present(evidence.data_readiness_evidence)?`<div class="report-repair-item"><b>Data Readiness Evidence</b><p>${esc(evidence.data_readiness_evidence)}</p></div>`:''}
     </section>
 
-    ${!nsp?`<section class="report-subsection"><h4>Football Interpretation</h4>${present(m.anchor)?`<div class="report-anchor"><span class="chip green">${show(m.world_type)}</span><p>${esc(m.anchor)}</p></div>`:''}<div class="report-axis-grid">${['Control','Chaos','Goal Profile','Tempo','Phase Structure','Draw Gravity'].map(axis=>`<div><small>${esc(axis)}</small><strong>— · nicht im run_record</strong></div>`).join('')}</div><p class="unavailable-note"><b>Game-State-Reaktionen:</b> kein strukturiertes Game-State-Objekt im run_record vorhanden.</p></section>`:''}
+    ${!nsp?`<section class="report-subsection">
+      <h4>Football Interpretation</h4>
+      ${present(m.football_interpretation?.summary)?`<div class="report-anchor"><span class="chip green">${show(m.world_type)}</span><p>${esc(m.football_interpretation.summary)}</p></div>`:''}
+      ${axes?`<div class="report-axis-grid">${axisHtml}</div>`:'<p class="unavailable-note">Keine strukturierten Achsen vorhanden.</p>'}
+      ${gameState?`<h5 class="detail-mini-title">Game State</h5><div class="report-status-grid">${stateRows}</div>`:''}
+    </section>`:''}
 
-    ${hasWorld?`<section class="report-subsection"><h4>World Analysis</h4><div class="report-worlds">${present(m.prime_world)?`<div class="report-world prime"><small>PRIME_WORLD</small><h5>${esc(m.prime_world)}</h5></div>`:''}${present(m.counterworld)?`<div class="report-world counter"><small>COUNTERWORLD</small><h5>${esc(m.counterworld)}</h5></div>`:''}</div></section>`:''}
+    ${hasWorld?`<section class="report-subsection"><h4>World Analysis</h4><div class="report-worlds">
+      <div class="report-world prime"><small>PRIME_WORLD · Plausibility ${show(primeDetail?.plausibility)}</small><h5>${show(primeDetail?.description||m.prime_world)}</h5>${present(primeDetail?.break_condition)?`<p><b>Break Trigger:</b> ${esc(primeDetail.break_condition)}</p>`:''}</div>
+      <div class="report-world counter"><small>COUNTERWORLD · Plausibility ${show(counterDetail?.plausibility)}</small><h5>${show(counterDetail?.description||m.counterworld)}</h5>${present(counterDetail?.break_condition)?`<p><b>Break Trigger:</b> ${esc(counterDetail.break_condition)}</p>`:''}</div>
+    </div></section>`:''}
 
-    ${hasEvidence&&(!nsp)?`<section class="report-subsection"><h4>Score Distribution</h4><div class="report-score-grid"><div><small>Modal Score</small><strong class="mono">${show(m.modal_score)}</strong></div><div><small>Four-Score Cluster</small><div class="cluster-chips">${cluster.length?cluster.map(score=>`<span class="cluster-chip">${esc(score)}</span>`).join(''):'—'}</div></div><div><small>Score Band</small><strong class="mono">${show(m.score_band)}</strong></div></div></section>`:''}
+    ${hasEvidence&&(!nsp)?`<section class="report-subsection"><h4>Score Distribution</h4><div class="report-score-grid">
+      <div><small>Modal Score</small><strong class="mono">${show(scoreDist?.modal_score||m.modal_score)}</strong></div>
+      <div><small>Four-Score Cluster</small><div class="cluster-chips">${cluster.length?cluster.map(score=>`<span class="cluster-chip">${esc(score)}</span>`).join(''):'—'}</div></div>
+      <div><small>Score Band</small><strong class="mono">${show(scoreDist?.score_band||m.score_band)}</strong></div>
+      ${present(scoreDist?.structurally_unlikely)?`<div><small>Structurally Unlikely</small><strong>${show(scoreDist.structurally_unlikely)}</strong></div>`:''}
+    </div></section>`:''}
 
-    ${nsp?`<section class="report-subsection"><h4>Gate-Entscheid &amp; Sperrzustand</h4><div class="locked-panel"><strong>NO_STABLE_PREDICTION</strong><p>Reguläre ECOBET-Entscheidung: In diesem Lauf wurde keine stabile Prediction freigegeben. Sichtbar sind ausschließlich die vorhandenen Gate-, Flag- und NSP-Code-Felder.</p>${codes.length?`<div class="tag-list">${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</div></section>`:''}
+    ${nsp?`<section class="report-subsection"><h4>Gate-Entscheid &amp; Sperrzustand</h4><div class="locked-panel"><strong>NO_STABLE_PREDICTION</strong>${codes.length?`<div class="tag-list">${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</div></section>`:''}
 
-    ${!nsp?`<section class="report-subsection"><h4>Prediction Map</h4><div class="pmap-line">${pmapLine}</div><p class="status-legend">Cluster dient als Modellkorridor, nicht als Exact-Score-Tipp.</p>${candidates.length?`<div class="prediction-map"><h5>Kandidaten-Audit</h5><table><thead><tr><th>Kandidat</th><th>Pfad</th><th>Achse</th><th>Coverage</th><th>W/F/R/D</th><th>Score</th><th>Status</th></tr></thead><tbody>${predictionRows}</tbody></table></div>`:''}${candidates.length?'':'<p class="unavailable-note"><b>Auditwerte:</b> Safe, Balanced und Aggressive stammen aus dem run_record. Achse, Coverage und Audit-Score fehlen, weil für dieses Match kein candidates-Objekt vorhanden ist.</p>'}</section>`:''}
+    ${!nsp?`<section class="report-subsection"><h4>Prediction Map</h4><div class="pmap-line">${pmapLine}</div>${candidates.length?`<div class="prediction-map"><h5>Kandidaten</h5><div class="audit-wrap"><table class="audit-table"><thead><tr><th>Kandidat</th><th>Achse</th><th>World</th><th>Coverage</th><th>p_raw</th><th>W/F/R/D</th><th>Score</th><th>Robust.</th><th>Penalties</th><th>Status</th></tr></thead><tbody>${candidateRows}</tbody></table></div></div>`:'<p class="unavailable-note">Keine Kandidaten im run_record.</p>'}</section>`:''}
 
     <section class="report-subsection">
       <h4>${nsp?'Decision Lock':'Decision Paths & Favourite'}</h4>
       <div class="report-path-grid"><div><small>Safe</small><strong>${show(m.safe)}</strong></div><div><small>Balanced</small><strong>${show(m.balanced)}</strong></div><div><small>Aggressive</small><strong>${show(m.aggressive)}</strong></div></div>
       <div class="report-decision-grid ${nsp?'nsp':''}"><div><small>Favourite Prediction</small><strong>${nsp?'NO_STABLE_PREDICTION':show(m.favourite)}</strong></div><div><small>Model Probability Band</small><strong class="mono">${show(m.model_probability_band)}</strong></div><div><small>Model Price Band</small><strong class="mono">${show(m.model_price_band)}</strong></div><div><small>Ampel</small><strong>${ampelChip(m.ampel)}</strong></div></div>
-      <p class="model-note">Modellbänder werden unverändert aus dem run_record dargestellt. Es werden keine zusätzlichen Quoten ergänzt.</p>
     </section>
 
-    ${!nsp?`<section class="report-subsection report-audit"><h4>Kandidaten-Audit <span>candidate-Records</span></h4>${candidates.length?`<div class="audit-wrap"><table class="audit-table"><thead><tr><th>Ausdruck</th><th>Achse</th><th>Coverage</th><th>W / F / R / D</th><th>Score</th><th>Status</th></tr></thead><tbody>${candidateRows}</tbody></table></div>`:'<div class="unavailable-note"><b>Nicht im run_record:</b> Für dieses Match ist kein candidates-Objekt vorhanden.</div>'}</section>`:''}
+    ${shock?`<section class="report-subsection"><h4>Candidate Audit · Shock Test</h4><div class="report-status-grid">${shockHtml}${present(shock.robustness)?`<div><small>Robustness</small><strong>${show(shock.robustness)}</strong></div>`:''}</div></section>`:''}
 
-    <section class="report-subsection"><h4>Repair Summary &amp; Search Exhaustion</h4>${repairs.length?`<div class="report-repair-list">${repairs.map(item=>`<div class="report-repair-item"><b>${show(item.field)} · ${show(item.result)}</b><p>${arr(item.routes).length?esc(arr(item.routes).join(' → ')):'—'}${present(item.note)?' · '+esc(item.note):''}</p></div>`).join('')}</div>`:'<div class="unavailable-note"><b>Nicht im run_record:</b> Für dieses Match ist keine repair_summary vorhanden.</div>'}</section>
+    <section class="report-subsection"><h4>Repair Summary &amp; Search Exhaustion</h4>${repairs.length?`<div class="report-repair-list">${repairs.map(item=>`<div class="report-repair-item"><b>${show(item.field)} · ${show(item.result)}</b><p>${arr(item.routes).length?esc(arr(item.routes).join(' → ')):'—'}${present(item.note)?' · '+esc(item.note):''}</p></div>`).join('')}</div>`:'<div class="unavailable-note">Keine repair_summary vorhanden.</div>'}</section>
 
-    <section class="report-subsection"><h4>Source Lineage</h4>${sources.length?`<div class="report-sources">${sources.map(source=>`<div class="report-source"><strong>${show(source.name)}</strong><span>Trust · ${show(source.trust)}</span></div>`).join('')}</div>`:'<div class="unavailable-note"><b>Nicht im run_record:</b> Für dieses Match ist kein sources-Objekt vorhanden.</div>'}</section>
+    <section class="report-subsection"><h4>Source Lineage</h4>${sources.length?`<div class="report-sources">${sources.map(source=>`<div class="report-source"><strong>${show(source.name)}</strong><span>${present(source.used_for)?esc(source.used_for)+' · ':''}Trust ${show(source.trust)}${present(source.snapshot)?' · Snapshot '+esc(source.snapshot):''}</span></div>`).join('')}</div>`:'<div class="unavailable-note">Keine Source Lineage vorhanden.</div>'}</section>
 
-    <footer class="report-footer"><span>RUN_RECORD MATCH</span><b>${nsp?'NO_STABLE_PREDICTION':show(m.favourite)}</b><span>${show(m.fixture_id)}</span></footer>
+    <footer class="report-footer"><span>${show(m.commit_status)}</span><b>${nsp?'NO_STABLE_PREDICTION':show(m.favourite)}</b><span>${show(m.fixture_id)}</span></footer>
   </article>`;
 }
 
