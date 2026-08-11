@@ -265,6 +265,220 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);fon
 @media(max-width:1180px){.match-list-head{display:none}.match-list .match-card{grid-template-columns:72px minmax(210px,2fr) minmax(160px,1.2fr) 140px 95px}.match-list .list-world{display:none}}
 @media(max-width:820px){.match-list .match-card{grid-template-columns:68px 1fr auto}.match-list .list-fav{grid-column:2}.match-list .list-model{grid-column:2}.match-list .list-status{grid-column:3;grid-row:1/4}.match-list .list-open{display:none}}
 
+
+/* ==========================================================
+   AUDIT · ECOBET VISUAL REPORT STYLE
+   ========================================================== */
+#view-replay .title{margin-bottom:18px}
+#view-replay .toolbar{margin-bottom:18px}
+#replay-content{min-height:180px}
+
+.audit-context{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:18px 20px;margin:0 0 14px;
+  border:1px solid rgba(84,127,150,.28);border-radius:18px;
+  background:linear-gradient(180deg,rgba(10,25,33,.9),rgba(7,17,24,.86));
+  box-shadow:0 14px 34px rgba(0,0,0,.18);backdrop-filter:blur(10px)
+}
+.audit-context small{display:block;color:var(--muted);font:750 .62rem var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.audit-context strong{display:block;margin-top:4px;font-size:.94rem;overflow-wrap:anywhere}
+.audit-context .sub{margin-top:5px;color:var(--dim);font-size:.68rem}
+
+.audit-kpis{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;margin:0 0 16px
+}
+.audit-kpi{
+  min-width:0;padding:15px 16px;border-radius:15px;
+  border:1px solid rgba(84,127,150,.27);
+  background:linear-gradient(180deg,rgba(17,35,44,.93),rgba(9,20,27,.91));
+  box-shadow:0 8px 22px rgba(0,0,0,.13)
+}
+.audit-kpi small{
+  display:block;color:var(--muted);font:750 .63rem var(--mono);
+  letter-spacing:.08em;text-transform:uppercase
+}
+.audit-kpi b{
+  display:block;margin-top:7px;color:#cfdee3;
+  font:750 .78rem var(--mono)
+}
+.audit-kpi strong{
+  display:block;margin-top:3px;color:#eef7f8;
+  font:900 1.42rem var(--mono);line-height:1.12
+}
+.audit-kpi.hit{border-top:2px solid var(--accent)}
+.audit-kpi.hit strong{color:var(--accent)}
+.audit-kpi.miss{border-top:2px solid var(--bad)}
+.audit-kpi.miss strong{color:var(--bad)}
+
+.audit-panel{
+  margin:0 0 16px;padding:19px 20px;border-radius:18px;
+  border:1px solid rgba(84,127,150,.27);
+  background:linear-gradient(180deg,rgba(9,23,31,.82),rgba(7,17,23,.80));
+  box-shadow:0 14px 34px rgba(0,0,0,.16);backdrop-filter:blur(9px)
+}
+.audit-panel>h3{
+  margin:0 0 14px;padding:0 0 9px;
+  color:#eef5f7;font-size:1.02rem;
+  border-bottom:1px solid rgba(84,127,150,.20)
+}
+.audit-panel-note{
+  margin:10px 0 0;padding:12px 14px;border-left:3px solid var(--warn);
+  border-radius:0 11px 11px 0;background:rgba(255,200,87,.055);
+  color:var(--muted);font-size:.78rem;line-height:1.55
+}
+
+/* Final Audit Board */
+.audit-board{
+  overflow-x:auto;border:1px solid rgba(84,127,150,.23);
+  border-radius:14px;background:rgba(5,15,21,.38)
+}
+.audit-board-head,.audit-board-row{
+  min-width:1110px;
+  display:grid;
+  grid-template-columns:minmax(230px,2fr) 72px minmax(180px,1.25fr) 95px 76px 130px minmax(210px,1.35fr);
+  gap:0;align-items:stretch
+}
+.audit-board-head{
+  color:#afc8d2;background:rgba(17,38,48,.88);
+  font:750 .62rem var(--mono);letter-spacing:.06em;text-transform:uppercase
+}
+.audit-board-head>span{padding:10px 11px;border-right:1px solid rgba(84,127,150,.14)}
+.audit-board-row{border-top:1px solid rgba(84,127,150,.16)}
+.audit-board-row>div{
+  padding:10px 11px;border-right:1px solid rgba(84,127,150,.10);
+  display:flex;align-items:center;min-width:0
+}
+.audit-board-row>div:first-child{display:block}
+.audit-board-row strong{font-size:.79rem;line-height:1.35}
+.audit-result{font:900 .90rem var(--mono);color:#f2f8fa}
+.audit-pill{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:26px;padding:4px 8px;border-radius:999px;
+  border:1px solid rgba(84,127,150,.28);
+  background:rgba(12,27,35,.72);
+  font:800 .65rem var(--mono);white-space:nowrap
+}
+.audit-pill.hit{color:var(--accent);border-color:rgba(49,230,161,.38);background:rgba(49,230,161,.06)}
+.audit-pill.miss{color:var(--bad);border-color:rgba(255,101,119,.38);background:rgba(255,101,119,.055)}
+.audit-pill.mix{color:var(--warn);border-color:rgba(255,200,87,.38);background:rgba(255,200,87,.055)}
+.audit-failure{display:flex!important;align-items:center!important;gap:5px;flex-wrap:wrap}
+.audit-failure .tag{font-size:.56rem}
+
+/* Match Audit cards */
+.audit-match-list{display:grid;gap:12px}
+.audit-match{
+  overflow:hidden;border:1px solid rgba(84,127,150,.27);
+  border-radius:17px;background:linear-gradient(180deg,rgba(11,27,35,.87),rgba(7,17,23,.86))
+}
+.audit-match>summary{
+  list-style:none;cursor:pointer;
+  display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;
+  padding:15px 17px;background:rgba(10,25,33,.48)
+}
+.audit-match>summary::-webkit-details-marker{display:none}
+.audit-match>summary:hover{background:rgba(16,36,45,.58)}
+.audit-match[open]>summary{border-bottom:1px solid rgba(84,127,150,.20)}
+.audit-match-title small{
+  display:block;color:#83d7ff;font:750 .60rem var(--mono);
+  letter-spacing:.065em;text-transform:uppercase
+}
+.audit-match-title strong{display:block;margin-top:4px;font-size:1.03rem}
+.audit-match-score{
+  min-width:86px;text-align:right;color:#f5fbfc;
+  font:900 1.55rem var(--mono);line-height:1
+}
+.audit-match-score small{
+  display:block;margin-top:5px;color:var(--dim);
+  font:650 .56rem var(--mono);white-space:nowrap
+}
+.audit-match-body{padding:15px 17px 18px}
+.audit-et{
+  margin:0 0 12px;padding:10px 12px;
+  border-left:3px solid var(--warn);border-radius:0 10px 10px 0;
+  background:rgba(255,200,87,.055);color:#d7e3e6;font-size:.76rem
+}
+.audit-grid4{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;margin-bottom:14px
+}
+.audit-box{
+  min-width:0;padding:12px 13px;border-radius:13px;
+  border:1px solid rgba(84,127,150,.22);
+  background:linear-gradient(180deg,rgba(15,32,41,.88),rgba(8,19,26,.84))
+}
+.audit-box small{
+  display:block;color:var(--muted);
+  font:750 .60rem var(--mono);letter-spacing:.07em;text-transform:uppercase
+}
+.audit-box b{
+  display:block;margin-top:6px;color:#e9f1f3;
+  font-size:.80rem;line-height:1.35;overflow-wrap:anywhere
+}
+.audit-box strong{
+  display:block;margin-top:6px;font:850 .73rem var(--mono)
+}
+.audit-hit{color:var(--accent)!important}
+.audit-miss{color:var(--bad)!important}
+.audit-neutral{color:var(--warn)!important}
+
+.audit-two{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px
+}
+.audit-textbox{
+  min-width:0;padding:13px 14px;border-radius:13px;
+  border:1px solid rgba(84,127,150,.21);
+  background:rgba(8,19,26,.60)
+}
+.audit-textbox small{
+  display:block;color:#73cfff;
+  font:750 .60rem var(--mono);letter-spacing:.07em;text-transform:uppercase
+}
+.audit-textbox b{display:block;margin-top:6px;font-size:.83rem;overflow-wrap:anywhere}
+.audit-textbox p{margin:7px 0 0;color:#dce8eb;font-size:.78rem;line-height:1.5}
+.audit-textbox p.sub{color:var(--muted);font-size:.70rem}
+.audit-sources{display:grid;gap:7px}
+.audit-source{
+  padding:8px 10px;border-radius:9px;
+  border:1px solid rgba(84,127,150,.17);
+  background:rgba(7,17,23,.48);color:var(--muted);font-size:.70rem
+}
+.audit-source a{color:var(--blue);text-decoration:none}.audit-source a:hover{text-decoration:underline}
+
+.audit-integrity ul{margin:0;padding-left:19px;color:#c6d6dc}
+.audit-integrity li{margin:7px 0;font-size:.75rem;line-height:1.5}
+
+.dashboard-audit{margin-top:22px}
+.audit-history{
+  overflow-x:auto;border:1px solid rgba(84,127,150,.21);
+  border-radius:13px
+}
+.audit-history-row{
+  min-width:930px;display:grid;
+  grid-template-columns:110px minmax(260px,1fr) repeat(6,82px);
+  gap:0;align-items:center;
+  border-top:1px solid rgba(84,127,150,.14);
+  background:rgba(8,19,26,.48);font-size:.69rem
+}
+.audit-history-row>span{padding:9px 10px}
+.audit-history-row.header{
+  border-top:0;background:rgba(17,38,48,.82);
+  color:var(--dim);font:750 .59rem var(--mono);letter-spacing:.05em;text-transform:uppercase
+}
+
+@media(max-width:1050px){
+  .audit-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .audit-grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:720px){
+  .audit-context{align-items:flex-start;flex-direction:column}
+  .audit-kpis,.audit-grid4,.audit-two{grid-template-columns:1fr}
+  .audit-panel{padding:15px 13px}
+  .audit-match>summary{padding:13px}
+  .audit-match-body{padding:13px}
+  .audit-match-score{font-size:1.28rem}
+}
+
 </style>
 </head>
 <body>
@@ -401,6 +615,31 @@ const AUDIT_TEXT_DE={
   "extra-time winning goal confirmation":"Bestätigung des Siegtores in der Verlängerung",
   "90-minute 1-1 confirmation":"Bestätigung des 1:1 nach 90 Minuten"
 };
+const AUDIT_LABEL_DE={
+  'Favourite':'Favorit',
+  'Safe':'Sicher',
+  'Balanced':'Ausgewogen',
+  'Aggressive':'Aggressiv',
+  'Modal Score':'Modaler Spielstand',
+  'Modal / Actual':'Modal / Tatsächlich',
+  'Four-Score Cluster':'Vierer-Ergebniscluster',
+  'Score Band':'Ergebnisband',
+  'World Verdict':'Szenario-Bewertung',
+  'WORLD VERDICT':'Szenario-Bewertung',
+  'FAILURE CLUSTER':'Fehlercluster',
+  'PRIME_WORLD':'Hauptszenario',
+  'COUNTERWORLD':'Gegenszenario',
+  'FAVOURITE':'Favorit',
+  'SAFE':'Sicher',
+  'BALANCED':'Ausgewogen',
+  'AGGRESSIVE':'Aggressiv',
+  'Cluster':'Cluster'
+};
+function auditLabelDE(value){
+  const s=String(value??'');
+  return AUDIT_LABEL_DE[s]||auditTextDE(s);
+}
+
 function auditTextDE(value){
   if(!present(value))return value;
   let s=String(value).trim();
@@ -836,26 +1075,26 @@ function auditMetricBy(metrics,label){
   return metrics.find(m=>m.label.toLowerCase().includes(label.toLowerCase()))||null;
 }
 function renderAuditDetails(audit){
-  const heroMetrics=audit.mainMetrics.map(m=>`<div class="audit-kpi ${auditStatusClass(m.count)}"><small>${esc(auditTextDE(m.label))}</small><b>${esc(auditTextDE(m.count))}</b><strong>${esc(auditTextDE(m.value))}</strong></div>`).join('');
-  const modelMetrics=audit.modelMetrics.map(m=>`<div class="audit-kpi ${auditStatusClass(m.count)}"><small>${esc(auditTextDE(m.label))}</small><b>${esc(auditTextDE(m.count))}</b><strong>${esc(auditTextDE(m.value))}</strong></div>`).join('');
+  const heroMetrics=audit.mainMetrics.map(m=>`<div class="audit-kpi ${auditStatusClass(m.count)}"><small>${esc(auditLabelDE(m.label))}</small><b>${esc(auditTextDE(m.count))}</b><strong>${esc(auditTextDE(m.value))}</strong></div>`).join('');
+  const modelMetrics=audit.modelMetrics.map(m=>`<div class="audit-kpi ${auditStatusClass(m.count)}"><small>${esc(auditLabelDE(m.label))}</small><b>${esc(auditTextDE(m.count))}</b><strong>${esc(auditTextDE(m.value))}</strong></div>`).join('');
   const board=audit.board.map(row=>{
     const match=row.Match?.text||'';const result=row["Result 90'"]?.text||'';const favourite=row.Favourite?.text||'';const settlement=row.Settlement?.text||'';
     const cluster=row.Cluster?.text||'';const world=(row["World Verdict"]?.text||'').replace(/RESULT_ONLY/ig,'').trim();const failures=splitFailureTags(row["Failure Tags"]?.text);
     return `<div class="audit-board-row"><div><strong>${esc(match)}</strong></div><div class="audit-result">${esc(result)}</div><div>${esc(favourite)}</div><div><span class="audit-pill ${auditStatusClass(settlement)}">${esc(auditTextDE(settlement))}</span></div><div><span class="audit-pill ${cluster.includes('✓')?'hit':'miss'}">${cluster.includes('✓')?'✓':'✕'}</span></div><div><span class="audit-pill ${String(world).toUpperCase().includes('PRIME')?'hit':String(world).toUpperCase().includes('COUNTER')?'miss':'mix'}">${esc(auditTextDE(world))}</span></div><div class="audit-failure">${failures.length?failures.map(tag=>`<span class="tag reason">${esc(tag)}</span>`).join(''):'—'}</div></div>`;
   }).join('');
-  const matchDetails=audit.matches.map(match=>{
-    const core=match.core.map(m=>`<div class="audit-box"><small>${esc(auditTextDE(m.label))}</small><b>${esc(auditTextDE(m.count))}</b><strong class="${auditStatusClass(m.value)==='hit'?'audit-hit':auditStatusClass(m.value)==='miss'?'audit-miss':'audit-neutral'}">${esc(auditTextDE(m.value))}</strong></div>`).join('');
-    const paths=match.paths.map(m=>`<div class="audit-box"><small>${esc(auditTextDE(m.label))}</small><b>${esc(auditTextDE(m.count))}</b><strong class="${auditStatusClass(m.value)==='hit'?'audit-hit':auditStatusClass(m.value)==='miss'?'audit-miss':'audit-neutral'}">${esc(auditTextDE(m.value))}</strong></div>`).join('');
-    const worldAudit=match.worldAudit.map(box=>`<div class="audit-textbox"><small>${esc(auditTextDE(box.label))}</small><b>${esc(auditTextDE(box.title))}</b>${box.paras.map((p,i)=>`<p class="${i?'sub':''}">${esc(auditTextDE(p))}</p>`).join('')}</div>`).join('');
-    const worlds=match.originalWorlds.map(box=>`<div class="audit-textbox"><small>${esc(auditTextDE(box.label))}</small><p>${esc(auditTextDE(box.text))}</p></div>`).join('');
+  const matchDetails=audit.matches.map((match,matchPos)=>{
+    const core=match.core.map(m=>`<div class="audit-box"><small>${esc(auditLabelDE(m.label))}</small><b>${esc(auditTextDE(m.count))}</b><strong class="${auditStatusClass(m.value)==='hit'?'audit-hit':auditStatusClass(m.value)==='miss'?'audit-miss':'audit-neutral'}">${esc(auditTextDE(m.value))}</strong></div>`).join('');
+    const paths=match.paths.map(m=>`<div class="audit-box"><small>${esc(auditLabelDE(m.label))}</small><b>${esc(auditTextDE(m.count))}</b><strong class="${auditStatusClass(m.value)==='hit'?'audit-hit':auditStatusClass(m.value)==='miss'?'audit-miss':'audit-neutral'}">${esc(auditTextDE(m.value))}</strong></div>`).join('');
+    const worldAudit=match.worldAudit.map(box=>`<div class="audit-textbox"><small>${esc(auditLabelDE(box.label))}</small><b>${esc(auditTextDE(box.title))}</b>${box.paras.map((p,i)=>`<p class="${i?'sub':''}">${esc(auditTextDE(p))}</p>`).join('')}</div>`).join('');
+    const worlds=match.originalWorlds.map(box=>`<div class="audit-textbox"><small>${esc(auditLabelDE(box.label))}</small><p>${esc(auditTextDE(box.text))}</p></div>`).join('');
     const sources=match.sources.length?`<div class="audit-sources">${match.sources.map(s=>`<div class="audit-source">${s.href?`<a href="${esc(s.href)}" target="_blank" rel="noopener">${esc(s.text.split(' — ')[0])}</a>`:esc(s.text)}${s.text.includes(' — ')?` — ${esc(auditTextDE(s.text.split(' — ').slice(1).join(' — ')))}`:''}</div>`).join('')}</div>`:'';
-    return `<details class="audit-match"><summary><div class="audit-match-title"><small>${esc(auditTextDE(match.eyebrow))}</small><strong>${esc(match.teamTitle)}</strong></div><div class="audit-match-score">${esc(match.score)}<small>90 Minuten + Nachspielzeit</small></div></summary><div class="audit-match-body">${match.et?`<div class="audit-et">${esc(auditTextDE(match.et))}</div>`:''}<div class="audit-grid4">${core}</div><h5 class="detail-mini-title">Auswertung der Prognosewege</h5><div class="audit-grid4">${paths}</div><h5 class="detail-mini-title">Szenario- &amp; Fehleraudit</h5><div class="audit-two">${worldAudit}</div><h5 class="detail-mini-title">Ursprünglich festgeschriebene Szenarien</h5><div class="audit-two">${worlds}</div>${sources?`<h5 class="detail-mini-title">Resultatquellen</h5>${sources}`:''}</div></details>`;
+    return `<details class="audit-match" ${matchPos===0?'open':''}><summary><div class="audit-match-title"><small>${esc(auditTextDE(match.eyebrow))}</small><strong>${esc(match.teamTitle)}</strong></div><div class="audit-match-score">${esc(match.score)}<small>90 Minuten + Nachspielzeit</small></div></summary><div class="audit-match-body">${match.et?`<div class="audit-et">${esc(auditTextDE(match.et))}</div>`:''}<div class="audit-grid4">${core}</div><h5 class="detail-mini-title">Auswertung der Prognosewege</h5><div class="audit-grid4">${paths}</div><h5 class="detail-mini-title">Szenario- &amp; Fehleraudit</h5><div class="audit-two">${worldAudit}</div><h5 class="detail-mini-title">Ursprünglich festgeschriebene Szenarien</h5><div class="audit-two">${worlds}</div>${sources?`<h5 class="detail-mini-title">Resultatquellen</h5>${sources}`:''}</div></details>`;
   }).join('');
-  return `<div class="audit-context"><div><small>Festgeschriebener Lauf</small><strong>${esc(audit.run_id||'—')}</strong>${audit.resolved_path?`<div class="sub mono">Quelle: ${esc(audit.resolved_path)}${audit.source_type==='json'?' · JSON':''}</div>`:''}</div><span class="chip green">${esc(dateLabel(audit.date||''))}</span></div>
+  return `<div class="audit-context"><div><small>Festgeschriebener Lauf</small><strong>${esc(audit.run_id||'—')}</strong>${audit.resolved_path?`<div class="sub mono">Audit-Quelle · ${esc(audit.resolved_path)}</div>`:''}</div><span class="chip green">${esc(dateLabel(audit.date||''))}</span></div>
     <div class="audit-kpis">${heroMetrics}</div>
-    <section class="audit-panel"><h3>Audit auf Laufebene</h3><div class="audit-kpis">${modelMetrics}</div>${audit.modelNote?`<p class="audit-panel-note">${esc(auditTextDE(audit.modelNote))}</p>`:''}</section>
-    <section class="audit-panel"><h3>Finale Audit-Übersicht</h3><div class="audit-board"><div class="audit-board-head"><span>Spiel</span><span>90'</span><span>Favorit</span><span>Auswertung</span><span>Cluster</span><span>Szenario</span><span>Fehlerkennzeichen</span></div>${board}</div></section>
-    <section class="audit-panel"><h3>Match-Audits</h3><div class="audit-match-list">${matchDetails}</div></section>
+    <section class="audit-panel"><h3>Modell-Audit auf Laufebene</h3><div class="audit-kpis">${modelMetrics}</div>${audit.modelNote?`<p class="audit-panel-note">${esc(auditTextDE(audit.modelNote))}</p>`:''}</section>
+    <section class="audit-panel"><h3>Finales Audit-Board</h3><div class="audit-board"><div class="audit-board-head"><span>Spiel</span><span>90'</span><span>Favorit</span><span>Auswertung</span><span>Cluster</span><span>Szenario</span><span>Fehlerkennzeichen</span></div>${board}</div></section>
+    <section class="audit-panel"><h3>Detail-Audits pro Spiel</h3><div class="audit-match-list">${matchDetails}</div></section>
     ${audit.integrityItems.length?`<section class="audit-panel audit-integrity"><h3>Audit-Integrität &amp; Grenzen</h3><ul>${audit.integrityItems.map(x=>`<li>${esc(auditTextDE(x))}</li>`).join('')}</ul></section>`:''}`;
 }
 async function loadAuditEntry(entry){
