@@ -1,0 +1,31 @@
+{
+  "team_id": "uefa_nec_nijmegen",
+  "team_name": "NEC Nijmegen",
+  "date": "2026-08-11",
+  "snapshot_id": "snap_20260811_134615",
+  "fixture_ids": [
+    "UCL2627_3c35e5df45bf"
+  ],
+  "feature_state": {},
+  "feature_status": {
+    "n_features": 0,
+    "blocks_present": [],
+    "blocks_missing": [
+      "domestic_full_feature_vector",
+      "df09_goals_phase_profile",
+      "all_competitions_context"
+    ],
+    "n_null_values": 0,
+    "missing_semantics": "null bedeutet NICHT_VORHANDEN - niemals 0 oder false"
+  },
+  "feature_lineage": {
+    "upstream_sources": [],
+    "by_feature": {},
+    "transport_layer": "GitHub Pages (kein Upstream)"
+  },
+  "feature_cutoff": {
+    "point_in_time_rule": "ausschliesslich Spiele mit Datum < scheduled_date",
+    "cutoff_date": "2026-08-11",
+    "own_fixture_excluded": true
+  }
+}
