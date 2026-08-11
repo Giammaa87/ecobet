@@ -539,8 +539,8 @@ function collectNamedFiles(obj,fileName,out=new Set()){
 }
 function findSnapshotId(obj){
   if(!obj||typeof obj!=='object')return null;
-  const direct=firstValue(obj,['snapshot_id','snapshotId','snapshot.id','latest.snapshot_id','latest.snapshotId','id']);
-  if(typeof direct==='string'&&direct.toLowerCase().startsWith('snap'))return direct;
+  const direct=firstValue(obj,['snapshot_id','snapshotId','data_snapshot_id','dataSnapshotId','snapshot.id','latest.snapshot_id','latest.snapshotId']);
+  if(typeof direct==='string'&&direct.trim())return direct.trim();
   for(const value of Object.values(obj)){if(value&&typeof value==='object'){const found=findSnapshotId(value);if(found)return found}}
   return null;
 }
@@ -620,16 +620,22 @@ function hasAnalysis(fixture,availability){
   return (fixture.fixtureId&&availability.ids.has(fixture.fixtureId))||availability.pairs.has(fixtureKey(fixture.home,fixture.away));
 }
 async function loadLatestFixtures(){
-  const latest=await loadJSON(DATA+'latest.json');
-  if(!latest)return {error:'data/latest.json konnte nicht geladen werden.'};
+  const runDate=todayISO();
+  const latestCandidates=[`${DATA}${runDate}/latest.json`,DATA+'latest.json'];
+  let latest=null,latestPath=null;
+  for(const path of latestCandidates){
+    const candidate=await loadJSON(path);
+    if(candidate){latest=candidate;latestPath=path;break}
+  }
+  if(!latest)return {error:`${DATA}${runDate}/latest.json konnte nicht geladen werden.`,tried:latestCandidates};
 
   const embedded=fixtureArray(latest);
-  if(embedded.length)return {latest,manifest:null,doc:latest,path:'data/latest.json (embedded)'};
+  if(embedded.length)return {latest,latestPath,manifest:null,doc:latest,path:`${latestPath} (embedded)`};
 
   const fixturePaths=[...collectNamedFiles(latest,'fixtures.json')].map(path=>normalizePath(path)).filter(Boolean);
   const manifestPaths=[...collectNamedFiles(latest,'manifest.json')].map(path=>normalizePath(path)).filter(Boolean);
   const latestSnapshotId=findSnapshotId(latest);
-  const latestSnapshotDate=findSnapshotDate(latest);
+  const latestSnapshotDate=findSnapshotDate(latest)||runDate;
   const latestBundlePath=findBundlePath(latest);
   if(latestBundlePath)manifestPaths.push(latestBundlePath+'/manifest.json');
   if(latestSnapshotId){
@@ -670,20 +676,20 @@ async function loadLatestFixtures(){
   const unique=[...new Set(fixturePaths.filter(Boolean))].slice(0,20);
   for(const path of unique){
     const doc=await loadJSON(path);
-    if(doc&&fixtureArray(doc).length)return {latest,manifest,manifestPath,doc,path};
+    if(doc&&fixtureArray(doc).length)return {latest,latestPath,manifest,manifestPath,doc,path};
   }
-  return {latest,manifest,manifestPath,error:'fixtures.json wurde über latest.json/manifest.json nicht gefunden.',tried:unique};
+  return {latest,latestPath,manifest,manifestPath,error:'fixtures.json wurde über latest.json/manifest.json nicht gefunden.',tried:unique};
 }
 async function renderFixtures(force=false){
   if(FIXTURES_LOADING)return;
   if(FIXTURES_LOADED&&!force)return;
   FIXTURES_LOADING=true;
   const box=document.getElementById('fixtures-content');const title=document.getElementById('fixtures-title');
-  box.innerHTML=empty('Fixtures werden geladen …','latest.json, manifest.json und das aktuelle Snapshot-Bundle werden geprüft.');
+  box.innerHTML=empty('Fixtures werden geladen …','Tages-latest.json, manifest.json und das aktuelle Snapshot-Bundle werden geprüft.');
   try{
     const bundle=await loadLatestFixtures();
     if(bundle.error){
-      box.innerHTML=empty('Noch keine Tagesfixtures verfügbar.',bundle.error,'data/latest.json → manifest.json → fixtures.json');
+      box.innerHTML=empty('Noch keine Tagesfixtures verfügbar.',bundle.error,`${DATA}${todayISO()}/latest.json → manifest.json → fixtures.json`);
       if(bundle.tried&&bundle.tried.length)box.innerHTML+=`<div class="fixture-source">Geprüft: ${bundle.tried.map(esc).join(' · ')}</div>`;
       return;
     }
@@ -713,7 +719,7 @@ async function renderFixtures(force=false){
         html+='</tbody></table></div></div>';
       });
     }
-    html+=`<div class="fixture-source">Quelle: ${esc(bundle.path)}${bundle.manifestPath?' · Manifest: '+esc(bundle.manifestPath):''}</div>`;
+    html+=`<div class="fixture-source">Latest: ${esc(bundle.latestPath||`${DATA}${snapshotDate}/latest.json`)} · Quelle: ${esc(bundle.path)}${bundle.manifestPath?' · Manifest: '+esc(bundle.manifestPath):''}</div>`;
     box.innerHTML=html;
     box.querySelectorAll('[data-open-run-date]').forEach(button=>button.addEventListener('click',async()=>{
       const date=button.dataset.openRunDate;document.getElementById('run-date').value=date;activateView('runs');await renderRuns(date);
