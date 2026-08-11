@@ -195,7 +195,8 @@ tbody tr.match-row.open td.match::after{content:'–';color:var(--accent)}tr.det
 .report-footer{display:flex;justify-content:space-between;gap:15px;padding:14px 24px;background:#09151b;color:var(--muted);font-size:.78rem}.report-footer b{color:var(--accent)}
 .availability-table{overflow:auto;border:1px solid var(--line);border-radius:14px}.availability-table table{min-width:760px}.availability-table code{color:var(--blue)}
 .availability-table .missing-row td{color:var(--dim)}.availability-table .missing-row td:nth-child(3){color:var(--bad)}
-.report-team-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.report-team-card{background:rgba(10,20,28,.76);border:1px solid rgba(84,127,150,.28);border-radius:18px;padding:17px;backdrop-filter:blur(9px)}.report-team-card h5{font-size:1.2rem;margin:0 0 10px}.team-role{display:inline-flex;align-items:center;gap:6px;margin:0 0 14px;padding:5px 10px;border-radius:999px;border:1px solid rgba(49,230,161,.22);background:rgba(49,230,161,.06);color:#cfe8de;font:700 10px var(--mono);letter-spacing:.06em;text-transform:uppercase}.team-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px}.team-tile{padding:10px 12px;border-radius:14px;border:1px solid rgba(84,127,150,.26);background:linear-gradient(180deg,rgba(16,31,39,.95),rgba(10,20,28,.92))}.team-tile small{display:block;color:var(--muted);font:700 .68rem var(--mono);letter-spacing:.05em;text-transform:uppercase}.team-tile b{display:block;margin-top:5px;color:var(--text);font-size:.98rem;line-height:1.2}.team-tile span{display:block;margin-top:6px;color:var(--dim);font:700 .66rem var(--mono);letter-spacing:.03em}
+.report-team-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.report-team-card{background:rgba(10,20,28,.76);border:1px solid rgba(84,127,150,.28);border-radius:18px;padding:18px 22px;backdrop-filter:blur(9px)}.report-team-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 0 12px}.report-team-head h5{font-size:1.2rem;margin:0;line-height:1.15}.team-role{display:inline-flex;align-items:center;gap:6px;margin-top:7px;color:#9bb9c5;font:700 .66rem var(--mono);letter-spacing:.06em;text-transform:uppercase}.team-badge{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,200,87,.7);border-radius:999px;padding:6px 12px;color:#ffd36e;font:800 .78rem var(--mono);letter-spacing:.04em;background:rgba(255,200,87,.06)}
+.team-summary{display:grid;gap:0}.team-row{display:grid;grid-template-columns:190px 1fr;gap:18px;padding:12px 0;border-top:1px solid rgba(84,127,150,.18)}.team-row:first-child{border-top:1px solid rgba(84,127,150,.18)}.team-key{color:#93b1bd;font-weight:750;line-height:1.35}.team-value{color:#e4edf0;line-height:1.45;font-weight:450}.team-note{display:block;margin-top:4px;color:#93aeb8;font:700 .66rem var(--mono);letter-spacing:.03em}
 .unavailable-note{background:rgba(57,189,248,.06);border:1px solid rgba(57,189,248,.35);padding:14px;border-radius:14px;color:#c8dbe2}.unavailable-note b{color:var(--blue)}
 .report-axis-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:14px}.axis-tile{position:relative;overflow:hidden;background:linear-gradient(155deg,rgba(18,35,44,.94),rgba(9,20,27,.94));border:1px solid rgba(84,127,150,.28);border-radius:16px;padding:14px 14px 15px}.axis-tile::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--accent),var(--blue))}.axis-tile small{display:block;color:var(--muted);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}.axis-tile strong{display:block;color:#dff2f6;font-size:.88rem;line-height:1.25;overflow-wrap:anywhere}
 .prediction-map{overflow:auto;border:1px solid var(--line);border-radius:14px}.prediction-map table{min-width:760px}.prediction-map td:first-child{font-weight:750}.prediction-map .path-name{color:var(--accent);font-family:var(--mono);font-size:11px}
@@ -209,7 +210,7 @@ tbody tr.match-row.open td.match::after{content:'–';color:var(--accent)}tr.det
 footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);font-size:12px}
 
 @media(max-width:1050px){.detail{position:sticky;left:0;width:calc(94vw - 2px);max-width:calc(94vw - 2px)}.decision-card{grid-template-columns:repeat(2,1fr)}.decision-cell{border-bottom:1px solid var(--line-soft)}.decision-cell.primary{grid-column:1/-1}.strategy-grid,.evidence-grid{grid-template-columns:1fr}.world-grid{grid-template-columns:1fr}.detail-id{text-align:left}.detail-header{display:grid}.report-status-grid{grid-template-columns:repeat(2,1fr)}.report-decision-grid{grid-template-columns:repeat(2,1fr)}.report-score-grid{grid-template-columns:1fr 2fr}.report-score-grid>div:last-child{grid-column:1/-1}.report-axis-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:760px){.match-grid{grid-template-columns:1fr}.match-paths-mini{grid-template-columns:1fr}.match-bands{grid-template-columns:1fr 1fr}header.hero{padding:24px 0 28px}.hero-grid{grid-template-columns:1fr;gap:18px}.toolbar{align-items:stretch;flex-direction:column}.pill-group{width:100%}.pill{flex:1 1 auto}.filter-group{align-items:flex-start}.filter-group-label{width:100%}.drift-item{grid-template-columns:1fr;gap:9px}.drift-legend{margin-left:0}.detail{padding:17px 14px}.detail.match-report{padding:0}.decision-card{grid-template-columns:1fr}.decision-cell.primary{grid-column:auto}.nsp-note{grid-column:auto}.meta-grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.report-match-header,.report-subsection{padding:18px 14px}.report-worlds,.report-path-grid,.report-team-grid{grid-template-columns:1fr}.report-status-grid,.report-score-grid,.report-decision-grid,.report-axis-grid{grid-template-columns:1fr 1fr}.report-score-grid>div:last-child{grid-column:auto}.report-footer{flex-direction:column;padding:14px}.report-anchor{display:block}.report-anchor .chip{margin-bottom:9px}.team-tiles{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.match-grid{grid-template-columns:1fr}.match-paths-mini{grid-template-columns:1fr}.match-bands{grid-template-columns:1fr 1fr}header.hero{padding:24px 0 28px}.hero-grid{grid-template-columns:1fr;gap:18px}.toolbar{align-items:stretch;flex-direction:column}.pill-group{width:100%}.pill{flex:1 1 auto}.filter-group{align-items:flex-start}.filter-group-label{width:100%}.drift-item{grid-template-columns:1fr;gap:9px}.drift-legend{margin-left:0}.detail{padding:17px 14px}.detail.match-report{padding:0}.decision-card{grid-template-columns:1fr}.decision-cell.primary{grid-column:auto}.nsp-note{grid-column:auto}.meta-grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.report-match-header,.report-subsection{padding:18px 14px}.report-worlds,.report-path-grid,.report-team-grid{grid-template-columns:1fr}.report-status-grid,.report-score-grid,.report-decision-grid,.report-axis-grid{grid-template-columns:1fr 1fr}.report-score-grid>div:last-child{grid-column:auto}.report-footer{flex-direction:column;padding:14px}.report-anchor{display:block}.report-anchor .chip{margin-bottom:9px}.team-row{grid-template-columns:1fr}.report-team-head{display:block}.matchbook-overview,.prediction-overview{grid-template-columns:1fr}}
 @media(max-width:430px){.wrap{width:min(94vw,1400px)}.kpis{grid-template-columns:1fr 1fr}.kpi strong{font-size:21px}.decision-cell{border-right:0}}
 
 .status-line{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 6px}
@@ -320,8 +321,14 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);fon
 </section>
 
 <section id="view-replay" class="view">
-  <div class="title"><div><div class="eyebrow">04 · Audit</div><h2>Szenario-Bewertungen und Fehlerkennzeichen</h2></div><p>Befunde sind Kalibrierungsdiagnosen und führen nicht automatisch zu einer Änderung der Norm. Dieser Bereich arbeitet immer mit dem aktuell gewählten Lauf aus „Läufe“ und hat deshalb kein eigenes Kalenderfeld.</p></div>
-  <div id="replay-content"></div>
+  <div class="title"><div><div class="eyebrow">04 · Audit</div><h2>Ergebnisprüfung &amp; Modell-Audit</h2></div><p>Append-only Auswertung eines festgeschriebenen ECOBET Laufs. Originalprognosen bleiben unverändert; Resultate, Treffer, Szenario-Bewertungen und Fehlerkennzeichen werden separat ausgewertet.</p></div>
+  <div class="toolbar">
+    <span class="toolbar-label">Audit-Datum</span>
+    <input type="date" id="audit-date" aria-label="Audit-Datum wählen">
+    <button class="btn" id="audit-go" type="button">Audit anzeigen</button>
+    <div class="pill-group" id="audit-pills" aria-label="Audit auswählen"></div>
+  </div>
+  <div id="replay-content" aria-live="polite"></div>
 </section>
 
 <section id="view-dashboard" class="view">
@@ -337,12 +344,13 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);fon
 /* runs/ enthält ECOBET-Run-Output. data/ wird nur für die neutrale Tagesfixture-Übersicht gelesen. */
 const RUNS='runs/';
 const DATA='data/';
+const AUDITS='audits/';
 const NSP='NO_STABLE_PREDICTION';
 const NA='NOT_AVAILABLE';
 const MISSING='__MISSING__';
 let INDEX=null,CURRENT_RUN=null,COMP_FILTER={kind:'all',value:'ALL'};
 let RUN_RENDER_TOKEN=0,RUN_LOAD_TOKEN=0,ACTIVE_RUN_DATE=null;
-let DASHBOARD_LOADED=false,DASHBOARD_LOADING=false,FIXTURES_LOADED=false,FIXTURES_LOADING=false;
+let DASHBOARD_LOADED=false,DASHBOARD_LOADING=false,FIXTURES_LOADED=false,FIXTURES_LOADING=false,AUDIT_INDEX=null,AUDIT_LOADED_DATE=null;
 let RUN_LAYOUT='tiles';
 try{RUN_LAYOUT=localStorage.getItem('ecobet_run_layout')==='list'?'list':'tiles'}catch{}
 
@@ -360,13 +368,51 @@ const DISPLAY_DE={
   COMMITTED:'Festgeschrieben',UNRESOLVED:'Ungeklärt',INTEGRITY_HOLD:'Integritätssperre',
   WEB_FALLBACK:'Web-Ersatzquelle',UNREACHABLE:'Nicht erreichbar',AVAILABLE:'Verfügbar',
   CONTROL_HOME:'Heimkontrolle',CONTROL_AWAY:'Auswärtskontrolle',
+  'Strength Baseline':'Stärkenbasis','Form / Current':'Form / Aktuell',Process:'Prozess','Goal / Role Profile':'Tor- / Rollenprofil','Availability / Load':'Verfügbarkeit / Belastung',Completeness:'Vollständigkeit',
   COUNTER_CONTROL_AWAY:'Auswärtskontrolle über Umschaltspiel',
   BALANCED_NARROW:'Ausgeglichen und eng',GOALS_OPEN:'Offenes Torszenario',
   TRANSITION_CHAOS:'Umschaltspiel mit hoher Unordnung',
   KO_STATE_DEPENDENT:'Vom K.-o.-Stand abhängig',
   Hauptszenario:'Hauptszenario',Gegenszenario:'Gegenszenario',
-  VALID:'Gültig',HOLDS:'Hält stand',BENDS:'Wird schwächer'
+  VALID:'Gültig',HOLDS:'Hält stand',BENDS:'Wird schwächer',
+  HIT:'Treffer',MISS:'Fehlgriff',PRIME:'Hauptszenario',MIXED:'Gemischt',
+  RESULT_ONLY:'Nur Resultat'
 };
+const AUDIT_TEXT_DE={
+  "Append-only audit against the committed run":"Append-only Audit gegen den festgeschriebenen Lauf",
+  "Original predictions, worlds, cluster, probability bands, model prices and ampels remain unchanged.":"Originalprognosen, Szenarien, Cluster, Wahrscheinlichkeitsbänder, Modellpreise und Ampeln bleiben unverändert.",
+  "All 11 original predictions were YELLOW / CONDITIONAL. Therefore today's YELLOW Favourite hit rate is 81.8% and YELLOW cluster hit rate is 63.6%. One slate is not sufficient for a normative calibration change.":"Alle 11 ursprünglichen Prognosen waren GELB / BEDINGT. Die heutige Trefferquote der favorisierten GELB-Prognosen beträgt deshalb 81,8 %, die GELB-Cluster-Trefferquote 63,6 %. Ein einzelner Spieltag reicht nicht für eine normative Kalibrierungsänderung.",
+  "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence.":"Es wird nur die Kompatibilität des Ergebnismusters bewertet. Aus einer Evidenz vom Typ RESULT_ONLY wird keine detaillierte Aussage über den tatsächlichen Spielverlauf abgeleitet.",
+  "Favourite miss and/or cluster diagnostic only. No retrospective model rewrite.":"Nur Diagnose eines Fehlgriffs der favorisierten Prognose und/oder des Clusters. Keine nachträgliche Umschreibung des Modells.",
+  "0-1 is directly counter-compatible: the committed alternative allowed a compressed match with Kairat failing to convert.":"Das 0:1 ist direkt mit dem Gegenszenario vereinbar: Die festgeschriebene Alternative erlaubte ein enges Spiel, in dem Kairat seine Chancen nicht verwertet.",
+  "2-2 at 90' matches the committed high-event, two-sided scoring world and is an exact cluster score.":"Das 2:2 nach 90 Minuten entspricht dem festgeschriebenen ereignisreichen Szenario mit Torwegen auf beiden Seiten und liegt exakt im Ergebniscluster.",
+  "Four total goals fit the open-event expectation, but the committed two-sided AGF scoring path did not materialise in the scoreline.":"Vier Gesamttore passen zur Erwartung eines offenen Spiels, der festgeschriebene beidseitige Torweg mit AGF zeigte sich im Endresultat jedoch nicht.",
+  "1-1 at 90' is an exact cluster score inside the committed compressed low-total world.":"Das 1:1 nach 90 Minuten ist ein exakter Cluster-Spielstand innerhalb des festgeschriebenen engen Szenarios mit niedriger Torzahl.",
+  "1-2 is an exact cluster score and retains the committed Dinamo scoring/directional edge.":"Das 1:2 ist ein exakter Cluster-Spielstand und bestätigt den festgeschriebenen Tor- und Richtungsvorteil von Dinamo.",
+  "1-1 at 90' is an exact cluster score and remains inside the committed balanced/narrow regulation-time world.":"Das 1:1 nach 90 Minuten ist ein exakter Cluster-Spielstand und bleibt innerhalb des festgeschriebenen ausgeglichenen und engen 90-Minuten-Szenarios.",
+  "0-2 is counter-compatible because the alternative world explicitly allowed Red Star conversion failure and Hapoel protection of the tie.":"Das 0:2 ist mit dem Gegenszenario vereinbar, weil die Alternative ausdrücklich eine schwache Chancenverwertung von Roter Stern und eine erfolgreiche Absicherung durch Hapoel zuliess.",
+  "Two goals validate the open-total axis, but the two-sided scoring mechanism did not appear in the 2-0 scoreline.":"Zwei Tore bestätigen die offene Torachse, der beidseitige Tormechanismus zeigte sich beim 2:0 jedoch nicht.",
+  "2-0 is an exact cluster score and fits Slovan control plus a home scoring path.":"Das 2:0 ist ein exakter Cluster-Spielstand und passt zu Slovans Kontrolle sowie zum festgeschriebenen Heim-Torweg.",
+  "0-1 is an exact cluster score and fits the committed Fenerbahce away scoring/counter-control path.":"Das 0:1 ist ein exakter Cluster-Spielstand und passt zum festgeschriebenen Auswärts-Torweg und zur Umschaltkontrolle von Fenerbahçe.",
+  "The high-event total axis was right, but the scoreline was one-sided rather than the committed two-sided cluster.":"Die ereignisreiche Torachse war richtig, das Resultat war jedoch einseitig und nicht wie im festgeschriebenen beidseitigen Cluster.",
+  "Competition final:":"Endstand des Wettbewerbs:",
+  "Extra time excluded from ECOBET settlement.":"Verlängerung ist von der ECOBET Auswertung ausgeschlossen.",
+  "official result confirmation":"offizielle Bestätigung des Resultats",
+  "official final/AET confirmation":"offizielle Bestätigung des Endstands inklusive Verlängerung",
+  "regulation-time / extra-time transition confirmation":"Bestätigung des Übergangs von regulärer Spielzeit zur Verlängerung",
+  "90-minute 1-1 and extra-time confirmation":"Bestätigung des 1:1 nach 90 Minuten und der Verlängerung",
+  "extra-time winning goal confirmation":"Bestätigung des Siegtores in der Verlängerung",
+  "90-minute 1-1 confirmation":"Bestätigung des 1:1 nach 90 Minuten"
+};
+function auditTextDE(value){
+  if(!present(value))return value;
+  let s=String(value).trim();
+  if(Object.prototype.hasOwnProperty.call(AUDIT_TEXT_DE,s))return AUDIT_TEXT_DE[s];
+  for(const [en,de] of Object.entries(AUDIT_TEXT_DE)){
+    if(s.includes(en))s=s.replaceAll(en,de);
+  }
+  return displayDE(s);
+}
 const NARRATIVE_DE={
   "Kairat's home chase raises attacking load, while Levski's stronger current-season control creates a live counter path.":"Kairats Aufholjagd zu Hause erhöht den Angriffsdruck, während Levskis stärkere aktuelle Kontrolle einen gefährlichen Konterweg offenhält.",
   "Kairat push earlier than in a neutral game; home volume rises, but Levski retain transition access and can punish overextension.":"Kairat muss früher Druck machen als in einem neutralen Spiel. Das Heimvolumen steigt, Levski behält jedoch Umschaltmöglichkeiten und kann zu grosses Aufrücken bestrafen.",
@@ -554,6 +600,200 @@ async function loadJSON(path){
   return Object.prototype.hasOwnProperty.call(local,path)?local[path]:null;
 }
 async function getIndex(force=false){if(force||!INDEX)INDEX=await loadJSON(RUNS+'index.json');return INDEX}
+async function loadText(path){
+  try{
+    const sep=path.includes('?')?'&':'?';
+    const url=location.protocol==='file:'?path:`${path}${sep}_ecobet=${Date.now()}`;
+    const response=await fetch(url,{cache:'no-store'});
+    if(response.ok)return await response.text();
+  }catch{}
+  return null;
+}
+async function getAuditIndex(force=false){
+  if(force||!AUDIT_INDEX)AUDIT_INDEX=await loadJSON(AUDITS+'index.json');
+  return AUDIT_INDEX;
+}
+function normalizeAuditIndex(index){
+  const out=[];
+  if(index&&index.dates&&typeof index.dates==='object'){
+    Object.entries(index.dates).forEach(([date,items])=>{
+      arr(items).forEach((item,pos)=>{
+        if(typeof item==='string'){
+          const file=item.endsWith('.html')?item:(item.endsWith('.json')?item:`${item}.html`);
+          out.push({date,id:item.replace(/\.(html|json)$/i,''),file,run_id:null,pos});
+        }else if(item&&typeof item==='object'){
+          const file=item.file||item.path||item.filename||item.audit_file;
+          if(file)out.push({date,id:item.id||item.audit_id||file.replace(/\.(html|json)$/i,''),file,run_id:item.run_id||null,generated_at:item.generated_at||null,pos});
+        }
+      });
+    });
+  }
+  if(index&&Array.isArray(index.audits)){
+    index.audits.forEach((item,pos)=>{
+      if(!item||typeof item!=='object')return;
+      const date=item.date||item.audit_date;
+      const file=item.file||item.path||item.filename||item.audit_file;
+      if(date&&file)out.push({date,id:item.id||item.audit_id||file.replace(/\.(html|json)$/i,''),file,run_id:item.run_id||null,generated_at:item.generated_at||null,pos});
+    });
+  }
+  const seen=new Set();
+  return out.filter(item=>{
+    const key=`${item.date}|${item.file}`;if(seen.has(key))return false;seen.add(key);return true;
+  }).sort((a,b)=>String(a.date).localeCompare(String(b.date))||a.pos-b.pos);
+}
+function auditPath(file){
+  if(/^https?:\/\//i.test(file)||file.startsWith(AUDITS))return file;
+  return AUDITS+file.replace(/^\/+/,'');
+}
+function auditFallbackCandidates(date){
+  return [
+    `${AUDITS}ECOBET_${date}_RESULT_AUDIT.html`,
+    `${AUDITS}ECOBET_${date}_RESULT_AUDIT(1).html`,
+    `${AUDITS}${date}_RESULT_AUDIT.html`,
+    `${AUDITS}${date}.html`
+  ];
+}
+async function resolveAuditEntries(date){
+  const idx=await getAuditIndex();
+  const listed=normalizeAuditIndex(idx).filter(item=>item.date===date);
+  if(listed.length)return listed;
+  return auditFallbackCandidates(date).map((path,pos)=>({date,id:`${date}_${pos}`,file:path,run_id:null,pos,fallback:true}));
+}
+function textOf(el){return el?el.textContent.replace(/\s+/g,' ').trim():''}
+function parseFraction(text){
+  const m=String(text||'').match(/(\d+)\s*\/\s*(\d+)/);return m?{hits:Number(m[1]),total:Number(m[2])}:null;
+}
+function parsePercent(text){
+  const m=String(text||'').match(/(-?\d+(?:\.\d+)?)\s*%/);return m?Number(m[1]):null;
+}
+function parseAuditMetricBox(el){
+  const label=textOf(el.querySelector('small'));
+  const count=textOf(el.querySelector('b'));
+  const value=textOf(el.querySelector('strong'));
+  const frac=parseFraction(count);
+  return {label,count,value,hits:frac&&frac.hits,total:frac&&frac.total,percent:parsePercent(value)};
+}
+function parseAuditTable(table){
+  if(!table)return [];
+  const heads=[...table.querySelectorAll('thead th')].map(textOf);
+  return [...table.querySelectorAll('tbody tr')].map(tr=>{
+    const cells=[...tr.querySelectorAll('td')].map(td=>({text:textOf(td),html:td.innerHTML,className:td.className}));
+    const row={};heads.forEach((head,i)=>row[head]=cells[i]||{text:'',html:'',className:''});return row;
+  });
+}
+function splitFailureTags(text){return String(text||'').split(/[,\u00b7]/).map(x=>x.trim()).filter(x=>x&&x!=='—')}
+function parseAuditHTML(text,path){
+  const doc=new DOMParser().parseFromString(text,'text/html');
+  const panels=[...doc.querySelectorAll('section.panel')];
+  const hero=doc.querySelector('header.hero');
+  const title=textOf(hero&&hero.querySelector('h1'))||textOf(doc.querySelector('h1'));
+  const heroP=textOf(hero&&hero.querySelector('p'));
+  const dateMatch=(title+' '+heroP).match(/(\d{2})\.(\d{2})\.(\d{4})|(\d{4}-\d{2}-\d{2})/);
+  let date=null;if(dateMatch)date=dateMatch[4]||`${dateMatch[3]}-${dateMatch[2]}-${dateMatch[1]}`;
+  const runMatch=heroP.match(/RUN_[A-Z0-9_-]+/i);
+  const mainMetrics=[...(hero?hero.querySelectorAll('.kpis>div'):[])].map(parseAuditMetricBox);
+  const modelPanel=panels.find(p=>/Run-Level Model Audit/i.test(textOf(p.querySelector('h2'))));
+  const modelMetrics=[...(modelPanel?modelPanel.querySelectorAll('.kpis>div'):[])].map(parseAuditMetricBox);
+  const modelNote=textOf(modelPanel&&modelPanel.querySelector('.note'));
+  const boardPanel=panels.find(p=>/Final Audit Board/i.test(textOf(p.querySelector('h2'))));
+  const board=parseAuditTable(boardPanel&&boardPanel.querySelector('table'));
+  const pathsPanel=panels.find(p=>/Safe\s*\/\s*Balanced\s*\/\s*Aggressive\s*\/\s*Favourite/i.test(textOf(p.querySelector('h2'))));
+  const paths=parseAuditTable(pathsPanel&&pathsPanel.querySelector('table'));
+  const matches=[...doc.querySelectorAll('section.match')].map((section,index)=>{
+    const teamTitle=textOf(section.querySelector('.matchhead h2')).replace(/\s+vs\s+/i,' – ');
+    const score=textOf(section.querySelector('.score')).replace(/90'.*$/i,'').trim();
+    const eyebrow=textOf(section.querySelector('.matchhead .eyebrow'));
+    const et=textOf(section.querySelector('.et'));
+    const grids=[...section.querySelectorAll(':scope > .grid4')];
+    const core=[...(grids[0]?grids[0].children:[])].map(parseAuditMetricBox);
+    const paths=[...(grids[1]?grids[1].children:[])].map(parseAuditMetricBox);
+    const twocols=[...section.querySelectorAll(':scope > .twocol')];
+    const worldAudit=twocols[0]?[...twocols[0].children].map(el=>({label:textOf(el.querySelector('small')),title:textOf(el.querySelector('b')),paras:[...el.querySelectorAll('p')].map(textOf)})):[];
+    const originalWorlds=twocols[1]?[...twocols[1].children].map(el=>({label:textOf(el.querySelector('small')),text:textOf(el.querySelector('p'))})):[];
+    const sources=[...section.querySelectorAll('ul li')].map(li=>({text:textOf(li),href:li.querySelector('a')&&li.querySelector('a').href}));
+    return {index,teamTitle,score,eyebrow,et,core,paths,worldAudit,originalWorlds,sources};
+  });
+  const integrity=panels.find(p=>/Audit Integrity/i.test(textOf(p.querySelector('h2'))));
+  const integrityItems=[...(integrity?integrity.querySelectorAll('li'):[])].map(textOf);
+  const footer=textOf(doc.querySelector('.foot'));
+  return {path,title,date,run_id:runMatch&&runMatch[0],heroP,mainMetrics,modelMetrics,modelNote,board,paths,matches,integrityItems,footer};
+}
+function auditStatusClass(value){
+  const s=String(value||'').toUpperCase();
+  if(s.includes('HIT'))return 'hit';if(s.includes('MISS'))return 'miss';return 'mix';
+}
+function auditMetricBy(metrics,label){
+  return metrics.find(m=>m.label.toLowerCase().includes(label.toLowerCase()))||null;
+}
+function renderAuditDetails(audit){
+  const heroMetrics=audit.mainMetrics.map(m=>`<div class="audit-kpi ${auditStatusClass(m.count)}"><small>${esc(auditTextDE(m.label))}</small><b>${esc(auditTextDE(m.count))}</b><strong>${esc(auditTextDE(m.value))}</strong></div>`).join('');
+  const modelMetrics=audit.modelMetrics.map(m=>`<div class="audit-kpi ${auditStatusClass(m.count)}"><small>${esc(auditTextDE(m.label))}</small><b>${esc(auditTextDE(m.count))}</b><strong>${esc(auditTextDE(m.value))}</strong></div>`).join('');
+  const board=audit.board.map(row=>{
+    const match=row.Match?.text||'';const result=row["Result 90'"]?.text||'';const favourite=row.Favourite?.text||'';const settlement=row.Settlement?.text||'';
+    const cluster=row.Cluster?.text||'';const world=(row["World Verdict"]?.text||'').replace(/RESULT_ONLY/ig,'').trim();const failures=splitFailureTags(row["Failure Tags"]?.text);
+    return `<div class="audit-board-row"><div><strong>${esc(match)}</strong></div><div class="audit-result">${esc(result)}</div><div>${esc(favourite)}</div><div><span class="audit-pill ${auditStatusClass(settlement)}">${esc(auditTextDE(settlement))}</span></div><div><span class="audit-pill ${cluster.includes('✓')?'hit':'miss'}">${cluster.includes('✓')?'✓':'✕'}</span></div><div><span class="audit-pill ${String(world).toUpperCase().includes('PRIME')?'hit':String(world).toUpperCase().includes('COUNTER')?'miss':'mix'}">${esc(auditTextDE(world))}</span></div><div class="audit-failure">${failures.length?failures.map(tag=>`<span class="tag reason">${esc(tag)}</span>`).join(''):'—'}</div></div>`;
+  }).join('');
+  const matchDetails=audit.matches.map(match=>{
+    const core=match.core.map(m=>`<div class="audit-box"><small>${esc(auditTextDE(m.label))}</small><b>${esc(auditTextDE(m.count))}</b><strong class="${auditStatusClass(m.value)==='hit'?'audit-hit':auditStatusClass(m.value)==='miss'?'audit-miss':'audit-neutral'}">${esc(auditTextDE(m.value))}</strong></div>`).join('');
+    const paths=match.paths.map(m=>`<div class="audit-box"><small>${esc(auditTextDE(m.label))}</small><b>${esc(auditTextDE(m.count))}</b><strong class="${auditStatusClass(m.value)==='hit'?'audit-hit':auditStatusClass(m.value)==='miss'?'audit-miss':'audit-neutral'}">${esc(auditTextDE(m.value))}</strong></div>`).join('');
+    const worldAudit=match.worldAudit.map(box=>`<div class="audit-textbox"><small>${esc(auditTextDE(box.label))}</small><b>${esc(auditTextDE(box.title))}</b>${box.paras.map((p,i)=>`<p class="${i?'sub':''}">${esc(auditTextDE(p))}</p>`).join('')}</div>`).join('');
+    const worlds=match.originalWorlds.map(box=>`<div class="audit-textbox"><small>${esc(auditTextDE(box.label))}</small><p>${esc(auditTextDE(box.text))}</p></div>`).join('');
+    const sources=match.sources.length?`<div class="audit-sources">${match.sources.map(s=>`<div class="audit-source">${s.href?`<a href="${esc(s.href)}" target="_blank" rel="noopener">${esc(s.text.split(' — ')[0])}</a>`:esc(s.text)}${s.text.includes(' — ')?` — ${esc(auditTextDE(s.text.split(' — ').slice(1).join(' — ')))}`:''}</div>`).join('')}</div>`:'';
+    return `<details class="audit-match"><summary><div class="audit-match-title"><small>${esc(auditTextDE(match.eyebrow))}</small><strong>${esc(match.teamTitle)}</strong></div><div class="audit-match-score">${esc(match.score)}<small>90 Minuten + Nachspielzeit</small></div></summary><div class="audit-match-body">${match.et?`<div class="audit-et">${esc(auditTextDE(match.et))}</div>`:''}<div class="audit-grid4">${core}</div><h5 class="detail-mini-title">Auswertung der Prognosewege</h5><div class="audit-grid4">${paths}</div><h5 class="detail-mini-title">Szenario- &amp; Fehleraudit</h5><div class="audit-two">${worldAudit}</div><h5 class="detail-mini-title">Ursprünglich festgeschriebene Szenarien</h5><div class="audit-two">${worlds}</div>${sources?`<h5 class="detail-mini-title">Resultatquellen</h5>${sources}`:''}</div></details>`;
+  }).join('');
+  return `<div class="audit-context"><div><small>Festgeschriebener Lauf</small><strong>${esc(audit.run_id||'—')}</strong></div><span class="chip green">${esc(dateLabel(audit.date||''))}</span></div>
+    <div class="audit-kpis">${heroMetrics}</div>
+    <section class="audit-panel"><h3>Audit auf Laufebene</h3><div class="audit-kpis">${modelMetrics}</div>${audit.modelNote?`<p class="audit-panel-note">${esc(auditTextDE(audit.modelNote))}</p>`:''}</section>
+    <section class="audit-panel"><h3>Finale Audit-Übersicht</h3><div class="audit-board"><div class="audit-board-head"><span>Spiel</span><span>90'</span><span>Favorit</span><span>Auswertung</span><span>Cluster</span><span>Szenario</span><span>Fehlerkennzeichen</span></div>${board}</div></section>
+    <section class="audit-panel"><h3>Match-Audits</h3><div class="audit-match-list">${matchDetails}</div></section>
+    ${audit.integrityItems.length?`<section class="audit-panel audit-integrity"><h3>Audit-Integrität &amp; Grenzen</h3><ul>${audit.integrityItems.map(x=>`<li>${esc(auditTextDE(x))}</li>`).join('')}</ul></section>`:''}`;
+}
+async function loadAuditEntry(entry){
+  const path=auditPath(entry.file);
+  const text=await loadText(path);
+  if(!text)return null;
+  return parseAuditHTML(text,path);
+}
+async function renderAuditDate(date,preferredIndex=0){
+  const box=document.getElementById('replay-content');
+  const pills=document.getElementById('audit-pills');
+  document.getElementById('audit-date').value=date;
+  box.innerHTML=empty('Audit wird geladen …','Audit-Datei und Ergebnisprüfung werden geladen.');
+  const entries=await resolveAuditEntries(date);
+  const loaded=[];
+  for(const entry of entries){
+    const audit=await loadAuditEntry(entry);
+    if(audit)loaded.push({entry,audit});
+  }
+  if(!loaded.length){
+    pills.innerHTML='';
+    box.innerHTML=empty('Kein Audit für dieses Datum gefunden.','Für ein dauerhaftes Audit-Archiv empfiehlt sich audits/index.json. Zusätzlich werden gängige Dateinamen automatisch geprüft.','audits/index.json');
+    AUDIT_LOADED_DATE=date;return;
+  }
+  pills.innerHTML=loaded.map(({audit},i)=>`<button type="button" class="pill ${i===preferredIndex?'active':''}" data-audit-index="${i}">${esc(timeLabel((audit.footer.match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}/)||[])[0]||'' )||`Audit ${i+1}`)}</button>`).join('');
+  const showAudit=i=>{
+    pills.querySelectorAll('.pill').forEach((p,j)=>p.classList.toggle('active',j===i));
+    box.innerHTML=renderAuditDetails(loaded[i].audit);
+  };
+  pills.querySelectorAll('[data-audit-index]').forEach(button=>button.onclick=()=>showAudit(Number(button.dataset.auditIndex)));
+  showAudit(Math.min(preferredIndex,loaded.length-1));
+  AUDIT_LOADED_DATE=date;
+}
+async function availableAuditSummaries(){
+  const idx=await getAuditIndex();
+  let entries=normalizeAuditIndex(idx);
+  if(!entries.length){
+    const runIdx=await getIndex();
+    entries=Object.keys((runIdx&&runIdx.dates)||{}).map((date,pos)=>({date,file:`ECOBET_${date}_RESULT_AUDIT.html`,pos,fallback:true}));
+  }
+  const audits=[];
+  for(const entry of entries){
+    const audit=await loadAuditEntry(entry);
+    if(audit)audits.push(audit);
+  }
+  return audits;
+}
+
 function todayISO(){
   const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Zurich',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
   const get=type=>parts.find(part=>part.type===type)?.value||'';
@@ -651,7 +891,7 @@ function paintRun(run){
   let html=`<div class="layout-switch"><span class="layout-switch-label">Ansicht</span><div class="layout-switch-buttons"><button type="button" data-run-layout="tiles" class="${RUN_LAYOUT==='tiles'?'active':''}">▦ Kacheln</button><button type="button" data-run-layout="list" class="${RUN_LAYOUT==='list'?'active':''}">☰ Liste</button></div></div>`;
   html+=`<div class="kpis"><div class="kpi"><span>Datenstand</span><strong style="font-size:15px">${timeLabel(r.snapshot_time)}</strong><small>${show(r.snapshot_id)}</small></div><div class="kpi"><span>Spiele</span><strong>${all.length}</strong></div><div class="kpi good"><span>Freigaben</span><strong>${released}</strong></div><div class="kpi warn"><span>NSP</span><strong>${nspCount}</strong><small>explizite ${esc(NSP)}</small></div><div class="kpi ${missingCount?'warn':'dim'}"><span>Entscheid fehlt</span><strong>${missingCount}</strong><small>nicht als NSP gewertet</small></div><div class="kpi"><span>Laufintegrität</span><strong style="font-size:17px">${show(r.run_integrity)}</strong><small>Ausgabe ${show(r.output_integrity)}</small></div></div>`;
 
-  if(!shown.length){box.innerHTML=html+empty('Keine Spiele für diesen Filter.','Wähle einen anderen Wettbewerb.');bindLayoutSwitch(run,box);updateAuditContext(run);return}
+  if(!shown.length){box.innerHTML=html+empty('Keine Spiele für diesen Filter.','Wähle einen anderen Wettbewerb.');bindLayoutSwitch(run,box);return}
 
   catalog.forEach(comp=>{
     const rows=shownRecords.map(({m,i})=>({m,i,c:competitionInfo(m,i)})).filter(x=>x.c.key===comp.key).sort((a,b)=>String(a.m.kickoff||'').localeCompare(String(b.m.kickoff||'')));
@@ -702,7 +942,7 @@ function paintRun(run){
     card.addEventListener('click',toggle);
     card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();toggle()}});
   });
-  updateAuditContext(run);
+  
 }
 
 function bindLayoutSwitch(run,box){
@@ -755,7 +995,8 @@ function renderMatchDetail(m,matchIndex=0){
     const robust=show(item.robustness);
     const low=String(item.robustness||'').toUpperCase()==='LOW';
     const tags=[item.axis,item.world,...arr(item.penalties)].filter(present);
-    return `<article class="candidate-card ${low?'low':'valid'}"><div class="candidate-card-head"><h5>${show(candidateName(item))}</h5><span class="candidate-score">${show(item.score_total)}</span></div><div class="candidate-metrics"><div class="candidate-metric"><small>p_raw</small><b>${esc(rawProb)}</b></div><div class="candidate-metric"><small>Abdeckung</small><b>${show(item.cluster_coverage)}</b></div><div class="candidate-metric"><small>Robustheit</small><b>${robust}</b></div></div><div class="candidate-meta">${tags.slice(0,5).map(tag=>`<span class="match-flag">${esc(tag)}</span>`).join('')}</div></article>`;
+    const wfrd=[item.W,item.F,item.R,item.D].every(v=>v!==undefined&&v!==null)?`${item.W}/${item.F}/${item.R}/${item.D}`:(present(item.W_F_R_D)?item.W_F_R_D:'—');
+    return `<article class="candidate-card ${low?'low':'valid'}"><div class="candidate-card-head"><h5>${show(candidateName(item))}</h5><span class="candidate-score">${show(item.score_total)}</span></div><ul><li><span>Achse</span><b>${show(item.axis)}</b></li><li><span>Szenario</span><b>${show(item.world)}</b></li><li><span>Abdeckung</span><b>${show(item.cluster_coverage)}</b></li><li><span>p_raw</span><b>${esc(rawProb)}</b></li><li><span>Robustheit</span><b>${robust}</b></li><li><span>W/F/R/D</span><b>${show(wfrd)}</b></li></ul><div class="candidate-meta">${tags.map(tag=>`<span class="match-flag">${show(tag)}</span>`).join('')}</div></article>`;
   }).join('');
 
   const pathEntries=[['Safe',m.safe],['Balanced',m.balanced],['Aggressive',m.aggressive]];
@@ -787,9 +1028,11 @@ function renderMatchDetail(m,matchIndex=0){
 
   const renderTeam=(side,label)=>{
     const team=teamEbook&&teamEbook[side];
-    if(!team)return `<article class="report-team-card"><h5>${show(label)}</h5><p class="unavailable-note">Nicht im run_record vorhanden.</p></article>`;
+    if(!team)return `<article class="report-team-card"><div class="report-team-head"><div><h5>${show(label)}</h5></div></div><p class="unavailable-note">Nicht im run_record vorhanden.</p></article>`;
     const fields=team.fields&&typeof team.fields==='object'?Object.values(team.fields):[];
-    return `<article class="report-team-card"><h5>${show(team.team||label)}</h5>${present(team.role)?`<div class="team-role">${esc(team.role)}</div>`:''}<div class="team-tiles">${fields.map(field=>`<div class="team-tile"><small>${show(field.label)}</small><b>${show(field.value)}</b><span>${show(field.status)} · Vertrauen ${show(field.trust)}</span></div>`).join('')}</div></article>`;
+    const completenessField=fields.find(field=>/completeness|vollständigkeit/i.test(String(field.label||'')));
+    const topBadge=present(completenessField?.status)?completenessField.status:(fields.find(field=>present(field.status))?.status||null);
+    return `<article class="report-team-card"><div class="report-team-head"><div><h5>${show(team.team||label)}</h5>${present(team.role)?`<div class="team-role">${show(team.role)}</div>`:''}</div>${present(topBadge)?`<span class="team-badge">${show(topBadge)}</span>`:''}</div><div class="team-summary">${fields.map(field=>`<div class="team-row"><div class="team-key">${show(field.label)}</div><div class="team-value">${show(field.value)}${(present(field.status)||present(field.trust))?`<span class="team-note">${present(field.status)?show(field.status):'—'}${present(field.trust)?` · Vertrauen ${show(field.trust)}`:''}</span>`:''}</div></div>`).join('')}</div></article>`;
   };
 
   const axisOrder=[['CONTROL','Kontrolle'],['CHAOS','Chaos'],['GOAL_PROFILE','Torprofil'],['TEMPO','Tempo'],['PHASE_STRUCTURE','Phasenstruktur'],['DRAW_GRAVITY','Remis-Tendenz'],['TAIL_RISK','Extremrisiko']];
@@ -854,10 +1097,15 @@ function renderMatchDetail(m,matchIndex=0){
     </section>
 
     <section class="report-subsection">
-      <h4>Match-E-Book Evidenz · Ankerkandidaten</h4>
-      ${present(m.anchor)?`<div class="report-anchor"><span class="chip green">${show(m.world_type)}</span><p>${esc(m.anchor)}</p></div>`:'<div class="unavailable-note"><b>Anker:</b> nicht verfügbar.</div>'}
-      ${evidence&&present(evidence.ko_state)?`<div class="report-repair-item"><b>K.-o.-Ausgangslage</b><p>${esc(evidence.ko_state)}</p></div>`:''}
-      ${evidence&&present(evidence.data_readiness_evidence)?`<div class="report-repair-item"><b>Evidenz zur Datenbereitschaft</b><p>${esc(evidence.data_readiness_evidence)}</p></div>`:''}
+      <h4>Match-E-Book · Übersicht</h4>
+      <div class="matchbook-overview">
+        ${present(m.anchor)?`<div class="matchbook-highlight"><small>Leitgedanke</small><p>${show(m.anchor)}</p></div>`:'<div class="unavailable-note"><b>Anker:</b> nicht verfügbar.</div>'}
+        <div class="matchbook-side">
+          ${evidence&&present(evidence.ko_state)?`<div class="matchbook-note"><strong>K.-o.-Ausgangslage</strong><p>${show(evidence.ko_state)}</p></div>`:''}
+          ${evidence&&present(evidence.data_readiness_evidence)?`<div class="matchbook-note"><strong>Evidenz zur Datenbereitschaft</strong><p>${show(evidence.data_readiness_evidence)}</p></div>`:''}
+          <div class="matchbook-note"><strong>Datenstatus</strong><p>${show(m.data_readiness)} · MATCH_CORE_STATUS ${show(m.match_core_status)}</p></div>
+        </div>
+      </div>
     </section>
 
     ${!nsp?`<section class="report-subsection">
@@ -881,7 +1129,7 @@ function renderMatchDetail(m,matchIndex=0){
 
     ${nsp?`<section class="report-subsection"><h4>Gate-Entscheid &amp; Sperrzustand</h4><div class="locked-panel"><strong>NO_STABLE_PREDICTION</strong>${codes.length?`<div class="tag-list">${codes.map(code=>`<span class="tag reason">${esc(code)}</span>`).join('')}</div>`:''}</div></section>`:''}
 
-    ${!nsp?`<section class="report-subsection"><h4>Prognosekarte</h4><div class="pmap-line">${pmapLine}</div>${candidates.length?`<div class="candidate-cards">${candidateCards}</div><details class="candidate-audit-toggle"><summary>Vollständige Kandidatenprüfung · W/F/R/D &amp; Abzüge</summary><div class="audit-wrap"><table class="audit-table"><thead><tr><th>Kandidat</th><th>Achse</th><th>Szenario</th><th>Abdeckung</th><th>p_raw</th><th>W/F/R/D</th><th>Punktzahl</th><th>Robustheit</th><th>Abzüge</th><th>Status</th></tr></thead><tbody>${candidateRows}</tbody></table></div></details>`:'<p class="unavailable-note">Keine Kandidaten im run_record.</p>'}</section>`:''}
+    ${!nsp?`<section class="report-subsection"><h4>Prognosekarte</h4><div class="prediction-overview"><div class="prediction-card favourite"><small>Favorisierte Prognose</small><strong>${show(m.favourite)}</strong></div><div class="prediction-card safe"><small>Sicher</small><strong>${show(m.safe)}</strong></div><div class="prediction-card balanced"><small>Ausgewogen</small><strong>${show(m.balanced)}</strong></div><div class="prediction-card aggressive"><small>Aggressiv</small><strong>${show(m.aggressive)}</strong></div></div><div class="pmap-line">${pmapLine}</div>${candidates.length?`<div class="candidate-cards">${candidateCards}</div><details class="candidate-audit-toggle"><summary>Vollständige Kandidatenprüfung · W/F/R/D &amp; Abzüge</summary><div class="audit-wrap"><table class="audit-table"><thead><tr><th>Kandidat</th><th>Achse</th><th>Szenario</th><th>Abdeckung</th><th>p_raw</th><th>W/F/R/D</th><th>Punktzahl</th><th>Robustheit</th><th>Abzüge</th><th>Status</th></tr></thead><tbody>${candidateRows}</tbody></table></div></details>`:'<p class="unavailable-note">Keine Kandidaten im run_record.</p>'}</section>`:''}
 
     <section class="report-subsection">
       <h4>${nsp?'Entscheidungssperre':'Entscheidungswege & Favorit'}</h4>
@@ -892,8 +1140,8 @@ function renderMatchDetail(m,matchIndex=0){
     ${shock?`<section class="report-subsection"><h4>Kandidatenprüfung · Stresstest</h4><div class="report-status-grid">${shockHtml}${present(shock.robustness)?`<div><small>Robustheit</small><strong>${show(shock.robustness)}</strong></div>`:''}</div></section>`:''}
 
     <section class="report-subsection"><h4>Audit &amp; Herkunft <span>zusätzliche Detailtiefe</span></h4>
-      <details class="secondary-audit"><summary>Reparaturübersicht &amp; Suchausschöpfung · ${repairs.length} Einträge</summary><div class="secondary-audit-body">${repairs.length?`<div class="report-repair-list">${repairs.map(item=>`<div class="report-repair-item"><b>${show(item.field)} · ${show(item.result)}</b><p>${arr(item.routes).length?esc(arr(item.routes).join(' → ')):'—'}${present(item.note)?' · '+esc(item.note):''}</p></div>`).join('')}</div>`:'<div class="unavailable-note">Keine Reparaturübersicht vorhanden.</div>'}</div></details>
-      <details class="secondary-audit" style="margin-top:9px"><summary>Quellenherkunft · ${sources.length} Quellen</summary><div class="secondary-audit-body">${sources.length?`<div class="report-sources">${sources.map(source=>`<div class="report-source"><strong>${show(source.name)}</strong><span>${present(source.used_for)?esc(source.used_for)+' · ':''}Vertrauen ${show(source.trust)}${present(source.snapshot)?' · Datenstand '+esc(source.snapshot):''}</span></div>`).join('')}</div>`:'<div class="unavailable-note">Keine Quellenherkunft vorhanden.</div>'}</div></details>
+      <details class="secondary-audit"><summary>Reparaturübersicht &amp; Suchausschöpfung · ${repairs.length} Einträge</summary><div class="secondary-audit-body">${repairs.length?`<div class="report-repair-list">${repairs.map(item=>`<div class="report-repair-item"><b>${show(item.field)} · ${show(item.result)}</b><p>${arr(item.routes).length?esc(arr(item.routes).join(' → ')):'—'}${present(item.note)?' · '+show(item.note):''}</p></div>`).join('')}</div>`:'<div class="unavailable-note">Keine Reparaturübersicht vorhanden.</div>'}</div></details>
+      <details class="secondary-audit" style="margin-top:9px"><summary>Quellenherkunft · ${sources.length} Quellen</summary><div class="secondary-audit-body">${sources.length?`<div class="report-sources">${sources.map(source=>`<div class="report-source"><strong>${show(source.name)}</strong><span>${present(source.used_for)?show(source.used_for)+' · ':''}Vertrauen ${show(source.trust)}${present(source.snapshot)?' · Datenstand '+show(source.snapshot):''}</span></div>`).join('')}</div>`:'<div class="unavailable-note">Keine Quellenherkunft vorhanden.</div>'}</div></details>
     </section>
 
     <footer class="report-footer"><span>${show(m.commit_status)}</span><b>${nsp?'NO_STABLE_PREDICTION':show(m.favourite)}</b><span>${show(m.fixture_id)}</span></footer>
@@ -1124,17 +1372,6 @@ async function renderSpiele(force=false){
 }
 
 document.getElementById('settlement-content').innerHTML=empty('Noch keine Auswertungsdaten.','Es werden keine Auswertungsfelder angenommen. Die Ansicht bleibt leer, bis entsprechende Dateien und das definierte Schema vorliegen.','runs/<run_id>.settlement.json');
-function updateAuditContext(run){
-  const box=document.getElementById('replay-content');if(!box)return;
-  if(!run){box.innerHTML=empty('Noch kein Lauf gewählt.','Wähle zuerst im Bereich „Läufe“ ein Datum und einen Run.');return}
-  const r=run.run||{};
-  const date=present(r.date)?r.date:ACTIVE_RUN_DATE;
-  const runLabel=present(r.snapshot_time)?timeLabel(r.snapshot_time):(present(r.run_id)?r.run_id:'—');
-  box.innerHTML=`<div class="audit-context"><div><small>Aktiver Audit-Kontext</small><strong>Audit für ${esc(dateLabel(date))} · Lauf ${esc(runLabel)}</strong></div><button class="btn" id="audit-choose-run" type="button">Anderen Lauf wählen</button></div>${empty('Noch keine Audit-Datei.','Der aktive Lauf ist eindeutig gewählt. Sobald runs/<run_id>.replay.json vorliegt, wird dieser Bereich mit den Audit-Ergebnissen gefüllt.','runs/<run_id>.replay.json')}`;
-  const button=document.getElementById('audit-choose-run');
-  if(button)button.onclick=()=>{activateView('runs');document.getElementById('run-date').focus()};
-}
-updateAuditContext(CURRENT_RUN);
 
 async function renderDashboard(){
   const box=document.getElementById('dashboard-content');
@@ -1170,7 +1407,31 @@ async function renderDashboard(){
       html+='</div></div>';
     });
   }
-  box.innerHTML=html+'</div>';
+  html+='</div>';
+  const audits=await availableAuditSummaries();
+  if(audits.length){
+    const aggregate={Favourite:{hits:0,total:0},Safe:{hits:0,total:0},Balanced:{hits:0,total:0},Aggressive:{hits:0,total:0},Cluster:{hits:0,total:0},ScoreBand:{hits:0,total:0}};
+    const worldCounts={};const failureCounts={};
+    audits.forEach(a=>{
+      [['Favourite','Favourite'],['Safe','Safe'],['Balanced','Balanced'],['Aggressive','Aggressive']].forEach(([key,label])=>{
+        const m=auditMetricBy(a.mainMetrics,label);if(m&&Number.isFinite(m.hits)&&Number.isFinite(m.total)){aggregate[key].hits+=m.hits;aggregate[key].total+=m.total}
+      });
+      const cluster=auditMetricBy(a.modelMetrics,'Four-Score Cluster');if(cluster&&Number.isFinite(cluster.hits)){aggregate.Cluster.hits+=cluster.hits;aggregate.Cluster.total+=cluster.total}
+      const band=auditMetricBy(a.modelMetrics,'Score Band');if(band&&Number.isFinite(band.hits)){aggregate.ScoreBand.hits+=band.hits;aggregate.ScoreBand.total+=band.total}
+      a.board.forEach(row=>{
+        const world=(row["World Verdict"]?.text||'').replace(/RESULT_ONLY/ig,'').trim()||'—';worldCounts[world]=(worldCounts[world]||0)+1;
+        splitFailureTags(row["Failure Tags"]?.text).forEach(tag=>failureCounts[tag]=(failureCounts[tag]||0)+1);
+      });
+    });
+    const pct=x=>x.total?`${(100*x.hits/x.total).toFixed(1)}%`:'—';
+    const topFailures=Object.entries(failureCounts).sort((a,b)=>b[1]-a[1]).slice(0,6);
+    html+=`<section class="dashboard-audit"><h3>Audit-Performance</h3><p class="sub">Aggregiert aus dem Ordner <span class="mono">audits/</span>. Prognosen werden dabei nicht verändert; die Übersicht zeigt nur die nachgelagerte Ergebnisprüfung.</p><div class="audit-kpis"><div class="audit-kpi"><small>Auditierte Läufe</small><strong>${audits.length}</strong></div><div class="audit-kpi hit"><small>Favorit</small><b>${aggregate.Favourite.hits}/${aggregate.Favourite.total}</b><strong>${pct(aggregate.Favourite)}</strong></div><div class="audit-kpi hit"><small>Sicher</small><b>${aggregate.Safe.hits}/${aggregate.Safe.total}</b><strong>${pct(aggregate.Safe)}</strong></div><div class="audit-kpi"><small>Ausgewogen</small><b>${aggregate.Balanced.hits}/${aggregate.Balanced.total}</b><strong>${pct(aggregate.Balanced)}</strong></div><div class="audit-kpi"><small>Aggressiv</small><b>${aggregate.Aggressive.hits}/${aggregate.Aggressive.total}</b><strong>${pct(aggregate.Aggressive)}</strong></div><div class="audit-kpi"><small>Vierer-Cluster</small><b>${aggregate.Cluster.hits}/${aggregate.Cluster.total}</b><strong>${pct(aggregate.Cluster)}</strong></div><div class="audit-kpi hit"><small>Ergebnisband</small><b>${aggregate.ScoreBand.hits}/${aggregate.ScoreBand.total}</b><strong>${pct(aggregate.ScoreBand)}</strong></div><div class="audit-kpi"><small>Szenario-Verteilung</small><b>${Object.entries(worldCounts).map(([k,v])=>`${auditTextDE(k)} ${v}`).join(' · ')}</b><strong>${Object.values(worldCounts).reduce((a,b)=>a+b,0)} Spiele</strong></div></div>`;
+    if(topFailures.length)html+=`<div class="audit-panel"><h3>Häufigste Fehlerkennzeichen</h3><div class="tag-list">${topFailures.map(([tag,count])=>`<span class="tag reason">${esc(tag)} · ${count}</span>`).join('')}</div></div>`;
+    html+=`<div class="audit-panel"><h3>Audit-Verlauf</h3><div class="audit-history"><div class="audit-history-row header"><span>Datum</span><span>Lauf</span><span>Favorit</span><span>Sicher</span><span>Ausgew.</span><span>Aggressiv</span><span>Cluster</span><span>Band</span></div>${audits.sort((a,b)=>String(b.date).localeCompare(String(a.date))).map(a=>{const fav=auditMetricBy(a.mainMetrics,'Favourite'),safe=auditMetricBy(a.mainMetrics,'Safe'),bal=auditMetricBy(a.mainMetrics,'Balanced'),agg=auditMetricBy(a.mainMetrics,'Aggressive'),cl=auditMetricBy(a.modelMetrics,'Four-Score Cluster'),sb=auditMetricBy(a.modelMetrics,'Score Band');return `<div class="audit-history-row"><span>${esc(a.date||'—')}</span><span>${esc(a.run_id||'—')}</span><span>${esc(fav?.value||'—')}</span><span>${esc(safe?.value||'—')}</span><span>${esc(bal?.value||'—')}</span><span>${esc(agg?.value||'—')}</span><span>${esc(cl?.value||'—')}</span><span>${esc(sb?.value||'—')}</span></div>`}).join('')}</div></div></section>`;
+  }else{
+    html+=`<section class="dashboard-audit">${empty('Noch keine Audits im Archiv.','Sobald audits/index.json und Audit-Dateien vorhanden sind, fliessen Trefferquoten, Cluster, Ergebnisbänder, Szenario-Bewertungen und Fehlerkennzeichen hier ein.','audits/index.json')}</section>`;
+  }
+  box.innerHTML=html;
 }
 
 function activateView(viewName){
@@ -1184,6 +1445,10 @@ document.querySelectorAll('nav.tabs button').forEach(button=>button.addEventList
     try{await renderDashboard();DASHBOARD_LOADED=true}finally{DASHBOARD_LOADING=false}
   }
   if(view==='fixtures'&&!FIXTURES_LOADED)await renderSpiele();
+  if(view==='replay'){
+    const auditDate=document.getElementById('audit-date').value||ACTIVE_RUN_DATE||todayISO();
+    if(AUDIT_LOADED_DATE!==auditDate)await renderAuditDate(auditDate);
+  }
 }));
 
 (async function init(){
@@ -1194,6 +1459,10 @@ document.querySelectorAll('nav.tabs button').forEach(button=>button.addEventList
   document.getElementById('run-go').onclick=goToDate;
   document.getElementById('run-date').addEventListener('change',goToDate);
   document.getElementById('fixtures-refresh').onclick=()=>{FIXTURES_LOADED=false;renderSpiele(true)};
+  document.getElementById('audit-date').value=start;
+  const goAudit=()=>renderAuditDate(document.getElementById('audit-date').value||start);
+  document.getElementById('audit-go').onclick=goAudit;
+  document.getElementById('audit-date').addEventListener('change',goAudit);
   await renderRuns(start);
 })();
 </script>
