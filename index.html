@@ -479,6 +479,188 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);fon
   .audit-match-score{font-size:1.28rem}
 }
 
+
+/* ==========================================================
+   ECOBET PERFORMANCE COCKPIT · v27
+   ========================================================== */
+.dash-switch{
+  display:inline-flex;gap:4px;padding:4px;margin-bottom:16px;
+  border:1px solid rgba(84,127,150,.24);border-radius:13px;
+  background:rgba(7,17,23,.64);backdrop-filter:blur(10px)
+}
+.dash-switch button{
+  border:0;border-radius:9px;padding:8px 13px;cursor:pointer;
+  background:transparent;color:var(--muted);font:750 .72rem var(--mono)
+}
+.dash-switch button.active{background:rgba(57,189,248,.11);color:#dff6ff;box-shadow:inset 0 0 0 1px rgba(57,189,248,.24)}
+.dash-switch button:disabled{opacity:.4;cursor:not-allowed}
+.dash-mode{display:none}.dash-mode.active{display:block}
+
+.cockpit-hero{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:22px;
+  margin-bottom:13px;padding:4px 2px
+}
+.cockpit-kicker,.panel-kicker{
+  display:block;color:#75d4ff;font:800 .61rem var(--mono);
+  letter-spacing:.11em;text-transform:uppercase
+}
+.cockpit-hero h3,.prediction-head h3{margin:4px 0 4px;font-size:1.45rem;letter-spacing:-.02em}
+.cockpit-hero p,.prediction-head p{margin:0;color:var(--muted);font-size:.78rem}
+.cockpit-live{
+  display:flex;align-items:center;gap:8px;white-space:nowrap;
+  color:#b9d1d9;font:700 .66rem var(--mono)
+}
+.cockpit-live i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 13px rgba(49,230,161,.72)}
+
+.performance-cards{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:11px;margin-bottom:13px
+}
+.performance-card{
+  position:relative;overflow:hidden;padding:16px 17px;border-radius:16px;
+  border:1px solid rgba(84,127,150,.25);
+  background:linear-gradient(180deg,rgba(15,32,41,.92),rgba(8,19,26,.88));
+  box-shadow:0 10px 26px rgba(0,0,0,.15)
+}
+.performance-card::before{content:'';position:absolute;left:0;right:0;top:0;height:2px;background:rgba(145,167,177,.45)}
+.performance-card.fav::before{background:var(--blue)}.performance-card.safe::before{background:var(--accent)}
+.performance-card.bal::before{background:var(--warn)}.performance-card.agg::before{background:#b99cff}
+.performance-card>span{display:block;color:#a8bec7;font:800 .64rem var(--mono);letter-spacing:.07em;text-transform:uppercase}
+.performance-card strong{display:block;margin-top:7px;font:900 1.72rem var(--mono);line-height:1;color:#f3fafb}
+.performance-card b{display:block;margin-top:7px;color:#c8d8dd;font:720 .71rem var(--mono)}
+.performance-card small{display:block;margin-top:2px;color:var(--dim);font-size:.64rem}
+
+.cockpit-grid{display:grid;gap:13px;margin-bottom:13px}
+.cockpit-grid.top{grid-template-columns:minmax(0,1.55fr) minmax(310px,.85fr)}
+.cockpit-grid.analysis{grid-template-columns:1fr 1fr}
+.cockpit-panel{
+  min-width:0;padding:17px 18px;border-radius:17px;
+  border:1px solid rgba(84,127,150,.24);
+  background:linear-gradient(180deg,rgba(10,25,33,.83),rgba(7,17,23,.80));
+  box-shadow:0 12px 30px rgba(0,0,0,.15);backdrop-filter:blur(8px)
+}
+.panel-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:12px}
+.panel-heading h3{margin:3px 0 0;font-size:.98rem}
+.panel-heading>span{color:var(--dim);font:650 .63rem var(--mono);text-align:right}
+
+.trend-wrap{min-height:228px}.trend-svg{display:block;width:100%;height:auto;overflow:visible}
+.trend-grid{stroke:rgba(126,160,173,.13);stroke-width:1}
+.trend-axis{fill:#6f8791;font:10px var(--mono)}
+.trend-line{fill:none;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.trend-line.fav,.trend-dot.fav{stroke:var(--blue);fill:var(--blue)}
+.trend-line.safe,.trend-dot.safe{stroke:var(--accent);fill:var(--accent)}
+.trend-line.bal,.trend-dot.bal{stroke:var(--warn);fill:var(--warn)}
+.trend-line.agg,.trend-dot.agg{stroke:#b99cff;fill:#b99cff}
+.trend-legend{display:flex;gap:14px;flex-wrap:wrap;padding:0 5px;color:var(--muted);font-size:.66rem}
+.trend-legend span{display:flex;align-items:center;gap:6px}.trend-legend i{width:16px;height:2px;border-radius:9px}
+.trend-legend i.fav{background:var(--blue)}.trend-legend i.safe{background:var(--accent)}
+.trend-legend i.bal{background:var(--warn)}.trend-legend i.agg{background:#b99cff}
+.cockpit-note{margin:10px 0 0;color:var(--dim);font-size:.68rem;line-height:1.5}
+
+.quality-stack{display:grid;gap:12px}
+.quality-row{display:grid;grid-template-columns:1fr auto;gap:7px 14px;align-items:end}
+.quality-row>div span{display:block;font-weight:750;font-size:.78rem}.quality-row>div small{display:block;margin-top:2px;color:var(--dim);font-size:.63rem;line-height:1.35}
+.quality-row>strong{font:900 .93rem var(--mono);color:#eaf5f7}
+.quality-row>i{grid-column:1/-1;display:block;height:5px;border-radius:9px;background:rgba(95,130,143,.16);overflow:hidden}
+.quality-row>i>b{display:block;height:100%;border-radius:inherit;background:var(--blue)}
+.quality-row.primary>i>b{background:var(--accent)}.quality-row.muted>i>b{background:#8399a3}
+.quality-row.muted{opacity:.82}
+
+.scenario-bars,.failure-bars{display:grid;gap:10px}
+.scenario-row{display:grid;grid-template-columns:minmax(130px,1fr) minmax(110px,1.2fr) 45px;gap:10px;align-items:center}
+.scenario-row>div,.failure-row>div{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.scenario-row span,.failure-row span{color:#d8e6e9;font-size:.70rem}
+.scenario-row b,.failure-row b{font:800 .67rem var(--mono)}
+.scenario-row>i,.failure-row>i{display:block;height:5px;border-radius:8px;background:rgba(95,130,143,.15);overflow:hidden}
+.scenario-row>i>b{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--accent));border-radius:inherit}
+.scenario-row small{color:var(--dim);font:650 .61rem var(--mono);text-align:right}
+.failure-row{display:grid;grid-template-columns:minmax(250px,1fr) minmax(100px,.8fr);gap:12px;align-items:center}
+.failure-row>i>b{display:block;height:100%;background:var(--bad);border-radius:inherit;opacity:.82}
+.diagnostic-clean{padding:12px;border-radius:11px;border:1px solid rgba(49,230,161,.16);background:rgba(49,230,161,.035)}
+.diagnostic-clean b,.diagnostic-clean span{display:block}.diagnostic-clean span{margin-top:3px;color:var(--muted);font-size:.68rem}
+
+.latest-audit{
+  display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:18px;
+  margin:0 0 13px;padding:16px 18px;border-radius:17px;
+  border:1px solid rgba(57,189,248,.22);
+  background:linear-gradient(100deg,rgba(18,49,62,.72),rgba(8,21,28,.77))
+}
+.latest-audit h3{margin:3px 0 0;font-size:1rem}.latest-audit p{margin:2px 0 0;color:var(--dim);font:650 .61rem var(--mono);overflow-wrap:anywhere}
+.latest-stats{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.latest-stats span{padding:7px 9px;border:1px solid rgba(84,127,150,.2);border-radius:10px;background:rgba(7,17,23,.4);color:var(--muted);font-size:.63rem}
+.latest-stats b{color:#edf7f8;font:800 .70rem var(--mono)}
+
+.dash-stability{
+  overflow:hidden;border:1px solid rgba(84,127,150,.21);border-radius:16px;
+  background:rgba(7,17,23,.62)
+}
+.dash-stability>summary{
+  cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 17px
+}
+.dash-stability>summary::-webkit-details-marker{display:none}
+.dash-stability>summary strong{display:block;margin-top:3px;font-size:.84rem}
+.dash-stability>summary small{display:block;margin-top:2px;color:var(--dim);font-size:.62rem}
+.summary-action{color:#8edcff;font:700 .62rem var(--mono)}
+.stability-body{padding:0 15px 15px}.stability-day{margin-top:10px;padding:12px;border-radius:13px;border:1px solid rgba(84,127,150,.18);background:rgba(10,25,33,.55)}
+.stability-day-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:9px}
+.stability-day-head>div{display:flex;align-items:center;gap:9px}.stability-day-head span{color:var(--dim);font-size:.63rem}.stability-day-head>strong{font:750 .65rem var(--mono);color:var(--warn)}
+.stability-grid{display:grid;gap:6px}.stability-row{display:grid;grid-template-columns:minmax(190px,.8fr) 1.8fr;gap:10px;align-items:center;padding:7px 8px;border-radius:9px;background:rgba(7,17,23,.42)}
+.stability-row.unstable{background:rgba(255,200,87,.035)}.stability-row b{display:block;font-size:.69rem}.stability-row small{display:block;color:var(--dim);font-size:.58rem}
+.stability-values{display:flex;gap:5px;flex-wrap:wrap}.stability-values span{padding:4px 6px;border-radius:7px;border:1px solid rgba(84,127,150,.18);font:650 .58rem var(--mono)}
+.stability-values .changed{color:var(--warn);border-color:rgba(255,200,87,.27)}.stability-values .stable{color:var(--accent)}
+.stability-values .nsp{color:#b99cff}.stability-values .missing{color:var(--bad)}
+
+.prediction-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:22px;
+  margin-bottom:13px;padding:4px 2px
+}
+.prediction-summary{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.prediction-summary span{padding:7px 9px;border-radius:10px;border:1px solid rgba(84,127,150,.2);background:rgba(7,17,23,.45);color:var(--muted);font-size:.62rem}
+.prediction-summary b{color:#f0f8fa;font:800 .69rem var(--mono)}
+.prediction-controls{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:14px;
+  margin-bottom:13px;padding:12px 13px;border-radius:15px;
+  border:1px solid rgba(84,127,150,.2);background:rgba(8,20,27,.65)
+}
+.prediction-family{display:flex;gap:5px;flex-wrap:wrap}
+.prediction-family button{
+  border:1px solid rgba(84,127,150,.2);border-radius:999px;padding:6px 9px;
+  background:rgba(7,17,23,.48);color:var(--muted);cursor:pointer;font:700 .61rem var(--mono)
+}
+.prediction-family button.active{color:#dff6ff;border-color:rgba(57,189,248,.35);background:rgba(57,189,248,.08)}
+.prediction-selects{display:flex;gap:8px}.prediction-selects label{display:grid;gap:3px;color:var(--dim);font:700 .57rem var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.prediction-selects select{min-width:150px;border:1px solid rgba(84,127,150,.24);border-radius:9px;padding:7px 8px;background:#0d1d25;color:var(--text);font:650 .66rem var(--mono)}
+
+.prediction-table{overflow-x:auto;border:1px solid rgba(84,127,150,.18);border-radius:13px}
+.prediction-row{
+  min-width:870px;display:grid;
+  grid-template-columns:minmax(250px,1.45fr) 130px 85px 90px minmax(160px,.8fr);
+  gap:0;align-items:center;border-top:1px solid rgba(84,127,150,.13);
+  background:rgba(7,17,23,.40)
+}
+.prediction-row.header{border-top:0;background:rgba(17,38,48,.82);color:var(--dim);font:750 .59rem var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.prediction-row>span,.prediction-row>strong,.prediction-row>div{padding:9px 10px}
+.prediction-name{display:flex;align-items:center;gap:9px}.prediction-name>b{display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:7px;background:rgba(57,189,248,.07);color:#83d8ff;font:800 .61rem var(--mono)}
+.prediction-name span{font-weight:720;font-size:.72rem}.prediction-cat{color:var(--muted);font-size:.65rem}
+.prediction-hit{font:750 .67rem var(--mono);color:#dce9ec}
+.prediction-row>strong{font:900 .77rem var(--mono)}.prediction-row>strong.excellent{color:var(--accent)}.prediction-row>strong.good{color:#aee8d2}.prediction-row>strong.weak{color:var(--bad)}
+.sample-cell{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}.sample-cell i{display:block;height:5px;border-radius:8px;background:rgba(95,130,143,.15);overflow:hidden}.sample-cell i>b{display:block;height:100%;background:var(--blue);border-radius:inherit}.sample-cell small{color:var(--dim);font:650 .58rem var(--mono);white-space:nowrap}
+
+@media(max-width:1050px){
+  .performance-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cockpit-grid.top,.cockpit-grid.analysis{grid-template-columns:1fr}
+  .prediction-head,.prediction-controls{align-items:flex-start;flex-direction:column}
+  .prediction-summary{justify-content:flex-start}
+}
+@media(max-width:720px){
+  .cockpit-hero{align-items:flex-start;flex-direction:column}.cockpit-live{align-self:flex-start}
+  .performance-cards{grid-template-columns:1fr 1fr}.performance-card{padding:13px}.performance-card strong{font-size:1.38rem}
+  .latest-audit{grid-template-columns:1fr}.latest-stats{justify-content:flex-start}
+  .scenario-row{grid-template-columns:120px 1fr 40px}.failure-row{grid-template-columns:1fr}
+  .stability-row{grid-template-columns:1fr}.prediction-selects{width:100%;flex-direction:column}.prediction-selects label,.prediction-selects select{width:100%}
+}
+@media(max-width:470px){.performance-cards{grid-template-columns:1fr}.dash-switch{display:flex;width:100%}.dash-switch button{flex:1}}
+
 </style>
 </head>
 <body>
@@ -543,7 +725,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);fon
 </section>
 
 <section id="view-dashboard" class="view">
-  <div class="title"><div><div class="eyebrow">04 · Übersicht</div><h2>Über alle Läufe hinweg</h2></div><p>Die Laufabweichung vergleicht die favorisierte Prognose identischer Spiel-IDs zwischen mehreren Läufen desselben Datums.</p></div>
+  <div class="title"><div><div class="eyebrow">04 · Übersicht</div><h2>ECOBET Performance Cockpit</h2></div><p>Gesamtleistung über alle registrierten Audits, Modellqualität, Fehlerdiagnostik und eine Detailanalyse der erfolgreichsten Prediction-Typen.</p></div>
   <div id="dashboard-content"></div>
 </section>
 </main>
@@ -1851,65 +2033,376 @@ async function renderSpiele(force=false){
 
 
 
+
+function dashPct(hits,total){return total?100*hits/total:null}
+function dashPctText(hits,total){const p=dashPct(hits,total);return p===null?'—':`${p.toFixed(1)}%`}
+function dashMetric(audit,group,label){
+  const source=group==='main'?audit.mainMetrics:audit.modelMetrics;
+  const m=auditMetricBy(source,label);
+  return m&&Number.isFinite(m.hits)&&Number.isFinite(m.total)?{hits:m.hits,total:m.total}:null;
+}
+function dashAggregate(audits,group,label){
+  const total={hits:0,total:0};
+  audits.forEach(a=>{const m=dashMetric(a,group,label);if(m){total.hits+=m.hits;total.total+=m.total}});
+  return total;
+}
+function dashWorldLabel(value){
+  const s=String(value||'').replace(/RESULT_ONLY/ig,'').trim().toUpperCase();
+  if(s==='PRIME'||s==='PRIME_WORLD')return 'Hauptszenario';
+  if(s==='COUNTER'||s==='COUNTERWORLD')return 'Gegenszenario';
+  if(s==='MIXED')return 'Gemischt';
+  if(s==='NEITHER')return 'Keines';
+  if(s==='UNDETERMINED')return 'Unbestimmt';
+  return auditTextDE(value||'—');
+}
+function dashRunStamp(audit){
+  return String(audit.raw?.audit_generated_at||audit.footer||audit.run_id||audit.date||'');
+}
+function dashboardTrendSVG(audits){
+  const sorted=[...audits].sort((a,b)=>String(a.date||'').localeCompare(String(b.date||''))||dashRunStamp(a).localeCompare(dashRunStamp(b)));
+  const roles=[
+    {label:'Favorit',metric:'Favourite',cls:'fav'},
+    {label:'Sicher',metric:'Safe',cls:'safe'},
+    {label:'Ausgewogen',metric:'Balanced',cls:'bal'},
+    {label:'Aggressiv',metric:'Aggressive',cls:'agg'}
+  ];
+  const cumulative={};
+  roles.forEach(r=>cumulative[r.metric]={hits:0,total:0});
+  const points=sorted.map((audit,index)=>{
+    const values={};
+    roles.forEach(r=>{
+      const m=dashMetric(audit,'main',r.metric);
+      if(m){cumulative[r.metric].hits+=m.hits;cumulative[r.metric].total+=m.total}
+      values[r.metric]=dashPct(cumulative[r.metric].hits,cumulative[r.metric].total);
+    });
+    return {index,date:audit.date||'',values};
+  });
+  if(!points.length)return '';
+  const W=760,H=235,L=42,R=18,T=18,B=38,plotW=W-L-R,plotH=H-T-B;
+  const x=i=>points.length===1?L+plotW/2:L+(i/(points.length-1))*plotW;
+  const y=v=>T+(1-(Math.max(0,Math.min(100,v??0))/100))*plotH;
+  const grid=[100,75,50,25];
+  const paths=roles.map(r=>{
+    const valid=points.filter(p=>p.values[r.metric]!==null);
+    const d=valid.map((p,i)=>`${i?'L':'M'} ${x(p.index).toFixed(1)} ${y(p.values[r.metric]).toFixed(1)}`).join(' ');
+    const dots=valid.map(p=>`<circle class="trend-dot ${r.cls}" cx="${x(p.index).toFixed(1)}" cy="${y(p.values[r.metric]).toFixed(1)}" r="3.2"></circle>`).join('');
+    return `<path class="trend-line ${r.cls}" d="${d}"></path>${dots}`;
+  }).join('');
+  const first=dateLabel(points[0].date),last=dateLabel(points[points.length-1].date);
+  return `<div class="trend-wrap"><svg class="trend-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Kumulierte Trefferquoten über alle Audits">
+    ${grid.map(v=>`<line class="trend-grid" x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}"></line><text class="trend-axis" x="${L-8}" y="${y(v)+4}" text-anchor="end">${v}%</text>`).join('')}
+    ${paths}
+    <text class="trend-axis" x="${L}" y="${H-8}">${esc(first)}</text>
+    <text class="trend-axis" x="${W-R}" y="${H-8}" text-anchor="end">${esc(last)}</text>
+  </svg><div class="trend-legend">${roles.map(r=>`<span><i class="${r.cls}"></i>${r.label}</span>`).join('')}</div></div>`;
+}
+function dashEscRegex(s){return String(s||'').replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+function canonicalPrediction(prediction,fixture={}){
+  let p=String(prediction||'').trim().replace(/\s+/g,' ');
+  if(!p)return '—';
+  const home=String(fixture.home||'').trim(),away=String(fixture.away||'').trim();
+  const teamGoal=(team,label)=>{
+    if(!team)return false;
+    const re=new RegExp('^'+dashEscRegex(team)+'\\s+O(?:ver\\s*)?(\\d+(?:\\.\\d+)?)\\s*(?:team\\s+goals?|goals?)$','i');
+    const m=p.match(re);
+    if(m){p=`${label} Over ${m[1]}`;return true}
+    return false;
+  };
+  if(teamGoal(home,'Heimteam'))return p;
+  if(teamGoal(away,'Auswärtsteam'))return p;
+  let m=p.match(/^BTTS\s*(Yes|No|Ja|Nein)$/i);
+  if(m)return `BTTS ${/yes|ja/i.test(m[1])?'Ja':'Nein'}`;
+  m=p.match(/^Match goals?\s*(\d+)\s*[-–]\s*(\d+)$/i);
+  if(m)return `Matchtore ${m[1]}–${m[2]}`;
+  m=p.match(/^(Over|Under)\s*(\d+(?:\.\d+)?)$/i);
+  if(m)return `${m[1][0].toUpperCase()+m[1].slice(1).toLowerCase()} ${m[2]}`;
+  return p;
+}
+function predictionFamily(prediction){
+  const p=String(prediction||'');
+  if(/^BTTS\b/i.test(p))return 'BTTS';
+  if(/^(Heimteam|Auswärtsteam)\b/i.test(p)||/team goals?/i.test(p))return 'TEAM_GOALS';
+  if(/^Matchtore\b/i.test(p)||/^Match goals?/i.test(p))return 'RANGES';
+  if(/^(Over|Under)\s*\d/i.test(p))return 'TOTALS';
+  if(/^(1X|X2|12|1|X|2)$/i.test(p)||/\b(double chance|draw no bet|home win|away win)\b/i.test(p))return 'RESULT';
+  return 'OTHER';
+}
+function predictionFamilyLabel(key){
+  return ({ALL:'Alle',TOTALS:'Totals',BTTS:'BTTS',TEAM_GOALS:'Teamtore',RESULT:'1X2 / Double Chance',RANGES:'Ranges',OTHER:'Weitere'})[key]||key;
+}
+function predictionEventsFromAudits(audits){
+  const out=[];
+  audits.forEach(audit=>{
+    const records=arr(audit.raw?.match_audit_records||audit.raw?.MATCH_AUDIT_RECORDS);
+    records.forEach((rec,idx)=>{
+      const cm=rec.committed_model||{},rs=rec.result_settlement||{},fixture=rec.fixture||{};
+      const matchKey=`${audit.run_id||audit.date||'audit'}|${rec.match_id||idx}`;
+      [
+        ['SAFE',cm.safe,rs.safe_result],
+        ['BALANCED',cm.balanced,rs.balanced_result],
+        ['AGGRESSIVE',cm.aggressive,rs.aggressive_result],
+        ['FAVOURITE',cm.favourite_prediction,rs.favourite_result]
+      ].forEach(([role,pred,status])=>{
+        if(!present(pred)||!present(status))return;
+        const prediction=canonicalPrediction(pred,fixture);
+        out.push({
+          matchKey,role,prediction,status:String(status).toUpperCase(),
+          family:predictionFamily(prediction),
+          competition:fixture.competition||rec.competition_metadata?.competition_name||'Unbekannt',
+          date:audit.date||'',home:fixture.home||'',away:fixture.away||''
+        });
+      });
+    });
+  });
+  return out;
+}
+function predictionStats(events,role='ALL',family='ALL',competition='ALL'){
+  let filtered=events.filter(e=>(family==='ALL'||e.family===family)&&(competition==='ALL'||e.competition===competition));
+  if(role!=='ALL')filtered=filtered.filter(e=>e.role===role);
+  else{
+    const seen=new Set();
+    filtered=filtered.filter(e=>{
+      const key=`${e.matchKey}|${e.prediction}`;
+      if(seen.has(key))return false;
+      seen.add(key);return true;
+    });
+  }
+  const map=new Map();
+  filtered.forEach(e=>{
+    if(!map.has(e.prediction))map.set(e.prediction,{prediction:e.prediction,family:e.family,hits:0,misses:0,push:0,total:0});
+    const s=map.get(e.prediction);
+    if(e.status==='HIT'){s.hits++;s.total++}
+    else if(e.status==='MISS'){s.misses++;s.total++}
+    else if(e.status==='PUSH'||e.status==='VOID')s.push++;
+  });
+  return [...map.values()].map(s=>({...s,rate:s.total?100*s.hits/s.total:null}))
+    .sort((a,b)=>(b.rate??-1)-(a.rate??-1)||b.total-a.total||a.prediction.localeCompare(b.prediction));
+}
+
 async function renderDashboard(){
   const box=document.getElementById('dashboard-content');
-  box.innerHTML=empty('Übersicht wird geladen …','Run-Dateien werden erst jetzt geladen, damit die Startseite schnell bleibt.');
-  const idx=await getIndex();
-  if(!idx||!idx.dates||!Object.keys(idx.dates).length){box.innerHTML=empty('Noch keine Läufe im Archiv.','Die Übersicht wird automatisch aufgebaut, sobald runs/index.json Einträge enthält.','runs/index.json');return}
-  const dates=Object.keys(idx.dates).sort();let totalRuns=0;dates.forEach(date=>totalRuns+=arr(idx.dates[date]).length);const multi=dates.filter(date=>arr(idx.dates[date]).length>1);const loaded={};
-  for(const date of dates){const records=await Promise.all(arr(idx.dates[date]).map(id=>loadJSON(RUNS+id+'.json')));loaded[date]=records.filter(Boolean)}
-  let releaseCount=0,nspCount=0,missingCount=0;
-  Object.values(loaded).forEach(runs=>runs.forEach(run=>arr(run.matches).forEach(match=>{
-    if(match.favourite===NSP)nspCount++;
-    else if(present(match.favourite))releaseCount++;
-    else missingCount++;
-  })));
-  let html=`<div class="kpis"><div class="kpi"><span>Tage im Archiv</span><strong>${dates.length}</strong></div><div class="kpi"><span>Läufe gesamt</span><strong>${totalRuns}</strong></div><div class="kpi good"><span>Prognose-Instanzen</span><strong>${releaseCount}</strong><small>über alle Läufe</small></div><div class="kpi warn"><span>NSP-Instanzen</span><strong>${nspCount}</strong></div><div class="kpi ${missingCount?'warn':'dim'}"><span>Entscheid fehlt</span><strong>${missingCount}</strong><small>nicht als NSP gewertet</small></div><div class="kpi ${multi.length?'':'dim'}"><span>Tage mit &gt;1 Lauf</span><strong>${multi.length}</strong></div></div><div class="drift"><h3>Laufabweichung</h3><p class="sub">Die Favorisierte Prognose derselben fixture_id wird zwischen allen Läufen eines Datums verglichen. NSP und fehlende Entscheidungen bleiben getrennte Zustände.</p>`;
-  if(!multi.length){html+=empty('Noch kein Tag mit mehreren Läufen.','Sobald an einem Datum zwei oder mehr Läufe im Index stehen, wird hier pro fixture_id verglichen.')}else{
+  box.innerHTML=empty('Performance Cockpit wird geladen …','Audits und Laufarchiv werden zusammengeführt.');
+
+  const [idx,auditsRaw]=await Promise.all([getIndex(),availableAuditSummaries()]);
+  const audits=[...auditsRaw].sort((a,b)=>String(a.date||'').localeCompare(String(b.date||''))||dashRunStamp(a).localeCompare(dashRunStamp(b)));
+
+  const dates=idx&&idx.dates?Object.keys(idx.dates).sort():[];
+  let totalRuns=0;dates.forEach(date=>totalRuns+=arr(idx.dates[date]).length);
+  const multi=dates.filter(date=>arr(idx.dates[date]).length>1);
+
+  /* Laufstabilität bleibt erhalten – inklusive historischer Tage wie 04.08. */
+  const loaded={};
+  for(const date of multi){
+    const records=await Promise.all(arr(idx.dates[date]).map(id=>loadJSON(RUNS+id+'.json')));
+    loaded[date]=records.filter(Boolean);
+  }
+
+  if(!audits.length){
+    let fallback=`<div class="dash-switch"><button class="active">Gesamtübersicht</button><button disabled>Prediction-Analyse</button></div>`;
+    fallback+=empty('Noch keine Audit-Daten für das Performance Cockpit.','Sobald audits/index.json mindestens einen gültigen Audit enthält, werden die Gesamtkennzahlen automatisch über alle Audits aggregiert.','audits/index.json');
+    if(multi.length)fallback+=`<section class="cockpit-panel"><div class="panel-heading"><div><span class="panel-kicker">Archiv</span><h3>Laufstabilität</h3></div><span>${multi.length} Tag(e) mit mehreren Läufen</span></div>${multi.map(date=>`<div class="stability-date">${esc(date)} · ${arr(idx.dates[date]).length} Läufe</div>`).join('')}</section>`;
+    box.innerHTML=fallback;return;
+  }
+
+  const fav=dashAggregate(audits,'main','Favourite');
+  const safe=dashAggregate(audits,'main','Safe');
+  const balanced=dashAggregate(audits,'main','Balanced');
+  const aggressive=dashAggregate(audits,'main','Aggressive');
+  const cluster=dashAggregate(audits,'model','Four-Score Cluster');
+  const band=dashAggregate(audits,'model','Score Band');
+  const exact=dashAggregate(audits,'model','Modal Score');
+  const auditedMatches=audits.reduce((n,a)=>n+arr(a.board).length,0);
+  const firstDate=audits[0]?.date||'',lastDate=audits[audits.length-1]?.date||'';
+
+  const worldCounts={},failureCounts={};
+  audits.forEach(a=>{
+    arr(a.board).forEach(row=>{
+      const raw=(row["World Verdict"]?.text||'').replace(/RESULT_ONLY/ig,'').trim()||'UNDETERMINED';
+      const key=String(raw).toUpperCase();worldCounts[key]=(worldCounts[key]||0)+1;
+      splitFailureTags(row["Failure Tags"]?.text).forEach(tag=>failureCounts[tag]=(failureCounts[tag]||0)+1);
+    });
+  });
+  const worldTotal=Object.values(worldCounts).reduce((a,b)=>a+b,0);
+  const worldOrder=['PRIME','PRIME_WORLD','COUNTERWORLD','MIXED','NEITHER','UNDETERMINED'];
+  const worlds=[];
+  const usedWorldLabels=new Set();
+  worldOrder.forEach(key=>{
+    if(!worldCounts[key])return;
+    const label=dashWorldLabel(key);
+    if(usedWorldLabels.has(label)){
+      const existing=worlds.find(x=>x.label===label);if(existing)existing.count+=worldCounts[key];
+    }else{worlds.push({key,label,count:worldCounts[key]});usedWorldLabels.add(label)}
+  });
+  Object.entries(worldCounts).forEach(([key,count])=>{
+    const label=dashWorldLabel(key);if(!usedWorldLabels.has(label)){worlds.push({key,label,count});usedWorldLabels.add(label)}
+  });
+  const failures=Object.entries(failureCounts).sort((a,b)=>b[1]-a[1]);
+  const maxFailure=Math.max(1,...failures.map(x=>x[1]));
+
+  const latest=audits[audits.length-1];
+  const latestFav=auditMetricBy(latest.mainMetrics,'Favourite');
+  const latestSafe=auditMetricBy(latest.mainMetrics,'Safe');
+  const events=predictionEventsFromAudits(audits);
+  const competitions=[...new Set(events.map(e=>e.competition))].sort();
+
+  let stabilityHTML='';
+  if(multi.length){
+    stabilityHTML=`<details class="dash-stability"><summary><div><span class="panel-kicker">Archiv &amp; Reproduzierbarkeit</span><strong>Laufstabilität</strong><small>${multi.length} Tag(e) mit mehreren Läufen · ${totalRuns} Läufe insgesamt</small></div><span class="summary-action">anzeigen</span></summary><div class="stability-body">`;
     multi.forEach(date=>{
-      const runs=loaded[date];const byFixture={};
+      const runs=loaded[date]||[];const byFixture={};
       runs.forEach((run,runIndex)=>arr(run.matches).forEach((match,matchIndex)=>{
         const key=present(match.fixture_id)?String(match.fixture_id):`__missing_${runIndex}_${matchIndex}`;
         if(!byFixture[key])byFixture[key]={label:(match.home||'—')+' – '+(match.away||'—'),comp:competitionInfo(match,matchIndex).name,vals:new Array(runs.length).fill(MISSING)};
         byFixture[key].vals[runIndex]=match.favourite===NSP?NSP:(present(match.favourite)?String(match.favourite):MISSING);
       }));
-      const items=Object.values(byFixture);const unstable=items.filter(item=>new Set(item.vals).size>1).length;
-      html+=`<div class="drift-day"><div class="drift-day-head"><b>${esc(date)}</b><span>${runs.length} Läufe · ${unstable} von ${items.length} Spiele abweichend</span><div class="drift-legend"><i><span class="dot s"></span>stabil</i><i><span class="dot u"></span>abweichend</i></div></div><div class="drift-grid">`;
+      const items=Object.values(byFixture),unstable=items.filter(item=>new Set(item.vals).size>1).length;
+      stabilityHTML+=`<div class="stability-day"><div class="stability-day-head"><div><b>${esc(dateLabel(date))}</b><span>${runs.length} Läufe</span></div><strong>${unstable}/${items.length} abweichend</strong></div><div class="stability-grid">`;
       items.forEach(item=>{
         const isUnstable=new Set(item.vals).size>1;
-        html+=`<div class="drift-item ${isUnstable?'unstable':''}"><div class="fx">${esc(item.label)}<em>${esc(item.comp)}</em></div><div class="vals">${item.vals.map(value=>{
+        stabilityHTML+=`<div class="stability-row ${isUnstable?'unstable':''}"><div><b>${esc(item.label)}</b><small>${esc(item.comp)}</small></div><div class="stability-values">${item.vals.map(value=>{
           const isNsp=value===NSP,isMissing=value===MISSING,label=isNsp?'NSP':isMissing?'FEHLT':esc(value);
-          return `<span class="val ${isNsp?'nsp':''} ${isMissing?'missing':''} ${isUnstable&&!isNsp&&!isMissing?'changed':''}">${label}</span>`;
+          return `<span class="${isNsp?'nsp':isMissing?'missing':isUnstable?'changed':'stable'}">${label}</span>`;
         }).join('')}</div></div>`;
       });
-      html+='</div></div>';
+      stabilityHTML+='</div></div>';
     });
+    stabilityHTML+='</div></details>';
   }
-  html+='</div>';
-  const audits=await availableAuditSummaries();
-  if(audits.length){
-    const aggregate={Favourite:{hits:0,total:0},Safe:{hits:0,total:0},Balanced:{hits:0,total:0},Aggressive:{hits:0,total:0},Cluster:{hits:0,total:0},ScoreBand:{hits:0,total:0}};
-    const worldCounts={};const failureCounts={};
-    audits.forEach(a=>{
-      [['Favourite','Favourite'],['Safe','Safe'],['Balanced','Balanced'],['Aggressive','Aggressive']].forEach(([key,label])=>{
-        const m=auditMetricBy(a.mainMetrics,label);if(m&&Number.isFinite(m.hits)&&Number.isFinite(m.total)){aggregate[key].hits+=m.hits;aggregate[key].total+=m.total}
-      });
-      const cluster=auditMetricBy(a.modelMetrics,'Four-Score Cluster');if(cluster&&Number.isFinite(cluster.hits)){aggregate.Cluster.hits+=cluster.hits;aggregate.Cluster.total+=cluster.total}
-      const band=auditMetricBy(a.modelMetrics,'Score Band');if(band&&Number.isFinite(band.hits)){aggregate.ScoreBand.hits+=band.hits;aggregate.ScoreBand.total+=band.total}
-      a.board.forEach(row=>{
-        const world=(row["World Verdict"]?.text||'').replace(/RESULT_ONLY/ig,'').trim()||'—';worldCounts[world]=(worldCounts[world]||0)+1;
-        splitFailureTags(row["Failure Tags"]?.text).forEach(tag=>failureCounts[tag]=(failureCounts[tag]||0)+1);
-      });
-    });
-    const pct=x=>x.total?`${(100*x.hits/x.total).toFixed(1)}%`:'—';
-    const topFailures=Object.entries(failureCounts).sort((a,b)=>b[1]-a[1]).slice(0,6);
-    html+=`<section class="dashboard-audit"><h3>Audit-Performance</h3><p class="sub">Aggregiert aus den in <span class="mono">audits/index.json</span> registrierten Audit-JSON-Dateien. Prognosen werden dabei nicht verändert.</p><div class="audit-kpis"><div class="audit-kpi"><small>Auditierte Läufe</small><strong>${audits.length}</strong></div><div class="audit-kpi hit"><small>Favorit</small><b>${aggregate.Favourite.hits}/${aggregate.Favourite.total}</b><strong>${pct(aggregate.Favourite)}</strong></div><div class="audit-kpi hit"><small>Sicher</small><b>${aggregate.Safe.hits}/${aggregate.Safe.total}</b><strong>${pct(aggregate.Safe)}</strong></div><div class="audit-kpi"><small>Ausgewogen</small><b>${aggregate.Balanced.hits}/${aggregate.Balanced.total}</b><strong>${pct(aggregate.Balanced)}</strong></div><div class="audit-kpi"><small>Aggressiv</small><b>${aggregate.Aggressive.hits}/${aggregate.Aggressive.total}</b><strong>${pct(aggregate.Aggressive)}</strong></div><div class="audit-kpi"><small>Vierer-Cluster</small><b>${aggregate.Cluster.hits}/${aggregate.Cluster.total}</b><strong>${pct(aggregate.Cluster)}</strong></div><div class="audit-kpi hit"><small>Ergebnisband</small><b>${aggregate.ScoreBand.hits}/${aggregate.ScoreBand.total}</b><strong>${pct(aggregate.ScoreBand)}</strong></div><div class="audit-kpi"><small>Szenario-Verteilung</small><b>${Object.entries(worldCounts).map(([k,v])=>`${auditTextDE(k)} ${v}`).join(' · ')}</b><strong>${Object.values(worldCounts).reduce((a,b)=>a+b,0)} Spiele</strong></div></div>`;
-    if(topFailures.length)html+=`<div class="audit-panel"><h3>Häufigste Fehlerkennzeichen</h3><div class="tag-list">${topFailures.map(([tag,count])=>`<span class="tag reason">${esc(tag)} · ${count}</span>`).join('')}</div></div>`;
-    html+=`<div class="audit-panel"><h3>Audit-Verlauf</h3><div class="audit-history"><div class="audit-history-row header"><span>Datum</span><span>Lauf</span><span>Favorit</span><span>Sicher</span><span>Ausgew.</span><span>Aggressiv</span><span>Cluster</span><span>Band</span></div>${audits.sort((a,b)=>String(b.date).localeCompare(String(a.date))).map(a=>{const fav=auditMetricBy(a.mainMetrics,'Favourite'),safe=auditMetricBy(a.mainMetrics,'Safe'),bal=auditMetricBy(a.mainMetrics,'Balanced'),agg=auditMetricBy(a.mainMetrics,'Aggressive'),cl=auditMetricBy(a.modelMetrics,'Four-Score Cluster'),sb=auditMetricBy(a.modelMetrics,'Score Band');return `<div class="audit-history-row"><span>${esc(a.date||'—')}</span><span>${esc(a.run_id||'—')}</span><span>${esc(fav?.value||'—')}</span><span>${esc(safe?.value||'—')}</span><span>${esc(bal?.value||'—')}</span><span>${esc(agg?.value||'—')}</span><span>${esc(cl?.value||'—')}</span><span>${esc(sb?.value||'—')}</span></div>`}).join('')}</div></div></section>`;
-  }else{
-    html+=`<section class="dashboard-audit">${empty('Noch keine Audits im Archiv.','Sobald audits/index.json einen Audit-Eintrag enthält, fliessen Trefferquoten, Cluster, Ergebnisbänder, Szenario-Bewertungen und Fehlerkennzeichen hier ein.','audits/<run_id>.html')}</section>`;
-  }
-  box.innerHTML=html;
+
+  const mainHTML=`
+    <div class="cockpit-hero">
+      <div>
+        <span class="cockpit-kicker">ECOBET PERFORMANCE</span>
+        <h3>${audits.length} Audit${audits.length===1?'':'s'} · ${auditedMatches} Spiele</h3>
+        <p>${esc(dateLabel(firstDate))}${firstDate!==lastDate?` – ${esc(dateLabel(lastDate))}`:''} · alle Werte werden über <b>sämtliche registrierten Audits</b> aggregiert.</p>
+      </div>
+      <div class="cockpit-live"><i></i> Audit-Daten aktiv</div>
+    </div>
+
+    <div class="performance-cards">
+      ${[
+        ['Favorit',fav,'fav','Favorisierte Prognose'],
+        ['Sicher',safe,'safe','Konservativer Pfad'],
+        ['Ausgewogen',balanced,'bal','Ausgewogener Pfad'],
+        ['Aggressiv',aggressive,'agg','Risikoreicher Pfad']
+      ].map(([label,m,cls,desc])=>`<div class="performance-card ${cls}"><span>${label}</span><strong>${dashPctText(m.hits,m.total)}</strong><b>${m.hits}/${m.total} Treffer</b><small>${desc}</small></div>`).join('')}
+    </div>
+
+    <div class="cockpit-grid top">
+      <section class="cockpit-panel trend-panel">
+        <div class="panel-heading"><div><span class="panel-kicker">Entwicklung</span><h3>Performance-Verlauf</h3></div><span>Kumuliert über alle Audits</span></div>
+        ${dashboardTrendSVG(audits)}
+        ${audits.length<2?`<p class="cockpit-note">Aktuell liegt erst ein Audit vor. Mit jedem weiteren Audit entsteht hier automatisch der zeitliche Verlauf.</p>`:''}
+      </section>
+
+      <section class="cockpit-panel quality-panel">
+        <div class="panel-heading"><div><span class="panel-kicker">Modellqualität</span><h3>Wie gut wird der Ergebnisraum getroffen?</h3></div></div>
+        <div class="quality-stack">
+          <div class="quality-row primary"><div><span>Ergebnisband</span><small>Liegt das tatsächliche Ergebnis im prognostizierten Torbereich?</small></div><strong>${dashPctText(band.hits,band.total)}</strong><i><b style="width:${dashPct(band.hits,band.total)||0}%"></b></i></div>
+          <div class="quality-row"><div><span>Vierer-Ergebniscluster</span><small>Trifft einer der vier vorab definierten Spielstände?</small></div><strong>${dashPctText(cluster.hits,cluster.total)}</strong><i><b style="width:${dashPct(cluster.hits,cluster.total)||0}%"></b></i></div>
+          <div class="quality-row muted"><div><span>Exakter Haupt-Spielstand</span><small>Der einzelne wahrscheinlichste exakte Spielstand.</small></div><strong>${dashPctText(exact.hits,exact.total)}</strong><i><b style="width:${dashPct(exact.hits,exact.total)||0}%"></b></i></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="cockpit-grid analysis">
+      <section class="cockpit-panel">
+        <div class="panel-heading"><div><span class="panel-kicker">Szenario-Audit</span><h3>Welches Spielbild traf?</h3></div><span>${worldTotal} Bewertungen</span></div>
+        <div class="scenario-bars">
+          ${worlds.map(w=>{const pct=worldTotal?100*w.count/worldTotal:0;return `<div class="scenario-row"><div><span>${esc(w.label)}</span><b>${w.count}</b></div><i><b style="width:${pct.toFixed(1)}%"></b></i><small>${pct.toFixed(1)}%</small></div>`}).join('')||'<p class="sub">Noch keine Szenario-Bewertungen.</p>'}
+        </div>
+      </section>
+
+      <section class="cockpit-panel">
+        <div class="panel-heading"><div><span class="panel-kicker">Diagnostik</span><h3>Häufigste Fehlerursachen</h3></div><span>${Object.values(failureCounts).reduce((a,b)=>a+b,0)} Tags</span></div>
+        <div class="failure-bars">
+          ${failures.slice(0,6).map(([tag,count])=>`<div class="failure-row"><div><span>${esc(tag)}</span><b>${count}</b></div><i><b style="width:${(100*count/maxFailure).toFixed(1)}%"></b></i></div>`).join('')||'<div class="diagnostic-clean"><b>Keine Fehlerkennzeichen</b><span>In den vorhandenen Audits wurden keine Failure Tags registriert.</span></div>'}
+        </div>
+      </section>
+    </div>
+
+    <section class="latest-audit">
+      <div><span class="panel-kicker">Letzter Audit</span><h3>${esc(dateLabel(latest.date||''))}</h3><p>${esc(latest.run_id||'—')}</p></div>
+      <div class="latest-stats"><span><b>${esc(latestFav?.value||'—')}</b> Favorit</span><span><b>${esc(latestSafe?.value||'—')}</b> Sicher</span><span><b>${arr(latest.board).length}</b> Spiele</span></div>
+      <button class="btn" id="dash-open-latest-audit" type="button">Audit öffnen</button>
+    </section>
+
+    ${stabilityHTML}
+  `;
+
+  const detailHTML=`
+    <div class="prediction-head">
+      <div><span class="cockpit-kicker">PREDICTION-ANALYSE</span><h3>Welche Prognosen funktionieren am besten?</h3><p>Gleiche Prediction innerhalb desselben Spiels wird bei „Alle Rollen“ nur einmal gezählt. So werden doppelte Rollen nicht künstlich aufgebläht.</p></div>
+      <div class="prediction-summary"><span><b>${events.length}</b> Rollen-Instanzen</span><span><b>${new Set(events.map(e=>e.prediction)).size}</b> Prediction-Typen</span><span><b>${competitions.length}</b> Wettbewerbe</span></div>
+    </div>
+    <div class="prediction-controls">
+      <div class="prediction-family" id="prediction-family">
+        ${['ALL','TOTALS','BTTS','TEAM_GOALS','RESULT','RANGES','OTHER'].map((key,i)=>`<button type="button" class="${i===0?'active':''}" data-family="${key}">${predictionFamilyLabel(key)}</button>`).join('')}
+      </div>
+      <div class="prediction-selects">
+        <label>Rolle<select id="prediction-role"><option value="ALL">Alle Rollen</option><option value="FAVOURITE">Favorit</option><option value="SAFE">Sicher</option><option value="BALANCED">Ausgewogen</option><option value="AGGRESSIVE">Aggressiv</option></select></label>
+        <label>Wettbewerb<select id="prediction-competition"><option value="ALL">Alle Wettbewerbe</option>${competitions.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('')}</select></label>
+      </div>
+    </div>
+    <section class="cockpit-panel prediction-panel">
+      <div class="panel-heading"><div><span class="panel-kicker">Ranking</span><h3>Prediction-Performance</h3></div><span id="prediction-ranking-note"></span></div>
+      <div id="prediction-ranking"></div>
+      <p class="cockpit-note">Trefferquoten sind rein deskriptiv. Bei kleinen Stichproben ist eine hohe Quote noch kein belastbarer Leistungsnachweis.</p>
+    </section>
+  `;
+
+  box.innerHTML=`
+    <div class="dash-switch" role="tablist" aria-label="Übersicht wählen">
+      <button type="button" class="active" data-dash-mode="overview">Gesamtübersicht</button>
+      <button type="button" data-dash-mode="predictions">Prediction-Analyse</button>
+    </div>
+    <div class="dash-mode active" id="dash-mode-overview">${mainHTML}</div>
+    <div class="dash-mode" id="dash-mode-predictions">${detailHTML}</div>
+  `;
+
+  const setMode=mode=>{
+    box.querySelectorAll('[data-dash-mode]').forEach(b=>b.classList.toggle('active',b.dataset.dashMode===mode));
+    box.querySelectorAll('.dash-mode').forEach(p=>p.classList.toggle('active',p.id==='dash-mode-'+mode));
+    try{localStorage.setItem('ecobet_dashboard_mode',mode)}catch{}
+  };
+  box.querySelectorAll('[data-dash-mode]').forEach(b=>b.onclick=()=>setMode(b.dataset.dashMode));
+  let savedMode='overview';try{savedMode=localStorage.getItem('ecobet_dashboard_mode')||'overview'}catch{}
+  if(savedMode==='predictions')setMode(savedMode);
+
+  const openLatest=document.getElementById('dash-open-latest-audit');
+  if(openLatest)openLatest.onclick=async()=>{activateView('replay');await renderAuditDate(latest.date||todayISO());};
+
+  let currentFamily='ALL';
+  const roleSelect=document.getElementById('prediction-role');
+  const compSelect=document.getElementById('prediction-competition');
+  const ranking=document.getElementById('prediction-ranking');
+  const rankingNote=document.getElementById('prediction-ranking-note');
+
+  const paintPredictionRanking=()=>{
+    const stats=predictionStats(events,roleSelect?.value||'ALL',currentFamily,compSelect?.value||'ALL');
+    if(rankingNote)rankingNote.textContent=`${stats.length} Prediction-Typen`;
+    if(!ranking)return;
+    if(!stats.length){ranking.innerHTML=empty('Keine Predictions für diesen Filter.','Wähle eine andere Kategorie, Rolle oder einen anderen Wettbewerb.');return}
+    const maxN=Math.max(1,...stats.map(s=>s.total));
+    ranking.innerHTML=`<div class="prediction-table">
+      <div class="prediction-row header"><span>Prediction</span><span>Kategorie</span><span>Treffer</span><span>Quote</span><span>Datenbasis</span></div>
+      ${stats.map((s,i)=>`<div class="prediction-row">
+        <div class="prediction-name"><b>${i+1}</b><span>${esc(s.prediction)}</span></div>
+        <span class="prediction-cat">${esc(predictionFamilyLabel(s.family))}</span>
+        <span class="prediction-hit">${s.hits}/${s.total}</span>
+        <strong class="${s.rate>=80?'excellent':s.rate>=65?'good':s.rate<50?'weak':''}">${s.rate===null?'—':s.rate.toFixed(1)+'%'}</strong>
+        <div class="sample-cell"><i><b style="width:${(100*s.total/maxN).toFixed(1)}%"></b></i><small>n=${s.total}${s.total<5?' · klein':''}</small></div>
+      </div>`).join('')}
+    </div>`;
+  };
+  box.querySelectorAll('[data-family]').forEach(b=>b.onclick=()=>{
+    currentFamily=b.dataset.family;
+    box.querySelectorAll('[data-family]').forEach(x=>x.classList.toggle('active',x===b));
+    paintPredictionRanking();
+  });
+  if(roleSelect)roleSelect.onchange=paintPredictionRanking;
+  if(compSelect)compSelect.onchange=paintPredictionRanking;
+  paintPredictionRanking();
 }
 
 function activateView(viewName){
