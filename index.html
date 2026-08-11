@@ -288,7 +288,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);fon
   <span class="brand">ECOBET</span>
   <button type="button" data-view="runs" class="active">Läufe</button>
   <button type="button" data-view="fixtures">Spiele heute</button>
-  <button type="button" data-view="settlement">Auswertung</button>
+  
   <button type="button" data-view="replay">Audit</button>
   <button type="button" data-view="dashboard">Übersicht</button>
 </div></nav>
@@ -315,13 +315,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);fon
   <div id="fixtures-content" aria-live="polite"></div>
 </section>
 
-<section id="view-settlement" class="view">
-  <div class="title"><div><div class="eyebrow">03 · Auswertung</div><h2>Ergebnisse gegen Prognosen</h2></div><p>Endstand nach 90 Minuten inklusive Nachspielzeit.</p></div>
-  <div id="settlement-content"></div>
-</section>
+
 
 <section id="view-replay" class="view">
-  <div class="title"><div><div class="eyebrow">04 · Audit</div><h2>Ergebnisprüfung &amp; Modell-Audit</h2></div><p>Append-only Auswertung eines festgeschriebenen ECOBET Laufs. Originalprognosen bleiben unverändert; Resultate, Treffer, Szenario-Bewertungen und Fehlerkennzeichen werden separat ausgewertet.</p></div>
+  <div class="title"><div><div class="eyebrow">03 · Audit</div><h2>Ergebnisprüfung &amp; Modell-Audit</h2></div><p>Der Audit enthält die vollständige Ergebnisprüfung und die Modellprüfung eines festgeschriebenen ECOBET Laufs. Eine separate Auswertungsseite ist deshalb nicht mehr nötig. Die Lauf-Auswahl kommt aus runs/index.json; die Audit-Inhalte werden aus dem Ordner audits/ geladen.</p></div>
   <div class="toolbar">
     <span class="toolbar-label">Audit-Datum</span>
     <input type="date" id="audit-date" aria-label="Audit-Datum wählen">
@@ -332,7 +329,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);fon
 </section>
 
 <section id="view-dashboard" class="view">
-  <div class="title"><div><div class="eyebrow">05 · Übersicht</div><h2>Über alle Läufe hinweg</h2></div><p>Die Laufabweichung vergleicht die favorisierte Prognose identischer Spiel-IDs zwischen mehreren Läufen desselben Datums.</p></div>
+  <div class="title"><div><div class="eyebrow">04 · Übersicht</div><h2>Über alle Läufe hinweg</h2></div><p>Die Laufabweichung vergleicht die favorisierte Prognose identischer Spiel-IDs zwischen mehreren Läufen desselben Datums.</p></div>
   <div id="dashboard-content"></div>
 </section>
 </main>
@@ -350,7 +347,7 @@ const NA='NOT_AVAILABLE';
 const MISSING='__MISSING__';
 let INDEX=null,CURRENT_RUN=null,COMP_FILTER={kind:'all',value:'ALL'};
 let RUN_RENDER_TOKEN=0,RUN_LOAD_TOKEN=0,ACTIVE_RUN_DATE=null;
-let DASHBOARD_LOADED=false,DASHBOARD_LOADING=false,FIXTURES_LOADED=false,FIXTURES_LOADING=false,AUDIT_INDEX=null,AUDIT_LOADED_DATE=null;
+let DASHBOARD_LOADED=false,DASHBOARD_LOADING=false,FIXTURES_LOADED=false,FIXTURES_LOADING=false,AUDIT_LOADED_DATE=null;
 let RUN_LAYOUT='tiles';
 try{RUN_LAYOUT=localStorage.getItem('ecobet_run_layout')==='list'?'list':'tiles'}catch{}
 
@@ -609,55 +606,53 @@ async function loadText(path){
   }catch{}
   return null;
 }
-async function getAuditIndex(force=false){
-  if(force||!AUDIT_INDEX)AUDIT_INDEX=await loadJSON(AUDITS+'index.json');
-  return AUDIT_INDEX;
+function runIdsForDate(index,date){
+  const raw=index&&index.dates&&Array.isArray(index.dates[date])?index.dates[date]:[];
+  return raw.map(item=>{
+    if(typeof item==='string')return item.replace(/\.json$/i,'');
+    if(item&&typeof item==='object')return String(item.id||item.run_id||item.file||'').replace(/^runs\//,'').replace(/\.json$/i,'');
+    return '';
+  }).filter(Boolean);
 }
-function normalizeAuditIndex(index){
-  const out=[];
-  if(index&&index.dates&&typeof index.dates==='object'){
-    Object.entries(index.dates).forEach(([date,items])=>{
-      arr(items).forEach((item,pos)=>{
-        if(typeof item==='string'){
-          const file=item.endsWith('.html')?item:(item.endsWith('.json')?item:`${item}.html`);
-          out.push({date,id:item.replace(/\.(html|json)$/i,''),file,run_id:null,pos});
-        }else if(item&&typeof item==='object'){
-          const file=item.file||item.path||item.filename||item.audit_file;
-          if(file)out.push({date,id:item.id||item.audit_id||file.replace(/\.(html|json)$/i,''),file,run_id:item.run_id||null,generated_at:item.generated_at||null,pos});
-        }
-      });
-    });
-  }
-  if(index&&Array.isArray(index.audits)){
-    index.audits.forEach((item,pos)=>{
-      if(!item||typeof item!=='object')return;
-      const date=item.date||item.audit_date;
-      const file=item.file||item.path||item.filename||item.audit_file;
-      if(date&&file)out.push({date,id:item.id||item.audit_id||file.replace(/\.(html|json)$/i,''),file,run_id:item.run_id||null,generated_at:item.generated_at||null,pos});
-    });
-  }
-  const seen=new Set();
-  return out.filter(item=>{
-    const key=`${item.date}|${item.file}`;if(seen.has(key))return false;seen.add(key);return true;
-  }).sort((a,b)=>String(a.date).localeCompare(String(b.date))||a.pos-b.pos);
+function auditPathForRun(runId){
+  return `${AUDITS}${String(runId).replace(/^audits\//,'').replace(/\.html$/i,'')}.html`;
 }
-function auditPath(file){
-  if(/^https?:\/\//i.test(file)||file.startsWith(AUDITS))return file;
-  return AUDITS+file.replace(/^\/+/,'');
-}
-function auditFallbackCandidates(date){
+function auditCandidatePaths(date,runId){
   return [
+    auditPathForRun(runId),
     `${AUDITS}ECOBET_${date}_RESULT_AUDIT.html`,
     `${AUDITS}ECOBET_${date}_RESULT_AUDIT(1).html`,
     `${AUDITS}${date}_RESULT_AUDIT.html`,
     `${AUDITS}${date}.html`
   ];
 }
+function auditRunToken(runId){
+  const m=String(runId||'').match(/(\d{4}-\d{2}-\d{2})_(\d{4})$/);
+  return m?{date:m[1],hhmm:m[2]}:{date:null,hhmm:null};
+}
+function parsedAuditMatchesRun(audit,runId){
+  if(!audit)return false;
+  const expected=auditRunToken(runId);
+  if(expected.date&&audit.date&&expected.date!==audit.date)return false;
+  if(expected.hhmm&&audit.run_id){
+    const m=String(audit.run_id).match(/_(\d{4})$/);
+    if(m&&m[1]!==expected.hhmm)return false;
+  }
+  return true;
+}
 async function resolveAuditEntries(date){
-  const idx=await getAuditIndex();
-  const listed=normalizeAuditIndex(idx).filter(item=>item.date===date);
-  if(listed.length)return listed;
-  return auditFallbackCandidates(date).map((path,pos)=>({date,id:`${date}_${pos}`,file:path,run_id:null,pos,fallback:true}));
+  const idx=await getIndex(true);
+  return runIdsForDate(idx,date).map((runId,pos)=>({
+    date,
+    id:runId,
+    run_id:runId,
+    candidates:auditCandidatePaths(date,runId),
+    pos
+  }));
+}
+function runTimeFromId(runId){
+  const m=String(runId||'').match(/_(\d{2})(\d{2})$/);
+  return m?`${m[1]}:${m[2]}`:runId;
 }
 function textOf(el){return el?el.textContent.replace(/\s+/g,' ').trim():''}
 function parseFraction(text){
@@ -741,7 +736,7 @@ function renderAuditDetails(audit){
     const sources=match.sources.length?`<div class="audit-sources">${match.sources.map(s=>`<div class="audit-source">${s.href?`<a href="${esc(s.href)}" target="_blank" rel="noopener">${esc(s.text.split(' — ')[0])}</a>`:esc(s.text)}${s.text.includes(' — ')?` — ${esc(auditTextDE(s.text.split(' — ').slice(1).join(' — ')))}`:''}</div>`).join('')}</div>`:'';
     return `<details class="audit-match"><summary><div class="audit-match-title"><small>${esc(auditTextDE(match.eyebrow))}</small><strong>${esc(match.teamTitle)}</strong></div><div class="audit-match-score">${esc(match.score)}<small>90 Minuten + Nachspielzeit</small></div></summary><div class="audit-match-body">${match.et?`<div class="audit-et">${esc(auditTextDE(match.et))}</div>`:''}<div class="audit-grid4">${core}</div><h5 class="detail-mini-title">Auswertung der Prognosewege</h5><div class="audit-grid4">${paths}</div><h5 class="detail-mini-title">Szenario- &amp; Fehleraudit</h5><div class="audit-two">${worldAudit}</div><h5 class="detail-mini-title">Ursprünglich festgeschriebene Szenarien</h5><div class="audit-two">${worlds}</div>${sources?`<h5 class="detail-mini-title">Resultatquellen</h5>${sources}`:''}</div></details>`;
   }).join('');
-  return `<div class="audit-context"><div><small>Festgeschriebener Lauf</small><strong>${esc(audit.run_id||'—')}</strong></div><span class="chip green">${esc(dateLabel(audit.date||''))}</span></div>
+  return `<div class="audit-context"><div><small>Festgeschriebener Lauf</small><strong>${esc(audit.run_id||'—')}</strong>${audit.resolved_path?`<div class="sub mono">${esc(audit.resolved_path)}</div>`:''}</div><span class="chip green">${esc(dateLabel(audit.date||''))}</span></div>
     <div class="audit-kpis">${heroMetrics}</div>
     <section class="audit-panel"><h3>Audit auf Laufebene</h3><div class="audit-kpis">${modelMetrics}</div>${audit.modelNote?`<p class="audit-panel-note">${esc(auditTextDE(audit.modelNote))}</p>`:''}</section>
     <section class="audit-panel"><h3>Finale Audit-Übersicht</h3><div class="audit-board"><div class="audit-board-head"><span>Spiel</span><span>90'</span><span>Favorit</span><span>Auswertung</span><span>Cluster</span><span>Szenario</span><span>Fehlerkennzeichen</span></div>${board}</div></section>
@@ -749,47 +744,79 @@ function renderAuditDetails(audit){
     ${audit.integrityItems.length?`<section class="audit-panel audit-integrity"><h3>Audit-Integrität &amp; Grenzen</h3><ul>${audit.integrityItems.map(x=>`<li>${esc(auditTextDE(x))}</li>`).join('')}</ul></section>`:''}`;
 }
 async function loadAuditEntry(entry){
-  const path=auditPath(entry.file);
-  const text=await loadText(path);
-  if(!text)return null;
-  return parseAuditHTML(text,path);
+  const paths=arr(entry.candidates).length?entry.candidates:[entry.file||auditPathForRun(entry.run_id||entry.id)];
+  for(const path of paths){
+    const text=await loadText(path);
+    if(!text)continue;
+    const parsed=parseAuditHTML(text,path);
+    if(!parsedAuditMatchesRun(parsed,entry.run_id||entry.id))continue;
+    parsed.archive_run_id=entry.run_id||entry.id||null;
+    parsed.resolved_path=path;
+    return parsed;
+  }
+  return null;
 }
 async function renderAuditDate(date,preferredIndex=0){
   const box=document.getElementById('replay-content');
   const pills=document.getElementById('audit-pills');
   document.getElementById('audit-date').value=date;
-  box.innerHTML=empty('Audit wird geladen …','Audit-Datei und Ergebnisprüfung werden geladen.');
+  box.innerHTML=empty('Audit wird geladen …','Die Lauf-ID wird aus runs/index.json gelesen und die zugehörige Datei aus audits/ geladen.');
+
   const entries=await resolveAuditEntries(date);
+  if(!entries.length){
+    pills.innerHTML='';
+    box.innerHTML=empty('Keine Läufe für dieses Datum gefunden.','Der Audit-Bereich verwendet dieselben Lauf-IDs wie runs/index.json.','runs/index.json');
+    AUDIT_LOADED_DATE=date;return;
+  }
+
   const loaded=[];
   for(const entry of entries){
     const audit=await loadAuditEntry(entry);
-    if(audit)loaded.push({entry,audit});
+    loaded.push({entry,audit});
   }
-  if(!loaded.length){
-    pills.innerHTML='';
-    box.innerHTML=empty('Kein Audit für dieses Datum gefunden.','Für ein dauerhaftes Audit-Archiv empfiehlt sich audits/index.json. Zusätzlich werden gängige Dateinamen automatisch geprüft.','audits/index.json');
+
+  pills.innerHTML=loaded.map(({entry,audit},i)=>`<button type="button" class="pill ${audit&&i===preferredIndex?'active':''} ${audit?'':'disabled'}" data-audit-index="${i}" ${audit?'':'disabled'} title="${audit?'Audit vorhanden':'Noch kein Audit vorhanden'}">${esc(runTimeFromId(entry.id))}${audit?'':' · kein Audit'}</button>`).join('');
+
+  const available=loaded.map((x,i)=>x.audit?i:-1).filter(i=>i>=0);
+  if(!available.length){
+    box.innerHTML=empty(
+      'Noch kein Audit für die vorhandenen Läufe.',
+      `Es wurde weder audits/<run_id>.html noch ein passender datumsbasierter Audit-Dateiname gefunden. Prüfe, ob die Audit-Datei wirklich im Ordner audits/ liegt.`,
+      entries.flatMap(e=>e.candidates||[]).join(' · ')
+    );
     AUDIT_LOADED_DATE=date;return;
   }
-  pills.innerHTML=loaded.map(({audit},i)=>`<button type="button" class="pill ${i===preferredIndex?'active':''}" data-audit-index="${i}">${esc(timeLabel((audit.footer.match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}/)||[])[0]||'' )||`Audit ${i+1}`)}</button>`).join('');
+
+  const initial=available.includes(preferredIndex)?preferredIndex:available[0];
   const showAudit=i=>{
+    const item=loaded[i];if(!item||!item.audit)return;
     pills.querySelectorAll('.pill').forEach((p,j)=>p.classList.toggle('active',j===i));
-    box.innerHTML=renderAuditDetails(loaded[i].audit);
+    box.innerHTML=renderAuditDetails(item.audit);
   };
-  pills.querySelectorAll('[data-audit-index]').forEach(button=>button.onclick=()=>showAudit(Number(button.dataset.auditIndex)));
-  showAudit(Math.min(preferredIndex,loaded.length-1));
+  pills.querySelectorAll('[data-audit-index]:not([disabled])').forEach(button=>button.onclick=()=>showAudit(Number(button.dataset.auditIndex)));
+  showAudit(initial);
   AUDIT_LOADED_DATE=date;
 }
 async function availableAuditSummaries(){
-  const idx=await getAuditIndex();
-  let entries=normalizeAuditIndex(idx);
-  if(!entries.length){
-    const runIdx=await getIndex();
-    entries=Object.keys((runIdx&&runIdx.dates)||{}).map((date,pos)=>({date,file:`ECOBET_${date}_RESULT_AUDIT.html`,pos,fallback:true}));
-  }
+  const idx=await getIndex(true);
+  const entries=[];
+  Object.entries((idx&&idx.dates)||{}).forEach(([date])=>{
+    runIdsForDate(idx,date).forEach((runId,pos)=>entries.push({
+      date,
+      id:runId,
+      run_id:runId,
+      candidates:auditCandidatePaths(date,runId),
+      pos
+    }));
+  });
   const audits=[];
   for(const entry of entries){
     const audit=await loadAuditEntry(entry);
-    if(audit)audits.push(audit);
+    if(audit){
+      if(!audit.date)audit.date=entry.date;
+      if(!audit.run_id)audit.run_id=entry.run_id;
+      audits.push(audit);
+    }
   }
   return audits;
 }
@@ -1425,11 +1452,11 @@ async function renderDashboard(){
     });
     const pct=x=>x.total?`${(100*x.hits/x.total).toFixed(1)}%`:'—';
     const topFailures=Object.entries(failureCounts).sort((a,b)=>b[1]-a[1]).slice(0,6);
-    html+=`<section class="dashboard-audit"><h3>Audit-Performance</h3><p class="sub">Aggregiert aus dem Ordner <span class="mono">audits/</span>. Prognosen werden dabei nicht verändert; die Übersicht zeigt nur die nachgelagerte Ergebnisprüfung.</p><div class="audit-kpis"><div class="audit-kpi"><small>Auditierte Läufe</small><strong>${audits.length}</strong></div><div class="audit-kpi hit"><small>Favorit</small><b>${aggregate.Favourite.hits}/${aggregate.Favourite.total}</b><strong>${pct(aggregate.Favourite)}</strong></div><div class="audit-kpi hit"><small>Sicher</small><b>${aggregate.Safe.hits}/${aggregate.Safe.total}</b><strong>${pct(aggregate.Safe)}</strong></div><div class="audit-kpi"><small>Ausgewogen</small><b>${aggregate.Balanced.hits}/${aggregate.Balanced.total}</b><strong>${pct(aggregate.Balanced)}</strong></div><div class="audit-kpi"><small>Aggressiv</small><b>${aggregate.Aggressive.hits}/${aggregate.Aggressive.total}</b><strong>${pct(aggregate.Aggressive)}</strong></div><div class="audit-kpi"><small>Vierer-Cluster</small><b>${aggregate.Cluster.hits}/${aggregate.Cluster.total}</b><strong>${pct(aggregate.Cluster)}</strong></div><div class="audit-kpi hit"><small>Ergebnisband</small><b>${aggregate.ScoreBand.hits}/${aggregate.ScoreBand.total}</b><strong>${pct(aggregate.ScoreBand)}</strong></div><div class="audit-kpi"><small>Szenario-Verteilung</small><b>${Object.entries(worldCounts).map(([k,v])=>`${auditTextDE(k)} ${v}`).join(' · ')}</b><strong>${Object.values(worldCounts).reduce((a,b)=>a+b,0)} Spiele</strong></div></div>`;
+    html+=`<section class="dashboard-audit"><h3>Audit-Performance</h3><p class="sub">Aggregiert aus <span class="mono">audits/&lt;run_id&gt;.html</span>. Die zugehörigen Lauf-IDs stammen aus <span class="mono">runs/index.json</span>; Prognosen werden dabei nicht verändert.</p><div class="audit-kpis"><div class="audit-kpi"><small>Auditierte Läufe</small><strong>${audits.length}</strong></div><div class="audit-kpi hit"><small>Favorit</small><b>${aggregate.Favourite.hits}/${aggregate.Favourite.total}</b><strong>${pct(aggregate.Favourite)}</strong></div><div class="audit-kpi hit"><small>Sicher</small><b>${aggregate.Safe.hits}/${aggregate.Safe.total}</b><strong>${pct(aggregate.Safe)}</strong></div><div class="audit-kpi"><small>Ausgewogen</small><b>${aggregate.Balanced.hits}/${aggregate.Balanced.total}</b><strong>${pct(aggregate.Balanced)}</strong></div><div class="audit-kpi"><small>Aggressiv</small><b>${aggregate.Aggressive.hits}/${aggregate.Aggressive.total}</b><strong>${pct(aggregate.Aggressive)}</strong></div><div class="audit-kpi"><small>Vierer-Cluster</small><b>${aggregate.Cluster.hits}/${aggregate.Cluster.total}</b><strong>${pct(aggregate.Cluster)}</strong></div><div class="audit-kpi hit"><small>Ergebnisband</small><b>${aggregate.ScoreBand.hits}/${aggregate.ScoreBand.total}</b><strong>${pct(aggregate.ScoreBand)}</strong></div><div class="audit-kpi"><small>Szenario-Verteilung</small><b>${Object.entries(worldCounts).map(([k,v])=>`${auditTextDE(k)} ${v}`).join(' · ')}</b><strong>${Object.values(worldCounts).reduce((a,b)=>a+b,0)} Spiele</strong></div></div>`;
     if(topFailures.length)html+=`<div class="audit-panel"><h3>Häufigste Fehlerkennzeichen</h3><div class="tag-list">${topFailures.map(([tag,count])=>`<span class="tag reason">${esc(tag)} · ${count}</span>`).join('')}</div></div>`;
     html+=`<div class="audit-panel"><h3>Audit-Verlauf</h3><div class="audit-history"><div class="audit-history-row header"><span>Datum</span><span>Lauf</span><span>Favorit</span><span>Sicher</span><span>Ausgew.</span><span>Aggressiv</span><span>Cluster</span><span>Band</span></div>${audits.sort((a,b)=>String(b.date).localeCompare(String(a.date))).map(a=>{const fav=auditMetricBy(a.mainMetrics,'Favourite'),safe=auditMetricBy(a.mainMetrics,'Safe'),bal=auditMetricBy(a.mainMetrics,'Balanced'),agg=auditMetricBy(a.mainMetrics,'Aggressive'),cl=auditMetricBy(a.modelMetrics,'Four-Score Cluster'),sb=auditMetricBy(a.modelMetrics,'Score Band');return `<div class="audit-history-row"><span>${esc(a.date||'—')}</span><span>${esc(a.run_id||'—')}</span><span>${esc(fav?.value||'—')}</span><span>${esc(safe?.value||'—')}</span><span>${esc(bal?.value||'—')}</span><span>${esc(agg?.value||'—')}</span><span>${esc(cl?.value||'—')}</span><span>${esc(sb?.value||'—')}</span></div>`}).join('')}</div></div></section>`;
   }else{
-    html+=`<section class="dashboard-audit">${empty('Noch keine Audits im Archiv.','Sobald audits/index.json und Audit-Dateien vorhanden sind, fliessen Trefferquoten, Cluster, Ergebnisbänder, Szenario-Bewertungen und Fehlerkennzeichen hier ein.','audits/index.json')}</section>`;
+    html+=`<section class="dashboard-audit">${empty('Noch keine Audits im Archiv.','Sobald zu einer Lauf-ID eine Datei unter audits/<run_id>.html vorhanden ist, fliessen Trefferquoten, Cluster, Ergebnisbänder, Szenario-Bewertungen und Fehlerkennzeichen hier ein.','audits/<run_id>.html')}</section>`;
   }
   box.innerHTML=html;
 }
