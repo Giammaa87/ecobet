@@ -1,0 +1,1990 @@
+{
+  "serialization_note": "Audit JSON derived from N_ECOBET_OUTPUT_AND_AUDIT_v1.3 RUN_AUDIT_RECORD / MATCH_AUDIT_RECORD semantics. No dedicated settlement_record schema was loaded, so this file does not claim a separate settlement schema version.",
+  "audit_generated_at": "2026-08-11T23:27:13+02:00",
+  "original_run_immutable": true,
+  "run_audit_record": {
+    "record_type": "RUN_AUDIT_RECORD",
+    "run_id": "RUN_2026-08-11_FOCUS_5_PLUS_UEFA_CEST_1534",
+    "snapshot_id": "SNAP_2026-08-11_1534_CEST",
+    "source_run_record": {
+      "filename": "ECOBET_FOCUS_5_PLUS_UEFA_2026-08-11_RUN_RECORD_FULL_FULL.json",
+      "sha256": "a2edb943d6d127d04ee1c111baf4ad834665da2867af438bcf5268f11641b231",
+      "immutability": "UNCHANGED"
+    },
+    "data_snapshot_provenance": {
+      "data_snapshot_status": "UNREACHABLE",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_date": "NOT_AVAILABLE",
+      "data_snapshot_generated_at": "NOT_AVAILABLE",
+      "data_snapshot_data_cutoff": "NOT_AVAILABLE",
+      "data_snapshot_db_updated_at": "NOT_AVAILABLE",
+      "data_snapshot_hash": "NOT_AVAILABLE",
+      "data_snapshot_schema_version": "NOT_AVAILABLE",
+      "data_snapshot_resolution_url": "https://giammaa87.github.io/ecobet/data/2026-08-11/latest.json",
+      "data_snapshot_url": "NOT_AVAILABLE"
+    },
+    "fixture_reconciliation_summary": "11 independently discovered in-scope fixtures; snapshot reconciliation unavailable because transport was unreachable.",
+    "source_mode_distribution": {
+      "WEB_FALLBACK": 11
+    },
+    "date_range": {
+      "from": "2026-08-11",
+      "to": "2026-08-11"
+    },
+    "timezone": "Europe/Zurich",
+    "scope": "FOCUS_5_PLUS_UEFA",
+    "norm_versions": [
+      "N_ECOBET_MASTER_OS_v1.3",
+      "N_ECOBET_DATA_FABRIC_AND_EBOOKS_v1.5",
+      "N_ECOBET_FOOTBALL_AND_DECISION_ENGINE_v1.0",
+      "N_ECOBET_OUTPUT_AND_AUDIT_v1.3",
+      "N_ECOBET_TEAM_ID_REGISTRY_v1.0",
+      "H_ECOBET_HISTORY_CALIBRATION_v1.0",
+      "ECOBET_SCHEMA_01_run_record_v1.3"
+    ],
+    "match_counts": {
+      "scope": 11,
+      "committed": 11,
+      "settled": 11
+    },
+    "readiness_distribution": {
+      "CONDITIONAL": 11
+    },
+    "world_stability_distribution": {
+      "STABLE": 11
+    },
+    "ampel_distribution": {
+      "YELLOW": 11
+    },
+    "nsp_count": 0,
+    "proof_counters": {
+      "matches_in_scope": 11,
+      "matches_queued": 11,
+      "matches_modeled": 11,
+      "matches_committed": 11,
+      "matches_no_stable_prediction": 0,
+      "matches_not_processed": 0,
+      "silent_exclusions": 0,
+      "out_of_scope_discovered": 2,
+      "scope_unresolved_count": 0,
+      "team_ebooks_built": 22,
+      "match_ebooks_built": 11,
+      "repair_passes_total": 35,
+      "critical_fields_partial": 149,
+      "critical_fields_restricted": 0,
+      "conflict_count": 1,
+      "timeout_limit_count": 0,
+      "forbidden_source_count": 0,
+      "readiness_distribution": {
+        "READY": 0,
+        "CONDITIONAL": 11,
+        "NOT_READY": 0
+      },
+      "world_stability_distribution": {
+        "STABLE": 11,
+        "VERY_STABLE": 0,
+        "ULTRA_STABLE": 0,
+        "UNKNOWN": 0
+      },
+      "ampel_distribution": {
+        "GREEN": 0,
+        "YELLOW": 11,
+        "RED": 0
+      },
+      "real_odds_used_as_input": 0,
+      "tickets_created": "NO",
+      "html_visual_report_status": "CREATED",
+      "pdf_report_status": "CREATED",
+      "final_board_png_status": "CREATED",
+      "visual_output_consistency": "PASS",
+      "visual_output_integrity": "PASS",
+      "run_integrity": "PASS",
+      "output_integrity": "PASS",
+      "search_exhaustion_note": "No prediction-critical field was set RESTRICTED. Daily snapshot resolution was exhausted to UNREACHABLE; all other unresolved values remain PARTIAL/CONFLICT and visible."
+    },
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "result_settlement_status": "COMPLETE",
+    "model_kpis": {
+      "favourite": {
+        "HIT": 9,
+        "MISS": 2,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 81.8
+      },
+      "safe": {
+        "HIT": 10,
+        "MISS": 1,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 90.9
+      },
+      "balanced": {
+        "HIT": 8,
+        "MISS": 3,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 72.7
+      },
+      "aggressive": {
+        "HIT": 6,
+        "MISS": 5,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 54.5
+      },
+      "modal_score": {
+        "hits": 0,
+        "total": 11,
+        "hit_rate_percent": 0.0
+      },
+      "four_score_cluster": {
+        "hits": 7,
+        "total": 11,
+        "hit_rate_percent": 63.6
+      },
+      "score_band": {
+        "hits": 11,
+        "total": 11,
+        "hit_rate_percent": 100.0
+      },
+      "world_verdict_distribution": {
+        "PRIME": 6,
+        "COUNTERWORLD": 2,
+        "MIXED": 3,
+        "NEITHER": 0,
+        "UNDETERMINED": 0
+      },
+      "yellow_favourite_hit_rate_percent": 81.8,
+      "yellow_cluster_hit_rate_percent": 63.6
+    },
+    "data_integrity_flags": [
+      "ALL_MATCHES_RESULT_SETTLED",
+      "THREE_EXTRA_TIME_MATCHES_SETTLED_AT_90_MINUTES",
+      "WORLD_VERDICTS_USE_RESULT_ONLY_EVIDENCE",
+      "RESULT_DISTANCE_FROM_MODAL_FORMULA_NOT_DEFINED_IN_LOADED_NORM"
+    ],
+    "notes": [
+      "Original predictions, worlds, clusters, bands, model prices and ampels were not modified.",
+      "No normative rule change is inferred from this single 11-match slate.",
+      "RESULT_DISTANCE_FROM_MODAL is left NOT_AVAILABLE because the loaded Output/Audit v1.3 requires the field but does not define a calculation formula."
+    ]
+  },
+  "match_audit_records": [
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-11-KAIRAT-LEVSKI",
+      "snapshot_id": "SNAP_2026-08-11_1534_CEST",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "17:00",
+        "home": "Kairat Almaty",
+        "away": "Levski Sofia",
+        "competition": "UEFA Champions League",
+        "phase": "Q3 - 2nd leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 1
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [
+          "Form L5"
+        ],
+        "world_type": "KO_STATE_DEPENDENT",
+        "anchor": "Kairat's home chase raises attacking load, while Levski's stronger current-season control creates a live counter path.",
+        "prime_world": "Kairat push earlier than in a neutral game; home volume rises, but Levski retain transition access and can punish overextension.",
+        "counterworld": "Levski protect central space, Kairat conversion stays inefficient, and the tie remains compressed deep into the second half.",
+        "prime_break_condition": "early state reversal or conversion collapse can shift control.",
+        "counterworld_break_condition": "sustained pressure or an early goal can invalidate the alternative mechanism.",
+        "modal_score": "1-1",
+        "four_score_cluster": [
+          "1-1",
+          "2-1",
+          "1-0",
+          "0-1"
+        ],
+        "score_band": "1-3",
+        "prediction_map": [
+          {
+            "prediction": "Match goals 1-3",
+            "axis": "RANGE",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "78%",
+            "W_F_R_D": "3/1/3/2",
+            "score_total": 8,
+            "robustness": "HIGH",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "Kairat O0.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "3/4",
+            "p_raw": "73%",
+            "W_F_R_D": "3/3/2/2",
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "BTTS Yes",
+            "axis": "BTTS",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "2/4",
+            "p_raw": "57%",
+            "W_F_R_D": "2/2/1/2",
+            "score_total": 6,
+            "robustness": "LOW",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "Levski O0.5 team goals",
+            "axis": "TG",
+            "world": "COUNTERWORLD",
+            "cluster_coverage": "2/4",
+            "p_raw": "60%",
+            "W_F_R_D": "2/2/2/2",
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "penalties": []
+          }
+        ],
+        "safe": "Match goals 1-3",
+        "balanced": "Kairat O0.5 team goals",
+        "aggressive": "BTTS Yes",
+        "favourite_prediction": "Kairat O0.5 team goals",
+        "model_probability_band": "65-81%",
+        "model_price_band": "1.23-1.54",
+        "robustness": "MEDIUM",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "SOURCE_MIXED",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-11T16:03:22+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-1",
+        "competition_final_score": "0-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-1 is directly counter-compatible: the committed alternative allowed a compressed match with Kairat failing to convert.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "RIGHT_WORLD_WRONG_RENDERER",
+        "TEAM_TOTAL_MISROUTED",
+        "COUNTERWORLD_UNDERRATED"
+      ],
+      "audit_flags": [
+        "SETTLEMENT_ALIAS_MAPPING_CORRECTED_KAIRAT_TO_KAIRAT_ALMATY"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-11-BODO-UNION",
+      "snapshot_id": "SNAP_2026-08-11_1534_CEST",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "18:00",
+        "home": "Bodo/Glimt",
+        "away": "Union SG",
+        "competition": "UEFA Champions League",
+        "phase": "Q3 - 2nd leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 2
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "TRANSITION_CHAOS",
+        "anchor": "A 3-3 aggregate enters a second leg with two high-output rolling profiles; Bodo's home process is especially strong and Union arrive off another high-scoring game.",
+        "prime_world": "Both teams sustain credible scoring routes; Bodo press and create at home while Union can play through transitions, keeping total chance volume elevated.",
+        "counterworld": "One side scores first and temporarily suppresses risk, forcing a more controlled middle phase before late re-expansion.",
+        "prime_break_condition": "early state reversal or conversion collapse can shift control.",
+        "counterworld_break_condition": "sustained pressure or an early goal can invalidate the alternative mechanism.",
+        "modal_score": "2-1",
+        "four_score_cluster": [
+          "2-1",
+          "2-2",
+          "3-1",
+          "1-2"
+        ],
+        "score_band": "3-5",
+        "prediction_map": [
+          {
+            "prediction": "Over 1.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "83%",
+            "W_F_R_D": "3/3/3/2",
+            "score_total": 9,
+            "robustness": "HIGH",
+            "penalties": [
+              "STATE_SENSITIVE",
+              "TAIL_EXPOSURE_HIGH"
+            ]
+          },
+          {
+            "prediction": "BTTS Yes",
+            "axis": "BTTS",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "72%",
+            "W_F_R_D": "3/3/2/2",
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "Over 2.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "70%",
+            "W_F_R_D": "3/2/2/2",
+            "score_total": 7,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE",
+              "TAIL_EXPOSURE_HIGH"
+            ]
+          },
+          {
+            "prediction": "Bodo/Glimt O0.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "86%",
+            "W_F_R_D": "2/2/3/2",
+            "score_total": 8,
+            "robustness": "HIGH",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          }
+        ],
+        "safe": "Over 1.5",
+        "balanced": "BTTS Yes",
+        "aggressive": "Over 2.5",
+        "favourite_prediction": "Over 1.5",
+        "model_probability_band": "74-92%",
+        "model_price_band": "1.09-1.35",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE",
+          "TAIL_RISK_HIGH",
+          "CHAOS_HIGH"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-11T16:03:22+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-2",
+        "competition_final_score": "3-2 AET",
+        "went_extra_time": true,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "official final/AET confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          },
+          {
+            "name": "Sky Sports live commentary",
+            "role": "regulation-time / extra-time transition confirmation",
+            "url": "https://www.skysports.com/football/bodo-glimt-vs-union-saint-gilloise/571438"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-2 at 90' matches the committed high-event, two-sided scoring world and is an exact cluster score.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": [
+        "EXTRA_TIME_EXCLUDED_FROM_SETTLEMENT"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-11-SABAH-AGF",
+      "snapshot_id": "SNAP_2026-08-11_1534_CEST",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "18:00",
+        "home": "Sabah",
+        "away": "AGF",
+        "competition": "UEFA Champions League",
+        "phase": "Q3 - 2nd leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 3
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "KO_STATE_DEPENDENT",
+        "anchor": "Sabah must turn a one-goal deficit while both rolling profiles create credible scoring paths and AGF's away xGA tail is elevated.",
+        "prime_world": "Sabah increase pressure and box entries; AGF answer through direct transitions, creating a two-sided chance environment.",
+        "counterworld": "AGF slow the game, Sabah fail to convert early pressure, and the tie stays near a one-goal corridor.",
+        "prime_break_condition": "early state reversal or conversion collapse can shift control.",
+        "counterworld_break_condition": "sustained pressure or an early goal can invalidate the alternative mechanism.",
+        "modal_score": "1-1",
+        "four_score_cluster": [
+          "1-1",
+          "2-1",
+          "1-2",
+          "2-2"
+        ],
+        "score_band": "2-4",
+        "prediction_map": [
+          {
+            "prediction": "Over 1.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "80%",
+            "W_F_R_D": "3/3/3/2",
+            "score_total": 9,
+            "robustness": "HIGH",
+            "penalties": [
+              "STATE_SENSITIVE",
+              "TAIL_EXPOSURE_HIGH"
+            ]
+          },
+          {
+            "prediction": "Match goals 2-5",
+            "axis": "RANGE",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "78%",
+            "W_F_R_D": "3/2/2/2",
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "BTTS Yes",
+            "axis": "BTTS",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "66%",
+            "W_F_R_D": "3/2/2/2",
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "Over 2.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "3/4",
+            "p_raw": "62%",
+            "W_F_R_D": "3/2/1/2",
+            "score_total": 6,
+            "robustness": "LOW",
+            "penalties": [
+              "STATE_SENSITIVE",
+              "TAIL_EXPOSURE_HIGH"
+            ]
+          }
+        ],
+        "safe": "Match goals 2-5",
+        "balanced": "Over 1.5",
+        "aggressive": "BTTS Yes",
+        "favourite_prediction": "Over 1.5",
+        "model_probability_band": "71-89%",
+        "model_price_band": "1.12-1.41",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE",
+          "TAIL_RISK_HIGH"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-11T16:03:22+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "4-0",
+        "competition_final_score": "4-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "Four total goals fit the open-event expectation, but the committed two-sided AGF scoring path did not materialise in the scoreline.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "BLOWOUT_TAIL_MISSED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-11-IBERIA-LARNE",
+      "snapshot_id": "SNAP_2026-08-11_1534_CEST",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "18:00",
+        "home": "Iberia 1999",
+        "away": "Larne",
+        "competition": "UEFA Europa League",
+        "phase": "Q3 - 2nd leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 4
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "BALANCED_NARROW",
+        "anchor": "The 0-0 first leg combines with Larne's high clean-sheet/failed-to-score rates, while Iberia's home process provides the clearest route to eventually open the tie.",
+        "prime_world": "The match stays compressed through the first phases; Iberia carry the better home scoring path, but Larne's structure keeps the upper total tail contained.",
+        "counterworld": "An early Iberia or Larne goal changes incentives and produces a late chase with more transition exposure than the base world.",
+        "prime_break_condition": "early state reversal or conversion collapse can shift control.",
+        "counterworld_break_condition": "sustained pressure or an early goal can invalidate the alternative mechanism.",
+        "modal_score": "1-0",
+        "four_score_cluster": [
+          "1-0",
+          "1-1",
+          "0-0",
+          "2-0"
+        ],
+        "score_band": "0-3",
+        "prediction_map": [
+          {
+            "prediction": "Under 3.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "80%",
+            "W_F_R_D": "3/3/1/2",
+            "score_total": 7,
+            "robustness": "LOW",
+            "penalties": [
+              "STATE_SENSITIVE",
+              "MULTIWORLD_CLOSE"
+            ]
+          },
+          {
+            "prediction": "Under 4.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "90%",
+            "W_F_R_D": "3/1/3/2",
+            "score_total": 6,
+            "robustness": "HIGH",
+            "penalties": [
+              "MULTIWORLD_CLOSE",
+              "SUBSET_OR_DUPLICATE"
+            ]
+          },
+          {
+            "prediction": "Larne U1.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "78%",
+            "W_F_R_D": "3/2/1/2",
+            "score_total": 7,
+            "robustness": "LOW",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "Match goals 1-3",
+            "axis": "RANGE",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "3/4",
+            "p_raw": "73%",
+            "W_F_R_D": "2/2/2/2",
+            "score_total": 6,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE",
+              "MULTIWORLD_CLOSE"
+            ]
+          }
+        ],
+        "safe": "Under 4.5",
+        "balanced": "Under 3.5",
+        "aggressive": "Larne U1.5 team goals",
+        "favourite_prediction": "Under 3.5",
+        "model_probability_band": "71-89%",
+        "model_price_band": "1.12-1.41",
+        "robustness": "LOW",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE",
+          "MULTIWORLD_CLOSE",
+          "LOW_EVENT_SIGNATURE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-11T16:03:22+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "2-1 AET",
+        "went_extra_time": true,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Daily Record match report",
+            "role": "90-minute 1-1 and extra-time confirmation",
+            "url": "https://www.dailyrecord.co.uk/sport/football/football-news/larne-see-dream-rangers-date-37540594"
+          },
+          {
+            "name": "Scottish Sun match report",
+            "role": "extra-time winning goal confirmation",
+            "url": "https://www.thescottishsun.co.uk/sport/16672942/rangers-europa-league-play-off-opponents-jagiellonia-bialystok/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-1 at 90' is an exact cluster score inside the committed compressed low-total world.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": [
+        "EXTRA_TIME_EXCLUDED_FROM_SETTLEMENT"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-11-KAUNO-DINAMO",
+      "snapshot_id": "SNAP_2026-08-11_1534_CEST",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "19:00",
+        "home": "Kauno Zalgiris",
+        "away": "Dinamo Zagreb",
+        "competition": "UEFA Champions League",
+        "phase": "Q3 - 2nd leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 5
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "CONTROL_AWAY",
+        "anchor": "Dinamo's large aggregate cushion and superior rolling process reduce urgency without removing their transition and scoring edge.",
+        "prime_world": "Dinamo manage territory and game state, accepting lower tempo but retaining the cleaner chance profile when Kauno step forward.",
+        "counterworld": "The five-goal cushion suppresses Dinamo intensity and Kauno keep the match level for long phases without changing the tie.",
+        "prime_break_condition": "early state reversal or conversion collapse can shift control.",
+        "counterworld_break_condition": "sustained pressure or an early goal can invalidate the alternative mechanism.",
+        "modal_score": "0-1",
+        "four_score_cluster": [
+          "0-1",
+          "0-2",
+          "1-1",
+          "1-2"
+        ],
+        "score_band": "1-3",
+        "prediction_map": [
+          {
+            "prediction": "X2",
+            "axis": "DIR",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "82%",
+            "W_F_R_D": "3/3/2/2",
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "LOW_SAMPLE"
+            ]
+          },
+          {
+            "prediction": "Dinamo Zagreb O0.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "80%",
+            "W_F_R_D": "3/3/2/2",
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "LOW_SAMPLE"
+            ]
+          },
+          {
+            "prediction": "Under 4.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "84%",
+            "W_F_R_D": "2/2/3/2",
+            "score_total": 8,
+            "robustness": "HIGH",
+            "penalties": [
+              "LOW_SAMPLE"
+            ]
+          },
+          {
+            "prediction": "Dinamo Zagreb O1.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "2/4",
+            "p_raw": "58%",
+            "W_F_R_D": "3/2/1/2",
+            "score_total": 6,
+            "robustness": "LOW",
+            "penalties": [
+              "LOW_SAMPLE",
+              "STATE_SENSITIVE"
+            ]
+          }
+        ],
+        "safe": "X2",
+        "balanced": "Dinamo Zagreb O0.5 team goals",
+        "aggressive": "Dinamo Zagreb O1.5 team goals",
+        "favourite_prediction": "X2",
+        "model_probability_band": "75-89%",
+        "model_price_band": "1.12-1.33",
+        "robustness": "MEDIUM",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "KO_STATE_DEPENDENT",
+          "ONE_SIDED_SCORING"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-11T16:03:22+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-2",
+        "competition_final_score": "1-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-2 is an exact cluster score and retains the committed Dinamo scoring/directional edge.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-11-NEC-OLYMPIACOS",
+      "snapshot_id": "SNAP_2026-08-11_1534_CEST",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "19:30",
+        "home": "NEC",
+        "away": "Olympiacos",
+        "competition": "UEFA Champions League",
+        "phase": "Q3 - 2nd leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 6
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "BALANCED_NARROW",
+        "anchor": "The 0-0 first leg meets Olympiacos' low recent scoring/conceding profile, while NEC's higher xG introduces a later opening rather than an automatic low-event lock.",
+        "prime_world": "The first phase stays controlled and score-sensitive; the tie expands only after a goal or deeper second-half urgency.",
+        "counterworld": "An early breakthrough breaks the narrow corridor and NEC's high-BTTS recent profile turns the game into transitions.",
+        "prime_break_condition": "early state reversal or conversion collapse can shift control.",
+        "counterworld_break_condition": "sustained pressure or an early goal can invalidate the alternative mechanism.",
+        "modal_score": "0-1",
+        "four_score_cluster": [
+          "0-1",
+          "1-1",
+          "1-0",
+          "1-2"
+        ],
+        "score_band": "1-3",
+        "prediction_map": [
+          {
+            "prediction": "Under 3.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "79%",
+            "W_F_R_D": "3/3/1/2",
+            "score_total": 7,
+            "robustness": "LOW",
+            "penalties": [
+              "STATE_SENSITIVE",
+              "MULTIWORLD_CLOSE"
+            ]
+          },
+          {
+            "prediction": "Under 4.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "88%",
+            "W_F_R_D": "3/1/3/2",
+            "score_total": 6,
+            "robustness": "HIGH",
+            "penalties": [
+              "MULTIWORLD_CLOSE",
+              "SUBSET_OR_DUPLICATE"
+            ]
+          },
+          {
+            "prediction": "Match goals 1-3",
+            "axis": "RANGE",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "75%",
+            "W_F_R_D": "2/2/2/2",
+            "score_total": 6,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE",
+              "MULTIWORLD_CLOSE"
+            ]
+          },
+          {
+            "prediction": "Olympiacos O0.5 team goals",
+            "axis": "TG",
+            "world": "COUNTERWORLD",
+            "cluster_coverage": "3/4",
+            "p_raw": "61%",
+            "W_F_R_D": "2/2/1/2",
+            "score_total": 6,
+            "robustness": "LOW",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          }
+        ],
+        "safe": "Under 4.5",
+        "balanced": "Under 3.5",
+        "aggressive": "Match goals 1-3",
+        "favourite_prediction": "Under 3.5",
+        "model_probability_band": "70-88%",
+        "model_price_band": "1.14-1.43",
+        "robustness": "LOW",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE",
+          "MULTIWORLD_CLOSE",
+          "LOW_EVENT_SIGNATURE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-11T16:03:22+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "2-1 AET",
+        "went_extra_time": true,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "official final/AET confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          },
+          {
+            "name": "Sky Sports live updates",
+            "role": "90-minute 1-1 confirmation",
+            "url": "https://www.skysports.com/football/nec-nijmegen-vs-olympiakos-fc/571440"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-1 at 90' is an exact cluster score and remains inside the committed balanced/narrow regulation-time world.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": [
+        "EXTRA_TIME_EXCLUDED_FROM_SETTLEMENT"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-11-REDSTAR-HAPOEL",
+      "snapshot_id": "SNAP_2026-08-11_1534_CEST",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "20:00",
+        "home": "Crvena Zvezda",
+        "away": "Hapoel Beer Sheva",
+        "competition": "UEFA Champions League",
+        "phase": "Q3 - 2nd leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 7
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "CONTROL_HOME",
+        "anchor": "Crvena Zvezda's strong home process and early domestic scoring face a one-goal deficit that forces sustained attacking responsibility.",
+        "prime_world": "Red Star establish territorial control, create repeated home pressure and score; Hapoel's best route is transition against the chase.",
+        "counterworld": "Hapoel survive the first pressure wave, protect the lead and force Red Star into lower-quality late attempts.",
+        "prime_break_condition": "early state reversal or conversion collapse can shift control.",
+        "counterworld_break_condition": "sustained pressure or an early goal can invalidate the alternative mechanism.",
+        "modal_score": "2-0",
+        "four_score_cluster": [
+          "2-0",
+          "1-0",
+          "2-1",
+          "1-1"
+        ],
+        "score_band": "1-3",
+        "prediction_map": [
+          {
+            "prediction": "Crvena Zvezda O0.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "82%",
+            "W_F_R_D": "3/3/2/2",
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "1X",
+            "axis": "DIR",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "80%",
+            "W_F_R_D": "2/2/3/2",
+            "score_total": 8,
+            "robustness": "HIGH",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "1",
+            "axis": "DIR",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "3/4",
+            "p_raw": "64%",
+            "W_F_R_D": "3/2/1/2",
+            "score_total": 7,
+            "robustness": "LOW",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "Crvena Zvezda O1.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "2/4",
+            "p_raw": "60%",
+            "W_F_R_D": "3/2/1/2",
+            "score_total": 7,
+            "robustness": "LOW",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          }
+        ],
+        "safe": "1X",
+        "balanced": "Crvena Zvezda O0.5 team goals",
+        "aggressive": "Crvena Zvezda O1.5 team goals",
+        "favourite_prediction": "Crvena Zvezda O0.5 team goals",
+        "model_probability_band": "75-89%",
+        "model_price_band": "1.12-1.33",
+        "robustness": "MEDIUM",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE",
+          "CONTROL_BUT_FRAGILE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-11T16:03:22+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-2",
+        "competition_final_score": "0-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-2 is counter-compatible because the alternative world explicitly allowed Red Star conversion failure and Hapoel protection of the tie.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "UPSET_TAIL_MISSED",
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-11-CELJE-ARARAT",
+      "snapshot_id": "SNAP_2026-08-11_1534_CEST",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "20:15",
+        "home": "Celje",
+        "away": "Ararat-Armenia",
+        "competition": "UEFA Champions League",
+        "phase": "Q3 - 2nd leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 8
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "GOALS_OPEN",
+        "anchor": "Celje's deficit forces initiative into two rolling profiles with high BTTS rates and elevated combined goal means.",
+        "prime_world": "Celje attack the tie and create chances, while Ararat-Armenia retain a credible away scoring route into the space behind the chase.",
+        "counterworld": "Ararat defend the lead deeper, Celje dominate territory but conversion lags, producing a narrower game than the rolling goal profiles suggest.",
+        "prime_break_condition": "early state reversal or conversion collapse can shift control.",
+        "counterworld_break_condition": "sustained pressure or an early goal can invalidate the alternative mechanism.",
+        "modal_score": "2-1",
+        "four_score_cluster": [
+          "2-1",
+          "1-1",
+          "1-2",
+          "2-2"
+        ],
+        "score_band": "2-4",
+        "prediction_map": [
+          {
+            "prediction": "Over 1.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "80%",
+            "W_F_R_D": "3/3/3/2",
+            "score_total": 9,
+            "robustness": "HIGH",
+            "penalties": [
+              "STATE_SENSITIVE",
+              "TAIL_EXPOSURE_HIGH"
+            ]
+          },
+          {
+            "prediction": "Celje O0.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "82%",
+            "W_F_R_D": "3/2/2/2",
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "BTTS Yes",
+            "axis": "BTTS",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "68%",
+            "W_F_R_D": "3/2/2/2",
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "Over 2.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "3/4",
+            "p_raw": "63%",
+            "W_F_R_D": "3/2/1/2",
+            "score_total": 6,
+            "robustness": "LOW",
+            "penalties": [
+              "STATE_SENSITIVE",
+              "TAIL_EXPOSURE_HIGH"
+            ]
+          }
+        ],
+        "safe": "Celje O0.5 team goals",
+        "balanced": "Over 1.5",
+        "aggressive": "BTTS Yes",
+        "favourite_prediction": "Over 1.5",
+        "model_probability_band": "71-89%",
+        "model_price_band": "1.12-1.41",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE",
+          "TAIL_RISK_HIGH"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-11T16:03:22+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-0",
+        "competition_final_score": "2-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "Two goals validate the open-total axis, but the two-sided scoring mechanism did not appear in the 2-0 scoreline.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "BTTS_ONE_GOAL_PATH"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-11-SLOVAN-MJALLBY",
+      "snapshot_id": "SNAP_2026-08-11_1534_CEST",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "20:15",
+        "home": "Slovan Bratislava",
+        "away": "Mjallby",
+        "competition": "UEFA Champions League",
+        "phase": "Q3 - 2nd leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 9
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "CONTROL_HOME",
+        "anchor": "Slovan combine a one-goal aggregate lead with a much stronger rolling result/defensive profile, while Mjallby must eventually increase risk.",
+        "prime_world": "Slovan control the central phases, preserve defensive structure and still retain a home scoring path as Mjallby chase.",
+        "counterworld": "Mjallby raise pressure early, convert a transition and pull the tie toward a balanced, higher-variance state.",
+        "prime_break_condition": "early state reversal or conversion collapse can shift control.",
+        "counterworld_break_condition": "sustained pressure or an early goal can invalidate the alternative mechanism.",
+        "modal_score": "1-0",
+        "four_score_cluster": [
+          "1-0",
+          "1-1",
+          "2-0",
+          "2-1"
+        ],
+        "score_band": "1-3",
+        "prediction_map": [
+          {
+            "prediction": "Slovan Bratislava O0.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "80%",
+            "W_F_R_D": "3/3/2/2",
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "1X",
+            "axis": "DIR",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "82%",
+            "W_F_R_D": "2/2/3/2",
+            "score_total": 8,
+            "robustness": "HIGH",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "1",
+            "axis": "DIR",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "3/4",
+            "p_raw": "65%",
+            "W_F_R_D": "3/2/1/2",
+            "score_total": 7,
+            "robustness": "LOW",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "Mjallby U1.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "76%",
+            "W_F_R_D": "2/2/2/2",
+            "score_total": 7,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          }
+        ],
+        "safe": "1X",
+        "balanced": "Slovan Bratislava O0.5 team goals",
+        "aggressive": "1",
+        "favourite_prediction": "Slovan Bratislava O0.5 team goals",
+        "model_probability_band": "73-87%",
+        "model_price_band": "1.15-1.37",
+        "robustness": "MEDIUM",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-11T16:03:22+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-0",
+        "competition_final_score": "2-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-0 is an exact cluster score and fits Slovan control plus a home scoring path.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-11-STURM-FENER",
+      "snapshot_id": "SNAP_2026-08-11_1534_CEST",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "20:30",
+        "home": "Sturm Graz",
+        "away": "Fenerbahce",
+        "competition": "UEFA Champions League",
+        "phase": "Q3 - 2nd leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 10
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "COUNTER_CONTROL_AWAY",
+        "anchor": "Sturm must chase a two-goal deficit, while Fenerbahce can choose transition moments from a stronger aggregate position and solid rolling attack.",
+        "prime_world": "Sturm push numbers forward; Fenerbahce absorb phases and attack the space behind, preserving a clear away scoring path without needing constant possession.",
+        "counterworld": "Fenerbahce prioritise pure game management, Sturm fail to create clean chances and the match stays low-event.",
+        "prime_break_condition": "early state reversal or conversion collapse can shift control.",
+        "counterworld_break_condition": "sustained pressure or an early goal can invalidate the alternative mechanism.",
+        "modal_score": "1-1",
+        "four_score_cluster": [
+          "1-1",
+          "1-2",
+          "0-1",
+          "2-2"
+        ],
+        "score_band": "1-4",
+        "prediction_map": [
+          {
+            "prediction": "Fenerbahce O0.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "80%",
+            "W_F_R_D": "3/3/2/2",
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "X2",
+            "axis": "DIR",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "79%",
+            "W_F_R_D": "2/2/3/2",
+            "score_total": 8,
+            "robustness": "HIGH",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "Over 1.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "3/4",
+            "p_raw": "70%",
+            "W_F_R_D": "3/2/2/2",
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "Fenerbahce O1.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "1/4",
+            "p_raw": "49%",
+            "W_F_R_D": "3/1/1/2",
+            "score_total": 6,
+            "robustness": "LOW",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          }
+        ],
+        "safe": "X2",
+        "balanced": "Fenerbahce O0.5 team goals",
+        "aggressive": "Fenerbahce O1.5 team goals",
+        "favourite_prediction": "Fenerbahce O0.5 team goals",
+        "model_probability_band": "73-87%",
+        "model_price_band": "1.15-1.37",
+        "robustness": "MEDIUM",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-11T16:03:22+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-1",
+        "competition_final_score": "0-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-1 is an exact cluster score and fits the committed Fenerbahce away scoring/counter-control path.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-11-LYON-SPARTA",
+      "snapshot_id": "SNAP_2026-08-11_1534_CEST",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "21:00",
+        "home": "Lyon",
+        "away": "Sparta Praha",
+        "competition": "UEFA Champions League",
+        "phase": "Q3 - 2nd leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 11
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "GOALS_OPEN",
+        "anchor": "Lyon's one-goal deficit meets a rolling 4.60-goal match mean and zero clean-sheet rate; Sparta retain a scoring route but carry confirmed availability events.",
+        "prime_world": "Lyon take initiative and generate pressure; their defensive leakiness keeps Sparta's counter/scoring path alive, lifting total-event risk.",
+        "counterworld": "Sparta protect the lead with a lower block, Lyon control possession but the game remains below the rolling volatility profile.",
+        "prime_break_condition": "early state reversal or conversion collapse can shift control.",
+        "counterworld_break_condition": "sustained pressure or an early goal can invalidate the alternative mechanism.",
+        "modal_score": "2-1",
+        "four_score_cluster": [
+          "2-1",
+          "1-1",
+          "2-2",
+          "1-2"
+        ],
+        "score_band": "2-4",
+        "prediction_map": [
+          {
+            "prediction": "Over 1.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "80%",
+            "W_F_R_D": "3/3/3/2",
+            "score_total": 9,
+            "robustness": "HIGH",
+            "penalties": [
+              "STATE_SENSITIVE",
+              "TAIL_EXPOSURE_HIGH"
+            ]
+          },
+          {
+            "prediction": "BTTS Yes",
+            "axis": "BTTS",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "69%",
+            "W_F_R_D": "3/3/2/2",
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "prediction": "Over 2.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "3/4",
+            "p_raw": "63%",
+            "W_F_R_D": "3/2/2/2",
+            "score_total": 7,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE",
+              "TAIL_EXPOSURE_HIGH"
+            ]
+          },
+          {
+            "prediction": "Lyon O0.5 team goals",
+            "axis": "TG",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": "84%",
+            "W_F_R_D": "3/2/2/2",
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "penalties": [
+              "STATE_SENSITIVE"
+            ]
+          }
+        ],
+        "safe": "Over 1.5",
+        "balanced": "BTTS Yes",
+        "aggressive": "Over 2.5",
+        "favourite_prediction": "Over 1.5",
+        "model_probability_band": "70-90%",
+        "model_price_band": "1.11-1.43",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "SOURCE_MIXED",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE",
+          "TAIL_RISK_HIGH"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-11T16:03:22+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "3-0",
+        "competition_final_score": "3-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "MISS",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "The high-event total axis was right, but the scoreline was one-sided rather than the committed two-sided cluster.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "BLOWOUT_TAIL_MISSED",
+        "BTTS_ONE_GOAL_PATH"
+      ],
+      "audit_flags": []
+    }
+  ],
+  "sparse_match_log": [
+    {
+      "match": "Kairat Almaty – Levski Sofia",
+      "result_90": "0-1",
+      "favourite": "Kairat O0.5 team goals",
+      "settlement": "MISS",
+      "world_verdict": "COUNTERWORLD",
+      "cluster_hit": true,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "RIGHT_WORLD_WRONG_RENDERER",
+        "TEAM_TOTAL_MISROUTED",
+        "COUNTERWORLD_UNDERRATED"
+      ],
+      "notes": [
+        "SETTLEMENT_ALIAS_MAPPING_CORRECTED_KAIRAT_TO_KAIRAT_ALMATY"
+      ]
+    },
+    {
+      "match": "Bodo/Glimt – Union SG",
+      "result_90": "2-2",
+      "favourite": "Over 1.5",
+      "settlement": "HIT",
+      "world_verdict": "PRIME",
+      "cluster_hit": true,
+      "ampel": "YELLOW",
+      "failure_tags": [],
+      "notes": [
+        "EXTRA_TIME_EXCLUDED_FROM_SETTLEMENT"
+      ]
+    },
+    {
+      "match": "Sabah – AGF",
+      "result_90": "4-0",
+      "favourite": "Over 1.5",
+      "settlement": "HIT",
+      "world_verdict": "MIXED",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "BLOWOUT_TAIL_MISSED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Iberia 1999 – Larne",
+      "result_90": "1-1",
+      "favourite": "Under 3.5",
+      "settlement": "HIT",
+      "world_verdict": "PRIME",
+      "cluster_hit": true,
+      "ampel": "YELLOW",
+      "failure_tags": [],
+      "notes": [
+        "EXTRA_TIME_EXCLUDED_FROM_SETTLEMENT"
+      ]
+    },
+    {
+      "match": "NEC – Olympiacos",
+      "result_90": "1-1",
+      "favourite": "Under 3.5",
+      "settlement": "HIT",
+      "world_verdict": "PRIME",
+      "cluster_hit": true,
+      "ampel": "YELLOW",
+      "failure_tags": [],
+      "notes": [
+        "EXTRA_TIME_EXCLUDED_FROM_SETTLEMENT"
+      ]
+    },
+    {
+      "match": "Crvena Zvezda – Hapoel Beer Sheva",
+      "result_90": "0-2",
+      "favourite": "Crvena Zvezda O0.5 team goals",
+      "settlement": "MISS",
+      "world_verdict": "COUNTERWORLD",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "UPSET_TAIL_MISSED",
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Celje – Ararat-Armenia",
+      "result_90": "2-0",
+      "favourite": "Over 1.5",
+      "settlement": "HIT",
+      "world_verdict": "MIXED",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "BTTS_ONE_GOAL_PATH"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Lyon – Sparta Praha",
+      "result_90": "3-0",
+      "favourite": "Over 1.5",
+      "settlement": "HIT",
+      "world_verdict": "MIXED",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "BLOWOUT_TAIL_MISSED",
+        "BTTS_ONE_GOAL_PATH"
+      ],
+      "notes": []
+    }
+  ],
+  "correction_records": [
+    {
+      "type": "CORRECTION_RECORD",
+      "references": "ECOBET_2026-08-11_RESULT_AUDIT initial serialization",
+      "reason": "Technical team alias mapping treated committed expression 'Kairat O0.5 team goals' as unmappable against canonical team name 'Kairat Almaty'. Correct settlement is MISS at 0-1.",
+      "prediction_changed": false,
+      "result_changed": false,
+      "settlement_mapping_only": true
+    }
+  ]
+}
