@@ -1,23 +1,491 @@
 {
-  "schema_version": "1.0",
-  "record_type": "audit_index",
-  "generated_at": "2026-08-12T22:17:00+02:00",
-  "dates": {
-    "2026-08-11": [
-      {
-        "id": "2026-08-11_1534",
-        "run_id": "RUN_2026-08-11_FOCUS_5_PLUS_UEFA_CEST_1534",
-        "file": "ECOBET_2026-08-11_RESULT_AUDIT.html",
-        "generated_at": "2026-08-11T23:27:13+02:00"
-      }
+  "serialization_note": "Audit JSON derived from N_ECOBET_OUTPUT_AND_AUDIT_v1.3 RUN_AUDIT_RECORD / MATCH_AUDIT_RECORD semantics. No dedicated settlement_record schema was loaded, so this file does not claim a separate settlement schema version.",
+  "audit_generated_at": "2026-08-12T22:17:00+02:00",
+  "original_run_immutable": true,
+  "run_audit_record": {
+    "record_type": "RUN_AUDIT_RECORD",
+    "run_id": "RUN_2026-08-12_FOCUS_5_PLUS_UEFA_CEST_1012_RERUN",
+    "snapshot_id": "SNAP_2026-08-12_1012_CEST_R2",
+    "source_run_record": {
+      "filename": "runs/2026-08-12_1012.json",
+      "sha256": "a0c066f78dc0065b85ad885b8184ca393b6ed5145614d77b556aa1567d3b2771",
+      "immutability": "UNCHANGED"
+    },
+    "data_snapshot_provenance": {
+      "data_snapshot_status": "UNREACHABLE",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_date": "NOT_AVAILABLE",
+      "data_snapshot_generated_at": "NOT_AVAILABLE",
+      "data_snapshot_data_cutoff": "NOT_AVAILABLE",
+      "data_snapshot_db_updated_at": "NOT_AVAILABLE",
+      "data_snapshot_hash": "NOT_AVAILABLE",
+      "data_snapshot_schema_version": "NOT_AVAILABLE",
+      "data_snapshot_url": "NOT_AVAILABLE",
+      "ui_snapshot_reference": "snap_20260812_030135"
+    },
+    "fixture_reconciliation_summary": "Corrected rerun: 3 independently verified in-scope UEFA Conference League fixtures were queued and committed; earlier 1-fixture run is operationally superseded.",
+    "source_mode_distribution": {
+      "WEB_FALLBACK": 3
+    },
+    "date_range": {
+      "from": "2026-08-12",
+      "to": "2026-08-12"
+    },
+    "timezone": "Europe/Zurich",
+    "scope": "FOCUS_5_PLUS_UEFA",
+    "norm_versions": {
+      "N_ECOBET_MASTER_OS": "v1.3",
+      "N_ECOBET_DATA_FABRIC_AND_EBOOKS": "v1.5",
+      "N_ECOBET_FOOTBALL_AND_DECISION_ENGINE": "v1.0",
+      "N_ECOBET_OUTPUT_AND_AUDIT": "v1.3",
+      "N_ECOBET_TEAM_ID_REGISTRY": "v1.0"
+    },
+    "match_counts": {
+      "scope": 3,
+      "committed": 3,
+      "settled": 3
+    },
+    "readiness_distribution": {
+      "CONDITIONAL": 3
+    },
+    "world_stability_distribution": {
+      "STABLE": 3
+    },
+    "ampel_distribution": {
+      "YELLOW": 3
+    },
+    "nsp_count": 0,
+    "proof_counters": {
+      "fixtures_found_in_scope": 3,
+      "competitions_with_matches": 1,
+      "scope_exclusions": [
+        {
+          "fixture": "Paris Saint-Germain - Aston Villa",
+          "competition": "UEFA Super Cup",
+          "reason": "DISCOVERED_OUT_OF_SCOPE: Super Cup is not part of FOCUS_5_PLUS_UEFA"
+        }
+      ],
+      "matches_queued": 3,
+      "matches_committed": 3,
+      "silent_exclusions": 0,
+      "no_stable_prediction_count": 0,
+      "df07_repair_passes": 3,
+      "df07_restricted_after_repair": 0,
+      "open_search_required_for_restricted": 0,
+      "real_odds_as_input": 0,
+      "tickets_created": false
+    },
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "result_settlement_status": "COMPLETE",
+    "model_kpis": {
+      "favourite": {
+        "HIT": 3,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 100.0
+      },
+      "safe": {
+        "HIT": 3,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 100.0
+      },
+      "balanced": {
+        "HIT": 3,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 100.0
+      },
+      "aggressive": {
+        "HIT": 3,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 100.0
+      },
+      "modal_score": {
+        "hits": 1,
+        "total": 3,
+        "hit_rate_percent": 33.3
+      },
+      "four_score_cluster": {
+        "hits": 2,
+        "total": 3,
+        "hit_rate_percent": 66.7
+      },
+      "score_band": {
+        "hits": 2,
+        "total": 3,
+        "hit_rate_percent": 66.7
+      },
+      "world_verdict_distribution": {
+        "PRIME": 3,
+        "COUNTERWORLD": 0,
+        "MIXED": 0,
+        "NEITHER": 0,
+        "UNDETERMINED": 0
+      },
+      "yellow_favourite_hit_rate_percent": 100.0,
+      "yellow_cluster_hit_rate_percent": 66.7
+    },
+    "data_integrity_flags": [
+      "ALL_MATCHES_RESULT_SETTLED",
+      "WORLD_VERDICTS_USE_PARTIAL_MATCH_DATA",
+      "RESULT_DISTANCE_FROM_MODAL_FORMULA_NOT_DEFINED_IN_LOADED_NORM",
+      "ORIGINAL_RUN_RECORD_UNCHANGED"
     ],
-    "2026-08-12": [
-      {
-        "id": "2026-08-12_1012",
-        "run_id": "RUN_2026-08-12_FOCUS_5_PLUS_UEFA_CEST_1012_RERUN",
-        "file": "ECOBET_2026-08-12_RESULT_AUDIT.html",
-        "generated_at": "2026-08-12T22:17:00+02:00"
-      }
+    "notes": [
+      "Original predictions, worlds, clusters, bands, model prices and ampels were not modified.",
+      "The audit is attached to the corrected 2026-08-12_1012 rerun selected in the run index.",
+      "No normative rule change is inferred from this single three-match slate.",
+      "Copenhagen-Debrecen is the only sparse-log entry because its Four-Score Cluster and Score Band both missed despite the Favourite Prediction hitting.",
+      "RESULT_DISTANCE_FROM_MODAL remains NOT_AVAILABLE because the loaded Output/Audit v1.3 does not define a calculation formula."
     ]
-  }
+  },
+  "match_audit_records": [
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-12-GKS-HAPOEL",
+      "snapshot_id": "SNAP_2026-08-12_1012_CEST_R2",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "18:00",
+        "competition": "UEFA Conference League",
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "phase": "Q3 - 2nd leg",
+        "home": "GKS Katowice",
+        "away": "Hapoel Tel Aviv"
+      },
+      "original_commit": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME",
+        "anchor": "GKS' two-goal deficit forces sustained home initiative into a much stronger home rolling process; Hapoel's weaker away profile leaves a home scoring route, while the 2-0 cushion preserves a counter/low-block route.",
+        "prime_world": "GKS establish the higher-pressure phase, create enough volume to score, and keep pushing; Hapoel absorb in a deeper state and look for transition moments as GKS commit numbers.",
+        "counterworld": "Hapoel survive the opening pressure, keep GKS outside high-quality zones and use the aggregate cushion to slow the match; one transition can turn the chase into a fragmented game.",
+        "modal_score": "1-1",
+        "four_score_cluster": [
+          "1-1",
+          "2-1",
+          "1-0",
+          "0-1"
+        ],
+        "score_band": "1-3 total goals",
+        "safe": "GKS Katowice O0.5 team goals",
+        "balanced": "Over 1.5",
+        "aggressive": "GKS Katowice win (1)",
+        "favourite_prediction": "GKS Katowice O0.5 team goals",
+        "model_probability_band": "66-84%",
+        "model_price_band": "1.19-1.52",
+        "world_stability": "STABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-12T10:12:00+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-1",
+        "competition_final_score": "2-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "beIN SPORTS",
+            "role": "final score and goal timeline confirmation",
+            "url": "https://www.beinsports.com/en-us/soccer/uefa-conference-league/gks-katowice-vs-hapoel-tel-aviv-2026-08-13"
+          },
+          {
+            "name": "365Scores",
+            "role": "final score and match-stat confirmation",
+            "url": "https://www.365scores.com/football/match/uefa-conference-league-7685/gks-katowice-hapoel-tel-aviv-567-2233-7685"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "The realised process is strongly PRIME_WORLD-compatible: GKS had 67% possession, 14-11 shots and 7-3 shots on target, kept pushing after Hapoel scored first, and turned the match with goals in the 83rd and 90th minutes.",
+        "limitation": "The counter mechanism was activated by Hapoel scoring first, but the available match statistics and event timeline support GKS territorial/volume control as the dominant mechanism."
+      },
+      "failure_cluster": [],
+      "observed_match_data": {
+        "possession": "67%-33%",
+        "shots": "14-11",
+        "shots_on_target": "7-3",
+        "goals": [
+          "23' Hapoel Tel Aviv",
+          "83' GKS Katowice",
+          "90' GKS Katowice (pen.)"
+        ]
+      },
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-12-FCK-DEBRECEN",
+      "snapshot_id": "SNAP_2026-08-12_1012_CEST_R2",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "18:00",
+        "competition": "UEFA Conference League",
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "phase": "Q3 - 2nd leg",
+        "home": "FC Copenhagen",
+        "away": "Debrecen"
+      },
+      "original_commit": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME",
+        "anchor": "Copenhagen combine a 3-0 aggregate lead with a 7W-2D-1L rolling profile and 2.90 goals per match; Debrecen must eventually take risk, but Copenhagen can choose when to accelerate.",
+        "prime_world": "Copenhagen manage possession and territory, keep the tie under control and still generate the cleaner scoring chances once Debrecen step higher.",
+        "counterworld": "The three-goal cushion suppresses intensity; Debrecen stay compact, the game remains level for long periods and Copenhagen accept qualification without forcing repeated final-third risk.",
+        "modal_score": "1-0",
+        "four_score_cluster": [
+          "1-0",
+          "2-0",
+          "1-1",
+          "0-0"
+        ],
+        "score_band": "0-3 total goals",
+        "safe": "FC Copenhagen O0.5 team goals",
+        "balanced": "FC Copenhagen win (1)",
+        "aggressive": "FC Copenhagen O1.5 team goals",
+        "favourite_prediction": "FC Copenhagen O0.5 team goals",
+        "model_probability_band": "72-90%",
+        "model_price_band": "1.11-1.39",
+        "world_stability": "STABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "KO_STATE_DEPENDENT",
+          "AVAILABILITY_EVENTS"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-12T10:12:00+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "5-1",
+        "competition_final_score": "5-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "beIN SPORTS",
+            "role": "final score confirmation",
+            "url": "https://www.beinsports.com/en-us/soccer/uefa-conference-league/kbenhavn-vs-debrecen-2026-08-13"
+          },
+          {
+            "name": "Sofascore News",
+            "role": "match-process and statistic confirmation",
+            "url": "https://www.sofascore.com/news/fc-kobenhavn-5-1-debreceni-vsc-late-flourish-seals-8-1-on-aggregate"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "The realised match strongly supports PRIME_WORLD: Copenhagen controlled most of the game, out-shot Debrecen 22-10, led shots on target 11-2, created eight big chances to none, and accelerated after Debrecen had to chase.",
+        "limitation": "The mechanism was right, but the committed score distribution was too narrow: the late 5-1 blowout sat outside both the Four-Score Cluster and the 0-3 total-goal band."
+      },
+      "failure_cluster": [
+        "BLOWOUT_TAIL_MISSED",
+        "RANGE_TOO_NARROW",
+        "LATE_STATE_RUN"
+      ],
+      "observed_match_data": {
+        "possession": "57%-43%",
+        "shots": "22-10",
+        "shots_on_target": "11-2",
+        "big_chances": "8-0",
+        "box_touches": "45-11",
+        "late_state_note": "Three Copenhagen goals came from 76' onward, including a stoppage-time fifth."
+      },
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-12-RAPID-PAIDE",
+      "snapshot_id": "SNAP_2026-08-12_1012_CEST_R2",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "18:00",
+        "competition": "UEFA Conference League",
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "phase": "Q3 - 2nd leg",
+        "home": "Rapid Wien",
+        "away": "Paide"
+      },
+      "original_commit": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME",
+        "anchor": "Rapid's 8W-0D-2L rolling profile, home xGA 0.75 and a 4.05-1.38 first-leg xG advantage meet Paide's 1.99 away rolling xGA; the 4-1 cushion lowers urgency but leaves a strong home scoring route.",
+        "prime_world": "Rapid control territory, score at least once and punish Paide's higher positioning when the visitors chase the tie.",
+        "counterworld": "Paide keep the match level through the first phase, Rapid protect the three-goal cushion and the contest becomes a low-urgency qualification exercise.",
+        "modal_score": "2-0",
+        "four_score_cluster": [
+          "2-0",
+          "2-1",
+          "1-0",
+          "1-1"
+        ],
+        "score_band": "1-3 total goals",
+        "safe": "Rapid Wien O0.5 team goals",
+        "balanced": "Rapid Wien win (1)",
+        "aggressive": "Rapid Wien O1.5 team goals",
+        "favourite_prediction": "Rapid Wien O0.5 team goals",
+        "model_probability_band": "77-95%",
+        "model_price_band": "1.05-1.30",
+        "world_stability": "STABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "KO_STATE_DEPENDENT",
+          "SHORT_TURNAROUND"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-12T10:12:00+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-0",
+        "competition_final_score": "2-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Sofascore News",
+            "role": "final score, timeline and match-process confirmation",
+            "url": "https://www.sofascore.com/news/rapid-wien-2-0-paide-controlled-win-built-on-volume-and-calm-finishing"
+          },
+          {
+            "name": "LAOLA1",
+            "role": "independent final score and scorer confirmation",
+            "url": "https://www.laola1.com/en/editorial-tree/football/conference-league/match-report/match-report-rapid-paide-1208/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": true,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "The realised process is directly PRIME_WORLD-compatible: Rapid had 65% possession, 23-2 shots, 7-1 shots on target and a 3-1 big-chance edge while controlling territory throughout.",
+        "limitation": "The aggregate cushion did suppress urgency, but not enough to shift the match into the committed low-intensity COUNTERWORLD; Rapid remained territorially dominant."
+      },
+      "failure_cluster": [],
+      "observed_match_data": {
+        "possession": "65%-35%",
+        "shots": "23-2",
+        "shots_on_target": "7-1",
+        "big_chances": "3-1",
+        "final_third_entries": "89-29",
+        "goals": [
+          "38' Rapid Wien",
+          "82' Rapid Wien (pen.)"
+        ]
+      },
+      "audit_flags": []
+    }
+  ],
+  "sparse_match_log": [
+    {
+      "match": "FC Copenhagen – Debrecen",
+      "result_90": "5-1",
+      "favourite": "FC Copenhagen O0.5 team goals",
+      "settlement": "HIT",
+      "world_verdict": "PRIME",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "BLOWOUT_TAIL_MISSED",
+        "RANGE_TOO_NARROW",
+        "LATE_STATE_RUN"
+      ],
+      "notes": [
+        "FAVOURITE_HIT_BUT_SCORE_DISTRIBUTION_TAIL_MISSED"
+      ]
+    }
+  ],
+  "correction_records": []
 }
