@@ -1,0 +1,116 @@
+{
+  "schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+  "snapshot_id": "snap_20260812_030135",
+  "date": "2026-08-12",
+  "n_fixtures": 3,
+  "fixtures": [
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_11e5529fb090",
+        "legacy_match_id": "UECL2627_387ac788a6ea",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-12",
+        "kickoff": "2026-08-12T18:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_katowice",
+        "home_team_name": "Katowice",
+        "away_team_id": "uefa_hapoel_tel_aviv",
+        "away_team_name": "Hapoel Tel Aviv"
+      },
+      "home_team": {
+        "team_id": "uefa_katowice",
+        "team_name": "Katowice",
+        "n_features": 76,
+        "ref": "teams/uefa_katowice.json"
+      },
+      "away_team": {
+        "team_id": "uefa_hapoel_tel_aviv",
+        "team_name": "Hapoel Tel Aviv",
+        "n_features": 76,
+        "ref": "teams/uefa_hapoel_tel_aviv.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_125179a59993",
+        "legacy_match_id": "UECL2627_281bc878574a",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-12",
+        "kickoff": "2026-08-12T18:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_fc_copenhagen",
+        "home_team_name": "FC Copenhagen",
+        "away_team_id": "uefa_debrecen",
+        "away_team_name": "Debrecen"
+      },
+      "home_team": {
+        "team_id": "uefa_fc_copenhagen",
+        "team_name": "FC Copenhagen",
+        "n_features": 76,
+        "ref": "teams/uefa_fc_copenhagen.json"
+      },
+      "away_team": {
+        "team_id": "uefa_debrecen",
+        "team_name": "Debrecen",
+        "n_features": 76,
+        "ref": "teams/uefa_debrecen.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_f725d3a17dc6",
+        "legacy_match_id": "UECL2627_97833707a2d5",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-12",
+        "kickoff": "2026-08-12T18:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_rapid_wien",
+        "home_team_name": "Rapid Wien",
+        "away_team_id": "uefa_paide",
+        "away_team_name": "Paide"
+      },
+      "home_team": {
+        "team_id": "uefa_rapid_wien",
+        "team_name": "Rapid Wien",
+        "n_features": 76,
+        "ref": "teams/uefa_rapid_wien.json"
+      },
+      "away_team": {
+        "team_id": "uefa_paide",
+        "team_name": "Paide",
+        "n_features": 76,
+        "ref": "teams/uefa_paide.json"
+      }
+    }
+  ]
+}
