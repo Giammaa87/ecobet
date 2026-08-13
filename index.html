@@ -1482,7 +1482,7 @@ function competitionCatalog(matches){
 }
 function matchesFilter(match,index){const c=competitionInfo(match,index);if(COMP_FILTER.kind==='all')return true;if(COMP_FILTER.kind==='group')return c.group===COMP_FILTER.value;return c.key===COMP_FILTER.value}
 
-async function renderRuns(date){
+async function renderRuns(date,targetRunId=null,targetMatchIndex=null){
   const renderToken=++RUN_RENDER_TOKEN;
   ++RUN_LOAD_TOKEN;
   ACTIVE_RUN_DATE=date;
@@ -1495,27 +1495,32 @@ async function renderRuns(date){
   const idx=await getIndex(true);
   if(renderToken!==RUN_RENDER_TOKEN||date!==ACTIVE_RUN_DATE)return;
 
-  if(!idx||!idx.dates||!Array.isArray(idx.dates[date])||!idx.dates[date].length){
+  const ids=runIdsForDate(idx,date);
+  if(!ids.length){
     box.innerHTML=empty('Für dieses Datum liegt kein Lauf vor.','Sobald ein run_record in runs/index.json eingetragen ist, erscheint er hier automatisch.','runs/index.json');
     return;
   }
 
-  const ids=idx.dates[date];
-  ids.forEach((id,index)=>{
-    const button=document.createElement('button');button.type='button';button.className='pill'+(index===0?' active':'');
+  const initialId=targetRunId&&ids.includes(targetRunId)?targetRunId:ids[0];
+  ids.forEach(id=>{
+    const button=document.createElement('button');button.type='button';button.dataset.runId=id;button.className='pill'+(id===initialId?' active':'');
     button.innerHTML=esc(id.split('_')[1]||id)+'<small>Datenstand</small>';
-    button.onclick=()=>{Array.from(pills.children).forEach(child=>child.classList.remove('active'));button.classList.add('active');showRun(id)};
+    button.onclick=()=>{Array.from(pills.children).forEach(child=>child.classList.remove('active'));button.classList.add('active');showRun(id,null)};
     pills.appendChild(button);
   });
-  await showRun(ids[0]);
+  await showRun(initialId,initialId===targetRunId?targetMatchIndex:null);
 
-  async function showRun(id){
+  async function showRun(id,matchIndex=null){
     const loadToken=++RUN_LOAD_TOKEN;
     box.innerHTML=empty('Lauf wird geladen …',`${id}.json wird geladen.`);
     const run=await loadJSON(RUNS+id+'.json');
     if(loadToken!==RUN_LOAD_TOKEN||renderToken!==RUN_RENDER_TOKEN||date!==ACTIVE_RUN_DATE)return;
     if(!run){CURRENT_RUN=null;leaguePills.innerHTML='';leagueBar.hidden=true;box.innerHTML=empty('Lauf-Datei fehlt.','Die Datei ist im Index eingetragen, aber nicht vorhanden.',`runs/${id}.json`);return}
     CURRENT_RUN=run;COMP_FILTER={kind:'all',value:'ALL'};buildCompetitionPills(run);paintRun(run);
+    if(Number.isInteger(Number(matchIndex))){
+      const card=box.querySelector(`.match-card[data-index="${Number(matchIndex)}"]`);
+      if(card)toggleMatchCard(card,box);
+    }
   }
 }
 
@@ -1906,19 +1911,135 @@ function kickoffLabel(value){
   if(!Number.isNaN(parsed.getTime()))return esc(new Intl.DateTimeFormat('de-CH',{timeZone:'Europe/Zurich',hour:'2-digit',minute:'2-digit',hour12:false}).format(parsed));
   const match=text.match(/T(\d{2}:\d{2})/);return match?esc(match[1]):esc(text);
 }
-function fixtureKey(home,away){return `${String(home||'').trim().toLowerCase()}|${String(away||'').trim().toLowerCase()}`}
-async function analysisAvailability(date){
-  const ids=new Set(),pairs=new Set();const idx=await getIndex();
-  const runIds=idx&&idx.dates&&Array.isArray(idx.dates[date])?idx.dates[date]:[];
-  const records=await Promise.all(runIds.map(id=>loadJSON(RUNS+id+'.json')));
-  records.filter(Boolean).forEach(run=>arr(run.matches).forEach(match=>{
-    if(present(match.fixture_id))ids.add(String(match.fixture_id));
-    if(present(match.home)&&present(match.away))pairs.add(fixtureKey(match.home,match.away));
-  }));
-  return {ids,pairs};
+function canonicalText(value){
+  return String(value||'')
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g,'')
+    .replace(/[øØ]/g,'o')
+    .replace(/[łŁ]/g,'l')
+    .replace(/[đĐðÐ]/g,'d')
+    .replace(/[þÞ]/g,'th')
+    .replace(/[æÆ]/g,'ae')
+    .replace(/[œŒ]/g,'oe')
+    .toLowerCase()
+    .replace(/&/g,' and ')
+    .replace(/[^a-z0-9]+/g,' ')
+    .trim()
+    .replace(/\s+/g,' ');
 }
-function hasAnalysis(fixture,availability){
-  return (fixture.fixtureId&&availability.ids.has(fixture.fixtureId))||availability.pairs.has(fixtureKey(fixture.home,fixture.away));
+function canonicalTeam(value){
+  let s=canonicalText(value);
+  s=s.replace(/\b(football club|futbol club|fussball club|soccer club|fc|cf|afc|ac|sc|sv|fk|sk|nk|bk|if|rc|rsc|cd|ud|as|us|ss)\b/g,' ');
+  return s.replace(/\s+/g,' ').trim();
+}
+function canonicalCompetition(value){
+  return canonicalText(value)
+    .replace(/\buefa\b/g,' ')
+    .replace(/\bqualifying\b/g,' ')
+    .replace(/\bqualification\b/g,' ')
+    .replace(/\s+/g,' ')
+    .trim();
+}
+function fixtureIdKey(value){return canonicalText(value).replace(/\s+/g,'')}
+function kickoffMinute(value){
+  if(!present(value))return null;
+  const text=String(value);
+  const direct=text.match(/(?:T|\b)(\d{1,2}):(\d{2})(?::\d{2})?/);
+  if(direct)return Number(direct[1])*60+Number(direct[2]);
+  const parsed=new Date(text);
+  if(Number.isNaN(parsed.getTime()))return null;
+  const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Zurich',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(parsed);
+  const hour=Number(parts.find(p=>p.type==='hour')?.value);
+  const minute=Number(parts.find(p=>p.type==='minute')?.value);
+  return Number.isFinite(hour)&&Number.isFinite(minute)?hour*60+minute:null;
+}
+function teamTokens(value){return canonicalTeam(value).split(' ').filter(Boolean)}
+function teamCompatible(a,b){
+  const left=canonicalTeam(a),right=canonicalTeam(b);
+  if(!left||!right)return false;
+  if(left===right)return true;
+  const la=teamTokens(left),rb=teamTokens(right);
+  if(!la.length||!rb.length)return false;
+  const short=la.length<=rb.length?la:rb,long=la.length<=rb.length?rb:la;
+  if(short.length===1&&short[0].length<4)return false;
+  return short.every(token=>long.includes(token));
+}
+function fixtureKey(home,away){return `${canonicalTeam(home)}|${canonicalTeam(away)}`}
+function competitionCompatible(a,b){
+  const left=canonicalCompetition(a),right=canonicalCompetition(b);
+  if(!left||!right)return false;
+  return left===right||left.includes(right)||right.includes(left);
+}
+function kickoffCompatible(a,b){
+  const left=kickoffMinute(a),right=kickoffMinute(b);
+  return left!==null&&right!==null&&Math.abs(left-right)<=5;
+}
+async function analysisAvailability(date){
+  const idx=await getIndex();
+  const runIds=runIdsForDate(idx,date);
+  const loaded=await Promise.all(runIds.map(async runId=>({runId,run:await loadJSON(RUNS+runId+'.json')})));
+  const matches=[];
+  loaded.forEach(({runId,run})=>{
+    if(!run)return;
+    const snapshotTime=run.run&&run.run.snapshot_time?String(run.run.snapshot_time):'';
+    arr(run.matches).forEach((match,matchIndex)=>{
+      matches.push({
+        runId,
+        matchIndex,
+        snapshotTime,
+        fixtureId:present(match.fixture_id)?String(match.fixture_id):null,
+        fixtureIdKey:present(match.fixture_id)?fixtureIdKey(match.fixture_id):null,
+        home:match.home,
+        away:match.away,
+        pairKey:fixtureKey(match.home,match.away),
+        kickoff:match.kickoff,
+        competition:match.competition_name||match.competition||''
+      });
+    });
+  });
+  matches.sort((a,b)=>String(b.snapshotTime).localeCompare(String(a.snapshotTime))||String(b.runId).localeCompare(String(a.runId)));
+  return {matches};
+}
+function findAnalysis(fixture,availability){
+  const candidates=arr(availability&&availability.matches);
+  if(!candidates.length)return null;
+
+  // 1. Strongest key: same fixture ID after harmless formatting normalization.
+  if(fixture.fixtureId){
+    const idKey=fixtureIdKey(fixture.fixtureId);
+    const exactId=candidates.find(candidate=>candidate.fixtureIdKey&&candidate.fixtureIdKey===idKey);
+    if(exactId)return exactId;
+  }
+
+  // 2. Same home/away after Unicode, punctuation and club-prefix normalization.
+  const pairKey=fixtureKey(fixture.home,fixture.away);
+  const exactPair=candidates.filter(candidate=>candidate.pairKey===pairKey);
+  if(exactPair.length===1)return exactPair[0];
+  if(exactPair.length>1){
+    const timed=exactPair.find(candidate=>kickoffCompatible(fixture.kickoff,candidate.kickoff));
+    return timed||exactPair[0];
+  }
+
+  // 3. Controlled relaxed match: names may be shortened (e.g. "Kairat" vs
+  //    "Kairat Almaty"), but kickoff OR competition must additionally agree.
+  const relaxed=candidates.filter(candidate=>{
+    if(!teamCompatible(fixture.home,candidate.home)||!teamCompatible(fixture.away,candidate.away))return false;
+    return kickoffCompatible(fixture.kickoff,candidate.kickoff)||competitionCompatible(fixture.competition,candidate.competition);
+  });
+  if(!relaxed.length)return null;
+
+  relaxed.sort((a,b)=>{
+    const score=candidate=>{
+      let points=0;
+      if(kickoffCompatible(fixture.kickoff,candidate.kickoff))points+=4;
+      if(competitionCompatible(fixture.competition,candidate.competition))points+=2;
+      if(canonicalTeam(fixture.home)===canonicalTeam(candidate.home))points+=1;
+      if(canonicalTeam(fixture.away)===canonicalTeam(candidate.away))points+=1;
+      return points;
+    };
+    return score(b)-score(a)||String(b.snapshotTime).localeCompare(String(a.snapshotTime));
+  });
+  return relaxed[0];
 }
 async function loadLatestSpiele(){
   const runDate=todayISO();
@@ -2014,8 +2135,8 @@ async function renderSpiele(force=false){
       [...groups.entries()].sort((a,b)=>a[0].localeCompare(b[0],'de')).forEach(([competition,list])=>{
         html+=`<div class="league"><div class="league-head"><h3>${esc(competition)}</h3><span class="count">${list.length} Spiele</span></div><div class="table-wrap fixtures-table"><table><thead><tr><th>KO</th><th>Spiel</th><th>Phase</th><th>ECOBET</th></tr></thead><tbody>`;
         list.forEach(f=>{
-          const analysed=hasAnalysis(f,availability);
-          html+=`<tr><td class="mono">${kickoffLabel(f.kickoff)}</td><td>${esc(f.home)} – ${esc(f.away)}</td><td class="subline">${f.phase?esc(f.phase):'—'}</td><td><div class="fixture-status">${analysed?`<button type="button" class="analysis-btn" data-open-run-date="${esc(snapshotDate)}">Analyse vorhanden</button>`:'<span class="chip muted">Noch keine Analyse</span>'}</div></td></tr>`;
+          const analysis=findAnalysis(f,availability);
+          html+=`<tr><td class="mono">${kickoffLabel(f.kickoff)}</td><td>${esc(f.home)} – ${esc(f.away)}</td><td class="subline">${f.phase?esc(f.phase):'—'}</td><td><div class="fixture-status">${analysis?`<button type="button" class="analysis-btn" data-open-run-date="${esc(snapshotDate)}" data-open-run-id="${esc(analysis.runId)}" data-open-match-index="${analysis.matchIndex}">Analyse vorhanden</button>`:'<span class="chip muted">Noch keine Analyse</span>'}</div></td></tr>`;
         });
         html+='</tbody></table></div></div>';
       });
@@ -2023,7 +2144,12 @@ async function renderSpiele(force=false){
     html+=`<div class="fixture-source">Latest: ${esc(bundle.latestPath||`${DATA}${snapshotDate}/latest.json`)} · Quelle: ${esc(bundle.path)}${bundle.manifestPath?' · Manifest: '+esc(bundle.manifestPath):''}</div>`;
     box.innerHTML=html;
     box.querySelectorAll('[data-open-run-date]').forEach(button=>button.addEventListener('click',async()=>{
-      const date=button.dataset.openRunDate;document.getElementById('run-date').value=date;activateView('runs');await renderRuns(date);
+      const date=button.dataset.openRunDate;
+      const runId=button.dataset.openRunId||null;
+      const matchIndex=button.dataset.openMatchIndex!==undefined?Number(button.dataset.openMatchIndex):null;
+      document.getElementById('run-date').value=date;
+      activateView('runs');
+      await renderRuns(date,runId,Number.isInteger(matchIndex)?matchIndex:null);
     }));
     FIXTURES_LOADED=true;
   }finally{
