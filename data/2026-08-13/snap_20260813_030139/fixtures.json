@@ -1,0 +1,1340 @@
+{
+  "schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+  "snapshot_id": "snap_20260813_030139",
+  "date": "2026-08-13",
+  "n_fixtures": 37,
+  "fixtures": [
+    {
+      "fixture": {
+        "fixture_id": "UEL2627_b2399de518f7",
+        "legacy_match_id": "UEL2627_c03f12f49556",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Europa League",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 110,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T17:30 (19:30)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_kv",
+        "home_team_name": "KV",
+        "away_team_id": "uefa_thun",
+        "away_team_name": "Thun"
+      },
+      "home_team": {
+        "team_id": "uefa_kv",
+        "team_name": "KV",
+        "n_features": 76,
+        "ref": "teams/uefa_kv.json"
+      },
+      "away_team": {
+        "team_id": "uefa_thun",
+        "team_name": "Thun",
+        "n_features": 76,
+        "ref": "teams/uefa_thun.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UEL2627_6240be5354dc",
+        "legacy_match_id": "UEL2627_1b7046573208",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Europa League",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 110,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T18:30 (19:30)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_ki_klaksvik",
+        "home_team_name": "KÍ Klaksvík",
+        "away_team_id": "uefa_lech_poznan",
+        "away_team_name": "Lech Poznań"
+      },
+      "home_team": {
+        "team_id": "uefa_ki_klaksvik",
+        "team_name": "KÍ Klaksvík",
+        "n_features": 76,
+        "ref": "teams/uefa_ki_klaksvik.json"
+      },
+      "away_team": {
+        "team_id": "uefa_lech_poznan",
+        "team_name": "Lech Poznań",
+        "n_features": 76,
+        "ref": "teams/uefa_lech_poznan.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UEL2627_706f1250ef48",
+        "legacy_match_id": "UEL2627_9ee7c360d7de",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Europa League",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 110,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_gornik_zabrze",
+        "home_team_name": "Górnik Zabrze",
+        "away_team_id": "uefa_ferencvaros",
+        "away_team_name": "Ferencváros"
+      },
+      "home_team": {
+        "team_id": "uefa_gornik_zabrze",
+        "team_name": "Górnik Zabrze",
+        "n_features": 76,
+        "ref": "teams/uefa_gornik_zabrze.json"
+      },
+      "away_team": {
+        "team_id": "uefa_ferencvaros",
+        "team_name": "Ferencváros",
+        "n_features": 76,
+        "ref": "teams/uefa_ferencvaros.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UEL2627_1f036d04ca62",
+        "legacy_match_id": "UEL2627_64540bd9b41d",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Europa League",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 110,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:30 (20:30)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_rangers",
+        "home_team_name": "Rangers",
+        "away_team_id": "uefa_jagiellonia",
+        "away_team_name": "Jagiellonia"
+      },
+      "home_team": {
+        "team_id": "uefa_rangers",
+        "team_name": "Rangers",
+        "n_features": 76,
+        "ref": "teams/uefa_rangers.json"
+      },
+      "away_team": {
+        "team_id": "uefa_jagiellonia",
+        "team_name": "Jagiellonia",
+        "n_features": 76,
+        "ref": "teams/uefa_jagiellonia.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UEL2627_2dc636ac4992",
+        "legacy_match_id": "UEL2627_2823e8b59c8b",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Europa League",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 110,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:45 (20:45)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_hearts",
+        "home_team_name": "Hearts",
+        "away_team_id": "uefa_benfica",
+        "away_team_name": "Benfica"
+      },
+      "home_team": {
+        "team_id": "uefa_hearts",
+        "team_name": "Hearts",
+        "n_features": 76,
+        "ref": "teams/uefa_hearts.json"
+      },
+      "away_team": {
+        "team_id": "uefa_benfica",
+        "team_name": "Benfica",
+        "n_features": 76,
+        "ref": "teams/uefa_benfica.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UEL2627_60ac672da6c4",
+        "legacy_match_id": "UEL2627_1c523088f70a",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Europa League",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 110,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:00 (19:00)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_ac_omonia",
+        "home_team_name": "AC Omonia",
+        "away_team_id": "uefa_lincoln_fc",
+        "away_team_name": "Lincoln FC"
+      },
+      "home_team": {
+        "team_id": "uefa_ac_omonia",
+        "team_name": "AC Omonia",
+        "n_features": 76,
+        "ref": "teams/uefa_ac_omonia.json"
+      },
+      "away_team": {
+        "team_id": "uefa_lincoln_fc",
+        "team_name": "Lincoln FC",
+        "n_features": 76,
+        "ref": "teams/uefa_lincoln_fc.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UEL2627_6e671c8ee65a",
+        "legacy_match_id": "UEL2627_822540aef129",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Europa League",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 110,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:00 (19:00)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_besiktas",
+        "home_team_name": "Beşiktaş",
+        "away_team_id": "uefa_hradec_kralove",
+        "away_team_name": "Hradec Králové"
+      },
+      "home_team": {
+        "team_id": "uefa_besiktas",
+        "team_name": "Beşiktaş",
+        "n_features": 76,
+        "ref": "teams/uefa_besiktas.json"
+      },
+      "away_team": {
+        "team_id": "uefa_hradec_kralove",
+        "team_name": "Hradec Králové",
+        "n_features": 76,
+        "ref": "teams/uefa_hradec_kralove.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UEL2627_827d42c28401",
+        "legacy_match_id": "UEL2627_f07ca5bc4217",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Europa League",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 110,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:00 (19:00)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_pafos_fc",
+        "home_team_name": "Pafos FC",
+        "away_team_id": "uefa_rb_salzburg",
+        "away_team_name": "RB Salzburg"
+      },
+      "home_team": {
+        "team_id": "uefa_pafos_fc",
+        "team_name": "Pafos FC",
+        "n_features": 76,
+        "ref": "teams/uefa_pafos_fc.json"
+      },
+      "away_team": {
+        "team_id": "uefa_rb_salzburg",
+        "team_name": "RB Salzburg",
+        "n_features": 76,
+        "ref": "teams/uefa_rb_salzburg.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UEL2627_e0ba82df99f7",
+        "legacy_match_id": "UEL2627_6b2e27ac36bf",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Europa League",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 110,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:00 (19:00)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_cs_u_craiova",
+        "home_team_name": "CS U Craiova",
+        "away_team_id": "uefa_kups",
+        "away_team_name": "KuPS"
+      },
+      "home_team": {
+        "team_id": "uefa_cs_u_craiova",
+        "team_name": "CS U Craiova",
+        "n_features": 76,
+        "ref": "teams/uefa_cs_u_craiova.json"
+      },
+      "away_team": {
+        "team_id": "uefa_kups",
+        "team_name": "KuPS",
+        "n_features": 76,
+        "ref": "teams/uefa_kups.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UEL2627_7fda940a77ff",
+        "legacy_match_id": "UEL2627_375f929e4aa3",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Europa League",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 110,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:30",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_anderlecht",
+        "home_team_name": "Anderlecht",
+        "away_team_id": "uefa_paok",
+        "away_team_name": "PAOK"
+      },
+      "home_team": {
+        "team_id": "uefa_anderlecht",
+        "team_name": "Anderlecht",
+        "n_features": 76,
+        "ref": "teams/uefa_anderlecht.json"
+      },
+      "away_team": {
+        "team_id": "uefa_paok",
+        "team_name": "PAOK",
+        "n_features": 76,
+        "ref": "teams/uefa_paok.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UEL2627_f70d098e7f73",
+        "legacy_match_id": "UEL2627_b84cb4bfaa5e",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Europa League",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 110,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T21:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_fk_egnatia",
+        "home_team_name": "FK Egnatia",
+        "away_team_id": "uefa_shamrock",
+        "away_team_name": "Shamrock"
+      },
+      "home_team": {
+        "team_id": "uefa_fk_egnatia",
+        "team_name": "FK Egnatia",
+        "n_features": 76,
+        "ref": "teams/uefa_fk_egnatia.json"
+      },
+      "away_team": {
+        "team_id": "uefa_shamrock",
+        "team_name": "Shamrock",
+        "n_features": 76,
+        "ref": "teams/uefa_shamrock.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UEL2627_e53104232f83",
+        "legacy_match_id": "UEL2627_25e1dec8cc6e",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Europa League",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 110,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T21:00 (20:00)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_cska_sofia",
+        "home_team_name": "CSKA Sofia",
+        "away_team_id": "uefa_maccabi_tel_aviv",
+        "away_team_name": "Maccabi Tel Aviv"
+      },
+      "home_team": {
+        "team_id": "uefa_cska_sofia",
+        "team_name": "CSKA Sofia",
+        "n_features": 76,
+        "ref": "teams/uefa_cska_sofia.json"
+      },
+      "away_team": {
+        "team_id": "uefa_maccabi_tel_aviv",
+        "team_name": "Maccabi Tel Aviv",
+        "n_features": 76,
+        "ref": "teams/uefa_maccabi_tel_aviv.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_91eb715829ed",
+        "legacy_match_id": "UECL2627_191fe9321333",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T18:30 (19:30)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_nsi_runavik",
+        "home_team_name": "NSÍ Runavík",
+        "away_team_id": "uefa_lugano",
+        "away_team_name": "Lugano"
+      },
+      "home_team": {
+        "team_id": "uefa_nsi_runavik",
+        "team_name": "NSÍ Runavík",
+        "n_features": 76,
+        "ref": "teams/uefa_nsi_runavik.json"
+      },
+      "away_team": {
+        "team_id": "uefa_lugano",
+        "team_name": "Lugano",
+        "n_features": 76,
+        "ref": "teams/uefa_lugano.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_08639dea98f6",
+        "legacy_match_id": "UECL2627_91ce2540ff47",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_dac",
+        "home_team_name": "DAC",
+        "away_team_id": "uefa_twente",
+        "away_team_name": "Twente"
+      },
+      "home_team": {
+        "team_id": "uefa_dac",
+        "team_name": "DAC",
+        "n_features": 76,
+        "ref": "teams/uefa_dac.json"
+      },
+      "away_team": {
+        "team_id": "uefa_twente",
+        "team_name": "Twente",
+        "n_features": 76,
+        "ref": "teams/uefa_twente.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_2e240b16a152",
+        "legacy_match_id": "UECL2627_0c56efdaa31a",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_hammarby",
+        "home_team_name": "Hammarby",
+        "away_team_id": "uefa_rakow",
+        "away_team_name": "Raków"
+      },
+      "home_team": {
+        "team_id": "uefa_hammarby",
+        "team_name": "Hammarby",
+        "n_features": 76,
+        "ref": "teams/uefa_hammarby.json"
+      },
+      "away_team": {
+        "team_id": "uefa_rakow",
+        "team_name": "Raków",
+        "n_features": 76,
+        "ref": "teams/uefa_rakow.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_99ab69827daf",
+        "legacy_match_id": "UECL2627_986508e28bf6",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_nordsjaelland",
+        "home_team_name": "Nordsjælland",
+        "away_team_id": "uefa_valur",
+        "away_team_name": "Valur"
+      },
+      "home_team": {
+        "team_id": "uefa_nordsjaelland",
+        "team_name": "Nordsjælland",
+        "n_features": 76,
+        "ref": "teams/uefa_nordsjaelland.json"
+      },
+      "away_team": {
+        "team_id": "uefa_valur",
+        "team_name": "Valur",
+        "n_features": 76,
+        "ref": "teams/uefa_valur.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_b34d7bdf07ee",
+        "legacy_match_id": "UECL2627_f15ed6997f12",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_midtjylland",
+        "home_team_name": "Midtjylland",
+        "away_team_id": "uefa_bohemian_fc",
+        "away_team_name": "Bohemian FC"
+      },
+      "home_team": {
+        "team_id": "uefa_midtjylland",
+        "team_name": "Midtjylland",
+        "n_features": 76,
+        "ref": "teams/uefa_midtjylland.json"
+      },
+      "away_team": {
+        "team_id": "uefa_bohemian_fc",
+        "team_name": "Bohemian FC",
+        "n_features": 76,
+        "ref": "teams/uefa_bohemian_fc.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_d9d29f5a3eaa",
+        "legacy_match_id": "UECL2627_b1f4d7ff98eb",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_tromso",
+        "home_team_name": "Tromsø",
+        "away_team_id": "uefa_cfr_cluj",
+        "away_team_name": "CFR Cluj"
+      },
+      "home_team": {
+        "team_id": "uefa_tromso",
+        "team_name": "Tromsø",
+        "n_features": 76,
+        "ref": "teams/uefa_tromso.json"
+      },
+      "away_team": {
+        "team_id": "uefa_cfr_cluj",
+        "team_name": "CFR Cluj",
+        "n_features": 76,
+        "ref": "teams/uefa_cfr_cluj.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_df6fd94bfd49",
+        "legacy_match_id": "UECL2627_b1489c0c364c",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_ml_vitebsk",
+        "home_team_name": "ML Vitebsk",
+        "away_team_id": "uefa_b_banja_luka",
+        "away_team_name": "B. Banja Luka"
+      },
+      "home_team": {
+        "team_id": "uefa_ml_vitebsk",
+        "team_name": "ML Vitebsk",
+        "n_features": 76,
+        "ref": "teams/uefa_ml_vitebsk.json"
+      },
+      "away_team": {
+        "team_id": "uefa_b_banja_luka",
+        "team_name": "B. Banja Luka",
+        "n_features": 76,
+        "ref": "teams/uefa_b_banja_luka.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_3b4163c691e9",
+        "legacy_match_id": "UECL2627_b951a540eedb",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:00 (18:00)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_fc_flora",
+        "home_team_name": "FC Flora",
+        "away_team_id": "uefa_inter_d_escaldes",
+        "away_team_name": "Inter d'Escaldes"
+      },
+      "home_team": {
+        "team_id": "uefa_fc_flora",
+        "team_name": "FC Flora",
+        "n_features": 76,
+        "ref": "teams/uefa_fc_flora.json"
+      },
+      "away_team": {
+        "team_id": "uefa_inter_d_escaldes",
+        "team_name": "Inter d'Escaldes",
+        "n_features": 76,
+        "ref": "teams/uefa_inter_d_escaldes.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_7934bd642d02",
+        "legacy_match_id": "UECL2627_32e498949ede",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:00 (18:00)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_ilves",
+        "home_team_name": "Ilves",
+        "away_team_id": "uefa_rijeka",
+        "away_team_name": "Rijeka"
+      },
+      "home_team": {
+        "team_id": "uefa_ilves",
+        "team_name": "Ilves",
+        "n_features": 76,
+        "ref": "teams/uefa_ilves.json"
+      },
+      "away_team": {
+        "team_id": "uefa_rijeka",
+        "team_name": "Rijeka",
+        "n_features": 76,
+        "ref": "teams/uefa_rijeka.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_9c05be3b2ecd",
+        "legacy_match_id": "UECL2627_2d9fb491cb92",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:30",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_vaduz",
+        "home_team_name": "Vaduz",
+        "away_team_id": "uefa_inter_turku",
+        "away_team_name": "Inter Turku"
+      },
+      "home_team": {
+        "team_id": "uefa_vaduz",
+        "team_name": "Vaduz",
+        "n_features": 76,
+        "ref": "teams/uefa_vaduz.json"
+      },
+      "away_team": {
+        "team_id": "uefa_inter_turku",
+        "team_name": "Inter Turku",
+        "n_features": 76,
+        "ref": "teams/uefa_inter_turku.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_45a8a6cc3e3b",
+        "legacy_match_id": "UECL2627_0d3952801e90",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:30 (18:30)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_rfs",
+        "home_team_name": "RFS",
+        "away_team_id": "uefa_jablonec",
+        "away_team_name": "Jablonec"
+      },
+      "home_team": {
+        "team_id": "uefa_rfs",
+        "team_name": "RFS",
+        "n_features": 76,
+        "ref": "teams/uefa_rfs.json"
+      },
+      "away_team": {
+        "team_id": "uefa_jablonec",
+        "team_name": "Jablonec",
+        "n_features": 76,
+        "ref": "teams/uefa_jablonec.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_7b97ddc91a24",
+        "legacy_match_id": "UECL2627_171283ecddcf",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:30 (20:30)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_motherwell",
+        "home_team_name": "Motherwell",
+        "away_team_id": "uefa_hjk_helsinki",
+        "away_team_name": "HJK Helsinki"
+      },
+      "home_team": {
+        "team_id": "uefa_motherwell",
+        "team_name": "Motherwell",
+        "n_features": 76,
+        "ref": "teams/uefa_motherwell.json"
+      },
+      "away_team": {
+        "team_id": "uefa_hjk_helsinki",
+        "team_name": "HJK Helsinki",
+        "n_features": 76,
+        "ref": "teams/uefa_hjk_helsinki.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_5fdbcb1afa18",
+        "legacy_match_id": "UECL2627_a70824032fd7",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T19:45 (20:45)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_shelbourne_fc",
+        "home_team_name": "Shelbourne FC",
+        "away_team_id": "uefa_ajax",
+        "away_team_name": "Ajax"
+      },
+      "home_team": {
+        "team_id": "uefa_shelbourne_fc",
+        "team_name": "Shelbourne FC",
+        "n_features": 76,
+        "ref": "teams/uefa_shelbourne_fc.json"
+      },
+      "away_team": {
+        "team_id": "uefa_ajax",
+        "team_name": "Ajax",
+        "n_features": 76,
+        "ref": "teams/uefa_ajax.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_28db3480cf37",
+        "legacy_match_id": "UECL2627_cd69a41206aa",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_kf_drita",
+        "home_team_name": "KF Drita",
+        "away_team_id": "uefa_tre_fiori",
+        "away_team_name": "Tre Fiori"
+      },
+      "home_team": {
+        "team_id": "uefa_kf_drita",
+        "team_name": "KF Drita",
+        "n_features": 76,
+        "ref": "teams/uefa_kf_drita.json"
+      },
+      "away_team": {
+        "team_id": "uefa_tre_fiori",
+        "team_name": "Tre Fiori",
+        "n_features": 76,
+        "ref": "teams/uefa_tre_fiori.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_2960a5dd6059",
+        "legacy_match_id": "UECL2627_17f7e9e833c8",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_st_gallen",
+        "home_team_name": "St. Gallen",
+        "away_team_id": "uefa_sheriff_tiraspol",
+        "away_team_name": "Sheriff Tiraspol"
+      },
+      "home_team": {
+        "team_id": "uefa_st_gallen",
+        "team_name": "St. Gallen",
+        "n_features": 76,
+        "ref": "teams/uefa_st_gallen.json"
+      },
+      "away_team": {
+        "team_id": "uefa_sheriff_tiraspol",
+        "team_name": "Sheriff Tiraspol",
+        "n_features": 76,
+        "ref": "teams/uefa_sheriff_tiraspol.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_bcf8ab69f29b",
+        "legacy_match_id": "UECL2627_d3ffde1690aa",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_fk_shkendija",
+        "home_team_name": "FK Shkëndija",
+        "away_team_id": "uefa_hibernian",
+        "away_team_name": "Hibernian"
+      },
+      "home_team": {
+        "team_id": "uefa_fk_shkendija",
+        "team_name": "FK Shkëndija",
+        "n_features": 76,
+        "ref": "teams/uefa_fk_shkendija.json"
+      },
+      "away_team": {
+        "team_id": "uefa_hibernian",
+        "team_name": "Hibernian",
+        "n_features": 76,
+        "ref": "teams/uefa_hibernian.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_73f235d5a5f8",
+        "legacy_match_id": "UECL2627_96742d6e4dcb",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:00 (17:00)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_fc_tobol",
+        "home_team_name": "FC Tobol",
+        "away_team_id": "uefa_partizan",
+        "away_team_name": "Partizan"
+      },
+      "home_team": {
+        "team_id": "uefa_fc_tobol",
+        "team_name": "FC Tobol",
+        "n_features": 76,
+        "ref": "teams/uefa_fc_tobol.json"
+      },
+      "away_team": {
+        "team_id": "uefa_partizan",
+        "team_name": "Partizan",
+        "n_features": 76,
+        "ref": "teams/uefa_partizan.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_d59ac5ec285c",
+        "legacy_match_id": "UECL2627_a9666997d55e",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:00 (18:00)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_qarabag",
+        "home_team_name": "Qarabağ",
+        "away_team_id": "uefa_dynamo_kyiv",
+        "away_team_name": "Dynamo Kyiv"
+      },
+      "home_team": {
+        "team_id": "uefa_qarabag",
+        "team_name": "Qarabağ",
+        "n_features": 76,
+        "ref": "teams/uefa_qarabag.json"
+      },
+      "away_team": {
+        "team_id": "uefa_dynamo_kyiv",
+        "team_name": "Dynamo Kyiv",
+        "n_features": 76,
+        "ref": "teams/uefa_dynamo_kyiv.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_2e3de872f722",
+        "legacy_match_id": "UECL2627_09214c5dfdec",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:00 (19:00)",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_dinamo_minsk",
+        "home_team_name": "Dinamo Minsk",
+        "away_team_id": "uefa_braga",
+        "away_team_name": "Braga"
+      },
+      "home_team": {
+        "team_id": "uefa_dinamo_minsk",
+        "team_name": "Dinamo Minsk",
+        "n_features": 76,
+        "ref": "teams/uefa_dinamo_minsk.json"
+      },
+      "away_team": {
+        "team_id": "uefa_braga",
+        "team_name": "Braga",
+        "n_features": 76,
+        "ref": "teams/uefa_braga.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_546bdff82017",
+        "legacy_match_id": "UECL2627_22497fabb40e",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:15",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_sion",
+        "home_team_name": "Sion",
+        "away_team_id": "uefa_fc_noah",
+        "away_team_name": "FC Noah"
+      },
+      "home_team": {
+        "team_id": "uefa_sion",
+        "team_name": "Sion",
+        "n_features": 76,
+        "ref": "teams/uefa_sion.json"
+      },
+      "away_team": {
+        "team_id": "uefa_fc_noah",
+        "team_name": "FC Noah",
+        "n_features": 76,
+        "ref": "teams/uefa_fc_noah.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_6ee2a44daf78",
+        "legacy_match_id": "UECL2627_2c92e3e5dafe",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:30",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_gyor",
+        "home_team_name": "Győr",
+        "away_team_id": "uefa_riga_fc",
+        "away_team_name": "Rīga FC"
+      },
+      "home_team": {
+        "team_id": "uefa_gyor",
+        "team_name": "Győr",
+        "n_features": 76,
+        "ref": "teams/uefa_gyor.json"
+      },
+      "away_team": {
+        "team_id": "uefa_riga_fc",
+        "team_name": "Rīga FC",
+        "n_features": 76,
+        "ref": "teams/uefa_riga_fc.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_c3bccc8e2b08",
+        "legacy_match_id": "UECL2627_ca4c1413b438",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:30",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_austria_wien",
+        "home_team_name": "Austria Wien",
+        "away_team_id": "uefa_beitar_jerusalem",
+        "away_team_name": "Beitar Jerusalem"
+      },
+      "home_team": {
+        "team_id": "uefa_austria_wien",
+        "team_name": "Austria Wien",
+        "n_features": 76,
+        "ref": "teams/uefa_austria_wien.json"
+      },
+      "away_team": {
+        "team_id": "uefa_beitar_jerusalem",
+        "team_name": "Beitar Jerusalem",
+        "n_features": 76,
+        "ref": "teams/uefa_beitar_jerusalem.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_dacce51aa905",
+        "legacy_match_id": "UECL2627_93c10b761a5b",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T20:30",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_gent",
+        "home_team_name": "Gent",
+        "away_team_id": "uefa_goteborg",
+        "away_team_name": "Göteborg"
+      },
+      "home_team": {
+        "team_id": "uefa_gent",
+        "team_name": "Gent",
+        "n_features": 76,
+        "ref": "teams/uefa_gent.json"
+      },
+      "away_team": {
+        "team_id": "uefa_goteborg",
+        "team_name": "Göteborg",
+        "n_features": 76,
+        "ref": "teams/uefa_goteborg.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_4b004e7b3819",
+        "legacy_match_id": "UECL2627_2837d8e30a16",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T21:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_hajduk_split",
+        "home_team_name": "Hajduk Split",
+        "away_team_id": "uefa_zalgiris",
+        "away_team_name": "Žalgiris"
+      },
+      "home_team": {
+        "team_id": "uefa_hajduk_split",
+        "team_name": "Hajduk Split",
+        "n_features": 76,
+        "ref": "teams/uefa_hajduk_split.json"
+      },
+      "away_team": {
+        "team_id": "uefa_zalgiris",
+        "team_name": "Žalgiris",
+        "n_features": 76,
+        "ref": "teams/uefa_zalgiris.json"
+      }
+    },
+    {
+      "fixture": {
+        "fixture_id": "UECL2627_88674dc79707",
+        "legacy_match_id": "UECL2627_e09a6c6ac6f4",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Conference League",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 120,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "QUALIFICATION",
+        "leg": "2",
+        "scheduled_date": "2026-08-13",
+        "kickoff": "2026-08-13T21:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_dinamo_tirana",
+        "home_team_name": "Dinamo Tirana",
+        "away_team_id": "uefa_fk_auda",
+        "away_team_name": "FK Auda"
+      },
+      "home_team": {
+        "team_id": "uefa_dinamo_tirana",
+        "team_name": "Dinamo Tirana",
+        "n_features": 76,
+        "ref": "teams/uefa_dinamo_tirana.json"
+      },
+      "away_team": {
+        "team_id": "uefa_fk_auda",
+        "team_name": "FK Auda",
+        "n_features": 76,
+        "ref": "teams/uefa_fk_auda.json"
+      }
+    }
+  ]
+}

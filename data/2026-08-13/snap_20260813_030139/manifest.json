@@ -1,0 +1,402 @@
+{
+  "schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+  "snapshot_id": "snap_20260813_030139",
+  "date": "2026-08-13",
+  "generated_at": "2026-08-13T03:01:39.187553+02:00",
+  "data_cutoff": "2026-08-13T03:01:39.187553+02:00",
+  "db_updated_at": "2026-08-13T03:00:02",
+  "scope": "ECOBET_DAILY_DATA_FULL",
+  "source": "ECOBET_DATA_FABRIC",
+  "snapshot_source_layer": "LOCAL_ECOBET_SOCCERDATA_PIPELINE",
+  "transport_layer": "GITHUB_PAGES",
+  "data_hash": "sha256:556d9e22d2a9b114dcdcb40a1f442818dcdd1a20f7ff1f4b254b04f37d8df885",
+  "bundle_layout": {
+    "manifest": "manifest.json",
+    "fixtures": "fixtures.json",
+    "teams": "teams/<team_id>.json"
+  },
+  "parts": [
+    {
+      "path": "fixtures.json",
+      "sha256": "sha256:d698d6693cf64341ce2cc782e6d399232c42360465b36c654688c12cd0c2a7e9",
+      "bytes": 33088
+    },
+    {
+      "path": "teams/uefa_ac_omonia.json",
+      "sha256": "sha256:3ec28ed9f225354299ecad0153cb6ee940db6e8d8dd9e2638cf41c22fc7f54e8",
+      "bytes": 10570
+    },
+    {
+      "path": "teams/uefa_ajax.json",
+      "sha256": "sha256:c23c9b7a0b00f476a9a4496abb5e2ceebbc78b3c324d9c2468ea15674789f7ce",
+      "bytes": 10561
+    },
+    {
+      "path": "teams/uefa_anderlecht.json",
+      "sha256": "sha256:18646d941b593bebb55d497ab10c318aa70029db48da13db5788df72456352c8",
+      "bytes": 10572
+    },
+    {
+      "path": "teams/uefa_austria_wien.json",
+      "sha256": "sha256:96890bc62d053550c662141696ff34af078e1b91836109c0f88c5ddefdc91c85",
+      "bytes": 10634
+    },
+    {
+      "path": "teams/uefa_b_banja_luka.json",
+      "sha256": "sha256:f97da83e539e244157eb524fdfaa5bd8a156b2372113efee8a137d59d5c8d86b",
+      "bytes": 10578
+    },
+    {
+      "path": "teams/uefa_beitar_jerusalem.json",
+      "sha256": "sha256:40ae8af8d3c1b82d7fb7566de8d5b2a158ed67b3b3dfc83f975b85dea0874c99",
+      "bytes": 10642
+    },
+    {
+      "path": "teams/uefa_benfica.json",
+      "sha256": "sha256:59f8c203420e4f67bad8ca1eaab255869ffb1b668ca2ea2222d4f75c5d29ab9e",
+      "bytes": 10566
+    },
+    {
+      "path": "teams/uefa_besiktas.json",
+      "sha256": "sha256:d54ab46c067d7ffca2d711ecaa4bf0ccc488c7e81bafc10c24e99e24e7ef655d",
+      "bytes": 10570
+    },
+    {
+      "path": "teams/uefa_bohemian_fc.json",
+      "sha256": "sha256:347ed614c34dc0db67c63a69d4a89e827744e3f3fb78c1322f96f54dedaaac1f",
+      "bytes": 10572
+    },
+    {
+      "path": "teams/uefa_braga.json",
+      "sha256": "sha256:b7ca82171fcfdfdae2d0c055c490fc45476c3a5dfc16fcfc3d1597be5786f1c3",
+      "bytes": 10563
+    },
+    {
+      "path": "teams/uefa_cfr_cluj.json",
+      "sha256": "sha256:4a675cd30870e15d76063c156b18bdda19a416b9c11401a8e040c01d99e49dfb",
+      "bytes": 10626
+    },
+    {
+      "path": "teams/uefa_cs_u_craiova.json",
+      "sha256": "sha256:b87b0f1455448b5abaae98a4b44a96595eaf4781755b9758f6c15c7fa386334c",
+      "bytes": 10576
+    },
+    {
+      "path": "teams/uefa_cska_sofia.json",
+      "sha256": "sha256:dd4c4a93e6d591f3724d2313481e913612bcf22338c2fd0b82875a4deeeb1c42",
+      "bytes": 10569
+    },
+    {
+      "path": "teams/uefa_dac.json",
+      "sha256": "sha256:5122b4dba408afaf6b468b8e3f95ec0bf4ade9ccd1c449b40fb8df82fbfed708",
+      "bytes": 10586
+    },
+    {
+      "path": "teams/uefa_dinamo_minsk.json",
+      "sha256": "sha256:5c6ab1cfc09a6d0acc2f379726f0541d4ed3ae2bc7b14503d69f6fc81bafeb6c",
+      "bytes": 10577
+    },
+    {
+      "path": "teams/uefa_dinamo_tirana.json",
+      "sha256": "sha256:e27437c5c02394b534a554fb69850ee90d73705fdaaa234aad42a4e5773c827c",
+      "bytes": 10576
+    },
+    {
+      "path": "teams/uefa_dynamo_kyiv.json",
+      "sha256": "sha256:5ea61978ceb10b033efb0f4aef146d6d19933ec95e54b6b91f5379899ee0b653",
+      "bytes": 10575
+    },
+    {
+      "path": "teams/uefa_fc_flora.json",
+      "sha256": "sha256:2f05335331441cfc59784f8d8eff3513a280ca4c1e9fd3642395fbcb16f77ee1",
+      "bytes": 10566
+    },
+    {
+      "path": "teams/uefa_fc_noah.json",
+      "sha256": "sha256:b123ace7dc67b5039af82a8f408c8a9fd679616481a5849a8c68433f477c7994",
+      "bytes": 10567
+    },
+    {
+      "path": "teams/uefa_fc_tobol.json",
+      "sha256": "sha256:a13228c57aaa268fdfdc7939944caae324e355455c0627b6a65b861e36570c07",
+      "bytes": 10656
+    },
+    {
+      "path": "teams/uefa_ferencvaros.json",
+      "sha256": "sha256:71634b75320e06f382f92254c153203e1804a9718a8b30162da19f6b851772ee",
+      "bytes": 10575
+    },
+    {
+      "path": "teams/uefa_fk_auda.json",
+      "sha256": "sha256:3afe9f1e6556de9df6698cdde8c9b96c460ba90116df804da44269971a9c5c43",
+      "bytes": 10594
+    },
+    {
+      "path": "teams/uefa_fk_egnatia.json",
+      "sha256": "sha256:0828d06a72a3f152cb3a9df5754a006e4674eb78eb5fc405fdbf00fc5ec3b7a1",
+      "bytes": 10569
+    },
+    {
+      "path": "teams/uefa_fk_shkendija.json",
+      "sha256": "sha256:f55033b34c42144eb6fd6b3d1d269a94ac58f57e2f39caf2643152b43da5c648",
+      "bytes": 10578
+    },
+    {
+      "path": "teams/uefa_gent.json",
+      "sha256": "sha256:4fc9ed7792ed0ff6130d07238678d39c14ed2412c0df2b61ab167a5c9240712c",
+      "bytes": 10561
+    },
+    {
+      "path": "teams/uefa_gornik_zabrze.json",
+      "sha256": "sha256:d6dc7b11fba354b485589f17aa0f58583fd2f57be2b0df0377d3c23dfa21c7bf",
+      "bytes": 10636
+    },
+    {
+      "path": "teams/uefa_goteborg.json",
+      "sha256": "sha256:a20d0d8f9490196dfdf285cb25f2578a90ba62301679cf75d0cf51910fd62219",
+      "bytes": 10627
+    },
+    {
+      "path": "teams/uefa_gyor.json",
+      "sha256": "sha256:4470230954e63fec32c4306dbcb01c645199113599cd6911e0a90260a36eeb49",
+      "bytes": 10559
+    },
+    {
+      "path": "teams/uefa_hajduk_split.json",
+      "sha256": "sha256:6d97ff95330271719d04404320184b24bc65538a746fa66ac70ba0299e60c29e",
+      "bytes": 10574
+    },
+    {
+      "path": "teams/uefa_hammarby.json",
+      "sha256": "sha256:62d96caec2f5aa04b068a34ef440f5683951b30dacd67dab657bf24b01463a41",
+      "bytes": 10656
+    },
+    {
+      "path": "teams/uefa_hearts.json",
+      "sha256": "sha256:74710732a51faed8c087ba7112217980b6b30ff463a1d1d21db7616831782f24",
+      "bytes": 10606
+    },
+    {
+      "path": "teams/uefa_hibernian.json",
+      "sha256": "sha256:06251b8be5a30d738cb428566eb55be72178f785faad6bc407fcf7f15ee1f916",
+      "bytes": 10598
+    },
+    {
+      "path": "teams/uefa_hjk_helsinki.json",
+      "sha256": "sha256:86d135f43b7576f309638a459488cd0ba271af7c61d225cf947d27bec7d1e504",
+      "bytes": 10577
+    },
+    {
+      "path": "teams/uefa_hradec_kralove.json",
+      "sha256": "sha256:5dd0bec1c974b08bd0ff460553c9cddd9283dce194d0014aee3b231c9f76cbb0",
+      "bytes": 10639
+    },
+    {
+      "path": "teams/uefa_ilves.json",
+      "sha256": "sha256:6327122ee10a4b628df95dab5c70a1ca29d5f10b53052d295f7afc71cb364368",
+      "bytes": 10560
+    },
+    {
+      "path": "teams/uefa_inter_d_escaldes.json",
+      "sha256": "sha256:95c218b335e91da0071ccbe56d8134f925be4c571cab302aea4232d52a07af1d",
+      "bytes": 10672
+    },
+    {
+      "path": "teams/uefa_inter_turku.json",
+      "sha256": "sha256:3556cc2edf6d0068d9a2f7482d7cea22715bba5506fefb2eec5036829b55ef74",
+      "bytes": 10572
+    },
+    {
+      "path": "teams/uefa_jablonec.json",
+      "sha256": "sha256:4aca233054c8f0016a0e3e918fd7a9acb1f3f705f31edbd1329e9141bbfa36c4",
+      "bytes": 10566
+    },
+    {
+      "path": "teams/uefa_jagiellonia.json",
+      "sha256": "sha256:82f355b4c35584d78bb7e1ea55dfe321c7fa24c441b69d1d4249a2c8bed73e52",
+      "bytes": 10574
+    },
+    {
+      "path": "teams/uefa_kf_drita.json",
+      "sha256": "sha256:35bbe86c5ec70c8d169b30b9bdbcaf1f88018426d6d031b248bba5bc18041d15",
+      "bytes": 10569
+    },
+    {
+      "path": "teams/uefa_ki_klaksvik.json",
+      "sha256": "sha256:9756741c673935ce6b99ccf5a95e9c581da79a3f9110bc50e5bb10e28dc5590d",
+      "bytes": 10576
+    },
+    {
+      "path": "teams/uefa_kups.json",
+      "sha256": "sha256:2eef5b9d31e15dba9e8a7e14a6d8a74e90633b37b93c4f010cdc07610e7abb23",
+      "bytes": 10560
+    },
+    {
+      "path": "teams/uefa_kv.json",
+      "sha256": "sha256:5b27d9a6e2f9796e87f249e8dea88cdbe0e690e1a9386adf7251ac2ce32e026f",
+      "bytes": 10556
+    },
+    {
+      "path": "teams/uefa_lech_poznan.json",
+      "sha256": "sha256:0fa3b64d4a1668799de70923b4ca26a7fb5352dc0602eb6d7ba98d7697196652",
+      "bytes": 10575
+    },
+    {
+      "path": "teams/uefa_lincoln_fc.json",
+      "sha256": "sha256:522900d95c285ddbc94cc5d4748a4f1d8612ad6e468a3dab47c6ffa0057942c2",
+      "bytes": 10572
+    },
+    {
+      "path": "teams/uefa_lugano.json",
+      "sha256": "sha256:3f053d7709e7c3bbdaca6e1bf6e654f12e7334acf559c8fb39ec7f4c04fc5949",
+      "bytes": 10565
+    },
+    {
+      "path": "teams/uefa_maccabi_tel_aviv.json",
+      "sha256": "sha256:e91ffa2e08b320f4d0c06cfc7b093e304d2ebb28cad9d74b2e9edab798f5e8c9",
+      "bytes": 10584
+    },
+    {
+      "path": "teams/uefa_midtjylland.json",
+      "sha256": "sha256:311392acd36969b0a02cea5aade41673d9bcfaac55d9ab176d4862ae8d96049e",
+      "bytes": 10575
+    },
+    {
+      "path": "teams/uefa_ml_vitebsk.json",
+      "sha256": "sha256:b9920060f48b5c7e5879247703a87f6e18f9c4e98424a0d227ded254e62be840",
+      "bytes": 10570
+    },
+    {
+      "path": "teams/uefa_motherwell.json",
+      "sha256": "sha256:3d095deff00ac26d939bfe93d64c90a9932ced7ee0278220323cb9b1a6f95cc2",
+      "bytes": 10630
+    },
+    {
+      "path": "teams/uefa_nordsjaelland.json",
+      "sha256": "sha256:f7421999cf94602806b0d594b0a33d3f0ed54ee55f42b1aded5ecbdf3955b1cd",
+      "bytes": 10621
+    },
+    {
+      "path": "teams/uefa_nsi_runavik.json",
+      "sha256": "sha256:e03f1aecaa29075f1e58694c8f40a59bc4b8c43ac2d0d1e26c424617586e568f",
+      "bytes": 10574
+    },
+    {
+      "path": "teams/uefa_pafos_fc.json",
+      "sha256": "sha256:7413b0185667e683a9ae64c2a10875ce39a801b26ff906cb2ff902be84998a33",
+      "bytes": 10568
+    },
+    {
+      "path": "teams/uefa_paok.json",
+      "sha256": "sha256:e6aa64516acc4d718cfd0a48c65f86ca61296ddccdb763499923b7fea95ea697",
+      "bytes": 10560
+    },
+    {
+      "path": "teams/uefa_partizan.json",
+      "sha256": "sha256:cb799dbb2038b33f59940f44feb43b4db74504c041ea115b1b0927dae68b2519",
+      "bytes": 10596
+    },
+    {
+      "path": "teams/uefa_qarabag.json",
+      "sha256": "sha256:b8f59be0c61bd507d432bc61b100e4369f1bcfe5b6c56bbef7d18fc081dd7812",
+      "bytes": 10568
+    },
+    {
+      "path": "teams/uefa_rakow.json",
+      "sha256": "sha256:0dcb0ca694016dcc1f319c5827f5e37deff414b129533ec65f846c40dbc63811",
+      "bytes": 10564
+    },
+    {
+      "path": "teams/uefa_rangers.json",
+      "sha256": "sha256:79cefae974e0e2d5c1057143e757618eb9a6a142b857488786b39d888d162c27",
+      "bytes": 10566
+    },
+    {
+      "path": "teams/uefa_rb_salzburg.json",
+      "sha256": "sha256:285da59f19c4c35a2138567f916a7c2c52963ab57db182e5098bd8eba7fec808",
+      "bytes": 10574
+    },
+    {
+      "path": "teams/uefa_rfs.json",
+      "sha256": "sha256:906a04cd3354eda0e0e27393bd7a1c853e2688a434430d1ed5e8883146c1030a",
+      "bytes": 10559
+    },
+    {
+      "path": "teams/uefa_riga_fc.json",
+      "sha256": "sha256:f57b9d7f551f362cf7ce1e2e07da3066d5153eb3bbe31474764426646072f579",
+      "bytes": 10565
+    },
+    {
+      "path": "teams/uefa_rijeka.json",
+      "sha256": "sha256:8aa3d2a9312c635007406b9072337b9487a589761a36d30db97fec279eda4bc9",
+      "bytes": 10565
+    },
+    {
+      "path": "teams/uefa_shamrock.json",
+      "sha256": "sha256:2650343f28107483169eab4111aecca1d45ca4c7fdb73933a10425e194a9163f",
+      "bytes": 10568
+    },
+    {
+      "path": "teams/uefa_shelbourne_fc.json",
+      "sha256": "sha256:29e5f7884c8fc0ba596925101ac53aaf00a82a69e57fdc29584fc83cf30d6e0a",
+      "bytes": 10621
+    },
+    {
+      "path": "teams/uefa_sheriff_tiraspol.json",
+      "sha256": "sha256:5910ee8eaac061ad0202c916835158febb3a6b18252457041873a87f85d0efcc",
+      "bytes": 10585
+    },
+    {
+      "path": "teams/uefa_sion.json",
+      "sha256": "sha256:9d2cbefb9d8de469cdf82dbfecfea66bb7f134ac7a183b4154cee304098621df",
+      "bytes": 10618
+    },
+    {
+      "path": "teams/uefa_st_gallen.json",
+      "sha256": "sha256:2237e96a373f55d70a97a6e9e1a76426b1a5a27acc3a48ce2a95cd276b01921f",
+      "bytes": 10614
+    },
+    {
+      "path": "teams/uefa_thun.json",
+      "sha256": "sha256:033f8b1f137960a3563669250eeb0d7dd25c0c83c13e2d7712da8650c44617ba",
+      "bytes": 10617
+    },
+    {
+      "path": "teams/uefa_tre_fiori.json",
+      "sha256": "sha256:9843b83b4bb458c06c32e5052901eb5328a6e16541faeffaa1436384bd1ae296",
+      "bytes": 10628
+    },
+    {
+      "path": "teams/uefa_tromso.json",
+      "sha256": "sha256:ff6a93fd3619054098b649b830287260924ef92111d174aa77ac3e597ca74c1d",
+      "bytes": 10593
+    },
+    {
+      "path": "teams/uefa_twente.json",
+      "sha256": "sha256:1f4c4fdb92a5ba77694daa89dc6a0d555f0e4bbf839a0642489b5ca942889366",
+      "bytes": 10565
+    },
+    {
+      "path": "teams/uefa_vaduz.json",
+      "sha256": "sha256:e7e0ae2c0a52549a474f0a8274ede56f54d0b20e78c53311c8a8340207a90818",
+      "bytes": 10620
+    },
+    {
+      "path": "teams/uefa_valur.json",
+      "sha256": "sha256:904dd6972edb9f194a0643ecf7a8f6d7575b50e505293d2a095a7fbc4acefe20",
+      "bytes": 10620
+    },
+    {
+      "path": "teams/uefa_zalgiris.json",
+      "sha256": "sha256:c50b0ca4b5b8fecf75add75d885da4f12393a1d24a92d3bfc9d0218f7fb7caa2",
+      "bytes": 10567
+    }
+  ],
+  "n_fixtures": 37,
+  "n_teams": 74,
+  "feature_count_min": 76,
+  "feature_count_max": 76,
+  "feature_count_avg": 76.0,
+  "missing_fields": [],
+  "immutability": "Der gesamte Verbund unter <snapshot_id>/ ist unveraenderlich. Ein geaenderter Datenstand erzeugt einen neuen snapshot_id."
+}
