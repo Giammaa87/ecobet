@@ -661,6 +661,182 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--dim);fon
 }
 @media(max-width:470px){.performance-cards{grid-template-columns:1fr}.dash-switch{display:flex;width:100%}.dash-switch button{flex:1}}
 
+
+/* ==========================================================
+   PROGNOSEKARTE · ISOLIERTER CSS-REPAIR v31
+   Basis: index_v27.html
+   Keine HTML-/JavaScript-/Datenlogik geändert.
+   ========================================================== */
+
+.prediction-overview{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin:0 0 14px;
+}
+.prediction-card{
+  position:relative;
+  min-width:0;
+  overflow:hidden;
+  padding:14px 15px 15px;
+  border:1px solid rgba(84,127,150,.28);
+  border-radius:15px;
+  background:linear-gradient(180deg,rgba(18,34,43,.94),rgba(10,20,28,.92));
+  box-shadow:0 8px 22px rgba(0,0,0,.16);
+}
+.prediction-card::before{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:2px;
+  background:rgba(145,167,177,.45);
+}
+.prediction-card.favourite::before{background:var(--accent)}
+.prediction-card.safe::before{background:var(--blue)}
+.prediction-card.balanced::before{background:#7bdcb5}
+.prediction-card.aggressive::before{background:var(--warn)}
+.prediction-card small{
+  display:block;
+  margin-bottom:7px;
+  color:var(--muted);
+  font-size:.66rem;
+  font-weight:750;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
+.prediction-card strong{
+  display:block;
+  color:#eef7f8;
+  font-size:1.02rem;
+  line-height:1.28;
+  overflow-wrap:anywhere;
+}
+.prediction-card.favourite{
+  border-color:rgba(49,230,161,.34);
+  background:linear-gradient(180deg,rgba(25,55,51,.52),rgba(10,20,28,.92));
+}
+.prediction-card.favourite strong{color:var(--accent)}
+
+.candidate-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
+  gap:11px;
+  margin-top:14px;
+}
+.candidate-card{
+  min-width:0;
+  overflow:hidden;
+  border:1px solid rgba(84,127,150,.25);
+  border-radius:15px;
+  padding:14px;
+  background:linear-gradient(180deg,rgba(15,30,38,.92),rgba(8,18,24,.9));
+  box-shadow:0 8px 20px rgba(0,0,0,.14);
+}
+.candidate-card.valid{border-top:2px solid rgba(49,230,161,.72)}
+.candidate-card.low{border-top:2px solid rgba(255,209,102,.78)}
+.candidate-card-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+.candidate-card-head h5{
+  margin:0;
+  min-width:0;
+  color:#eef7f8;
+  font-size:.88rem;
+  line-height:1.3;
+  overflow-wrap:anywhere;
+}
+.candidate-score{
+  flex:0 0 auto;
+  min-width:32px;
+  height:32px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(49,230,161,.32);
+  border-radius:10px;
+  background:rgba(49,230,161,.08);
+  color:var(--accent);
+  font:800 .78rem var(--mono);
+}
+.candidate-card.low .candidate-score{
+  border-color:rgba(255,209,102,.34);
+  background:rgba(255,209,102,.07);
+  color:var(--warn);
+}
+.candidate-card ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  border-top:1px solid rgba(84,127,150,.15);
+}
+.candidate-card li{
+  display:grid;
+  grid-template-columns:minmax(82px,.75fr) minmax(0,1.25fr);
+  gap:10px;
+  align-items:center;
+  padding:7px 0;
+  border-bottom:1px solid rgba(84,127,150,.12);
+}
+.candidate-card li span{
+  color:var(--dim);
+  font-size:.63rem;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.candidate-card li b{
+  min-width:0;
+  color:#dcebef;
+  font:700 .72rem var(--mono);
+  text-align:right;
+  overflow-wrap:anywhere;
+}
+.candidate-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:10px;
+}
+
+.candidate-audit-toggle{
+  margin-top:12px;
+  overflow:hidden;
+  border:1px solid rgba(84,127,150,.22);
+  border-radius:13px;
+  background:rgba(7,16,22,.42);
+}
+.candidate-audit-toggle>summary{
+  padding:11px 13px;
+  cursor:pointer;
+  color:#b8ccd3;
+  font:750 .68rem var(--mono);
+  letter-spacing:.025em;
+  user-select:none;
+}
+.candidate-audit-toggle>summary:hover{color:#e1f5f9}
+.candidate-audit-toggle[open]>summary{
+  border-bottom:1px solid rgba(84,127,150,.18);
+  background:rgba(18,36,45,.52);
+}
+.candidate-audit-toggle .audit-wrap{
+  margin:0;
+  border:0;
+  border-radius:0;
+}
+
+@media(max-width:1050px){
+  .prediction-overview{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:720px){
+  .prediction-overview{grid-template-columns:1fr}
+  .candidate-cards{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
