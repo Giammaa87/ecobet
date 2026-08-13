@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "record_type": "audit_index",
-  "generated_at": "2026-08-12T23:52:00+02:00",
+  "generated_at": "2026-08-14T00:27:00+02:00",
   "dates": {
     "2026-08-11": [
       {
@@ -17,6 +17,14 @@
         "run_id": "RUN_2026-08-12_FOCUS_5_PLUS_UEFA_CEST_1012_RERUN",
         "file": "ECOBET_2026-08-12_RESULT_AUDIT.json",
         "generated_at": "2026-08-12T22:17:00+02:00"
+      }
+    ],
+    "2026-08-13": [
+      {
+        "id": "2026-08-13_1002_rerun",
+        "run_id": "RUN_2026-08-13_FOCUS_5_PLUS_UEFA_CEST_1002_RERUN",
+        "file": "ECOBET_2026-08-13_RESULT_AUDIT.json",
+        "generated_at": "2026-08-14T00:27:00+02:00"
       }
     ]
   }
