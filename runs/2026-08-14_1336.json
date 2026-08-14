@@ -1,0 +1,755 @@
+{
+  "schema_version": "1.3",
+  "record_type": "run_record",
+  "run": {
+    "run_id": "RUN_2026-08-14_FOCUS_5_PLUS_UEFA_CEST_1336",
+    "snapshot_id": "SNAP_2026-08-14_1336_CEST",
+    "snapshot_time": "2026-08-14T13:36:00+02:00",
+    "date": "2026-08-14",
+    "timezone": "Europe/Zurich",
+    "scope": [
+      "Premier League",
+      "Bundesliga",
+      "La Liga",
+      "Serie A",
+      "Ligue 1",
+      "UEFA Champions League",
+      "UEFA Europa League",
+      "UEFA Conference League"
+    ],
+    "build_mode": "FULL",
+    "audit_mode": false,
+    "run_status": "COMPLETE",
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "norm_versions": {
+      "N_ECOBET_MASTER_OS": "1.3",
+      "N_ECOBET_DATA_FABRIC_AND_EBOOKS": "1.5",
+      "N_ECOBET_FOOTBALL_AND_DECISION_ENGINE": "1.0",
+      "N_ECOBET_OUTPUT_AND_AUDIT": "1.3",
+      "N_ECOBET_TEAM_ID_REGISTRY": "1.0",
+      "H_ECOBET_HISTORY_CALIBRATION": "1.0",
+      "run_record_schema": "1.3"
+    },
+    "data_snapshot_status": "UNREACHABLE",
+    "data_snapshot_id": "NOT_AVAILABLE",
+    "data_snapshot_date": "NOT_AVAILABLE",
+    "data_snapshot_generated_at": "NOT_AVAILABLE",
+    "data_snapshot_data_cutoff": "NOT_AVAILABLE",
+    "data_snapshot_db_updated_at": "NOT_AVAILABLE",
+    "data_snapshot_hash": "NOT_AVAILABLE",
+    "data_snapshot_schema_version": "NOT_AVAILABLE",
+    "data_snapshot_url": "NOT_AVAILABLE"
+  },
+  "matches": [
+    {
+      "fixture_id": "uefa_2049135",
+      "kickoff": "2026-08-14T20:00:00+02:00",
+      "competition": "UEFA Europa League",
+      "competition_id": "UEL",
+      "competition_name": "UEFA Europa League",
+      "competition_group": "UEFA",
+      "competition_type": "uefa_club_competition",
+      "display_order": 1,
+      "phase": "Third qualifying round - 2nd leg",
+      "home": "KÍ Klaksvík",
+      "away": "Lech Poznań",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "world_type": "KO_STATE_DEPENDENT",
+      "safe": "Under 4.5",
+      "balanced": "Under 3.5",
+      "aggressive": "Match goals 1-3",
+      "favourite": "Under 3.5",
+      "model_probability_band": "71-85%",
+      "model_price_band": "1.18-1.41",
+      "ampel": "YELLOW",
+      "flags": [
+        "DATA_CONDITIONAL",
+        "KO_STATE_DEPENDENT",
+        "STATE_SENSITIVE",
+        "LOW_SAMPLE",
+        "TRAVEL_DISRUPTION",
+        "LOW_EVENT_SIGNATURE"
+      ],
+      "data_readiness": "CONDITIONAL",
+      "match_core_status": "PARTIAL",
+      "nsp_codes": [],
+      "board_status": "COMMITTED",
+      "confirmation_status": "NOT_APPLICABLE",
+      "commit_status": "COMMITTED",
+      "commit_time": "2026-08-14T13:36:00+02:00",
+      "match_validation": "PASS_WITH_LIMITS",
+      "aggregate_state": "KÍ trails 0-1",
+      "field_status": [
+        {
+          "id": "DF01",
+          "family": "Fixture Identity & Kickoff",
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH",
+          "evidence": "UEFA + Lech official + FotMob: Fri 14 Aug; 18:00 UTC / 20:00 Europe/Zurich; Tórsvøllur."
+        },
+        {
+          "id": "DF02",
+          "family": "Competition / Phase / KO State",
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH",
+          "evidence": "UEL third qualifying round, second leg; Lech leads aggregate 1-0."
+        },
+        {
+          "id": "DF03",
+          "family": "Season / Table",
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "MEDIUM",
+          "evidence": "KÍ 18: 9-7-2, 33:14, 1.89 PPG, 2nd. Lech 3: 2-1-0, 5:1, 2.33 PPG, 1st."
+        },
+        {
+          "id": "DF04",
+          "family": "Recent Form L5 / L10",
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "MEDIUM",
+          "evidence": "KÍ L5 1-1-3, 2:4, FTS 4/5. Lech L5 3-1-1, 7:5. Match history checked through target."
+        },
+        {
+          "id": "DF05",
+          "family": "Relevant Home / Away Split",
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "MEDIUM",
+          "evidence": "KÍ home n=9: 5-2-2, 14:7. Lech away league n=1: 1-0-0, 2:1; VERY_LOW sample."
+        },
+        {
+          "id": "DF06",
+          "family": "Goals / CS / FTS / Totals",
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "MEDIUM",
+          "evidence": "KÍ home 1.56 GF / 0.78 GA, U3.5 89%. Lech league 1.67 GF / 0.33 GA, U3.5 3/3 (LOW sample)."
+        },
+        {
+          "id": "DF07",
+          "family": "xG / xGA Season + Recent",
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM",
+          "evidence": "Season/role found: KÍ 1.93/1.06, home 1.58/0.93; Lech 2.10/1.12, away 2.27/1.37 n=1. Exact all-comp L5 xG incomplete."
+        },
+        {
+          "id": "DF08",
+          "family": "Shots / SOT For + Against",
+          "home": "PARTIAL",
+          "away": "PARTIAL",
+          "trust": "MEDIUM",
+          "evidence": "For-volume found: KÍ 15.56/5.17, home 12.44/3.33; Lech 19.33/7.00. Complete rolling against-volume not exposed consistently."
+        },
+        {
+          "id": "DF09",
+          "family": "1H / 2H Phase Profile",
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "MEDIUM",
+          "evidence": "KÍ home 1H 1.11 GF / 0.11 GA; 2H 0.44 GF / 0.67 GA. Lech 3-game phase sample found but LOW."
+        },
+        {
+          "id": "DF10",
+          "family": "Rest / Load / Match Density",
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH",
+          "evidence": "KÍ 4 rest days. Lech 5 days, but weather delayed arrival and UEFA moved the tie one day."
+        },
+        {
+          "id": "DF11",
+          "family": "Confirmed Availability Events",
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_EVENT",
+          "trust": "MEDIUM/HIGH",
+          "evidence": "KÍ: no material confirmed unavailable event retained. Lech: confirmed recovery/unavailability events retained; no projected lineup."
+        },
+        {
+          "id": "DF12",
+          "family": "Coach / Regime Check",
+          "home": "FOUND_NO_EVENT",
+          "away": "FOUND_NO_EVENT",
+          "trust": "MEDIUM/HIGH",
+          "evidence": "No confirmed current regime-change trigger; Niels Frederiksen confirmed in current Lech material."
+        },
+        {
+          "id": "DF13",
+          "family": "H2H Support",
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH",
+          "evidence": "One current H2H only: Lech 1-0 KÍ on 6 Aug. Support signal only."
+        },
+        {
+          "id": "DF14",
+          "family": "DNA Layer",
+          "home": "NOT_EXPECTED",
+          "away": "NOT_EXPECTED",
+          "trust": "HIGH",
+          "evidence": "No active validated DNA object required; no DNA invented."
+        },
+        {
+          "id": "DF15",
+          "family": "Entity / Registry Mapping",
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH",
+          "evidence": "Registry entry points revalidated against current UEFA/FotMob/FootyStats first-team entities."
+        },
+        {
+          "id": "DF16",
+          "family": "Quality / Lineage / Freshness",
+          "home": "FOUND",
+          "away": "FOUND",
+          "trust": "HIGH",
+          "evidence": "Source, snapshot time, sample and trust retained; transport and upstream source separated."
+        }
+      ],
+      "team_ebooks": {
+        "home": {
+          "team": "KÍ Klaksvík",
+          "Current season": "Faroe Islands Premier League 2026: 18 MP, 9W 7D 2L, GF 33, GA 14, PPG 1.89, rank 2/10.",
+          "Role split": "Home n=9: 5W 2D 2L, GF 14, GA 7, PPG 1.89.",
+          "Recent": "L5: 0-2 HB, 0-1 Lech, 2-0 B36, 0-1 Kauno, 0-0 Kauno => 1W 1D 3L, GF 2, GA 4, FTS 4/5; all five <=2 total goals.",
+          "Process": "League xG/xGA 1.93/1.06; home 1.58/0.93. Shots/SOT 15.56/5.17; home 12.44/3.33.",
+          "Goal profile": "League 1.83 GF / 0.78 GA; home 1.56/0.78. Home U3.5 89%, U4.5 89%, BTTS 44%.",
+          "Phase": "Home 1H 1.11 GF / 0.11 GA, 89% 1H clean sheets; home 2H 0.44 GF / 0.67 GA.",
+          "Load": "4 rest days from 10 Aug; domestic fixture follows 16 Aug.",
+          "Availability": "No material current confirmed unavailable event retained from allowed checks; no lineup/formation inference.",
+          "Gaps": "Exact definition-consistent all-comp L5 xG/xGA and complete rolling shots/SOT-against remain PARTIAL.",
+          "Trust": "MEDIUM-HIGH"
+        },
+        "away": {
+          "team": "Lech Poznań",
+          "Current season": "Ekstraklasa 2026/27: 3 MP, 2W 1D 0L, GF 5, GA 1, PPG 2.33, rank 1/18.",
+          "Role split": "Away league n=1: 1W 0D 0L, GF 2, GA 1, PPG 3.00; VERY_LOW sample and damped.",
+          "Recent": "L5: 3-0 Piast, 1-0 KÍ, 2-1 Wieczysta, 1-4 AGF, 0-0 Cracovia => 3W 1D 1L, GF 7, GA 5.",
+          "Process": "League xG/xGA 2.10/1.12; shots/SOT 19.33/7.00. Away xG/xGA 2.27/1.37, 21 shots, but n=1.",
+          "Goal profile": "League 1.67 GF / 0.33 GA; all first three league matches U3.5, but sample class LOW.",
+          "Phase": "Current league n=3: 0.67 GF 1H / 1.00 GF 2H; 0.00 GA 1H / 0.33 GA 2H. Support only.",
+          "Load": "5 rest days, but bad weather delayed arrival in the Faroe Islands; UEFA postponed the match to 14 Aug.",
+          "Availability": "Confirmed current unavailability/recovery events retained from Lech official/current checks; no projected lineup or formation used.",
+          "Regime": "Niels Frederiksen current coach; no regime-change trigger.",
+          "Gaps": "Exact all-comp L5 xG/xGA and complete rolling shots/SOT-against remain PARTIAL; away-role n=1.",
+          "Trust": "MEDIUM-HIGH"
+        }
+      },
+      "match_ebook_evidence": {
+        "anchor_candidates": [
+          "Low-event corridor: KÍ home U3.5 89%, current L5 all <=2 total goals, first leg 0-1.",
+          "Lech process edge: league xG 2.10, 19.33 shots and 7.00 SOT; away role n=1.",
+          "KO opening: KÍ must overturn 0-1; KÍ home defensive profile is more exposed in 2H than 1H."
+        ],
+        "selected_anchor": "Lech enters the second leg with a 1-0 aggregate lead. KÍ's strong home-season baseline is offset by a sharp recent scoring slowdown, while Lech bring the stronger current shot/xG volume. The most coherent 90-minute path is a score-sensitive opening followed by greater second-half space as KÍ must eventually chase; the central corridor remains 1-3 total goals unless KÍ equalise early or travel/event volatility breaks control.",
+        "ko_state": "KÍ trails 0-1 aggregate; tie state changes tempo and late risk.",
+        "data_readiness_evidence": "CONDITIONAL: independent evidence families carry the anchor; all-comp recent xG and complete against-volume remain PARTIAL."
+      },
+      "football_interpretation": {
+        "summary": "Lech enters the second leg with a 1-0 aggregate lead. KÍ's strong home-season baseline is offset by a sharp recent scoring slowdown, while Lech bring the stronger current shot/xG volume. The most coherent 90-minute path is a score-sensitive opening followed by greater second-half space as KÍ must eventually chase; the central corridor remains 1-3 total goals unless KÍ equalise early or travel/event volatility breaks control.",
+        "world_type": "KO_STATE_DEPENDENT",
+        "anchor": "Lech enters the second leg with a 1-0 aggregate lead. KÍ's strong home-season baseline is offset by a sharp recent scoring slowdown, while Lech bring the stronger current shot/xG volume. The most coherent 90-minute path is a score-sensitive opening followed by greater second-half space as KÍ must eventually chase; the central corridor remains 1-3 total goals unless KÍ equalise early or travel/event volatility breaks control.",
+        "tempo": "MEDIUM / STATE-LED",
+        "control": "LECH STRATEGIC EDGE, NOT DOMINANT",
+        "chaos": "MEDIUM",
+        "tail_risk": "MEDIUM",
+        "phase_flow": "KÍ can push early; without an equaliser Lech state-control grows, then KÍ's chase creates more second-half space.",
+        "game_states": {
+          "1-0": "Aggregate level. Tempo and transition risk rise; Under 3.5 BENDS but does not automatically break.",
+          "0-1": "Lech two clear aggregate. KÍ chase two; Lech manage/counter. 0-1/0-2/1-2 paths strengthen.",
+          "1-1": "Lech still aggregate +1. KÍ must keep attacking; late space and 1-2/2-1/2-2 tail grow."
+        }
+      },
+      "prime_world": {
+        "plausibility": "HIGH",
+        "mechanism": "Lech use the aggregate advantage to avoid unnecessary early risk while KÍ probe without converting their home pressure into sustained high-quality output. If the tie stays level on the night through the middle phase, KÍ's need to chase increases space after the break and preserves a Lech transition/scoring route. The game lands most often in a controlled 1-3-goal corridor.",
+        "break_conditions": [
+          "early KÍ equaliser",
+          "red card/extreme event",
+          "travel effect materially degrades Lech control"
+        ]
+      },
+      "counterworld": {
+        "plausibility": "MEDIUM",
+        "mechanism": "KÍ convert their strong home first-half pattern into an early goal, immediately tying the aggregate. Lech can no longer manage the one-goal cushion and must increase possession and chance creation; the match becomes a genuine two-way knockout contest with a wider late tail and 1-1/2-1/1-2 type paths.",
+        "break_conditions": [
+          "KÍ fail to sustain early pressure",
+          "Lech score first and restore two-goal aggregate cushion"
+        ]
+      },
+      "world_stability": "STABLE",
+      "score_distribution": {
+        "modal_score": "0-1",
+        "four_score_cluster": [
+          "0-1",
+          "1-1",
+          "0-2",
+          "1-0"
+        ],
+        "score_band": "1-3 total goals",
+        "structurally_unlikely": [
+          "4+ total goals without early state shock",
+          "KÍ 3+ goals in 90 minutes"
+        ]
+      },
+      "prediction_map": [
+        {
+          "candidate_id": "C1",
+          "prediction": "Under 3.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 78,
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 9,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "candidate_id": "C2",
+          "prediction": "Under 4.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 90,
+          "W": 2,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "SUBSET_OR_DUPLICATE"
+          ],
+          "score_total": 6,
+          "robustness": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "candidate_id": "C3",
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 74,
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 8,
+          "robustness": "LOW",
+          "status": "VALID"
+        },
+        {
+          "candidate_id": "C4",
+          "prediction": "Lech Poznań Over 0.5 team goals",
+          "axis": "TEAM_GOALS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 70,
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "candidate_id": "C5",
+          "prediction": "BTTS No",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 64,
+          "W": 2,
+          "F": 2,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 6,
+          "robustness": "LOW",
+          "status": "VALID"
+        },
+        {
+          "candidate_id": "C6",
+          "prediction": "X2",
+          "axis": "DIRECTION",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 68,
+          "W": 2,
+          "F": 2,
+          "R": 1,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 4,
+          "robustness": "LOW",
+          "status": "VALID"
+        }
+      ],
+      "candidate_audit": {
+        "candidates_structured": [
+          {
+            "candidate_id": "C1",
+            "prediction": "Under 3.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": 78,
+            "W": 3,
+            "F": 3,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              "STATE_SENSITIVE"
+            ],
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS",
+            "status": "VALID",
+            "fit": "Prime corridor stays below four goals; all cluster scores fit.",
+            "break_condition": "Early KÍ equaliser or extreme event can widen the tail."
+          },
+          {
+            "candidate_id": "C2",
+            "prediction": "Under 4.5",
+            "axis": "TOTAL",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": 90,
+            "W": 2,
+            "F": 1,
+            "R": 3,
+            "D": 2,
+            "penalties": [
+              "SUBSET_OR_DUPLICATE"
+            ],
+            "score_total": 6,
+            "robustness": "HIGH",
+            "S1": "HOLDS",
+            "S2": "HOLDS",
+            "S3": "BENDS",
+            "status": "VALID",
+            "fit": "Same world with wider tail cushion; full cluster coverage but lower specificity.",
+            "break_condition": "Only a genuine shootout/extreme-event run strongly threatens it."
+          },
+          {
+            "candidate_id": "C3",
+            "prediction": "Match goals 1-3",
+            "axis": "RANGE",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "4/4",
+            "p_raw": 74,
+            "W": 3,
+            "F": 3,
+            "R": 1,
+            "D": 2,
+            "penalties": [
+              "STATE_SENSITIVE"
+            ],
+            "score_total": 8,
+            "robustness": "LOW",
+            "S1": "BENDS",
+            "S2": "BENDS",
+            "S3": "BREAKS",
+            "status": "VALID",
+            "fit": "All four cluster scores sit inside 1-3; 0-0 stall and 4+ tail are live breaks.",
+            "break_condition": "Deep 0-0 or event cascade beyond three."
+          },
+          {
+            "candidate_id": "C4",
+            "prediction": "Lech Poznań Over 0.5 team goals",
+            "axis": "TEAM_GOALS",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "3/4",
+            "p_raw": 70,
+            "W": 3,
+            "F": 2,
+            "R": 2,
+            "D": 1,
+            "penalties": [
+              "LOW_SAMPLE",
+              "STATE_SENSITIVE"
+            ],
+            "score_total": 6,
+            "robustness": "MEDIUM",
+            "S1": "HOLDS",
+            "S2": "BENDS",
+            "S3": "BENDS",
+            "status": "VALID",
+            "fit": "Lech process edge plus expected late space creates a credible scoring path.",
+            "break_condition": "Travel execution drop plus KÍ transition suppression."
+          },
+          {
+            "candidate_id": "C5",
+            "prediction": "BTTS No",
+            "axis": "BTTS",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "3/4",
+            "p_raw": 64,
+            "W": 2,
+            "F": 2,
+            "R": 1,
+            "D": 2,
+            "penalties": [
+              "STATE_SENSITIVE"
+            ],
+            "score_total": 6,
+            "robustness": "LOW",
+            "S1": "BREAKS",
+            "S2": "HOLDS",
+            "S3": "BENDS",
+            "status": "VALID",
+            "fit": "KÍ's finishing suppression supports a one-sided-score route, but 1-1 is central enough to limit robustness.",
+            "break_condition": "Early KÍ goal while Lech retain their scoring route."
+          },
+          {
+            "candidate_id": "C6",
+            "prediction": "X2",
+            "axis": "DIRECTION",
+            "world": "PRIME_WORLD",
+            "cluster_coverage": "3/4",
+            "p_raw": 68,
+            "W": 2,
+            "F": 2,
+            "R": 1,
+            "D": 1,
+            "penalties": [
+              "LOW_SAMPLE",
+              "STATE_SENSITIVE"
+            ],
+            "score_total": 4,
+            "robustness": "LOW",
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BREAKS",
+            "status": "VALID",
+            "fit": "Lech process and aggregate position support not-lose, but KÍ home strength keeps direction secondary.",
+            "break_condition": "KÍ convert early pressure and then control the night."
+          }
+        ]
+      },
+      "decision_paths": {
+        "safe": {
+          "expression": "Under 4.5",
+          "rationale": "Highest shock robustness and full cluster coverage; wider tail cushion."
+        },
+        "balanced": {
+          "expression": "Under 3.5",
+          "rationale": "Best combined World Fit, Market Fit / Abbildungstreue, Robustness and Data Integrity."
+        },
+        "aggressive": {
+          "expression": "Match goals 1-3",
+          "rationale": "Narrower corridor; greater 0-0 stall and 4+ knockout-tail exposure."
+        }
+      },
+      "favourite_decision": {
+        "favourite_prediction": "Under 3.5",
+        "p_raw": 78,
+        "model_probability_band": "71-85%",
+        "model_price_band": "1.18-1.41",
+        "probability_half_width_pp": 7,
+        "band_build": [
+          "base 3pp",
+          "+2pp CONDITIONAL",
+          "+2pp STATE_SENSITIVE"
+        ],
+        "robustness": "MEDIUM",
+        "shock_test": {
+          "S1": "BENDS",
+          "S2": "HOLDS",
+          "S3": "BENDS"
+        },
+        "ampel": "YELLOW",
+        "confirmation_status": "NOT_APPLICABLE",
+        "model_price_note": "Internal fair-price band only; no real bookmaker quote, market availability or value claim."
+      },
+      "repair_summary": [
+        {
+          "field": "Daily Data Snapshot",
+          "routes": "Resolution endpoint -> exact Open Search",
+          "result": "UNREACHABLE -> WEB_FALLBACK; transport does not define scope."
+        },
+        {
+          "field": "Fixture correction / kickoff",
+          "routes": "UEFA current match page -> UEFA competition page -> Lech official postponement -> FotMob",
+          "result": "FOUND: Fri 14 Aug, 20:00 Europe/Zurich; KÍ trails aggregate 0-1."
+        },
+        {
+          "field": "KÍ recent process/xG",
+          "routes": "FootyStats current team stats -> FotMob all-comp log -> Open Search",
+          "result": "Season/role xG FOUND; exact all-comp L5 xG remains PARTIAL."
+        },
+        {
+          "field": "Lech recent process/xG",
+          "routes": "FootyStats 2026/27 -> FotMob current games -> Open Search",
+          "result": "Current league process FOUND; exact all-comp L5 xG PARTIAL; away n=1 flagged."
+        },
+        {
+          "field": "Shots/SOT against",
+          "routes": "FootyStats -> FotMob match pages -> Open Search",
+          "result": "For-volume FOUND; complete rolling against-volume PARTIAL for both."
+        },
+        {
+          "field": "Availability / regime / load",
+          "routes": "Lech official -> current team pages -> FotMob current check -> Open Search",
+          "result": "Lech FOUND_EVENT + travel disruption; KÍ FOUND_NO_EVENT; no current regime change."
+        }
+      ],
+      "sources": [
+        {
+          "name": "UEFA.com",
+          "page": "Klaksvík vs Lech Poznań - UEFA Europa League 2026/27",
+          "used_for": "Fixture identity, competition, match-day confirmation, aggregate state",
+          "trust": "HIGH",
+          "url": "https://www.uefa.com/uefaeuropaleague/match/2049135--klaksvik-vs-lech-poznan/",
+          "snapshot": "2026-08-14T13:36:00+02:00"
+        },
+        {
+          "name": "Lech Poznań official",
+          "page": "Mecz z KÍ Klaksvík przełożony",
+          "used_for": "Postponement, Friday 14 Aug, 20:00 Europe/Zurich, travel disruption",
+          "trust": "HIGH",
+          "url": "https://www.lechpoznan.pl/aktualnosci,2,mecz-z-ki-klaksvik-przelozony,48044.html",
+          "snapshot": "2026-08-14T13:36:00+02:00"
+        },
+        {
+          "name": "Lech Poznań official",
+          "page": "First team schedule",
+          "used_for": "Current fixture, first-leg 1-0, recent Lech results",
+          "trust": "HIGH",
+          "url": "https://www.lechpoznan.pl/pierwsza-druzyna,61.html",
+          "snapshot": "2026-08-14T13:36:00+02:00"
+        },
+        {
+          "name": "FotMob",
+          "page": "Klaksvik vs Lech Poznań",
+          "used_for": "18:00 UTC cross-check, venue, aggregate 0-1, recent form",
+          "trust": "HIGH",
+          "url": "https://www.fotmob.com/matches/lech-poznan-vs-klaksvik/vikoy",
+          "snapshot": "2026-08-14T13:36:00+02:00"
+        },
+        {
+          "name": "FootyStats",
+          "page": "KÍ Klaksvík 2026 team statistics",
+          "used_for": "Season/table, home split, goals, xG/xGA, shots/SOT, totals, phases",
+          "trust": "MEDIUM",
+          "url": "https://footystats.org/clubs/ki-klaksvik-5404",
+          "snapshot": "2026-08-14T13:36:00+02:00"
+        },
+        {
+          "name": "FootyStats",
+          "page": "Lech Poznań 2026/27 team statistics",
+          "used_for": "Season/table, role split, goals, xG/xGA, shots/SOT, totals, phases",
+          "trust": "MEDIUM",
+          "url": "https://footystats.org/clubs/kks-lech-poznan-961",
+          "snapshot": "2026-08-14T13:36:00+02:00"
+        },
+        {
+          "name": "Lech Poznań official",
+          "page": "Current match-day / team-status material",
+          "used_for": "Confirmed current unavailability/recovery events; no projected lineup used",
+          "trust": "HIGH",
+          "url": "https://www.lechpoznan.pl/dzien-meczowy,113,lpo-kla,324.html",
+          "snapshot": "2026-08-14T13:36:00+02:00"
+        },
+        {
+          "name": "Lech Poznań official",
+          "page": "Niels Frederiksen before KÍ Klaksvík",
+          "used_for": "Current coach/regime confirmation",
+          "trust": "HIGH",
+          "url": "https://www.lechpoznan.pl/aktualnosci,2,konferencja-%7C-niels-frederiksen-przed-ki-klaksvik,47978.html",
+          "snapshot": "2026-08-14T13:36:00+02:00"
+        }
+      ]
+    }
+  ],
+  "proof_of_work": {
+    "scope_units_total": 8,
+    "scope_units_found": 1,
+    "scope_units_confirmed_zero": 7,
+    "scope_units_unresolved": 0,
+    "matches_in_scope": 1,
+    "matches_queued": 1,
+    "matches_modeled": 1,
+    "matches_committed": 1,
+    "matches_no_stable_prediction": 0,
+    "matches_not_processed": 0,
+    "team_ebooks_built": 2,
+    "match_ebooks_built": 1,
+    "silent_exclusions": 0,
+    "out_of_scope_discovered": 0,
+    "scope_unresolved_count": 0,
+    "repair_passes_total": 6,
+    "critical_fields_partial": 4,
+    "critical_fields_restricted": 0,
+    "conflict_count": 0,
+    "timeout_limit_count": 0,
+    "forbidden_source_count": 0,
+    "readiness_distribution": {
+      "READY": 0,
+      "CONDITIONAL": 1,
+      "NOT_READY": 0
+    },
+    "world_stability_distribution": {
+      "STABLE": 1,
+      "VERY_STABLE": 0,
+      "ULTRA_STABLE": 0,
+      "UNKNOWN": 0
+    },
+    "ampel_distribution": {
+      "GREEN": 0,
+      "YELLOW": 1,
+      "RED": 0
+    },
+    "data_snapshot_status": "UNREACHABLE",
+    "data_snapshot_id": "NOT_AVAILABLE",
+    "data_snapshot_hash": "NOT_AVAILABLE",
+    "snapshot_fixture_count": 0,
+    "discovered_fixture_count": 1,
+    "snapshot_covered_fixtures": 0,
+    "additional_fixtures_found": 0,
+    "snapshot_only_fixtures": 0,
+    "fixture_set_relation": "UNRESOLVED",
+    "matches_source_snapshot": 0,
+    "matches_source_snapshot_plus_repair": 0,
+    "matches_source_web_fallback": 1,
+    "html_visual_report_status": "CREATED",
+    "pdf_report_status": "CREATED",
+    "final_board_png_status": "CREATED",
+    "visual_output_consistency": "PASS",
+    "visual_output_integrity": "PASS",
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "real_odds_used_as_input": 0,
+    "tickets_created": "NO",
+    "search_exhaustion_note": "Daily Snapshot resolution plus exact Open Search exhausted to UNREACHABLE. No prediction-critical field is RESTRICTED; exact all-competition recent xG and complete rolling shots/SOT-against remain visibly PARTIAL after allowed-source paths plus Open Search.",
+    "correction_note": "New 13:36 snapshot supersedes the invalid 09:43 zero-fixture visual output. The earlier record remains preserved as audit history."
+  }
+}
