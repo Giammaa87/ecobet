@@ -1,0 +1,32 @@
+{
+  "schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+  "snapshot_id": "snap_20260815_033127",
+  "date": "2026-08-15",
+  "generated_at": "2026-08-15T03:31:27.245511+02:00",
+  "data_cutoff": "2026-08-15T03:31:27.245511+02:00",
+  "db_updated_at": "2026-08-15T03:05:08",
+  "scope": "ECOBET_DAILY_DATA_FULL",
+  "source": "ECOBET_DATA_FABRIC",
+  "snapshot_source_layer": "LOCAL_ECOBET_SOCCERDATA_PIPELINE",
+  "transport_layer": "GITHUB_PAGES",
+  "data_hash": "sha256:dba6194fa470b723aca6ac6af6fa0339db35de2a4b811f273a24449bd4cbaa09",
+  "bundle_layout": {
+    "manifest": "manifest.json",
+    "fixtures": "fixtures.json",
+    "teams": "teams/<team_id>.json"
+  },
+  "parts": [
+    {
+      "path": "fixtures.json",
+      "sha256": "sha256:cbfdeeb8dd0d9226267d8a2e5c2e4f2670c02ca4309c07ca41eb82343729ff8f",
+      "bytes": 141
+    }
+  ],
+  "n_fixtures": 0,
+  "n_teams": 0,
+  "feature_count_min": 0,
+  "feature_count_max": 0,
+  "feature_count_avg": 0,
+  "missing_fields": [],
+  "immutability": "Der gesamte Verbund unter <snapshot_id>/ ist unveraenderlich. Ein geaenderter Datenstand erzeugt einen neuen snapshot_id."
+}
