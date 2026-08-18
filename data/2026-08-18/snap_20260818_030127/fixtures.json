@@ -1,0 +1,44 @@
+{
+  "schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+  "snapshot_id": "snap_20260818_030127",
+  "date": "2026-08-18",
+  "n_fixtures": 1,
+  "fixtures": [
+    {
+      "fixture": {
+        "fixture_id": "UCL2627_0b1ff928e606",
+        "legacy_match_id": "UCL2627_000979061d4e",
+        "source_fixture_id": null,
+        "competition_id": "UEFA-Champions League",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 100,
+        "season": "2026-2027",
+        "phase": "QUALIFICATION",
+        "round": "PLAYOFF",
+        "leg": "1",
+        "scheduled_date": "2026-08-18",
+        "kickoff": "2026-08-18T00:00:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "uefa_celtic",
+        "home_team_name": "Celtic",
+        "away_team_id": "uefa_lask",
+        "away_team_name": "LASK"
+      },
+      "home_team": {
+        "team_id": "uefa_celtic",
+        "team_name": "Celtic",
+        "n_features": 76,
+        "ref": "teams/uefa_celtic.json"
+      },
+      "away_team": {
+        "team_id": "uefa_lask",
+        "team_name": "LASK",
+        "n_features": 76,
+        "ref": "teams/uefa_lask.json"
+      }
+    }
+  ]
+}
