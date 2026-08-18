@@ -2,9 +2,9 @@
   "schema_version": "1.3",
   "record_type": "run_record",
   "run": {
-    "run_id": "RUN_2026-08-18_FOCUS_5_PLUS_UEFA_CEST_1555",
-    "snapshot_id": "SNAP_20260818_1555_CEST",
-    "snapshot_time": "2026-08-18T15:55:00+02:00",
+    "run_id": "RUN_2026-08-18_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260818T173744",
+    "snapshot_id": "RUNSNAP_2026-08-18T17-37-44+02-00",
+    "snapshot_time": "2026-08-18T17:37:44+02:00",
     "date": "2026-08-18",
     "timezone": "Europe/Zurich",
     "scope": [
@@ -41,7 +41,7 @@
     "data_snapshot_schema_version": "NOT_AVAILABLE",
     "data_snapshot_url": "NOT_AVAILABLE",
     "data_snapshot_resolution_url": "https://giammaa87.github.io/ecobet/data/2026-08-18/latest.json",
-    "fixture_reconciliation": "Three independently verified in-scope UCL fixtures. Daily Data Snapshot was not retrievable in this run, so snapshot-vs-discovery relation remains UNRESOLVED without reducing the scope."
+    "fixture_reconciliation": "Three independently verified in-scope UCL fixtures remain unchanged. Second targeted repair pass completed for Levski Sofia–AEK Athens and Fenerbahçe–Olympique Lyonnais; both moved from NOT_READY to CONDITIONAL. Daily Data Snapshot remains UNREACHABLE; all three matches remain WEB_FALLBACK."
   },
   "matches": [
     {
@@ -60,40 +60,37 @@
       "data_snapshot_coverage": "NONE",
       "data_source_mode": "WEB_FALLBACK",
       "snapshot_fixture_missing": null,
-      "world_type": "NOT_AVAILABLE",
-      "safe": "NOT_AVAILABLE",
-      "balanced": "NOT_AVAILABLE",
-      "aggressive": "NOT_AVAILABLE",
-      "favourite": "NO_STABLE_PREDICTION",
-      "model_probability_band": "NOT_AVAILABLE",
-      "model_price_band": "NOT_AVAILABLE",
-      "ampel": "RED",
+      "world_type": "BALANCED_NARROW",
+      "safe": "Under 4.5",
+      "balanced": "Under 3.5",
+      "aggressive": "Match Goals 1–3",
+      "favourite": "Under 3.5",
+      "model_probability_band": "70–88%",
+      "model_price_band": "1.14–1.43",
+      "ampel": "YELLOW",
       "flags": [
-        "DATA_NOT_READY",
+        "DATA_CONDITIONAL",
         "LOW_SAMPLE",
-        "MATERIAL_CONFLICT",
-        "PATH_NOT_AVAILABLE"
+        "MULTIWORLD_CLOSE",
+        "LOW_EVENT_SIGNATURE",
+        "AVAILABILITY_UNCERTAINTY"
       ],
-      "data_readiness": "NOT_READY",
-      "match_core_status": "CONFLICT",
-      "nsp_codes": [
-        "NSP_DATA_NOT_READY",
-        "NSP_NO_ANCHOR",
-        "NSP_MATERIAL_CONFLICT"
-      ],
+      "data_readiness": "CONDITIONAL",
+      "match_core_status": "PARTIAL",
+      "nsp_codes": [],
       "board_status": "COMMITTED",
       "confirmation_status": "NOT_APPLICABLE",
       "commit_status": "COMMITTED",
-      "commit_time": "2026-08-18T16:12:00+02:00",
+      "commit_time": "2026-08-18T17:37:44+02:00",
       "match_validation": "PASS_WITH_LIMITS",
       "team_ebook": {
         "home": {
           "team": "Levski Sofia",
-          "completeness": "CONFLICT"
+          "completeness": "PARTIAL"
         },
         "away": {
           "team": "AEK Athens",
-          "completeness": "CONFLICT"
+          "completeness": "PARTIAL"
         }
       },
       "field_status": [
@@ -106,7 +103,7 @@
             "trust": "HIGH"
           },
           "away": {
-            "value": "Super League MP0; direkter UCL-Sample vor Target n=0",
+            "value": "Super League MP0; LONG_TERM_PRIOR 2025/26: 21-9-2 · 72 Pkt.; aktueller Pflichtspiel-Sample n=1",
             "status": "NOT_EXPECTED",
             "trust": "HIGH"
           }
@@ -162,9 +159,9 @@
             "trust": "HIGH"
           },
           "away": {
-            "value": "Aktueller Pflichtspiel-Sample n=1 · 2 / 2",
+            "value": "Aktueller Pflichtspiel-Sample n=1 · 2:2; Long-Term-Prior bleibt getrennt vom Current Sample",
             "status": "PARTIAL",
-            "trust": "LOW"
+            "trust": "MEDIUM"
           }
         },
         {
@@ -176,9 +173,9 @@
             "trust": "MEDIUM"
           },
           "away": {
-            "value": "Liga/UCL aktuell n=0",
-            "status": "NOT_EXPECTED",
-            "trust": "HIGH"
+            "value": "Current League/UCL n=0; LONG_TERM_PRIOR 2025/26 ca. 59.6 xG / 29.3 xGA über 32 Ligaspiele",
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
           }
         },
         {
@@ -204,9 +201,9 @@
             "trust": "MEDIUM"
           },
           "away": {
-            "value": "Aktuelle Liga/UCL n=0",
-            "status": "NOT_EXPECTED",
-            "trust": "HIGH"
+            "value": "Aktueller Pflichtspiel-Sample n=1: 12 Schüsse / 10 SOT; kein stabiler Saison-Aggregatwert",
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
           }
         },
         {
@@ -283,14 +280,14 @@
           "field": "Bestätigte Events",
           "critical": true,
           "home": {
-            "value": "Quellenkonflikt: Transfermarkt meldet mehrere Ausfälle; FotMob meldet keine",
-            "status": "CONFLICT",
-            "trust": "LOW"
+            "value": "Availability-Events aus Transfermarkt bleiben als Event-Signal; fehlender FotMob-Eintrag ist kein Gegenbeweis",
+            "status": "FOUND_EVENT",
+            "trust": "MEDIUM"
           },
           "away": {
-            "value": "Quellenkonflikt: FotMob meldet Gacinovic verletzt; Transfermarkt-Matchsheet ohne Ausfall",
-            "status": "CONFLICT",
-            "trust": "LOW"
+            "value": "Mijat Gacinovic als verletzt geführt; kein materialer Gegenbeleg im Repair-Pass",
+            "status": "FOUND_EVENT",
+            "trust": "HIGH"
           }
         },
         {
@@ -308,77 +305,254 @@
           }
         }
       ],
-      "axes": {},
-      "anchor": "NOT_AVAILABLE",
-      "prime_world": "NOT_AVAILABLE",
-      "counterworld": "NOT_AVAILABLE",
-      "game_state": "NOT_AVAILABLE",
-      "modal_score": "NOT_AVAILABLE",
-      "four_score_cluster": [],
-      "score_band": "NOT_AVAILABLE",
-      "prediction_map": [],
-      "candidates": [],
-      "world_stability": "UNKNOWN",
-      "robustness": "NOT_AVAILABLE",
-      "shock_test": "NOT_AVAILABLE",
+      "axes": {
+        "WORLD_TYPE": "BALANCED_NARROW",
+        "CONTROL": "BALANCED_SLIGHT_HOME",
+        "CHAOS": "LOW_MEDIUM",
+        "GOAL_PROFILE": "NARROW",
+        "TEMPO": "CONTROLLED",
+        "PHASE_STRUCTURE": "FIRST_PHASE_COMPRESSED",
+        "DRAW_GRAVITY": "ELEVATED",
+        "TAIL_RISK": "MEDIUM"
+      },
+      "anchor": "Levski carry the stronger current home/UEFA control process, while AEK's long-term strength and defensive prior supply credible resistance; the direction edge remains weak, but the central goal corridor is comparatively narrow.",
+      "prime_world": "The first phase stays controlled. Levski hold more territorial initiative, but AEK retain enough structural resistance to keep the upper-score tail contained for long stretches.",
+      "counterworld": "AEK bypass the first Levski pressure wave and score first or early, forcing Levski into a chase state that raises transition frequency and opens the 3–4 goal tail.",
+      "game_state": {
+        "1:0": "Levski can reduce tempo; Under 3.5 remains structurally live but AEK response risk rises.",
+        "0:1": "Levski chase; transition exposure increases and the Under bends.",
+        "1:1": "The match remains inside the central 1–3 corridor, but late-state variance rises."
+      },
+      "modal_score": "1:1",
+      "four_score_cluster": [
+        "1:1",
+        "1:0",
+        "0:1",
+        "2:1"
+      ],
+      "score_band": "1–3",
+      "prediction_map": [
+        {
+          "expression": "Under 3.5",
+          "axis": "TOTAL",
+          "cluster_coverage": "4/4",
+          "p_raw": 0.79
+        },
+        {
+          "expression": "Under 4.5",
+          "axis": "TOTAL",
+          "cluster_coverage": "4/4",
+          "p_raw": 0.9
+        },
+        {
+          "expression": "Match Goals 1–3",
+          "axis": "RANGE",
+          "cluster_coverage": "4/4",
+          "p_raw": 0.72
+        },
+        {
+          "expression": "Levski Sofia Over 0.5 Team Goals",
+          "axis": "TEAM_GOALS",
+          "cluster_coverage": "3/4",
+          "p_raw": 0.75
+        },
+        {
+          "expression": "AEK Athens Under 1.5 Team Goals",
+          "axis": "TEAM_GOALS",
+          "cluster_coverage": "4/4",
+          "p_raw": 0.7
+        }
+      ],
+      "candidates": [
+        {
+          "expression": "Under 3.5",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            {
+              "LOW_SAMPLE": -1
+            },
+            {
+              "MULTIWORLD_CLOSE": -1
+            }
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BRICHT"
+          }
+        },
+        {
+          "expression": "Under 4.5",
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            {
+              "LOW_SAMPLE": -1
+            },
+            {
+              "SUBSET_OR_DUPLICATE": -2
+            }
+          ],
+          "score_total": 6,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "expression": "Match Goals 1–3",
+          "W": 2,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            {
+              "LOW_SAMPLE": -1
+            },
+            {
+              "STATE_SENSITIVE": -1
+            }
+          ],
+          "score_total": 7,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BRICHT"
+          }
+        },
+        {
+          "expression": "Levski Sofia Over 0.5 Team Goals",
+          "W": 2,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            {
+              "LOW_SAMPLE": -1
+            }
+          ],
+          "score_total": 7,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        },
+        {
+          "expression": "AEK Athens Under 1.5 Team Goals",
+          "W": 2,
+          "F": 2,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            {
+              "LOW_SAMPLE": -1
+            },
+            {
+              "DATA_AXIS_GAP": -2
+            }
+          ],
+          "score_total": 4,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BRICHT",
+            "S2": "BLEIBT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "world_stability": "STABLE",
+      "robustness": "MEDIUM",
+      "shock_test": {
+        "S1": "BIEGT",
+        "S2": "BLEIBT",
+        "S3": "BRICHT"
+      },
       "repair_summary": [
         {
-          "field": "AEK Current Team State / process",
+          "field": "AEK Current Team State / Strength Prior",
           "routes": [
-            "FootyStats current team/competition",
-            "FotMob current team results",
+            "Current competition sample",
+            "FBref 2025/26 league prior",
+            "FootyStats current/role check",
             "Open Search"
           ],
-          "result": "Current competitive sample n=1; central season/role process NOT_EXPECTED or insufficient."
+          "result": "Current league n=0 retained as NOT_EXPECTED; long-term prior restored as permitted stabilizer instead of treating n=0 as missing evidence."
         },
         {
-          "field": "Levski process-volume gaps",
+          "field": "AEK current process / volume",
           "routes": [
-            "FootyStats team stats",
-            "FotMob recent results",
+            "Current competitive match record",
+            "FotMob match sequence",
             "Open Search"
           ],
-          "result": "Core scoring/xG/shots FOUND; shots-against aggregate RESTRICTED after search exhaustion."
+          "result": "Current competitive n=1 retained with explicit LOW_SAMPLE penalty; no fabricated rolling L5/L10 values."
         },
         {
-          "field": "Availability / regime",
+          "field": "Levski process / role",
           "routes": [
-            "Transfermarkt match sheet",
-            "FotMob match page",
-            "Official/open search"
+            "FootyStats current league/UCL team stats",
+            "FotMob current results",
+            "Open Search"
           ],
-          "result": "CONFLICT remains for availability; regime check resolved."
+          "result": "Current home/UCL process remains the stronger live evidence family; unresolved against-shot aggregate stays visible and non-central."
+        },
+        {
+          "field": "Availability conflict",
+          "routes": [
+            "Transfermarkt event list",
+            "FotMob availability check",
+            "Open Search"
+          ],
+          "result": "Previous MATERIAL_CONFLICT removed: source silence is not counterevidence. Events retained with trust/uncertainty flags."
         }
       ],
       "sources": [
         {
           "name": "UEFA.com",
           "used_for": "Fixture, kickoff, competition phase",
-          "snapshot": "2026-08-18T15:55:00+02:00",
+          "snapshot": "2026-08-18T17:37:44+02:00",
           "trust": "HIGH"
         },
         {
           "name": "FootyStats",
-          "used_for": "League/UCL process, xG, goals, shots, role/phase profiles",
-          "snapshot": "2026-08-18T15:55:00+02:00",
+          "used_for": "Levski current league/UCL process, role, xG, shots and goal profiles",
+          "snapshot": "2026-08-18T17:37:44+02:00",
+          "trust": "MEDIUM"
+        },
+        {
+          "name": "FBref",
+          "used_for": "AEK 2025/26 long-term strength/xG prior",
+          "snapshot": "2026-08-18T17:37:44+02:00",
           "trust": "MEDIUM"
         },
         {
           "name": "FotMob",
-          "used_for": "Current results, fixture cross-check, availability event check",
-          "snapshot": "2026-08-18T15:55:00+02:00",
+          "used_for": "Current competitive sequence and availability event check",
+          "snapshot": "2026-08-18T17:37:44+02:00",
           "trust": "HIGH"
         },
         {
           "name": "Transfermarkt",
-          "used_for": "Availability and regime event check",
-          "snapshot": "2026-08-18T15:55:00+02:00",
+          "used_for": "Availability and regime events",
+          "snapshot": "2026-08-18T17:37:44+02:00",
           "trust": "HIGH"
         },
         {
           "name": "Open Search",
-          "used_for": "Mandatory terminal repair / conflict-resolution pass",
-          "snapshot": "2026-08-18T15:55:00+02:00",
+          "used_for": "Terminal repair and conflict-resolution pass",
+          "snapshot": "2026-08-18T17:37:44+02:00",
           "trust": "LOW"
         }
       ]
@@ -419,7 +593,7 @@
       "board_status": "COMMITTED",
       "confirmation_status": "NOT_APPLICABLE",
       "commit_status": "COMMITTED",
-      "commit_time": "2026-08-18T16:14:00+02:00",
+      "commit_time": "2026-08-18T17:37:44+02:00",
       "match_validation": "PASS_WITH_LIMITS",
       "team_ebook": {
         "home": {
@@ -881,30 +1055,29 @@
       "data_snapshot_coverage": "NONE",
       "data_source_mode": "WEB_FALLBACK",
       "snapshot_fixture_missing": null,
-      "world_type": "NOT_AVAILABLE",
-      "safe": "NOT_AVAILABLE",
-      "balanced": "NOT_AVAILABLE",
-      "aggressive": "NOT_AVAILABLE",
-      "favourite": "NO_STABLE_PREDICTION",
-      "model_probability_band": "NOT_AVAILABLE",
-      "model_price_band": "NOT_AVAILABLE",
-      "ampel": "RED",
+      "world_type": "CONTROL_HOME",
+      "safe": "Under 4.5",
+      "balanced": "Under 3.5",
+      "aggressive": "Fenerbahçe Sieg",
+      "favourite": "Under 3.5",
+      "model_probability_band": "70–90%",
+      "model_price_band": "1.11–1.43",
+      "ampel": "YELLOW",
       "flags": [
-        "DATA_NOT_READY",
+        "DATA_CONDITIONAL",
         "LOW_SAMPLE",
-        "RESULT_PROCESS_DIVERGENCE",
-        "PATH_NOT_AVAILABLE"
+        "STATE_SENSITIVE",
+        "SOURCE_MIXED",
+        "AVAILABILITY_LOAD",
+        "LOW_EVENT_SIGNATURE"
       ],
-      "data_readiness": "NOT_READY",
+      "data_readiness": "CONDITIONAL",
       "match_core_status": "PARTIAL",
-      "nsp_codes": [
-        "NSP_DATA_NOT_READY",
-        "NSP_NO_ANCHOR"
-      ],
+      "nsp_codes": [],
       "board_status": "COMMITTED",
       "confirmation_status": "NOT_APPLICABLE",
       "commit_status": "COMMITTED",
-      "commit_time": "2026-08-18T16:16:00+02:00",
+      "commit_time": "2026-08-18T17:37:44+02:00",
       "match_validation": "PASS_WITH_LIMITS",
       "team_ebook": {
         "home": {
@@ -921,12 +1094,12 @@
           "field": "Tabelle / Saison",
           "critical": true,
           "home": {
-            "value": "Süper Lig MP1 · 0-0-1 · 1:2; UCL current n=4 · 3W-1D · 5:1",
+            "value": "Süper Lig MP1 · 0-0-1 · 1:2; UCL current n=4 · 3W-1D · 5:1; LONG_TERM_PRIOR 2025/26: 21-11-2 · 74 Pkt. · 77 Tore",
             "status": "FOUND",
             "trust": "HIGH"
           },
           "away": {
-            "value": "Ligue 1 MP0; UCL current n=2 · 1W-1L · 4:2",
+            "value": "Ligue 1 MP0 NOT_EXPECTED; UCL current n=2 · 1W-1L · 4:2; LONG_TERM_PRIOR 2025/26: 18-6-10",
             "status": "PARTIAL",
             "trust": "HIGH"
           }
@@ -991,12 +1164,12 @@
           "field": "xG / xGA Saison",
           "critical": true,
           "home": {
-            "value": "UCL ca. 2.01 / 1.04 · n=4",
+            "value": "Current UCL process ca. 1.75 / 1.19 · n=4; LONG_TERM_PRIOR 2025/26 ca. 66.8 xG / 30.2 xGA",
             "status": "FOUND",
             "trust": "MEDIUM"
           },
           "away": {
-            "value": "UCL ca. 2.31 / 0.93 · n=2",
+            "value": "Current UCL ca. 2.31 / 0.93 · n=2; LONG_TERM_PRIOR 2025/26 ca. 53.5 xG / 45.4 xGA",
             "status": "PARTIAL",
             "trust": "MEDIUM"
           }
@@ -1103,12 +1276,12 @@
           "field": "Bestätigte Events",
           "critical": true,
           "home": {
-            "value": "Bestätigte Sperren/Verletzungen vorhanden; Quellen unterscheiden sich in Roster-/Eligibility-Breite",
+            "value": "Mehrere bestätigte Ausfälle/Sperren; vollständiger Event-Check abgeschlossen, aber zentrale Robustness reduziert",
             "status": "FOUND_EVENT",
-            "trust": "MEDIUM"
+            "trust": "HIGH"
           },
           "away": {
-            "value": "Mehrere bestätigte Nicht-Verfügbarkeiten/Eligibility-Events im Matchsheet",
+            "value": "Mehrere bestätigte Nicht-Verfügbarkeiten/Eligibility-Events; kein ungelöster materialer Konflikt",
             "status": "FOUND_EVENT",
             "trust": "HIGH"
           }
@@ -1128,78 +1301,258 @@
           }
         }
       ],
-      "axes": {},
-      "anchor": "NOT_AVAILABLE",
-      "prime_world": "NOT_AVAILABLE",
-      "counterworld": "NOT_AVAILABLE",
-      "game_state": "NOT_AVAILABLE",
-      "modal_score": "NOT_AVAILABLE",
-      "four_score_cluster": [],
-      "score_band": "NOT_AVAILABLE",
-      "prediction_map": [],
-      "candidates": [],
-      "world_stability": "UNKNOWN",
-      "robustness": "NOT_AVAILABLE",
-      "shock_test": "NOT_AVAILABLE",
-      "repair_summary": [
+      "axes": {
+        "WORLD_TYPE": "CONTROL_HOME",
+        "CONTROL": "HOME_EDGE",
+        "CHAOS": "LOW_MEDIUM",
+        "GOAL_PROFILE": "NARROW_STATE_SENSITIVE",
+        "TEMPO": "CONTROLLED",
+        "PHASE_STRUCTURE": "HOME_CONTROL_WITH_TRANSITION_RISK",
+        "DRAW_GRAVITY": "MEDIUM",
+        "TAIL_RISK": "MEDIUM"
+      },
+      "anchor": "Fenerbahçe's current UEFA defensive/control process is the strongest live match block. Lyon retain a credible scoring route, but their current sample is only n=2 and one strong return-leg process is state-distorted; availability risk weakens aggressive direction and team-goal renderers.",
+      "prime_world": "Fenerbahçe control the central home phases without forcing a permanently high tempo. Lyon create isolated transition chances, but the main game remains compressed enough to keep the upper total tail secondary.",
+      "counterworld": "Lyon score first or bypass the home press early, forcing Fenerbahçe into a wider chase state; the 3–4 goal tail grows and direction becomes materially less stable.",
+      "game_state": {
+        "1:0": "Home control strengthens and Under 3.5 remains central unless Lyon force late risk.",
+        "0:1": "Fenerbahçe chase; total volatility rises and the Under bends materially.",
+        "1:1": "Direction becomes close, while the 1–3 goal corridor still remains central with a larger late tail."
+      },
+      "modal_score": "1:0",
+      "four_score_cluster": [
+        "1:0",
+        "1:1",
+        "2:0",
+        "0:1"
+      ],
+      "score_band": "1–3",
+      "prediction_map": [
         {
-          "field": "Fenerbahçe Current Team State / regime",
-          "routes": [
-            "FootyStats current competition stats",
-            "FotMob current results",
-            "Transfermarkt regime/status",
-            "Open Search"
-          ],
-          "result": "UCL process FOUND; domestic role sample n=1/0-home and new-regime sample remain low."
+          "expression": "Under 3.5",
+          "axis": "TOTAL",
+          "cluster_coverage": "4/4",
+          "p_raw": 0.8
         },
         {
-          "field": "Lyon Current Team State / process",
+          "expression": "Under 4.5",
+          "axis": "TOTAL",
+          "cluster_coverage": "4/4",
+          "p_raw": 0.91
+        },
+        {
+          "expression": "Fenerbahçe Over 0.5 Team Goals",
+          "axis": "TEAM_GOALS",
+          "cluster_coverage": "3/4",
+          "p_raw": 0.82
+        },
+        {
+          "expression": "Match Goals 1–3",
+          "axis": "RANGE",
+          "cluster_coverage": "4/4",
+          "p_raw": 0.74
+        },
+        {
+          "expression": "Fenerbahçe Sieg",
+          "axis": "DIRECTION",
+          "cluster_coverage": "2/4",
+          "p_raw": 0.62
+        }
+      ],
+      "candidates": [
+        {
+          "expression": "Under 3.5",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            {
+              "LOW_SAMPLE": -1
+            },
+            {
+              "STATE_SENSITIVE": -1
+            }
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BRICHT"
+          }
+        },
+        {
+          "expression": "Under 4.5",
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            {
+              "LOW_SAMPLE": -1
+            },
+            {
+              "SUBSET_OR_DUPLICATE": -2
+            }
+          ],
+          "score_total": 6,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "expression": "Fenerbahçe Over 0.5 Team Goals",
+          "W": 2,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            {
+              "LOW_SAMPLE": -1
+            },
+            {
+              "STATE_SENSITIVE": -1
+            }
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        },
+        {
+          "expression": "Match Goals 1–3",
+          "W": 2,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            {
+              "LOW_SAMPLE": -1
+            },
+            {
+              "STATE_SENSITIVE": -1
+            }
+          ],
+          "score_total": 7,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BRICHT"
+          }
+        },
+        {
+          "expression": "Fenerbahçe Sieg",
+          "W": 2,
+          "F": 2,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            {
+              "LOW_SAMPLE": -1
+            },
+            {
+              "STATE_SENSITIVE": -1
+            }
+          ],
+          "score_total": 5,
+          "robustness": "LOW",
+          "shock": {
+            "S1": "BRICHT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "world_stability": "STABLE",
+      "robustness": "MEDIUM",
+      "shock_test": {
+        "S1": "BIEGT",
+        "S2": "BLEIBT",
+        "S3": "BRICHT"
+      },
+      "repair_summary": [
+        {
+          "field": "Fenerbahçe Current Team State / Strength Prior",
           "routes": [
-            "FootyStats Ligue1/UCL",
-            "FotMob current competition results",
+            "Current UCL sample",
+            "FBref 2025/26 prior",
+            "FootyStats current competition process",
             "Open Search"
           ],
-          "result": "Ligue1 n=0 NOT_EXPECTED; UCL current n=2 only; current phase/volume axis insufficient."
+          "result": "Current UCL n=4 retained as live process; 2025/26 long-term prior restored as early-season stabilizer. New-regime sample remains LOW_SAMPLE."
+        },
+        {
+          "field": "Lyon Current Team State / Strength Prior",
+          "routes": [
+            "Current UCL sample",
+            "FBref 2025/26 prior",
+            "FootyStats UCL/Ligue1 check",
+            "Open Search"
+          ],
+          "result": "Ligue1 MP0 retained as NOT_EXPECTED; current UCL n=2 used with low-sample damping and long-term prior support."
+        },
+        {
+          "field": "Current process distortion",
+          "routes": [
+            "Current UCL match sequence",
+            "match-state check",
+            "Open Search"
+          ],
+          "result": "Lyon's strong return-leg process retained but damped because early opponent red-card/state distortion reduces standalone weight."
         },
         {
           "field": "Availability / eligibility",
           "routes": [
-            "Transfermarkt match sheet",
-            "FotMob match page",
+            "Transfermarkt event check",
+            "FotMob availability check",
             "Open Search"
           ],
-          "result": "Confirmed events recorded; differing roster breadth treated as uncertainty, not as lineup input."
+          "result": "Confirmed events recorded; no unresolved material event conflict. Availability remains a robustness penalty, not a Data Gate blocker."
         }
       ],
       "sources": [
         {
           "name": "UEFA.com",
           "used_for": "Fixture, kickoff, competition phase",
-          "snapshot": "2026-08-18T15:55:00+02:00",
+          "snapshot": "2026-08-18T17:37:44+02:00",
           "trust": "HIGH"
         },
         {
           "name": "FootyStats",
-          "used_for": "Current competition xG, goals, league/UCL state",
-          "snapshot": "2026-08-18T15:55:00+02:00",
+          "used_for": "Current UCL/league goals and xG process",
+          "snapshot": "2026-08-18T17:37:44+02:00",
+          "trust": "MEDIUM"
+        },
+        {
+          "name": "FBref",
+          "used_for": "2025/26 long-term strength/xG priors for Fenerbahçe and Lyon",
+          "snapshot": "2026-08-18T17:37:44+02:00",
           "trust": "MEDIUM"
         },
         {
           "name": "FotMob",
-          "used_for": "Current results, fixture and availability cross-check",
-          "snapshot": "2026-08-18T15:55:00+02:00",
+          "used_for": "Current match sequence and availability cross-check",
+          "snapshot": "2026-08-18T17:37:44+02:00",
           "trust": "HIGH"
         },
         {
           "name": "Transfermarkt",
           "used_for": "Availability/eligibility and coach-regime events",
-          "snapshot": "2026-08-18T15:55:00+02:00",
+          "snapshot": "2026-08-18T17:37:44+02:00",
           "trust": "HIGH"
         },
         {
           "name": "Open Search",
-          "used_for": "Mandatory terminal repair passes",
-          "snapshot": "2026-08-18T15:55:00+02:00",
+          "used_for": "Terminal repair / state-distortion verification",
+          "snapshot": "2026-08-18T17:37:44+02:00",
           "trust": "LOW"
         }
       ]
@@ -1210,34 +1563,34 @@
     "matches_queued": 3,
     "matches_modeled": 3,
     "matches_committed": 3,
-    "matches_no_stable_prediction": 2,
+    "matches_no_stable_prediction": 0,
     "matches_not_processed": 0,
     "team_ebooks_built": 6,
     "match_ebooks_built": 3,
     "silent_exclusions": 0,
     "out_of_scope_discovered": 0,
     "scope_unresolved_count": 0,
-    "repair_passes_total": 9,
-    "critical_fields_partial": 14,
+    "repair_passes_total": 11,
+    "critical_fields_partial": 16,
     "critical_fields_restricted": 6,
-    "conflict_count": 2,
+    "conflict_count": 0,
     "timeout_limit_count": 0,
     "forbidden_source_count": 0,
     "readiness_distribution": {
       "READY": 0,
-      "CONDITIONAL": 1,
-      "NOT_READY": 2
+      "CONDITIONAL": 3,
+      "NOT_READY": 0
     },
     "world_stability_distribution": {
-      "STABLE": 1,
+      "STABLE": 3,
       "VERY_STABLE": 0,
       "ULTRA_STABLE": 0,
-      "UNKNOWN": 2
+      "UNKNOWN": 0
     },
     "ampel_distribution": {
       "GREEN": 0,
-      "YELLOW": 1,
-      "RED": 2
+      "YELLOW": 3,
+      "RED": 0
     },
     "data_snapshot_status": "UNREACHABLE",
     "data_snapshot_id": "NOT_AVAILABLE",
@@ -1253,11 +1606,6 @@
     "matches_source_web_fallback": 3,
     "real_odds_input": 0,
     "tickets_created": "NO",
-    "html_visual_report_status": "CREATED",
-    "pdf_report_status": "CREATED",
-    "final_board_png_status": "CREATED",
-    "visual_output_consistency": "PASS",
-    "visual_output_integrity": "PASS",
     "run_integrity": "PASS",
     "output_integrity": "PASS"
   }
