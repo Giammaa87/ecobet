@@ -1,0 +1,990 @@
+{
+  "serialization_note": "Audit JSON derived from N_ECOBET_OUTPUT_AND_AUDIT_v1.3 RUN_AUDIT_RECORD / MATCH_AUDIT_RECORD semantics. No dedicated settlement_record schema was loaded, so this file does not claim a separate settlement schema version.",
+  "audit_generated_at": "2026-08-18T23:44:29+02:00",
+  "original_run_immutable": true,
+  "run_audit_record": {
+    "record_type": "RUN_AUDIT_RECORD",
+    "run_id": "RUN_2026-08-18_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260818T173744",
+    "snapshot_id": "RUNSNAP_2026-08-18T17-37-44+02-00",
+    "source_run_record": {
+      "filename": "ECOBET_FOCUS_5_PLUS_UEFA_2026-08-18_RUN_RECORD_1737.json",
+      "sha256": "8de9dcccdc24bcdf550fe3b405d3c08aa3e47acb12b2b165424155aa34f5bce3",
+      "immutability": "UNCHANGED"
+    },
+    "data_snapshot_provenance": {
+      "data_snapshot_status": "UNREACHABLE",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_date": "NOT_AVAILABLE",
+      "data_snapshot_generated_at": "NOT_AVAILABLE",
+      "data_snapshot_data_cutoff": "NOT_AVAILABLE",
+      "data_snapshot_db_updated_at": "NOT_AVAILABLE",
+      "data_snapshot_hash": "NOT_AVAILABLE",
+      "data_snapshot_schema_version": "NOT_AVAILABLE",
+      "data_snapshot_resolution_url": "https://giammaa87.github.io/ecobet/data/2026-08-18/latest.json",
+      "data_snapshot_url": "NOT_AVAILABLE"
+    },
+    "fixture_reconciliation_summary": "Three independently verified in-scope UCL fixtures remain unchanged. Second targeted repair pass completed for Levski Sofia–AEK Athens and Fenerbahçe–Olympique Lyonnais; both moved from NOT_READY to CONDITIONAL. Daily Data Snapshot remains UNREACHABLE; all three matches remain WEB_FALLBACK.",
+    "source_mode_distribution": {
+      "WEB_FALLBACK": 3,
+      "SNAPSHOT": 0,
+      "SNAPSHOT_PLUS_REPAIR": 0
+    },
+    "date_range": {
+      "from": "2026-08-18",
+      "to": "2026-08-18"
+    },
+    "timezone": "Europe/Zurich",
+    "scope": "FOCUS_5_PLUS_UEFA",
+    "norm_versions": [
+      "N_ECOBET_MASTER_OS_v1.3",
+      "N_ECOBET_DATA_FABRIC_AND_EBOOKS_v1.5",
+      "N_ECOBET_FOOTBALL_AND_DECISION_ENGINE_v1.0",
+      "N_ECOBET_OUTPUT_AND_AUDIT_v1.3",
+      "N_ECOBET_TEAM_ID_REGISTRY_v1.0",
+      "H_ECOBET_HISTORY_CALIBRATION_v1.0",
+      "ECOBET_SCHEMA_01_run_record_v1.3"
+    ],
+    "match_counts": {
+      "scope": 3,
+      "committed": 3,
+      "settled": 3
+    },
+    "readiness_distribution": {
+      "CONDITIONAL": 3
+    },
+    "world_stability_distribution": {
+      "STABLE": 3
+    },
+    "ampel_distribution": {
+      "YELLOW": 3
+    },
+    "nsp_count": 0,
+    "proof_counters": {
+      "matches_in_scope": 3,
+      "matches_queued": 3,
+      "matches_modeled": 3,
+      "matches_committed": 3,
+      "matches_no_stable_prediction": 0,
+      "matches_not_processed": 0,
+      "team_ebooks_built": 6,
+      "match_ebooks_built": 3,
+      "silent_exclusions": 0,
+      "out_of_scope_discovered": 0,
+      "scope_unresolved_count": 0,
+      "repair_passes_total": 11,
+      "critical_fields_partial": 16,
+      "critical_fields_restricted": 6,
+      "conflict_count": 0,
+      "timeout_limit_count": 0,
+      "forbidden_source_count": 0,
+      "readiness_distribution": {
+        "READY": 0,
+        "CONDITIONAL": 3,
+        "NOT_READY": 0
+      },
+      "world_stability_distribution": {
+        "STABLE": 3,
+        "VERY_STABLE": 0,
+        "ULTRA_STABLE": 0,
+        "UNKNOWN": 0
+      },
+      "ampel_distribution": {
+        "GREEN": 0,
+        "YELLOW": 3,
+        "RED": 0
+      },
+      "data_snapshot_status": "UNREACHABLE",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_hash": "NOT_AVAILABLE",
+      "snapshot_fixture_count": 0,
+      "discovered_fixture_count": 3,
+      "snapshot_covered_fixtures": 0,
+      "additional_fixtures_found": 0,
+      "snapshot_only_fixtures": 0,
+      "fixture_set_relation": "UNRESOLVED",
+      "matches_source_snapshot": 0,
+      "matches_source_snapshot_plus_repair": 0,
+      "matches_source_web_fallback": 3,
+      "real_odds_input": 0,
+      "tickets_created": "NO",
+      "run_integrity": "PASS",
+      "output_integrity": "PASS"
+    },
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "result_settlement_status": "COMPLETE",
+    "model_kpis": {
+      "favourite": {
+        "HIT": 3,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 100.0
+      },
+      "safe": {
+        "HIT": 3,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 100.0
+      },
+      "balanced": {
+        "HIT": 3,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 100.0
+      },
+      "aggressive": {
+        "HIT": 0,
+        "MISS": 3,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 0.0
+      },
+      "modal_score": {
+        "hits": 0,
+        "total": 3,
+        "hit_rate_percent": 0.0
+      },
+      "four_score_cluster": {
+        "hits": 1,
+        "total": 3,
+        "hit_rate_percent": 33.3
+      },
+      "score_band": {
+        "hits": 2,
+        "total": 3,
+        "hit_rate_percent": 66.7
+      },
+      "world_verdict_distribution": {
+        "PRIME": 0,
+        "COUNTERWORLD": 1,
+        "MIXED": 2,
+        "NEITHER": 0,
+        "UNDETERMINED": 0
+      },
+      "yellow_favourite_hit_rate_percent": 100.0,
+      "yellow_cluster_hit_rate_percent": 33.3
+    },
+    "data_integrity_flags": [
+      "ALL_MATCHES_RESULT_SETTLED",
+      "WORLD_VERDICTS_USE_PARTIAL_MATCH_DATA",
+      "RESULT_DISTANCE_FROM_MODAL_FORMULA_NOT_DEFINED_IN_LOADED_NORM",
+      "ORIGINAL_RUN_SHA256_VERIFIED_UNCHANGED"
+    ],
+    "notes": [
+      "Original predictions, worlds, clusters, probability bands, model prices and ampels were not modified.",
+      "All three fixtures were settled on 90 minutes plus stoppage time; no extra time was involved.",
+      "No normative rule or calibration change is inferred from this single three-match slate.",
+      "RESULT_DISTANCE_FROM_MODAL remains NOT_AVAILABLE because the loaded Output/Audit v1.3 requires the field but does not define its calculation formula.",
+      "The audit is append-only and references the immutable revised 17:37 run record."
+    ]
+  },
+  "match_audit_records": [
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-18-LEVSKI-AEK",
+      "snapshot_id": "RUNSNAP_2026-08-18T17-37-44+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "21:00",
+        "home": "Levski Sofia",
+        "away": "AEK Athens",
+        "competition": "UEFA Champions League",
+        "phase": "Play-offs · 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 1
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "BALANCED_NARROW",
+        "anchor": "Levski carry the stronger current home/UEFA control process, while AEK's long-term strength and defensive prior supply credible resistance; the direction edge remains weak, but the central goal corridor is comparatively narrow.",
+        "prime_world": "The first phase stays controlled. Levski hold more territorial initiative, but AEK retain enough structural resistance to keep the upper-score tail contained for long stretches.",
+        "counterworld": "AEK bypass the first Levski pressure wave and score first or early, forcing Levski into a chase state that raises transition frequency and opens the 3–4 goal tail.",
+        "break_conditions": {
+          "status": "NOT_AVAILABLE_IN_COMMITTED_RUN_RECORD",
+          "reason": "No explicit break-condition field was serialized in the source run_record. Committed game_state is preserved separately and is not retroactively reinterpreted as a break condition."
+        },
+        "game_state": {
+          "1:0": "Levski can reduce tempo; Under 3.5 remains structurally live but AEK response risk rises.",
+          "0:1": "Levski chase; transition exposure increases and the Under bends.",
+          "1:1": "The match remains inside the central 1–3 corridor, but late-state variance rises."
+        },
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "1:0",
+          "0:1",
+          "2:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          {
+            "expression": "Under 3.5",
+            "axis": "TOTAL",
+            "cluster_coverage": "4/4",
+            "p_raw": 0.79
+          },
+          {
+            "expression": "Under 4.5",
+            "axis": "TOTAL",
+            "cluster_coverage": "4/4",
+            "p_raw": 0.9
+          },
+          {
+            "expression": "Match Goals 1–3",
+            "axis": "RANGE",
+            "cluster_coverage": "4/4",
+            "p_raw": 0.72
+          },
+          {
+            "expression": "Levski Sofia Over 0.5 Team Goals",
+            "axis": "TEAM_GOALS",
+            "cluster_coverage": "3/4",
+            "p_raw": 0.75
+          },
+          {
+            "expression": "AEK Athens Under 1.5 Team Goals",
+            "axis": "TEAM_GOALS",
+            "cluster_coverage": "4/4",
+            "p_raw": 0.7
+          }
+        ],
+        "candidates": [
+          {
+            "expression": "Under 3.5",
+            "W": 3,
+            "F": 3,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              },
+              {
+                "MULTIWORLD_CLOSE": -1
+              }
+            ],
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "shock": {
+              "S1": "BIEGT",
+              "S2": "BLEIBT",
+              "S3": "BRICHT"
+            }
+          },
+          {
+            "expression": "Under 4.5",
+            "W": 2,
+            "F": 2,
+            "R": 3,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              },
+              {
+                "SUBSET_OR_DUPLICATE": -2
+              }
+            ],
+            "score_total": 6,
+            "robustness": "HIGH",
+            "shock": {
+              "S1": "BLEIBT",
+              "S2": "BLEIBT",
+              "S3": "BIEGT"
+            }
+          },
+          {
+            "expression": "Match Goals 1–3",
+            "W": 2,
+            "F": 3,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              },
+              {
+                "STATE_SENSITIVE": -1
+              }
+            ],
+            "score_total": 7,
+            "robustness": "MEDIUM",
+            "shock": {
+              "S1": "BIEGT",
+              "S2": "BLEIBT",
+              "S3": "BRICHT"
+            }
+          },
+          {
+            "expression": "Levski Sofia Over 0.5 Team Goals",
+            "W": 2,
+            "F": 2,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              }
+            ],
+            "score_total": 7,
+            "robustness": "MEDIUM",
+            "shock": {
+              "S1": "BIEGT",
+              "S2": "BIEGT",
+              "S3": "BRICHT"
+            }
+          },
+          {
+            "expression": "AEK Athens Under 1.5 Team Goals",
+            "W": 2,
+            "F": 2,
+            "R": 2,
+            "D": 1,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              },
+              {
+                "DATA_AXIS_GAP": -2
+              }
+            ],
+            "score_total": 4,
+            "robustness": "MEDIUM",
+            "shock": {
+              "S1": "BRICHT",
+              "S2": "BLEIBT",
+              "S3": "BRICHT"
+            }
+          }
+        ],
+        "safe": "Under 4.5",
+        "balanced": "Under 3.5",
+        "aggressive": "Match Goals 1–3",
+        "favourite_prediction": "Under 3.5",
+        "model_probability_band": "70–88%",
+        "model_price_band": "1.14–1.43",
+        "robustness": "MEDIUM",
+        "world_stability": "STABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "MULTIWORLD_CLOSE",
+          "LOW_EVENT_SIGNATURE",
+          "AVAILABILITY_UNCERTAINTY"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-18T17:37:44+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-0",
+        "competition_final_score": "0-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Sky Sports live commentary",
+            "role": "90-minute full-time and event-sequence confirmation",
+            "url": "https://www.skysports.com/football/levski-sofia-vs-aek-athens/live/577267"
+          },
+          {
+            "name": "UEFA Champions League match page",
+            "role": "official fixture identity",
+            "url": "https://www.uefa.com/uefachampionsleague/match/2049208--levski-sofia-vs-aek-athens/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "The low-event/upper-tail containment mechanism was realised in the 0-0 scoreline, but the committed central 1–3 goal corridor and all four cluster scores required at least one goal.",
+        "limitation": "Public live commentary/event data were used; no complete tracking/xG replay dataset was audited. The verdict is limited to observed score/state compatibility."
+      },
+      "failure_cluster": [
+        "STALL_RISK_MISSED",
+        "RANGE_TOO_NARROW"
+      ],
+      "audit_flags": [
+        "FAVOURITE_HIT_WITH_CLUSTER_AND_SCORE_BAND_MISS"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-18-DINAMO-VIKING",
+      "snapshot_id": "RUNSNAP_2026-08-18T17-37-44+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "21:00",
+        "home": "GNK Dinamo Zagreb",
+        "away": "Viking FK",
+        "competition": "UEFA Champions League",
+        "phase": "Play-offs · 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 2
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "CONTROL_BUT_FRAGILE_HOME",
+        "anchor": "Dinamos current home chance volume and repeated multi-goal production support territorial control, while Viking's established away scoring process keeps a credible counter-path alive.",
+        "prime_world": "Dinamo establish the larger share of territory and chance volume, sustain repeated scoring pressure and lead the central score corridor; Viking remain dangerous enough to keep the home-control world fragile.",
+        "counterworld": "Viking's away attack escapes the first home pressure cycle and scores into transition space, forcing Dinamo into a more open chase state rather than sustained control.",
+        "break_conditions": {
+          "status": "NOT_AVAILABLE_IN_COMMITTED_RUN_RECORD",
+          "reason": "No explicit break-condition field was serialized in the source run_record. Committed game_state is preserved separately and is not retroactively reinterpreted as a break condition."
+        },
+        "game_state": {
+          "1:0": "Viking must expand; home-control remains favoured but concede-tail rises.",
+          "0:1": "Dinamo volume escalates; transition exposure increases.",
+          "1:1": "Both scoring paths remain live and the 2–4 goal corridor broadens."
+        },
+        "modal_score": "2:1",
+        "four_score_cluster": [
+          "2:1",
+          "2:0",
+          "1:1",
+          "3:1"
+        ],
+        "score_band": "2–4",
+        "prediction_map": [
+          {
+            "expression": "Over 1.5 Tore",
+            "axis": "TOTAL",
+            "cluster_coverage": "4/4",
+            "p_raw": 0.8
+          },
+          {
+            "expression": "Dinamo Zagreb Over 0.5 Team Goals",
+            "axis": "TEAM_GOALS",
+            "cluster_coverage": "4/4",
+            "p_raw": 0.84
+          },
+          {
+            "expression": "Dinamo Zagreb 1X",
+            "axis": "DIRECTION",
+            "cluster_coverage": "4/4",
+            "p_raw": 0.78
+          },
+          {
+            "expression": "Dinamo Zagreb Sieg",
+            "axis": "DIRECTION",
+            "cluster_coverage": "3/4",
+            "p_raw": 0.64
+          },
+          {
+            "expression": "Match Goals 2–4",
+            "axis": "RANGE",
+            "cluster_coverage": "4/4",
+            "p_raw": 0.72
+          }
+        ],
+        "candidates": [
+          {
+            "expression": "Over 1.5 Tore",
+            "W": 3,
+            "F": 3,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              }
+            ],
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "shock": {
+              "S1": "BLEIBT",
+              "S2": "BIEGT",
+              "S3": "BIEGT"
+            }
+          },
+          {
+            "expression": "Dinamo Zagreb Over 0.5 Team Goals",
+            "W": 3,
+            "F": 2,
+            "R": 3,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              }
+            ],
+            "score_total": 9,
+            "robustness": "HIGH",
+            "shock": {
+              "S1": "BLEIBT",
+              "S2": "BIEGT",
+              "S3": "BRICHT"
+            }
+          },
+          {
+            "expression": "Dinamo Zagreb 1X",
+            "W": 3,
+            "F": 2,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              }
+            ],
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "shock": {
+              "S1": "BIEGT",
+              "S2": "BLEIBT",
+              "S3": "BRICHT"
+            }
+          },
+          {
+            "expression": "Dinamo Zagreb Sieg",
+            "W": 3,
+            "F": 2,
+            "R": 1,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              }
+            ],
+            "score_total": 7,
+            "robustness": "LOW",
+            "shock": {
+              "S1": "BIEGT",
+              "S2": "BIEGT",
+              "S3": "BRICHT"
+            }
+          },
+          {
+            "expression": "Match Goals 2–4",
+            "W": 2,
+            "F": 3,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              }
+            ],
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "shock": {
+              "S1": "BLEIBT",
+              "S2": "BIEGT",
+              "S3": "BIEGT"
+            }
+          }
+        ],
+        "safe": "Dinamo Zagreb Over 0.5 Team Goals",
+        "balanced": "Over 1.5 Tore",
+        "aggressive": "Dinamo Zagreb Sieg",
+        "favourite_prediction": "Over 1.5 Tore",
+        "model_probability_band": "73–87%",
+        "model_price_band": "1.15–1.37",
+        "robustness": "MEDIUM",
+        "world_stability": "STABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "CONTROL_BUT_FRAGILE",
+          "CONCEDE_TAIL"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-18T17:37:44+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-2",
+        "competition_final_score": "2-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Sky Sports live commentary",
+            "role": "90-minute full-time and event-sequence confirmation",
+            "url": "https://www.skysports.com/football/dinamo-zagreb-vs-viking/live/577266"
+          },
+          {
+            "name": "SportyTrader result page",
+            "role": "independent final-score cross-check",
+            "url": "https://www.sportytrader.com/en/results-live/gnk-dinamo-zagreb-viking-fk-8731356/"
+          },
+          {
+            "name": "UEFA Champions League match page",
+            "role": "official fixture identity",
+            "url": "https://www.uefa.com/uefachampionsleague/match/2049210--gnk-dinamo-vs-viking/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Dinamo established the early control world and led 2-0, but Viking's counter/scoring mechanism then materialised strongly enough to make it 2-2 before half-time. The favourite total survived, while the committed cluster omitted the draw/chaos tail.",
+        "limitation": "Public live commentary/event data were used; no complete tracking/xG replay dataset was audited. The verdict reflects the observed 2-0 to 2-2 state sequence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "CHAOS_UNDERRATED"
+      ],
+      "audit_flags": [
+        "FAVOURITE_HIT_WITH_CLUSTER_MISS"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-18-FENER-LYON",
+      "snapshot_id": "RUNSNAP_2026-08-18T17-37-44+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "21:00",
+        "home": "Fenerbahçe",
+        "away": "Olympique Lyonnais",
+        "competition": "UEFA Champions League",
+        "phase": "Play-offs · 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+        "competition_name": "UEFA Champions League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 3
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "data_trust": "NOT_AVAILABLE_AS_SINGLE_SCALAR_IN_COMMITTED_RUN_RECORD",
+        "material_conflicts": [],
+        "world_type": "CONTROL_HOME",
+        "anchor": "Fenerbahçe's current UEFA defensive/control process is the strongest live match block. Lyon retain a credible scoring route, but their current sample is only n=2 and one strong return-leg process is state-distorted; availability risk weakens aggressive direction and team-goal renderers.",
+        "prime_world": "Fenerbahçe control the central home phases without forcing a permanently high tempo. Lyon create isolated transition chances, but the main game remains compressed enough to keep the upper total tail secondary.",
+        "counterworld": "Lyon score first or bypass the home press early, forcing Fenerbahçe into a wider chase state; the 3–4 goal tail grows and direction becomes materially less stable.",
+        "break_conditions": {
+          "status": "NOT_AVAILABLE_IN_COMMITTED_RUN_RECORD",
+          "reason": "No explicit break-condition field was serialized in the source run_record. Committed game_state is preserved separately and is not retroactively reinterpreted as a break condition."
+        },
+        "game_state": {
+          "1:0": "Home control strengthens and Under 3.5 remains central unless Lyon force late risk.",
+          "0:1": "Fenerbahçe chase; total volatility rises and the Under bends materially.",
+          "1:1": "Direction becomes close, while the 1–3 goal corridor still remains central with a larger late tail."
+        },
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "1:1",
+          "2:0",
+          "0:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          {
+            "expression": "Under 3.5",
+            "axis": "TOTAL",
+            "cluster_coverage": "4/4",
+            "p_raw": 0.8
+          },
+          {
+            "expression": "Under 4.5",
+            "axis": "TOTAL",
+            "cluster_coverage": "4/4",
+            "p_raw": 0.91
+          },
+          {
+            "expression": "Fenerbahçe Over 0.5 Team Goals",
+            "axis": "TEAM_GOALS",
+            "cluster_coverage": "3/4",
+            "p_raw": 0.82
+          },
+          {
+            "expression": "Match Goals 1–3",
+            "axis": "RANGE",
+            "cluster_coverage": "4/4",
+            "p_raw": 0.74
+          },
+          {
+            "expression": "Fenerbahçe Sieg",
+            "axis": "DIRECTION",
+            "cluster_coverage": "2/4",
+            "p_raw": 0.62
+          }
+        ],
+        "candidates": [
+          {
+            "expression": "Under 3.5",
+            "W": 3,
+            "F": 3,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              },
+              {
+                "STATE_SENSITIVE": -1
+              }
+            ],
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "shock": {
+              "S1": "BIEGT",
+              "S2": "BLEIBT",
+              "S3": "BRICHT"
+            }
+          },
+          {
+            "expression": "Under 4.5",
+            "W": 2,
+            "F": 2,
+            "R": 3,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              },
+              {
+                "SUBSET_OR_DUPLICATE": -2
+              }
+            ],
+            "score_total": 6,
+            "robustness": "HIGH",
+            "shock": {
+              "S1": "BLEIBT",
+              "S2": "BLEIBT",
+              "S3": "BIEGT"
+            }
+          },
+          {
+            "expression": "Fenerbahçe Over 0.5 Team Goals",
+            "W": 2,
+            "F": 2,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              },
+              {
+                "STATE_SENSITIVE": -1
+              }
+            ],
+            "score_total": 6,
+            "robustness": "MEDIUM",
+            "shock": {
+              "S1": "BIEGT",
+              "S2": "BIEGT",
+              "S3": "BRICHT"
+            }
+          },
+          {
+            "expression": "Match Goals 1–3",
+            "W": 2,
+            "F": 3,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              },
+              {
+                "STATE_SENSITIVE": -1
+              }
+            ],
+            "score_total": 7,
+            "robustness": "MEDIUM",
+            "shock": {
+              "S1": "BIEGT",
+              "S2": "BLEIBT",
+              "S3": "BRICHT"
+            }
+          },
+          {
+            "expression": "Fenerbahçe Sieg",
+            "W": 2,
+            "F": 2,
+            "R": 1,
+            "D": 2,
+            "penalties": [
+              {
+                "LOW_SAMPLE": -1
+              },
+              {
+                "STATE_SENSITIVE": -1
+              }
+            ],
+            "score_total": 5,
+            "robustness": "LOW",
+            "shock": {
+              "S1": "BRICHT",
+              "S2": "BIEGT",
+              "S3": "BRICHT"
+            }
+          }
+        ],
+        "safe": "Under 4.5",
+        "balanced": "Under 3.5",
+        "aggressive": "Fenerbahçe Sieg",
+        "favourite_prediction": "Under 3.5",
+        "model_probability_band": "70–90%",
+        "model_price_band": "1.11–1.43",
+        "robustness": "MEDIUM",
+        "world_stability": "STABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "STATE_SENSITIVE",
+          "SOURCE_MIXED",
+          "AVAILABILITY_LOAD",
+          "LOW_EVENT_SIGNATURE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-18T17:37:44+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "1-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Sky Sports live commentary",
+            "role": "90-minute full-time and goal-sequence confirmation",
+            "url": "https://www.skysports.com/football/fenerbahce-vs-lyon/live/577475"
+          },
+          {
+            "name": "SportyTrader result page",
+            "role": "independent final-score cross-check",
+            "url": "https://www.sportytrader.com/en/results-live/fenerbahce-olympique-lyon-8731363/"
+          },
+          {
+            "name": "UEFA Champions League match page",
+            "role": "official fixture identity",
+            "url": "https://www.uefa.com/uefachampionsleague/match/2049213--fenerbahce-vs-lyon/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Lyon scored first and forced Fenerbahçe into the chase state explicitly described by the committed COUNTERWORLD. Fenerbahçe equalised and the match finished 1-1, an exact committed cluster score; the favourite Under 3.5 remained intact.",
+        "limitation": "Public live commentary/event data were used; no complete tracking/xG replay dataset was audited. The verdict is based on the observed scoring order and final state, not a full tactical reconstruction."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    }
+  ],
+  "sparse_match_log": [
+    {
+      "match": "Levski Sofia – AEK Athens",
+      "result_90": "0-0",
+      "favourite": "Under 3.5",
+      "settlement": "HIT",
+      "world_verdict": "MIXED",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "STALL_RISK_MISSED",
+        "RANGE_TOO_NARROW"
+      ],
+      "notes": [
+        "FAVOURITE_HIT_WITH_CLUSTER_AND_SCORE_BAND_MISS"
+      ]
+    },
+    {
+      "match": "GNK Dinamo Zagreb – Viking FK",
+      "result_90": "2-2",
+      "favourite": "Over 1.5 Tore",
+      "settlement": "HIT",
+      "world_verdict": "MIXED",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "CHAOS_UNDERRATED"
+      ],
+      "notes": [
+        "FAVOURITE_HIT_WITH_CLUSTER_MISS"
+      ]
+    }
+  ],
+  "correction_records": []
+}
