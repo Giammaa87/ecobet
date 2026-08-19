@@ -1,0 +1,44 @@
+{
+  "schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+  "snapshot_id": "snap_20260819_030140",
+  "date": "2026-08-19",
+  "n_fixtures": 1,
+  "fixtures": [
+    {
+      "fixture": {
+        "fixture_id": "DISC_5addebbfa058",
+        "legacy_match_id": null,
+        "source_fixture_id": null,
+        "competition_id": "ESP-La Liga",
+        "competition_name": "La Liga",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 30,
+        "season": "2026-2027",
+        "phase": null,
+        "round": null,
+        "leg": null,
+        "scheduled_date": "2026-08-19",
+        "kickoff": "2026-08-19T19:00:00+00:00",
+        "timezone": "Europe/Zurich",
+        "status": "SCHEDULED",
+        "home_team_id": "la_liga_atletico_madrid",
+        "home_team_name": "Atlético de Madrid",
+        "away_team_id": "la_liga_malaga",
+        "away_team_name": "Málaga CF"
+      },
+      "home_team": {
+        "team_id": "la_liga_atletico_madrid",
+        "team_name": "Atlético de Madrid",
+        "n_features": 1000,
+        "ref": "teams/la_liga_atletico_madrid.json"
+      },
+      "away_team": {
+        "team_id": "la_liga_malaga",
+        "team_name": "Málaga CF",
+        "n_features": 0,
+        "ref": "teams/la_liga_malaga.json"
+      }
+    }
+  ]
+}

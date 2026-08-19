@@ -1,0 +1,31 @@
+{
+  "team_id": "la_liga_malaga",
+  "team_name": "Málaga CF",
+  "date": "2026-08-19",
+  "snapshot_id": "snap_20260819_030140",
+  "fixture_ids": [
+    "DISC_5addebbfa058"
+  ],
+  "feature_state": {},
+  "feature_status": {
+    "n_features": 0,
+    "blocks_present": [],
+    "blocks_missing": [
+      "domestic_full_feature_vector",
+      "df09_goals_phase_profile",
+      "all_competitions_context"
+    ],
+    "n_null_values": 0,
+    "missing_semantics": "null bedeutet NICHT_VORHANDEN - niemals 0 oder false"
+  },
+  "feature_lineage": {
+    "upstream_sources": [],
+    "by_feature": {},
+    "transport_layer": "GitHub Pages (kein Upstream)"
+  },
+  "feature_cutoff": {
+    "point_in_time_rule": "ausschliesslich Spiele mit Datum < scheduled_date",
+    "cutoff_date": "2026-08-19",
+    "own_fixture_excluded": true
+  }
+}
