@@ -1,0 +1,2560 @@
+{
+  "schema_version": "1.3",
+  "record_type": "run_record",
+  "run": {
+    "run_id": "RUN_2026-08-19_FOCUS_5_PLUS_UEFA_CEST_1334",
+    "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+    "snapshot_time": "2026-08-19T13:34:00+02:00",
+    "date": "2026-08-19",
+    "timezone": "Europe/Zurich",
+    "scope": "FOCUS_5_PLUS_UEFA",
+    "build_mode": "FULL",
+    "audit_mode": false,
+    "run_status": "COMPLETE",
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "norm_versions": [
+      "N_ECOBET_MASTER_OS_v1.3",
+      "N_ECOBET_DATA_FABRIC_AND_EBOOKS_v1.5",
+      "N_ECOBET_FOOTBALL_AND_DECISION_ENGINE_v1.0",
+      "N_ECOBET_OUTPUT_AND_AUDIT_v1.3",
+      "N_ECOBET_TEAM_ID_REGISTRY_v1.0",
+      "H_ECOBET_HISTORY_CALIBRATION_v1.0",
+      "ECOBET_SCHEMA_01_run_record_v1.3"
+    ],
+    "data_snapshot_status": "UNREACHABLE",
+    "data_snapshot_id": "NOT_AVAILABLE",
+    "data_snapshot_date": "NOT_AVAILABLE",
+    "data_snapshot_generated_at": "NOT_AVAILABLE",
+    "data_snapshot_data_cutoff": "NOT_AVAILABLE",
+    "data_snapshot_db_updated_at": "NOT_AVAILABLE",
+    "data_snapshot_hash": "NOT_AVAILABLE",
+    "data_snapshot_schema_version": "NOT_AVAILABLE",
+    "data_snapshot_url": "NOT_AVAILABLE",
+    "data_snapshot_resolution_url": "https://giammaa87.github.io/ecobet/data/2026-08-19/latest.json",
+    "fixture_reconciliation": "5 independently discovered in-scope fixtures; structured Daily Snapshot transport could not be resolved, therefore set relation UNRESOLVED while independent scope is complete.",
+    "scope_coverage": [
+      {
+        "competition": "Premier League",
+        "status": "CONFIRMED_ZERO",
+        "fixtures": 0,
+        "note": "2026/27 league start is 21 Aug 2026."
+      },
+      {
+        "competition": "Bundesliga",
+        "status": "CONFIRMED_ZERO",
+        "fixtures": 0,
+        "note": "2026/27 league start is 28 Aug 2026."
+      },
+      {
+        "competition": "La Liga",
+        "status": "FOUND_MATCHES",
+        "fixtures": 1,
+        "note": "Atlético de Madrid–Málaga CF at 19:00 Europe/Zurich."
+      },
+      {
+        "competition": "Serie A",
+        "status": "CONFIRMED_ZERO",
+        "fixtures": 0,
+        "note": "Opening round begins 22–23 Aug 2026."
+      },
+      {
+        "competition": "Ligue 1",
+        "status": "CONFIRMED_ZERO",
+        "fixtures": 0,
+        "note": "No in-scope fixture on 19 Aug; opening round follows."
+      },
+      {
+        "competition": "UEFA Champions League",
+        "status": "FOUND_MATCHES",
+        "fixtures": 4,
+        "note": "Play-off first legs; all four at 21:00 Europe/Zurich."
+      },
+      {
+        "competition": "UEFA Europa League",
+        "status": "CONFIRMED_ZERO",
+        "fixtures": 0,
+        "note": "Play-off first legs are 20 Aug 2026."
+      },
+      {
+        "competition": "UEFA Conference League",
+        "status": "CONFIRMED_ZERO",
+        "fixtures": 0,
+        "note": "Play-off first legs are 20 Aug 2026."
+      }
+    ]
+  },
+  "matches": [
+    {
+      "fixture_id": "LL-2026-08-19-ATLETICO-MALAGA",
+      "kickoff": "19:00",
+      "competition": "La Liga",
+      "competition_id": "LALIGA",
+      "competition_name": "LALIGA EA SPORTS",
+      "competition_group": "DOMESTIC",
+      "competition_type": "domestic_league",
+      "display_order": 1,
+      "phase": "Matchday 1",
+      "home": "Atlético de Madrid",
+      "away": "Málaga CF",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "world_type": "ONE_SIDED_SCORING_HOME",
+      "safe": "Under 4.5",
+      "balanced": "Atlético O0.5 Team Goals",
+      "aggressive": "Atlético gewinnt",
+      "favourite": "Atlético O0.5 Team Goals",
+      "model_probability_band": "74–94%",
+      "model_price_band": "1.06–1.35",
+      "ampel": "YELLOW",
+      "flags": [
+        "DATA_CONDITIONAL",
+        "LOW_SAMPLE",
+        "SOURCE_MIXED",
+        "ONE_SIDED_SCORING",
+        "STATE_SENSITIVE",
+        "CONTROL_BUT_FRAGILE"
+      ],
+      "data_readiness": "CONDITIONAL",
+      "match_core_status": "PARTIAL",
+      "nsp_codes": [],
+      "board_status": "COMMITTED",
+      "confirmation_status": "NOT_APPLICABLE",
+      "commit_status": "COMMITTED",
+      "commit_time": "2026-08-19T13:34:00+02:00",
+      "match_validation": "PASS_WITH_LIMITS",
+      "team_ebook": {
+        "home": {
+          "strength": "2025/26 La Liga Rang 4 als langfristiger Prior; 2026/27 vor Anpfiff 0 MP.",
+          "recent": "Letztes Pflichtspiel vor Target: 24.05.2026; Sommer-Testspiele nicht als Pflichtspielform gewertet.",
+          "process": "Aktueller Saisonprozess xG/Shots: NOT_EXPECTED (0 Ligaspiele).",
+          "role": "Heimsplit 2026/27: NOT_EXPECTED; Heimvorteil nur als Kontext, nicht als erfundener Split.",
+          "load": "87 Tage seit letztem Pflichtspiel; Preseason-Load separat nicht als Pflichtspielzählung.",
+          "status": "FOUND_EVENT: Julián Álvarez, Cristian Romero, Alexander Sørloth als nicht verfügbar gemeldet.",
+          "sample": "Current league n=0; long-term prior 2025/26.",
+          "identity": {
+            "team_id": "atletico_madrid",
+            "team_key": "atletico_madrid",
+            "team_name": "Atlético de Madrid",
+            "role": "HOME",
+            "competition": "LALIGA EA SPORTS",
+            "season": "2026/27",
+            "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+            "data_cutoff": "2026-08-19T13:34:00+02:00",
+            "entity_confidence": "MEDIUM"
+          }
+        },
+        "away": {
+          "strength": "2025/26 Vierter in LaLiga2 und über Playoffs aufgestiegen; Klassenwechsel erzeugt Prior-Unsicherheit.",
+          "recent": "Letzter bestätigter Pflichtspielpfad: Aufstiegsplayoff; 2026/27 vor Anpfiff 0 MP.",
+          "process": "Aktueller Saisonprozess xG/Shots: NOT_EXPECTED (0 Ligaspiele).",
+          "role": "Auswärtssplit 2026/27: NOT_EXPECTED.",
+          "load": "Lange Pflichtspielpause seit Promotion; Testspiele nicht als Core-Pflichtspielform.",
+          "status": "FOUND_EVENT: Carlos Dotor, Diego Murillo, Fernando Calero, Aarón Ochoa, Adrián Nino als nicht verfügbar gemeldet.",
+          "sample": "Current league n=0; prior from 2025/26 LaLiga2/promotion.",
+          "identity": {
+            "team_id": "malaga_cf",
+            "team_key": "malaga_cf",
+            "team_name": "Málaga CF",
+            "role": "AWAY",
+            "competition": "LALIGA EA SPORTS",
+            "season": "2026/27",
+            "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+            "data_cutoff": "2026-08-19T13:34:00+02:00",
+            "entity_confidence": "MEDIUM"
+          }
+        }
+      },
+      "field_status": {
+        "home": {
+          "DF01": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF06": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF08": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF09": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF10": {
+            "status": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "status": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF14": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF15": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          }
+        },
+        "away": {
+          "DF01": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF06": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF08": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF09": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF10": {
+            "status": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "status": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "status": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF14": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF15": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          }
+        }
+      },
+      "axes": {
+        "CONTROL": "HOME_EDGE",
+        "CHAOS": "MEDIUM",
+        "GOAL_PROFILE": "HOME_SKEW",
+        "TEMPO": "CONTROLLED_TO_MEDIUM",
+        "PHASE_STRUCTURE": "LOW_SAMPLE",
+        "DRAW_GRAVITY": "MEDIUM"
+      },
+      "anchor": "Atlético’s long-term top-flight/home territorial baseline is materially stronger than promoted Málaga’s, while confirmed Atlético absences cap the expected margin.",
+      "prime_world": "Atlético controls territory and creates the repeatable home scoring path; the game can remain controlled rather than become a broad shootout.",
+      "counterworld": "Atlético’s unavailable attackers blunt finishing, Málaga survives the first pressure wave and reaches transition/set-piece parity.",
+      "game_state": {
+        "1:0": "Atlético can reduce tempo and protect territory.",
+        "0:1": "Home pressure rises sharply; transition risk expands.",
+        "1:1": "Atlético remains more likely to produce the next sustained pressure cycle."
+      },
+      "modal_score": "1:0",
+      "four_score_cluster": [
+        "1:0",
+        "2:0",
+        "1:1",
+        "2:1"
+      ],
+      "score_band": "1–3 Tore",
+      "prediction_map": [
+        {
+          "prediction": "Atlético O0.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 84,
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "DATA_AXIS_GAP",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Under 4.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 91,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "DATA_AXIS_GAP"
+          ],
+          "score_total": 4,
+          "robustness": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Atlético gewinnt",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 66,
+          "W": 3,
+          "F": 2,
+          "R": 1,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 4,
+          "robustness": "LOW",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match Goals 1–3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 73,
+          "W": 2,
+          "F": 2,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 4,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        }
+      ],
+      "world_stability": "STABLE",
+      "robustness": "MEDIUM",
+      "shock_test": {
+        "S1": "BIEGT",
+        "S2": "BIEGT",
+        "S3": "BIEGT"
+      },
+      "sources": [
+        {
+          "name": "LALIGA.com",
+          "use": "Fixture, kickoff, competition context",
+          "trust": "HIGH",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        },
+        {
+          "name": "FotMob",
+          "use": "Recent competitive sequence and confirmed target-match availability",
+          "trust": "HIGH",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        },
+        {
+          "name": "FootyStats",
+          "use": "Current-season zero-sample verification",
+          "trust": "MEDIUM",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        }
+      ],
+      "repair_summary": [
+        {
+          "field": "Daily Data Snapshot / DF01",
+          "routes": [
+            "Resolution Endpoint",
+            "Open Search",
+            "LALIGA fixture page"
+          ],
+          "result": "UNREACHABLE → WEB_FALLBACK; fixture FOUND"
+        },
+        {
+          "field": "DF03–DF09 current-season process",
+          "routes": [
+            "LALIGA season state",
+            "FootyStats team pages",
+            "Recent matchlogs"
+          ],
+          "result": "0 MP verified; NOT_EXPECTED/PARTIAL preserved"
+        },
+        {
+          "field": "Long-term strength prior",
+          "routes": [
+            "2025/26 final competition context",
+            "Promotion context"
+          ],
+          "result": "FOUND/PARTIAL with season transition flag"
+        },
+        {
+          "field": "DF11 team status",
+          "routes": [
+            "Current target-match FotMob status check"
+          ],
+          "result": "FOUND_EVENT for both teams"
+        },
+        {
+          "field": "Phase/process gap",
+          "routes": [
+            "Allowed team-stat routes",
+            "Open Search"
+          ],
+          "result": "No legitimate 2026/27 sample; NOT_EXPECTED, not RESTRICTED"
+        }
+      ],
+      "candidates": [
+        {
+          "prediction": "Atlético O0.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 84,
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "DATA_AXIS_GAP",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Under 4.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 91,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "DATA_AXIS_GAP"
+          ],
+          "score_total": 4,
+          "robustness": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Atlético gewinnt",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 66,
+          "W": 3,
+          "F": 2,
+          "R": 1,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 4,
+          "robustness": "LOW",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match Goals 1–3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 73,
+          "W": 2,
+          "F": 2,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 4,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        }
+      ],
+      "p_raw": 84,
+      "tail_risk": "MEDIUM",
+      "football_interpretation": "Atlético should own more territory and possession, but the first competitive match of the season lacks current process calibration. Málaga’s promoted-team uncertainty makes transition resistance hard to price precisely. At 1:0 Atlético can compress the match; at 0:1 the game becomes materially more volatile; at 1:1 the home side still has the stronger repeat-pressure path.",
+      "prime_break": "Málaga scores first and forces Atlético into higher-risk attacking volume.",
+      "counter_break": "Atlético scores early and sustains field tilt without giving Málaga transition access.",
+      "structurally_unlikely": [
+        "0:3",
+        "3:3"
+      ],
+      "match_ebook_evidence": {
+        "structural_clash": "Top-flight home strength prior vs newly promoted opponent; current-season process sample absent for both.",
+        "process_clash": "No 2026/27 league xG/shot sample exists pre-kickoff; process axis remains intentionally unfilled.",
+        "goal_profile_clash": "Atlético has the stronger structural scoring route, but confirmed attacking absences reduce margin confidence.",
+        "phase_clash": "Current-season phase profiles NOT_EXPECTED at n=0; no phase invention.",
+        "load_status": "Long competitive layoff on both sides; Atlético has three confirmed unavailable attackers/players.",
+        "h2h_role": "SUPPORT_ONLY",
+        "dna_role": "NOT_ACTIVE",
+        "material_conflicts": "NONE"
+      },
+      "reason": "Current-season process is genuinely unavailable at 0 MP; long-term prior + fixture + event evidence still support a conditional world."
+    },
+    {
+      "fixture_id": "UCL-2026-08-19-HBS-SABAH",
+      "kickoff": "21:00",
+      "competition": "UEFA Champions League",
+      "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+      "competition_name": "UEFA Champions League",
+      "competition_group": "UEFA",
+      "competition_type": "uefa_club_competition",
+      "display_order": 2,
+      "phase": "Play-off - 1st leg",
+      "home": "Hapoel Beer-Sheva",
+      "away": "Sabah FK",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "world_type": "KO_STATE_DEPENDENT",
+      "safe": "Under 4.5",
+      "balanced": "Under 3.5",
+      "aggressive": "Match Goals 1–3",
+      "favourite": "Under 3.5",
+      "model_probability_band": "68–88%",
+      "model_price_band": "1.14–1.47",
+      "ampel": "YELLOW",
+      "flags": [
+        "DATA_CONDITIONAL",
+        "LOW_SAMPLE",
+        "SOURCE_MIXED",
+        "KO_STATE_DEPENDENT",
+        "STATE_SENSITIVE",
+        "TAIL_RISK_HIGH"
+      ],
+      "data_readiness": "CONDITIONAL",
+      "match_core_status": "PARTIAL",
+      "nsp_codes": [],
+      "board_status": "COMMITTED",
+      "confirmation_status": "NOT_APPLICABLE",
+      "commit_status": "COMMITTED",
+      "commit_time": "2026-08-19T13:34:00+02:00",
+      "match_validation": "PASS_WITH_LIMITS",
+      "team_ebook": {
+        "home": {
+          "strength": "UCL qualifying before target: 3W-1L, 6:2; domestic league sample not yet active.",
+          "recent": "Vikingur 2:1 HBS, HBS 2:0 Vikingur, HBS 1:0 Crvena Zvezda, Crvena Zvezda 0:2 HBS; 15.08 cup tail: Hapoel Haifa 4:0 HBS.",
+          "process": "UEFA scorelog supports the result/goal axis; xG and shot depth remain PARTIAL.",
+          "role": "Nominal home team, but match is in Bucharest; normal home split is not transplanted.",
+          "load": "4 rest days since cup match; second leg in 6 days.",
+          "status": "FOUND_EVENT: Djibril Diop, Pedro Amador, João Victor unavailable.",
+          "sample": "UCL qualifying n=4 + one domestic cup event.",
+          "identity": {
+            "team_id": "hapoel_beer_sheva",
+            "team_key": "hapoel_beer_sheva",
+            "team_name": "Hapoel Beer-Sheva",
+            "role": "HOME",
+            "competition": "UEFA Champions League",
+            "season": "2026/27",
+            "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+            "data_cutoff": "2026-08-19T13:34:00+02:00",
+            "entity_confidence": "MEDIUM"
+          }
+        },
+        "away": {
+          "strength": "UCL qualifying before target: 3W-1L, 8:2.",
+          "recent": "Sabah 1:0 KuPS, KuPS 0:2 Sabah, AGF 2:1 Sabah, Sabah 4:0 AGF.",
+          "process": "Current domestic season/xG feed conflicts with fixture calendar; UEFA path is used as independent replacement evidence.",
+          "role": "Neutral/away role in Bucharest; no domestic away split is allowed to substitute the UEFA context.",
+          "load": "8 rest days since last UCL match; league opener follows on 22.08.",
+          "status": "FOUND_NO_EVENT: target-match check returned no unavailable players.",
+          "sample": "UCL qualifying n=4; domestic current-state feed conflict isolated.",
+          "identity": {
+            "team_id": "sabah_fk",
+            "team_key": "sabah_fk",
+            "team_name": "Sabah FK",
+            "role": "AWAY",
+            "competition": "UEFA Champions League",
+            "season": "2026/27",
+            "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+            "data_cutoff": "2026-08-19T13:34:00+02:00",
+            "entity_confidence": "MEDIUM"
+          }
+        }
+      },
+      "field_status": {
+        "home": {
+          "DF01": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF04": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF06": {
+            "status": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF08": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF09": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF10": {
+            "status": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "status": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF14": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF15": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          }
+        },
+        "away": {
+          "DF01": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "status": "CONFLICT",
+            "trust": "LOW"
+          },
+          "DF04": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF06": {
+            "status": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "status": "CONFLICT",
+            "trust": "LOW"
+          },
+          "DF08": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF09": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF10": {
+            "status": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "status": "FOUND_NO_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF14": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF15": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          }
+        }
+      },
+      "axes": {
+        "CONTROL": "BALANCED",
+        "CHAOS": "MEDIUM_WITH_HIGH_TAIL",
+        "GOAL_PROFILE": "NARROW_CENTRAL",
+        "TEMPO": "MEASURED",
+        "PHASE_STRUCTURE": "PARTIAL",
+        "DRAW_GRAVITY": "HIGH"
+      },
+      "anchor": "Both teams have controlled qualifying scorelines, but a neutralized Hapoel home role, three HBS absences and first-leg incentives pull the central world toward a low-to-mid event corridor.",
+      "prime_world": "Measured first-leg start, selective pressure and limited transition exposure keep 1:0, 1:1 and 0:1 states structurally live.",
+      "counterworld": "Hapoel’s 0:4 cup tail reappears or an early setback forces pursuit, opening repeated transitions and a 2:1/2:2-type branch.",
+      "game_state": {
+        "1:0": "Leading side can lower risk and protect the first-leg state.",
+        "0:1": "HBS must increase occupation and leaves more space.",
+        "1:1": "Management incentive rises again; late-game tail still remains."
+      },
+      "modal_score": "1:1",
+      "four_score_cluster": [
+        "1:1",
+        "1:0",
+        "0:1",
+        "2:0"
+      ],
+      "score_band": "1–3 Tore",
+      "prediction_map": [
+        {
+          "prediction": "Under 3.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 78,
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 7,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Under 4.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 88,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 7,
+          "robustness": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match Goals 1–3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 72,
+          "W": 2,
+          "F": 3,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "BTTS No",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 64,
+          "W": 2,
+          "F": 2,
+          "R": 1,
+          "D": 1,
+          "penalties": [
+            "STATE_SENSITIVE",
+            "TAIL_EXPOSURE_HIGH"
+          ],
+          "score_total": 3,
+          "robustness": "LOW",
+          "status": "VALID"
+        }
+      ],
+      "world_stability": "STABLE",
+      "robustness": "MEDIUM",
+      "shock_test": {
+        "S1": "BIEGT",
+        "S2": "BLEIBT",
+        "S3": "BRICHT"
+      },
+      "sources": [
+        {
+          "name": "UEFA.com",
+          "use": "Fixture, play-off phase, qualifying result sequence",
+          "trust": "HIGH",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        },
+        {
+          "name": "FotMob",
+          "use": "Venue, all-competition recent sequence, target-match availability",
+          "trust": "HIGH",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        },
+        {
+          "name": "FootyStats",
+          "use": "Season/process attempt; conflicting Sabah current feed preserved",
+          "trust": "MEDIUM",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        }
+      ],
+      "repair_summary": [
+        {
+          "field": "Daily Data Snapshot / DF01",
+          "routes": [
+            "Resolution Endpoint",
+            "Open Search",
+            "UEFA fixture page",
+            "FotMob venue check"
+          ],
+          "result": "UNREACHABLE → WEB_FALLBACK; fixture FOUND"
+        },
+        {
+          "field": "Current team state",
+          "routes": [
+            "UEFA complete qualifying log",
+            "FotMob all-competition sequence"
+          ],
+          "result": "FOUND/PARTIAL"
+        },
+        {
+          "field": "DF06 goals",
+          "routes": [
+            "UEFA individual match results",
+            "Deterministic aggregation"
+          ],
+          "result": "DERIVED for both teams"
+        },
+        {
+          "field": "DF11 team status",
+          "routes": [
+            "Current target-match FotMob status check"
+          ],
+          "result": "HBS FOUND_EVENT; Sabah FOUND_NO_EVENT"
+        },
+        {
+          "field": "Sabah DF03/DF07 conflict",
+          "routes": [
+            "FootyStats current feed",
+            "Fixture calendar",
+            "UEFA sequence",
+            "Open Search"
+          ],
+          "result": "CONFLICT isolated; UEFA axis independently carries current competitive state"
+        }
+      ],
+      "candidates": [
+        {
+          "prediction": "Under 3.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 78,
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 7,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Under 4.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 88,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 7,
+          "robustness": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match Goals 1–3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 72,
+          "W": 2,
+          "F": 3,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "BTTS No",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 64,
+          "W": 2,
+          "F": 2,
+          "R": 1,
+          "D": 1,
+          "penalties": [
+            "STATE_SENSITIVE",
+            "TAIL_EXPOSURE_HIGH"
+          ],
+          "score_total": 3,
+          "robustness": "LOW",
+          "status": "VALID"
+        }
+      ],
+      "p_raw": 78,
+      "tail_risk": "HIGH",
+      "football_interpretation": "The first leg should begin with more risk control than the raw qualifying scorelines suggest. Both teams have demonstrated clean-sheet paths, but Hapoel’s fresh 0:4 cup tail raises the volatility ceiling. At 1:0 either side can protect structure; at 0:1 the nominal home side must open; at 1:1 the tie should return toward measured management.",
+      "prime_break": "An early goal is followed by another high-quality transition chance before the game can reset.",
+      "counter_break": "The first 30–40 minutes remain low-event and neither side concedes transition territory.",
+      "structurally_unlikely": [
+        "4:2",
+        "3:3"
+      ],
+      "match_ebook_evidence": {
+        "structural_clash": "Both sides arrived through efficient qualifying scorelines; neither has a clean domestic-season process baseline.",
+        "process_clash": "Sabah domestic feed conflicts with calendar; HBS lacks current league sample. UEFA match sequence replaces the affected result axis, not the missing xG depth.",
+        "goal_profile_clash": "Both produced three clean sheets in four UCL qualifiers; HBS also carries a fresh 0:4 domestic-cup tail.",
+        "phase_clash": "Detailed 1H/2H phase profiles remain PARTIAL.",
+        "load_status": "HBS 4-day turnaround and three absences; Sabah 8-day turnaround and no confirmed target-match absence.",
+        "h2h_role": "SUPPORT_ONLY",
+        "dna_role": "NOT_ACTIVE",
+        "material_conflicts": "Sabah domestic season/xG feed isolated; no critical axis break."
+      },
+      "reason": "Isolated Sabah data conflict does not break the central axis because the full UEFA sequence independently replaces it."
+    },
+    {
+      "fixture_id": "UCL-2026-08-19-CELTIC-LASK",
+      "kickoff": "21:00",
+      "competition": "UEFA Champions League",
+      "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+      "competition_name": "UEFA Champions League",
+      "competition_group": "UEFA",
+      "competition_type": "uefa_club_competition",
+      "display_order": 3,
+      "phase": "Play-off - 1st leg",
+      "home": "Celtic",
+      "away": "LASK",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "world_type": "GOALS_OPEN",
+      "safe": "Celtic O0.5 Team Goals",
+      "balanced": "Over 1.5",
+      "aggressive": "Celtic gewinnt",
+      "favourite": "Celtic O0.5 Team Goals",
+      "model_probability_band": "77–97%",
+      "model_price_band": "1.03–1.30",
+      "ampel": "YELLOW",
+      "flags": [
+        "DATA_CONDITIONAL",
+        "LOW_SAMPLE",
+        "SOURCE_MIXED",
+        "GOALS_OPEN",
+        "KO_STATE_DEPENDENT",
+        "STATE_SENSITIVE"
+      ],
+      "data_readiness": "CONDITIONAL",
+      "match_core_status": "PARTIAL",
+      "nsp_codes": [],
+      "board_status": "COMMITTED",
+      "confirmation_status": "NOT_APPLICABLE",
+      "commit_status": "COMMITTED",
+      "commit_time": "2026-08-19T13:34:00+02:00",
+      "match_validation": "PASS_WITH_LIMITS",
+      "team_ebook": {
+        "home": {
+          "strength": "Current Scottish champion; 2/2 league wins before target plus League Cup progression.",
+          "recent": "Dundee 0:1, Kilmarnock 1:5, Dundee United 0:4 in recent competitive sequence.",
+          "process": "FootyStats: xG 2.78, xGA 1.27, 25.5 shots, 10 SOT per match; n=2 league.",
+          "role": "Home n=1 current split: xG 2.04, xGA 1.18; LOW sample.",
+          "load": "4 rest days since League Cup match.",
+          "status": "FOUND_EVENT: Jota unavailable; Martin O’Neill regime active since January.",
+          "sample": "League n=2; role n=1; recent competitive all-comp n=3.",
+          "identity": {
+            "team_id": "celtic",
+            "team_key": "celtic",
+            "team_name": "Celtic",
+            "role": "HOME",
+            "competition": "UEFA Champions League",
+            "season": "2026/27",
+            "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+            "data_cutoff": "2026-08-19T13:34:00+02:00",
+            "entity_confidence": "MEDIUM"
+          }
+        },
+        "away": {
+          "strength": "Current Austrian champion; perfect early domestic competitive sequence.",
+          "recent": "Kalsdorf 0:7, LASK 3:0 Grazer AK, Austria Wien 0:2 LASK, LASK 4:1 Ried.",
+          "process": "FootyStats narrative: 19.67 shots, 8 SOT, xG 2.32, xGA 0.74 across n=3 league, but table fields display incompatible zeros → CONFLICT.",
+          "role": "Home/away current league split too small for full trust.",
+          "load": "5 rest days since 4:1 vs Ried.",
+          "status": "FOUND_NO_EVENT: no target-match unavailable player returned.",
+          "sample": "League n=3 plus cup; xG/shot provider conflict preserved.",
+          "identity": {
+            "team_id": "lask",
+            "team_key": "lask",
+            "team_name": "LASK",
+            "role": "AWAY",
+            "competition": "UEFA Champions League",
+            "season": "2026/27",
+            "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+            "data_cutoff": "2026-08-19T13:34:00+02:00",
+            "entity_confidence": "MEDIUM"
+          }
+        }
+      },
+      "field_status": {
+        "home": {
+          "DF01": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF06": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF08": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF09": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF10": {
+            "status": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "status": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "status": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF14": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF15": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          }
+        },
+        "away": {
+          "DF01": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF06": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "status": "CONFLICT",
+            "trust": "LOW"
+          },
+          "DF08": {
+            "status": "CONFLICT",
+            "trust": "LOW"
+          },
+          "DF09": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF10": {
+            "status": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "status": "FOUND_NO_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF14": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF15": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          }
+        }
+      },
+      "axes": {
+        "CONTROL": "HOME_EDGE",
+        "CHAOS": "MEDIUM_HIGH",
+        "GOAL_PROFILE": "TWO_LIVE_PATHS_HOME_SKEW",
+        "TEMPO": "MEDIUM_TO_HIGH",
+        "PHASE_STRUCTURE": "PARTIAL",
+        "DRAW_GRAVITY": "MEDIUM"
+      },
+      "anchor": "Celtic’s quantified high-volume attack and LASK’s 16:1 competitive start create two live scoring mechanisms, with Celtic’s home scoring path the most stable single expression.",
+      "prime_world": "Celtic sustains pressure and scores; LASK retains enough transition capability to keep a 2–4 goal corridor active.",
+      "counterworld": "First-leg caution plus Jota’s absence suppresses Celtic’s finishing and LASK defends compactly into a 1:0/0:0 corridor.",
+      "game_state": {
+        "1:0": "Celtic can keep territory; LASK transition risk rises.",
+        "0:1": "Celtic volume increases and creates a more open game.",
+        "1:1": "Both attacks retain viable next-goal paths."
+      },
+      "modal_score": "2:1",
+      "four_score_cluster": [
+        "2:1",
+        "2:0",
+        "1:1",
+        "3:1"
+      ],
+      "score_band": "2–4 Tore",
+      "prediction_map": [
+        {
+          "prediction": "Celtic O0.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 87,
+          "W": 3,
+          "F": 3,
+          "R": 3,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "DATA_AXIS_GAP"
+          ],
+          "score_total": 7,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Over 1.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 82,
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Celtic gewinnt",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 63,
+          "W": 3,
+          "F": 2,
+          "R": 1,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 4,
+          "robustness": "LOW",
+          "status": "VALID"
+        },
+        {
+          "prediction": "BTTS Yes",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "2/4",
+          "p_raw": 58,
+          "W": 2,
+          "F": 2,
+          "R": 1,
+          "D": 1,
+          "penalties": [
+            "DATA_AXIS_GAP",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 2,
+          "robustness": "LOW",
+          "status": "VALID"
+        }
+      ],
+      "world_stability": "STABLE",
+      "robustness": "MEDIUM",
+      "shock_test": {
+        "S1": "BLEIBT",
+        "S2": "BIEGT",
+        "S3": "BIEGT"
+      },
+      "sources": [
+        {
+          "name": "UEFA.com",
+          "use": "Fixture and play-off context",
+          "trust": "HIGH",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        },
+        {
+          "name": "FotMob",
+          "use": "Current competitive sequence and target-match availability",
+          "trust": "HIGH",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        },
+        {
+          "name": "FootyStats",
+          "use": "Celtic process metrics; LASK narrative/table conflict",
+          "trust": "MEDIUM",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        }
+      ],
+      "repair_summary": [
+        {
+          "field": "Daily Data Snapshot / DF01",
+          "routes": [
+            "Resolution Endpoint",
+            "Open Search",
+            "UEFA fixture page"
+          ],
+          "result": "UNREACHABLE → WEB_FALLBACK; fixture FOUND"
+        },
+        {
+          "field": "Current all-competition state",
+          "routes": [
+            "FotMob competitive matchlogs",
+            "League context"
+          ],
+          "result": "FOUND for both"
+        },
+        {
+          "field": "Celtic DF07/DF08",
+          "routes": [
+            "FootyStats team stats"
+          ],
+          "result": "FOUND; n=2 LOW sample"
+        },
+        {
+          "field": "LASK DF07/DF08",
+          "routes": [
+            "FootyStats narrative",
+            "FootyStats table",
+            "FotMob result sequence",
+            "Open Search"
+          ],
+          "result": "CONFLICT preserved; result axis independent"
+        },
+        {
+          "field": "DF11 team status",
+          "routes": [
+            "Current target-match FotMob status check"
+          ],
+          "result": "Celtic FOUND_EVENT; LASK FOUND_NO_EVENT"
+        }
+      ],
+      "candidates": [
+        {
+          "prediction": "Celtic O0.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 87,
+          "W": 3,
+          "F": 3,
+          "R": 3,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "DATA_AXIS_GAP"
+          ],
+          "score_total": 7,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Over 1.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 82,
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Celtic gewinnt",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 63,
+          "W": 3,
+          "F": 2,
+          "R": 1,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 4,
+          "robustness": "LOW",
+          "status": "VALID"
+        },
+        {
+          "prediction": "BTTS Yes",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "2/4",
+          "p_raw": 58,
+          "W": 2,
+          "F": 2,
+          "R": 1,
+          "D": 1,
+          "penalties": [
+            "DATA_AXIS_GAP",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 2,
+          "robustness": "LOW",
+          "status": "VALID"
+        }
+      ],
+      "p_raw": 87,
+      "tail_risk": "MEDIUM",
+      "football_interpretation": "Celtic should produce the stronger territorial pressure and shot volume, while LASK’s current scoring sequence makes passive away containment unlikely to be the only live branch. The game can remain measured early because it is a first leg, but the first goal should increase transition frequency. At 1:0 Celtic can keep pressure; at 0:1 their pursuit raises total-event risk; at 1:1 both scoring routes remain live.",
+      "prime_break": "Celtic cannot convert territorial volume and the match remains 0:0 deep into the second half.",
+      "counter_break": "An early Celtic goal forces LASK to leave its compact block.",
+      "structurally_unlikely": [
+        "0:0",
+        "0:3"
+      ],
+      "match_ebook_evidence": {
+        "structural_clash": "Celtic’s high territorial volume meets a LASK side with four competitive wins and 16:1 goals.",
+        "process_clash": "Celtic process is directly quantified; LASK’s FootyStats narrative is strong but conflicts with table zeros, so result logs carry more weight.",
+        "goal_profile_clash": "Both attacks have repeated multi-goal paths; Celtic’s home route remains structurally stronger.",
+        "phase_clash": "Detailed phase splits PARTIAL; late-state opening is handled via robustness rather than invented phase rates.",
+        "load_status": "Celtic 4-day rest + Jota out; LASK 5-day rest and no confirmed target-match absence.",
+        "h2h_role": "SUPPORT_ONLY",
+        "dna_role": "NOT_ACTIVE",
+        "material_conflicts": "LASK xG/shots provider-internal conflict, isolated by explicit result sequence."
+      },
+      "reason": "LASK quantitative conflict is visible but does not erase the independent result/goal path; current samples remain low."
+    },
+    {
+      "fixture_id": "UCL-2026-08-19-SLOVAN-CELJE",
+      "kickoff": "21:00",
+      "competition": "UEFA Champions League",
+      "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+      "competition_name": "UEFA Champions League",
+      "competition_group": "UEFA",
+      "competition_type": "uefa_club_competition",
+      "display_order": 4,
+      "phase": "Play-off - 1st leg",
+      "home": "Slovan Bratislava",
+      "away": "NK Celje",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "world_type": "ONE_SIDED_SCORING_HOME",
+      "safe": "Slovan O0.5 Team Goals",
+      "balanced": "Slovan DNB",
+      "aggressive": "Slovan gewinnt",
+      "favourite": "Slovan O0.5 Team Goals",
+      "model_probability_band": "79–95%",
+      "model_price_band": "1.05–1.27",
+      "ampel": "YELLOW",
+      "flags": [
+        "DATA_CONDITIONAL",
+        "LOW_SAMPLE",
+        "SOURCE_MIXED",
+        "ONE_SIDED_SCORING",
+        "KO_STATE_DEPENDENT",
+        "CONCEDE_TAIL"
+      ],
+      "data_readiness": "CONDITIONAL",
+      "match_core_status": "PARTIAL",
+      "nsp_codes": [],
+      "board_status": "COMMITTED",
+      "confirmation_status": "NOT_APPLICABLE",
+      "commit_status": "COMMITTED",
+      "commit_time": "2026-08-19T13:34:00+02:00",
+      "match_validation": "PASS_WITH_LIMITS",
+      "team_ebook": {
+        "home": {
+          "strength": "Domestic n=3: 100% wins; UCL qualifying 3W-1D, 7:2.",
+          "recent": "Iberia 1:1, Podbrezová 0:3, Mjällby 1:2, Mjällby 0:2, Ružomberok 0:5.",
+          "process": "FootyStats: xG 1.92, xGA 1.02, 17 shots, 5.67 SOT; 4.0 GF and 0.0 GA domestic n=3.",
+          "role": "Home n=2 current: xG 2.10, xGA 0.97; LOW sample.",
+          "load": "4 rest days since 5:0 vs Ružomberok.",
+          "status": "FOUND_EVENT: Andraž Šporar unavailable.",
+          "sample": "Domestic n=3, home n=2, UCL qualifying n=4.",
+          "identity": {
+            "team_id": "slovan_bratislava",
+            "team_key": "slovan_bratislava",
+            "team_name": "Slovan Bratislava",
+            "role": "HOME",
+            "competition": "UEFA Champions League",
+            "season": "2026/27",
+            "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+            "data_cutoff": "2026-08-19T13:34:00+02:00",
+            "entity_confidence": "MEDIUM"
+          }
+        },
+        "away": {
+          "strength": "Domestic n=4: 2W-2D; UCL route volatile but progressed.",
+          "recent": "Maribor 1:1, Ararat-Armenia 2:1 Celje, Celje 1:0 Ljubljana, Celje 2:0 Ararat, Nafta 1:3 Celje.",
+          "process": "FootyStats: xG 1.55, xGA 1.43, 12 shots, 3.75 SOT, 1.75 GF, 1.0 GA, BTTS 75%; n=4.",
+          "role": "Away current role n=1; LOW sample.",
+          "load": "4 rest days since 3:1 at Nafta.",
+          "status": "FOUND_NO_EVENT in current target-match check; older status noise not carried forward.",
+          "sample": "Domestic n=4; UCL qualifying sequence adds current competition context.",
+          "identity": {
+            "team_id": "celje",
+            "team_key": "celje",
+            "team_name": "NK Celje",
+            "role": "AWAY",
+            "competition": "UEFA Champions League",
+            "season": "2026/27",
+            "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+            "data_cutoff": "2026-08-19T13:34:00+02:00",
+            "entity_confidence": "MEDIUM"
+          }
+        }
+      },
+      "field_status": {
+        "home": {
+          "DF01": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF06": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF08": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF09": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF10": {
+            "status": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "status": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF14": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF15": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          }
+        },
+        "away": {
+          "DF01": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF06": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF08": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF09": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF10": {
+            "status": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "status": "FOUND_NO_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF14": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF15": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          }
+        }
+      },
+      "axes": {
+        "CONTROL": "HOME_EDGE",
+        "CHAOS": "MEDIUM",
+        "GOAL_PROFILE": "HOME_SKEW_WITH_AWAY_TAIL",
+        "TEMPO": "MEDIUM",
+        "PHASE_STRUCTURE": "PARTIAL",
+        "DRAW_GRAVITY": "MEDIUM_LOW"
+      },
+      "anchor": "Slovan’s stronger current xG/shot volume, clean UCL path and home role create a repeatable home scoring mechanism against Celje’s more permissive process.",
+      "prime_world": "Slovan controls territory, creates the better chances and reaches at least one home goal without needing a high-chaos match.",
+      "counterworld": "Celje’s 1.55 xG and 75% BTTS domestic profile attacks Slovan’s rest defence; after 0:1 or 1:1 the game becomes an open exchange.",
+      "game_state": {
+        "1:0": "Slovan can slow the game and retain territorial control.",
+        "0:1": "Slovan increases pressure; Celje transitions become more dangerous.",
+        "1:1": "Control edge remains home-side, but total-event risk rises."
+      },
+      "modal_score": "2:0",
+      "four_score_cluster": [
+        "2:0",
+        "2:1",
+        "1:0",
+        "1:1"
+      ],
+      "score_band": "1–3 Tore",
+      "prediction_map": [
+        {
+          "prediction": "Slovan O0.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 87,
+          "W": 3,
+          "F": 3,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 10,
+          "robustness": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Slovan DNB",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 76,
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Slovan gewinnt",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 65,
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 7,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Under 4.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 90,
+          "W": 2,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "SUBSET_OR_DUPLICATE"
+          ],
+          "score_total": 5,
+          "robustness": "HIGH",
+          "status": "VALID"
+        }
+      ],
+      "world_stability": "STABLE",
+      "robustness": "HIGH",
+      "shock_test": {
+        "S1": "BLEIBT",
+        "S2": "BIEGT",
+        "S3": "BIEGT"
+      },
+      "sources": [
+        {
+          "name": "UEFA.com",
+          "use": "Fixture, play-off phase, qualifying result context",
+          "trust": "HIGH",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        },
+        {
+          "name": "FotMob",
+          "use": "Current domestic/UEFA match sequence and target-match availability",
+          "trust": "HIGH",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        },
+        {
+          "name": "FootyStats",
+          "use": "Current xG/xGA, shots/SOT, goals and role sample",
+          "trust": "MEDIUM",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        }
+      ],
+      "repair_summary": [
+        {
+          "field": "Daily Data Snapshot / DF01",
+          "routes": [
+            "Resolution Endpoint",
+            "Open Search",
+            "UEFA fixture page"
+          ],
+          "result": "UNREACHABLE → WEB_FALLBACK; fixture FOUND"
+        },
+        {
+          "field": "Current team state",
+          "routes": [
+            "FotMob domestic + UEFA matchlogs"
+          ],
+          "result": "FOUND; target fixture excluded"
+        },
+        {
+          "field": "DF03–DF08 quantitative process",
+          "routes": [
+            "FootyStats team-stat pages"
+          ],
+          "result": "FOUND with visible samples"
+        },
+        {
+          "field": "DF11 team status",
+          "routes": [
+            "Current target-match FotMob status check"
+          ],
+          "result": "Slovan FOUND_EVENT; Celje FOUND_NO_EVENT"
+        },
+        {
+          "field": "DF09 phase profiles",
+          "routes": [
+            "Allowed team-stat routes",
+            "Open Search"
+          ],
+          "result": "PARTIAL retained; no synthetic phase rates"
+        }
+      ],
+      "candidates": [
+        {
+          "prediction": "Slovan O0.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 87,
+          "W": 3,
+          "F": 3,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 10,
+          "robustness": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Slovan DNB",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 76,
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Slovan gewinnt",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 65,
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 7,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Under 4.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 90,
+          "W": 2,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "SUBSET_OR_DUPLICATE"
+          ],
+          "score_total": 5,
+          "robustness": "HIGH",
+          "status": "VALID"
+        }
+      ],
+      "p_raw": 87,
+      "tail_risk": "MEDIUM",
+      "football_interpretation": "Slovan should have the clearer territorial and chance-volume advantage, while Celje’s scoring profile prevents a pure shutout assumption. The home side can control a 1:0 state, but a Celje equalizer would widen the game because both sides then retain recent scoring mechanisms. At 0:1 Slovan’s volume should rise strongly; at 1:1 the match becomes less control-dominant.",
+      "prime_break": "Celje scores first and repeatedly escapes Slovan’s counterpress.",
+      "counter_break": "Slovan scores first and keeps Celje below sustained final-third access.",
+      "structurally_unlikely": [
+        "0:3",
+        "3:3"
+      ],
+      "match_ebook_evidence": {
+        "structural_clash": "Slovan combines stronger domestic control with a cleaner UCL result profile; Celje’s domestic profile is more open.",
+        "process_clash": "Slovan 1.92 xG / 17 shots vs Celje 1.55 xG / 12 shots; Slovan defensive process also stronger.",
+        "goal_profile_clash": "Slovan’s current domestic 4.0 GF/0.0 GA contrasts with Celje’s 75% BTTS profile.",
+        "phase_clash": "Phase profiles remain PARTIAL; first-leg state management is therefore treated qualitatively.",
+        "load_status": "Both have 4-day rest; Slovan has one confirmed absence, Celje none in target-specific check.",
+        "h2h_role": "SUPPORT_ONLY",
+        "dna_role": "NOT_ACTIVE",
+        "material_conflicts": "NONE"
+      },
+      "reason": "Current samples are still LOW, but multiple independent evidence families support the same home-scoring world."
+    },
+    {
+      "fixture_id": "UCL-2026-08-19-NEC-BODO",
+      "kickoff": "21:00",
+      "competition": "UEFA Champions League",
+      "competition_id": "UEFA_CHAMPIONS_LEAGUE",
+      "competition_name": "UEFA Champions League",
+      "competition_group": "UEFA",
+      "competition_type": "uefa_club_competition",
+      "display_order": 5,
+      "phase": "Play-off - 1st leg",
+      "home": "N.E.C. Nijmegen",
+      "away": "Bodø/Glimt",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "world_type": "TRANSITION_CHAOS",
+      "safe": "Bodø/Glimt O0.5 Team Goals",
+      "balanced": "Over 1.5",
+      "aggressive": "BTTS Yes",
+      "favourite": "Over 1.5",
+      "model_probability_band": "76–96%",
+      "model_price_band": "1.04–1.32",
+      "ampel": "YELLOW",
+      "flags": [
+        "DATA_CONDITIONAL",
+        "LOW_SAMPLE",
+        "SOURCE_MIXED",
+        "CHAOS_HIGH",
+        "KO_STATE_DEPENDENT",
+        "STATE_SENSITIVE",
+        "TAIL_RISK_HIGH"
+      ],
+      "data_readiness": "CONDITIONAL",
+      "match_core_status": "PARTIAL",
+      "nsp_codes": [],
+      "board_status": "COMMITTED",
+      "confirmation_status": "NOT_APPLICABLE",
+      "commit_status": "COMMITTED",
+      "commit_time": "2026-08-19T13:34:00+02:00",
+      "match_validation": "PASS_WITH_LIMITS",
+      "team_ebook": {
+        "home": {
+          "strength": "Eredivisie n=2: 1W-1L; UCL previous round eliminated Olympiacos over two legs.",
+          "recent": "Olympiacos 0:0 NEC, NEC 1:2 Telstar, NEC 2:1 aet Olympiacos, Willem II 1:4 NEC.",
+          "process": "FootyStats: xG 2.67, xGA 0.91, 24 shots, 7 SOT, 2.5 GF, 1.5 GA; n=2 league.",
+          "role": "Home n=1: xG 2.79, xGA 0.93; LOW sample.",
+          "load": "4 rest days since 4:1 at Willem II.",
+          "status": "FOUND_EVENT: Philippe Sandler, Yassin Moslih, Sami Ouaissa, Koki Ogawa unavailable.",
+          "sample": "League n=2, home n=1, UCL recent n=2.",
+          "identity": {
+            "team_id": "nec_nijmegen",
+            "team_key": "nec_nijmegen",
+            "team_name": "N.E.C. Nijmegen",
+            "role": "HOME",
+            "competition": "UEFA Champions League",
+            "season": "2026/27",
+            "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+            "data_cutoff": "2026-08-19T13:34:00+02:00",
+            "entity_confidence": "MEDIUM"
+          }
+        },
+        "away": {
+          "strength": "Eliteserien n=17: 76% wins; 2.53 GF, 0.71 GA; established current-season sample.",
+          "recent": "Sandefjord 0:3, Lillestrøm 0:4, Union SG 3:3, Vålerenga 1:2, Bodø/Glimt 3:2 Union SG.",
+          "process": "FootyStats: xG 2.22, xGA 0.93, 16.88 shots, 6.65 SOT; n=17.",
+          "role": "Away: 67% wins, 2.11 GF, 1.11 GA, xG 1.89, xGA 1.20; strong usable sample.",
+          "load": "8 rest days since extra-time win over Union SG.",
+          "status": "FOUND_EVENT: Jostein Gundersen, Håkon Evjen, August Mikkelsen unavailable.",
+          "sample": "League n=17; away role strong; recent UCL adds high-event context.",
+          "identity": {
+            "team_id": "bodo_glimt",
+            "team_key": "bodo_glimt",
+            "team_name": "Bodø/Glimt",
+            "role": "AWAY",
+            "competition": "UEFA Champions League",
+            "season": "2026/27",
+            "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+            "data_cutoff": "2026-08-19T13:34:00+02:00",
+            "entity_confidence": "MEDIUM"
+          }
+        }
+      },
+      "field_status": {
+        "home": {
+          "DF01": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF06": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF08": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF09": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF10": {
+            "status": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "status": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF14": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF15": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          }
+        },
+        "away": {
+          "DF01": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "status": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF06": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF08": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF09": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF10": {
+            "status": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "status": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF14": {
+            "status": "NOT_EXPECTED",
+            "trust": "NOT_APPLICABLE"
+          },
+          "DF15": {
+            "status": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "status": "PARTIAL",
+            "trust": "MEDIUM"
+          }
+        }
+      },
+      "axes": {
+        "CONTROL": "BALANCED_WITH_BODO_DEPTH",
+        "CHAOS": "HIGH",
+        "GOAL_PROFILE": "TWO_LIVE_PATHS",
+        "TEMPO": "MEDIUM_TO_HIGH",
+        "PHASE_STRUCTURE": "PARTIAL",
+        "DRAW_GRAVITY": "MEDIUM"
+      },
+      "anchor": "NEC’s 2.67 xG/24-shot low-sample attack and Bodø/Glimt’s established 2.22 xG/2.53-GF season profile create two independent scoring routes with transition escalation after the first goal.",
+      "prime_world": "Both teams create from their own volume; once the tie state moves away from 0:0, transition frequency expands and the 2–4 goal corridor becomes dominant.",
+      "counterworld": "First-leg respect plus confirmed absences suppresses early tempo and holds the game in a narrow 0:0/1:0 state for longer than the process data imply.",
+      "game_state": {
+        "1:0": "Bodø must push higher, increasing transition exchange.",
+        "0:1": "NEC volume rises; Bodø counter route strengthens.",
+        "1:1": "Both sides retain live next-goal paths; chaos rises."
+      },
+      "modal_score": "1:2",
+      "four_score_cluster": [
+        "1:2",
+        "2:2",
+        "2:1",
+        "1:1"
+      ],
+      "score_band": "2–4 Tore",
+      "prediction_map": [
+        {
+          "prediction": "Over 1.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 86,
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Bodø/Glimt O0.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 84,
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "BTTS Yes",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 69,
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "TAIL_EXPOSURE_HIGH"
+          ],
+          "score_total": 7,
+          "robustness": "LOW",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Over 2.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 64,
+          "W": 3,
+          "F": 2,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 6,
+          "robustness": "LOW",
+          "status": "VALID"
+        }
+      ],
+      "world_stability": "STABLE",
+      "robustness": "MEDIUM",
+      "shock_test": {
+        "S1": "BLEIBT",
+        "S2": "BIEGT",
+        "S3": "BIEGT"
+      },
+      "sources": [
+        {
+          "name": "UEFA.com",
+          "use": "Fixture, play-off phase, previous UCL tie context",
+          "trust": "HIGH",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        },
+        {
+          "name": "FotMob",
+          "use": "Current competitive sequence and target-match availability",
+          "trust": "HIGH",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        },
+        {
+          "name": "FootyStats",
+          "use": "Current xG/xGA, shots/SOT, goals and away role",
+          "trust": "MEDIUM",
+          "snapshot": "2026-08-19T13:34:00+02:00"
+        }
+      ],
+      "repair_summary": [
+        {
+          "field": "Daily Data Snapshot / DF01",
+          "routes": [
+            "Resolution Endpoint",
+            "Open Search",
+            "UEFA fixture page"
+          ],
+          "result": "UNREACHABLE → WEB_FALLBACK; fixture FOUND"
+        },
+        {
+          "field": "Current all-competition state",
+          "routes": [
+            "FotMob domestic + UEFA matchlogs"
+          ],
+          "result": "FOUND; target fixture excluded"
+        },
+        {
+          "field": "DF03–DF08 quantitative process",
+          "routes": [
+            "FootyStats team-stat pages"
+          ],
+          "result": "FOUND; NEC LOW sample, Bodø strong sample"
+        },
+        {
+          "field": "DF11 team status",
+          "routes": [
+            "Current target-match FotMob status check"
+          ],
+          "result": "FOUND_EVENT for both teams"
+        },
+        {
+          "field": "DF09 phase profiles",
+          "routes": [
+            "Allowed team-stat routes",
+            "Open Search"
+          ],
+          "result": "PARTIAL retained; tail risk handled in robustness"
+        }
+      ],
+      "candidates": [
+        {
+          "prediction": "Over 1.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 86,
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Bodø/Glimt O0.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 84,
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "prediction": "BTTS Yes",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 69,
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "TAIL_EXPOSURE_HIGH"
+          ],
+          "score_total": 7,
+          "robustness": "LOW",
+          "status": "VALID"
+        },
+        {
+          "prediction": "Over 2.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 64,
+          "W": 3,
+          "F": 2,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 6,
+          "robustness": "LOW",
+          "status": "VALID"
+        }
+      ],
+      "p_raw": 86,
+      "tail_risk": "HIGH",
+      "football_interpretation": "Both teams carry live chance-volume mechanisms, but Bodø/Glimt’s evidence is much deeper and more stable. NEC can produce pressure at home, while Bodø’s away scoring and transition quality make a one-way control game unlikely. After the first goal the transition count should rise; at 0:0 deep into the game the first-leg context can delay rather than erase the over path.",
+      "prime_break": "A long 0:0 persists with both teams refusing to expose rest defence.",
+      "counter_break": "An early goal forces the trailing side into immediate pursuit and restores the high-event branch.",
+      "structurally_unlikely": [
+        "0:0",
+        "0:4"
+      ],
+      "match_ebook_evidence": {
+        "structural_clash": "NEC’s tiny but high-volume current sample meets Bodø/Glimt’s established high-output season profile.",
+        "process_clash": "NEC 2.67 xG / 24 shots (n=2) vs Bodø 2.22 xG / 16.88 shots (n=17); both create enough volume for independent scoring paths.",
+        "goal_profile_clash": "Bodø averages 2.53 GF with strong away output; NEC has 2.5 GF in n=2 and recently scored four away.",
+        "phase_clash": "Phase detail PARTIAL; recent UCL ties show both teams can enter high-event later states.",
+        "load_status": "NEC 4-day rest and four unavailable; Bodø 8-day rest and three unavailable.",
+        "h2h_role": "SUPPORT_ONLY",
+        "dna_role": "NOT_ACTIVE",
+        "material_conflicts": "NONE"
+      },
+      "reason": "NEC’s central sample is LOW, but Bodø’s strong sample plus two independent current scoring mechanisms carry a conditional high-event world."
+    }
+  ],
+  "proof_of_work": {
+    "matches_in_scope": 5,
+    "matches_queued": 5,
+    "matches_modeled": 5,
+    "matches_committed": 5,
+    "matches_no_stable_prediction": 0,
+    "matches_not_processed": 0,
+    "team_ebooks_built": 10,
+    "match_ebooks_built": 5,
+    "silent_exclusions": 0,
+    "out_of_scope_discovered": 0,
+    "scope_unresolved_count": 0,
+    "repair_passes_total": 25,
+    "critical_fields_partial": 42,
+    "critical_fields_restricted": 0,
+    "conflict_count": 4,
+    "timeout_limit_count": 0,
+    "forbidden_source_count": 0,
+    "readiness_distribution": {
+      "READY": 0,
+      "CONDITIONAL": 5,
+      "NOT_READY": 0
+    },
+    "world_stability_distribution": {
+      "STABLE": 5,
+      "VERY_STABLE": 0,
+      "ULTRA_STABLE": 0,
+      "UNKNOWN": 0
+    },
+    "ampel_distribution": {
+      "GREEN": 0,
+      "YELLOW": 5,
+      "RED": 0
+    },
+    "field_status_distribution": {
+      "FOUND": 61,
+      "PARTIAL": 48,
+      "NOT_EXPECTED": 23,
+      "DERIVED": 12,
+      "FOUND_EVENT": 9,
+      "CONFLICT": 4,
+      "FOUND_NO_EVENT": 3
+    },
+    "data_snapshot_status": "UNREACHABLE",
+    "data_snapshot_id": "NOT_AVAILABLE",
+    "data_snapshot_hash": "NOT_AVAILABLE",
+    "snapshot_fixture_count": "NOT_AVAILABLE",
+    "discovered_fixture_count": 5,
+    "snapshot_covered_fixtures": 0,
+    "additional_fixtures_found": 0,
+    "snapshot_only_fixtures": 0,
+    "fixture_set_relation": "UNRESOLVED",
+    "matches_source_snapshot": 0,
+    "matches_source_snapshot_plus_repair": 0,
+    "matches_source_web_fallback": 5,
+    "real_odds_used_as_input": 0,
+    "tickets_created": "NO",
+    "html_visual_report_status": "CREATED",
+    "pdf_report_status": "CREATED",
+    "final_board_png_status": "CREATED",
+    "visual_output_consistency": "PASS",
+    "visual_output_integrity": "PASS",
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "search_exhaustion_note": "Daily snapshot transport could not be resolved in the available web route. No prediction-critical field was set RESTRICTED; genuine zero-sample fields remain NOT_EXPECTED and unresolved quantitative gaps remain PARTIAL/CONFLICT."
+  },
+  "artifact_suite": {
+    "html_visual_report": {
+      "file": "ECOBET_RUN_2026-08-19.html",
+      "sha256": "227002cc2e19ae516df22288af9e0d52af38fa32044825bc78b061350b0bc4c0",
+      "status": "CREATED"
+    },
+    "pdf_report": {
+      "file": "ECOBET_RUN_2026-08-19.pdf",
+      "sha256": "c21736a08a745e2092b957a1137e8c6a192acddb47ecbab95476b31cf749d210",
+      "status": "CREATED"
+    },
+    "final_board_png": {
+      "file": "ECOBET_FINAL_BOARD_2026-08-19.png",
+      "sha256": "1e5cb04b34a62a3767657797c070c0e0a898d96760c49a7e12c6e6e9b2890df3",
+      "status": "CREATED"
+    }
+  }
+}
