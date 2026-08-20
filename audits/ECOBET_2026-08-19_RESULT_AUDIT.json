@@ -1,0 +1,439 @@
+{
+  "schema_version": "1.0",
+  "record_type": "result_audit",
+  "original_run_id": "RUN_2026-08-19_FOCUS_5_PLUS_UEFA_CEST_1334",
+  "original_snapshot_id": "SNAP_2026-08-19_1334_CEST",
+  "audit_date": "2026-08-20",
+  "audit_mode": "RESULT_REPLAY",
+  "evidence_level": "RESULT_ONLY",
+  "original_record_mutated": false,
+  "settlement_summary": {
+    "matches": 5,
+    "safe": {
+      "HIT": 5
+    },
+    "balanced": {
+      "HIT": 4,
+      "PUSH": 1
+    },
+    "aggressive": {
+      "HIT": 4,
+      "MISS": 1
+    },
+    "favourite": {
+      "HIT": 5
+    },
+    "modal_score_hits": 0,
+    "cluster_hits": 2,
+    "score_band_hits": 5,
+    "world_verdicts": {
+      "PRIME": 2,
+      "COUNTERWORLD": 2,
+      "MIXED": 1
+    }
+  },
+  "matches": [
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "LL-2026-08-19-ATLETICO-MALAGA",
+      "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+      "fixture": {
+        "home": "Atlético de Madrid",
+        "away": "Málaga CF",
+        "competition": "LALIGA EA SPORTS",
+        "phase": "Matchday 1",
+        "kickoff": "19:00"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "world_type": "ONE_SIDED_SCORING_HOME",
+        "anchor": "Atlético’s long-term top-flight/home territorial baseline is materially stronger than promoted Málaga’s, while confirmed Atlético absences cap the expected margin.",
+        "prime_world": "Atlético controls territory and creates the repeatable home scoring path; the game can remain controlled rather than become a broad shootout.",
+        "counterworld": "Atlético’s unavailable attackers blunt finishing, Málaga survives the first pressure wave and reaches transition/set-piece parity.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "1:1",
+          "2:1"
+        ],
+        "score_band": "1–3 Tore",
+        "safe": "Under 4.5",
+        "balanced": "Atlético O0.5 Team Goals",
+        "aggressive": "Atlético gewinnt",
+        "favourite_prediction": "Atlético O0.5 Team Goals",
+        "model_probability_band": "74–94%",
+        "model_price_band": "1.06–1.35",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "SOURCE_MIXED",
+          "ONE_SIDED_SCORING",
+          "STATE_SENSITIVE",
+          "CONTROL_BUT_FRAGILE"
+        ]
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-0",
+        "competition_final_score": "2-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Reuters",
+            "role": "result confirmation",
+            "url": "https://www.reuters.com/sports/soccer/atletico-madrid-beat-malaga-alvarez-absence-is-felt-2026-08-19/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "Loaded norm requires the field but defines no calculation formula; no new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-0 is an exact committed cluster score and fits the home-scoring/control PRIME_WORLD at RESULT_ONLY level.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-19-HBS-SABAH",
+      "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+      "fixture": {
+        "home": "Hapoel Beer-Sheva",
+        "away": "Sabah FK",
+        "competition": "UEFA Champions League",
+        "phase": "Play-off - 1st leg",
+        "kickoff": "21:00"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "world_type": "KO_STATE_DEPENDENT",
+        "anchor": "Both teams have controlled qualifying scorelines, but a neutralized Hapoel home role, three HBS absences and first-leg incentives pull the central world toward a low-to-mid event corridor.",
+        "prime_world": "Measured first-leg start, selective pressure and limited transition exposure keep 1:0, 1:1 and 0:1 states structurally live.",
+        "counterworld": "Hapoel’s 0:4 cup tail reappears or an early setback forces pursuit, opening repeated transitions and a 2:1/2:2-type branch.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "1:0",
+          "0:1",
+          "2:0"
+        ],
+        "score_band": "1–3 Tore",
+        "safe": "Under 4.5",
+        "balanced": "Under 3.5",
+        "aggressive": "Match Goals 1–3",
+        "favourite_prediction": "Under 3.5",
+        "model_probability_band": "68–88%",
+        "model_price_band": "1.14–1.47",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "SOURCE_MIXED",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE",
+          "TAIL_RISK_HIGH"
+        ]
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-1",
+        "competition_final_score": "2-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "result confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "Loaded norm requires the field but defines no calculation formula; no new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-1 is outside the Four-Score Cluster but explicitly compatible with the committed COUNTERWORLD 2:1/2:2-type branch.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-19-CELTIC-LASK",
+      "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+      "fixture": {
+        "home": "Celtic",
+        "away": "LASK",
+        "competition": "UEFA Champions League",
+        "phase": "Play-off - 1st leg",
+        "kickoff": "21:00"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "world_type": "GOALS_OPEN",
+        "anchor": "Celtic’s quantified high-volume attack and LASK’s 16:1 competitive start create two live scoring mechanisms, with Celtic’s home scoring path the most stable single expression.",
+        "prime_world": "Celtic sustains pressure and scores; LASK retains enough transition capability to keep a 2–4 goal corridor active.",
+        "counterworld": "First-leg caution plus Jota’s absence suppresses Celtic’s finishing and LASK defends compactly into a 1:0/0:0 corridor.",
+        "modal_score": "2:1",
+        "four_score_cluster": [
+          "2:1",
+          "2:0",
+          "1:1",
+          "3:1"
+        ],
+        "score_band": "2–4 Tore",
+        "safe": "Celtic O0.5 Team Goals",
+        "balanced": "Over 1.5",
+        "aggressive": "Celtic gewinnt",
+        "favourite_prediction": "Celtic O0.5 Team Goals",
+        "model_probability_band": "77–97%",
+        "model_price_band": "1.03–1.30",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "SOURCE_MIXED",
+          "GOALS_OPEN",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE"
+        ]
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "3-0",
+        "competition_final_score": "3-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "result confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "Loaded norm requires the field but defines no calculation formula; no new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "The Celtic scoring route and 2–4 goal corridor were right, but the realized score was one-sided rather than the two-live-path central cluster.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "BLOWOUT_TAIL_MISSED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-19-SLOVAN-CELJE",
+      "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+      "fixture": {
+        "home": "Slovan Bratislava",
+        "away": "NK Celje",
+        "competition": "UEFA Champions League",
+        "phase": "Play-off - 1st leg",
+        "kickoff": "21:00"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "world_type": "ONE_SIDED_SCORING_HOME",
+        "anchor": "Slovan’s stronger current xG/shot volume, clean UCL path and home role create a repeatable home scoring mechanism against Celje’s more permissive process.",
+        "prime_world": "Slovan controls territory, creates the better chances and reaches at least one home goal without needing a high-chaos match.",
+        "counterworld": "Celje’s 1.55 xG and 75% BTTS domestic profile attacks Slovan’s rest defence; after 0:1 or 1:1 the game becomes an open exchange.",
+        "modal_score": "2:0",
+        "four_score_cluster": [
+          "2:0",
+          "2:1",
+          "1:0",
+          "1:1"
+        ],
+        "score_band": "1–3 Tore",
+        "safe": "Slovan O0.5 Team Goals",
+        "balanced": "Slovan DNB",
+        "aggressive": "Slovan gewinnt",
+        "favourite_prediction": "Slovan O0.5 Team Goals",
+        "model_probability_band": "79–95%",
+        "model_price_band": "1.05–1.27",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "SOURCE_MIXED",
+          "ONE_SIDED_SCORING",
+          "KO_STATE_DEPENDENT",
+          "CONCEDE_TAIL"
+        ]
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "1-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "PUSH",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "result confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "Loaded norm requires the field but defines no calculation formula; no new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-1 is an exact committed cluster score and directly compatible with the committed COUNTERWORLD in which Celje scores.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "DIRECTION_OVERREACH",
+        "COUNTERWORLD_UNDERRATED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UCL-2026-08-19-NEC-BODO",
+      "snapshot_id": "SNAP_2026-08-19_1334_CEST",
+      "fixture": {
+        "home": "N.E.C. Nijmegen",
+        "away": "Bodø/Glimt",
+        "competition": "UEFA Champions League",
+        "phase": "Play-off - 1st leg",
+        "kickoff": "21:00"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "world_type": "TRANSITION_CHAOS",
+        "anchor": "NEC’s 2.67 xG/24-shot low-sample attack and Bodø/Glimt’s established 2.22 xG/2.53-GF season profile create two independent scoring routes with transition escalation after the first goal.",
+        "prime_world": "Both teams create from their own volume; once the tie state moves away from 0:0, transition frequency expands and the 2–4 goal corridor becomes dominant.",
+        "counterworld": "First-leg respect plus confirmed absences suppresses early tempo and holds the game in a narrow 0:0/1:0 state for longer than the process data imply.",
+        "modal_score": "1:2",
+        "four_score_cluster": [
+          "1:2",
+          "2:2",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "2–4 Tore",
+        "safe": "Bodø/Glimt O0.5 Team Goals",
+        "balanced": "Over 1.5",
+        "aggressive": "BTTS Yes",
+        "favourite_prediction": "Over 1.5",
+        "model_probability_band": "76–96%",
+        "model_price_band": "1.04–1.32",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "SOURCE_MIXED",
+          "CHAOS_HIGH",
+          "KO_STATE_DEPENDENT",
+          "STATE_SENSITIVE",
+          "TAIL_RISK_HIGH"
+        ]
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-3",
+        "competition_final_score": "1-3",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Champions League qualifying results",
+            "role": "result confirmation",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-fixtures-results-dates-how-it-/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "Loaded norm requires the field but defines no calculation formula; no new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-3 preserves both scoring paths and lands inside the committed 2–4 goal band, fitting the TRANSITION_CHAOS PRIME_WORLD despite missing the exact cluster.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "WORLD_TOO_NARROW"
+      ],
+      "audit_flags": []
+    }
+  ],
+  "learning_summary": {
+    "strongest_result": "Favourite Prediction 5/5 HIT and Safe Path 5/5 HIT.",
+    "main_weakness": "Modal Score 0/5 and Four-Score Cluster 2/5 despite Score Band 5/5.",
+    "interpretation": "Broad football worlds and robust renderers held better than exact score concentration.",
+    "norm_change": "NONE. One five-match slate is insufficient for normative calibration change."
+  }
+}
