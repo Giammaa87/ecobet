@@ -1,0 +1,19 @@
+{
+  "schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+  "date": "2026-08-20",
+  "snapshot_id": "snap_20260820_030139",
+  "data_hash": "sha256:5c0d7362af63e07c081f471e4c02e6e1879e6168300b89d0f9baaf61870092b3",
+  "generated_at": "2026-08-20T03:01:39.975855+02:00",
+  "data_cutoff": "2026-08-20T03:01:39.975855+02:00",
+  "db_updated_at": "2026-08-20T03:00:02",
+  "n_fixtures": 0,
+  "n_teams": 0,
+  "zero_fixture_basis": "UNRESOLVED_ZERO",
+  "zero_fixture_reason": "fixture identity not independently confirmed zero for: ESP-La Liga, UEFA-Champions League, UEFA-Conference League, UEFA-Europa League",
+  "resolves_to": {
+    "manifest": "snap_20260820_030139/manifest.json",
+    "fixtures": "snap_20260820_030139/fixtures.json",
+    "team_template": "snap_20260820_030139/teams/<team_id>.json"
+  },
+  "note": "Resolution-Endpoint. Der eigentliche Datenverbund liegt unveraenderlich unter <snapshot_id>/ und ist ueber data_hash gebunden."
+}
