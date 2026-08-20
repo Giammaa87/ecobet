@@ -2,9 +2,9 @@
   "schema_version": "1.3",
   "record_type": "run_record",
   "run": {
-    "run_id": "RUN_2026-08-20_FOCUS_5_PLUS_UEFA_CEST_0858_REPAIR",
-    "snapshot_id": "SNAP_2026-08-20_0858_CEST_REPAIR",
-    "snapshot_time": "2026-08-20T08:58:00+02:00",
+    "run_id": "RUN_2026-08-20_FOCUS_5_PLUS_UEFA_CEST_1342",
+    "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+    "snapshot_time": "2026-08-20T13:42:00+02:00",
     "date": "2026-08-20",
     "timezone": "Europe/Zurich",
     "scope": [
@@ -44,7 +44,13 @@
     "data_snapshot_schema_version": "ECOBET_DAILY_DATA_V2_FULL",
     "data_snapshot_resolution_url": "https://giammaa87.github.io/ecobet/data/2026-08-20/latest.json",
     "data_snapshot_url": "https://giammaa87.github.io/ecobet/data/2026-08-20/snap_20260820_030139/manifest.json",
-    "fixture_reconciliation": "37/37 locked fixtures independently revalidated; stale draw placeholders rejected. Snapshot still contains 0 fixtures."
+    "fixture_reconciliation": "37/37 locked fixtures independently revalidated; stale draw placeholders rejected. Snapshot still contains 0 fixtures.",
+    "rerun_type": "DECISION_LAYER_RENDERER_REAUDIT",
+    "rerun_of": "RUN_2026-08-20_FOCUS_5_PLUS_UEFA_CEST_0858_REPAIR",
+    "upstream_basis": "FROZEN 08:58 data/team-e-book/match-e-book/PRIME_WORLD/COUNTERWORLD/score-distribution basis",
+    "rerun_scope": "Prediction Map -> Candidate W/F/R/D -> Shock -> Paths -> Favourite -> Probability/Price Band",
+    "rerun_reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+    "real_odds_used_as_input": 0
   },
   "matches": [
     {
@@ -70,8 +76,8 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_BUT_FRAGILE_AWAY",
       "safe": "Anderlecht team Over 0.5 goals",
-      "balanced": "Over 1.5 goals",
-      "aggressive": "BTTS Yes",
+      "balanced": "X2",
+      "aggressive": "Anderlecht team Over 1.5 goals",
       "favourite": "Anderlecht team Over 0.5 goals",
       "model_probability_band": "75–89%",
       "model_price_band": "1.12–1.33",
@@ -200,14 +206,18 @@
       "score_band": "1–3",
       "prediction_map": [
         "Anderlecht team Over 0.5 goals",
-        "Over 1.5 goals",
         "X2",
-        "BTTS Yes",
-        "Anderlecht team Over 1.5 goals"
+        "2",
+        "Anderlecht team Over 1.5 goals",
+        "Match goals 1-3"
       ],
       "candidates": [
         {
           "prediction": "Anderlecht team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 82,
           "W": 3,
           "F": 3,
           "R": 3,
@@ -216,67 +226,112 @@
             "LOW_SAMPLE:-1"
           ],
           "score_total": 10,
+          "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
-          }
+          },
+          "status": "VALID"
         },
         {
-          "prediction": "Over 1.5 goals",
-          "W": 3,
+          "prediction": "X2",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 74,
+          "W": 2,
           "F": 2,
-          "R": 2,
+          "R": 3,
           "D": 2,
           "penalties": [
             "LOW_SAMPLE:-1"
           ],
           "score_total": 8,
-          "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
-            "S3": "BENDS"
-          }
-        },
-        {
-          "prediction": "X2",
-          "W": 2,
-          "F": 2,
-          "R": 2,
-          "D": 2,
-          "penalties": [
-            "LOW_SAMPLE:-1"
-          ],
-          "score_total": 7,
+          "robustness": "HIGH",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
             "S3": "BENDS"
-          }
+          },
+          "status": "VALID"
         },
         {
-          "prediction": "BTTS Yes",
+          "prediction": "2",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "2/4",
+          "p_raw": 74,
           "W": 2,
-          "F": 2,
+          "F": 1,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1"
           ],
-          "score_total": 5,
+          "score_total": 4,
+          "robustness": "LOW",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BREAKS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
-          }
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Anderlecht team Over 1.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "1/4",
+          "p_raw": 78,
+          "W": 2,
+          "F": 2,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
+          ],
+          "score_total": 4,
+          "robustness": "LOW",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 73,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
         }
       ],
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -314,7 +369,22 @@
         }
       ],
       "repair_continuation_check": "Current-state recheck attempted at 2026-08-20T08:58+02:00; no material decision-changing finding established.",
-      "decision_provenance": "VALID_PRIOR_COMMIT_REUSED_UNDER_USE_WHAT_IS_VALID"
+      "decision_provenance": "VALID_PRIOR_COMMIT_REUSED_UNDER_USE_WHAT_IS_VALID",
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Anderlecht team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 10,
+        "runner_up_score": 8,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UEL-2026-08-20-JAGIELLONIA-BIALYSTOK-IBERIA-1999",
@@ -338,9 +408,9 @@
       "commit_time": "2026-08-20T07:15:20+02:00",
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "GOALS_CLOSED",
-      "safe": "Under 3.5 goals",
-      "balanced": "Jagiellonia DNB(1)",
-      "aggressive": "Jagiellonia win",
+      "safe": "Under 4.5 goals",
+      "balanced": "Under 3.5 goals",
+      "aggressive": "Under 2.5 goals",
       "favourite": "Under 3.5 goals",
       "model_probability_band": "71–85%",
       "model_price_band": "1.18–1.41",
@@ -470,80 +540,107 @@
       "score_band": "1–3",
       "prediction_map": [
         "Under 3.5 goals",
-        "Jagiellonia DNB(1)",
-        "1X",
-        "Jagiellonia win",
-        "BTTS No"
+        "Under 2.5 goals",
+        "BTTS No",
+        "Match goals 1-3"
       ],
       "candidates": [
         {
           "prediction": "Under 3.5 goals",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 78,
           "W": 3,
           "F": 3,
-          "R": 2,
+          "R": 3,
           "D": 2,
           "penalties": [
+            "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1"
           ],
           "score_total": 9,
+          "robustness": "HIGH",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
             "S3": "BENDS"
-          }
+          },
+          "status": "VALID"
         },
         {
-          "prediction": "Jagiellonia DNB(1)",
+          "prediction": "Under 2.5 goals",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 68,
           "W": 3,
           "F": 2,
           "R": 2,
           "D": 2,
           "penalties": [
-            "LOW_SAMPLE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 8,
+          "score_total": 6,
+          "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
-          }
+            "S3": "BENDS"
+          },
+          "status": "VALID"
         },
         {
-          "prediction": "Jagiellonia win",
+          "prediction": "BTTS No",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 70,
           "W": 2,
           "F": 2,
-          "R": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 74,
+          "W": 2,
+          "F": 1,
+          "R": 2,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1"
           ],
           "score_total": 5,
-          "shock": {
-            "S1": "BREAKS",
-            "S2": "BENDS",
-            "S3": "BREAKS"
-          }
-        },
-        {
-          "prediction": "BTTS No",
-          "W": 2,
-          "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
+          "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
-          }
+            "S3": "BENDS"
+          },
+          "status": "VALID"
         }
       ],
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "shock_test": {
         "S1": "BENDS",
         "S2": "HOLDS",
@@ -579,7 +676,22 @@
         }
       ],
       "repair_continuation_check": "Current-state recheck attempted at 2026-08-20T08:58+02:00; no material decision-changing finding established.",
-      "decision_provenance": "VALID_PRIOR_COMMIT_REUSED_UNDER_USE_WHAT_IS_VALID"
+      "decision_provenance": "VALID_PRIOR_COMMIT_REUSED_UNDER_USE_WHAT_IS_VALID",
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Under 3.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 9,
+        "runner_up_score": 6,
+        "candidate_axes": [
+          "BTTS",
+          "RANGE",
+          "TOTAL"
+        ]
+      }
     },
     {
       "fixture_id": "UEL-2026-08-20-MJALLBY-SALZBURG",
@@ -604,7 +716,7 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_BUT_FRAGILE_AWAY",
       "safe": "Salzburg team Over 0.5 goals",
-      "balanced": "Over 1.5 goals",
+      "balanced": "X2",
       "aggressive": "Salzburg team Over 1.5 goals",
       "favourite": "Salzburg team Over 0.5 goals",
       "model_probability_band": "79–93%",
@@ -734,14 +846,18 @@
       "score_band": "1–3",
       "prediction_map": [
         "Salzburg team Over 0.5 goals",
-        "Over 1.5 goals",
         "X2",
+        "2",
         "Salzburg team Over 1.5 goals",
-        "BTTS Yes"
+        "Match goals 1-3"
       ],
       "candidates": [
         {
           "prediction": "Salzburg team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 86,
           "W": 3,
           "F": 3,
           "R": 3,
@@ -750,67 +866,112 @@
             "LOW_SAMPLE:-1"
           ],
           "score_total": 10,
+          "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
-          }
+          },
+          "status": "VALID"
         },
         {
-          "prediction": "Over 1.5 goals",
-          "W": 3,
+          "prediction": "X2",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 78,
+          "W": 2,
           "F": 2,
           "R": 3,
           "D": 2,
           "penalties": [
             "LOW_SAMPLE:-1"
           ],
-          "score_total": 9,
-          "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
-            "S3": "HOLDS"
-          }
-        },
-        {
-          "prediction": "X2",
-          "W": 2,
-          "F": 2,
-          "R": 2,
-          "D": 2,
-          "penalties": [
-            "LOW_SAMPLE:-1"
-          ],
-          "score_total": 7,
+          "score_total": 8,
+          "robustness": "HIGH",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
-          }
+            "S3": "BENDS"
+          },
+          "status": "VALID"
         },
         {
-          "prediction": "Salzburg team Over 1.5 goals",
+          "prediction": "2",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "2/4",
+          "p_raw": 78,
           "W": 2,
-          "F": 2,
+          "F": 1,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1"
           ],
-          "score_total": 5,
+          "score_total": 4,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
-            "S2": "BREAKS",
+            "S2": "HOLDS",
             "S3": "BENDS"
-          }
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Salzburg team Over 1.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "2/4",
+          "p_raw": 82,
+          "W": 2,
+          "F": 2,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
+          ],
+          "score_total": 4,
+          "robustness": "LOW",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 77,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
         }
       ],
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -848,7 +1009,22 @@
         }
       ],
       "repair_continuation_check": "Current-state recheck attempted at 2026-08-20T08:58+02:00; no material decision-changing finding established.",
-      "decision_provenance": "VALID_PRIOR_COMMIT_REUSED_UNDER_USE_WHAT_IS_VALID"
+      "decision_provenance": "VALID_PRIOR_COMMIT_REUSED_UNDER_USE_WHAT_IS_VALID",
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Salzburg team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 10,
+        "runner_up_score": 8,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-LINCOLN-RED-IMPS-LARNE",
@@ -1022,7 +1198,15 @@
         }
       ],
       "repair_continuation_check": "Current-state recheck attempted at 2026-08-20T08:58+02:00; no material decision-changing finding established.",
-      "decision_provenance": "VALID_PRIOR_COMMIT_REUSED_UNDER_USE_WHAT_IS_VALID"
+      "decision_provenance": "VALID_PRIOR_COMMIT_REUSED_UNDER_USE_WHAT_IS_VALID",
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "NO_STABLE_PREDICTION",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "RETAINED_NSP"
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-INTER-TURKU-FC-COPENHAGEN",
@@ -1176,75 +1360,124 @@
       "prediction_map": [
         "FC Copenhagen team Over 0.5 goals",
         "X2",
-        "Over 1.5 goals",
+        "2",
         "FC Copenhagen team Over 1.5 goals",
-        "BTTS Yes"
+        "Match goals 1-3"
       ],
       "candidates": [
         {
           "prediction": "FC Copenhagen team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 88,
           "W": 3,
           "F": 3,
           "R": 3,
           "D": 2,
           "penalties": [],
           "score_total": 11,
-          "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
-            "S3": "BENDS"
-          }
-        },
-        {
-          "prediction": "X2",
-          "W": 3,
-          "F": 2,
-          "R": 2,
-          "D": 2,
-          "penalties": [],
-          "score_total": 9,
+          "robustness": "HIGH",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
-          }
+            "S3": "BENDS"
+          },
+          "status": "VALID"
         },
         {
-          "prediction": "Over 1.5 goals",
+          "prediction": "X2",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": 80,
           "W": 2,
           "F": 2,
-          "R": 2,
+          "R": 3,
           "D": 2,
           "penalties": [],
-          "score_total": 8,
+          "score_total": 9,
+          "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
-          }
+          },
+          "status": "VALID"
         },
         {
-          "prediction": "FC Copenhagen team Over 1.5 goals",
+          "prediction": "2",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "2/4",
+          "p_raw": 80,
           "W": 2,
-          "F": 2,
+          "F": 1,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 6,
+          "score_total": 5,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
-            "S2": "BREAKS",
+            "S2": "HOLDS",
             "S3": "BENDS"
-          }
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "FC Copenhagen team Over 1.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "2/4",
+          "p_raw": 84,
+          "W": 2,
+          "F": 2,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
+          ],
+          "score_total": 5,
+          "robustness": "LOW",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 79,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
         }
       ],
       "world_stability": "STABLE",
       "robustness": "HIGH",
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -1282,7 +1515,22 @@
         }
       ],
       "repair_continuation_check": "Current-state recheck attempted at 2026-08-20T08:58+02:00; no material decision-changing finding established.",
-      "decision_provenance": "VALID_PRIOR_COMMIT_REUSED_UNDER_USE_WHAT_IS_VALID"
+      "decision_provenance": "VALID_PRIOR_COMMIT_REUSED_UNDER_USE_WHAT_IS_VALID",
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "FC Copenhagen team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 11,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UEL-2026-08-20-TRABZONSPOR-FERENCVAROS",
@@ -1307,11 +1555,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME_FRAGILE",
       "safe": "Trabzonspor team Over 0.5 goals",
-      "balanced": "Trabzonspor DNB(1)",
-      "aggressive": "Trabzonspor team Over 1.5 goals",
-      "favourite": "Trabzonspor team Over 0.5 goals",
-      "model_probability_band": "72–84%",
-      "model_price_band": "1.19–1.39",
+      "balanced": "1X",
+      "aggressive": "1",
+      "favourite": "1X",
+      "model_probability_band": "67–85%",
+      "model_price_band": "1.18–1.49",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -1435,45 +1683,90 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
-          "prediction": "Trabzonspor team Over 0.5 goals",
-          "axis": "TG",
+          "prediction": "1X",
+          "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 78,
+          "p_raw": 76,
           "W": 3,
           "F": 3,
           "R": 3,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1"
           ],
-          "score_total": 9,
+          "score_total": 10,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Trabzonspor DNB(1)",
+          "prediction": "Trabzonspor team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 79,
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
-          "p_raw": 70,
+          "p_raw": 68,
           "W": 2,
           "F": 2,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 5,
+          "robustness": "LOW",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 67,
+          "W": 2,
+          "F": 1,
           "R": 2,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 7,
+          "score_total": 5,
           "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
@@ -1486,57 +1779,37 @@
           "prediction": "Trabzonspor team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 64,
-          "W": 2,
-          "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 61,
+          "cluster_coverage": "2/4",
+          "p_raw": 72,
           "W": 2,
           "F": 1,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 3,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
+        "1X",
         "Trabzonspor team Over 0.5 goals",
-        "Trabzonspor DNB(1)",
-        "Trabzonspor team Over 1.5 goals",
-        "Over 1.5 goals"
+        "1",
+        "Match goals 1-3",
+        "Trabzonspor team Over 1.5 goals"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -1580,7 +1853,22 @@
           "web_ref": "turn327929search4",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Trabzonspor team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CHANGED",
+        "favourite_score": 10,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UEL-2026-08-20-UNIVERSITATEA-CRAIOVA-ARARAT-ARMENIA",
@@ -1605,11 +1893,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME",
       "safe": "Universitatea Craiova team Over 0.5 goals",
-      "balanced": "Universitatea Craiova DNB(1)",
+      "balanced": "1X",
       "aggressive": "Universitatea Craiova team Over 1.5 goals",
       "favourite": "Universitatea Craiova team Over 0.5 goals",
-      "model_probability_band": "76–88%",
-      "model_price_band": "1.14–1.32",
+      "model_probability_band": "73–91%",
+      "model_price_band": "1.10–1.37",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -1733,7 +2021,7 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Universitatea Craiova team Over 0.5 goals",
@@ -1746,33 +2034,55 @@
           "R": 3,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1"
           ],
-          "score_total": 9,
+          "score_total": 10,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Universitatea Craiova DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 74,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 74,
           "W": 2,
-          "F": 2,
-          "R": 2,
+          "F": 1,
+          "R": 1,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 4,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -1784,36 +2094,15 @@
           "prediction": "Universitatea Craiova team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 68,
+          "cluster_coverage": "2/4",
+          "p_raw": 78,
           "W": 2,
           "F": 2,
           "R": 1,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 65,
-          "W": 2,
-          "F": 1,
-          "R": 1,
-          "D": 2,
-          "penalties": [
             "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
           "score_total": 4,
@@ -1821,20 +2110,44 @@
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 73,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Universitatea Craiova team Over 0.5 goals",
-        "Universitatea Craiova DNB(1)",
+        "1X",
+        "1",
         "Universitatea Craiova team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -1878,7 +2191,22 @@
           "web_ref": "turn256744search11",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Universitatea Craiova team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 10,
+        "runner_up_score": 8,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UEL-2026-08-20-EGNATIA-LILLESTRØM",
@@ -1903,11 +2231,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME_FRAGILE",
       "safe": "Egnatia team Over 0.5 goals",
-      "balanced": "Egnatia DNB(1)",
+      "balanced": "1X",
       "aggressive": "Egnatia team Over 1.5 goals",
       "favourite": "Egnatia team Over 0.5 goals",
-      "model_probability_band": "78–90%",
-      "model_price_band": "1.11–1.28",
+      "model_probability_band": "75–93%",
+      "model_price_band": "1.08–1.33",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -2032,7 +2360,7 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Egnatia team Over 0.5 goals",
@@ -2043,36 +2371,58 @@
           "W": 3,
           "F": 3,
           "R": 3,
-          "D": 2,
+          "D": 1,
           "penalties": [
-            "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1",
             "DATA_AXIS_GAP:-2"
           ],
           "score_total": 7,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Egnatia DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 76,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 7,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 76,
           "W": 2,
-          "F": 2,
-          "R": 2,
-          "D": 2,
+          "F": 1,
+          "R": 1,
+          "D": 1,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 3,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -2084,57 +2434,60 @@
           "prediction": "Egnatia team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 70,
+          "cluster_coverage": "2/4",
+          "p_raw": 80,
           "W": 2,
           "F": 2,
           "R": 1,
-          "D": 2,
+          "D": 1,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 6,
+          "score_total": 3,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 67,
+          "cluster_coverage": "4/4",
+          "p_raw": 75,
           "W": 2,
           "F": 1,
-          "R": 1,
-          "D": 2,
+          "R": 2,
+          "D": 1,
           "penalties": [
             "STATE_SENSITIVE:-1",
-            "TAIL_EXPOSURE_HIGH:-1"
+            "LOW_SAMPLE:-1"
           ],
           "score_total": 4,
-          "robustness": "LOW",
+          "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Egnatia team Over 0.5 goals",
-        "Egnatia DNB(1)",
+        "1X",
+        "1",
         "Egnatia team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -2178,7 +2531,22 @@
           "web_ref": "turn327929news179",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Egnatia team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 7,
+        "runner_up_score": 7,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UEL-2026-08-20-BEŞIKTAŞ-KAUNO-ŽALGIRIS",
@@ -2202,12 +2570,12 @@
       "commit_time": "2026-08-20T09:01:56+02:00",
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME",
-      "safe": "Beşiktaş team Over 0.5 goals",
-      "balanced": "Beşiktaş DNB(1)",
+      "safe": "1X",
+      "balanced": "1",
       "aggressive": "Beşiktaş team Over 1.5 goals",
-      "favourite": "Beşiktaş team Over 0.5 goals",
-      "model_probability_band": "84–94%",
-      "model_price_band": "1.06–1.19",
+      "favourite": "1",
+      "model_probability_band": "65–79%",
+      "model_price_band": "1.27–1.54",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -2330,45 +2698,63 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "HIGH",
+      "robustness": "MEDIUM",
       "candidates": [
         {
-          "prediction": "Beşiktaş team Over 0.5 goals",
-          "axis": "TG",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "4/4",
-          "p_raw": 89,
-          "W": 3,
-          "F": 3,
-          "R": 3,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 10,
-          "robustness": "HIGH",
-          "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
-            "S3": "BENDS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Beşiktaş DNB(1)",
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
-          "p_raw": 81,
-          "W": 2,
-          "F": 2,
+          "p_raw": 72,
+          "W": 3,
+          "F": 3,
           "R": 2,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 7,
+          "score_total": 9,
           "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 84,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Beşiktaş team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 87,
+          "W": 3,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 9,
+          "robustness": "HIGH",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -2380,57 +2766,58 @@
           "prediction": "Beşiktaş team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 75,
+          "cluster_coverage": "2/4",
+          "p_raw": 60,
           "W": 2,
           "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 72,
-          "W": 2,
-          "F": 1,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 5,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 69,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
+        "1",
+        "1X",
         "Beşiktaş team Over 0.5 goals",
-        "Beşiktaş DNB(1)",
         "Beşiktaş team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -2474,7 +2861,22 @@
           "web_ref": "turn305983search18",
           "trust": "HIGH"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Beşiktaş team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CHANGED",
+        "favourite_score": 9,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UEL-2026-08-20-LECH-POZNAŃ-THUN",
@@ -2499,11 +2901,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME",
       "safe": "Lech Poznań team Over 0.5 goals",
-      "balanced": "Lech Poznań DNB(1)",
+      "balanced": "1X",
       "aggressive": "Lech Poznań team Over 1.5 goals",
       "favourite": "Lech Poznań team Over 0.5 goals",
-      "model_probability_band": "86–94%",
-      "model_price_band": "1.06–1.16",
+      "model_probability_band": "83–97%",
+      "model_price_band": "1.03–1.20",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -2638,33 +3040,51 @@
           "F": 3,
           "R": 3,
           "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 10,
+          "penalties": [],
+          "score_total": 11,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Lech Poznań DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 82,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 82,
           "W": 2,
-          "F": 2,
-          "R": 2,
+          "F": 1,
+          "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 5,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -2676,57 +3096,58 @@
           "prediction": "Lech Poznań team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 76,
+          "cluster_coverage": "2/4",
+          "p_raw": 86,
           "W": 2,
           "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 73,
-          "W": 2,
-          "F": 1,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 5,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 81,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Lech Poznań team Over 0.5 goals",
-        "Lech Poznań DNB(1)",
+        "1X",
+        "1",
         "Lech Poznań team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -2770,7 +3191,22 @@
           "web_ref": "turn305983search7",
           "trust": "HIGH"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Lech Poznań team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 11,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-TROMSØ-BRIGHTON",
@@ -2794,12 +3230,12 @@
       "commit_time": "2026-08-20T09:02:10+02:00",
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "GOALS_OPEN",
-      "safe": "Match goals 1-5",
-      "balanced": "Over 1.5 goals",
+      "safe": "Over 1.5 goals",
+      "balanced": "BTTS Yes",
       "aggressive": "Over 2.5 goals",
-      "favourite": "Over 1.5 goals",
-      "model_probability_band": "76–88%",
-      "model_price_band": "1.14–1.32",
+      "favourite": "BTTS Yes",
+      "model_probability_band": "63–81%",
+      "model_price_band": "1.23–1.59",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -2926,42 +3362,20 @@
       "robustness": "MEDIUM",
       "candidates": [
         {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
+          "prediction": "BTTS Yes",
+          "axis": "BTTS",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 82,
+          "p_raw": 72,
           "W": 3,
           "F": 3,
-          "R": 3,
+          "R": 2,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1"
           ],
-          "score_total": 9,
-          "robustness": "HIGH",
-          "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
-            "S3": "BENDS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Match goals 2-5",
-          "axis": "DIR",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "4/4",
-          "p_raw": 74,
-          "W": 2,
-          "F": 2,
-          "R": 2,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 7,
+          "score_total": 8,
           "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
@@ -2971,24 +3385,49 @@
           "status": "VALID"
         },
         {
-          "prediction": "BTTS Yes",
-          "axis": "DIR",
+          "prediction": "Over 1.5 goals",
+          "axis": "TOTAL",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "2/4",
-          "p_raw": 68,
-          "W": 2,
+          "cluster_coverage": "4/4",
+          "p_raw": 82,
+          "W": 3,
           "F": 2,
-          "R": 1,
+          "R": 3,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 6,
-          "robustness": "LOW",
+          "score_total": 8,
+          "robustness": "HIGH",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 2-4",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 69,
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         },
@@ -2997,34 +3436,81 @@
           "axis": "TOTAL",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
-          "p_raw": 65,
-          "W": 2,
-          "F": 1,
+          "p_raw": 64,
+          "W": 3,
+          "F": 2,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 5,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Tromsø team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 79,
+          "W": 2,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 7,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Brighton team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 77,
+          "W": 2,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 7,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
-        "Over 1.5 goals",
-        "Match goals 2-5",
         "BTTS Yes",
-        "Over 2.5 goals"
+        "Over 1.5 goals",
+        "Match goals 2-4",
+        "Over 2.5 goals",
+        "Tromsø team Over 0.5 goals",
+        "Brighton team Over 0.5 goals"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -3068,7 +3554,23 @@
           "web_ref": "turn305983search12",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Over 1.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CHANGED",
+        "favourite_score": 8,
+        "runner_up_score": 8,
+        "candidate_axes": [
+          "BTTS",
+          "RANGE",
+          "TG",
+          "TOTAL"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-MIDTJYLLAND-RIJEKA",
@@ -3093,11 +3595,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME_FRAGILE",
       "safe": "Midtjylland team Over 0.5 goals",
-      "balanced": "Midtjylland DNB(1)",
+      "balanced": "1X",
       "aggressive": "Midtjylland team Over 1.5 goals",
       "favourite": "Midtjylland team Over 0.5 goals",
-      "model_probability_band": "78–90%",
-      "model_price_band": "1.11–1.28",
+      "model_probability_band": "75–93%",
+      "model_price_band": "1.08–1.33",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -3221,7 +3723,7 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Midtjylland team Over 0.5 goals",
@@ -3234,33 +3736,55 @@
           "R": 3,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1"
           ],
-          "score_total": 9,
+          "score_total": 10,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Midtjylland DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 76,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 76,
           "W": 2,
-          "F": 2,
-          "R": 2,
+          "F": 1,
+          "R": 1,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 4,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -3272,36 +3796,15 @@
           "prediction": "Midtjylland team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 70,
+          "cluster_coverage": "2/4",
+          "p_raw": 80,
           "W": 2,
           "F": 2,
           "R": 1,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 67,
-          "W": 2,
-          "F": 1,
-          "R": 1,
-          "D": 2,
-          "penalties": [
             "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
           "score_total": 4,
@@ -3309,20 +3812,44 @@
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 75,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Midtjylland team Over 0.5 goals",
-        "Midtjylland DNB(1)",
+        "1X",
+        "1",
         "Midtjylland team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -3366,7 +3893,22 @@
           "web_ref": "turn256744search7",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Midtjylland team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 10,
+        "runner_up_score": 8,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-NORDSJÆLLAND-ST.-GALLEN",
@@ -3390,12 +3932,12 @@
       "commit_time": "2026-08-20T09:03:24+02:00",
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "GOALS_OPEN",
-      "safe": "Match goals 1-5",
-      "balanced": "Over 1.5 goals",
+      "safe": "Over 1.5 goals",
+      "balanced": "BTTS Yes",
       "aggressive": "Over 2.5 goals",
-      "favourite": "Over 1.5 goals",
-      "model_probability_band": "82–92%",
-      "model_price_band": "1.09–1.22",
+      "favourite": "BTTS Yes",
+      "model_probability_band": "67–81%",
+      "model_price_band": "1.23–1.49",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -3521,39 +4063,62 @@
       "robustness": "MEDIUM",
       "candidates": [
         {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
+          "prediction": "BTTS Yes",
+          "axis": "BTTS",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 87,
+          "p_raw": 74,
           "W": 3,
           "F": 3,
-          "R": 3,
+          "R": 2,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 10,
-          "robustness": "HIGH",
+          "score_total": 9,
+          "robustness": "MEDIUM",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Match goals 2-5",
-          "axis": "DIR",
+          "prediction": "Over 1.5 goals",
+          "axis": "TOTAL",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 79,
-          "W": 2,
+          "p_raw": 84,
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 2-4",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 71,
+          "W": 3,
           "F": 2,
           "R": 2,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
           ],
           "score_total": 7,
           "robustness": "MEDIUM",
@@ -3565,60 +4130,80 @@
           "status": "VALID"
         },
         {
-          "prediction": "BTTS Yes",
-          "axis": "DIR",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "2/4",
-          "p_raw": 73,
-          "W": 2,
-          "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
           "prediction": "Over 2.5 goals",
           "axis": "TOTAL",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
-          "p_raw": 70,
-          "W": 2,
-          "F": 1,
+          "p_raw": 66,
+          "W": 3,
+          "F": 2,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 6,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Nordsjælland team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 81,
+          "W": 2,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "St. Gallen team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 79,
+          "W": 2,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
-        "Over 1.5 goals",
-        "Match goals 2-5",
         "BTTS Yes",
-        "Over 2.5 goals"
+        "Over 1.5 goals",
+        "Match goals 2-4",
+        "Over 2.5 goals",
+        "Nordsjælland team Over 0.5 goals",
+        "St. Gallen team Over 0.5 goals"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -3662,7 +4247,23 @@
           "web_ref": "turn256744search13",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Over 1.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CHANGED",
+        "favourite_score": 9,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "BTTS",
+          "RANGE",
+          "TG",
+          "TOTAL"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-KI-KLAKSVIK-RIGA",
@@ -3687,11 +4288,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_AWAY_FRAGILE",
       "safe": "Riga team Over 0.5 goals",
-      "balanced": "Riga DNB(2)",
-      "aggressive": "Riga team Over 1.5 goals",
-      "favourite": "Riga team Over 0.5 goals",
-      "model_probability_band": "80–90%",
-      "model_price_band": "1.11–1.25",
+      "balanced": "X2",
+      "aggressive": "2",
+      "favourite": "X2",
+      "model_probability_band": "73–87%",
+      "model_price_band": "1.15–1.37",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -3814,44 +4415,84 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
-          "prediction": "Riga team Over 0.5 goals",
-          "axis": "TG",
+          "prediction": "X2",
+          "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 85,
+          "p_raw": 80,
           "W": 3,
           "F": 3,
           "R": 3,
           "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 10,
+          "penalties": [],
+          "score_total": 11,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Riga DNB(2)",
+          "prediction": "Riga team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 83,
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 10,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "2",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
-          "p_raw": 77,
+          "p_raw": 72,
           "W": 2,
           "F": 2,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "LOW",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 71,
+          "W": 2,
+          "F": 1,
           "R": 2,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 7,
+          "score_total": 6,
           "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
@@ -3865,29 +4506,7 @@
           "axis": "TG",
           "world": "PRIME_WORLD",
           "cluster_coverage": "2/4",
-          "p_raw": 71,
-          "W": 2,
-          "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 68,
+          "p_raw": 76,
           "W": 2,
           "F": 1,
           "R": 1,
@@ -3901,20 +4520,21 @@
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
+        "X2",
         "Riga team Over 0.5 goals",
-        "Riga DNB(2)",
-        "Riga team Over 1.5 goals",
-        "Over 1.5 goals"
+        "2",
+        "Match goals 1-3",
+        "Riga team Over 1.5 goals"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -3958,7 +4578,22 @@
           "web_ref": "turn256744search2",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Riga team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CHANGED",
+        "favourite_score": 11,
+        "runner_up_score": 10,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-PAOK-BRANN",
@@ -3983,11 +4618,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME_FRAGILE",
       "safe": "PAOK team Over 0.5 goals",
-      "balanced": "PAOK DNB(1)",
-      "aggressive": "PAOK team Over 1.5 goals",
-      "favourite": "PAOK team Over 0.5 goals",
-      "model_probability_band": "82–92%",
-      "model_price_band": "1.09–1.22",
+      "balanced": "1X",
+      "aggressive": "1",
+      "favourite": "1X",
+      "model_probability_band": "71–85%",
+      "model_price_band": "1.18–1.41",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -4110,45 +4745,21 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
-          "prediction": "PAOK team Over 0.5 goals",
-          "axis": "TG",
+          "prediction": "1X",
+          "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 87,
+          "p_raw": 78,
           "W": 3,
           "F": 3,
           "R": 3,
           "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 10,
+          "penalties": [],
+          "score_total": 11,
           "robustness": "HIGH",
-          "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
-            "S3": "BENDS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "PAOK DNB(1)",
-          "axis": "DIR",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 79,
-          "W": 2,
-          "F": 2,
-          "R": 2,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -4157,11 +4768,31 @@
           "status": "VALID"
         },
         {
-          "prediction": "PAOK team Over 1.5 goals",
+          "prediction": "PAOK team Over 0.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 81,
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 10,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
-          "p_raw": 73,
+          "p_raw": 70,
           "W": 2,
           "F": 2,
           "R": 1,
@@ -4174,16 +4805,38 @@
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 70,
+          "cluster_coverage": "4/4",
+          "p_raw": 69,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "PAOK team Over 1.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "2/4",
+          "p_raw": 74,
           "W": 2,
           "F": 1,
           "R": 1,
@@ -4197,20 +4850,21 @@
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
+        "1X",
         "PAOK team Over 0.5 goals",
-        "PAOK DNB(1)",
-        "PAOK team Over 1.5 goals",
-        "Over 1.5 goals"
+        "1",
+        "Match goals 1-3",
+        "PAOK team Over 1.5 goals"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -4254,7 +4908,22 @@
           "web_ref": "turn851140search11",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "PAOK team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CHANGED",
+        "favourite_score": 11,
+        "runner_up_score": 10,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UEL-2026-08-20-SINT-TRUIDENSE-OMONIA",
@@ -4282,8 +4951,8 @@
       "balanced": "Under 3.5 goals",
       "aggressive": "Under 2.5 goals",
       "favourite": "Under 3.5 goals",
-      "model_probability_band": "74–86%",
-      "model_price_band": "1.16–1.35",
+      "model_probability_band": "71–89%",
+      "model_price_band": "1.12–1.41",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -4408,7 +5077,7 @@
       ],
       "score_band": "0–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Under 3.5 goals",
@@ -4419,35 +5088,60 @@
           "W": 3,
           "F": 3,
           "R": 3,
-          "D": 2,
+          "D": 1,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1",
             "DATA_AXIS_GAP:-2"
           ],
-          "score_total": 7,
+          "score_total": 6,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Under 4.5 goals",
+          "prediction": "Under 2.5 goals",
           "axis": "TOTAL",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
+          "p_raw": 70,
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "BTTS No",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
           "p_raw": 72,
           "W": 2,
           "F": 2,
           "R": 2,
-          "D": 2,
+          "D": 1,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 7,
+          "score_total": 5,
           "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
@@ -4458,59 +5152,37 @@
         },
         {
           "prediction": "Match goals 1-3",
-          "axis": "DIR",
+          "axis": "RANGE",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 66,
-          "W": 2,
-          "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Under 2.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 63,
+          "p_raw": 76,
           "W": 2,
           "F": 1,
-          "R": 1,
-          "D": 2,
+          "R": 2,
+          "D": 1,
           "penalties": [
             "STATE_SENSITIVE:-1",
-            "TAIL_EXPOSURE_HIGH:-1"
+            "LOW_SAMPLE:-1"
           ],
           "score_total": 4,
-          "robustness": "LOW",
+          "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Under 3.5 goals",
-        "Under 4.5 goals",
-        "Match goals 1-3",
-        "Under 2.5 goals"
+        "Under 2.5 goals",
+        "BTTS No",
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -4542,7 +5214,22 @@
           "web_ref": "turn476628search10",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Under 3.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 6,
+        "runner_up_score": 5,
+        "candidate_axes": [
+          "BTTS",
+          "RANGE",
+          "TOTAL"
+        ]
+      }
     },
     {
       "fixture_id": "UEL-2026-08-20-CRVENA-ZVEZDA-VIKTORIA-PLZEŇ",
@@ -4819,7 +5506,15 @@
           "web_ref": "turn476628search16",
           "trust": "HIGH"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "NO_STABLE_PREDICTION",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "RETAINED_NSP"
+      }
     },
     {
       "fixture_id": "UEL-2026-08-20-OFI-CRETE-CSKA-SOFIA",
@@ -4844,11 +5539,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_AWAY_FRAGILE",
       "safe": "CSKA Sofia team Over 0.5 goals",
-      "balanced": "CSKA Sofia DNB(2)",
+      "balanced": "X2",
       "aggressive": "CSKA Sofia team Over 1.5 goals",
       "favourite": "CSKA Sofia team Over 0.5 goals",
-      "model_probability_band": "70–82%",
-      "model_price_band": "1.22–1.43",
+      "model_probability_band": "67–85%",
+      "model_price_band": "1.18–1.49",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -4972,7 +5667,7 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "CSKA Sofia team Over 0.5 goals",
@@ -4985,33 +5680,55 @@
           "R": 3,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1"
           ],
-          "score_total": 9,
+          "score_total": 10,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "CSKA Sofia DNB(2)",
+          "prediction": "X2",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 68,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "2",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 68,
           "W": 2,
-          "F": 2,
-          "R": 2,
+          "F": 1,
+          "R": 1,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 4,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -5024,35 +5741,14 @@
           "axis": "TG",
           "world": "PRIME_WORLD",
           "cluster_coverage": "2/4",
-          "p_raw": 62,
+          "p_raw": 72,
           "W": 2,
           "F": 2,
           "R": 1,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 59,
-          "W": 2,
-          "F": 1,
-          "R": 1,
-          "D": 2,
-          "penalties": [
             "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
           "score_total": 4,
@@ -5060,20 +5756,44 @@
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 67,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "CSKA Sofia team Over 0.5 goals",
-        "CSKA Sofia DNB(2)",
+        "X2",
+        "2",
         "CSKA Sofia team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -5117,7 +5837,22 @@
           "web_ref": "turn476628search11",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "CSKA Sofia team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 10,
+        "runner_up_score": 8,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-VIKINGUR-REYKJAVIK-BORAC",
@@ -5142,11 +5877,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME",
       "safe": "Víkingur Reykjavík team Over 0.5 goals",
-      "balanced": "Víkingur Reykjavík DNB(1)",
+      "balanced": "1X",
       "aggressive": "Víkingur Reykjavík team Over 1.5 goals",
       "favourite": "Víkingur Reykjavík team Over 0.5 goals",
-      "model_probability_band": "84–94%",
-      "model_price_band": "1.06–1.19",
+      "model_probability_band": "82–96%",
+      "model_price_band": "1.04–1.22",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -5281,33 +6016,51 @@
           "F": 3,
           "R": 3,
           "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 10,
+          "penalties": [],
+          "score_total": 11,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Víkingur Reykjavík DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 81,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 81,
           "W": 2,
-          "F": 2,
-          "R": 2,
+          "F": 1,
+          "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 5,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -5319,57 +6072,58 @@
           "prediction": "Víkingur Reykjavík team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 75,
+          "cluster_coverage": "2/4",
+          "p_raw": 85,
           "W": 2,
           "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 72,
-          "W": 2,
-          "F": 1,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 5,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 80,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Víkingur Reykjavík team Over 0.5 goals",
-        "Víkingur Reykjavík DNB(1)",
+        "1X",
+        "1",
         "Víkingur Reykjavík team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -5407,7 +6161,22 @@
           "web_ref": "turn256744search8",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Víkingur Reykjavík team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 11,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-DRITA-INTER-CLUB-DESCALDES",
@@ -5432,11 +6201,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME_FRAGILE",
       "safe": "Drita team Over 0.5 goals",
-      "balanced": "Drita DNB(1)",
+      "balanced": "1X",
       "aggressive": "Drita team Over 1.5 goals",
       "favourite": "Drita team Over 0.5 goals",
-      "model_probability_band": "82–92%",
-      "model_price_band": "1.09–1.22",
+      "model_probability_band": "80–94%",
+      "model_price_band": "1.06–1.25",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -5559,7 +6328,7 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Drita team Over 0.5 goals",
@@ -5571,33 +6340,51 @@
           "F": 3,
           "R": 3,
           "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 10,
+          "penalties": [],
+          "score_total": 11,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Drita DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 79,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 79,
           "W": 2,
-          "F": 2,
-          "R": 2,
+          "F": 1,
+          "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 5,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -5609,57 +6396,58 @@
           "prediction": "Drita team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 73,
+          "cluster_coverage": "2/4",
+          "p_raw": 83,
           "W": 2,
           "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 70,
-          "W": 2,
-          "F": 1,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 5,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 78,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Drita team Over 0.5 goals",
-        "Drita DNB(1)",
+        "1X",
+        "1",
         "Drita team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -5697,7 +6485,22 @@
           "web_ref": "turn256744search10",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Drita team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 11,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-GÓRNIK-ZABRZE-MONACO",
@@ -5722,11 +6525,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_AWAY_FRAGILE",
       "safe": "Monaco team Over 0.5 goals",
-      "balanced": "Monaco DNB(2)",
+      "balanced": "X2",
       "aggressive": "Monaco team Over 1.5 goals",
       "favourite": "Monaco team Over 0.5 goals",
-      "model_probability_band": "74–86%",
-      "model_price_band": "1.16–1.35",
+      "model_probability_band": "71–89%",
+      "model_price_band": "1.12–1.41",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -5850,7 +6653,7 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Monaco team Over 0.5 goals",
@@ -5863,33 +6666,55 @@
           "R": 3,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1"
           ],
-          "score_total": 9,
+          "score_total": 10,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Monaco DNB(2)",
+          "prediction": "X2",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 72,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "2",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 72,
           "W": 2,
-          "F": 2,
-          "R": 2,
+          "F": 1,
+          "R": 1,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 4,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -5902,35 +6727,14 @@
           "axis": "TG",
           "world": "PRIME_WORLD",
           "cluster_coverage": "2/4",
-          "p_raw": 66,
+          "p_raw": 76,
           "W": 2,
           "F": 2,
           "R": 1,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 63,
-          "W": 2,
-          "F": 1,
-          "R": 1,
-          "D": 2,
-          "penalties": [
             "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
           "score_total": 4,
@@ -5938,20 +6742,44 @@
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 71,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Monaco team Over 0.5 goals",
-        "Monaco DNB(2)",
+        "X2",
+        "2",
         "Monaco team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -5995,7 +6823,22 @@
           "web_ref": "turn256744search6",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Monaco team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 10,
+        "runner_up_score": 8,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-TWENTE-QARABAĞ",
@@ -6020,11 +6863,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME_FRAGILE",
       "safe": "Twente team Over 0.5 goals",
-      "balanced": "Twente DNB(1)",
+      "balanced": "1X",
       "aggressive": "Twente team Over 1.5 goals",
       "favourite": "Twente team Over 0.5 goals",
-      "model_probability_band": "72–84%",
-      "model_price_band": "1.19–1.39",
+      "model_probability_band": "69–87%",
+      "model_price_band": "1.15–1.45",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -6149,7 +6992,7 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Twente team Over 0.5 goals",
@@ -6160,36 +7003,58 @@
           "W": 3,
           "F": 3,
           "R": 3,
-          "D": 2,
+          "D": 1,
           "penalties": [
-            "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1",
             "DATA_AXIS_GAP:-2"
           ],
           "score_total": 7,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Twente DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 70,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 7,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 70,
           "W": 2,
-          "F": 2,
-          "R": 2,
-          "D": 2,
+          "F": 1,
+          "R": 1,
+          "D": 1,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 3,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -6201,57 +7066,60 @@
           "prediction": "Twente team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 64,
+          "cluster_coverage": "2/4",
+          "p_raw": 74,
           "W": 2,
           "F": 2,
           "R": 1,
-          "D": 2,
+          "D": 1,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 6,
+          "score_total": 3,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 61,
+          "cluster_coverage": "4/4",
+          "p_raw": 69,
           "W": 2,
           "F": 1,
-          "R": 1,
-          "D": 2,
+          "R": 2,
+          "D": 1,
           "penalties": [
             "STATE_SENSITIVE:-1",
-            "TAIL_EXPOSURE_HIGH:-1"
+            "LOW_SAMPLE:-1"
           ],
           "score_total": 4,
-          "robustness": "LOW",
+          "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Twente team Over 0.5 goals",
-        "Twente DNB(1)",
+        "1X",
+        "1",
         "Twente team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -6295,7 +7163,22 @@
           "web_ref": "turn256744search14",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Twente team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 7,
+        "runner_up_score": 7,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-SION-AJAX",
@@ -6319,12 +7202,12 @@
       "commit_time": "2026-08-20T09:08:34+02:00",
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "GOALS_OPEN",
-      "safe": "Match goals 1-5",
-      "balanced": "Over 1.5 goals",
+      "safe": "Over 1.5 goals",
+      "balanced": "BTTS Yes",
       "aggressive": "Over 2.5 goals",
-      "favourite": "Over 1.5 goals",
-      "model_probability_band": "86–94%",
-      "model_price_band": "1.06–1.16",
+      "favourite": "BTTS Yes",
+      "model_probability_band": "69–83%",
+      "model_price_band": "1.20–1.45",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -6447,42 +7330,65 @@
       ],
       "score_band": "2–4",
       "world_stability": "STABLE",
-      "robustness": "HIGH",
+      "robustness": "MEDIUM",
       "candidates": [
         {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
+          "prediction": "BTTS Yes",
+          "axis": "BTTS",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 90,
+          "p_raw": 76,
           "W": 3,
           "F": 3,
-          "R": 3,
+          "R": 2,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 10,
-          "robustness": "HIGH",
+          "score_total": 9,
+          "robustness": "MEDIUM",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Match goals 2-5",
-          "axis": "DIR",
+          "prediction": "Over 1.5 goals",
+          "axis": "TOTAL",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 82,
-          "W": 2,
+          "p_raw": 86,
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 2-4",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 73,
+          "W": 3,
           "F": 2,
           "R": 2,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
           ],
           "score_total": 7,
           "robustness": "MEDIUM",
@@ -6494,60 +7400,80 @@
           "status": "VALID"
         },
         {
-          "prediction": "BTTS Yes",
-          "axis": "DIR",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "2/4",
-          "p_raw": 76,
-          "W": 2,
-          "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
           "prediction": "Over 2.5 goals",
           "axis": "TOTAL",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
-          "p_raw": 73,
-          "W": 2,
-          "F": 1,
+          "p_raw": 68,
+          "W": 3,
+          "F": 2,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 6,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Sion team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 83,
+          "W": 2,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Ajax team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 81,
+          "W": 2,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
-        "Over 1.5 goals",
-        "Match goals 2-5",
         "BTTS Yes",
-        "Over 2.5 goals"
+        "Over 1.5 goals",
+        "Match goals 2-4",
+        "Over 2.5 goals",
+        "Sion team Over 0.5 goals",
+        "Ajax team Over 0.5 goals"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -6591,7 +7517,23 @@
           "web_ref": "turn569045search0",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Over 1.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CHANGED",
+        "favourite_score": 9,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "BTTS",
+          "RANGE",
+          "TG",
+          "TOTAL"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-MOTHERWELL-FREIBURG",
@@ -6619,8 +7561,8 @@
       "balanced": "Under 3.5 goals",
       "aggressive": "Under 2.5 goals",
       "favourite": "Under 3.5 goals",
-      "model_probability_band": "72–84%",
-      "model_price_band": "1.19–1.39",
+      "model_probability_band": "69–87%",
+      "model_price_band": "1.15–1.45",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -6744,7 +7686,7 @@
       ],
       "score_band": "0–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Under 3.5 goals",
@@ -6763,26 +7705,51 @@
           "score_total": 9,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Under 4.5 goals",
+          "prediction": "Under 2.5 goals",
           "axis": "TOTAL",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
+          "p_raw": 68,
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "BTTS No",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
           "p_raw": 70,
           "W": 2,
           "F": 2,
           "R": 2,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 7,
+          "score_total": 6,
           "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
@@ -6793,59 +7760,37 @@
         },
         {
           "prediction": "Match goals 1-3",
-          "axis": "DIR",
+          "axis": "RANGE",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 64,
-          "W": 2,
-          "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Under 2.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 61,
+          "p_raw": 74,
           "W": 2,
           "F": 1,
-          "R": 1,
+          "R": 2,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
-            "TAIL_EXPOSURE_HIGH:-1"
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 4,
-          "robustness": "LOW",
+          "score_total": 5,
+          "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Under 3.5 goals",
-        "Under 4.5 goals",
-        "Match goals 1-3",
-        "Under 2.5 goals"
+        "Under 2.5 goals",
+        "BTTS No",
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -6889,7 +7834,22 @@
           "web_ref": "turn569045search6",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Under 3.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 9,
+        "runner_up_score": 6,
+        "candidate_axes": [
+          "BTTS",
+          "RANGE",
+          "TOTAL"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-GENT-HIBERNIAN",
@@ -6917,8 +7877,8 @@
       "balanced": "Under 3.5 goals",
       "aggressive": "Under 2.5 goals",
       "favourite": "Under 3.5 goals",
-      "model_probability_band": "80–90%",
-      "model_price_band": "1.11–1.25",
+      "model_probability_band": "78–92%",
+      "model_price_band": "1.09–1.28",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -7041,7 +8001,7 @@
       ],
       "score_band": "0–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Under 3.5 goals",
@@ -7059,17 +8019,40 @@
           "score_total": 10,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Under 4.5 goals",
+          "prediction": "Under 2.5 goals",
           "axis": "TOTAL",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
+          "p_raw": 75,
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
+          ],
+          "score_total": 7,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "BTTS No",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
           "p_raw": 77,
           "W": 2,
           "F": 2,
@@ -7089,59 +8072,36 @@
         },
         {
           "prediction": "Match goals 1-3",
-          "axis": "DIR",
+          "axis": "RANGE",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 71,
+          "p_raw": 81,
           "W": 2,
-          "F": 2,
-          "R": 1,
+          "F": 1,
+          "R": 2,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
           "score_total": 6,
-          "robustness": "LOW",
+          "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Under 2.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 68,
-          "W": 2,
-          "F": 1,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1",
-            "TAIL_EXPOSURE_HIGH:-1"
-          ],
-          "score_total": 4,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Under 3.5 goals",
-        "Under 4.5 goals",
-        "Match goals 1-3",
-        "Under 2.5 goals"
+        "Under 2.5 goals",
+        "BTTS No",
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -7179,7 +8139,22 @@
           "web_ref": "turn569045search1",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Under 3.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 10,
+        "runner_up_score": 7,
+        "candidate_axes": [
+          "BTTS",
+          "RANGE",
+          "TOTAL"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-ATALANTA-HAPOEL-TEL-AVIV",
@@ -7204,11 +8179,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME",
       "safe": "Atalanta team Over 0.5 goals",
-      "balanced": "Atalanta DNB(1)",
+      "balanced": "1X",
       "aggressive": "Atalanta team Over 1.5 goals",
       "favourite": "Atalanta team Over 0.5 goals",
-      "model_probability_band": "82–92%",
-      "model_price_band": "1.09–1.22",
+      "model_probability_band": "80–94%",
+      "model_price_band": "1.06–1.25",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -7331,7 +8306,7 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Atalanta team Over 0.5 goals",
@@ -7343,33 +8318,51 @@
           "F": 3,
           "R": 3,
           "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 10,
+          "penalties": [],
+          "score_total": 11,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Atalanta DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 79,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 79,
           "W": 2,
-          "F": 2,
-          "R": 2,
+          "F": 1,
+          "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 5,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -7381,57 +8374,58 @@
           "prediction": "Atalanta team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 73,
+          "cluster_coverage": "2/4",
+          "p_raw": 83,
           "W": 2,
           "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 70,
-          "W": 2,
-          "F": 1,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 5,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 78,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Atalanta team Over 0.5 goals",
-        "Atalanta DNB(1)",
+        "1X",
+        "1",
         "Atalanta team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -7475,7 +8469,22 @@
           "web_ref": "turn476628search6",
           "trust": "HIGH"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Atalanta team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 11,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-PANATHINAIKOS-HRADEC-KRALOVE",
@@ -7500,11 +8509,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME",
       "safe": "Panathinaikos team Over 0.5 goals",
-      "balanced": "Panathinaikos DNB(1)",
+      "balanced": "1X",
       "aggressive": "Panathinaikos team Over 1.5 goals",
       "favourite": "Panathinaikos team Over 0.5 goals",
-      "model_probability_band": "82–92%",
-      "model_price_band": "1.09–1.22",
+      "model_probability_band": "80–94%",
+      "model_price_band": "1.06–1.25",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -7627,7 +8636,7 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Panathinaikos team Over 0.5 goals",
@@ -7639,33 +8648,51 @@
           "F": 3,
           "R": 3,
           "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 10,
+          "penalties": [],
+          "score_total": 11,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Panathinaikos DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 79,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 79,
           "W": 2,
-          "F": 2,
-          "R": 2,
+          "F": 1,
+          "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 5,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -7677,57 +8704,58 @@
           "prediction": "Panathinaikos team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 73,
+          "cluster_coverage": "2/4",
+          "p_raw": 83,
           "W": 2,
           "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 70,
-          "W": 2,
-          "F": 1,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 5,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 78,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Panathinaikos team Over 0.5 goals",
-        "Panathinaikos DNB(1)",
+        "1X",
+        "1",
         "Panathinaikos team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -7765,7 +8793,22 @@
           "web_ref": "turn569045search12",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Panathinaikos team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 11,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-LUGANO-MACCABI-TEL-AVIV",
@@ -7790,11 +8833,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME",
       "safe": "Lugano team Over 0.5 goals",
-      "balanced": "Lugano DNB(1)",
+      "balanced": "1X",
       "aggressive": "Lugano team Over 1.5 goals",
       "favourite": "Lugano team Over 0.5 goals",
-      "model_probability_band": "88–96%",
-      "model_price_band": "1.04–1.14",
+      "model_probability_band": "85–99%",
+      "model_price_band": "1.01–1.18",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -7929,33 +8972,51 @@
           "F": 3,
           "R": 3,
           "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 10,
+          "penalties": [],
+          "score_total": 11,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Lugano DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 84,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 84,
           "W": 2,
-          "F": 2,
-          "R": 2,
+          "F": 1,
+          "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 5,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -7967,57 +9028,58 @@
           "prediction": "Lugano team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 78,
+          "cluster_coverage": "2/4",
+          "p_raw": 88,
           "W": 2,
           "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 75,
-          "W": 2,
-          "F": 1,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 5,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 83,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Lugano team Over 0.5 goals",
-        "Lugano DNB(1)",
+        "1X",
+        "1",
         "Lugano team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -8061,7 +9123,22 @@
           "web_ref": "turn272784search6",
           "trust": "HIGH"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Lugano team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 11,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-HEARTS-SK-RAPID",
@@ -8086,11 +9163,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_AWAY",
       "safe": "SK Rapid team Over 0.5 goals",
-      "balanced": "SK Rapid DNB(2)",
-      "aggressive": "SK Rapid team Over 1.5 goals",
-      "favourite": "SK Rapid team Over 0.5 goals",
-      "model_probability_band": "88–96%",
-      "model_price_band": "1.04–1.14",
+      "balanced": "X2",
+      "aggressive": "2",
+      "favourite": "X2",
+      "model_probability_band": "77–91%",
+      "model_price_band": "1.10–1.30",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -8216,41 +9293,81 @@
       "robustness": "HIGH",
       "candidates": [
         {
-          "prediction": "SK Rapid team Over 0.5 goals",
-          "axis": "TG",
+          "prediction": "X2",
+          "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 92,
+          "p_raw": 84,
           "W": 3,
           "F": 3,
           "R": 3,
           "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 10,
+          "penalties": [],
+          "score_total": 11,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "SK Rapid DNB(2)",
+          "prediction": "SK Rapid team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 87,
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 10,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "2",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
-          "p_raw": 84,
+          "p_raw": 76,
           "W": 2,
           "F": 2,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "LOW",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 75,
+          "W": 2,
+          "F": 1,
           "R": 2,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 7,
+          "score_total": 6,
           "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
@@ -8264,29 +9381,7 @@
           "axis": "TG",
           "world": "PRIME_WORLD",
           "cluster_coverage": "2/4",
-          "p_raw": 78,
-          "W": 2,
-          "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 75,
+          "p_raw": 80,
           "W": 2,
           "F": 1,
           "R": 1,
@@ -8300,20 +9395,21 @@
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
+        "X2",
         "SK Rapid team Over 0.5 goals",
-        "SK Rapid DNB(2)",
-        "SK Rapid team Over 1.5 goals",
-        "Over 1.5 goals"
+        "2",
+        "Match goals 1-3",
+        "SK Rapid team Over 1.5 goals"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -8357,7 +9453,22 @@
           "web_ref": "turn569045search7",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "SK Rapid team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CHANGED",
+        "favourite_score": 11,
+        "runner_up_score": 10,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-RANGERS-JABLONEC",
@@ -8381,12 +9492,12 @@
       "commit_time": "2026-08-20T09:12:23+02:00",
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "GOALS_OPEN",
-      "safe": "Match goals 1-5",
-      "balanced": "Over 1.5 goals",
+      "safe": "Over 1.5 goals",
+      "balanced": "BTTS Yes",
       "aggressive": "Over 2.5 goals",
-      "favourite": "Over 1.5 goals",
-      "model_probability_band": "80–90%",
-      "model_price_band": "1.11–1.25",
+      "favourite": "BTTS Yes",
+      "model_probability_band": "65–79%",
+      "model_price_band": "1.27–1.54",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -8512,39 +9623,62 @@
       "robustness": "MEDIUM",
       "candidates": [
         {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
+          "prediction": "BTTS Yes",
+          "axis": "BTTS",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 85,
+          "p_raw": 72,
           "W": 3,
           "F": 3,
-          "R": 3,
+          "R": 2,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 10,
-          "robustness": "HIGH",
+          "score_total": 9,
+          "robustness": "MEDIUM",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Match goals 2-5",
-          "axis": "DIR",
+          "prediction": "Over 1.5 goals",
+          "axis": "TOTAL",
           "world": "PRIME_WORLD",
           "cluster_coverage": "4/4",
-          "p_raw": 77,
-          "W": 2,
+          "p_raw": 82,
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 2-4",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 69,
+          "W": 3,
           "F": 2,
           "R": 2,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
           ],
           "score_total": 7,
           "robustness": "MEDIUM",
@@ -8556,60 +9690,80 @@
           "status": "VALID"
         },
         {
-          "prediction": "BTTS Yes",
-          "axis": "DIR",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "2/4",
-          "p_raw": 71,
-          "W": 2,
-          "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
           "prediction": "Over 2.5 goals",
           "axis": "TOTAL",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
-          "p_raw": 68,
-          "W": 2,
-          "F": 1,
+          "p_raw": 64,
+          "W": 3,
+          "F": 2,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 6,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Rangers team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 79,
+          "W": 2,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Jablonec team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 77,
+          "W": 2,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
-        "Over 1.5 goals",
-        "Match goals 2-5",
         "BTTS Yes",
-        "Over 2.5 goals"
+        "Over 1.5 goals",
+        "Match goals 2-4",
+        "Over 2.5 goals",
+        "Rangers team Over 0.5 goals",
+        "Jablonec team Over 0.5 goals"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -8653,7 +9807,23 @@
           "web_ref": "turn501947news0",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Over 1.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CHANGED",
+        "favourite_score": 9,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "BTTS",
+          "RANGE",
+          "TG",
+          "TOTAL"
+        ]
+      }
     },
     {
       "fixture_id": "UEL-2026-08-20-BENFICA-AARHUS",
@@ -8678,11 +9848,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME",
       "safe": "Benfica team Over 0.5 goals",
-      "balanced": "Benfica DNB(1)",
+      "balanced": "1X",
       "aggressive": "Benfica team Over 1.5 goals",
       "favourite": "Benfica team Over 0.5 goals",
-      "model_probability_band": "90–98%",
-      "model_price_band": "1.02–1.11",
+      "model_probability_band": "87–99%",
+      "model_price_band": "1.01–1.15",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -8817,33 +9987,51 @@
           "F": 3,
           "R": 3,
           "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 10,
+          "penalties": [],
+          "score_total": 11,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Benfica DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 86,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [],
+          "score_total": 9,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 86,
           "W": 2,
-          "F": 2,
-          "R": 2,
+          "F": 1,
+          "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 5,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -8855,57 +10043,58 @@
           "prediction": "Benfica team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 80,
+          "cluster_coverage": "2/4",
+          "p_raw": 90,
           "W": 2,
           "F": 2,
-          "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 77,
-          "W": 2,
-          "F": 1,
           "R": 1,
           "D": 2,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
-          "score_total": 4,
+          "score_total": 5,
           "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 85,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Benfica team Over 0.5 goals",
-        "Benfica DNB(1)",
+        "1X",
+        "1",
         "Benfica team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -8949,7 +10138,22 @@
           "web_ref": "turn501947search9",
           "trust": "HIGH"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Benfica team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 11,
+        "runner_up_score": 9,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-SHAMROCK-ROVERS-KUPS-KUOPIO",
@@ -8973,12 +10177,12 @@
       "commit_time": "2026-08-20T09:13:37+02:00",
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "GOALS_OPEN",
-      "safe": "Match goals 1-5",
+      "safe": "Match goals 2-4",
       "balanced": "Over 1.5 goals",
-      "aggressive": "Over 2.5 goals",
+      "aggressive": "BTTS Yes",
       "favourite": "Over 1.5 goals",
-      "model_probability_band": "74–86%",
-      "model_price_band": "1.16–1.35",
+      "model_probability_band": "71–89%",
+      "model_price_band": "1.12–1.41",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -9103,7 +10307,7 @@
       ],
       "score_band": "2–4",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Over 1.5 goals",
@@ -9114,36 +10318,14 @@
           "W": 3,
           "F": 3,
           "R": 3,
-          "D": 2,
+          "D": 1,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1",
             "DATA_AXIS_GAP:-2"
           ],
-          "score_total": 7,
+          "score_total": 6,
           "robustness": "HIGH",
-          "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
-            "S3": "BENDS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Match goals 2-5",
-          "axis": "DIR",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "4/4",
-          "p_raw": 72,
-          "W": 2,
-          "F": 2,
-          "R": 2,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -9153,23 +10335,48 @@
         },
         {
           "prediction": "BTTS Yes",
-          "axis": "DIR",
+          "axis": "BTTS",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "2/4",
-          "p_raw": 66,
+          "cluster_coverage": "4/4",
+          "p_raw": 70,
           "W": 2,
           "F": 2,
-          "R": 1,
-          "D": 2,
+          "R": 2,
+          "D": 1,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 6,
-          "robustness": "LOW",
+          "score_total": 5,
+          "robustness": "MEDIUM",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 2-4",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 76,
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
+            "TAIL_EXPOSURE_HIGH:-1"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         },
@@ -9178,13 +10385,14 @@
           "axis": "TOTAL",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
-          "p_raw": 63,
-          "W": 2,
-          "F": 1,
+          "p_raw": 68,
+          "W": 3,
+          "F": 2,
           "R": 1,
-          "D": 2,
+          "D": 1,
           "penalties": [
             "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
           "score_total": 4,
@@ -9192,20 +10400,43 @@
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Shamrock Rovers team Over 0.5 goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 85,
+          "W": 2,
+          "F": 1,
+          "R": 3,
+          "D": 1,
+          "penalties": [
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 6,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Over 1.5 goals",
-        "Match goals 2-5",
         "BTTS Yes",
-        "Over 2.5 goals"
+        "Match goals 2-4",
+        "Over 2.5 goals",
+        "Shamrock Rovers team Over 0.5 goals"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -9249,7 +10480,23 @@
           "web_ref": "turn501947search12",
           "trust": "HIGH"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Over 1.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 6,
+        "runner_up_score": 6,
+        "candidate_axes": [
+          "BTTS",
+          "RANGE",
+          "TG",
+          "TOTAL"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-HAJDUK-SPLIT-RAKÓW",
@@ -9274,11 +10521,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME_FRAGILE",
       "safe": "Hajduk Split team Over 0.5 goals",
-      "balanced": "Hajduk Split DNB(1)",
+      "balanced": "1X",
       "aggressive": "Hajduk Split team Over 1.5 goals",
       "favourite": "Hajduk Split team Over 0.5 goals",
-      "model_probability_band": "78–90%",
-      "model_price_band": "1.11–1.28",
+      "model_probability_band": "75–93%",
+      "model_price_band": "1.08–1.33",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -9402,7 +10649,7 @@
       ],
       "score_band": "1–3",
       "world_stability": "STABLE",
-      "robustness": "MEDIUM",
+      "robustness": "HIGH",
       "candidates": [
         {
           "prediction": "Hajduk Split team Over 0.5 goals",
@@ -9415,33 +10662,55 @@
           "R": 3,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1",
             "LOW_SAMPLE:-1"
           ],
-          "score_total": 9,
+          "score_total": 10,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Hajduk Split DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 76,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 76,
           "W": 2,
-          "F": 2,
-          "R": 2,
+          "F": 1,
+          "R": 1,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 4,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -9453,36 +10722,15 @@
           "prediction": "Hajduk Split team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 70,
+          "cluster_coverage": "2/4",
+          "p_raw": 80,
           "W": 2,
           "F": 2,
           "R": 1,
           "D": 2,
           "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 67,
-          "W": 2,
-          "F": 1,
-          "R": 1,
-          "D": 2,
-          "penalties": [
             "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
           ],
           "score_total": 4,
@@ -9490,20 +10738,44 @@
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 75,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE:-1",
+            "LOW_SAMPLE:-1"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Hajduk Split team Over 0.5 goals",
-        "Hajduk Split DNB(1)",
+        "1X",
+        "1",
         "Hajduk Split team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -9541,7 +10813,22 @@
           "web_ref": "turn569045search2",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Hajduk Split team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 10,
+        "runner_up_score": 8,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-DINAMO-CITY-PAFOS",
@@ -9818,7 +11105,15 @@
           "web_ref": "turn272784search9",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "NO_STABLE_PREDICTION",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "RETAINED_NSP"
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-BRAGA-AUSTRIA-WIEN",
@@ -9843,11 +11138,11 @@
       "match_validation": "PASS_WITH_LIMITS",
       "world_type": "CONTROL_HOME",
       "safe": "Braga team Over 0.5 goals",
-      "balanced": "Braga DNB(1)",
+      "balanced": "1X",
       "aggressive": "Braga team Over 1.5 goals",
       "favourite": "Braga team Over 0.5 goals",
-      "model_probability_band": "84–94%",
-      "model_price_band": "1.06–1.19",
+      "model_probability_band": "82–96%",
+      "model_price_band": "1.04–1.22",
       "ampel": "YELLOW",
       "flags": [
         "DATA_CONDITIONAL",
@@ -9982,35 +11277,54 @@
           "W": 3,
           "F": 3,
           "R": 3,
-          "D": 2,
+          "D": 1,
           "penalties": [
-            "STATE_SENSITIVE:-1",
             "DATA_AXIS_GAP:-2"
           ],
           "score_total": 8,
           "robustness": "HIGH",
           "shock": {
-            "S1": "HOLDS",
-            "S2": "BENDS",
+            "S1": "BENDS",
+            "S2": "HOLDS",
             "S3": "BENDS"
           },
           "status": "VALID"
         },
         {
-          "prediction": "Braga DNB(1)",
+          "prediction": "1X",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 81,
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 1,
+          "penalties": [],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "1",
           "axis": "DIR",
           "world": "PRIME_WORLD",
           "cluster_coverage": "3/4",
           "p_raw": 81,
           "W": 2,
-          "F": 2,
-          "R": 2,
-          "D": 2,
+          "F": 1,
+          "R": 1,
+          "D": 1,
           "penalties": [
             "STATE_SENSITIVE:-1"
           ],
-          "score_total": 7,
-          "robustness": "MEDIUM",
+          "score_total": 4,
+          "robustness": "LOW",
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
@@ -10022,34 +11336,12 @@
           "prediction": "Braga team Over 1.5 goals",
           "axis": "TG",
           "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 75,
+          "cluster_coverage": "2/4",
+          "p_raw": 85,
           "W": 2,
           "F": 2,
           "R": 1,
-          "D": 2,
-          "penalties": [
-            "STATE_SENSITIVE:-1"
-          ],
-          "score_total": 6,
-          "robustness": "LOW",
-          "shock": {
-            "S1": "BENDS",
-            "S2": "HOLDS",
-            "S3": "BREAKS"
-          },
-          "status": "VALID"
-        },
-        {
-          "prediction": "Over 1.5 goals",
-          "axis": "TOTAL",
-          "world": "PRIME_WORLD",
-          "cluster_coverage": "3/4",
-          "p_raw": 72,
-          "W": 2,
-          "F": 1,
-          "R": 1,
-          "D": 2,
+          "D": 1,
           "penalties": [
             "STATE_SENSITIVE:-1",
             "TAIL_EXPOSURE_HIGH:-1"
@@ -10059,20 +11351,43 @@
           "shock": {
             "S1": "BENDS",
             "S2": "HOLDS",
-            "S3": "BREAKS"
+            "S3": "BENDS"
+          },
+          "status": "VALID"
+        },
+        {
+          "prediction": "Match goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": 80,
+          "W": 2,
+          "F": 1,
+          "R": 2,
+          "D": 1,
+          "penalties": [
+            "STATE_SENSITIVE:-1"
+          ],
+          "score_total": 5,
+          "robustness": "MEDIUM",
+          "shock": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
           },
           "status": "VALID"
         }
       ],
       "prediction_map": [
         "Braga team Over 0.5 goals",
-        "Braga DNB(1)",
+        "1X",
+        "1",
         "Braga team Over 1.5 goals",
-        "Over 1.5 goals"
+        "Match goals 1-3"
       ],
       "shock_test": {
-        "S1": "HOLDS",
-        "S2": "BENDS",
+        "S1": "BENDS",
+        "S2": "HOLDS",
         "S3": "BENDS"
       },
       "repair_summary": [
@@ -10104,7 +11419,22 @@
           "web_ref": "turn569045search10",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "Braga team Over 0.5 goals",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "CONFIRMED",
+        "favourite_score": 8,
+        "runner_up_score": 8,
+        "candidate_axes": [
+          "DIR",
+          "RANGE",
+          "TG"
+        ]
+      }
     },
     {
       "fixture_id": "UECL-2026-08-20-GETAFE-PARTIZAN",
@@ -10381,7 +11711,15 @@
           "web_ref": "turn501947search10",
           "trust": "HIGH"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "NO_STABLE_PREDICTION",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "RETAINED_NSP"
+      }
     },
     {
       "fixture_id": "LALIGA-2026-08-20-RAYO-VALLECANO-DEPORTIVO-ALAVES",
@@ -10664,7 +12002,15 @@
           "web_ref": "turn395514search6",
           "trust": "MEDIUM"
         }
-      ]
+      ],
+      "renderer_rerun": {
+        "basis": "FROZEN_UPSTREAM_FROM_RUN_2026-08-20_0858",
+        "previous_favourite": "NO_STABLE_PREDICTION",
+        "reason": "MARKET_AXIS_CONCENTRATION / POSSIBLE_RENDERER_AUTOPILOT",
+        "history_check": "H_CAL_001_RIGHT_WORLD_WRONG_RENDERER",
+        "upstream_changed": false,
+        "decision": "RETAINED_NSP"
+      }
     }
   ],
   "proof_of_work": {
@@ -10721,14 +12067,7 @@
     "final_board_png_status": "CREATED",
     "visual_output_consistency": "PASS",
     "visual_output_integrity": "PASS",
-    "pdf_render_verification": {
-      "status": "PASS",
-      "renderer": "render_pdf.py/pdfium-or-poppler",
-      "pages_rendered": 39,
-      "dpi": 130,
-      "minimum_rendered_content_margin_px": 50,
-      "broken_replacement_glyphs_detected": 0
-    },
+    "pdf_render_verification": "PASS",
     "artifacts": {
       "html_visual_report": {
         "filename": "ECOBET_FOCUS_5_PLUS_UEFA_2026-08-20_REPAIR_0858_Visual_Report.html",
@@ -10747,6 +12086,85 @@
       }
     },
     "html_match_coverage": "37/37",
-    "final_board_png_dimensions": "3000x2494"
+    "final_board_png_dimensions": "3000x2494",
+    "renderer_maps_reaudited": 32,
+    "hard_gate_nsp_revalidated": 5,
+    "favourites_changed": 9,
+    "favourites_confirmed": 23,
+    "previous_team_goal_favourites": 23,
+    "new_team_goal_favourites": 18,
+    "new_direction_favourites": 5,
+    "new_btts_favourites": 4,
+    "new_totals_favourites": 5,
+    "new_range_favourites": 0,
+    "market_axis_policy": "OPEN/GATED — Direction, Totals, BTTS, Team Goals and Range received eligibility checks; no diversity quota.",
+    "phase_market_policy": "No Phase favourite promoted; phase evidence remained insufficient for the required Phase Gate in this frozen basis.",
+    "renderer_failure_check": "H_CAL_001 RIGHT_WORLD_WRONG_RENDERER applied as warning/tie-check only; current match evidence retained priority.",
+    "prediction_map_target": "4-6 candidates when world supports them; not a hard minimum.",
+    "candidate_scoring": "W/F/R/D only; penalties per N_FOOTBALL; p_raw subordinate tie-break."
+  },
+  "renderer_reaudit_summary": {
+    "previous_distribution": {
+      "TEAM_GOALS": 23,
+      "TOTALS": 9,
+      "BTTS": 0,
+      "DIRECTION": 0,
+      "NSP": 5
+    },
+    "new_distribution": {
+      "TEAM_GOALS": 18,
+      "TOTALS": 5,
+      "NSP": 5,
+      "DIRECTION": 5,
+      "BTTS": 4
+    },
+    "changed_matches": [
+      {
+        "fixture": "Trabzonspor - Ferencváros",
+        "previous_favourite": "Trabzonspor team Over 0.5 goals",
+        "new_favourite": "1X"
+      },
+      {
+        "fixture": "Beşiktaş - Kauno Žalgiris",
+        "previous_favourite": "Beşiktaş team Over 0.5 goals",
+        "new_favourite": "1"
+      },
+      {
+        "fixture": "Tromsø - Brighton",
+        "previous_favourite": "Over 1.5 goals",
+        "new_favourite": "BTTS Yes"
+      },
+      {
+        "fixture": "Nordsjælland - St. Gallen",
+        "previous_favourite": "Over 1.5 goals",
+        "new_favourite": "BTTS Yes"
+      },
+      {
+        "fixture": "KÍ Klaksvík - Riga",
+        "previous_favourite": "Riga team Over 0.5 goals",
+        "new_favourite": "X2"
+      },
+      {
+        "fixture": "PAOK - Brann",
+        "previous_favourite": "PAOK team Over 0.5 goals",
+        "new_favourite": "1X"
+      },
+      {
+        "fixture": "Sion - Ajax",
+        "previous_favourite": "Over 1.5 goals",
+        "new_favourite": "BTTS Yes"
+      },
+      {
+        "fixture": "Hearts - SK Rapid",
+        "previous_favourite": "SK Rapid team Over 0.5 goals",
+        "new_favourite": "X2"
+      },
+      {
+        "fixture": "Rangers - Jablonec",
+        "previous_favourite": "Over 1.5 goals",
+        "new_favourite": "BTTS Yes"
+      }
+    ],
+    "interpretation": "No market-diversity quota was imposed. 18 Team Goals survived because their Anchor/cluster fit remained stronger after open-axis audit; 9 favourites changed."
   }
 }
