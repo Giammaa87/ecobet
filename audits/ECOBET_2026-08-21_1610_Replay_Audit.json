@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "record_type": "replay_settlement_audit",
+  "replay_id": "REPLAY_2026-08-22_0031_RUN_2026-08-21_1610",
+  "audit_time": "2026-08-22T00:31:00+02:00",
+  "original_run_id": "RUN_2026-08-21_FOCUS_5_PLUS_UEFA_CEST_1610",
+  "original_run_record": "/mnt/data/ecobet_rerun_2026-08-21_1610/runs/2026-08-21_1610.json",
+  "original_prediction_record_unchanged": true,
+  "norm_version_original": {
+    "football_decision": "N_ECOBET_FOOTBALL_AND_DECISION_ENGINE v1.0 + explicit run correction instruction",
+    "output_audit": "N_ECOBET_OUTPUT_AND_AUDIT v1.3"
+  },
+  "replay_rules": {
+    "result_settlement": "Output/Audit v1.3 sections 29-34",
+    "original_snapshot_unchanged": true,
+    "no_prediction_rewrite_after_result": true
+  },
+  "matches": [
+    {
+      "fixture": "Marseille - Strasbourg",
+      "competition": "Ligue 1",
+      "actual_result": "4-0",
+      "result_source": "Reuters via CNA",
+      "result_source_note": "Marseille won 4-0. Gouiri scored twice; Strasbourg were reduced to 10 men in the 59th minute with the score 1-0; Marseille added three further goals.",
+      "original_prediction": {
+        "world_type": "CONTROL_BUT_FRAGILE_HOME",
+        "prime_world": "Marseille controls more territory and final-third volume, but Strasbourg keeps a credible transition/scoring route. A first goal expands the game.",
+        "counterworld": "Opening-day and regime uncertainty suppress conversion; Marseille controls more without full separation, preserving 1-0/1-1/2-0 states.",
+        "modal_score": "2-1",
+        "four_score_cluster": [
+          "2-1",
+          "2-2",
+          "3-1",
+          "1-1"
+        ],
+        "score_band": "2-4",
+        "safe": "Marseille O0.5 Team Goals",
+        "balanced": "BTTS Yes",
+        "aggressive": "Marseille O1.5 Team Goals",
+        "favourite": "BTTS Yes",
+        "ampel": "YELLOW"
+      },
+      "settlement": {
+        "SAFE_RESULT": "HIT",
+        "BALANCED_RESULT": "UNMAPPABLE",
+        "AGGRESSIVE_RESULT": "HIT",
+        "FAVOURITE_RESULT": "UNMAPPABLE"
+      },
+      "modal_score_hit": false,
+      "cluster_hit": false,
+      "score_band_hit": true,
+      "result_distance_from_modal": "NOT_AVAILABLE",
+      "result_distance_reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm.",
+      "world_verdict": "MIXED",
+      "world_verdict_evidence": "PARTIAL_MATCH_DATA",
+      "world_audit_note": "Home-control mechanism was correct, but the model's central Strasbourg scoring path did not materialize. The red card materially changed the second half and the 4-0 blowout sat outside the four-score cluster.",
+      "failure_tags": [
+        "RED_CARD_SHOCK",
+        "BLOWOUT_TAIL_MISSED",
+        "RIGHT_WORLD_WRONG_RENDERER"
+      ]
+    },
+    {
+      "fixture": "Arsenal - Coventry City",
+      "competition": "Premier League",
+      "actual_result": "3-0",
+      "result_source": "The Guardian",
+      "result_source_note": "Arsenal won 3-0 and controlled the match clearly; Coventry struggled to escape pressure and Arsenal eased off late.",
+      "original_prediction": {
+        "world_type": "CONTROL_HOME",
+        "prime_world": "Arsenal controls ball and territory and creates enough repeatable box entries for 2-3 own goals; Coventry retains isolated transition/set-piece routes.",
+        "counterworld": "Opening-day variance and Arsenal defensive availability keep separation smaller, extending a 1-0/1-1 corridor.",
+        "modal_score": "2-0",
+        "four_score_cluster": [
+          "2-0",
+          "3-0",
+          "2-1",
+          "1-0"
+        ],
+        "score_band": "1-3",
+        "safe": "Arsenal O0.5 Team Goals",
+        "balanced": "Arsenal 1-3 Team Goals",
+        "aggressive": "Arsenal O1.5 Team Goals",
+        "favourite": "Arsenal 1-3 Team Goals",
+        "ampel": "YELLOW"
+      },
+      "settlement": {
+        "SAFE_RESULT": "HIT",
+        "BALANCED_RESULT": "HIT",
+        "AGGRESSIVE_RESULT": "HIT",
+        "FAVOURITE_RESULT": "HIT"
+      },
+      "modal_score_hit": false,
+      "cluster_hit": true,
+      "score_band_hit": true,
+      "result_distance_from_modal": "NOT_AVAILABLE",
+      "result_distance_reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm.",
+      "world_verdict": "PRIME",
+      "world_verdict_evidence": "PARTIAL_MATCH_DATA",
+      "world_audit_note": "The expected Arsenal control world realized strongly. The exact 3-0 score was inside the original four-score cluster.",
+      "failure_tags": []
+    },
+    {
+      "fixture": "Real Betis - Real Sociedad",
+      "competition": "La Liga",
+      "actual_result": "1-0",
+      "result_source": "Cadena SER",
+      "result_source_note": "Betis won 1-0 through Riquelme. Sociedad had periods of possession and late equalizing chances, while Betis grew into the match and defended the lead.",
+      "original_prediction": {
+        "world_type": "CONTROL_BUT_FRAGILE_HOME",
+        "prime_world": "Betis owns more field and chance volume, reaches 1-2 goals in the main corridor and forces Sociedad into longer defensive phases.",
+        "counterworld": "Matarazzo's structure reduces clear Betis chances and raises draw gravity; Sociedad's transition route keeps 1-1 alive.",
+        "modal_score": "2-1",
+        "four_score_cluster": [
+          "2-1",
+          "1-1",
+          "2-0",
+          "1-0"
+        ],
+        "score_band": "1-3",
+        "safe": "Betis O0.5 Team Goals",
+        "balanced": "DNB(1) Betis",
+        "aggressive": "Betis Win",
+        "favourite": "DNB(1) Betis",
+        "ampel": "YELLOW"
+      },
+      "settlement": {
+        "SAFE_RESULT": "HIT",
+        "BALANCED_RESULT": "HIT",
+        "AGGRESSIVE_RESULT": "HIT",
+        "FAVOURITE_RESULT": "HIT"
+      },
+      "modal_score_hit": false,
+      "cluster_hit": true,
+      "score_band_hit": true,
+      "result_distance_from_modal": "NOT_AVAILABLE",
+      "result_distance_reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm.",
+      "world_verdict": "MIXED",
+      "world_verdict_evidence": "PARTIAL_MATCH_DATA",
+      "world_audit_note": "Betis' home edge realized, while the tight game and Sociedad's late equalizer threat retained meaningful COUNTERWORLD influence. The exact 1-0 score was in the cluster.",
+      "failure_tags": []
+    }
+  ],
+  "kpis": {
+    "matches_settled": 3,
+    "safe_hit": 3,
+    "balanced_hit": 2,
+    "aggressive_hit": 3,
+    "favourite_hit": 2,
+    "favourite_miss": 0,
+    "favourite_push": 0,
+    "modal_score_hit": 0,
+    "cluster_hit": 2,
+    "score_band_hit": 3,
+    "world_verdict_distribution": {
+      "PRIME": 1,
+      "COUNTERWORLD": 0,
+      "MIXED": 2,
+      "NEITHER": 0,
+      "UNDETERMINED": 0
+    },
+    "safe_hit_rate": "100.0%",
+    "balanced_hit_rate": "66.7%",
+    "aggressive_hit_rate": "100.0%",
+    "favourite_hit_rate": "66.7%",
+    "modal_score_hit_rate": "0.0%",
+    "cluster_hit_rate": "66.7%",
+    "score_band_hit_rate": "100.0%"
+  },
+  "learning_conclusion": {
+    "norm_change_from_this_slate": "NO",
+    "reason": "Three matches are insufficient to justify a new normative calibration. The audit is diagnostic only.",
+    "primary_learning": "The structurally richer Favourite approach succeeded in 2/3 matches. The lone miss, Marseille BTTS Yes, coincided with a red-card shock and a blowout tail outside the cluster; Safe and Aggressive still hit.",
+    "arsenal_control": "The anti-triviality correction was validated in this match: Arsenal 1-3 Team Goals hit exactly at 3, while retaining more match information than Arsenal O0.5.",
+    "betis_control": "DNB(1) Betis hit and represented the intended home-edge-plus-draw-gravity structure; the actual 1-0 was in the cluster.",
+    "marseille_control": "BTTS Yes missed. The home-control component was right, but the Strasbourg scoring mechanism failed; the red card at 1-0 materially altered the path."
+  }
+}
