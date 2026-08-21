@@ -1,0 +1,870 @@
+{
+  "schema_version": "1.3",
+  "record_type": "run_record",
+  "run": {
+    "run_id": "RUN_2026-08-21_FOCUS_5_PLUS_UEFA_CEST_1610",
+    "snapshot_id": "RS_2026-08-21_1610_CEST_F5UEFA",
+    "snapshot_time": "2026-08-21T16:10:00+02:00",
+    "date": "2026-08-21",
+    "timezone": "Europe/Zurich",
+    "scope": [
+      "FOCUS_5_PLUS_UEFA"
+    ],
+    "build_mode": "FULL",
+    "audit_mode": false,
+    "run_status": "COMPLETE",
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "norm_versions": [
+      "N_ECOBET_MASTER_OS v1.3",
+      "N_ECOBET_DATA_FABRIC_AND_EBOOKS v1.5",
+      "N_ECOBET_FOOTBALL_AND_DECISION_ENGINE v1.0",
+      "N_ECOBET_OUTPUT_AND_AUDIT v1.3",
+      "N_ECOBET_TEAM_ID_REGISTRY v1.0",
+      "H_ECOBET_HISTORY_CALIBRATION v1.0",
+      "ECOBET run_record schema v1.3"
+    ],
+    "data_snapshot_status": "AVAILABLE",
+    "data_snapshot_id": "snap_20260821_030147",
+    "data_snapshot_date": "2026-08-21",
+    "data_snapshot_generated_at": "2026-08-21T03:01:47.800151+02:00",
+    "data_snapshot_data_cutoff": "2026-08-21T03:01:47.800151+02:00",
+    "data_snapshot_db_updated_at": "2026-08-21T03:00:02",
+    "data_snapshot_hash": "sha256:cf725633a4a1b94f5b59056705937501f4168904e3a8166bc6522f6e4e505fe3",
+    "data_snapshot_schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+    "data_snapshot_url": "https://giammaa87.github.io/ecobet/data/2026-08-21/snap_20260821_030147/manifest.json",
+    "rerun_parent": "RUN_2026-08-21_FOCUS_5_PLUS_UEFA_CEST_1158",
+    "rerun_scope": "FOOTBALL_DECISION_APPLICATION_ONLY",
+    "data_payload_reused_unchanged": true,
+    "numerical_p_raw_policy": {
+      "available": false,
+      "blocks_favourite_only_if_tiebreak_required": true,
+      "model_probability_band_when_unavailable": "NOT_AVAILABLE",
+      "model_price_band_when_unavailable": "NOT_AVAILABLE"
+    }
+  },
+  "matches": [
+    {
+      "fixture_id": "DISC_2abfe61b31e8",
+      "kickoff": "20:45",
+      "competition": "Ligue 1",
+      "competition_id": "FRA-Ligue 1",
+      "competition_name": "Ligue 1",
+      "competition_group": "DOMESTIC",
+      "competition_type": "domestic_league",
+      "display_order": 50,
+      "phase": "Round 1",
+      "home": "Marseille",
+      "away": "Strasbourg",
+      "data_snapshot_id": "snap_20260821_030147",
+      "data_snapshot_coverage": "FULL",
+      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+      "snapshot_fixture_missing": false,
+      "snapshot_team_features": {
+        "Marseille": 1000,
+        "Strasbourg": 1000
+      },
+      "match_core_status": "PARTIAL",
+      "data_readiness": "CONDITIONAL",
+      "world_type": "CONTROL_BUT_FRAGILE_HOME",
+      "world_stability": "STABLE",
+      "anchor": "Marseille's strong 2025/26 home production meets a Strasbourg away profile that remained productive but open; two summer coaching changes keep the home-control world fragile.",
+      "prime_world": "Marseille controls more territory and final-third volume, but Strasbourg keeps a credible transition/scoring route. A first goal expands the game.",
+      "counterworld": "Opening-day and regime uncertainty suppress conversion; Marseille controls more without full separation, preserving 1-0/1-1/2-0 states.",
+      "modal_score": "2-1",
+      "four_score_cluster": [
+        "2-1",
+        "2-2",
+        "3-1",
+        "1-1"
+      ],
+      "score_band": "2-4",
+      "candidates": [
+        {
+          "expression": "Marseille O0.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shocks": {
+            "S1": "HOLDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "LOW",
+          "status": "VALID"
+        },
+        {
+          "expression": "BTTS Yes",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 9,
+          "robustness": "MEDIUM",
+          "shocks": {
+            "S1": "HOLDS",
+            "S2": "BENDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "expression": "Match Goals 2-4",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "TAIL_EXPOSURE_HIGH"
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "shocks": {
+            "S1": "HOLDS",
+            "S2": "BENDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "expression": "Marseille DNB(1)",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "shocks": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "expression": "Over 1.5",
+          "axis": "TOTAL",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "shocks": {
+            "S1": "HOLDS",
+            "S2": "BENDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "expression": "Marseille O1.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 7,
+          "robustness": "LOW",
+          "shocks": {
+            "S1": "BENDS",
+            "S2": "BREAKS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "HIGH",
+          "status": "VALID"
+        }
+      ],
+      "safe": "Marseille O0.5 Team Goals",
+      "balanced": "BTTS Yes",
+      "aggressive": "Marseille O1.5 Team Goals",
+      "favourite": "BTTS Yes",
+      "favourite_decision_reason": "BTTS Yes is the most informative robust renderer of the model: all four Prime cluster scores contain goals by both teams, and Strasbourg's own scoring path is a central match-specific finding rather than a generic safety shell.",
+      "why_not_safest_candidate": "Marseille O0.5 Team Goals is more robust but too broad (F=1). It preserves less of the actual model information than BTTS Yes, which directly renders the two-sided scoring mechanism.",
+      "favourite_specificity": "MEDIUM",
+      "favourite_cluster_coverage": "4/4",
+      "favourite_robustness": "MEDIUM",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "no_stable_prediction": "NO",
+      "exact_nsp_reason": "NOT_APPLICABLE",
+      "ampel": "YELLOW",
+      "flags": [
+        "DATA_CONDITIONAL",
+        "LOW_SAMPLE",
+        "CONTROL_BUT_FRAGILE",
+        "STATE_SENSITIVE"
+      ],
+      "nsp_codes": [],
+      "confirmation_status": "NOT_APPLICABLE",
+      "board_status": "COMMITTED",
+      "commit_status": "COMMITTED",
+      "commit_time": "2026-08-21T16:10:00+02:00",
+      "match_validation": "PASS_WITH_LIMITS",
+      "data_fabric_summary": {
+        "Marseille": [
+          "Snapshot shard 1000 features",
+          "2025/26 home PPG 2.18",
+          "Home GF 2.41 / GA 1.18",
+          "Current: Genesio regime; Timber/Koum suspended"
+        ],
+        "Strasbourg": [
+          "Snapshot shard 1000 features",
+          "2025/26 away PPG 1.35",
+          "Away GF 1.65 / GA 1.65",
+          "Current: Hugo Oliveira regime; Panichelli injured"
+        ]
+      },
+      "repair_summary": [
+        "Snapshot binding and both team shards retained unchanged from 11:58.",
+        "Current-state repair retained unchanged from 11:58.",
+        "Decision-only rerun: Prediction Map expanded across TG/BTTS/RANGE/DIR/TOTAL."
+      ],
+      "decision_paths": {
+        "safe": {
+          "expression": "Marseille O0.5 Team Goals",
+          "robustness": "HIGH",
+          "cluster_coverage": "4/4"
+        },
+        "balanced": {
+          "expression": "BTTS Yes",
+          "robustness": "MEDIUM",
+          "cluster_coverage": "4/4"
+        },
+        "aggressive": {
+          "expression": "Marseille O1.5 Team Goals",
+          "robustness": "LOW",
+          "cluster_coverage": "3/4"
+        }
+      },
+      "favourite_decision_audit": {
+        "favourite_prediction": "BTTS Yes",
+        "decision_quality_score": 9,
+        "world_coherence": "HIGH",
+        "information_content": "HIGH",
+        "numerical_p_raw_available": false,
+        "p_raw_tiebreak_required": false,
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "anti_triviality_guard": "PASS",
+        "reason": "BTTS Yes is the most informative robust renderer of the model: all four Prime cluster scores contain goals by both teams, and Strasbourg's own scoring path is a central match-specific finding rather than a generic safety shell."
+      }
+    },
+    {
+      "fixture_id": "FX2627_d6ee421d632e",
+      "kickoff": "21:00",
+      "competition": "Premier League",
+      "competition_id": "ENG-Premier League",
+      "competition_name": "Premier League",
+      "competition_group": "DOMESTIC",
+      "competition_type": "domestic_league",
+      "display_order": 10,
+      "phase": "Round 1",
+      "home": "Arsenal",
+      "away": "Coventry City",
+      "data_snapshot_id": "snap_20260821_030147",
+      "data_snapshot_coverage": "PARTIAL",
+      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+      "snapshot_fixture_missing": false,
+      "snapshot_team_features": {
+        "Arsenal": 1000,
+        "Coventry City": 0
+      },
+      "match_core_status": "PARTIAL",
+      "data_readiness": "CONDITIONAL",
+      "world_type": "CONTROL_HOME",
+      "world_stability": "STABLE",
+      "anchor": "Arsenal's 2025/26 home control and defensive suppression meets a promoted Coventry side whose 95-point Championship season is strong but measured at a lower opponent level; Arsenal also carries a one-match current signal from the 3-0 Community Shield.",
+      "prime_world": "Arsenal controls ball and territory and creates enough repeatable box entries for 2-3 own goals; Coventry retains isolated transition/set-piece routes.",
+      "counterworld": "Opening-day variance and Arsenal defensive availability keep separation smaller, extending a 1-0/1-1 corridor.",
+      "modal_score": "2-0",
+      "four_score_cluster": [
+        "2-0",
+        "3-0",
+        "2-1",
+        "1-0"
+      ],
+      "score_band": "1-3",
+      "candidates": [
+        {
+          "expression": "Arsenal O0.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shocks": {
+            "S1": "HOLDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "LOW",
+          "status": "VALID"
+        },
+        {
+          "expression": "Arsenal 1-3 Team Goals",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 9,
+          "robustness": "MEDIUM",
+          "shocks": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "expression": "Arsenal Win",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "shocks": {
+            "S1": "BENDS",
+            "S2": "BENDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "expression": "Match Goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "shocks": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "expression": "BTTS No",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 2,
+          "F": 2,
+          "R": 1,
+          "D": 1,
+          "penalties": [
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 5,
+          "robustness": "LOW",
+          "shocks": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BREAKS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "expression": "Arsenal O1.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 7,
+          "robustness": "LOW",
+          "shocks": {
+            "S1": "BENDS",
+            "S2": "BREAKS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "HIGH",
+          "status": "VALID"
+        }
+      ],
+      "safe": "Arsenal O0.5 Team Goals",
+      "balanced": "Arsenal 1-3 Team Goals",
+      "aggressive": "Arsenal O1.5 Team Goals",
+      "favourite": "Arsenal 1-3 Team Goals",
+      "favourite_decision_reason": "Arsenal 1-3 Team Goals keeps 4/4 cluster coverage while encoding the expected scoring magnitude, not merely the existence of one Arsenal goal. It survives both clean-sheet and Coventry-scoring variants and is more informative than the safe O0.5 shell.",
+      "why_not_safest_candidate": "Arsenal O0.5 Team Goals is the robust Safe Path, but its Fit is deliberately low because it discards the model's 1-3 scoring corridor. The 1-3 range retains all four cluster scores without requiring a clean sheet or exact win margin.",
+      "favourite_specificity": "MEDIUM",
+      "favourite_cluster_coverage": "4/4",
+      "favourite_robustness": "MEDIUM",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "no_stable_prediction": "NO",
+      "exact_nsp_reason": "NOT_APPLICABLE",
+      "ampel": "YELLOW",
+      "flags": [
+        "DATA_CONDITIONAL",
+        "LOW_SAMPLE",
+        "SOURCE_MIXED",
+        "STATE_SENSITIVE"
+      ],
+      "nsp_codes": [],
+      "confirmation_status": "NOT_APPLICABLE",
+      "board_status": "COMMITTED",
+      "commit_status": "COMMITTED",
+      "commit_time": "2026-08-21T16:10:00+02:00",
+      "match_validation": "PASS_WITH_LIMITS",
+      "data_fabric_summary": {
+        "Arsenal": [
+          "Snapshot shard 1000 features",
+          "2025/26 home PPG 2.47",
+          "Home GF 2.16 / GA 0.58",
+          "Current competitive sample: Community Shield 3-0; sample=1"
+        ],
+        "Coventry City": [
+          "Snapshot shard exists but 0 features",
+          "2025/26 Championship champions: 95 pts, 97:45",
+          "Away historical PPG 1.74",
+          "Gap repaired only for Coventry; no invented Premier League process"
+        ]
+      },
+      "repair_summary": [
+        "Arsenal snapshot features retained unchanged from 11:58.",
+        "Coventry 0-feature snapshot gap retained and remains a CONDITIONAL uncertainty.",
+        "Decision-only rerun: Prediction Map expanded across TG/RANGE/DIR/BTTS."
+      ],
+      "decision_paths": {
+        "safe": {
+          "expression": "Arsenal O0.5 Team Goals",
+          "robustness": "HIGH",
+          "cluster_coverage": "4/4"
+        },
+        "balanced": {
+          "expression": "Arsenal 1-3 Team Goals",
+          "robustness": "MEDIUM",
+          "cluster_coverage": "4/4"
+        },
+        "aggressive": {
+          "expression": "Arsenal O1.5 Team Goals",
+          "robustness": "LOW",
+          "cluster_coverage": "3/4"
+        }
+      },
+      "favourite_decision_audit": {
+        "favourite_prediction": "Arsenal 1-3 Team Goals",
+        "decision_quality_score": 9,
+        "world_coherence": "HIGH",
+        "information_content": "HIGH",
+        "numerical_p_raw_available": false,
+        "p_raw_tiebreak_required": false,
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "anti_triviality_guard": "PASS",
+        "reason": "Arsenal 1-3 Team Goals keeps 4/4 cluster coverage while encoding the expected scoring magnitude, not merely the existence of one Arsenal goal. It survives both clean-sheet and Coventry-scoring variants and is more informative than the safe O0.5 shell."
+      }
+    },
+    {
+      "fixture_id": "DISC_bb102bb1044b",
+      "kickoff": "21:00",
+      "competition": "La Liga",
+      "competition_id": "ESP-La Liga",
+      "competition_name": "La Liga",
+      "competition_group": "DOMESTIC",
+      "competition_type": "domestic_league",
+      "display_order": 30,
+      "phase": "Round 2",
+      "home": "Real Betis",
+      "away": "Real Sociedad",
+      "data_snapshot_id": "snap_20260821_030147",
+      "data_snapshot_coverage": "FULL",
+      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+      "snapshot_fixture_missing": false,
+      "snapshot_team_features": {
+        "Real Betis": 1000,
+        "Real Sociedad": 1000
+      },
+      "match_core_status": "PARTIAL",
+      "data_readiness": "CONDITIONAL",
+      "world_type": "CONTROL_BUT_FRAGILE_HOME",
+      "world_stability": "STABLE",
+      "anchor": "Betis' 2025/26 home split (10-6-3, 34:19) meets Sociedad's weak away split (3-8-8, 22:30), while Matarazzo's stabilized regime keeps genuine draw gravity alive.",
+      "prime_world": "Betis owns more field and chance volume, reaches 1-2 goals in the main corridor and forces Sociedad into longer defensive phases.",
+      "counterworld": "Matarazzo's structure reduces clear Betis chances and raises draw gravity; Sociedad's transition route keeps 1-1 alive.",
+      "modal_score": "2-1",
+      "four_score_cluster": [
+        "2-1",
+        "1-1",
+        "2-0",
+        "1-0"
+      ],
+      "score_band": "1-3",
+      "candidates": [
+        {
+          "expression": "Betis O0.5 Team Goals",
+          "axis": "TG",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 1,
+          "R": 3,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 8,
+          "robustness": "HIGH",
+          "shocks": {
+            "S1": "HOLDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "LOW",
+          "status": "VALID"
+        },
+        {
+          "expression": "DNB(1) Betis",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "shocks": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "VERY_HIGH",
+          "information_content": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "expression": "Betis 1-3 Team Goals",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE"
+          ],
+          "score_total": 8,
+          "robustness": "MEDIUM",
+          "shocks": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "HIGH",
+          "status": "VALID"
+        },
+        {
+          "expression": "Match Goals 1-3",
+          "axis": "RANGE",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "4/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 2,
+          "R": 2,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 7,
+          "robustness": "MEDIUM",
+          "shocks": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "expression": "BTTS No",
+          "axis": "BTTS",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "2/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 2,
+          "F": 2,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 6,
+          "robustness": "LOW",
+          "shocks": {
+            "S1": "BENDS",
+            "S2": "HOLDS",
+            "S3": "BREAKS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "MEDIUM",
+          "status": "VALID"
+        },
+        {
+          "expression": "Betis Win",
+          "axis": "DIR",
+          "world": "PRIME_WORLD",
+          "cluster_coverage": "3/4",
+          "p_raw": "NOT_AVAILABLE",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 2,
+          "penalties": [
+            "LOW_SAMPLE",
+            "STATE_SENSITIVE"
+          ],
+          "score_total": 7,
+          "robustness": "LOW",
+          "shocks": {
+            "S1": "BENDS",
+            "S2": "BREAKS",
+            "S3": "BENDS"
+          },
+          "world_coherence": "HIGH",
+          "information_content": "HIGH",
+          "status": "VALID"
+        }
+      ],
+      "safe": "Betis O0.5 Team Goals",
+      "balanced": "DNB(1) Betis",
+      "aggressive": "Betis Win",
+      "favourite": "DNB(1) Betis",
+      "favourite_decision_reason": "DNB(1) Betis is the best structural renderer because it combines the home-control edge with the model's real draw gravity. It covers all four cluster states as win-or-push and reflects both PRIME_WORLD and COUNTERWORLD better than a generic team-goal floor.",
+      "why_not_safest_candidate": "Betis O0.5 Team Goals is safer, but too broad to express the decisive home-vs-draw structure. DNB(1) preserves that structure without overreaching to a pure Betis Win.",
+      "favourite_specificity": "MEDIUM",
+      "favourite_cluster_coverage": "4/4 (3 wins + 1 push state)",
+      "favourite_robustness": "MEDIUM",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "no_stable_prediction": "NO",
+      "exact_nsp_reason": "NOT_APPLICABLE",
+      "ampel": "YELLOW",
+      "flags": [
+        "DATA_CONDITIONAL",
+        "LOW_SAMPLE",
+        "DRAW_GRAVITY_HIGH",
+        "STATE_SENSITIVE"
+      ],
+      "nsp_codes": [],
+      "confirmation_status": "NOT_APPLICABLE",
+      "board_status": "COMMITTED",
+      "commit_status": "COMMITTED",
+      "commit_time": "2026-08-21T16:10:00+02:00",
+      "match_validation": "PASS_WITH_LIMITS",
+      "data_fabric_summary": {
+        "Real Betis": [
+          "Snapshot shard 1000 features",
+          "2025/26 home 10-6-3, 34:19, PPG 1.89",
+          "Current league sample 0 before target",
+          "Pellegrini continuity"
+        ],
+        "Real Sociedad": [
+          "Snapshot shard 1000 features",
+          "2025/26 away 3-8-8, 22:30, PPG 0.89",
+          "Current league sample 0 before target",
+          "Matarazzo continuity after Copa success"
+        ]
+      },
+      "repair_summary": [
+        "Both 1000-feature snapshot shards retained unchanged from 11:58.",
+        "Round-1 postponement/current-state checks retained unchanged.",
+        "Decision-only rerun: Prediction Map expanded across TG/DIR/RANGE/BTTS."
+      ],
+      "decision_paths": {
+        "safe": {
+          "expression": "Betis O0.5 Team Goals",
+          "robustness": "HIGH",
+          "cluster_coverage": "4/4"
+        },
+        "balanced": {
+          "expression": "DNB(1) Betis",
+          "robustness": "MEDIUM",
+          "cluster_coverage": "4/4"
+        },
+        "aggressive": {
+          "expression": "Betis Win",
+          "robustness": "LOW",
+          "cluster_coverage": "3/4"
+        }
+      },
+      "favourite_decision_audit": {
+        "favourite_prediction": "DNB(1) Betis",
+        "decision_quality_score": 8,
+        "world_coherence": "VERY_HIGH",
+        "information_content": "HIGH",
+        "numerical_p_raw_available": false,
+        "p_raw_tiebreak_required": false,
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "anti_triviality_guard": "PASS",
+        "reason": "DNB(1) Betis is the best structural renderer because it combines the home-control edge with the model's real draw gravity. It covers all four cluster states as win-or-push and reflects both PRIME_WORLD and COUNTERWORLD better than a generic team-goal floor."
+      }
+    }
+  ],
+  "proof_of_work": {
+    "fixtures_found": 3,
+    "scope_matches": 3,
+    "matches_committed": 3,
+    "silent_exclusions": 0,
+    "no_stable_prediction_count": 0,
+    "favourite_prediction_count": 3,
+    "data_snapshot_status": "AVAILABLE",
+    "data_snapshot_id": "snap_20260821_030147",
+    "snapshot_fixture_count": 3,
+    "snapshot_team_count": 6,
+    "matches_using_snapshot_data": 3,
+    "matches_using_snapshot_plus_repair": 3,
+    "matches_full_web_fallback": 0,
+    "source_mode_distribution": {
+      "SNAPSHOT": 0,
+      "SNAPSHOT_PLUS_REPAIR": 3,
+      "WEB_FALLBACK": 0
+    },
+    "readiness_distribution": {
+      "READY": 0,
+      "CONDITIONAL": 3,
+      "NOT_READY": 0
+    },
+    "ampel_distribution": {
+      "GREEN": 0,
+      "YELLOW": 3,
+      "RED": 0
+    },
+    "numerical_p_raw_available_count": 0,
+    "p_raw_tiebreak_required_count": 0,
+    "model_probability_band_available_count": 0,
+    "model_price_band_available_count": 0,
+    "real_odds_used_as_input": 0,
+    "tickets_created": "NO",
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "rerun_type": "DECISION_APPLICATION_CORRECTION_ONLY",
+    "upstream_data_changed": false,
+    "norm_files_changed": false
+  }
+}
