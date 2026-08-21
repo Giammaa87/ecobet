@@ -1,0 +1,4372 @@
+{
+  "serialization_note": "Audit JSON derived from N_ECOBET_OUTPUT_AND_AUDIT_v1.3 RUN_AUDIT_RECORD / MATCH_AUDIT_RECORD semantics. No dedicated settlement_record schema was loaded, so this file does not claim a separate settlement schema version.",
+  "audit_generated_at": "2026-08-21T00:15:00+02:00",
+  "original_run_immutable": true,
+  "run_audit_record": {
+    "record_type": "RUN_AUDIT_RECORD",
+    "run_id": "RUN_2026-08-20_FOCUS_5_PLUS_UEFA_CEST_1342",
+    "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+    "source_run_record": {
+      "filename": "2026-08-20_1342.json",
+      "sha256": "d0d127b6fed8cdb643a24748ac49c87e2e1a4122b0842fb90de8de87022235d6",
+      "immutability": "UNCHANGED",
+      "sha256_after_audit": "d0d127b6fed8cdb643a24748ac49c87e2e1a4122b0842fb90de8de87022235d6",
+      "original_run_mutated_by_audit": false
+    },
+    "data_snapshot_provenance": {
+      "data_snapshot_status": "AVAILABLE",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_date": "2026-08-20",
+      "data_snapshot_generated_at": "2026-08-20T03:01:39.975855+02:00",
+      "data_snapshot_data_cutoff": "2026-08-20T03:01:39.975855+02:00",
+      "data_snapshot_db_updated_at": "2026-08-20T03:00:02+02:00",
+      "data_snapshot_hash": "sha256:5c0d7362af63e07c081f471e4c02e6e1879e6168300b89d0f9baaf61870092b3",
+      "data_snapshot_schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+      "data_snapshot_resolution_url": "https://giammaa87.github.io/ecobet/data/2026-08-20/latest.json",
+      "data_snapshot_url": "https://giammaa87.github.io/ecobet/data/2026-08-20/snap_20260820_030139/manifest.json"
+    },
+    "fixture_reconciliation_summary": "37/37 locked fixtures independently revalidated; stale draw placeholders rejected. Snapshot still contains 0 fixtures.",
+    "source_mode_distribution": {
+      "WEB_FALLBACK": 37
+    },
+    "date_range": {
+      "from": "2026-08-20",
+      "to": "2026-08-20"
+    },
+    "timezone": "Europe/Zurich",
+    "scope": "FOCUS_5_PLUS_UEFA",
+    "norm_versions": [
+      "N_ECOBET_MASTER_OS_v1.3",
+      "N_ECOBET_DATA_FABRIC_AND_EBOOKS_v1.5",
+      "N_ECOBET_FOOTBALL_AND_DECISION_ENGINE_v1.0",
+      "N_ECOBET_OUTPUT_AND_AUDIT_v1.3",
+      "N_ECOBET_TEAM_ID_REGISTRY_v1.0",
+      "H_ECOBET_HISTORY_CALIBRATION_v1.0",
+      "ECOBET_SCHEMA_01_run_record_v1.3"
+    ],
+    "match_counts": {
+      "scope": 37,
+      "committed": 37,
+      "results_confirmed": 37,
+      "favourite_released": 32,
+      "nsp": 5
+    },
+    "readiness_distribution": {
+      "CONDITIONAL": 36,
+      "NOT_READY": 1
+    },
+    "world_stability_distribution": {
+      "STABLE": 32,
+      "UNKNOWN": 5
+    },
+    "ampel_distribution": {
+      "YELLOW": 32,
+      "RED": 5
+    },
+    "nsp_count": 5,
+    "result_settlement_status": "COMPLETE",
+    "model_kpis": {
+      "favourite": {
+        "HIT": 21,
+        "MISS": 11,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 65.6
+      },
+      "safe": {
+        "HIT": 22,
+        "MISS": 10,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 68.8
+      },
+      "balanced": {
+        "HIT": 23,
+        "MISS": 9,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 71.9
+      },
+      "aggressive": {
+        "HIT": 15,
+        "MISS": 17,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 46.9
+      },
+      "modal_score": {
+        "hits": 3,
+        "total": 36,
+        "hit_rate_percent": 8.3
+      },
+      "four_score_cluster": {
+        "hits": 9,
+        "total": 36,
+        "hit_rate_percent": 25.0
+      },
+      "score_band": {
+        "hits": 17,
+        "total": 36,
+        "hit_rate_percent": 47.2
+      },
+      "world_verdict_distribution": {
+        "PRIME": 13,
+        "COUNTERWORLD": 10,
+        "MIXED": 8,
+        "NEITHER": 1,
+        "UNDETERMINED": 5
+      },
+      "market_family_favourite": {
+        "TEAM_GOALS": {
+          "HIT": 13,
+          "MISS": 5,
+          "PUSH": 0,
+          "VOID": 0,
+          "UNSETTLED": 0,
+          "UNMAPPABLE": 0,
+          "hit_rate_percent": 72.2
+        },
+        "TOTALS": {
+          "HIT": 3,
+          "MISS": 2,
+          "PUSH": 0,
+          "VOID": 0,
+          "UNSETTLED": 0,
+          "UNMAPPABLE": 0,
+          "hit_rate_percent": 60.0
+        },
+        "DIRECTION": {
+          "HIT": 4,
+          "MISS": 1,
+          "PUSH": 0,
+          "VOID": 0,
+          "UNSETTLED": 0,
+          "UNMAPPABLE": 0,
+          "hit_rate_percent": 80.0
+        },
+        "BTTS": {
+          "HIT": 1,
+          "MISS": 3,
+          "PUSH": 0,
+          "VOID": 0,
+          "UNSETTLED": 0,
+          "UNMAPPABLE": 0,
+          "hit_rate_percent": 25.0
+        }
+      },
+      "yellow_favourite_hit_rate_percent": 65.6,
+      "yellow_cluster_hit_rate_percent": 21.9
+    },
+    "renderer_rerun_result_comparison": {
+      "status": "AVAILABLE",
+      "changed_fixture_count": 9,
+      "previous_changed_subset_hits": 4,
+      "rerun_changed_subset_hits": 5,
+      "previous_changed_subset_hit_rate_percent": 44.4,
+      "rerun_changed_subset_hit_rate_percent": 55.6,
+      "net_hit_change": 1,
+      "matches": [
+        {
+          "fixture": "Trabzonspor – Ferencváros",
+          "previous_favourite": "Trabzonspor team Over 0.5 goals",
+          "previous_result": "MISS",
+          "rerun_favourite": "1X",
+          "rerun_result": "MISS"
+        },
+        {
+          "fixture": "Beşiktaş – Kauno Žalgiris",
+          "previous_favourite": "Beşiktaş team Over 0.5 goals",
+          "previous_result": "HIT",
+          "rerun_favourite": "1",
+          "rerun_result": "HIT"
+        },
+        {
+          "fixture": "Tromsø – Brighton",
+          "previous_favourite": "Over 1.5 goals",
+          "previous_result": "MISS",
+          "rerun_favourite": "BTTS Yes",
+          "rerun_result": "MISS"
+        },
+        {
+          "fixture": "Nordsjælland – St. Gallen",
+          "previous_favourite": "Over 1.5 goals",
+          "previous_result": "MISS",
+          "rerun_favourite": "BTTS Yes",
+          "rerun_result": "MISS"
+        },
+        {
+          "fixture": "KÍ Klaksvík – Riga",
+          "previous_favourite": "Riga team Over 0.5 goals",
+          "previous_result": "MISS",
+          "rerun_favourite": "X2",
+          "rerun_result": "HIT"
+        },
+        {
+          "fixture": "PAOK – Brann",
+          "previous_favourite": "PAOK team Over 0.5 goals",
+          "previous_result": "HIT",
+          "rerun_favourite": "1X",
+          "rerun_result": "HIT"
+        },
+        {
+          "fixture": "Sion – Ajax",
+          "previous_favourite": "Over 1.5 goals",
+          "previous_result": "HIT",
+          "rerun_favourite": "BTTS Yes",
+          "rerun_result": "HIT"
+        },
+        {
+          "fixture": "Hearts – SK Rapid",
+          "previous_favourite": "SK Rapid team Over 0.5 goals",
+          "previous_result": "HIT",
+          "rerun_favourite": "X2",
+          "rerun_result": "HIT"
+        },
+        {
+          "fixture": "Rangers – Jablonec",
+          "previous_favourite": "Over 1.5 goals",
+          "previous_result": "MISS",
+          "rerun_favourite": "BTTS Yes",
+          "rerun_result": "MISS"
+        }
+      ]
+    },
+    "data_integrity_flags": [
+      "ALL_37_RESULTS_CONFIRMED",
+      "WORLD_VERDICTS_USE_RESULT_ONLY_EVIDENCE",
+      "RESULT_DISTANCE_FROM_MODAL_FORMULA_NOT_DEFINED_IN_LOADED_NORM",
+      "NSP_EXCLUDED_FROM_FAVOURITE_AND_PATH_HIT_RATES"
+    ],
+    "notes": [
+      "Original Football Interpretation, PRIME_WORLD, COUNTERWORLD, Four-Score Cluster, Favourite, probability band, model price band and Ampel were not modified.",
+      "Five NO_STABLE_PREDICTION records are not treated as hits or misses.",
+      "World Verdicts are RESULT_ONLY and therefore describe only score-pattern compatibility, not the detailed match process.",
+      "One 37-match slate is not sufficient for an automatic normative or calibration change."
+    ]
+  },
+  "match_audit_records": [
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-20-KAIRAT-ALMATY-ANDERLECHT",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "17:00",
+        "home": "Kairat Almaty",
+        "away": "Anderlecht",
+        "competition": "UEFA Europa League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 1
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_BUT_FRAGILE_AWAY",
+        "anchor": "Anderlecht’s stronger recent European output and chance process meet a Kairat side with a strong home production profile; away control is plausible, but Kairat’s home scoring path keeps the controller fragile.",
+        "prime_world": "PRIME_WORLD — Anderlecht own more of the ball-and-chance territory, but Kairat repeatedly reach enough home final-third volume to prevent one-sided control. A 1–2 goal Anderlecht path is strongest; an early Kairat goal opens the game rather than killing it.",
+        "counterworld": "COUNTERWORLD — Kairat compress the first leg into a lower-tempo home block, Anderlecht’s travel/availability friction slows creation, and the match remains level or one-goal deep into the second half.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "1:2",
+          "2:1",
+          "0:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Anderlecht team Over 0.5 goals",
+          "X2",
+          "2",
+          "Anderlecht team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Anderlecht team Over 0.5 goals",
+        "balanced": "X2",
+        "aggressive": "Anderlecht team Over 1.5 goals",
+        "favourite_prediction": "Anderlecht team Over 0.5 goals",
+        "model_probability_band": "75–89%",
+        "model_price_band": "1.12–1.33",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "CONTROL_BUT_FRAGILE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T07:15:10+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-3",
+        "competition_final_score": "0-3",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Europa League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a6-20e5db0029dd-8241a8d00925-1000--europa-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-3 preserves part of the committed PRIME_WORLD mechanism but departs materially on direction, total width or the second scoring path.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "BLOWOUT_TAIL_MISSED",
+        "WORLD_TOO_NARROW"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-20-JAGIELLONIA-BIALYSTOK-IBERIA-1999",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "18:00",
+        "home": "Jagiellonia Białystok",
+        "away": "Iberia 1999",
+        "competition": "UEFA Europa League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 2
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "GOALS_CLOSED",
+        "anchor": "The first-leg context combines with Iberia’s recent low-event European tie and Jagiellonia’s controlled two-leg win over Rangers; neither side’s available process evidence supports an automatic high-tempo opening.",
+        "prime_world": "PRIME_WORLD — Jagiellonia hold more territory at home but attack patiently; Iberia protect central space and accept long scoreless stretches. The home side’s clearest route is a one- or two-goal win rather than sustained transition chaos.",
+        "counterworld": "COUNTERWORLD — An Iberia first goal or an early Jagiellonia turnover forces the home side to accelerate, creating a more open second half with both teams reaching the box more often.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "1:1",
+          "2:0",
+          "0:0"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Under 3.5 goals",
+          "Under 2.5 goals",
+          "BTTS No",
+          "Match goals 1-3"
+        ],
+        "safe": "Under 4.5 goals",
+        "balanced": "Under 3.5 goals",
+        "aggressive": "Under 2.5 goals",
+        "favourite_prediction": "Under 3.5 goals",
+        "model_probability_band": "71–85%",
+        "model_price_band": "1.18–1.41",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "LOW_EVENT_SIGNATURE",
+          "KO_STATE_DEPENDENT",
+          "DRAW_GRAVITY_HIGH"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T07:15:20+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "4-0",
+        "competition_final_score": "4-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Europa League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a6-20e5db0029dd-8241a8d00925-1000--europa-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "4-0 preserves part of the committed PRIME_WORLD mechanism but departs materially on direction, total width or the second scoring path.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "RIGHT_WORLD_WRONG_RENDERER",
+        "UNDER_TOO_TIGHT",
+        "BLOWOUT_TAIL_MISSED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-20-MJALLBY-SALZBURG",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "18:00",
+        "home": "Mjällby",
+        "away": "Salzburg",
+        "competition": "UEFA Europa League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 3
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_BUT_FRAGILE_AWAY",
+        "anchor": "Salzburg’s current 25.33 shots, 9.67 SOT and 2.79 xG per domestic match create a materially stronger chance-volume path against a Mjällby profile allowing 1.67 xGA; Mjällby’s home production keeps the away controller fragile.",
+        "prime_world": "PRIME_WORLD — Salzburg establish the higher shot and territory ceiling and generate repeated box entries. Mjällby remain live on transition and set-piece phases, so the away side’s control does not imply a clean-sheet world.",
+        "counterworld": "COUNTERWORLD — Mjällby’s compact home structure disrupts Salzburg’s first phase and converts one of the limited transition windows, pulling the tie toward 1:1 or a narrow home upset.",
+        "modal_score": "1:2",
+        "four_score_cluster": [
+          "1:2",
+          "1:1",
+          "0:2",
+          "2:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Salzburg team Over 0.5 goals",
+          "X2",
+          "2",
+          "Salzburg team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Salzburg team Over 0.5 goals",
+        "balanced": "X2",
+        "aggressive": "Salzburg team Over 1.5 goals",
+        "favourite_prediction": "Salzburg team Over 0.5 goals",
+        "model_probability_band": "79–93%",
+        "model_price_band": "1.08–1.27",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_SAMPLE",
+          "CONTROL_BUT_FRAGILE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T07:15:30+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-1",
+        "competition_final_score": "0-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Europa League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a6-20e5db0029dd-8241a8d00925-1000--europa-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-1 is score-compatible with the central mechanism of PRIME_WORLD, although the exact cluster tail differs.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-LINCOLN-RED-IMPS-LARNE",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "18:00",
+        "home": "Lincoln Red Imps",
+        "away": "Larne",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 4
+      },
+      "committed_model": {
+        "data_readiness": "NOT_READY",
+        "match_core_status": "RESTRICTED",
+        "world_type": "NOT_AVAILABLE",
+        "anchor": "NOT_AVAILABLE",
+        "prime_world": "NOT_AVAILABLE — Data Gate failed; no downstream football world is reconstructed.",
+        "counterworld": "NOT_AVAILABLE — Data Gate failed; no downstream football world is reconstructed.",
+        "modal_score": "NOT_AVAILABLE",
+        "four_score_cluster": [],
+        "score_band": "NOT_AVAILABLE",
+        "prediction_map": [],
+        "safe": "NOT_AVAILABLE",
+        "balanced": "NOT_AVAILABLE",
+        "aggressive": "NOT_AVAILABLE",
+        "favourite_prediction": "NO_STABLE_PREDICTION",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "robustness": "NOT_AVAILABLE",
+        "ampel": "RED",
+        "flags": [
+          "DATA_NOT_READY",
+          "PATH_NOT_AVAILABLE",
+          "RESTRICTED_SCORE_CLUSTER"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T07:15:40+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-2",
+        "competition_final_score": "0-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "NOT_AVAILABLE",
+        "balanced_result": "NOT_AVAILABLE",
+        "aggressive_result": "NOT_AVAILABLE",
+        "favourite_result": "NOT_AVAILABLE",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": null,
+        "cluster_hit": null,
+        "score_band_hit": null,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "The committed model intentionally withheld a stable prediction/world decision or failed the relevant gate; RESULT_ONLY evidence is insufficient to select PRIME_WORLD or COUNTERWORLD retrospectively.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": [
+        "NSP_EXCLUDED_FROM_FAVOURITE_HIT_RATE",
+        "DATA_GATE_NSP_NO_SCORE_CLUSTER"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-INTER-TURKU-FC-COPENHAGEN",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "18:00",
+        "home": "Inter Turku",
+        "away": "FC Copenhagen",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 5
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_AWAY",
+        "anchor": "Copenhagen’s stronger current all-competition scoring output and away role process meet an Inter side that is structurally sound at home but concedes a larger chance-quality ceiling than Copenhagen are currently producing.",
+        "prime_world": "PRIME_WORLD — Copenhagen control more territory and generate the clearer repeated scoring path, while Inter’s home process is strong enough to create counters and prevent a one-sided tempo.",
+        "counterworld": "COUNTERWORLD — Inter’s 1.86 home xG / 0.84 home xGA domestic profile absorbs Copenhagen’s first wave and turns the tie into a balanced 1:1 or narrow home result.",
+        "modal_score": "1:2",
+        "four_score_cluster": [
+          "1:2",
+          "1:1",
+          "0:2",
+          "2:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "FC Copenhagen team Over 0.5 goals",
+          "X2",
+          "2",
+          "FC Copenhagen team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "FC Copenhagen team Over 0.5 goals",
+        "balanced": "X2",
+        "aggressive": "FC Copenhagen team Over 1.5 goals",
+        "favourite_prediction": "FC Copenhagen team Over 0.5 goals",
+        "model_probability_band": "83–93%",
+        "model_price_band": "1.08–1.20",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T07:15:50+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-0",
+        "competition_final_score": "0-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-0 is more score-compatible with the committed COUNTERWORLD mechanism than with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED",
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-20-TRABZONSPOR-FERENCVAROS",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "19:00",
+        "home": "Trabzonspor",
+        "away": "Ferencváros",
+        "competition": "UEFA Europa League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 6
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME_FRAGILE",
+        "anchor": "Trabzonspor's fresh 1:1 league opener and Ferencváros' current European resistance point to home initiative without clean one-sided control.",
+        "prime_world": "PRIME_WORLD — Trabzonspor establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Ferencváros slows the first leg, protects central zones and makes Trabzonspor's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "1X",
+          "Trabzonspor team Over 0.5 goals",
+          "1",
+          "Match goals 1-3",
+          "Trabzonspor team Over 1.5 goals"
+        ],
+        "safe": "Trabzonspor team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "1",
+        "favourite_prediction": "1X",
+        "model_probability_band": "67–85%",
+        "model_price_band": "1.18–1.49",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "LOW_SAMPLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:00:35+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-1",
+        "competition_final_score": "0-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Europa League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a6-20e5db0029dd-8241a8d00925-1000--europa-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-1 is more score-compatible with the committed COUNTERWORLD mechanism than with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "DIRECTION_OVERREACH",
+        "STALL_RISK_MISSED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-20-UNIVERSITATEA-CRAIOVA-ARARAT-ARMENIA",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "19:00",
+        "home": "Universitatea Craiova",
+        "away": "Ararat-Armenia",
+        "competition": "UEFA Europa League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 7
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME",
+        "anchor": "Craiova's current domestic shot volume and repeated European scoring path are the clearest stable mechanism against an Ararat-Armenia side that has conceded across several qualifying ties.",
+        "prime_world": "PRIME_WORLD — Universitatea Craiova establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Ararat-Armenia slows the first leg, protects central zones and makes Universitatea Craiova's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Universitatea Craiova team Over 0.5 goals",
+          "1X",
+          "1",
+          "Universitatea Craiova team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Universitatea Craiova team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Universitatea Craiova team Over 1.5 goals",
+        "favourite_prediction": "Universitatea Craiova team Over 0.5 goals",
+        "model_probability_band": "73–91%",
+        "model_price_band": "1.10–1.37",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "LOW_SAMPLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:00:42+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "1-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Europa League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a6-20e5db0029dd-8241a8d00925-1000--europa-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-1 preserves part of the committed PRIME_WORLD mechanism but departs materially on direction, total width or the second scoring path.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-20-EGNATIA-LILLESTRØM",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "19:00",
+        "home": "Egnatia",
+        "away": "Lillestrøm",
+        "competition": "UEFA Europa League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 8
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME_FRAGILE",
+        "anchor": "Egnatia's current European scoring run meets a Lillestrøm side with a mature domestic sample but a poor recent defensive/results sequence.",
+        "prime_world": "PRIME_WORLD — Egnatia establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Lillestrøm slows the first leg, protects central zones and makes Egnatia's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Egnatia team Over 0.5 goals",
+          "1X",
+          "1",
+          "Egnatia team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Egnatia team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Egnatia team Over 1.5 goals",
+        "favourite_prediction": "Egnatia team Over 0.5 goals",
+        "model_probability_band": "75–93%",
+        "model_price_band": "1.08–1.33",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "LOW_SAMPLE",
+          "DATA_AXIS_GAP"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:01:49+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-0",
+        "competition_final_score": "0-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Europa League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a6-20e5db0029dd-8241a8d00925-1000--europa-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-0 is more score-compatible with the committed COUNTERWORLD mechanism than with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED",
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-20-BEŞIKTAŞ-KAUNO-ŽALGIRIS",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "19:00",
+        "home": "Beşiktaş",
+        "away": "Kauno Žalgiris",
+        "competition": "UEFA Europa League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 9
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME",
+        "anchor": "Beşiktaş arrive with four consecutive European qualifying wins to nil; Kauno have a mature domestic base but recently conceded heavily to Dinamo Zagreb.",
+        "prime_world": "PRIME_WORLD — Beşiktaş establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Kauno Žalgiris slows the first leg, protects central zones and makes Beşiktaş's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "1",
+          "1X",
+          "Beşiktaş team Over 0.5 goals",
+          "Beşiktaş team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "1X",
+        "balanced": "1",
+        "aggressive": "Beşiktaş team Over 1.5 goals",
+        "favourite_prediction": "1",
+        "model_probability_band": "65–79%",
+        "model_price_band": "1.27–1.54",
+        "robustness": "MEDIUM",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:01:56+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "3-0",
+        "competition_final_score": "3-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Europa League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a6-20e5db0029dd-8241a8d00925-1000--europa-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "3-0 is score-compatible with the central mechanism of PRIME_WORLD, although the exact cluster tail differs.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "BLOWOUT_TAIL_MISSED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-20-LECH-POZNAŃ-THUN",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "19:00",
+        "home": "Lech Poznań",
+        "away": "Thun",
+        "competition": "UEFA Europa League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 10
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME",
+        "anchor": "Lech's current 2.13 xG baseline and 5:0 recent away win at KÍ meet a Thun sample allowing 2.37 xGA; the home scoring route is stronger than the match-direction route.",
+        "prime_world": "PRIME_WORLD — Lech Poznań establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Thun slows the first leg, protects central zones and makes Lech Poznań's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Lech Poznań team Over 0.5 goals",
+          "1X",
+          "1",
+          "Lech Poznań team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Lech Poznań team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Lech Poznań team Over 1.5 goals",
+        "favourite_prediction": "Lech Poznań team Over 0.5 goals",
+        "model_probability_band": "83–97%",
+        "model_price_band": "1.03–1.20",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:02:03+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "7-0",
+        "competition_final_score": "7-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Europa League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a6-20e5db0029dd-8241a8d00925-1000--europa-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "7-0 is score-compatible with the central mechanism of PRIME_WORLD, although the exact cluster tail differs.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "BLOWOUT_TAIL_MISSED",
+        "WORLD_TOO_NARROW"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-TROMSØ-BRIGHTON",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "19:00",
+        "home": "Tromsø",
+        "away": "Brighton",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 11
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "GOALS_OPEN",
+        "anchor": "Tromsø bring a mature 2026 home process and seven goals across the Cluj tie, while Brighton finished pre-season with wins over Roma and Bologna; both the home scoring route and Brighton's response path are credible.",
+        "prime_world": "PRIME_WORLD — Both teams retain credible scoring or second-goal mechanisms, so one goal is more likely to open than close the game.",
+        "counterworld": "COUNTERWORLD — First-leg caution suppresses transition frequency and turns the match into a longer 0:0/1:0 corridor.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "2:1",
+          "1:2",
+          "2:2"
+        ],
+        "score_band": "2–4",
+        "prediction_map": [
+          "BTTS Yes",
+          "Over 1.5 goals",
+          "Match goals 2-4",
+          "Over 2.5 goals",
+          "Tromsø team Over 0.5 goals",
+          "Brighton team Over 0.5 goals"
+        ],
+        "safe": "Over 1.5 goals",
+        "balanced": "BTTS Yes",
+        "aggressive": "Over 2.5 goals",
+        "favourite_prediction": "BTTS Yes",
+        "model_probability_band": "63–81%",
+        "model_price_band": "1.23–1.59",
+        "robustness": "MEDIUM",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "LOW_SAMPLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:02:10+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-0",
+        "competition_final_score": "0-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-0 is more score-compatible with the committed COUNTERWORLD mechanism than with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED",
+        "BTTS_ONE_GOAL_PATH"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-MIDTJYLLAND-RIJEKA",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "19:00",
+        "home": "Midtjylland",
+        "away": "Rijeka",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 12
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME_FRAGILE",
+        "anchor": "Midtjylland's current domestic/European scoring volume is stronger than Rijeka's very-low domestic sample, but Rijeka's recent sequence is controlled enough to keep the home controller fragile.",
+        "prime_world": "PRIME_WORLD — Midtjylland establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Rijeka slows the first leg, protects central zones and makes Midtjylland's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Midtjylland team Over 0.5 goals",
+          "1X",
+          "1",
+          "Midtjylland team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Midtjylland team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Midtjylland team Over 1.5 goals",
+        "favourite_prediction": "Midtjylland team Over 0.5 goals",
+        "model_probability_band": "75–93%",
+        "model_price_band": "1.08–1.33",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "LOW_SAMPLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:03:17+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-0",
+        "competition_final_score": "2-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-0 is an exact committed cluster score and is score-compatible with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-NORDSJÆLLAND-ST.-GALLEN",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "19:00",
+        "home": "Nordsjælland",
+        "away": "St. Gallen",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 13
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "GOALS_OPEN",
+        "anchor": "Both teams combine high early-season process with strong European scoring: Nordsjælland eliminated Valur 7:0 on aggregate and St. Gallen advanced with repeated goals against Sheriff.",
+        "prime_world": "PRIME_WORLD — Both teams retain credible scoring or second-goal mechanisms, so one goal is more likely to open than close the game.",
+        "counterworld": "COUNTERWORLD — First-leg caution suppresses transition frequency and turns the match into a longer 0:0/1:0 corridor.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "2:1",
+          "1:2",
+          "2:2"
+        ],
+        "score_band": "2–4",
+        "prediction_map": [
+          "BTTS Yes",
+          "Over 1.5 goals",
+          "Match goals 2-4",
+          "Over 2.5 goals",
+          "Nordsjælland team Over 0.5 goals",
+          "St. Gallen team Over 0.5 goals"
+        ],
+        "safe": "Over 1.5 goals",
+        "balanced": "BTTS Yes",
+        "aggressive": "Over 2.5 goals",
+        "favourite_prediction": "BTTS Yes",
+        "model_probability_band": "67–81%",
+        "model_price_band": "1.23–1.49",
+        "robustness": "MEDIUM",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:03:24+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-0",
+        "competition_final_score": "1-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-0 is more score-compatible with the committed COUNTERWORLD mechanism than with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED",
+        "BTTS_ONE_GOAL_PATH"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-KI-KLAKSVIK-RIGA",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "19:30",
+        "home": "KÍ Klaksvík",
+        "away": "Riga",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 14
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_AWAY_FRAGILE",
+        "anchor": "Riga's mature 24-match 72:20 domestic profile and strong away process meet a KÍ side with good domestic numbers but a current European scoring collapse against Lech.",
+        "prime_world": "PRIME_WORLD — Riga owns the clearer repeated scoring route even away from home, while KÍ Klaksvík still has enough resistance to keep control fragile.",
+        "counterworld": "COUNTERWORLD — KÍ Klaksvík compresses the tie and denies Riga sustained access, forcing a lower-event game with the away goal delayed or removed.",
+        "modal_score": "0:1",
+        "four_score_cluster": [
+          "0:1",
+          "1:1",
+          "1:2",
+          "0:2"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "X2",
+          "Riga team Over 0.5 goals",
+          "2",
+          "Match goals 1-3",
+          "Riga team Over 1.5 goals"
+        ],
+        "safe": "Riga team Over 0.5 goals",
+        "balanced": "X2",
+        "aggressive": "2",
+        "favourite_prediction": "X2",
+        "model_probability_band": "73–87%",
+        "model_price_band": "1.15–1.37",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:04:31+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-0",
+        "competition_final_score": "0-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-0 is more score-compatible with the committed COUNTERWORLD mechanism than with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-PAOK-BRANN",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "19:45",
+        "home": "PAOK",
+        "away": "Brann",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 15
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME_FRAGILE",
+        "anchor": "PAOK's strong 2025/26 home baseline is supported by current European scoring, while Brann's mature 2026 profile still creates enough away threat to make the controller fragile rather than dominant.",
+        "prime_world": "PRIME_WORLD — PAOK establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Brann slows the first leg, protects central zones and makes PAOK's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "1X",
+          "PAOK team Over 0.5 goals",
+          "1",
+          "Match goals 1-3",
+          "PAOK team Over 1.5 goals"
+        ],
+        "safe": "PAOK team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "1",
+        "favourite_prediction": "1X",
+        "model_probability_band": "71–85%",
+        "model_price_band": "1.18–1.41",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:04:38+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "1-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-1 preserves part of the committed PRIME_WORLD mechanism but departs materially on direction, total width or the second scoring path.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-20-SINT-TRUIDENSE-OMONIA",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:00",
+        "home": "Sint-Truidense",
+        "away": "Omonia",
+        "competition": "UEFA Europa League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 16
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "GOALS_CLOSED",
+        "anchor": "Omonia's four current 2026/27 European qualifiers and Sint-Truidense's last six completed league results both show a repeated low-to-medium event corridor; the main break requires an early game-state shock.",
+        "prime_world": "PRIME_WORLD — The tie stays structurally controlled: neither side needs to expose itself early and the observed result profiles support a three-goal ceiling more than a transition race.",
+        "counterworld": "COUNTERWORLD — An early goal against the intended game state forces expansion and creates the main route to four or more goals.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "1:0",
+          "0:1",
+          "2:0"
+        ],
+        "score_band": "0–3",
+        "prediction_map": [
+          "Under 3.5 goals",
+          "Under 2.5 goals",
+          "BTTS No",
+          "Match goals 1-3"
+        ],
+        "safe": "Under 4.5 goals",
+        "balanced": "Under 3.5 goals",
+        "aggressive": "Under 2.5 goals",
+        "favourite_prediction": "Under 3.5 goals",
+        "model_probability_band": "71–89%",
+        "model_price_band": "1.12–1.41",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "LOW_SAMPLE",
+          "DATA_AXIS_GAP"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:05:45+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-0",
+        "competition_final_score": "1-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Europa League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a6-20e5db0029dd-8241a8d00925-1000--europa-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-0 is an exact committed cluster score and is score-compatible with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-20-CRVENA-ZVEZDA-VIKTORIA-PLZEŇ",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:00",
+        "home": "Crvena Zvezda",
+        "away": "Viktoria Plzeň",
+        "competition": "UEFA Europa League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 17
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "MULTIWORLD_CLOSE",
+        "anchor": "Crvena Zvezda's current European profile flips from 9:0 across Larne to 0:3 across Hapoel Beer-Sheva, while Plzeň's tiny domestic process is weak but its older European corridor is low-event; no single renderer survives both worlds cleanly.",
+        "prime_world": "PRIME_WORLD — Crvena Zvezda's current European profile flips from 9:0 across Larne to 0:3 across Hapoel Beer-Sheva, while Plzeň's tiny domestic process is weak but its older European corridor is low-event; no single renderer survives both worlds cleanly.",
+        "counterworld": "COUNTERWORLD — A competing mechanism has comparable support and breaks the candidate route.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "1:0",
+          "0:1",
+          "2:1"
+        ],
+        "score_band": "0–3",
+        "prediction_map": [
+          "NOT_AVAILABLE — candidate audit does not produce a robust route across PRIME_WORLD and COUNTERWORLD."
+        ],
+        "safe": "NOT_AVAILABLE",
+        "balanced": "NOT_AVAILABLE",
+        "aggressive": "NOT_AVAILABLE",
+        "favourite_prediction": "NO_STABLE_PREDICTION",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "robustness": "NOT_AVAILABLE",
+        "ampel": "RED",
+        "flags": [
+          "MULTIWORLD_CLOSE",
+          "WORLD_STABILITY_UNKNOWN",
+          "STATE_SENSITIVE",
+          "DATA_CONDITIONAL"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:05:52+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "3-0",
+        "competition_final_score": "3-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "NOT_AVAILABLE",
+        "balanced_result": "NOT_AVAILABLE",
+        "aggressive_result": "NOT_AVAILABLE",
+        "favourite_result": "NOT_AVAILABLE",
+        "result_sources": [
+          {
+            "name": "UEFA Europa League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a6-20e5db0029dd-8241a8d00925-1000--europa-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "The committed model intentionally withheld a stable prediction/world decision or failed the relevant gate; RESULT_ONLY evidence is insufficient to select PRIME_WORLD or COUNTERWORLD retrospectively.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "BLOWOUT_TAIL_MISSED"
+      ],
+      "audit_flags": [
+        "NSP_EXCLUDED_FROM_FAVOURITE_HIT_RATE"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-20-OFI-CRETE-CSKA-SOFIA",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:00",
+        "home": "OFI Crete",
+        "away": "CSKA Sofia",
+        "competition": "UEFA Europa League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 18
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_AWAY_FRAGILE",
+        "anchor": "CSKA have six current European qualifiers and a live domestic sample, while OFI's new Greek league season has not started; the away scoring route is supportable, but the home Strength Prior keeps it fragile.",
+        "prime_world": "PRIME_WORLD — CSKA Sofia owns the clearer repeated scoring route even away from home, while OFI Crete still has enough resistance to keep control fragile.",
+        "counterworld": "COUNTERWORLD — OFI Crete compresses the tie and denies CSKA Sofia sustained access, forcing a lower-event game with the away goal delayed or removed.",
+        "modal_score": "0:1",
+        "four_score_cluster": [
+          "0:1",
+          "1:1",
+          "1:2",
+          "0:2"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "CSKA Sofia team Over 0.5 goals",
+          "X2",
+          "2",
+          "CSKA Sofia team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "CSKA Sofia team Over 0.5 goals",
+        "balanced": "X2",
+        "aggressive": "CSKA Sofia team Over 1.5 goals",
+        "favourite_prediction": "CSKA Sofia team Over 0.5 goals",
+        "model_probability_band": "67–85%",
+        "model_price_band": "1.18–1.49",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "LOW_SAMPLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:06:59+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "3-0",
+        "competition_final_score": "3-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Europa League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a6-20e5db0029dd-8241a8d00925-1000--europa-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "3-0 preserves part of the committed PRIME_WORLD mechanism but departs materially on direction, total width or the second scoring path.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "UPSET_TAIL_MISSED",
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-VIKINGUR-REYKJAVIK-BORAC",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:00",
+        "home": "Víkingur Reykjavík",
+        "away": "Borac",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 19
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME",
+        "anchor": "Víkingur's mature 17-match domestic process, unbeaten home role and 2.29 home xG create the clearest scoring mechanism against a Borac side that has already conceded across several European ties.",
+        "prime_world": "PRIME_WORLD — Víkingur Reykjavík establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Borac slows the first leg, protects central zones and makes Víkingur Reykjavík's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Víkingur Reykjavík team Over 0.5 goals",
+          "1X",
+          "1",
+          "Víkingur Reykjavík team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Víkingur Reykjavík team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Víkingur Reykjavík team Over 1.5 goals",
+        "favourite_prediction": "Víkingur Reykjavík team Over 0.5 goals",
+        "model_probability_band": "82–96%",
+        "model_price_band": "1.04–1.22",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:06:06+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-3",
+        "competition_final_score": "1-3",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "NEITHER",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-3 is not adequately represented by either committed world on score-pattern evidence.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "WRONG_WORLD",
+        "UPSET_TAIL_MISSED",
+        "WORLD_TOO_NARROW"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-DRITA-INTER-CLUB-DESCALDES",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:00",
+        "home": "Drita",
+        "away": "Inter Club d’Escaldes",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 20
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME_FRAGILE",
+        "anchor": "Drita have scored in every one of the six current European results retrieved, while Inter d'Escaldes bring a strong mature prior and active away scoring profile; the home goal is more stable than the home direction.",
+        "prime_world": "PRIME_WORLD — Drita establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Inter Club d’Escaldes slows the first leg, protects central zones and makes Drita's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Drita team Over 0.5 goals",
+          "1X",
+          "1",
+          "Drita team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Drita team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Drita team Over 1.5 goals",
+        "favourite_prediction": "Drita team Over 0.5 goals",
+        "model_probability_band": "80–94%",
+        "model_price_band": "1.06–1.25",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:07:13+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-2",
+        "competition_final_score": "2-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-2 preserves part of the committed PRIME_WORLD mechanism but departs materially on direction, total width or the second scoring path.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "CHAOS_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-GÓRNIK-ZABRZE-MONACO",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:00",
+        "home": "Górnik Zabrze",
+        "away": "Monaco",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 21
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_AWAY_FRAGILE",
+        "anchor": "Monaco's 2025/26 prior provides a legitimate early-season scoring baseline, while Górnik have current competitive rhythm but only a tiny domestic process sample; the away goal is more stable than a Monaco win.",
+        "prime_world": "PRIME_WORLD — Monaco owns the clearer repeated scoring route even away from home, while Górnik Zabrze still has enough resistance to keep control fragile.",
+        "counterworld": "COUNTERWORLD — Górnik Zabrze compresses the tie and denies Monaco sustained access, forcing a lower-event game with the away goal delayed or removed.",
+        "modal_score": "0:1",
+        "four_score_cluster": [
+          "0:1",
+          "1:1",
+          "1:2",
+          "0:2"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Monaco team Over 0.5 goals",
+          "X2",
+          "2",
+          "Monaco team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Monaco team Over 0.5 goals",
+        "balanced": "X2",
+        "aggressive": "Monaco team Over 1.5 goals",
+        "favourite_prediction": "Monaco team Over 0.5 goals",
+        "model_probability_band": "71–89%",
+        "model_price_band": "1.12–1.41",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "LOW_SAMPLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:07:20+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-3",
+        "competition_final_score": "2-3",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-3 is score-compatible with the central mechanism of PRIME_WORLD, although the exact cluster tail differs.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "CHAOS_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-TWENTE-QARABAĞ",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:00",
+        "home": "Twente",
+        "away": "Qarabağ",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 22
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME_FRAGILE",
+        "anchor": "Twente have scored in five of their six latest listed matches and are generating repeated multi-goal outputs, but Qarabağ's qualifying run contains several clean sheets; the home-goal route passes only with a visible counterworld.",
+        "prime_world": "PRIME_WORLD — Twente establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Qarabağ slows the first leg, protects central zones and makes Twente's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Twente team Over 0.5 goals",
+          "1X",
+          "1",
+          "Twente team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Twente team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Twente team Over 1.5 goals",
+        "favourite_prediction": "Twente team Over 0.5 goals",
+        "model_probability_band": "69–87%",
+        "model_price_band": "1.15–1.45",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "LOW_SAMPLE",
+          "DATA_AXIS_GAP"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:08:27+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-1",
+        "competition_final_score": "0-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-1 is more score-compatible with the committed COUNTERWORLD mechanism than with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "UPSET_TAIL_MISSED",
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-SION-AJAX",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:15",
+        "home": "Sion",
+        "away": "Ajax",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 23
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "GOALS_OPEN",
+        "anchor": "Sion's first two league matches produced nine total goals and their current European path is open, while Ajax's recent sequence repeatedly clears the two-goal threshold; both worlds preserve at least two goals.",
+        "prime_world": "PRIME_WORLD — Both teams retain credible scoring or second-goal mechanisms, so one goal is more likely to open than close the game.",
+        "counterworld": "COUNTERWORLD — First-leg caution suppresses transition frequency and turns the match into a longer 0:0/1:0 corridor.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "2:1",
+          "1:2",
+          "2:2"
+        ],
+        "score_band": "2–4",
+        "prediction_map": [
+          "BTTS Yes",
+          "Over 1.5 goals",
+          "Match goals 2-4",
+          "Over 2.5 goals",
+          "Sion team Over 0.5 goals",
+          "Ajax team Over 0.5 goals"
+        ],
+        "safe": "Over 1.5 goals",
+        "balanced": "BTTS Yes",
+        "aggressive": "Over 2.5 goals",
+        "favourite_prediction": "BTTS Yes",
+        "model_probability_band": "69–83%",
+        "model_price_band": "1.20–1.45",
+        "robustness": "MEDIUM",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:08:34+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-4",
+        "competition_final_score": "2-4",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-4 is score-compatible with the central mechanism of PRIME_WORLD, although the exact cluster tail differs.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "CHAOS_UNDERRATED",
+        "BLOWOUT_TAIL_MISSED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-MOTHERWELL-FREIBURG",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:30",
+        "home": "Motherwell",
+        "away": "Freiburg",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 24
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "GOALS_CLOSED",
+        "anchor": "Motherwell's six latest listed competitive matches all stayed at three goals or fewer; Freiburg's 2026/27 league has not started and their 2025/26 away profile was modest, while Höler's confirmed absence removes one attacking option.",
+        "prime_world": "PRIME_WORLD — The tie stays structurally controlled: neither side needs to expose itself early and the observed result profiles support a three-goal ceiling more than a transition race.",
+        "counterworld": "COUNTERWORLD — An early goal against the intended game state forces expansion and creates the main route to four or more goals.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "1:0",
+          "0:1",
+          "2:0"
+        ],
+        "score_band": "0–3",
+        "prediction_map": [
+          "Under 3.5 goals",
+          "Under 2.5 goals",
+          "BTTS No",
+          "Match goals 1-3"
+        ],
+        "safe": "Under 4.5 goals",
+        "balanced": "Under 3.5 goals",
+        "aggressive": "Under 2.5 goals",
+        "favourite_prediction": "Under 3.5 goals",
+        "model_probability_band": "69–87%",
+        "model_price_band": "1.15–1.45",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "LOW_SAMPLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:09:41+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-3",
+        "competition_final_score": "1-3",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-3 is more score-compatible with the committed COUNTERWORLD mechanism than with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "UNDER_TOO_TIGHT",
+        "CHAOS_UNDERRATED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-GENT-HIBERNIAN",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:30",
+        "home": "Gent",
+        "away": "Hibernian",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 25
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "GOALS_CLOSED",
+        "anchor": "Gent's current European sequence is persistently controlled and Hibernian's early league process has volume without a mature scoring sample; the 0–3 goal corridor survives more worlds than either direction.",
+        "prime_world": "PRIME_WORLD — The tie stays structurally controlled: neither side needs to expose itself early and the observed result profiles support a three-goal ceiling more than a transition race.",
+        "counterworld": "COUNTERWORLD — An early goal against the intended game state forces expansion and creates the main route to four or more goals.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "1:0",
+          "0:1",
+          "2:0"
+        ],
+        "score_band": "0–3",
+        "prediction_map": [
+          "Under 3.5 goals",
+          "Under 2.5 goals",
+          "BTTS No",
+          "Match goals 1-3"
+        ],
+        "safe": "Under 4.5 goals",
+        "balanced": "Under 3.5 goals",
+        "aggressive": "Under 2.5 goals",
+        "favourite_prediction": "Under 3.5 goals",
+        "model_probability_band": "78–92%",
+        "model_price_band": "1.09–1.28",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:09:48+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-0",
+        "competition_final_score": "0-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-0 is score-compatible with the central mechanism of PRIME_WORLD, although the exact cluster tail differs.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "STALL_RISK_MISSED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-ATALANTA-HAPOEL-TEL-AVIV",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:30",
+        "home": "Atalanta",
+        "away": "Hapoel Tel-Aviv",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 26
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME",
+        "anchor": "Atalanta's 2025/26 home Strength Prior supplies a stable shot/scoring base before Serie A starts, while Hapoel's domestic league has not started and their current European qualifiers have conceded in multiple states.",
+        "prime_world": "PRIME_WORLD — Atalanta establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Hapoel Tel-Aviv slows the first leg, protects central zones and makes Atalanta's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Atalanta team Over 0.5 goals",
+          "1X",
+          "1",
+          "Atalanta team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Atalanta team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Atalanta team Over 1.5 goals",
+        "favourite_prediction": "Atalanta team Over 0.5 goals",
+        "model_probability_band": "80–94%",
+        "model_price_band": "1.06–1.25",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:10:55+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-0",
+        "competition_final_score": "0-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "0-0 is more score-compatible with the committed COUNTERWORLD mechanism than with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED",
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-PANATHINAIKOS-HRADEC-KRALOVE",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:30",
+        "home": "Panathinaikos",
+        "away": "Hradec Králové",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 27
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME",
+        "anchor": "Panathinaikos have scored in each of the four latest European results retrieved, while Hradec's tiny domestic process allows 1.61 xGA and they conceded in both legs against Beşiktaş.",
+        "prime_world": "PRIME_WORLD — Panathinaikos establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Hradec Králové slows the first leg, protects central zones and makes Panathinaikos's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Panathinaikos team Over 0.5 goals",
+          "1X",
+          "1",
+          "Panathinaikos team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Panathinaikos team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Panathinaikos team Over 1.5 goals",
+        "favourite_prediction": "Panathinaikos team Over 0.5 goals",
+        "model_probability_band": "80–94%",
+        "model_price_band": "1.06–1.25",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:10:02+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-2",
+        "competition_final_score": "2-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-2 preserves part of the committed PRIME_WORLD mechanism but departs materially on direction, total width or the second scoring path.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "CHAOS_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-LUGANO-MACCABI-TEL-AVIV",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:30",
+        "home": "Lugano",
+        "away": "Maccabi Tel-Aviv",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 28
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME",
+        "anchor": "Lugano's current 2.03 xG / 18-shot league process and repeated European scoring create the strongest home-goal mechanism; Maccabi's current qualifying path has conceded four across its latest two listed legs.",
+        "prime_world": "PRIME_WORLD — Lugano establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Maccabi Tel-Aviv slows the first leg, protects central zones and makes Lugano's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Lugano team Over 0.5 goals",
+          "1X",
+          "1",
+          "Lugano team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Lugano team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Lugano team Over 1.5 goals",
+        "favourite_prediction": "Lugano team Over 0.5 goals",
+        "model_probability_band": "85–99%",
+        "model_price_band": "1.01–1.18",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:11:09+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-1",
+        "competition_final_score": "2-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-1 is an exact committed cluster score and is score-compatible with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-HEARTS-SK-RAPID",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:45",
+        "home": "Hearts",
+        "away": "SK Rapid",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 29
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_AWAY",
+        "anchor": "Rapid's current domestic run has accelerated sharply — including an official 8:0 win on 16 August — and their European path is also scoring; Hearts' current European results leave a repeated concession route.",
+        "prime_world": "PRIME_WORLD — SK Rapid owns the clearer repeated scoring route even away from home, while Hearts still has enough resistance to keep control fragile.",
+        "counterworld": "COUNTERWORLD — Hearts compresses the tie and denies SK Rapid sustained access, forcing a lower-event game with the away goal delayed or removed.",
+        "modal_score": "0:1",
+        "four_score_cluster": [
+          "0:1",
+          "1:1",
+          "1:2",
+          "0:2"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "X2",
+          "SK Rapid team Over 0.5 goals",
+          "2",
+          "Match goals 1-3",
+          "SK Rapid team Over 1.5 goals"
+        ],
+        "safe": "SK Rapid team Over 0.5 goals",
+        "balanced": "X2",
+        "aggressive": "2",
+        "favourite_prediction": "X2",
+        "model_probability_band": "77–91%",
+        "model_price_band": "1.10–1.30",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:11:16+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-2",
+        "competition_final_score": "2-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-2 is score-compatible with the central mechanism of PRIME_WORLD, although the exact cluster tail differs.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "CHAOS_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-RANGERS-JABLONEC",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "20:45",
+        "home": "Rangers",
+        "away": "Jablonec",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 30
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "GOALS_OPEN",
+        "anchor": "Rangers' latest current sequence contains repeated concessions but also a 5:1 domestic response, while Jablonec enter with a winning early-season process; a two-goal match survives either side's control path better than a direction pick.",
+        "prime_world": "PRIME_WORLD — Both teams retain credible scoring or second-goal mechanisms, so one goal is more likely to open than close the game.",
+        "counterworld": "COUNTERWORLD — First-leg caution suppresses transition frequency and turns the match into a longer 0:0/1:0 corridor.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "2:1",
+          "1:2",
+          "2:2"
+        ],
+        "score_band": "2–4",
+        "prediction_map": [
+          "BTTS Yes",
+          "Over 1.5 goals",
+          "Match goals 2-4",
+          "Over 2.5 goals",
+          "Rangers team Over 0.5 goals",
+          "Jablonec team Over 0.5 goals"
+        ],
+        "safe": "Over 1.5 goals",
+        "balanced": "BTTS Yes",
+        "aggressive": "Over 2.5 goals",
+        "favourite_prediction": "BTTS Yes",
+        "model_probability_band": "65–79%",
+        "model_price_band": "1.27–1.54",
+        "robustness": "MEDIUM",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:12:23+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-0",
+        "competition_final_score": "1-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-0 is more score-compatible with the committed COUNTERWORLD mechanism than with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED",
+        "BTTS_ONE_GOAL_PATH"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UEL-2026-08-20-BENFICA-AARHUS",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "21:00",
+        "home": "Benfica",
+        "away": "Aarhus",
+        "competition": "UEFA Europa League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_EUROPA_LEAGUE",
+        "competition_name": "UEFA Europa League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 31
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME",
+        "anchor": "Benfica's 2025/26 unbeaten 34-match league prior, 2.41 home goals and 18.1 home shots combine with a current 6:1 European result against Hearts; the home goal survives substantially more states than a handicap-style direction.",
+        "prime_world": "PRIME_WORLD — Benfica establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Aarhus slows the first leg, protects central zones and makes Benfica's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Benfica team Over 0.5 goals",
+          "1X",
+          "1",
+          "Benfica team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Benfica team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Benfica team Over 1.5 goals",
+        "favourite_prediction": "Benfica team Over 0.5 goals",
+        "model_probability_band": "87–99%",
+        "model_price_band": "1.01–1.15",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:12:30+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "3-1",
+        "competition_final_score": "3-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Europa League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a6-20e5db0029dd-8241a8d00925-1000--europa-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "3-1 is score-compatible with the central mechanism of PRIME_WORLD, although the exact cluster tail differs.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "CHAOS_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-SHAMROCK-ROVERS-KUPS-KUOPIO",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "21:00",
+        "home": "Shamrock Rovers",
+        "away": "KuPS Kuopio",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 32
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "GOALS_OPEN",
+        "anchor": "Shamrock's current European path is volatile and KuPS' latest six also repeatedly reach two goals; confirmed Shamrock returns improve the home attacking path while two absences preserve fragility.",
+        "prime_world": "PRIME_WORLD — Both teams retain credible scoring or second-goal mechanisms, so one goal is more likely to open than close the game.",
+        "counterworld": "COUNTERWORLD — First-leg caution suppresses transition frequency and turns the match into a longer 0:0/1:0 corridor.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "2:1",
+          "1:2",
+          "2:2"
+        ],
+        "score_band": "2–4",
+        "prediction_map": [
+          "Over 1.5 goals",
+          "BTTS Yes",
+          "Match goals 2-4",
+          "Over 2.5 goals",
+          "Shamrock Rovers team Over 0.5 goals"
+        ],
+        "safe": "Match goals 2-4",
+        "balanced": "Over 1.5 goals",
+        "aggressive": "BTTS Yes",
+        "favourite_prediction": "Over 1.5 goals",
+        "model_probability_band": "71–89%",
+        "model_price_band": "1.12–1.41",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "LOW_SAMPLE",
+          "DATA_AXIS_GAP"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:13:37+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "1-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": true,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "1-1 is an exact committed cluster score and is score-compatible with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-HAJDUK-SPLIT-RAKÓW",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "21:00",
+        "home": "Hajduk Split",
+        "away": "Raków",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 33
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME_FRAGILE",
+        "anchor": "Hajduk have scored in five of six latest listed European results, while Raków's current European path is controlled but not impermeable; home scoring is more robust than outright home direction.",
+        "prime_world": "PRIME_WORLD — Hajduk Split establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Raków slows the first leg, protects central zones and makes Hajduk Split's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Hajduk Split team Over 0.5 goals",
+          "1X",
+          "1",
+          "Hajduk Split team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Hajduk Split team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Hajduk Split team Over 1.5 goals",
+        "favourite_prediction": "Hajduk Split team Over 0.5 goals",
+        "model_probability_band": "75–93%",
+        "model_price_band": "1.08–1.33",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "LOW_SAMPLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:13:44+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-2",
+        "competition_final_score": "2-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-2 preserves part of the committed PRIME_WORLD mechanism but departs materially on direction, total width or the second scoring path.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "CHAOS_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-DINAMO-CITY-PAFOS",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "21:00",
+        "home": "Dinamo City",
+        "away": "Pafos",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 34
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "MULTIWORLD_CLOSE",
+        "anchor": "Dinamo City's current home qualifying output supports a home-control world, while Pafos' current European path and prior strength support the opposite mechanism; comparable process/volume data for both sides remain too incomplete to select a stable renderer.",
+        "prime_world": "PRIME_WORLD — Dinamo City's current home qualifying output supports a home-control world, while Pafos' current European path and prior strength support the opposite mechanism; comparable process/volume data for both sides remain too incomplete to select a stable renderer.",
+        "counterworld": "COUNTERWORLD — A competing mechanism has comparable support and breaks the candidate route.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "1:0",
+          "0:1",
+          "2:1"
+        ],
+        "score_band": "0–3",
+        "prediction_map": [
+          "NOT_AVAILABLE — candidate audit does not produce a robust route across PRIME_WORLD and COUNTERWORLD."
+        ],
+        "safe": "NOT_AVAILABLE",
+        "balanced": "NOT_AVAILABLE",
+        "aggressive": "NOT_AVAILABLE",
+        "favourite_prediction": "NO_STABLE_PREDICTION",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "robustness": "NOT_AVAILABLE",
+        "ampel": "RED",
+        "flags": [
+          "MULTIWORLD_CLOSE",
+          "WORLD_STABILITY_UNKNOWN",
+          "STATE_SENSITIVE",
+          "DATA_CONDITIONAL"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:14:51+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "1-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "NOT_AVAILABLE",
+        "balanced_result": "NOT_AVAILABLE",
+        "aggressive_result": "NOT_AVAILABLE",
+        "favourite_result": "NOT_AVAILABLE",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": true,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "The committed model intentionally withheld a stable prediction/world decision or failed the relevant gate; RESULT_ONLY evidence is insufficient to select PRIME_WORLD or COUNTERWORLD retrospectively.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": [
+        "NSP_EXCLUDED_FROM_FAVOURITE_HIT_RATE"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-BRAGA-AUSTRIA-WIEN",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "21:00",
+        "home": "Braga",
+        "away": "Austria Wien",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 35
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CONTROL_HOME",
+        "anchor": "Braga have scored in five of six latest listed current matches and own the steadier home structure, while Austria Wien's recent sequence repeatedly concedes; the home-goal axis is cleaner than match direction.",
+        "prime_world": "PRIME_WORLD — Braga establishes the clearer repeated scoring route through territory and chance volume.",
+        "counterworld": "COUNTERWORLD — Austria Wien slows the first leg, protects central zones and makes Braga's scoring path depend on a smaller number of clean chances.",
+        "modal_score": "1:0",
+        "four_score_cluster": [
+          "1:0",
+          "2:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Braga team Over 0.5 goals",
+          "1X",
+          "1",
+          "Braga team Over 1.5 goals",
+          "Match goals 1-3"
+        ],
+        "safe": "Braga team Over 0.5 goals",
+        "balanced": "1X",
+        "aggressive": "Braga team Over 1.5 goals",
+        "favourite_prediction": "Braga team Over 0.5 goals",
+        "model_probability_band": "82–96%",
+        "model_price_band": "1.04–1.22",
+        "robustness": "HIGH",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "STATE_SENSITIVE",
+          "KO_STATE_DEPENDENT",
+          "DATA_AXIS_GAP"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:14:58+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-0",
+        "competition_final_score": "2-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "2-0 is an exact committed cluster score and is score-compatible with PRIME_WORLD.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "UECL-2026-08-20-GETAFE-PARTIZAN",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "21:00",
+        "home": "Getafe",
+        "away": "Partizan",
+        "competition": "UEFA Conference League",
+        "phase": "Play-off 1st leg"
+      },
+      "competition_metadata": {
+        "competition_id": "UEFA_CONFERENCE_LEAGUE",
+        "competition_name": "UEFA Conference League",
+        "competition_group": "UEFA",
+        "competition_type": "uefa_club_competition",
+        "display_order": 36
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "MULTIWORLD_CLOSE",
+        "anchor": "Getafe's mature 2025/26 low-scoring home prior conflicts with a red-card-distorted 0:3 opener, while Partizan arrive with current scoring momentum. The Strength Prior and current process point to different worlds and no candidate is robust enough across both.",
+        "prime_world": "PRIME_WORLD — Getafe's mature 2025/26 low-scoring home prior conflicts with a red-card-distorted 0:3 opener, while Partizan arrive with current scoring momentum. The Strength Prior and current process point to different worlds and no candidate is robust enough across both.",
+        "counterworld": "COUNTERWORLD — A competing mechanism has comparable support and breaks the candidate route.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "1:0",
+          "0:1",
+          "2:1"
+        ],
+        "score_band": "0–3",
+        "prediction_map": [
+          "NOT_AVAILABLE — candidate audit does not produce a robust route across PRIME_WORLD and COUNTERWORLD."
+        ],
+        "safe": "NOT_AVAILABLE",
+        "balanced": "NOT_AVAILABLE",
+        "aggressive": "NOT_AVAILABLE",
+        "favourite_prediction": "NO_STABLE_PREDICTION",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "robustness": "NOT_AVAILABLE",
+        "ampel": "RED",
+        "flags": [
+          "MULTIWORLD_CLOSE",
+          "WORLD_STABILITY_UNKNOWN",
+          "STATE_SENSITIVE",
+          "DATA_CONDITIONAL"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:15:05+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "3-1",
+        "competition_final_score": "3-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "NOT_AVAILABLE",
+        "balanced_result": "NOT_AVAILABLE",
+        "aggressive_result": "NOT_AVAILABLE",
+        "favourite_result": "NOT_AVAILABLE",
+        "result_sources": [
+          {
+            "name": "UEFA Conference League qualifying fixtures/results",
+            "role": "official result confirmation",
+            "url": "https://www.uefa.com/uefaconferenceleague/news/02a6-20e5e911587f-cc10425958b3-1000--conference-league-qualifying-fixtures-dates-how-it-works/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "The committed model intentionally withheld a stable prediction/world decision or failed the relevant gate; RESULT_ONLY evidence is insufficient to select PRIME_WORLD or COUNTERWORLD retrospectively.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [
+        "BLOWOUT_TAIL_MISSED",
+        "WORLD_TOO_NARROW"
+      ],
+      "audit_flags": [
+        "NSP_EXCLUDED_FROM_FAVOURITE_HIT_RATE"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "LALIGA-2026-08-20-RAYO-VALLECANO-DEPORTIVO-ALAVES",
+      "snapshot_id": "SNAP_2026-08-20_1342_CEST",
+      "data_snapshot_id": "snap_20260820_030139",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": true,
+      "fixture": {
+        "kickoff": "21:00",
+        "home": "Rayo Vallecano",
+        "away": "Deportivo Alavés",
+        "competition": "La Liga",
+        "phase": "Matchday 2"
+      },
+      "competition_metadata": {
+        "competition_id": "ESP_LALIGA",
+        "competition_name": "La Liga",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 37
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "MULTIWORLD_CLOSE",
+        "anchor": "Both La Liga sides have only one current league match and those openers are heavily event-distorted: Alavés' 3:0 came against ten men, while Rayo's 1:2 contained two second-half penalties. Current-state evidence is insufficient for a stable world edge.",
+        "prime_world": "PRIME_WORLD — Both La Liga sides have only one current league match and those openers are heavily event-distorted: Alavés' 3:0 came against ten men, while Rayo's 1:2 contained two second-half penalties. Current-state evidence is insufficient for a stable world edge.",
+        "counterworld": "COUNTERWORLD — A competing mechanism has comparable support and breaks the candidate route.",
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "1:0",
+          "0:1",
+          "2:1"
+        ],
+        "score_band": "0–3",
+        "prediction_map": [
+          "NOT_AVAILABLE — candidate audit does not produce a robust route across PRIME_WORLD and COUNTERWORLD."
+        ],
+        "safe": "NOT_AVAILABLE",
+        "balanced": "NOT_AVAILABLE",
+        "aggressive": "NOT_AVAILABLE",
+        "favourite_prediction": "NO_STABLE_PREDICTION",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "robustness": "NOT_AVAILABLE",
+        "ampel": "RED",
+        "flags": [
+          "MULTIWORLD_CLOSE",
+          "WORLD_STABILITY_UNKNOWN",
+          "STATE_SENSITIVE",
+          "DATA_CONDITIONAL"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-20T09:15:12+02:00"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "1-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "NOT_AVAILABLE",
+        "balanced_result": "NOT_AVAILABLE",
+        "aggressive_result": "NOT_AVAILABLE",
+        "favourite_result": "NOT_AVAILABLE",
+        "result_sources": [
+          {
+            "name": "ESPN Rayo Vallecano–Alavés",
+            "role": "final result confirmation",
+            "url": "https://www.espn.co.uk/football/match/_/gameId/401882908"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": true,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "N_ECOBET_OUTPUT_AND_AUDIT_v1.3 requires RESULT_DISTANCE_FROM_MODAL but the loaded norm does not define its calculation formula. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "The committed model intentionally withheld a stable prediction/world decision or failed the relevant gate; RESULT_ONLY evidence is insufficient to select PRIME_WORLD or COUNTERWORLD retrospectively.",
+        "limitation": "Score-pattern compatibility only. No detailed match-process claim is made from RESULT_ONLY evidence."
+      },
+      "failure_cluster": [],
+      "audit_flags": [
+        "NSP_EXCLUDED_FROM_FAVOURITE_HIT_RATE"
+      ]
+    }
+  ],
+  "sparse_match_log": [
+    {
+      "match": "Kairat Almaty – Anderlecht",
+      "result_90": "0-3",
+      "favourite": "Anderlecht team Over 0.5 goals",
+      "settlement": "HIT",
+      "world_verdict": "MIXED",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "BLOWOUT_TAIL_MISSED",
+        "WORLD_TOO_NARROW"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Jagiellonia Białystok – Iberia 1999",
+      "result_90": "4-0",
+      "favourite": "Under 3.5 goals",
+      "settlement": "MISS",
+      "world_verdict": "MIXED",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "RIGHT_WORLD_WRONG_RENDERER",
+        "UNDER_TOO_TIGHT",
+        "BLOWOUT_TAIL_MISSED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Mjällby – Salzburg",
+      "result_90": "0-1",
+      "favourite": "Salzburg team Over 0.5 goals",
+      "settlement": "HIT",
+      "world_verdict": "PRIME",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [],
+      "notes": []
+    },
+    {
+      "match": "Lincoln Red Imps – Larne",
+      "result_90": "0-2",
+      "favourite": "NO_STABLE_PREDICTION",
+      "settlement": "NOT_AVAILABLE",
+      "world_verdict": "UNDETERMINED",
+      "cluster_hit": null,
+      "ampel": "RED",
+      "failure_tags": [],
+      "notes": [
+        "NSP_EXCLUDED_FROM_FAVOURITE_HIT_RATE",
+        "DATA_GATE_NSP_NO_SCORE_CLUSTER"
+      ]
+    },
+    {
+      "match": "Inter Turku – FC Copenhagen",
+      "result_90": "0-0",
+      "favourite": "FC Copenhagen team Over 0.5 goals",
+      "settlement": "MISS",
+      "world_verdict": "COUNTERWORLD",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED",
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Trabzonspor – Ferencváros",
+      "result_90": "0-1",
+      "favourite": "1X",
+      "settlement": "MISS",
+      "world_verdict": "COUNTERWORLD",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "DIRECTION_OVERREACH",
+        "STALL_RISK_MISSED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Egnatia – Lillestrøm",
+      "result_90": "0-0",
+      "favourite": "Egnatia team Over 0.5 goals",
+      "settlement": "MISS",
+      "world_verdict": "COUNTERWORLD",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED",
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Beşiktaş – Kauno Žalgiris",
+      "result_90": "3-0",
+      "favourite": "1",
+      "settlement": "HIT",
+      "world_verdict": "PRIME",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "BLOWOUT_TAIL_MISSED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Lech Poznań – Thun",
+      "result_90": "7-0",
+      "favourite": "Lech Poznań team Over 0.5 goals",
+      "settlement": "HIT",
+      "world_verdict": "PRIME",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "BLOWOUT_TAIL_MISSED",
+        "WORLD_TOO_NARROW"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Tromsø – Brighton",
+      "result_90": "0-0",
+      "favourite": "BTTS Yes",
+      "settlement": "MISS",
+      "world_verdict": "COUNTERWORLD",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED",
+        "BTTS_ONE_GOAL_PATH"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Nordsjælland – St. Gallen",
+      "result_90": "1-0",
+      "favourite": "BTTS Yes",
+      "settlement": "MISS",
+      "world_verdict": "COUNTERWORLD",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED",
+        "BTTS_ONE_GOAL_PATH"
+      ],
+      "notes": []
+    },
+    {
+      "match": "KÍ Klaksvík – Riga",
+      "result_90": "0-0",
+      "favourite": "X2",
+      "settlement": "HIT",
+      "world_verdict": "COUNTERWORLD",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Crvena Zvezda – Viktoria Plzeň",
+      "result_90": "3-0",
+      "favourite": "NO_STABLE_PREDICTION",
+      "settlement": "NOT_AVAILABLE",
+      "world_verdict": "UNDETERMINED",
+      "cluster_hit": false,
+      "ampel": "RED",
+      "failure_tags": [
+        "BLOWOUT_TAIL_MISSED"
+      ],
+      "notes": [
+        "NSP_EXCLUDED_FROM_FAVOURITE_HIT_RATE"
+      ]
+    },
+    {
+      "match": "OFI Crete – CSKA Sofia",
+      "result_90": "3-0",
+      "favourite": "CSKA Sofia team Over 0.5 goals",
+      "settlement": "MISS",
+      "world_verdict": "MIXED",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "UPSET_TAIL_MISSED",
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Víkingur Reykjavík – Borac",
+      "result_90": "1-3",
+      "favourite": "Víkingur Reykjavík team Over 0.5 goals",
+      "settlement": "HIT",
+      "world_verdict": "NEITHER",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "WRONG_WORLD",
+        "UPSET_TAIL_MISSED",
+        "WORLD_TOO_NARROW"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Drita – Inter Club d’Escaldes",
+      "result_90": "2-2",
+      "favourite": "Drita team Over 0.5 goals",
+      "settlement": "HIT",
+      "world_verdict": "MIXED",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "CHAOS_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Górnik Zabrze – Monaco",
+      "result_90": "2-3",
+      "favourite": "Monaco team Over 0.5 goals",
+      "settlement": "HIT",
+      "world_verdict": "PRIME",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "CHAOS_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Twente – Qarabağ",
+      "result_90": "0-1",
+      "favourite": "Twente team Over 0.5 goals",
+      "settlement": "MISS",
+      "world_verdict": "COUNTERWORLD",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "UPSET_TAIL_MISSED",
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Sion – Ajax",
+      "result_90": "2-4",
+      "favourite": "BTTS Yes",
+      "settlement": "HIT",
+      "world_verdict": "PRIME",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "CHAOS_UNDERRATED",
+        "BLOWOUT_TAIL_MISSED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Motherwell – Freiburg",
+      "result_90": "1-3",
+      "favourite": "Under 3.5 goals",
+      "settlement": "MISS",
+      "world_verdict": "COUNTERWORLD",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "UNDER_TOO_TIGHT",
+        "CHAOS_UNDERRATED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Gent – Hibernian",
+      "result_90": "0-0",
+      "favourite": "Under 3.5 goals",
+      "settlement": "HIT",
+      "world_verdict": "PRIME",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "STALL_RISK_MISSED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Atalanta – Hapoel Tel-Aviv",
+      "result_90": "0-0",
+      "favourite": "Atalanta team Over 0.5 goals",
+      "settlement": "MISS",
+      "world_verdict": "COUNTERWORLD",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED",
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Panathinaikos – Hradec Králové",
+      "result_90": "2-2",
+      "favourite": "Panathinaikos team Over 0.5 goals",
+      "settlement": "HIT",
+      "world_verdict": "MIXED",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "CHAOS_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Hearts – SK Rapid",
+      "result_90": "2-2",
+      "favourite": "X2",
+      "settlement": "HIT",
+      "world_verdict": "PRIME",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "CHAOS_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Rangers – Jablonec",
+      "result_90": "1-0",
+      "favourite": "BTTS Yes",
+      "settlement": "MISS",
+      "world_verdict": "COUNTERWORLD",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "COUNTERWORLD_UNDERRATED",
+        "STALL_RISK_MISSED",
+        "BTTS_ONE_GOAL_PATH"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Benfica – Aarhus",
+      "result_90": "3-1",
+      "favourite": "Benfica team Over 0.5 goals",
+      "settlement": "HIT",
+      "world_verdict": "PRIME",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "CHAOS_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Hajduk Split – Raków",
+      "result_90": "2-2",
+      "favourite": "Hajduk Split team Over 0.5 goals",
+      "settlement": "HIT",
+      "world_verdict": "MIXED",
+      "cluster_hit": false,
+      "ampel": "YELLOW",
+      "failure_tags": [
+        "CHAOS_UNDERRATED",
+        "WORLD_TOO_NARROW"
+      ],
+      "notes": []
+    },
+    {
+      "match": "Dinamo City – Pafos",
+      "result_90": "1-1",
+      "favourite": "NO_STABLE_PREDICTION",
+      "settlement": "NOT_AVAILABLE",
+      "world_verdict": "UNDETERMINED",
+      "cluster_hit": true,
+      "ampel": "RED",
+      "failure_tags": [],
+      "notes": [
+        "NSP_EXCLUDED_FROM_FAVOURITE_HIT_RATE"
+      ]
+    },
+    {
+      "match": "Getafe – Partizan",
+      "result_90": "3-1",
+      "favourite": "NO_STABLE_PREDICTION",
+      "settlement": "NOT_AVAILABLE",
+      "world_verdict": "UNDETERMINED",
+      "cluster_hit": false,
+      "ampel": "RED",
+      "failure_tags": [
+        "BLOWOUT_TAIL_MISSED",
+        "WORLD_TOO_NARROW"
+      ],
+      "notes": [
+        "NSP_EXCLUDED_FROM_FAVOURITE_HIT_RATE"
+      ]
+    },
+    {
+      "match": "Rayo Vallecano – Deportivo Alavés",
+      "result_90": "1-1",
+      "favourite": "NO_STABLE_PREDICTION",
+      "settlement": "NOT_AVAILABLE",
+      "world_verdict": "UNDETERMINED",
+      "cluster_hit": true,
+      "ampel": "RED",
+      "failure_tags": [],
+      "notes": [
+        "NSP_EXCLUDED_FROM_FAVOURITE_HIT_RATE"
+      ]
+    }
+  ],
+  "correction_records": []
+}
