@@ -29,8 +29,7 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          p=Path('index.html')
-          s=p.read_text(encoding='utf-8')
+          s=Path('index.html').read_text(encoding='utf-8')
           checks={
             'run loader': "const RUNS='runs/';",
             'data loader': "const DATA='data/';",
@@ -69,11 +68,14 @@ jobs:
           print(f'Extracted {len(blocks)} inline script block(s)')
           PY
           for f in /tmp/ecobet-inline-*.js; do node --check "$f"; done
-      - name: Commit staged index only
+      - name: Record successful validation
+        run: |
+          printf 'PASS\nstructure=PASS\ninline_javascript_syntax=PASS\n' > tools/.v14-display-validation
+      - name: Commit validation result
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html
+          git add index.html tools/.v14-display-validation
           git diff --cached --quiet && exit 0
-          git commit -m "Expand match detail display for run schema v1.4"
+          git commit -m "Validate v1.4 display compatibility"
           git push origin HEAD:ecobet-v14-display-safe
