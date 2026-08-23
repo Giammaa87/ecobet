@@ -19,7 +19,12 @@ jobs:
           ref: ecobet-v14-display-safe
           fetch-depth: 0
       - name: Apply compatibility patch
-        run: python tools/patch_index_v14_display.py
+        run: |
+          if grep -q "const worldText=(world,detail)" index.html; then
+            echo "Patch already present; no re-application needed."
+          else
+            python tools/patch_index_v14_display.py
+          fi
       - name: Validate expected additions and existing loaders
         run: |
           python - <<'PY'
@@ -43,8 +48,27 @@ jobs:
               raise SystemExit('Missing expected markers: '+', '.join(missing))
           if s.count('function renderMatchDetail') != 1:
               raise SystemExit('renderMatchDetail count changed unexpectedly')
-          print('Validation PASS')
+          print('Structural validation PASS')
           PY
+      - name: Validate inline JavaScript syntax
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          s=Path('index.html').read_text(encoding='utf-8')
+          blocks=[]
+          for attrs, body in re.findall(r'<script([^>]*)>(.*?)</script>', s, flags=re.S|re.I):
+              if re.search(r'\bsrc\s*=', attrs, flags=re.I):
+                  continue
+              if body.strip():
+                  blocks.append(body)
+          if not blocks:
+              raise SystemExit('No inline JavaScript block found')
+          for i, body in enumerate(blocks,1):
+              Path(f'/tmp/ecobet-inline-{i}.js').write_text(body, encoding='utf-8')
+          print(f'Extracted {len(blocks)} inline script block(s)')
+          PY
+          for f in /tmp/ecobet-inline-*.js; do node --check "$f"; done
       - name: Commit staged index only
         run: |
           git config user.name "github-actions[bot]"
