@@ -1,4 +1,4 @@
-name: ECOBET v1.4 display safe patch
+name: ECOBET football interpretation fallback
 
 on:
   push:
@@ -18,64 +18,40 @@ jobs:
         with:
           ref: ecobet-v14-display-safe
           fetch-depth: 0
-      - name: Apply compatibility patch
-        run: |
-          if grep -q "const worldText=(world,detail)" index.html; then
-            echo "Patch already present; no re-application needed."
-          else
-            python tools/patch_index_v14_display.py
-          fi
-      - name: Validate expected additions and existing loaders
+      - name: Apply football interpretation fallback
+        run: python tools/patch_football_interpretation_fallback.py
+      - name: Validate structure and JavaScript syntax
         run: |
           python - <<'PY'
           from pathlib import Path
           s=Path('index.html').read_text(encoding='utf-8')
-          checks={
-            'run loader': "const RUNS='runs/';",
-            'data loader': "const DATA='data/';",
-            'audit loader': "const AUDITS='audits/';",
-            'detail renderer': 'function renderMatchDetail',
-            'team ebook compatibility': 'teamFieldLabel',
-            'v1.4 candidate axis': 'market_axis',
-            'v1.4 candidate world': 'supported_world',
-            'field status section': 'Datenfelder · DF01–DF16',
-            'favourite reason': 'favourite_decision_reason',
-            'world object renderer': 'worldText=(world,detail)',
-          }
-          missing=[name for name,needle in checks.items() if needle not in s]
-          if missing:
-              raise SystemExit('Missing expected markers: '+', '.join(missing))
-          if s.count('function renderMatchDetail') != 1:
-              raise SystemExit('renderMatchDetail count changed unexpectedly')
-          print('Structural validation PASS')
+          required=[
+            'function renderMatchDetail',
+            "const RUNS='runs/';",
+            "const DATA='data/';",
+            "const AUDITS='audits/';",
+            'Spielmechanismus · PRIME',
+            'Gegenmechanismus · COUNTER',
+            'Strukturierte Interpretationsachsen sind in diesem Run nicht verfügbar.',
+            'm.football_interpretation?.summary',
+          ]
+          missing=[x for x in required if x not in s]
+          if missing: raise SystemExit('Missing markers: '+', '.join(missing))
+          print('structure=PASS')
           PY
-      - name: Validate inline JavaScript syntax
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          s=Path('index.html').read_text(encoding='utf-8')
-          blocks=[]
-          for attrs, body in re.findall(r'<script([^>]*)>(.*?)</script>', s, flags=re.S|re.I):
-              if re.search(r'\bsrc\s*=', attrs, flags=re.I):
-                  continue
-              if body.strip():
-                  blocks.append(body)
-          if not blocks:
-              raise SystemExit('No inline JavaScript block found')
-          for i, body in enumerate(blocks,1):
-              Path(f'/tmp/ecobet-inline-{i}.js').write_text(body, encoding='utf-8')
-          print(f'Extracted {len(blocks)} inline script block(s)')
-          PY
-          for f in /tmp/ecobet-inline-*.js; do node --check "$f"; done
-      - name: Record successful validation
-        run: |
-          printf 'PASS\nstructure=PASS\ninline_javascript_syntax=PASS\n' > tools/.v14-display-validation
-      - name: Commit validation result
+          node - <<'NODE'
+          const fs=require('fs');
+          const html=fs.readFileSync('index.html','utf8');
+          const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)].map(m=>m[1]).filter(x=>x.trim());
+          if(!scripts.length) throw new Error('No inline scripts found');
+          for(const code of scripts) new Function(code);
+          console.log('inline_javascript_syntax=PASS');
+          NODE
+      - name: Commit index only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html tools/.v14-display-validation
+          git add index.html
           git diff --cached --quiet && exit 0
-          git commit -m "Validate v1.4 display compatibility"
+          git commit -m "Add football interpretation fallback"
           git push origin HEAD:ecobet-v14-display-safe
