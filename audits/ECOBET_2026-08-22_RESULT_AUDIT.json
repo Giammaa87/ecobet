@@ -1,0 +1,1936 @@
+{
+  "serialization_note": "Website-compatible audit JSON using the existing RUN_AUDIT_RECORD / MATCH_AUDIT_RECORD contract. Original run remains immutable.",
+  "audit_generated_at": "2026-08-22T23:40:00+02:00",
+  "original_run_immutable": true,
+  "run_audit_record": {
+    "record_type": "RUN_AUDIT_RECORD",
+    "run_id": "RUN_2026-08-22_FOCUS_5_PLUS_UEFA_CEST_1218_COMPLETE_RETRY",
+    "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+    "source_run_record": {
+      "filename": "2026-08-22_1218.json",
+      "immutability": "UNCHANGED",
+      "original_run_mutated_by_audit": false
+    },
+    "data_snapshot_provenance": {
+      "status": "NOT_AVAILABLE",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_date": "NOT_AVAILABLE",
+      "data_snapshot_generated_at": "NOT_AVAILABLE",
+      "data_snapshot_data_cutoff": "NOT_AVAILABLE",
+      "data_snapshot_db_updated_at": "NOT_AVAILABLE",
+      "data_snapshot_hash": "NOT_AVAILABLE",
+      "data_snapshot_schema_version": "NOT_AVAILABLE",
+      "data_snapshot_url": "NOT_AVAILABLE"
+    },
+    "fixture_reconciliation_summary": "Source run contains 17/17 committed in-scope fixtures; this audit confirmed final results for all 17 source fixtures. The source run itself remains immutable.",
+    "source_mode_distribution": {
+      "WEB_FALLBACK": 17
+    },
+    "date_range": {
+      "from": "2026-08-22",
+      "to": "2026-08-22"
+    },
+    "timezone": "Europe/Zurich",
+    "scope": "FOCUS_5_PLUS_UEFA",
+    "scope_members": [
+      "Premier League",
+      "Bundesliga",
+      "La Liga",
+      "Serie A",
+      "Ligue 1",
+      "UEFA Champions League",
+      "UEFA Europa League",
+      "UEFA Conference League"
+    ],
+    "norm_versions": [
+      "N_ECOBET_MASTER_OS_v1.3",
+      "N_ECOBET_DATA_FABRIC_AND_EBOOKS_v1.5",
+      "N_ECOBET_FOOTBALL_AND_DECISION_ENGINE_v1.1",
+      "N_ECOBET_OUTPUT_AND_AUDIT_v1.4",
+      "N_ECOBET_TEAM_ID_REGISTRY_v1.0",
+      "H_ECOBET_HISTORY_CALIBRATION_v1.0",
+      "ECOBET_SCHEMA_01_run_record_v1.4"
+    ],
+    "match_counts": {
+      "scope": 17,
+      "committed": 17,
+      "results_confirmed": 17,
+      "favourite_released": 17,
+      "nsp": 0
+    },
+    "readiness_distribution": {
+      "CONDITIONAL": 17
+    },
+    "world_stability_distribution": {
+      "NOT_AVAILABLE": 17
+    },
+    "ampel_distribution": {
+      "YELLOW": 17
+    },
+    "nsp_count": 0,
+    "result_settlement_status": "COMPLETE",
+    "model_kpis": {
+      "favourite": {
+        "HIT": 10,
+        "MISS": 6,
+        "PUSH": 1,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 62.5
+      },
+      "safe": {
+        "HIT": 13,
+        "MISS": 4,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 76.5
+      },
+      "balanced": {
+        "HIT": 10,
+        "MISS": 6,
+        "PUSH": 1,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 62.5
+      },
+      "aggressive": {
+        "HIT": 8,
+        "MISS": 5,
+        "PUSH": 4,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 61.5
+      },
+      "modal_score": {
+        "hits": 0,
+        "total": 17,
+        "hit_rate_percent": 0.0
+      },
+      "four_score_cluster": {
+        "hits": 5,
+        "total": 17,
+        "hit_rate_percent": 29.4
+      },
+      "score_band": {
+        "hits": 10,
+        "total": 17,
+        "hit_rate_percent": 58.8
+      },
+      "world_verdict_distribution": {
+        "PRIME": 9,
+        "COUNTERWORLD": 4,
+        "MIXED": 2,
+        "NEITHER": 2,
+        "UNDETERMINED": 0
+      }
+    },
+    "data_integrity_flags": [
+      "ALL_17_RESULTS_CONFIRMED",
+      "ORIGINAL_RUN_IMMUTABLE",
+      "SOURCE_RUN_DATA_SNAPSHOT_NOT_AVAILABLE_PRESERVED",
+      "SOURCE_RUN_WEB_FALLBACK_17_PRESERVED",
+      "SOURCE_RUN_HAS_NO_WORLD_STABILITY_FIELD",
+      "SOURCE_RUN_HAS_NO_COMMIT_TIME_FIELD",
+      "RESULT_DISTANCE_FROM_MODAL_NOT_COMPUTED_WITHOUT_NORM_FORMULA",
+      "WEBSITE_COMPATIBLE_AUDIT_SERIALIZATION"
+    ],
+    "notes": [
+      "The audit settles the exact predictions contained in 2026-08-22_1218.json; it does not substitute predictions from any later rerun.",
+      "Favourite settlement: 10 HIT / 6 MISS / 1 PUSH. Decisive-hit rate (PUSH excluded): 62.5%.",
+      "Safe settlement: 13 HIT / 4 MISS. Decisive-hit rate: 76.5%.",
+      "Balanced settlement: 10 HIT / 6 MISS / 1 PUSH. Decisive-hit rate: 62.5%.",
+      "Aggressive settlement: 8 HIT / 5 MISS / 4 PUSH. Decisive-hit rate: 61.5%.",
+      "Modal score: 0/17. Four-score cluster: 5/17 (29.4%). Score band: 10/17 (58.8%).",
+      "The source run's DATA_SNAPSHOT_STATUS=NOT_AVAILABLE and WEB_FALLBACK provenance are preserved exactly from the attached source record; result audit does not retroactively rewrite run provenance.",
+      "No real odds, stake, ticket or portfolio logic was introduced by settlement.",
+      "No normative model rule is changed from this single-day audit."
+    ]
+  },
+  "match_audit_records": [
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ENG-2026-08-22-HULL-CITY-MANCHESTER-UNITED",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "13:30",
+        "home": "Hull City",
+        "away": "Manchester United",
+        "competition": "Premier League",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Premier League",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "FAVOURITE_CONTROL_WITH_PROMOTED_HOME_RESISTANCE",
+        "anchor": "Uniteds Topliga-Prozessvorteil trifft auf Hulls Aufsteiger-Heimrolle und ein 2025/26 defensiv schwaches Championship-Profil.",
+        "prime_world": "United erzeugt das höhere Volumen, zwingt Hull tiefer und gewinnt mit zunehmender Spieldauer Kontrolle.",
+        "counterworld": "Hull hält das Spiel über Heimintensität und Aufsteigerenergie eng; United kommt wegen eigener Ausfälle nicht zu sauberer Kontrolle.",
+        "modal_score": "0-2",
+        "four_score_cluster": [
+          "0-2",
+          "1-2",
+          "0-1",
+          "1-1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Manchester United DNB",
+          "Manchester United O0.5 Team Goals",
+          "Manchester United 1–3 Team Goals",
+          "Over 1.5"
+        ],
+        "safe": "Manchester United O0.5 Team Goals",
+        "balanced": "Manchester United DNB",
+        "aggressive": "Manchester United Win",
+        "favourite_prediction": "Manchester United DNB",
+        "favourite_decision_reason": "Die Richtung bildet den strukturellen Strength-/Process-Edge besser ab als der breitere Team-Goal-Safe-Path.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "PROMOTED_TEAM",
+          "SOURCE_MIXED",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-0",
+        "competition_final_score": "2-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "Reuters",
+            "role": "result and match-event confirmation",
+            "url": "https://www.reuters.com/sports/soccer/hull-stun-manchester-united-2-0-premier-league-return-2026-08-22/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Hull's home-resistance mechanism materialised much more strongly than the committed PRIME_WORLD; United failed to score and never established the modelled control path.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [
+        "DIRECTION_OVERREACH"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ESP-2026-08-22-ATHLETIC-CLUB-SEVILLA",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "17:00",
+        "home": "Athletic Club",
+        "away": "Sevilla",
+        "competition": "La Liga",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "La Liga",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "HOME_PRESSURE_AGAINST_WEAK_AWAY_DEFENCE",
+        "anchor": "Athletics höheres xG-/Defensivprozessniveau trifft auf Sevillas schwaches Auswärtsprofil und niedrige Chance Creation.",
+        "prime_world": "Athletic hält Sevilla tief, gewinnt Pressingduelle und erzeugt den klareren Torpfad.",
+        "counterworld": "Sevilla nutzt Regimefrische und Athletics Abschlussineffizienz, um das Spiel in einen engen Draw zu ziehen.",
+        "modal_score": "2-0",
+        "four_score_cluster": [
+          "2-0",
+          "1-0",
+          "2-1",
+          "1-1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Athletic Club DNB",
+          "Athletic Club O0.5 Team Goals",
+          "1X",
+          "Under 3.5"
+        ],
+        "safe": "Athletic Club O0.5 Team Goals",
+        "balanced": "Athletic Club DNB",
+        "aggressive": "Athletic Club Win",
+        "favourite_prediction": "Athletic Club DNB",
+        "favourite_decision_reason": "Der Heim-Pressing-/Prozessedge ist richtungsstärker als ein bloßer Team-Goal-Ausdruck, während DNB den Draw-Tail schützt.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "SOURCE_MIXED",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-3",
+        "competition_final_score": "1-3",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "Athletic Club",
+            "role": "official result and match report",
+            "url": "https://www.athletic-club.eus/en/teams/athletic-club/2026-27/liga/matches/athletic-club-vs-sevilla-fc/1_8573/report/"
+          },
+          {
+            "name": "ESPN",
+            "role": "result cross-check",
+            "url": "https://www.espn.in/football/match/_/gameId/401882916"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Sevilla's alternative regime/efficiency path materialised and exceeded the narrow draw-tail described in COUNTERWORLD; Athletic scored but lost 1-3.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [
+        "DIRECTION_OVERREACH"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ENG-2026-08-22-EVERTON-CRYSTAL-PALACE",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "16:00",
+        "home": "Everton",
+        "away": "Crystal Palace",
+        "competition": "Premier League",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Premier League",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "BALANCED_OPEN_MIDFIELD_WITH_HOME_TERRITORY",
+        "anchor": "Evertons Heimrolle trifft auf zwei mittelstarke Prozessprofile mit defensiver Verwundbarkeit; Palace startet unter neuem Regime.",
+        "prime_world": "Everton gewinnt etwas mehr Territorium, beide Teams erzeugen aber genug zweite Bälle und Übergänge für mindestens zwei Tore.",
+        "counterworld": "Palace stabilisiert unter neuem Trainer den Ballbesitz gegen Evertons Druck und dreht den Territorialvorteil in einen Auswärtspfad.",
+        "modal_score": "1-1",
+        "four_score_cluster": [
+          "1-1",
+          "2-1",
+          "1-2",
+          "1-0"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Over 1.5",
+          "Everton DNB",
+          "Crystal Palace O0.5 Team Goals",
+          "BTTS Yes"
+        ],
+        "safe": "Over 1.5",
+        "balanced": "Over 1.5",
+        "aggressive": "Everton DNB",
+        "favourite_prediction": "Over 1.5",
+        "favourite_decision_reason": "Der Zwei-Tore-Korridor überlebt beide Welten besser als eine richtungsabhängige Entscheidung und bleibt dennoch vom Matchmechanismus getragen.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "MULTIWORLD_CLOSE",
+          "CONFIRMED_REGIME_CHANGE",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-0",
+        "competition_final_score": "2-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Premier League result feed",
+            "role": "result confirmation",
+            "url": "https://www.premierleague.com/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Everton's home-territory path and the at-least-two-goal mechanism both materialised in a 2-0 home win.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ENG-2026-08-22-IPSWICH-TOWN-SUNDERLAND",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "16:00",
+        "home": "Ipswich Town",
+        "away": "Sunderland",
+        "competition": "Premier League",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Premier League",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "PROMOTED_HOME_PROCESS_VS_TOPFLIGHT_PRIOR",
+        "anchor": "Ipswich bringt ein sehr starkes Championship-Prozessprofil mit, Sunderland aber den höheren Wettbewerb-Prior aus der Premier League.",
+        "prime_world": "Ipswich überträgt Heimdruck und Chance Creation in den Aufstieg und kommt zuverlässig zu eigenem Scoring.",
+        "counterworld": "Sunderland neutralisiert den Aufsteigerdruck über Topliga-Athletik und gewinnt das enge Spiel über Transitionen.",
+        "modal_score": "1-1",
+        "four_score_cluster": [
+          "1-1",
+          "2-1",
+          "1-0",
+          "1-2"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Ipswich Town O0.5 Team Goals",
+          "Ipswich Town DNB",
+          "Over 1.5",
+          "Sunderland O0.5 Team Goals"
+        ],
+        "safe": "Ipswich Town O0.5 Team Goals",
+        "balanced": "Ipswich Town O0.5 Team Goals",
+        "aggressive": "Ipswich Town DNB",
+        "favourite_prediction": "Ipswich Town O0.5 Team Goals",
+        "favourite_decision_reason": "Der Ipswich-Scoring-Pfad ist stabiler als die wegen Cross-Division-Prior unsichere Richtung.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "PROMOTED_TEAM",
+          "CROSS_DIVISION_PRIOR",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-1",
+        "competition_final_score": "2-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Premier League result feed",
+            "role": "result confirmation",
+            "url": "https://www.premierleague.com/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Ipswich's promoted-home chance-creation/scoring path materialised and produced the 2-1 cluster score.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ENG-2026-08-22-NOTTINGHAM-FOREST-LEEDS-UNITED",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "16:00",
+        "home": "Nottingham Forest",
+        "away": "Leeds United",
+        "competition": "Premier League",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Premier League",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "HOME_EDGE_AGAINST_FRAGILE_AWAY_ROLE",
+        "anchor": "Forest erhält Heimvorteil gegen ein Leeds-Profil mit starkem Heim-/Auswärtsgefälle und 1.84 Auswärts-Gegentoren 2025/26.",
+        "prime_world": "Forest gewinnt die zweite Ballzone und drückt Leeds in eine schwächere Auswärtsrolle; ein knapper Heimsiegpfad dominiert.",
+        "counterworld": "Leeds überträgt sein ordentliches xG-Profil in Auswärtschancen und hält Forest im 1:1.",
+        "modal_score": "2-1",
+        "four_score_cluster": [
+          "2-1",
+          "1-1",
+          "1-0",
+          "2-0"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Nottingham Forest DNB",
+          "1X",
+          "Nottingham Forest O0.5 Team Goals",
+          "Under 3.5"
+        ],
+        "safe": "1X",
+        "balanced": "Nottingham Forest DNB",
+        "aggressive": "Nottingham Forest Win",
+        "favourite_prediction": "Nottingham Forest DNB",
+        "favourite_decision_reason": "DNB bildet die Heim-/Away-Role-Differenz direkt ab und überlebt den primären Draw-Tail.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "AWAY_ROLE_WEAKNESS",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-1",
+        "competition_final_score": "0-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "Premier League result feed",
+            "role": "result confirmation",
+            "url": "https://www.premierleague.com/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Leeds' away chance path materialised while the committed home-edge direction failed; Leeds won 1-0.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [
+        "DIRECTION_OVERREACH"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "FRA-2026-08-22-LENS-AUXERRE",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "17:15",
+        "home": "Lens",
+        "away": "Auxerre",
+        "competition": "Ligue 1",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Ligue 1",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "STRONG_HOME_PRESSURE_WITH_RECENT_REGIME_CONFIRMATION",
+        "anchor": "Lens koppelt Elite-2025/26-Prozess an einen positiven aktuellen Pflichtspielindikator; Auxerres Angriffsprozess war deutlich schwächer.",
+        "prime_world": "Lens dominiert Abschlüsse und zweite Bälle, hält Auxerre unter niedrigem Chance-Volumen und gewinnt den Heimkorridor.",
+        "counterworld": "Auxerre übersteht die frühe Druckphase und zwingt das neue Lens-Regime in ein zähes 1:1.",
+        "modal_score": "2-0",
+        "four_score_cluster": [
+          "2-0",
+          "2-1",
+          "1-0",
+          "3-0"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Lens Win",
+          "Lens O0.5 Team Goals",
+          "Lens O1.5 Team Goals",
+          "Under 3.5"
+        ],
+        "safe": "Lens O0.5 Team Goals",
+        "balanced": "Lens Win",
+        "aggressive": "Lens O1.5 Team Goals",
+        "favourite_prediction": "Lens Win",
+        "favourite_decision_reason": "Der Heim-/Volume-/Defensivprozessedge ist hier spezifisch genug, um einen Sieg besser abzubilden als der sehr breite Team-Goal-Safe-Path.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "CURRENT_COMPETITIVE_MATCH_FOUND",
+          "CONFIRMED_REGIME_CHANGE",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "5-2",
+        "competition_final_score": "5-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Sofascore News",
+            "role": "result and match report",
+            "url": "https://www.sofascore.com/news/rc-lens-5-2-auxerre-thauvin-lights-up-ligue-1-opener"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Lens' dominant home-pressure and scoring-volume mechanism materialised decisively, though the 5-2 tail was much wider than the committed score corridor.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [
+        "SCORE_BAND_MISS"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ESP-2026-08-22-VALENCIA-CELTA-VIGO",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "19:30",
+        "home": "Valencia",
+        "away": "Celta Vigo",
+        "competition": "La Liga",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "La Liga",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "LOW_EVENT_BALANCE_WITH_CELTA_AWAY_RESILIENCE",
+        "anchor": "Valencias ordentliche Heimrolle trifft auf Celtas starkes Auswärtsresultatprofil; beide Teams besitzen moderate statt dominante Chance Creation.",
+        "prime_world": "Das Spiel bleibt phasenweise kontrolliert und eng; keine Seite erzeugt dauerhaft genug Druck für einen offenen Vier-Tore-Pfad.",
+        "counterworld": "Ein frühes Tor öffnet beide Seiten und hebt die Richtungsunsicherheit in einen 2:1/1:2-Tail.",
+        "modal_score": "1-1",
+        "four_score_cluster": [
+          "1-1",
+          "1-0",
+          "0-1",
+          "2-1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Under 3.5",
+          "Valencia DNB",
+          "Celta Vigo DNB",
+          "Celta Vigo O0.5 Team Goals"
+        ],
+        "safe": "Under 3.5",
+        "balanced": "Under 3.5",
+        "aggressive": "Celta Vigo DNB",
+        "favourite_prediction": "Under 3.5",
+        "favourite_decision_reason": "Die Low-Event-Signatur wird von moderatem Volumen, Celtas Auswärtsdefensive und dem engen Cluster getragen; Richtung bleibt deutlich näher.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_EVENT_SIGNATURE",
+          "MULTIWORLD_CLOSE",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-0",
+        "competition_final_score": "0-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "PUSH",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "ESPN",
+            "role": "result confirmation",
+            "url": "https://www.espn.co.uk/football/match/_/gameId/401882907/celta-vigo-valencia"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "The committed low-event, controlled-match mechanism materialised in a 0-0 draw; direction stayed unresolved as modelled.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [
+        "SCORE_BAND_MISS"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ENG-2026-08-22-BRENTFORD-TOTTENHAM-HOTSPUR",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "18:30",
+        "home": "Brentford",
+        "away": "Tottenham Hotspur",
+        "competition": "Premier League",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Premier League",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "OPEN_TRANSITION_WITH_REGIME_VOLATILITY",
+        "anchor": "Brentfords besseres 2025/26-Offensivprozessprofil trifft auf einen tiefgreifend veränderten Tottenham-Kontext unter neuem Trainer.",
+        "prime_world": "Beide Teams finden Scoring-Pfade; Brentford nutzt Heimdruck, Tottenham erzeugt unter De Zerbi aber ebenfalls hohe Übergangsgefahr.",
+        "counterworld": "Tottenhams neues Ballbesitzregime greift schneller als erwartet und verschiebt das Spiel deutlich in Spurs-Richtung.",
+        "modal_score": "1-1",
+        "four_score_cluster": [
+          "1-1",
+          "2-1",
+          "1-2",
+          "2-2"
+        ],
+        "score_band": "2–4",
+        "prediction_map": [
+          "BTTS Yes",
+          "Over 1.5",
+          "Brentford O0.5 Team Goals",
+          "Tottenham O0.5 Team Goals",
+          "Brentford DNB"
+        ],
+        "safe": "Over 1.5",
+        "balanced": "BTTS Yes",
+        "aggressive": "Brentford DNB",
+        "favourite_prediction": "BTTS Yes",
+        "favourite_decision_reason": "Zwei eigenständige Scoring-Pfade sind trotz unsicherer Richtung der gemeinsame Kern beider Welten.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "CONFIRMED_REGIME_CHANGE",
+          "MULTIWORLD_CLOSE",
+          "STATE_SENSITIVE",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "3-0",
+        "competition_final_score": "3-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "MISS",
+        "aggressive_result": "HIT",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "Premier League result feed",
+            "role": "result confirmation",
+            "url": "https://www.premierleague.com/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Brentford's home-pressure path materialised strongly, but the central two-sided-scoring mechanism did not: Tottenham failed to score in a 3-0 result.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [
+        "RIGHT_WORLD_WRONG_RENDERER",
+        "BTTS_ONE_GOAL_PATH"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ITA-2026-08-22-INTER-MONZA",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "18:30",
+        "home": "Inter",
+        "away": "Monza",
+        "competition": "Serie A",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Serie A",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "CHAMPION_HOME_CONTROL_VS_PROMOTED_PROCESS",
+        "anchor": "Inters Champion-/Eliteprozess trifft auf einen starken, aber zweitklassigen Monza-Aufsteiger; beide kommen mit positiver 2026/27 Pflichtspielhistorie.",
+        "prime_world": "Inter kontrolliert Ball und Boxzugänge, Monza verteidigt ordentlich, kann die höhere Geschwindigkeit aber nicht dauerhaft halten.",
+        "counterworld": "Monzas starker Serie-B-Prozess und 3:0-Coppa-Start tragen die defensive Struktur in ein langes 1:1.",
+        "modal_score": "2-0",
+        "four_score_cluster": [
+          "2-0",
+          "2-1",
+          "1-0",
+          "1-1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Inter DNB",
+          "Inter O0.5 Team Goals",
+          "Inter Win",
+          "Under 3.5"
+        ],
+        "safe": "Inter O0.5 Team Goals",
+        "balanced": "Inter DNB",
+        "aggressive": "Inter Win",
+        "favourite_prediction": "Inter DNB",
+        "favourite_decision_reason": "Der klassenübergreifende Strength- und Volume-Edge ist klar, DNB absorbiert aber Monzas belastbaren Aufsteiger-/Coppa-Tail.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "PROMOTED_TEAM",
+          "CURRENT_COMPETITIVE_MATCH_FOUND",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "4-1",
+        "competition_final_score": "4-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Reuters",
+            "role": "result and match-event confirmation",
+            "url": "https://www.reuters.com/sports/soccer/inter-begin-title-defence-with-stylish-4-1-win-over-monza-2026-08-22/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Inter's superior class, box control and scoring path materialised clearly; the 4-1 outcome exceeded the modelled 1-3 total-goal corridor.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [
+        "SCORE_BAND_MISS"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ITA-2026-08-22-UDINESE-COMO",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "18:30",
+        "home": "Udinese",
+        "away": "Como",
+        "competition": "Serie A",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Serie A",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "AWAY_PROCESS_EDGE_AGAINST_HOME_RESILIENCE",
+        "anchor": "Como bringt ein außergewöhnlich starkes 2025/26-Topliga-Profil mit (1.64 xG, 0.90 xGA), Udinese aber Heimrolle und positiven Coppa-Start.",
+        "prime_world": "Como kontrolliert die besseren Zonen und hält Udineses Chance Quality niedrig; der knappe Auswärtspfad ist strukturell stärker.",
+        "counterworld": "Udinese nutzt Standards, Heimrolle und den 1:0-Coppa-Impuls, um Como auf ein 1:1 zu begrenzen.",
+        "modal_score": "0-1",
+        "four_score_cluster": [
+          "0-1",
+          "1-1",
+          "0-2",
+          "1-2"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Como DNB",
+          "Como O0.5 Team Goals",
+          "X2",
+          "Como Win"
+        ],
+        "safe": "Como O0.5 Team Goals",
+        "balanced": "Como DNB",
+        "aggressive": "Como Win",
+        "favourite_prediction": "Como DNB",
+        "favourite_decision_reason": "Comos Prozessvorteil ist richtungsfähig, während DNB den plausiblen Heim-Draw-Tail aus Coppa-Form und Rolle abfedert.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "CURRENT_COMPETITIVE_MATCH_FOUND",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "1-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "PUSH",
+        "aggressive_result": "MISS",
+        "favourite_result": "PUSH",
+        "result_sources": [
+          {
+            "name": "AS",
+            "role": "result confirmation",
+            "url": "https://as.com/resultados/futbol/italia/jornada/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "COUNTERWORLD",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "The exact 1-1 home-resilience/draw tail described in COUNTERWORLD materialised.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ESP-2026-08-22-ESPANYOL-REAL-MADRID",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "21:30",
+        "home": "Espanyol",
+        "away": "Real Madrid",
+        "competition": "La Liga",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "La Liga",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "ELITE_AWAY_STRENGTH_WITH_NEW_REGIME",
+        "anchor": "Reals Elite-Prozess (1.99 xG, 6.66 SOT) trifft auf Espanyols defensiv anfälliges 2025/26-Profil; neuer Real-Trainer erhöht aber Regimevarianz.",
+        "prime_world": "Real erzeugt klar mehr Abschlüsse und zwingt Espanyol in lange defensive Phasen; der Auswärtssiegpfad dominiert.",
+        "counterworld": "Espanyol hält über Heimrolle und Reals neues Regime das Spiel lange eng und erzwingt einen 1:1-Tail.",
+        "modal_score": "0-2",
+        "four_score_cluster": [
+          "0-2",
+          "1-2",
+          "0-1",
+          "1-3"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Real Madrid DNB",
+          "Real Madrid O0.5 Team Goals",
+          "Real Madrid 1–3 Team Goals",
+          "Real Madrid Win"
+        ],
+        "safe": "Real Madrid O0.5 Team Goals",
+        "balanced": "Real Madrid DNB",
+        "aggressive": "Real Madrid Win",
+        "favourite_prediction": "Real Madrid DNB",
+        "favourite_decision_reason": "Die klare Strength-/Volume-Kante ist richtungsfähig; DNB bewahrt Robustness gegen den Regime-/Heim-Draw-Tail.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "CONFIRMED_REGIME_CHANGE",
+          "ONE_SIDED_SCORING",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-2",
+        "competition_final_score": "1-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Managing Madrid",
+            "role": "result and match report",
+            "url": "https://www.managingmadrid.com/real-madrid-cf-la-liga/111682/immediate-reaction-espanyol-1-2-real-madrid"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Real Madrid's elite away-strength and volume path materialised in a 2-1 away win, which was also inside the committed four-score cluster.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ITA-2026-08-22-GENOA-NAPOLI",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "20:45",
+        "home": "Genoa",
+        "away": "Napoli",
+        "competition": "Serie A",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Serie A",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "AWAY_STRENGTH_VS_CURRENT_HOME_MOMENTUM",
+        "anchor": "Napoli besitzt den klar besseren 2025/26-Defensiv-/Strength-Prior, Genoa kommt jedoch aus einem 4:1-Coppa-Sieg und Napoli startet unter neuem Trainer.",
+        "prime_world": "Napoli limitiert Genoas Boxzugänge und gewinnt das Spiel über kontrollierte Qualität statt hohes Volumen.",
+        "counterworld": "Genoas Pflichtspielmomentum und Heimdruck treffen ein noch nicht gefestigtes Napoli-Regime und erzeugen 1:1/1:2-Varianz.",
+        "modal_score": "0-1",
+        "four_score_cluster": [
+          "0-1",
+          "1-1",
+          "0-2",
+          "1-2"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Napoli DNB",
+          "Napoli O0.5 Team Goals",
+          "X2",
+          "Under 3.5"
+        ],
+        "safe": "Napoli O0.5 Team Goals",
+        "balanced": "Napoli DNB",
+        "aggressive": "Napoli Win",
+        "favourite_prediction": "Napoli DNB",
+        "favourite_decision_reason": "Der Strength-/Defensivprozess trägt Napoli, während DNB den belastbaren Genoa-Heim-/Regime-Tail schützt.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "CONFIRMED_REGIME_CHANGE",
+          "CURRENT_COMPETITIVE_MATCH_FOUND",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-2",
+        "competition_final_score": "0-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Reuters",
+            "role": "result confirmation",
+            "url": "https://www.reuters.com/sports/soccer/inter-begin-title-defence-with-stylish-4-1-win-over-monza-2026-08-22/"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Napoli's defensive-control and superior-quality path materialised in a 2-0 away win, also inside the committed cluster.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ITA-2026-08-22-PARMA-CAGLIARI",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "20:45",
+        "home": "Parma",
+        "away": "Cagliari",
+        "competition": "Serie A",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Serie A",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "LOW_EVENT_HOME_STRUCTURE",
+        "anchor": "Beide 2025/26-Offensivprofile waren schwach; Parma und Cagliari starten zudem aus kontrollierten Coppa-Siegen ohne Gegentor.",
+        "prime_world": "Parma hält das Spiel strukturell eng, beide Teams erzeugen wenig hochwertige Chancen und der Gesamttor-Korridor bleibt klein.",
+        "counterworld": "Ein früher Fehler zwingt die andere Seite aus ihrer kontrollierten Struktur und öffnet einen 2:1-Tail.",
+        "modal_score": "1-0",
+        "four_score_cluster": [
+          "1-0",
+          "0-0",
+          "1-1",
+          "0-1"
+        ],
+        "score_band": "0–1",
+        "prediction_map": [
+          "Under 2.5",
+          "Under 3.5",
+          "Parma DNB",
+          "Cagliari DNB"
+        ],
+        "safe": "Under 3.5",
+        "balanced": "Under 2.5",
+        "aggressive": "Parma DNB",
+        "favourite_prediction": "Under 2.5",
+        "favourite_decision_reason": "Zwei unabhängige Low-Event-Trigger (schwache 2025/26 Chance Creation + aktuelle kontrollierte 2:0/1:0 Coppa-Siege) tragen den engen Cluster.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "LOW_EVENT_SIGNATURE",
+          "CURRENT_COMPETITIVE_MATCH_FOUND",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-1",
+        "competition_final_score": "0-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "ESPN",
+            "role": "result confirmation",
+            "url": "https://www.espn.com/soccer/match/_/gameId/401874747/cagliari-parma"
+          },
+          {
+            "name": "Sofascore News",
+            "role": "match report cross-check",
+            "url": "https://www.sofascore.com/news/parma-0-1-cagliari-romano-strikes-in-serie-a-opener"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "The low-event structure materialised exactly: one total goal, Under 2.5 hit, and the 0-1 final score sat in the committed cluster.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "FRA-2026-08-22-TOULOUSE-LYON",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "20:45",
+        "home": "Toulouse",
+        "away": "Lyon",
+        "competition": "Ligue 1",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Ligue 1",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "LYON_QUALITY_EDGE_WITH_HOME_DRAW_GRAVITY",
+        "anchor": "Lyon besitzt den höheren Strength-/Resultat-Prior, Toulouse aber einen ausgeglichenen Prozess und Heimrolle.",
+        "prime_world": "Lyon erzeugt die klarere Einzelqualität und mindestens einen stabilen Auswärts-Torpfad.",
+        "counterworld": "Toulouse neutralisiert Lyons Qualitätsedge über Heimkompaktheit und zwingt das Spiel in ein 1:1.",
+        "modal_score": "1-1",
+        "four_score_cluster": [
+          "1-1",
+          "1-2",
+          "2-1",
+          "0-1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Lyon O0.5 Team Goals",
+          "Lyon DNB",
+          "Over 1.5",
+          "BTTS Yes"
+        ],
+        "safe": "Lyon O0.5 Team Goals",
+        "balanced": "Lyon O0.5 Team Goals",
+        "aggressive": "Lyon DNB",
+        "favourite_prediction": "Lyon O0.5 Team Goals",
+        "favourite_decision_reason": "Der Lyon-Scoring-Pfad ist über beide Welten stabiler als die auswärts state-sensitive Richtung.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "DRAW_GRAVITY_HIGH",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-2",
+        "competition_final_score": "0-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Sofascore News",
+            "role": "result and match report",
+            "url": "https://www.sofascore.com/news/toulouse-0-2-lyon-bench-lifts-ol-as-fofana-seals-it"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": true,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "PRIME",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Lyon's superior individual-quality and stable scoring path materialised in a 2-0 away win.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "FRA-2026-08-22-NICE-LORIENT",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "20:45",
+        "home": "Nice",
+        "away": "Lorient",
+        "competition": "Ligue 1",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Ligue 1",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "AWAY_SCORING_EDGE_AGAINST_FRAGILE_HOME_DEFENCE",
+        "anchor": "Nices 2025/26-Defensive war strukturell schwach (xGA 1.64), während Lorient mit 1.40 xG und ausgeglichenerem Prozess anreist.",
+        "prime_world": "Lorient findet regelmäßig Zugriff auf Nices defensive Räume und kommt mindestens einmal zum Abschluss eines stabilen Scoring-Pfads.",
+        "counterworld": "Nice nutzt Heimdruck, erzwingt höhere Varianz und dreht die Richtung trotz eigener Defensivprobleme.",
+        "modal_score": "1-1",
+        "four_score_cluster": [
+          "1-1",
+          "1-2",
+          "0-1",
+          "2-1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Lorient O0.5 Team Goals",
+          "Lorient DNB",
+          "BTTS Yes",
+          "Over 1.5"
+        ],
+        "safe": "Lorient O0.5 Team Goals",
+        "balanced": "Lorient O0.5 Team Goals",
+        "aggressive": "Lorient DNB",
+        "favourite_prediction": "Lorient O0.5 Team Goals",
+        "favourite_decision_reason": "Der teambezogene Scoring-Pfad bildet Nices defensive Vulnerability direkter und robuster ab als eine Richtungsentscheidung.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "FRAGILE_HOME_DEFENCE",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-0",
+        "competition_final_score": "0-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "PUSH",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "Sofascore News",
+            "role": "result and match report",
+            "url": "https://www.sofascore.com/news/nice-0-0-lorient-control-vs-chances-on-matchday-1"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "NEITHER",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Lorient's committed scoring path failed, while Nice also did not create the higher-variance home-turn mechanism; the match finished 0-0.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "FRA-2026-08-22-TROYES-PARIS-FC",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "20:45",
+        "home": "Troyes",
+        "away": "Paris FC",
+        "competition": "Ligue 1",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Ligue 1",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "PROMOTED_HOME_CREATION_VS_TOPFLIGHT_PRIOR",
+        "anchor": "Troyes bringt einen starken Ligue-2-Aufstiegsprozess mit, Paris FC aber den Topliga-Prior trotz defensiv schwachem 2025/26-Profil.",
+        "prime_world": "Troyes überträgt Heimchance-Creation und trifft gegen eine Paris-FC-Defensive mit 1.64 xGA pro Spiel.",
+        "counterworld": "Paris FC setzt den höheren Ligaprior in Übergängen um und gewinnt trotz Troyes-Heimdruck ein enges Spiel.",
+        "modal_score": "1-1",
+        "four_score_cluster": [
+          "1-1",
+          "2-1",
+          "1-0",
+          "1-2"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Troyes O0.5 Team Goals",
+          "Troyes DNB",
+          "Over 1.5",
+          "Paris FC O0.5 Team Goals"
+        ],
+        "safe": "Troyes O0.5 Team Goals",
+        "balanced": "Troyes O0.5 Team Goals",
+        "aggressive": "Troyes DNB",
+        "favourite_prediction": "Troyes O0.5 Team Goals",
+        "favourite_decision_reason": "Troyes' eigener Scoring-Pfad wird vom Aufstiegsprozess und Paris-FC-xGA getragen; die Richtung bleibt cross-division-empfindlich.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "PROMOTED_TEAM",
+          "CROSS_DIVISION_PRIOR",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "0-0",
+        "competition_final_score": "0-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "PUSH",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "Sofascore News",
+            "role": "result and match report",
+            "url": "https://www.sofascore.com/news/troyes-0-0-paris-fc-monfray-leads-a-stubborn-start"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "NEITHER",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Troyes' promoted-home scoring mechanism failed and Paris FC did not realise the alternative away-win path; the match finished 0-0.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [
+        "TEAM_TOTAL_MISROUTED"
+      ],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "FRA-2026-08-22-LE-MANS-BREST",
+      "snapshot_id": "RUNSNAP_2026-08-22T12-18-00+02-00",
+      "data_snapshot_id": "NOT_AVAILABLE",
+      "data_snapshot_coverage": "NONE",
+      "data_source_mode": "WEB_FALLBACK",
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "20:45",
+        "home": "Le Mans",
+        "away": "Brest",
+        "competition": "Ligue 1",
+        "phase": "NOT_AVAILABLE"
+      },
+      "competition_metadata": {
+        "competition_id": "NOT_AVAILABLE",
+        "competition_name": "Ligue 1",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": "NOT_AVAILABLE"
+      },
+      "committed_model": {
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "world_type": "PROMOTED_HOME_STRUCTURE_VS_TOPFLIGHT_PRIOR",
+        "anchor": "Le Mans kommt mit einem defensiv starken Ligue-2-Aufstiegsprofil, Brest mit Topliga-Prior, aber negativer 2025/26-xGA-Struktur.",
+        "prime_world": "Le Mans hält die eigene Box stabil und findet gegen Brests 1.44 xGA mindestens einen Heim-Torpfad.",
+        "counterworld": "Brests höherer Ligaprior setzt sich über individuelle Qualität durch und kippt ein enges Spiel auswärts.",
+        "modal_score": "1-1",
+        "four_score_cluster": [
+          "1-1",
+          "1-0",
+          "1-2",
+          "2-1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "Le Mans O0.5 Team Goals",
+          "Le Mans DNB",
+          "Brest O0.5 Team Goals",
+          "Under 3.5"
+        ],
+        "safe": "Le Mans O0.5 Team Goals",
+        "balanced": "Le Mans O0.5 Team Goals",
+        "aggressive": "Le Mans DNB",
+        "favourite_prediction": "Le Mans O0.5 Team Goals",
+        "favourite_decision_reason": "Der Heim-Scoring-Pfad ist klarer als die cross-division-sensitive Richtung und wird von Brests Defensivprofil getragen.",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "3/4 or 4/4 mechanism-dependent",
+        "favourite_robustness": "MEDIUM-HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "DATA_CONDITIONAL",
+          "PROMOTED_TEAM",
+          "CROSS_DIVISION_PRIOR",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE"
+        ],
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "NOT_AVAILABLE"
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-2",
+        "competition_final_score": "2-2",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "PUSH",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "Sofascore News",
+            "role": "result and match report",
+            "url": "https://www.sofascore.com/news/le-mans-2-2-brest-chotard-pulls-strings-in-ligue-1"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No deterministic RESULT_DISTANCE_FROM_MODAL formula is defined in the loaded Output/Audit norm available to this audit. No new metric logic was invented."
+        }
+      },
+      "world_verdict": {
+        "verdict": "MIXED",
+        "evidence_level": "PARTIAL_MATCH_DATA",
+        "basis": "Le Mans' home scoring/resistance and Brest's higher-tier attacking quality both appeared, producing a 2-2 draw outside the committed narrow score band.",
+        "limitation": "Replay/result audit only. Original committed prediction, PRIME_WORLD, COUNTERWORLD, cluster and paths remain unchanged."
+      },
+      "failure_cluster": [
+        "CHAOS_UNDERRATED",
+        "SCORE_BAND_MISS"
+      ],
+      "audit_flags": []
+    }
+  ]
+}
