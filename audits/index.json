@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "record_type": "audit_index",
-  "generated_at": "2026-08-24T01:29:00+02:00",
+  "generated_at": "2026-08-25T02:06:00+02:00",
   "dates": {
     "2026-08-11": [
       {
@@ -73,6 +73,14 @@
         "run_id": "RUN_2026-08-23_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260823T1013",
         "file": "ECOBET_2026-08-23_RESULT_AUDIT.json",
         "generated_at": "2026-08-24T01:29:00+02:00"
+      }
+    ],
+    "2026-08-24": [
+      {
+        "id": "2026-08-24_1127",
+        "run_id": "RUN_2026-08-24_FOCUS_5_PLUS_UEFA_Europe-Zurich_112700",
+        "file": "ECOBET_2026-08-24_RESULT_AUDIT.json",
+        "generated_at": "2026-08-25T02:06:00+02:00"
       }
     ]
   }
