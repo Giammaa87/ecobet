@@ -1,0 +1,282 @@
+{
+  "serialization_note": "Website-compatible audit JSON using the existing RUN_AUDIT_RECORD / MATCH_AUDIT_RECORD contract. Original run remains immutable.",
+  "audit_generated_at": "2026-08-26T18:52:00+02:00",
+  "original_run_immutable": true,
+  "run_audit_record": {
+    "record_type": "RUN_AUDIT_RECORD",
+    "run_id": "RUN_2026-08-25_FOCUS_5_PLUS_UEFA_Europe-Zurich_111500",
+    "snapshot_id": "ECOBET_RUNSNAP_2026-08-25_1115",
+    "source_run_record": {
+      "filename": "2026-08-25_1115.json",
+      "immutability": "UNCHANGED",
+      "original_run_mutated_by_audit": false
+    },
+    "data_snapshot_provenance": {
+      "status": "AVAILABLE",
+      "data_snapshot_id": "snap_20260825_030225",
+      "data_snapshot_date": "2026-08-25",
+      "data_snapshot_generated_at": "2026-08-25T03:02:25.925368+02:00",
+      "data_snapshot_data_cutoff": "2026-08-25T03:02:25.925368+02:00",
+      "data_snapshot_db_updated_at": "2026-08-25T03:00:02",
+      "data_snapshot_hash": "sha256:153ba5b00f348ad8af4b956ce918669b0653c6cc78b8ef81c7d4fe80bc1e816b",
+      "data_snapshot_schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+      "data_snapshot_url": "https://giammaa87.github.io/ecobet/data/2026-08-25/snap_20260825_030225/manifest.json"
+    },
+    "fixture_reconciliation_summary": "The immutable official source run contains 4 committed in-scope fixtures. Final results were confirmed for all 4. Sabah–Hapoel Beer-Sheva and LASK–Celtic required extra time; all prediction-market settlement in this audit uses the score after 90 minutes plus stoppage time, consistent with the existing audit contract.",
+    "source_mode_distribution": {
+      "SNAPSHOT": 0,
+      "SNAPSHOT_PLUS_REPAIR": 0,
+      "WEB_FALLBACK": 4
+    },
+    "date_range": {
+      "from": "2026-08-25",
+      "to": "2026-08-25"
+    },
+    "timezone": "Europe/Zurich",
+    "scope": "FOCUS_5_PLUS_UEFA",
+    "match_counts": {
+      "scope": 4,
+      "committed": 4,
+      "results_confirmed": 4,
+      "favourite_released": 4,
+      "nsp": 0
+    },
+    "result_settlement_status": "COMPLETE",
+    "model_kpis": {
+      "favourite": {
+        "HIT": 3,
+        "MISS": 1,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 75.0
+      },
+      "safe": {
+        "HIT": 3,
+        "MISS": 1,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 75.0
+      },
+      "balanced": {
+        "HIT": 4,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 100.0
+      },
+      "aggressive": {
+        "HIT": 4,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "hit_rate_percent": 100.0
+      },
+      "modal_score": {
+        "hits": 0,
+        "total": 4,
+        "hit_rate_percent": 0.0
+      },
+      "four_score_cluster": {
+        "hits": 1,
+        "total": 4,
+        "hit_rate_percent": 25.0
+      },
+      "score_band": {
+        "hits": 2,
+        "total": 4,
+        "hit_rate_percent": 50.0
+      },
+      "world_verdict_distribution": {
+        "PRIME": 4,
+        "COUNTERWORLD": 0,
+        "MIXED": 0,
+        "NEITHER": 0,
+        "UNDETERMINED": 0
+      }
+    },
+    "data_integrity_flags": [
+      "ALL_4_RESULTS_CONFIRMED",
+      "ORIGINAL_RUN_IMMUTABLE",
+      "SOURCE_RUN_DATA_SNAPSHOT_AVAILABLE_PRESERVED",
+      "SOURCE_MODE_DISTRIBUTION_0_SNAPSHOT_0_SNAPSHOT_PLUS_REPAIR_4_WEB_FALLBACK_PRESERVED",
+      "SOURCE_RUN_INTEGRITY_PARTIAL_PRESERVED",
+      "TWO_UEFA_MATCHES_WENT_TO_EXTRA_TIME",
+      "MARKET_SETTLEMENT_USES_90_PLUS_STOPPAGE_ONLY",
+      "WEBSITE_COMPATIBLE_AUDIT_SERIALIZATION"
+    ],
+    "match_audit_records": [
+      {
+        "record_type": "MATCH_AUDIT_RECORD",
+        "match_id": "UEFA-UCL-2026-08-25-SABAH-HBS",
+        "data_source_mode": "WEB_FALLBACK",
+        "fixture": {
+          "kickoff": "18:45",
+          "home": "Sabah",
+          "away": "Hapoel Beer-Sheva",
+          "competition": "UEFA Champions League",
+          "phase": "Play-off, second leg"
+        },
+        "committed_model": {
+          "world_type": "KO_STATE_DEPENDENT",
+          "modal_score": "1:1",
+          "four_score_cluster": ["1:1", "1:2", "2:1", "0:1"],
+          "score_band": "1–3",
+          "safe": "Match Goals 1–3",
+          "balanced": "BTTS Yes",
+          "aggressive": "Hapoel Beer-Sheva O0.5 Team Goals",
+          "favourite_prediction": "Match Goals 1–3",
+          "numerical_p_raw": "NOT_AVAILABLE",
+          "numerical_p_raw_available": "NO",
+          "ampel": "YELLOW",
+          "commit_status": "COMMITTED"
+        },
+        "result_settlement": {
+          "result_status": "CONFIRMED",
+          "settlement_basis": "90_PLUS_STOPPAGE",
+          "score_90_plus_stoppage": "3-2",
+          "score_after_extra_time": "5-2",
+          "safe_result": "MISS",
+          "balanced_result": "HIT",
+          "aggressive_result": "HIT",
+          "favourite_result": "MISS",
+          "result_sources": [{"name": "UEFA"}, {"name": "Sahadan"}]
+        },
+        "score_cluster_audit": {"modal_score_hit": false, "cluster_hit": false, "score_band_hit": false},
+        "world_verdict": {"verdict": "PRIME"},
+        "failure_cluster": ["GOAL_RANGE_TOO_NARROW", "SCORE_BAND_MISS"],
+        "audit_flags": ["EXTRA_TIME_PLAYED", "SETTLED_AT_90_PLUS_STOPPAGE"]
+      },
+      {
+        "record_type": "MATCH_AUDIT_RECORD",
+        "match_id": "UEFA-UCL-2026-08-25-BODO-NEC",
+        "data_source_mode": "WEB_FALLBACK",
+        "fixture": {
+          "kickoff": "21:00",
+          "home": "Bodø/Glimt",
+          "away": "N.E.C.",
+          "competition": "UEFA Champions League",
+          "phase": "Play-off, second leg"
+        },
+        "committed_model": {
+          "world_type": "CONTROL_BUT_FRAGILE_HOME",
+          "modal_score": "2:1",
+          "four_score_cluster": ["2:1", "2:0", "3:1", "1:1"],
+          "score_band": "2–4",
+          "safe": "Bodø/Glimt O0.5 Team Goals",
+          "balanced": "Bodø/Glimt 1–3 Team Goals",
+          "aggressive": "1",
+          "favourite_prediction": "Bodø/Glimt 1–3 Team Goals",
+          "numerical_p_raw": "NOT_AVAILABLE",
+          "numerical_p_raw_available": "NO",
+          "ampel": "YELLOW",
+          "commit_status": "COMMITTED"
+        },
+        "result_settlement": {
+          "result_status": "CONFIRMED",
+          "settlement_basis": "90_PLUS_STOPPAGE",
+          "score_90_plus_stoppage": "3-0",
+          "score_after_extra_time": "NOT_APPLICABLE",
+          "safe_result": "HIT",
+          "balanced_result": "HIT",
+          "aggressive_result": "HIT",
+          "favourite_result": "HIT",
+          "result_sources": [{"name": "N.E.C. official matchcenter"}]
+        },
+        "score_cluster_audit": {"modal_score_hit": false, "cluster_hit": false, "score_band_hit": true},
+        "world_verdict": {"verdict": "PRIME"},
+        "failure_cluster": ["FOUR_SCORE_CLUSTER_MISS"],
+        "audit_flags": []
+      },
+      {
+        "record_type": "MATCH_AUDIT_RECORD",
+        "match_id": "UEFA-UCL-2026-08-25-LASK-CELTIC",
+        "data_source_mode": "WEB_FALLBACK",
+        "fixture": {
+          "kickoff": "21:00",
+          "home": "LASK",
+          "away": "Celtic",
+          "competition": "UEFA Champions League",
+          "phase": "Play-off, second leg"
+        },
+        "committed_model": {
+          "world_type": "KO_STATE_DEPENDENT",
+          "modal_score": "1:2",
+          "four_score_cluster": ["1:2", "2:2", "1:1", "2:1"],
+          "score_band": "2–4",
+          "safe": "Over 1.5",
+          "balanced": "Match Goals 2–5",
+          "aggressive": "BTTS Yes",
+          "favourite_prediction": "Match Goals 2–5",
+          "numerical_p_raw": "NOT_AVAILABLE",
+          "numerical_p_raw_available": "NO",
+          "ampel": "YELLOW",
+          "commit_status": "COMMITTED"
+        },
+        "result_settlement": {
+          "result_status": "CONFIRMED",
+          "settlement_basis": "90_PLUS_STOPPAGE",
+          "score_90_plus_stoppage": "4-1",
+          "score_after_extra_time": "5-1",
+          "safe_result": "HIT",
+          "balanced_result": "HIT",
+          "aggressive_result": "HIT",
+          "favourite_result": "HIT",
+          "result_sources": [{"name": "UEFA"}, {"name": "Reuters"}]
+        },
+        "score_cluster_audit": {"modal_score_hit": false, "cluster_hit": false, "score_band_hit": false},
+        "world_verdict": {"verdict": "PRIME"},
+        "failure_cluster": ["SCORE_BAND_TOO_NARROW"],
+        "audit_flags": ["EXTRA_TIME_PLAYED", "SETTLED_AT_90_PLUS_STOPPAGE"]
+      },
+      {
+        "record_type": "MATCH_AUDIT_RECORD",
+        "match_id": "ESP-LALIGA-2026-08-25-VALENCIA-BETIS",
+        "data_source_mode": "WEB_FALLBACK",
+        "fixture": {
+          "kickoff": "21:00",
+          "home": "Valencia",
+          "away": "Real Betis",
+          "competition": "LaLiga",
+          "phase": "Matchday 1 (rescheduled after Matchday 2)"
+        },
+        "committed_model": {
+          "world_type": "BALANCED_NARROW",
+          "modal_score": "0:0",
+          "four_score_cluster": ["0:0", "0:1", "1:1", "1:0"],
+          "score_band": "0–1",
+          "safe": "Under 3.5",
+          "balanced": "Under 2.5",
+          "aggressive": "BTTS No",
+          "favourite_prediction": "Under 3.5",
+          "numerical_p_raw": "NOT_AVAILABLE",
+          "numerical_p_raw_available": "NO",
+          "ampel": "YELLOW",
+          "commit_status": "COMMITTED"
+        },
+        "result_settlement": {
+          "result_status": "CONFIRMED",
+          "settlement_basis": "90_PLUS_STOPPAGE",
+          "score_90_plus_stoppage": "0-1",
+          "score_after_extra_time": "NOT_APPLICABLE",
+          "safe_result": "HIT",
+          "balanced_result": "HIT",
+          "aggressive_result": "HIT",
+          "favourite_result": "HIT",
+          "result_sources": [{"name": "LaLiga"}]
+        },
+        "score_cluster_audit": {"modal_score_hit": false, "cluster_hit": true, "score_band_hit": true},
+        "world_verdict": {"verdict": "PRIME"},
+        "failure_cluster": [],
+        "audit_flags": []
+      }
+    ]
+  }
+}
