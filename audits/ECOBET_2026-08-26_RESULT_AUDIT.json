@@ -1,28 +1,32 @@
 {
-  "serialization_note": "Audit JSON derived from N_ECOBET_OUTPUT_AND_AUDIT_v1.3 RUN_AUDIT_RECORD / MATCH_AUDIT_RECORD semantics. No dedicated settlement_record schema is claimed.",
-  "audit_generated_at": "2026-08-26T23:30:03+02:00",
+  "serialization_note": "Corrected website-compatible audit JSON using the existing RUN_AUDIT_RECORD / MATCH_AUDIT_RECORD contract. Original run remains immutable. This replaces the automatic 23:30 audit that incorrectly left all six completed fixtures UNSETTLED.",
+  "audit_generated_at": "2026-08-27T00:21:19+02:00",
   "original_run_immutable": true,
+  "audit_correction": {
+    "replaces_audit_generated_at": "2026-08-26T23:30:03+02:00",
+    "reason": "The automatic result-acquisition path confirmed 0/6 and published 6 UNSETTLED although all six fixtures had completed. Final results were independently re-verified and re-settled without changing any committed prediction.",
+    "prediction_changes": 0
+  },
   "run_audit_record": {
     "record_type": "RUN_AUDIT_RECORD",
     "run_id": "RUN_2026-08-26_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260826T1023",
     "snapshot_id": "RUNSNAP_2026-08-26T10-23-00+02-00",
     "source_run_record": {
       "filename": "2026-08-26_1023.json",
-      "sha256": "84583e2904c5f5a68514bd4131a72140734d122ddeb87a5786a08357a37187f4",
-      "immutability": "UNCHANGED"
+      "immutability": "UNCHANGED",
+      "original_run_mutated_by_audit": false
     },
     "data_snapshot_provenance": {
-      "data_snapshot_status": "AVAILABLE",
+      "status": "AVAILABLE",
       "data_snapshot_id": "snap_20260826_030123",
       "data_snapshot_date": "2026-08-26",
       "data_snapshot_generated_at": "2026-08-26T03:01:23.865960+02:00",
       "data_snapshot_data_cutoff": "2026-08-26T03:01:23.865960+02:00",
       "data_snapshot_db_updated_at": "2026-08-26T03:00:02",
       "data_snapshot_hash": "sha256:a99d6bf05faa0af8a57b4b497e708218bf9effe6be2e5ea2aeb2b0e5e348241d",
-      "data_snapshot_schema_version": "ECOBET_DAILY_DATA_V2_FULL",
-      "data_snapshot_url": "https://giammaa87.github.io/ecobet/data/2026-08-26/snap_20260826_030123/manifest.json"
+      "data_snapshot_schema_version": "ECOBET_DAILY_DATA_V2_FULL"
     },
-    "fixture_reconciliation_summary": "EQUAL",
+    "fixture_reconciliation_summary": "EQUAL. The immutable source run contains 6 committed in-scope fixtures and all 6 final results are now confirmed. Celje-Slovan Bratislava and Rapid Vienna-Heart of Midlothian required extra time; prediction-market settlement uses 90 minutes plus stoppage time only.",
     "source_mode_distribution": {
       "SNAPSHOT": 0,
       "SNAPSHOT_PLUS_REPAIR": 4,
@@ -33,118 +37,116 @@
       "to": "2026-08-26"
     },
     "timezone": "Europe/Zurich",
-    "scope": [
-      "Premier League",
-      "Bundesliga",
-      "La Liga",
-      "Serie A",
-      "Ligue 1",
-      "UEFA Champions League",
-      "UEFA Europa League",
-      "UEFA Conference League"
-    ],
-    "norm_versions": {
-      "master_os": "1.3",
-      "data_fabric": "1.5",
-      "football_decision_engine": "1.1",
-      "output_audit": "1.4",
-      "team_id_registry": "1.0",
-      "history_calibration": "1.0",
-      "run_record_schema": "1.4"
-    },
     "match_counts": {
       "scope_committed_original": 6,
-      "result_confirmed": 0,
-      "unsettled": 6
+      "result_confirmed": 6,
+      "unsettled": 0
     },
     "readiness_distribution": {
       "READY": 0,
       "CONDITIONAL": 6,
       "NOT_READY": 0
     },
-    "world_stability_distribution": {
-      "STABLE": 4,
-      "VERY_STABLE": 2,
-      "ULTRA_STABLE": 0,
-      "UNKNOWN": 0
-    },
     "ampel_distribution": {
       "GREEN": 0,
       "YELLOW": 6,
       "RED": 0
     },
-    "nsp_count": 0,
     "proof_counters": {
       "matches_in_original_run": 6,
       "match_audit_records": 6,
-      "result_confirmed": 0,
-      "result_unsettled": 6,
+      "result_confirmed": 6,
+      "result_unsettled": 0,
       "predictions_rewritten": 0,
       "real_odds_used_as_input": 0,
       "tickets_created": "NO"
     },
     "run_integrity": "PARTIAL",
     "output_integrity": "PASS",
-    "result_settlement_status": "PARTIAL",
+    "result_settlement_status": "COMPLETE",
     "model_kpis": {
       "safe": {
-        "HIT": 0,
+        "HIT": 6,
         "MISS": 0,
         "PUSH": 0,
         "VOID": 0,
-        "UNSETTLED": 6,
+        "UNSETTLED": 0,
         "UNMAPPABLE": 0,
-        "decisive_total": 0,
-        "hit_rate_percent": null
+        "decisive_total": 6,
+        "hit_rate_percent": 100.0
       },
       "balanced": {
-        "HIT": 0,
-        "MISS": 0,
-        "PUSH": 0,
+        "HIT": 2,
+        "MISS": 2,
+        "PUSH": 2,
         "VOID": 0,
-        "UNSETTLED": 6,
+        "UNSETTLED": 0,
         "UNMAPPABLE": 0,
-        "decisive_total": 0,
-        "hit_rate_percent": null
+        "decisive_total": 4,
+        "hit_rate_percent": 50.0
       },
       "aggressive": {
-        "HIT": 0,
-        "MISS": 0,
+        "HIT": 2,
+        "MISS": 4,
         "PUSH": 0,
         "VOID": 0,
-        "UNSETTLED": 6,
+        "UNSETTLED": 0,
         "UNMAPPABLE": 0,
-        "decisive_total": 0,
-        "hit_rate_percent": null
+        "decisive_total": 6,
+        "hit_rate_percent": 33.33
       },
       "favourite": {
-        "HIT": 0,
-        "MISS": 0,
-        "PUSH": 0,
+        "HIT": 2,
+        "MISS": 2,
+        "PUSH": 2,
         "VOID": 0,
-        "UNSETTLED": 6,
+        "UNSETTLED": 0,
         "UNMAPPABLE": 0,
-        "decisive_total": 0,
-        "hit_rate_percent": null
+        "decisive_total": 4,
+        "hit_rate_percent": 50.0
+      },
+      "modal_score": {
+        "hits": 0,
+        "total": 6,
+        "hit_rate_percent": 0.0
+      },
+      "four_score_cluster": {
+        "hits": 2,
+        "total": 6,
+        "hit_rate_percent": 33.33
+      },
+      "score_band": {
+        "hits": 4,
+        "total": 6,
+        "hit_rate_percent": 66.67
+      },
+      "world_verdict_distribution": {
+        "PRIME": 2,
+        "COUNTERWORLD": 3,
+        "MIXED": 1,
+        "NEITHER": 0,
+        "UNDETERMINED": 0
       }
     },
     "data_integrity_flags": [
+      "ALL_6_RESULTS_CONFIRMED",
       "ORIGINAL_RUN_IMMUTABLE",
-      "RESULT_SETTLEMENT_PARTIAL_UNSETTLED_FIXTURES_PRESENT"
+      "SOURCE_RUN_INTEGRITY_PARTIAL_PRESERVED",
+      "TWO_UEFA_MATCHES_WENT_TO_EXTRA_TIME",
+      "ONE_UEFA_MATCH_DECIDED_BY_PENALTY_SHOOTOUT",
+      "MARKET_SETTLEMENT_USES_90_PLUS_STOPPAGE_ONLY",
+      "AUTOMATIC_6_UNSETTLED_AUDIT_REPLACED"
     ],
     "notes": [
-      "Original committed Predictions and Run Record remain unchanged."
+      "Original committed predictions and source Run Record remain unchanged.",
+      "The incorrect automatic 23:30 audit was replaced at the same public path; it is no longer the current published audit.",
+      "Extra-time and shootout outcomes are retained as competition context only; market settlement is based on 90 minutes plus stoppage time."
     ]
   },
   "match_audit_records": [
     {
       "record_type": "MATCH_AUDIT_RECORD",
       "match_id": "DISC_f5ec19e589d4",
-      "snapshot_id": "RUNSNAP_2026-08-26T10-23-00+02-00",
-      "data_snapshot_id": "snap_20260826_030123",
-      "data_snapshot_coverage": "FULL",
-      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
-      "snapshot_fixture_missing": false,
       "fixture": {
         "kickoff": "21:00",
         "home": "Real Madrid",
@@ -152,1820 +154,266 @@
         "competition": "La Liga",
         "phase": "Matchday 1"
       },
-      "competition_metadata": {
-        "competition_id": "ESP-La Liga",
-        "competition_name": "La Liga",
-        "competition_group": "DOMESTIC",
-        "competition_type": "domestic_league",
-        "display_order": 30
-      },
       "committed_model": {
-        "fixture_id": "DISC_f5ec19e589d4",
-        "kickoff": "21:00",
-        "competition": "La Liga",
-        "competition_id": "ESP-La Liga",
-        "competition_name": "La Liga",
-        "competition_group": "DOMESTIC",
-        "competition_type": "domestic_league",
-        "display_order": 30,
-        "phase": "Matchday 1",
-        "home": "Real Madrid",
-        "away": "Real Sociedad",
-        "data_snapshot_id": "snap_20260826_030123",
-        "data_snapshot_coverage": "FULL",
-        "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
-        "snapshot_fixture_missing": false,
         "world_type": "CONTROL_HOME",
+        "modal_score": "2:0",
+        "four_score_cluster": ["2:0", "2:1", "1:0", "1:1"],
+        "score_band": "1–3",
         "safe": "Real Madrid O0.5 Goals",
         "balanced": "Real Madrid DNB",
         "aggressive": "Real Madrid 1",
-        "favourite": "Real Madrid 1",
-        "favourite_decision_reason": "The home-win expression carries more information about the control anchor than the broad scoring shell while remaining supported by three of four cluster scores.",
-        "why_not_safest_candidate": "Real Madrid O0.5 Goals is more robust but too broad to represent the directional home-control edge.",
-        "why_safe_is_also_best_decision": "NOT_AVAILABLE",
-        "favourite_specificity": "MEDIUM",
-        "favourite_cluster_coverage": "4/4",
-        "favourite_robustness": "MEDIUM",
+        "favourite_prediction": "Real Madrid 1",
         "numerical_p_raw": "NOT_AVAILABLE",
         "numerical_p_raw_available": "NO",
-        "p_raw_tiebreak_required": "NO",
-        "model_probability_band": "NOT_AVAILABLE",
-        "model_price_band": "NOT_AVAILABLE",
         "ampel": "YELLOW",
-        "flags": [
-          "LOW_SAMPLE_CURRENT_SEASON",
-          "SNAPSHOT_PLUS_WEB_REPAIR",
-          "NUMERICAL_P_RAW_NOT_AVAILABLE"
-        ],
-        "data_readiness": "CONDITIONAL",
-        "match_core_status": "PARTIAL",
-        "nsp_codes": [],
-        "board_status": "COMMITTED",
-        "confirmation_status": "NOT_APPLICABLE",
-        "commit_status": "COMMITTED",
-        "commit_time": "2026-08-26T10:23:00+02:00",
-        "match_validation": "PASS",
-        "team_ebook": {
-          "home": {
-            "sample": "early 2026/27 + long-term prior",
-            "strength": "clear home-favourite baseline",
-            "recent": "2-1 away win at Espanyol",
-            "status": "current-event check completed"
-          },
-          "away": {
-            "sample": "early 2026/27 + long-term prior",
-            "strength": "lower baseline",
-            "recent": "0-1 away loss at Betis",
-            "status": "current-event check completed"
-          }
-        },
-        "field_status": {
-          "DF01_FIXTURE_ENTITY": {
-            "status": "FOUND",
-            "trust": "HIGH"
-          },
-          "DF02_COMPETITION_CONTEXT": {
-            "status": "FOUND",
-            "trust": "HIGH"
-          },
-          "DF03_CURRENT_RESULTS_FORM": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF04_ROLE_SPLIT": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF05_PROCESS_XG_XGA": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF06_SHOTS_SOT": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF07_GOAL_PROFILE": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF08_PHASE_PROFILE": {
-            "status": "PARTIAL",
-            "trust": "LOW"
-          },
-          "DF09_REST_LOAD": {
-            "status": "DERIVED",
-            "trust": "HIGH"
-          },
-          "DF10_TEAM_STATUS": {
-            "status": "FOUND_NO_EVENT",
-            "trust": "MEDIUM"
-          },
-          "DF11_LONG_TERM_PRIOR": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF12_CURRENT_SEASON_STRENGTH": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF13_RECENT_PROCESS": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF14_H2H_SUPPORT": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF15_TEAM_DNA": {
-            "status": "NOT_EXPECTED",
-            "trust": "LOW"
-          },
-          "DF16_LEAGUE_DNA": {
-            "status": "NOT_EXPECTED",
-            "trust": "LOW"
-          }
-        },
-        "axes": {
-          "CONTROL": "HOME",
-          "CHAOS": "MEDIUM_LOW",
-          "GOAL_PROFILE": "HOME_SKEW",
-          "TEMPO": "MEDIUM",
-          "PHASE_STRUCTURE": "HOME_PRESSURE_THEN_CONTROL",
-          "DRAW_GRAVITY": "MEDIUM_LOW"
-        },
-        "anchor": "Real Madrid's stronger long-term baseline and home control are the central anchor, while the 2026/27 sample is still very small.",
-        "prime_world": "Real Madrid sustain territorial control and create the larger high-quality chance share; a one- or two-goal home win is the main world.",
-        "counterworld": "Real Sociedad keep the game compressed, survive Madrid's first pressure wave and turn the match into a low-margin draw state.",
-        "game_state": {
-          "1-0": "Prime mechanism gains control unless transition pressure materially rises.",
-          "0-1": "Chasing side must increase risk; counterworld exposure rises.",
-          "1-1": "Tie state preserves both mechanisms and increases late-state sensitivity."
-        },
-        "modal_score": "2:0",
-        "four_score_cluster": [
-          "2:0",
-          "2:1",
-          "1:0",
-          "1:1"
-        ],
-        "score_band": "1–3",
-        "prediction_map": [
-          "Real Madrid O0.5 Goals",
-          "Real Madrid DNB",
-          "Real Madrid 1",
-          "Under 4.5 Goals"
-        ],
-        "candidates": [
-          {
-            "prediction": "Real Madrid O0.5 Goals",
-            "axis": "TEAM_GOALS",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "4/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 4,
-            "F": 3,
-            "R": 4,
-            "D": 3,
-            "penalties": [],
-            "score_total": 14
-          },
-          {
-            "prediction": "Real Madrid DNB",
-            "axis": "DIRECTION",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "4/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 4,
-            "F": 4,
-            "R": 4,
-            "D": 3,
-            "penalties": [],
-            "score_total": 15
-          },
-          {
-            "prediction": "Real Madrid 1",
-            "axis": "DIRECTION",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "3/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 4,
-            "F": 4,
-            "R": 3,
-            "D": 3,
-            "penalties": [],
-            "score_total": 14
-          }
-        ],
-        "world_stability": "VERY_STABLE",
-        "robustness": "MEDIUM",
-        "shock_test": {
-          "S1": "BLEIBT",
-          "S2": "BIEGT",
-          "S3": "BIEGT"
-        },
-        "repair_summary": [
-          {
-            "field": "current-season sample / current team state",
-            "routes": [
-              "Daily Snapshot",
-              "LaLiga",
-              "Real Madrid official",
-              "Open Search"
-            ],
-            "result": "PARTIAL; early-season sample retained, no synthetic completion"
-          }
-        ],
-        "sources": [
-          {
-            "name": "ECOBET Daily Data Snapshot",
-            "snapshot": "2026-08-26T03:01:23.865960+02:00",
-            "trust": "TRANSPORT_VALIDATED",
-            "used_for": "snapshot bundle and team evidence"
-          },
-          {
-            "name": "LaLiga",
-            "snapshot": "2026-08-26",
-            "trust": "HIGH",
-            "used_for": "fixture and current league record"
-          },
-          {
-            "name": "Real Madrid official",
-            "snapshot": "2026-08-26",
-            "trust": "HIGH",
-            "used_for": "fixture, recent result and confirmed current team-status context"
-          },
-          {
-            "name": "Open Search",
-            "snapshot": "2026-08-26T10:23:00+02:00",
-            "trust": "MEDIUM",
-            "used_for": "residual team/process and match-stat repair"
-          }
-        ]
+        "commit_status": "COMMITTED"
       },
       "result_settlement": {
-        "result_status": "UNSETTLED",
-        "score_90_plus_stoppage": null,
-        "competition_final_score": null,
-        "went_extra_time": null,
-        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
-        "safe_result": "UNSETTLED",
-        "balanced_result": "UNSETTLED",
-        "aggressive_result": "UNSETTLED",
-        "favourite_result": "UNSETTLED",
-        "result_sources": [],
-        "reason": "final 90-minute result not yet confirmed (postponed/abandoned/unfinished)"
+        "result_status": "CONFIRMED",
+        "settlement_basis": "90_PLUS_STOPPAGE",
+        "score_90_plus_stoppage": "4-1",
+        "competition_final_score": "4-1",
+        "score_after_extra_time": "NOT_APPLICABLE",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [{"name": "Managing Madrid", "trust": "INDEPENDENT_SPORT_MEDIA"}]
       },
       "score_cluster_audit": {
         "modal_score_hit": false,
         "cluster_hit": false,
-        "score_band_hit": false,
-        "result_distance_from_modal": {
-          "status": "NOT_AVAILABLE",
-          "reason": "No confirmed final result to compare against."
-        }
+        "score_band_hit": false
       },
-      "world_verdict": {
-        "verdict": "UNDETERMINED",
-        "evidence_level": "NONE",
-        "basis": "No confirmed result is available for this fixture."
-      },
-      "failure_cluster": [],
-      "audit_flags": [
-        "RESULT_UNSETTLED"
-      ]
+      "world_verdict": {"verdict": "PRIME"},
+      "failure_cluster": ["FOUR_SCORE_CLUSTER_MISS", "SCORE_BAND_TOO_NARROW"],
+      "audit_flags": []
     },
     {
       "record_type": "MATCH_AUDIT_RECORD",
       "match_id": "DISC_1063361832d9",
-      "snapshot_id": "RUNSNAP_2026-08-26T10-23-00+02-00",
-      "data_snapshot_id": "snap_20260826_030123",
-      "data_snapshot_coverage": "PARTIAL",
-      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
-      "snapshot_fixture_missing": false,
       "fixture": {
         "kickoff": "21:00",
         "home": "AEK Athens",
         "away": "Levski Sofia",
         "competition": "UEFA Champions League",
-        "phase": "Play-off round · second leg · aggregate 0-0"
-      },
-      "competition_metadata": {
-        "competition_id": "UEFA-Champions League",
-        "competition_name": "UEFA Champions League",
-        "competition_group": "UEFA",
-        "competition_type": "uefa_club_competition",
-        "display_order": 100
+        "phase": "Play-off round, second leg"
       },
       "committed_model": {
-        "fixture_id": "DISC_1063361832d9",
-        "kickoff": "21:00",
-        "competition": "UEFA Champions League",
-        "competition_id": "UEFA-Champions League",
-        "competition_name": "UEFA Champions League",
-        "competition_group": "UEFA",
-        "competition_type": "uefa_club_competition",
-        "display_order": 100,
-        "phase": "Play-off round · second leg · aggregate 0-0",
-        "home": "AEK Athens",
-        "away": "Levski Sofia",
-        "data_snapshot_id": "snap_20260826_030123",
-        "data_snapshot_coverage": "PARTIAL",
-        "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
-        "snapshot_fixture_missing": false,
         "world_type": "CONTROL_HOME",
+        "modal_score": "1:0",
+        "four_score_cluster": ["1:0", "1:1", "2:0", "2:1"],
+        "score_band": "1–3",
         "safe": "Under 4.5 Goals",
         "balanced": "Under 3.5 Goals",
         "aggressive": "AEK Athens 1",
-        "favourite": "Under 3.5 Goals",
-        "favourite_decision_reason": "Under 3.5 directly renders the low-event play-off mechanism across all four cluster scores without relying on a narrow winner call.",
-        "why_not_safest_candidate": "Under 4.5 survives more tails but is less faithful to the identified low-event anchor.",
-        "why_safe_is_also_best_decision": "NOT_AVAILABLE",
-        "favourite_specificity": "MEDIUM",
-        "favourite_cluster_coverage": "4/4",
-        "favourite_robustness": "MEDIUM",
+        "favourite_prediction": "Under 3.5 Goals",
         "numerical_p_raw": "NOT_AVAILABLE",
         "numerical_p_raw_available": "NO",
-        "p_raw_tiebreak_required": "NO",
-        "model_probability_band": "NOT_AVAILABLE",
-        "model_price_band": "NOT_AVAILABLE",
         "ampel": "YELLOW",
-        "flags": [
-          "UEFA_PLAYOFF_SECOND_LEG",
-          "LOW_SAMPLE",
-          "DATA_SENSITIVE",
-          "SNAPSHOT_PLUS_WEB_REPAIR",
-          "NUMERICAL_P_RAW_NOT_AVAILABLE"
-        ],
-        "data_readiness": "CONDITIONAL",
-        "match_core_status": "PARTIAL",
-        "nsp_codes": [],
-        "board_status": "COMMITTED",
-        "confirmation_status": "NOT_APPLICABLE",
-        "commit_status": "COMMITTED",
-        "commit_time": "2026-08-26T10:23:00+02:00",
-        "match_validation": "PASS",
-        "team_ebook": {
-          "home": {
-            "sample": "UEFA qualifying + prior",
-            "first_leg": "0-0 away",
-            "process": "low-event first-leg profile",
-            "status": "no material confirmed event used as prediction shortcut"
-          },
-          "away": {
-            "sample": "UEFA qualifying + prior",
-            "first_leg": "0-0 home",
-            "process": "low-event first-leg profile",
-            "status": "no material confirmed event used as prediction shortcut"
-          }
-        },
-        "field_status": {
-          "DF01_FIXTURE_ENTITY": {
-            "status": "FOUND",
-            "trust": "HIGH"
-          },
-          "DF02_COMPETITION_CONTEXT": {
-            "status": "FOUND",
-            "trust": "HIGH"
-          },
-          "DF03_CURRENT_RESULTS_FORM": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF04_ROLE_SPLIT": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF05_PROCESS_XG_XGA": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF06_SHOTS_SOT": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF07_GOAL_PROFILE": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF08_PHASE_PROFILE": {
-            "status": "PARTIAL",
-            "trust": "LOW"
-          },
-          "DF09_REST_LOAD": {
-            "status": "DERIVED",
-            "trust": "HIGH"
-          },
-          "DF10_TEAM_STATUS": {
-            "status": "FOUND_NO_EVENT",
-            "trust": "MEDIUM"
-          },
-          "DF11_LONG_TERM_PRIOR": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF12_CURRENT_SEASON_STRENGTH": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF13_RECENT_PROCESS": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF14_H2H_SUPPORT": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF15_TEAM_DNA": {
-            "status": "NOT_EXPECTED",
-            "trust": "LOW"
-          },
-          "DF16_LEAGUE_DNA": {
-            "status": "NOT_EXPECTED",
-            "trust": "LOW"
-          }
-        },
-        "axes": {
-          "CONTROL": "HOME_SLIGHT",
-          "CHAOS": "MEDIUM_LOW",
-          "GOAL_PROFILE": "LOW_TO_MEDIUM",
-          "TEMPO": "MEDIUM_LOW",
-          "PHASE_STRUCTURE": "CAUTIOUS_OPENING",
-          "DRAW_GRAVITY": "MEDIUM_HIGH"
-        },
-        "anchor": "The 0-0 first leg and low-event chance profile anchor a controlled second leg in which AEK's home role is an edge but not a licence for a wide score.",
-        "prime_world": "AEK control more territory at home, but the tie remains low-event long enough for the total to stay below four goals.",
-        "counterworld": "An early goal breaks the cage and forces the trailing side into a higher-tempo chase, opening a 2-1/2-2 tail.",
-        "game_state": {
-          "1-0": "Prime mechanism gains control unless transition pressure materially rises.",
-          "0-1": "Chasing side must increase risk; counterworld exposure rises.",
-          "1-1": "Tie state preserves both mechanisms and increases late-state sensitivity."
-        },
-        "modal_score": "1:0",
-        "four_score_cluster": [
-          "1:0",
-          "1:1",
-          "2:0",
-          "2:1"
-        ],
-        "score_band": "1–3",
-        "prediction_map": [
-          "Under 4.5 Goals",
-          "Under 3.5 Goals",
-          "AEK Athens DNB",
-          "AEK Athens 1"
-        ],
-        "candidates": [
-          {
-            "prediction": "Under 4.5 Goals",
-            "axis": "TOTAL",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "4/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 3,
-            "F": 3,
-            "R": 4,
-            "D": 3,
-            "penalties": [],
-            "score_total": 13
-          },
-          {
-            "prediction": "Under 3.5 Goals",
-            "axis": "TOTAL",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "4/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 4,
-            "F": 4,
-            "R": 4,
-            "D": 3,
-            "penalties": [],
-            "score_total": 15
-          },
-          {
-            "prediction": "AEK Athens 1",
-            "axis": "DIRECTION",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "2/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 3,
-            "F": 3,
-            "R": 2,
-            "D": 3,
-            "penalties": [],
-            "score_total": 11
-          }
-        ],
-        "world_stability": "STABLE",
-        "robustness": "MEDIUM",
-        "shock_test": {
-          "S1": "BLEIBT",
-          "S2": "BIEGT",
-          "S3": "BIEGT"
-        },
-        "repair_summary": [
-          {
-            "field": "UEFA current-season process depth",
-            "routes": [
-              "Daily Snapshot",
-              "UEFA",
-              "structured match-stat search",
-              "Open Search"
-            ],
-            "result": "PARTIAL; first-leg and recent evidence found, season depth remains low"
-          }
-        ],
-        "sources": [
-          {
-            "name": "ECOBET Daily Data Snapshot",
-            "snapshot": "2026-08-26T03:01:23.865960+02:00",
-            "trust": "TRANSPORT_VALIDATED",
-            "used_for": "snapshot bundle and team evidence"
-          },
-          {
-            "name": "UEFA",
-            "snapshot": "2026-08-26",
-            "trust": "HIGH",
-            "used_for": "fixture, play-off round, second leg, aggregate pre-kickoff"
-          },
-          {
-            "name": "Open Search structured match-stat sources",
-            "snapshot": "2026-08-26",
-            "trust": "MEDIUM",
-            "used_for": "first-leg xG/shots and recent-process repair"
-          }
-        ]
+        "commit_status": "COMMITTED"
       },
       "result_settlement": {
-        "result_status": "UNSETTLED",
-        "score_90_plus_stoppage": null,
-        "competition_final_score": null,
-        "went_extra_time": null,
-        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
-        "safe_result": "UNSETTLED",
-        "balanced_result": "UNSETTLED",
-        "aggressive_result": "UNSETTLED",
-        "favourite_result": "UNSETTLED",
-        "result_sources": [],
-        "reason": "final 90-minute result not yet confirmed (postponed/abandoned/unfinished)"
+        "result_status": "CONFIRMED",
+        "settlement_basis": "90_PLUS_STOPPAGE",
+        "score_90_plus_stoppage": "4-0",
+        "competition_final_score": "4-0",
+        "score_after_extra_time": "NOT_APPLICABLE",
+        "safe_result": "HIT",
+        "balanced_result": "MISS",
+        "aggressive_result": "HIT",
+        "favourite_result": "MISS",
+        "result_sources": [{"name": "theScore", "trust": "INDEPENDENT_RESULT_SOURCE"}]
       },
       "score_cluster_audit": {
         "modal_score_hit": false,
         "cluster_hit": false,
-        "score_band_hit": false,
-        "result_distance_from_modal": {
-          "status": "NOT_AVAILABLE",
-          "reason": "No confirmed final result to compare against."
-        }
+        "score_band_hit": false
       },
-      "world_verdict": {
-        "verdict": "UNDETERMINED",
-        "evidence_level": "NONE",
-        "basis": "No confirmed result is available for this fixture."
-      },
-      "failure_cluster": [],
-      "audit_flags": [
-        "RESULT_UNSETTLED"
-      ]
+      "world_verdict": {"verdict": "MIXED"},
+      "failure_cluster": ["BALANCED_TOTAL_MISS", "FAVOURITE_MISS", "FOUR_SCORE_CLUSTER_MISS", "SCORE_BAND_TOO_NARROW"],
+      "audit_flags": []
     },
     {
       "record_type": "MATCH_AUDIT_RECORD",
       "match_id": "DISC_6ccf3f4ee45e",
-      "snapshot_id": "RUNSNAP_2026-08-26T10-23-00+02-00",
-      "data_snapshot_id": "snap_20260826_030123",
-      "data_snapshot_coverage": "FULL",
-      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
-      "snapshot_fixture_missing": false,
       "fixture": {
         "kickoff": "21:00",
         "home": "Lyon",
         "away": "Fenerbahce",
         "competition": "UEFA Champions League",
-        "phase": "Play-off round · second leg · aggregate 1-1"
-      },
-      "competition_metadata": {
-        "competition_id": "UEFA-Champions League",
-        "competition_name": "UEFA Champions League",
-        "competition_group": "UEFA",
-        "competition_type": "uefa_club_competition",
-        "display_order": 100
+        "phase": "Play-off round, second leg"
       },
       "committed_model": {
-        "fixture_id": "DISC_6ccf3f4ee45e",
-        "kickoff": "21:00",
-        "competition": "UEFA Champions League",
-        "competition_id": "UEFA-Champions League",
-        "competition_name": "UEFA Champions League",
-        "competition_group": "UEFA",
-        "competition_type": "uefa_club_competition",
-        "display_order": 100,
-        "phase": "Play-off round · second leg · aggregate 1-1",
-        "home": "Lyon",
-        "away": "Fenerbahce",
-        "data_snapshot_id": "snap_20260826_030123",
-        "data_snapshot_coverage": "FULL",
-        "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
-        "snapshot_fixture_missing": false,
         "world_type": "BALANCED_CONTROL",
+        "modal_score": "1:1",
+        "four_score_cluster": ["1:1", "1:0", "2:1", "2:0"],
+        "score_band": "1–3",
         "safe": "Under 4.5 Goals",
         "balanced": "Under 3.5 Goals",
         "aggressive": "Lyon DNB",
-        "favourite": "Under 3.5 Goals",
-        "favourite_decision_reason": "Under 3.5 best maps the demonstrated low-xG first-leg mechanism and remains intact across the full four-score cluster.",
-        "why_not_safest_candidate": "Under 4.5 is the safer shell but gives away too much specificity relative to the observed process.",
-        "why_safe_is_also_best_decision": "NOT_AVAILABLE",
-        "favourite_specificity": "MEDIUM",
-        "favourite_cluster_coverage": "4/4",
-        "favourite_robustness": "MEDIUM",
+        "favourite_prediction": "Under 3.5 Goals",
         "numerical_p_raw": "NOT_AVAILABLE",
         "numerical_p_raw_available": "NO",
-        "p_raw_tiebreak_required": "NO",
-        "model_probability_band": "NOT_AVAILABLE",
-        "model_price_band": "NOT_AVAILABLE",
         "ampel": "YELLOW",
-        "flags": [
-          "UEFA_PLAYOFF_SECOND_LEG",
-          "LOW_SAMPLE_CURRENT_SEASON",
-          "SNAPSHOT_PLUS_WEB_REPAIR",
-          "NUMERICAL_P_RAW_NOT_AVAILABLE"
-        ],
-        "data_readiness": "CONDITIONAL",
-        "match_core_status": "PARTIAL",
-        "nsp_codes": [],
-        "board_status": "COMMITTED",
-        "confirmation_status": "NOT_APPLICABLE",
-        "commit_status": "COMMITTED",
-        "commit_time": "2026-08-26T10:23:00+02:00",
-        "match_validation": "PASS",
-        "team_ebook": {
-          "home": {
-            "sample": "domestic snapshot + UEFA qualifying",
-            "first_leg": "1-1 away",
-            "first_leg_process": "12 shots, 5 SOT, sub-1 xG",
-            "status": "current check completed"
-          },
-          "away": {
-            "sample": "UEFA qualifying + prior",
-            "first_leg": "1-1 home",
-            "first_leg_process": "12 shots, 5 SOT, sub-1 xG",
-            "status": "current check completed"
-          }
-        },
-        "field_status": {
-          "DF01_FIXTURE_ENTITY": {
-            "status": "FOUND",
-            "trust": "HIGH"
-          },
-          "DF02_COMPETITION_CONTEXT": {
-            "status": "FOUND",
-            "trust": "HIGH"
-          },
-          "DF03_CURRENT_RESULTS_FORM": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF04_ROLE_SPLIT": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF05_PROCESS_XG_XGA": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF06_SHOTS_SOT": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF07_GOAL_PROFILE": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF08_PHASE_PROFILE": {
-            "status": "PARTIAL",
-            "trust": "LOW"
-          },
-          "DF09_REST_LOAD": {
-            "status": "DERIVED",
-            "trust": "HIGH"
-          },
-          "DF10_TEAM_STATUS": {
-            "status": "FOUND_NO_EVENT",
-            "trust": "MEDIUM"
-          },
-          "DF11_LONG_TERM_PRIOR": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF12_CURRENT_SEASON_STRENGTH": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF13_RECENT_PROCESS": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF14_H2H_SUPPORT": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF15_TEAM_DNA": {
-            "status": "NOT_EXPECTED",
-            "trust": "LOW"
-          },
-          "DF16_LEAGUE_DNA": {
-            "status": "NOT_EXPECTED",
-            "trust": "LOW"
-          }
-        },
-        "axes": {
-          "CONTROL": "BALANCED_HOME_LEAN",
-          "CHAOS": "MEDIUM",
-          "GOAL_PROFILE": "LOW_TO_MEDIUM",
-          "TEMPO": "MEDIUM",
-          "PHASE_STRUCTURE": "CAUTIOUS_THEN_STATE_DEPENDENT",
-          "DRAW_GRAVITY": "HIGH"
-        },
-        "anchor": "The first leg was balanced in shots and low in xG, so the tie starts from a controlled 1-1 aggregate rather than a high-event baseline.",
-        "prime_world": "Both sides protect against the first transition error; Lyon's home role lifts territory but not enough to erase the low-event signature.",
-        "counterworld": "An early conversion forces the other side to chase and creates a late two-way transition game with a 2-2 tail.",
-        "game_state": {
-          "1-0": "Prime mechanism gains control unless transition pressure materially rises.",
-          "0-1": "Chasing side must increase risk; counterworld exposure rises.",
-          "1-1": "Tie state preserves both mechanisms and increases late-state sensitivity."
-        },
-        "modal_score": "1:1",
-        "four_score_cluster": [
-          "1:1",
-          "1:0",
-          "2:1",
-          "2:0"
-        ],
-        "score_band": "1–3",
-        "prediction_map": [
-          "Under 4.5 Goals",
-          "Under 3.5 Goals",
-          "Lyon DNB",
-          "BTTS No"
-        ],
-        "candidates": [
-          {
-            "prediction": "Under 4.5 Goals",
-            "axis": "TOTAL",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "4/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 3,
-            "F": 3,
-            "R": 4,
-            "D": 3,
-            "penalties": [],
-            "score_total": 13
-          },
-          {
-            "prediction": "Under 3.5 Goals",
-            "axis": "TOTAL",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "4/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 4,
-            "F": 4,
-            "R": 4,
-            "D": 3,
-            "penalties": [],
-            "score_total": 15
-          },
-          {
-            "prediction": "Lyon DNB",
-            "axis": "DIRECTION",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "4/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 3,
-            "F": 3,
-            "R": 3,
-            "D": 3,
-            "penalties": [],
-            "score_total": 12
-          }
-        ],
-        "world_stability": "STABLE",
-        "robustness": "MEDIUM",
-        "shock_test": {
-          "S1": "BLEIBT",
-          "S2": "BIEGT",
-          "S3": "BIEGT"
-        },
-        "repair_summary": [
-          {
-            "field": "cross-competition current state / UEFA process",
-            "routes": [
-              "Daily Snapshot",
-              "UEFA",
-              "FotMob",
-              "Open Search"
-            ],
-            "result": "PARTIAL; first-leg process repaired, broader early-season sample remains limited"
-          }
-        ],
-        "sources": [
-          {
-            "name": "ECOBET Daily Data Snapshot",
-            "snapshot": "2026-08-26T03:01:23.865960+02:00",
-            "trust": "TRANSPORT_VALIDATED",
-            "used_for": "snapshot bundle and team evidence"
-          },
-          {
-            "name": "UEFA",
-            "snapshot": "2026-08-26",
-            "trust": "HIGH",
-            "used_for": "fixture, play-off round, second leg, aggregate pre-kickoff"
-          },
-          {
-            "name": "FotMob",
-            "snapshot": "2026-08-26",
-            "trust": "HIGH",
-            "used_for": "first-leg 1-1, 12-12 shots and low xG profile"
-          },
-          {
-            "name": "Open Search",
-            "snapshot": "2026-08-26T10:23:00+02:00",
-            "trust": "MEDIUM",
-            "used_for": "residual team/process and match-stat repair"
-          }
-        ]
+        "commit_status": "COMMITTED"
       },
       "result_settlement": {
-        "result_status": "UNSETTLED",
-        "score_90_plus_stoppage": null,
-        "competition_final_score": null,
-        "went_extra_time": null,
-        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
-        "safe_result": "UNSETTLED",
-        "balanced_result": "UNSETTLED",
-        "aggressive_result": "UNSETTLED",
-        "favourite_result": "UNSETTLED",
-        "result_sources": [],
-        "reason": "final 90-minute result not yet confirmed (postponed/abandoned/unfinished)"
+        "result_status": "CONFIRMED",
+        "settlement_basis": "90_PLUS_STOPPAGE",
+        "score_90_plus_stoppage": "1-2",
+        "competition_final_score": "1-2",
+        "score_after_extra_time": "NOT_APPLICABLE",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [{"name": "SRF", "trust": "PUBLIC_BROADCASTER"}, {"name": "Anadolu Agency", "trust": "NEWS_AGENCY"}]
       },
       "score_cluster_audit": {
         "modal_score_hit": false,
         "cluster_hit": false,
-        "score_band_hit": false,
-        "result_distance_from_modal": {
-          "status": "NOT_AVAILABLE",
-          "reason": "No confirmed final result to compare against."
-        }
+        "score_band_hit": true
       },
-      "world_verdict": {
-        "verdict": "UNDETERMINED",
-        "evidence_level": "NONE",
-        "basis": "No confirmed result is available for this fixture."
-      },
-      "failure_cluster": [],
-      "audit_flags": [
-        "RESULT_UNSETTLED"
-      ]
+      "world_verdict": {"verdict": "COUNTERWORLD"},
+      "failure_cluster": ["AGGRESSIVE_DIRECTION_MISS", "FOUR_SCORE_CLUSTER_MISS"],
+      "audit_flags": []
     },
     {
       "record_type": "MATCH_AUDIT_RECORD",
       "match_id": "DISC_a6dafc94ab9b",
-      "snapshot_id": "RUNSNAP_2026-08-26T10-23-00+02-00",
-      "data_snapshot_id": "snap_20260826_030123",
-      "data_snapshot_coverage": "NONE",
-      "data_source_mode": "WEB_FALLBACK",
-      "snapshot_fixture_missing": false,
       "fixture": {
         "kickoff": "21:00",
         "home": "Viking FK",
         "away": "Dinamo Zagreb",
         "competition": "UEFA Champions League",
-        "phase": "Play-off round · second leg · aggregate 2-2"
-      },
-      "competition_metadata": {
-        "competition_id": "UEFA-Champions League",
-        "competition_name": "UEFA Champions League",
-        "competition_group": "UEFA",
-        "competition_type": "uefa_club_competition",
-        "display_order": 100
+        "phase": "Play-off round, second leg"
       },
       "committed_model": {
-        "fixture_id": "DISC_a6dafc94ab9b",
-        "kickoff": "21:00",
-        "competition": "UEFA Champions League",
-        "competition_id": "UEFA-Champions League",
-        "competition_name": "UEFA Champions League",
-        "competition_group": "UEFA",
-        "competition_type": "uefa_club_competition",
-        "display_order": 100,
-        "phase": "Play-off round · second leg · aggregate 2-2",
-        "home": "Viking FK",
-        "away": "Dinamo Zagreb",
-        "data_snapshot_id": "snap_20260826_030123",
-        "data_snapshot_coverage": "NONE",
-        "data_source_mode": "WEB_FALLBACK",
-        "snapshot_fixture_missing": false,
         "world_type": "TRANSITION_AWAY_EDGE",
+        "modal_score": "1:2",
+        "four_score_cluster": ["1:2", "1:1", "2:2", "0:2"],
+        "score_band": "2–4",
         "safe": "Over 1.5 Goals",
         "balanced": "Dinamo Zagreb DNB",
         "aggressive": "Dinamo Zagreb 1",
-        "favourite": "Dinamo Zagreb DNB",
-        "favourite_decision_reason": "Dinamo DNB expresses the strong first-leg process edge while retaining protection against the substantial Viking home-transition tail.",
-        "why_not_safest_candidate": "Over 1.5 is broader but does not represent which side owned the underlying chance process.",
-        "why_safe_is_also_best_decision": "NOT_AVAILABLE",
-        "favourite_specificity": "MEDIUM",
-        "favourite_cluster_coverage": "4/4",
-        "favourite_robustness": "MEDIUM",
+        "favourite_prediction": "Dinamo Zagreb DNB",
         "numerical_p_raw": "NOT_AVAILABLE",
         "numerical_p_raw_available": "NO",
-        "p_raw_tiebreak_required": "NO",
-        "model_probability_band": "NOT_AVAILABLE",
-        "model_price_band": "NOT_AVAILABLE",
         "ampel": "YELLOW",
-        "flags": [
-          "SNAPSHOT_HOME_TEAM_MISSING",
-          "WEB_FALLBACK",
-          "UEFA_PLAYOFF_SECOND_LEG",
-          "DATA_SENSITIVE",
-          "NUMERICAL_P_RAW_NOT_AVAILABLE"
-        ],
-        "data_readiness": "CONDITIONAL",
-        "match_core_status": "PARTIAL",
-        "nsp_codes": [],
-        "board_status": "COMMITTED",
-        "confirmation_status": "NOT_APPLICABLE",
-        "commit_status": "COMMITTED",
-        "commit_time": "2026-08-26T10:23:00+02:00",
-        "match_validation": "PASS",
-        "team_ebook": {
-          "home": {
-            "sample": "external current results + first leg",
-            "first_leg": "2-2 away",
-            "first_leg_process": "6 shots, ~0.8 xG",
-            "status": "snapshot team shard absent"
-          },
-          "away": {
-            "sample": "snapshot + external first leg",
-            "first_leg": "2-2 home",
-            "first_leg_process": "23 shots, ~2.5 xG",
-            "status": "current check completed"
-          }
-        },
-        "field_status": {
-          "DF01_FIXTURE_ENTITY": {
-            "status": "FOUND",
-            "trust": "HIGH"
-          },
-          "DF02_COMPETITION_CONTEXT": {
-            "status": "FOUND",
-            "trust": "HIGH"
-          },
-          "DF03_CURRENT_RESULTS_FORM": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF04_ROLE_SPLIT": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF05_PROCESS_XG_XGA": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF06_SHOTS_SOT": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF07_GOAL_PROFILE": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF08_PHASE_PROFILE": {
-            "status": "PARTIAL",
-            "trust": "LOW"
-          },
-          "DF09_REST_LOAD": {
-            "status": "DERIVED",
-            "trust": "HIGH"
-          },
-          "DF10_TEAM_STATUS": {
-            "status": "FOUND_NO_EVENT",
-            "trust": "MEDIUM"
-          },
-          "DF11_LONG_TERM_PRIOR": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF12_CURRENT_SEASON_STRENGTH": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF13_RECENT_PROCESS": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF14_H2H_SUPPORT": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF15_TEAM_DNA": {
-            "status": "NOT_EXPECTED",
-            "trust": "LOW"
-          },
-          "DF16_LEAGUE_DNA": {
-            "status": "NOT_EXPECTED",
-            "trust": "LOW"
-          }
-        },
-        "axes": {
-          "CONTROL": "AWAY_PROCESS_EDGE",
-          "CHAOS": "HIGH",
-          "GOAL_PROFILE": "MEDIUM_HIGH",
-          "TEMPO": "MEDIUM_HIGH",
-          "PHASE_STRUCTURE": "TRANSITION_SENSITIVE",
-          "DRAW_GRAVITY": "MEDIUM"
-        },
-        "anchor": "The first leg finished 2-2 but Dinamo generated a materially larger shot and xG volume, making process superiority the anchor rather than the raw draw.",
-        "prime_world": "Dinamo reproduce the chance-volume edge and avoid defeat even if Viking's home transitions remain dangerous.",
-        "counterworld": "Viking convert early home-transition chances, forcing Dinamo into a stretched chase and turning the tie into a high-variance shootout.",
-        "game_state": {
-          "1-0": "Prime mechanism gains control unless transition pressure materially rises.",
-          "0-1": "Chasing side must increase risk; counterworld exposure rises.",
-          "1-1": "Tie state preserves both mechanisms and increases late-state sensitivity."
-        },
-        "modal_score": "1:2",
-        "four_score_cluster": [
-          "1:2",
-          "1:1",
-          "2:2",
-          "0:2"
-        ],
-        "score_band": "2–4",
-        "prediction_map": [
-          "Over 1.5 Goals",
-          "Dinamo Zagreb DNB",
-          "Dinamo Zagreb 1",
-          "Over 2.5 Goals"
-        ],
-        "candidates": [
-          {
-            "prediction": "Over 1.5 Goals",
-            "axis": "TOTAL",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "3/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 3,
-            "F": 3,
-            "R": 4,
-            "D": 2,
-            "penalties": [],
-            "score_total": 12
-          },
-          {
-            "prediction": "Dinamo Zagreb DNB",
-            "axis": "DIRECTION",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "4/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 4,
-            "F": 4,
-            "R": 4,
-            "D": 2,
-            "penalties": [],
-            "score_total": 14
-          },
-          {
-            "prediction": "Dinamo Zagreb 1",
-            "axis": "DIRECTION",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "2/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 4,
-            "F": 3,
-            "R": 2,
-            "D": 2,
-            "penalties": [],
-            "score_total": 11
-          }
-        ],
-        "world_stability": "STABLE",
-        "robustness": "MEDIUM",
-        "shock_test": {
-          "S1": "BLEIBT",
-          "S2": "BIEGT",
-          "S3": "BIEGT"
-        },
-        "repair_summary": [
-          {
-            "field": "Viking team shard / current process",
-            "routes": [
-              "Daily Snapshot",
-              "UEFA",
-              "structured match stats",
-              "Open Search"
-            ],
-            "result": "PARTIAL; missing snapshot team shard repaired externally but full team-season matrix not recovered"
-          }
-        ],
-        "sources": [
-          {
-            "name": "ECOBET Daily Data Snapshot",
-            "snapshot": "2026-08-26T03:01:23.865960+02:00",
-            "trust": "TRANSPORT_VALIDATED",
-            "used_for": "snapshot bundle and team evidence"
-          },
-          {
-            "name": "UEFA",
-            "snapshot": "2026-08-26",
-            "trust": "HIGH",
-            "used_for": "fixture, play-off round, second leg, aggregate pre-kickoff"
-          },
-          {
-            "name": "TacticoSports / structured match stats",
-            "snapshot": "2026-08-26",
-            "trust": "MEDIUM",
-            "used_for": "first-leg xG 2.51-0.81, shots 23-6, SOT 4-3"
-          },
-          {
-            "name": "Open Search",
-            "snapshot": "2026-08-26T10:23:00+02:00",
-            "trust": "MEDIUM",
-            "used_for": "residual team/process and match-stat repair"
-          }
-        ]
+        "commit_status": "COMMITTED"
       },
       "result_settlement": {
-        "result_status": "UNSETTLED",
-        "score_90_plus_stoppage": null,
-        "competition_final_score": null,
-        "went_extra_time": null,
-        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
-        "safe_result": "UNSETTLED",
-        "balanced_result": "UNSETTLED",
-        "aggressive_result": "UNSETTLED",
-        "favourite_result": "UNSETTLED",
-        "result_sources": [],
-        "reason": "final 90-minute result not yet confirmed (postponed/abandoned/unfinished)"
+        "result_status": "CONFIRMED",
+        "settlement_basis": "90_PLUS_STOPPAGE",
+        "score_90_plus_stoppage": "3-1",
+        "competition_final_score": "3-1",
+        "score_after_extra_time": "NOT_APPLICABLE",
+        "safe_result": "HIT",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [{"name": "Live Soccer TV", "trust": "INDEPENDENT_RESULT_SOURCE"}]
       },
       "score_cluster_audit": {
         "modal_score_hit": false,
         "cluster_hit": false,
-        "score_band_hit": false,
-        "result_distance_from_modal": {
-          "status": "NOT_AVAILABLE",
-          "reason": "No confirmed final result to compare against."
-        }
+        "score_band_hit": true
       },
-      "world_verdict": {
-        "verdict": "UNDETERMINED",
-        "evidence_level": "NONE",
-        "basis": "No confirmed result is available for this fixture."
-      },
-      "failure_cluster": [],
-      "audit_flags": [
-        "RESULT_UNSETTLED"
-      ]
+      "world_verdict": {"verdict": "COUNTERWORLD"},
+      "failure_cluster": ["DIRECTIONAL_EDGE_WRONG", "BALANCED_MISS", "AGGRESSIVE_MISS", "FAVOURITE_MISS", "FOUR_SCORE_CLUSTER_MISS"],
+      "audit_flags": []
     },
     {
       "record_type": "MATCH_AUDIT_RECORD",
       "match_id": "DISC_dfa158814e4b",
-      "snapshot_id": "RUNSNAP_2026-08-26T10-23-00+02-00",
-      "data_snapshot_id": "snap_20260826_030123",
-      "data_snapshot_coverage": "PARTIAL",
-      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
-      "snapshot_fixture_missing": false,
       "fixture": {
         "kickoff": "21:00",
         "home": "NK Celje",
         "away": "Slovan Bratislava",
         "competition": "UEFA Champions League",
-        "phase": "Play-off round · second leg · aggregate 1-1"
-      },
-      "competition_metadata": {
-        "competition_id": "UEFA-Champions League",
-        "competition_name": "UEFA Champions League",
-        "competition_group": "UEFA",
-        "competition_type": "uefa_club_competition",
-        "display_order": 100
+        "phase": "Play-off round, second leg"
       },
       "committed_model": {
-        "fixture_id": "DISC_dfa158814e4b",
-        "kickoff": "21:00",
-        "competition": "UEFA Champions League",
-        "competition_id": "UEFA-Champions League",
-        "competition_name": "UEFA Champions League",
-        "competition_group": "UEFA",
-        "competition_type": "uefa_club_competition",
-        "display_order": 100,
-        "phase": "Play-off round · second leg · aggregate 1-1",
-        "home": "NK Celje",
-        "away": "Slovan Bratislava",
-        "data_snapshot_id": "snap_20260826_030123",
-        "data_snapshot_coverage": "PARTIAL",
-        "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
-        "snapshot_fixture_missing": false,
         "world_type": "AWAY_PROCESS_EDGE",
+        "modal_score": "1:2",
+        "four_score_cluster": ["1:2", "1:1", "0:1", "2:2"],
+        "score_band": "1–3",
         "safe": "Over 1.5 Goals",
         "balanced": "Slovan Bratislava DNB",
         "aggressive": "Slovan Bratislava 1",
-        "favourite": "Slovan Bratislava DNB",
-        "favourite_decision_reason": "Slovan DNB captures the aligned form/process edge while respecting the draw gravity of a level second leg.",
-        "why_not_safest_candidate": "Over 1.5 is robust but less faithful to the identified directional process edge.",
-        "why_safe_is_also_best_decision": "NOT_AVAILABLE",
-        "favourite_specificity": "MEDIUM",
-        "favourite_cluster_coverage": "4/4",
-        "favourite_robustness": "MEDIUM",
+        "favourite_prediction": "Slovan Bratislava DNB",
         "numerical_p_raw": "NOT_AVAILABLE",
         "numerical_p_raw_available": "NO",
-        "p_raw_tiebreak_required": "NO",
-        "model_probability_band": "NOT_AVAILABLE",
-        "model_price_band": "NOT_AVAILABLE",
         "ampel": "YELLOW",
-        "flags": [
-          "UEFA_PLAYOFF_SECOND_LEG",
-          "LOW_SAMPLE",
-          "SNAPSHOT_PLUS_WEB_REPAIR",
-          "NUMERICAL_P_RAW_NOT_AVAILABLE"
-        ],
-        "data_readiness": "CONDITIONAL",
-        "match_core_status": "PARTIAL",
-        "nsp_codes": [],
-        "board_status": "COMMITTED",
-        "confirmation_status": "NOT_APPLICABLE",
-        "commit_status": "COMMITTED",
-        "commit_time": "2026-08-26T10:23:00+02:00",
-        "match_validation": "PASS",
-        "team_ebook": {
-          "home": {
-            "sample": "recent UEFA window",
-            "first_leg": "1-1 away",
-            "process": "recent xG ~1.6, xGA ~1.2; first-leg xG ~0.4",
-            "status": "current check completed"
-          },
-          "away": {
-            "sample": "recent UEFA window",
-            "first_leg": "1-1 home",
-            "process": "recent xG ~1.6, xGA ~1.1; first-leg xG ~1.6",
-            "status": "current check completed"
-          }
-        },
-        "field_status": {
-          "DF01_FIXTURE_ENTITY": {
-            "status": "FOUND",
-            "trust": "HIGH"
-          },
-          "DF02_COMPETITION_CONTEXT": {
-            "status": "FOUND",
-            "trust": "HIGH"
-          },
-          "DF03_CURRENT_RESULTS_FORM": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF04_ROLE_SPLIT": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF05_PROCESS_XG_XGA": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF06_SHOTS_SOT": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF07_GOAL_PROFILE": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF08_PHASE_PROFILE": {
-            "status": "PARTIAL",
-            "trust": "LOW"
-          },
-          "DF09_REST_LOAD": {
-            "status": "DERIVED",
-            "trust": "HIGH"
-          },
-          "DF10_TEAM_STATUS": {
-            "status": "FOUND_NO_EVENT",
-            "trust": "MEDIUM"
-          },
-          "DF11_LONG_TERM_PRIOR": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF12_CURRENT_SEASON_STRENGTH": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF13_RECENT_PROCESS": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF14_H2H_SUPPORT": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF15_TEAM_DNA": {
-            "status": "NOT_EXPECTED",
-            "trust": "LOW"
-          },
-          "DF16_LEAGUE_DNA": {
-            "status": "NOT_EXPECTED",
-            "trust": "LOW"
-          }
-        },
-        "axes": {
-          "CONTROL": "AWAY_SLIGHT",
-          "CHAOS": "MEDIUM",
-          "GOAL_PROFILE": "MEDIUM",
-          "TEMPO": "MEDIUM",
-          "PHASE_STRUCTURE": "AWAY_PROCESS_EDGE_STATE_SENSITIVE",
-          "DRAW_GRAVITY": "MEDIUM_HIGH"
-        },
-        "anchor": "Slovan's stronger recent results plus a clear first-leg xG/shots edge anchor an away-process advantage despite the 1-1 aggregate.",
-        "prime_world": "Slovan sustain the superior chance process and avoid defeat while Celje remain capable of scoring at home.",
-        "counterworld": "Celje's home intensity converts first and forces Slovan into a riskier chase, producing a 2-1/2-2 counterworld.",
-        "game_state": {
-          "1-0": "Prime mechanism gains control unless transition pressure materially rises.",
-          "0-1": "Chasing side must increase risk; counterworld exposure rises.",
-          "1-1": "Tie state preserves both mechanisms and increases late-state sensitivity."
-        },
-        "modal_score": "1:2",
-        "four_score_cluster": [
-          "1:2",
-          "1:1",
-          "0:1",
-          "2:2"
-        ],
-        "score_band": "1–3",
-        "prediction_map": [
-          "Over 1.5 Goals",
-          "Slovan Bratislava DNB",
-          "Slovan Bratislava 1",
-          "BTTS Yes"
-        ],
-        "candidates": [
-          {
-            "prediction": "Over 1.5 Goals",
-            "axis": "TOTAL",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "3/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 3,
-            "F": 3,
-            "R": 4,
-            "D": 3,
-            "penalties": [],
-            "score_total": 13
-          },
-          {
-            "prediction": "Slovan Bratislava DNB",
-            "axis": "DIRECTION",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "4/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 4,
-            "F": 4,
-            "R": 4,
-            "D": 3,
-            "penalties": [],
-            "score_total": 15
-          },
-          {
-            "prediction": "Slovan Bratislava 1",
-            "axis": "DIRECTION",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "2/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 4,
-            "F": 3,
-            "R": 2,
-            "D": 3,
-            "penalties": [],
-            "score_total": 12
-          }
-        ],
-        "world_stability": "VERY_STABLE",
-        "robustness": "MEDIUM",
-        "shock_test": {
-          "S1": "BLEIBT",
-          "S2": "BIEGT",
-          "S3": "BIEGT"
-        },
-        "repair_summary": [
-          {
-            "field": "UEFA process and role split",
-            "routes": [
-              "Daily Snapshot",
-              "UEFA",
-              "FootyStats",
-              "first-leg structured stats",
-              "Open Search"
-            ],
-            "result": "PARTIAL; multiple independent evidence families aligned"
-          }
-        ],
-        "sources": [
-          {
-            "name": "ECOBET Daily Data Snapshot",
-            "snapshot": "2026-08-26T03:01:23.865960+02:00",
-            "trust": "TRANSPORT_VALIDATED",
-            "used_for": "snapshot bundle and team evidence"
-          },
-          {
-            "name": "UEFA",
-            "snapshot": "2026-08-26",
-            "trust": "HIGH",
-            "used_for": "fixture, play-off round, second leg, aggregate pre-kickoff"
-          },
-          {
-            "name": "FootyStats",
-            "snapshot": "2026-08-26",
-            "trust": "MEDIUM",
-            "used_for": "recent 10-match UEFA form, xG/xGA and goal-profile context"
-          },
-          {
-            "name": "structured first-leg match stats",
-            "snapshot": "2026-08-26",
-            "trust": "MEDIUM",
-            "used_for": "Slovan 1.61 xG vs Celje 0.42, shots 14-8"
-          },
-          {
-            "name": "Open Search",
-            "snapshot": "2026-08-26T10:23:00+02:00",
-            "trust": "MEDIUM",
-            "used_for": "residual team/process and match-stat repair"
-          }
-        ]
+        "commit_status": "COMMITTED"
       },
       "result_settlement": {
-        "result_status": "UNSETTLED",
-        "score_90_plus_stoppage": null,
-        "competition_final_score": null,
-        "went_extra_time": null,
-        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
-        "safe_result": "UNSETTLED",
-        "balanced_result": "UNSETTLED",
-        "aggressive_result": "UNSETTLED",
-        "favourite_result": "UNSETTLED",
-        "result_sources": [],
-        "reason": "final 90-minute result not yet confirmed (postponed/abandoned/unfinished)"
+        "result_status": "CONFIRMED",
+        "settlement_basis": "90_PLUS_STOPPAGE",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "1-2 AET",
+        "score_after_extra_time": "1-2",
+        "safe_result": "HIT",
+        "balanced_result": "PUSH",
+        "aggressive_result": "MISS",
+        "favourite_result": "PUSH",
+        "result_sources": [{"name": "Live Soccer TV", "trust": "INDEPENDENT_RESULT_SOURCE"}]
       },
       "score_cluster_audit": {
         "modal_score_hit": false,
-        "cluster_hit": false,
-        "score_band_hit": false,
-        "result_distance_from_modal": {
-          "status": "NOT_AVAILABLE",
-          "reason": "No confirmed final result to compare against."
-        }
+        "cluster_hit": true,
+        "score_band_hit": true
       },
-      "world_verdict": {
-        "verdict": "UNDETERMINED",
-        "evidence_level": "NONE",
-        "basis": "No confirmed result is available for this fixture."
-      },
-      "failure_cluster": [],
-      "audit_flags": [
-        "RESULT_UNSETTLED"
-      ]
+      "world_verdict": {"verdict": "PRIME"},
+      "failure_cluster": ["AGGRESSIVE_DIRECTION_MISS"],
+      "audit_flags": ["EXTRA_TIME_PLAYED", "SETTLED_AT_90_PLUS_STOPPAGE"]
     },
     {
       "record_type": "MATCH_AUDIT_RECORD",
       "match_id": "DISC_17136a544932",
-      "snapshot_id": "RUNSNAP_2026-08-26T10-23-00+02-00",
-      "data_snapshot_id": "snap_20260826_030123",
-      "data_snapshot_coverage": "NONE",
-      "data_source_mode": "WEB_FALLBACK",
-      "snapshot_fixture_missing": false,
       "fixture": {
         "kickoff": "18:45",
         "home": "Rapid Vienna",
         "away": "Heart of Midlothian",
         "competition": "UEFA Conference League",
-        "phase": "Play-off round · second leg · aggregate 2-2"
-      },
-      "competition_metadata": {
-        "competition_id": "UEFA-Conference League",
-        "competition_name": "UEFA Conference League",
-        "competition_group": "UEFA",
-        "competition_type": "uefa_club_competition",
-        "display_order": 120
+        "phase": "Play-off round, second leg"
       },
       "committed_model": {
-        "fixture_id": "DISC_17136a544932",
-        "kickoff": "18:45",
-        "competition": "UEFA Conference League",
-        "competition_id": "UEFA-Conference League",
-        "competition_name": "UEFA Conference League",
-        "competition_group": "UEFA",
-        "competition_type": "uefa_club_competition",
-        "display_order": 120,
-        "phase": "Play-off round · second leg · aggregate 2-2",
-        "home": "Rapid Vienna",
-        "away": "Heart of Midlothian",
-        "data_snapshot_id": "snap_20260826_030123",
-        "data_snapshot_coverage": "NONE",
-        "data_source_mode": "WEB_FALLBACK",
-        "snapshot_fixture_missing": false,
         "world_type": "CONTROL_HOME",
+        "modal_score": "2:1",
+        "four_score_cluster": ["2:1", "1:1", "2:0", "1:0"],
+        "score_band": "1–3",
         "safe": "Rapid Vienna O0.5 Goals",
         "balanced": "Rapid Vienna DNB",
         "aggressive": "Rapid Vienna 1",
-        "favourite": "Rapid Vienna DNB",
-        "favourite_decision_reason": "Rapid's home role, stronger recent results and superior first-leg xG/big-chance process support the home side while DNB preserves protection against Hearts' demonstrated shot-volume and transition threat.",
-        "why_not_safest_candidate": "Rapid Vienna O0.5 Goals is more robust but too broad to express the directional home-control edge carried by the first-leg chance-quality profile and Rapid's current form.",
-        "why_safe_is_also_best_decision": "NOT_AVAILABLE",
-        "favourite_specificity": "MEDIUM",
-        "favourite_cluster_coverage": "4/4",
-        "favourite_robustness": "MEDIUM",
+        "favourite_prediction": "Rapid Vienna DNB",
         "numerical_p_raw": "NOT_AVAILABLE",
         "numerical_p_raw_available": "NO",
-        "p_raw_tiebreak_required": "NO",
-        "model_probability_band": "NOT_AVAILABLE",
-        "model_price_band": "NOT_AVAILABLE",
         "ampel": "YELLOW",
-        "flags": [
-          "UEFA_PLAYOFF_SECOND_LEG",
-          "SNAPSHOT_TEAM_IDS_MISSING",
-          "LOW_SAMPLE_CURRENT_SEASON",
-          "WEB_FALLBACK",
-          "DATA_SENSITIVE",
-          "NUMERICAL_P_RAW_NOT_AVAILABLE"
-        ],
-        "data_readiness": "CONDITIONAL",
-        "match_core_status": "PARTIAL",
-        "nsp_codes": [],
-        "board_status": "COMMITTED",
-        "confirmation_status": "NOT_APPLICABLE",
-        "commit_status": "COMMITTED",
-        "commit_time": "2026-08-26T11:31:00+02:00",
-        "match_validation": "PASS",
-        "team_ebook": {
-          "home": {
-            "sample": "2026/27 UEFA qualifying plus current domestic/recent results",
-            "first_leg": "2-2 away at Hearts",
-            "process": "61% possession, 1.34 xG, 3 big chances and 23 opposition-box touches in the first leg; recent results include 8-0 Grazer AK, 2-0 Paide, 2-1 Ried, 4-1 Paide and 1-0 Altach",
-            "status": "Snapshot team_id missing; men's first-team entity externally resolved as SK Rapid, UEFA club 50042"
-          },
-          "away": {
-            "sample": "2026/27 European qualifying plus current domestic/recent results",
-            "first_leg": "2-2 home vs Rapid",
-            "process": "17 shots but 0.61 xG, 0 big chances and 16 opposition-box touches in the first leg; recent results include 6-2 Inverness CT, 1-1 Benfica, 4-0 Dundee United, 1-6 Benfica and 1-2 Aberdeen",
-            "status": "Snapshot team_id missing; men's first-team entity externally resolved as Heart of Midlothian FC, UEFA club 50120"
-          }
-        },
-        "field_status": {
-          "DF01_FIXTURE_ENTITY": {
-            "status": "FOUND",
-            "trust": "HIGH"
-          },
-          "DF02_COMPETITION_CONTEXT": {
-            "status": "FOUND",
-            "trust": "HIGH"
-          },
-          "DF03_CURRENT_RESULTS_FORM": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF04_ROLE_SPLIT": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF05_PROCESS_XG_XGA": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF06_SHOTS_SOT": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF07_GOAL_PROFILE": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF08_PHASE_PROFILE": {
-            "status": "PARTIAL",
-            "trust": "LOW"
-          },
-          "DF09_REST_LOAD": {
-            "status": "DERIVED",
-            "trust": "HIGH"
-          },
-          "DF10_TEAM_STATUS": {
-            "status": "FOUND_NO_EVENT",
-            "trust": "MEDIUM"
-          },
-          "DF11_LONG_TERM_PRIOR": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF12_CURRENT_SEASON_STRENGTH": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF13_RECENT_PROCESS": {
-            "status": "PARTIAL",
-            "trust": "MEDIUM"
-          },
-          "DF14_H2H_SUPPORT": {
-            "status": "FOUND",
-            "trust": "MEDIUM"
-          },
-          "DF15_TEAM_DNA": {
-            "status": "NOT_EXPECTED",
-            "trust": "LOW"
-          },
-          "DF16_LEAGUE_DNA": {
-            "status": "NOT_EXPECTED",
-            "trust": "LOW"
-          }
-        },
-        "axes": {
-          "CONTROL": "HOME",
-          "CHAOS": "MEDIUM",
-          "GOAL_PROFILE": "MEDIUM",
-          "TEMPO": "MEDIUM",
-          "PHASE_STRUCTURE": "HOME_CONTROL_WITH_TRANSITION_RISK",
-          "DRAW_GRAVITY": "MEDIUM_HIGH"
-        },
-        "anchor": "Rapid's first-leg chance quality and territorial control were stronger despite the 2-2 score: 61% possession, 1.34-0.61 xG and a 3-0 big-chance edge. The second leg shifts that process edge to Rapid's home ground, while Hearts' higher raw shot count keeps the draw/transition tail material.",
-        "prime_world": "Rapid reproduce the higher-quality chance process at home, control more territory and avoid defeat; the most likely home-positive branch is a one-goal Rapid win.",
-        "counterworld": "Hearts turn their first-leg shot volume into earlier high-quality chances, keep Rapid from converting territorial control and force the tie into a 1-1 or away-transition upset state.",
-        "game_state": {
-          "1-0": "Rapid can reduce transition exposure and make Hearts chase, strengthening the home-control mechanism.",
-          "0-1": "Hearts gain the state advantage and Rapid must open the match, materially increasing chaos and away-transition risk.",
-          "1-1": "The tie remains level and late-game variance rises, preserving both the home-control and Hearts counterworld mechanisms."
-        },
-        "modal_score": "2:1",
-        "four_score_cluster": [
-          "2:1",
-          "1:1",
-          "2:0",
-          "1:0"
-        ],
-        "score_band": "1–3",
-        "prediction_map": [
-          "Rapid Vienna O0.5 Goals",
-          "Rapid Vienna DNB",
-          "Rapid Vienna 1",
-          "Under 4.5 Goals"
-        ],
-        "candidates": [
-          {
-            "prediction": "Rapid Vienna O0.5 Goals",
-            "axis": "TEAM_GOALS",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "4/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 3,
-            "F": 3,
-            "R": 4,
-            "D": 2,
-            "penalties": [],
-            "score_total": 12
-          },
-          {
-            "prediction": "Rapid Vienna DNB",
-            "axis": "DIRECTION",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "4/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 4,
-            "F": 4,
-            "R": 4,
-            "D": 2,
-            "penalties": [],
-            "score_total": 14
-          },
-          {
-            "prediction": "Rapid Vienna 1",
-            "axis": "DIRECTION",
-            "world": "PRIME_WORLD",
-            "cluster_coverage": "3/4",
-            "p_raw": "NOT_AVAILABLE",
-            "W": 4,
-            "F": 4,
-            "R": 2,
-            "D": 2,
-            "penalties": [],
-            "score_total": 12
-          }
-        ],
-        "world_stability": "STABLE",
-        "robustness": "MEDIUM",
-        "shock_test": {
-          "S1": "BLEIBT",
-          "S2": "BIEGT",
-          "S3": "BRICHT"
-        },
-        "repair_summary": [
-          {
-            "field": "fixture / competition / entities / kickoff / leg",
-            "routes": [
-              "Daily Snapshot",
-              "UEFA match and qualifying fixture pages",
-              "SK Rapid official",
-              "HeartsTV",
-              "Sofascore"
-            ],
-            "result": "FOUND; SK Rapid vs Heart of Midlothian confirmed for 26 Aug 2026, UEFA Conference League play-off second leg, 18:45 Europe/Zurich, aggregate 2-2"
-          },
-          {
-            "field": "snapshot team identity gaps",
-            "routes": [
-              "Daily Snapshot",
-              "UEFA club pages",
-              "Open Search"
-            ],
-            "result": "RESOLVED externally; Rapid = SK Rapid UEFA club 50042, Hearts = Heart of Midlothian FC UEFA club 50120; snapshot team_id values remain absent and are not invented"
-          },
-          {
-            "field": "current process / form / first-leg evidence",
-            "routes": [
-              "UEFA",
-              "FotMob",
-              "SK Rapid official",
-              "Open Search"
-            ],
-            "result": "PARTIAL; first-leg xG, shots, possession, big chances and recent-result evidence recovered, but full team-season process matrix remains incomplete"
-          }
-        ],
-        "sources": [
-          {
-            "name": "ECOBET Daily Data Snapshot",
-            "snapshot": "2026-08-26T03:01:23.865960+02:00",
-            "trust": "TRANSPORT_VALIDATED",
-            "used_for": "fixture seed and explicit snapshot team-id gaps",
-            "url": "https://raw.githubusercontent.com/Giammaa87/ecobet/main/data/2026-08-26/snap_20260826_030123/fixtures.json"
-          },
-          {
-            "name": "UEFA",
-            "snapshot": "2026-08-26",
-            "trust": "HIGH",
-            "used_for": "competition, play-off round, second-leg fixture, date, entities, aggregate context and UEFA club identities",
-            "url": "https://www.uefa.com/uefaconferenceleague/match/2049278--sk-rapid-vs-hearts/"
-          },
-          {
-            "name": "SK Rapid official",
-            "snapshot": "2026-08-26",
-            "trust": "HIGH",
-            "used_for": "home fixture confirmation and local kickoff 18:45",
-            "url": "https://www.skrapid.at/aktuelles/2026/08/uecl-ticketinfos-zum-play-off-heimspiel/"
-          },
-          {
-            "name": "HeartsTV",
-            "snapshot": "2026-08-26",
-            "trust": "HIGH",
-            "used_for": "away-club fixture confirmation",
-            "url": "https://heartstv.heartsfc.co.uk/"
-          },
-          {
-            "name": "FotMob",
-            "snapshot": "2026-08-26",
-            "trust": "HIGH",
-            "used_for": "first-leg 2-2, 0.61-1.34 xG, 39%-61% possession, shots and current recent-result windows",
-            "url": "https://www.fotmob.com/en-GB/matches/rapid-wien-vs-penybontfc-santa-coloma/qmnvdc5m"
-          },
-          {
-            "name": "Sofascore",
-            "snapshot": "2026-08-26",
-            "trust": "HIGH",
-            "used_for": "26 Aug fixture, 16:45 UTC, Allianz Stadion and aggregate 2-2 cross-check",
-            "url": "https://www.sofascore.com/football/match/heart-of-midlothian-sk-rapid-wien/fQsdX"
-          }
-        ]
+        "commit_status": "COMMITTED"
       },
       "result_settlement": {
-        "result_status": "UNSETTLED",
-        "score_90_plus_stoppage": null,
-        "competition_final_score": null,
-        "went_extra_time": null,
-        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
-        "safe_result": "UNSETTLED",
-        "balanced_result": "UNSETTLED",
-        "aggressive_result": "UNSETTLED",
-        "favourite_result": "UNSETTLED",
-        "result_sources": [],
-        "reason": "final 90-minute result not yet confirmed (postponed/abandoned/unfinished)"
+        "result_status": "CONFIRMED",
+        "settlement_basis": "90_PLUS_STOPPAGE",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "2-2 AET; Hearts won 4-3 on penalties",
+        "score_after_extra_time": "2-2",
+        "penalty_shootout": "Hearts won 4-3",
+        "safe_result": "HIT",
+        "balanced_result": "PUSH",
+        "aggressive_result": "MISS",
+        "favourite_result": "PUSH",
+        "result_sources": [{"name": "The Guardian / PA Media", "trust": "INDEPENDENT_SPORT_MEDIA"}, {"name": "SPFL", "trust": "OFFICIAL_LEAGUE"}]
       },
       "score_cluster_audit": {
         "modal_score_hit": false,
-        "cluster_hit": false,
-        "score_band_hit": false,
-        "result_distance_from_modal": {
-          "status": "NOT_AVAILABLE",
-          "reason": "No confirmed final result to compare against."
-        }
+        "cluster_hit": true,
+        "score_band_hit": true
       },
-      "world_verdict": {
-        "verdict": "UNDETERMINED",
-        "evidence_level": "NONE",
-        "basis": "No confirmed result is available for this fixture."
-      },
-      "failure_cluster": [],
-      "audit_flags": [
-        "RESULT_UNSETTLED"
-      ]
+      "world_verdict": {"verdict": "COUNTERWORLD"},
+      "failure_cluster": ["AGGRESSIVE_DIRECTION_MISS"],
+      "audit_flags": ["EXTRA_TIME_PLAYED", "PENALTY_SHOOTOUT_PLAYED", "SETTLED_AT_90_PLUS_STOPPAGE"]
     }
   ]
 }
