@@ -1,0 +1,2534 @@
+{
+  "serialization_note": "Audit JSON derived from N_ECOBET_OUTPUT_AND_AUDIT_v1.3 RUN_AUDIT_RECORD / MATCH_AUDIT_RECORD semantics. No dedicated settlement_record schema is claimed.",
+  "audit_generated_at": "2026-08-28T23:30:04+02:00",
+  "original_run_immutable": true,
+  "run_audit_record": {
+    "record_type": "RUN_AUDIT_RECORD",
+    "run_id": "RUN_2026-08-28_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260828T1610",
+    "snapshot_id": "RUNSNAP_2026-08-28T16-10-00+02-00",
+    "source_run_record": {
+      "filename": "2026-08-28_1610.json",
+      "sha256": "1ab4317d6d1f9bf4ce48f686a56e1d7df09a413a1a3ccad832d1c4cb69f44b9e",
+      "immutability": "UNCHANGED"
+    },
+    "data_snapshot_provenance": {
+      "data_snapshot_status": "AVAILABLE",
+      "data_snapshot_id": "snap_20260828_030122",
+      "data_snapshot_date": "2026-08-28",
+      "data_snapshot_generated_at": "2026-08-28T03:01:22.356656+02:00",
+      "data_snapshot_data_cutoff": "2026-08-28T03:01:22.356656+02:00",
+      "data_snapshot_db_updated_at": "2026-08-28T03:00:02",
+      "data_snapshot_hash": "sha256:2ed7c61133ab1a691b4af1ac00fef043037f3b8298d8731e8770a2bf97f83f31",
+      "data_snapshot_schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+      "data_snapshot_url": "https://giammaa87.github.io/ecobet/data/2026-08-28/snap_20260828_030122/manifest.json"
+    },
+    "fixture_reconciliation_summary": "EQUAL",
+    "source_mode_distribution": {
+      "SNAPSHOT": 0,
+      "SNAPSHOT_PLUS_REPAIR": 6,
+      "WEB_FALLBACK": 0
+    },
+    "date_range": {
+      "from": "2026-08-28",
+      "to": "2026-08-28"
+    },
+    "timezone": "Europe/Zurich",
+    "scope": [
+      "Premier League",
+      "Bundesliga",
+      "La Liga",
+      "Serie A",
+      "Ligue 1",
+      "UEFA Champions League",
+      "UEFA Europa League",
+      "UEFA Conference League"
+    ],
+    "norm_versions": {
+      "master_os": "1.3",
+      "data_fabric": "1.5",
+      "football_decision_engine": "1.1",
+      "output_audit": "1.4",
+      "team_id_registry": "1.0",
+      "history_calibration": "1.0"
+    },
+    "match_counts": {
+      "scope_committed_original": 6,
+      "result_confirmed": 0,
+      "unsettled": 6
+    },
+    "readiness_distribution": {
+      "READY": 0,
+      "CONDITIONAL": 5,
+      "NOT_READY": 1
+    },
+    "world_stability_distribution": {
+      "STABLE": 5,
+      "VERY_STABLE": 0,
+      "ULTRA_STABLE": 0,
+      "UNKNOWN": 1
+    },
+    "ampel_distribution": {
+      "GREEN": 0,
+      "YELLOW": 5,
+      "RED": 1
+    },
+    "nsp_count": 1,
+    "proof_counters": {
+      "matches_in_original_run": 6,
+      "match_audit_records": 6,
+      "result_confirmed": 0,
+      "result_unsettled": 6,
+      "predictions_rewritten": 0,
+      "real_odds_used_as_input": 0,
+      "tickets_created": "NO"
+    },
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "result_settlement_status": "PARTIAL",
+    "model_kpis": {
+      "safe": {
+        "HIT": 0,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 6,
+        "UNMAPPABLE": 0,
+        "decisive_total": 0,
+        "hit_rate_percent": null
+      },
+      "balanced": {
+        "HIT": 0,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 6,
+        "UNMAPPABLE": 0,
+        "decisive_total": 0,
+        "hit_rate_percent": null
+      },
+      "aggressive": {
+        "HIT": 0,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 6,
+        "UNMAPPABLE": 0,
+        "decisive_total": 0,
+        "hit_rate_percent": null
+      },
+      "favourite": {
+        "HIT": 0,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 6,
+        "UNMAPPABLE": 0,
+        "decisive_total": 0,
+        "hit_rate_percent": null
+      }
+    },
+    "data_integrity_flags": [
+      "ORIGINAL_RUN_IMMUTABLE",
+      "RESULT_SETTLEMENT_PARTIAL_UNSETTLED_FIXTURES_PRESENT"
+    ],
+    "notes": [
+      "Original committed Predictions and Run Record remain unchanged."
+    ]
+  },
+  "match_audit_records": [
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ESP-2026-08-28-RACING-SANTANDER-ELCHE",
+      "snapshot_id": "RUNSNAP_2026-08-28T16-10-00+02-00",
+      "data_snapshot_id": "snap_20260828_030122",
+      "data_snapshot_coverage": "PARTIAL",
+      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+      "snapshot_fixture_missing": false,
+      "fixture": {
+        "kickoff": "19:00",
+        "home": "Racing Santander",
+        "away": "Elche",
+        "competition": "La Liga",
+        "phase": "Matchday 3"
+      },
+      "competition_metadata": {
+        "competition_id": "ESP_LA_LIGA",
+        "competition_name": "La Liga",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 30
+      },
+      "committed_model": {
+        "fixture_id": "ESP-2026-08-28-RACING-SANTANDER-ELCHE",
+        "kickoff": "19:00",
+        "competition": "La Liga",
+        "competition_id": "ESP_LA_LIGA",
+        "competition_name": "La Liga",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 30,
+        "phase": "Matchday 3",
+        "home": "Racing Santander",
+        "away": "Elche",
+        "data_snapshot_id": "snap_20260828_030122",
+        "data_snapshot_coverage": "PARTIAL",
+        "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+        "snapshot_fixture_missing": false,
+        "board_status": "COMMITTED",
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-28T16:10:00+02:00",
+        "match_validation": "PASS",
+        "world_type": "NOT_AVAILABLE",
+        "safe": "NOT_AVAILABLE",
+        "balanced": "NOT_AVAILABLE",
+        "aggressive": "NOT_AVAILABLE",
+        "favourite": "NO_STABLE_PREDICTION",
+        "favourite_decision_reason": "NOT_AVAILABLE",
+        "why_not_safest_candidate": "NOT_AVAILABLE",
+        "why_safe_is_also_best_decision": "NOT_AVAILABLE",
+        "favourite_specificity": "NOT_AVAILABLE",
+        "favourite_cluster_coverage": "NOT_AVAILABLE",
+        "favourite_robustness": "NOT_AVAILABLE",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "RED",
+        "flags": [
+          "DATA_NOT_READY",
+          "LOW_SAMPLE_ROLE_SPLIT",
+          "NARROW_PREDICTION_SPACE"
+        ],
+        "data_readiness": "NOT_READY",
+        "match_core_status": "PARTIAL",
+        "nsp_codes": [
+          "NSP_NO_ANCHOR",
+          "NSP_UNKNOWN_WORLD"
+        ],
+        "team_ebook": {
+          "home": {
+            "season_sample": "2 league matches (VERY_LOW)",
+            "current_results": "2-2 Villarreal; 0-1 Getafe",
+            "process": "FootyStats: 1.25 xG, 1.42 xGA, 11.5 shots/match; home split is one match only",
+            "availability": "Pedro Felipe injury",
+            "regime": "Promoted/new top-flight context; role split too small for a stable anchor",
+            "trust": "MEDIUM"
+          },
+          "away": {
+            "season_sample": "2 league matches (VERY_LOW)",
+            "current_results": "1 point from first two matches; includes 0-5 Barcelona",
+            "process": "FootyStats: 9 shots/match, 4.0 SOT; xGA displayed around 1.17 overall",
+            "availability": "Adam Boayar injury; Yago Santiago injury",
+            "regime": "Early-season sample and away role insufficiently mature",
+            "trust": "MEDIUM"
+          }
+        },
+        "field_status": {
+          "DF01": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "LOW"
+          },
+          "DF06": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "home": "FOUND",
+            "away": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF08": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF09": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "LOW"
+          },
+          "DF10": {
+            "home": "DERIVED",
+            "away": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "home": "FOUND_EVENT",
+            "away": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF14": {
+            "home": "NOT_EXPECTED",
+            "away": "NOT_EXPECTED",
+            "trust": "LOW"
+          },
+          "DF15": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          }
+        },
+        "axes": {},
+        "anchor": "NOT_AVAILABLE",
+        "prime_world": "NOT_AVAILABLE",
+        "counterworld": "NOT_AVAILABLE",
+        "game_state": {},
+        "modal_score": "NOT_AVAILABLE",
+        "four_score_cluster": [],
+        "score_band": "NOT_AVAILABLE",
+        "prediction_map": [],
+        "candidates": [],
+        "world_stability": "UNKNOWN",
+        "robustness": "NOT_AVAILABLE",
+        "shock_test": {},
+        "repair_summary": [
+          {
+            "field": "Daily Data Snapshot / Step 0",
+            "routes": [
+              "latest.json resolution",
+              "immutable manifest.json",
+              "immutable fixtures.json",
+              "snapshot team payload attempt",
+              "WEB_FALLBACK repair for unreadable/missing team fields"
+            ],
+            "result": "FOUND",
+            "note": "Validated Daily Snapshot bound first: latest.json resolved to immutable snap_20260828_030122 with matching date, hash, cutoff and manifest. Fixture/manifest data were used as the primary basis. Immutable team payload URLs remained transport-blocked by Safe-Open, so missing team-field content was repaired through the existing external search routes; snapshot values were not replaced silently. The snapshot explicitly reports n_features=0 for Racing Santander, therefore Racing team fields required external repair."
+          },
+          {
+            "field": "DF07/DF08 process data",
+            "routes": [
+              "FootyStats team statistics",
+              "FotMob match/team pages",
+              "Open Search"
+            ],
+            "result": "PARTIAL",
+            "note": "Racing process block resolved better than Elche; provider-consistent complete two-team process window was not sufficient for a stable match anchor."
+          },
+          {
+            "field": "DF11 current team status",
+            "routes": [
+              "FotMob current match status",
+              "Open Search"
+            ],
+            "result": "FOUND_EVENT",
+            "note": "Pedro Felipe; Adam Boayar; Yago Santiago."
+          }
+        ],
+        "sources": [
+          {
+            "name": "ECOBET Daily Snapshot manifest",
+            "used_for": "Snapshot identity, hash, cutoff, bundle diagnostics and lineage",
+            "trust": "HIGH"
+          },
+          {
+            "name": "ECOBET Daily Snapshot fixtures",
+            "used_for": "Fixture presence, discovery evidence, kickoff where present, team feature coverage",
+            "trust": "HIGH"
+          },
+          {
+            "name": "LaLiga / fixture discovery",
+            "used_for": "Fixture identity and date",
+            "trust": "HIGH"
+          },
+          {
+            "name": "FootyStats",
+            "used_for": "Current La Liga xG/shots/sample context",
+            "trust": "MEDIUM"
+          },
+          {
+            "name": "FotMob",
+            "used_for": "Current results, availability events and H2H support",
+            "trust": "MEDIUM"
+          }
+        ]
+      },
+      "result_settlement": {
+        "result_status": "UNSETTLED",
+        "score_90_plus_stoppage": null,
+        "competition_final_score": null,
+        "went_extra_time": null,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "UNSETTLED",
+        "balanced_result": "UNSETTLED",
+        "aggressive_result": "UNSETTLED",
+        "favourite_result": "UNSETTLED",
+        "result_sources": [],
+        "reason": "final 90-minute result not yet confirmed (postponed/abandoned/unfinished)"
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No confirmed final result to compare against."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "NONE",
+        "basis": "No confirmed result is available for this fixture."
+      },
+      "failure_cluster": [],
+      "audit_flags": [
+        "RESULT_UNSETTLED"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "GER-2026-08-28-BAYERN-MUNICH-VFB-STUTTGART",
+      "snapshot_id": "RUNSNAP_2026-08-28T16-10-00+02-00",
+      "data_snapshot_id": "snap_20260828_030122",
+      "data_snapshot_coverage": "PARTIAL",
+      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+      "snapshot_fixture_missing": false,
+      "fixture": {
+        "kickoff": "20:30",
+        "home": "Bayern Munich",
+        "away": "VfB Stuttgart",
+        "competition": "Bundesliga",
+        "phase": "Matchday 1"
+      },
+      "competition_metadata": {
+        "competition_id": "GER_BUNDESLIGA",
+        "competition_name": "Bundesliga",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 20
+      },
+      "committed_model": {
+        "fixture_id": "GER-2026-08-28-BAYERN-MUNICH-VFB-STUTTGART",
+        "kickoff": "20:30",
+        "competition": "Bundesliga",
+        "competition_id": "GER_BUNDESLIGA",
+        "competition_name": "Bundesliga",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 20,
+        "phase": "Matchday 1",
+        "home": "Bayern Munich",
+        "away": "VfB Stuttgart",
+        "data_snapshot_id": "snap_20260828_030122",
+        "data_snapshot_coverage": "PARTIAL",
+        "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+        "snapshot_fixture_missing": false,
+        "board_status": "COMMITTED",
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-28T16:10:00+02:00",
+        "match_validation": "PASS",
+        "world_type": "GOALS_OPEN",
+        "safe": "Over 1.5",
+        "balanced": "Over 2.5",
+        "aggressive": "Bayern München O1.5 Team Goals",
+        "favourite": "Over 2.5",
+        "favourite_decision_reason": "Over 2.5 bewahrt Bayerns klare Heim- und Torproduktionskante, ohne Stuttgarts eigenen Pressing-/Scoring-Pfad auszublenden; es rendert den 2–4-Tore-Korridor informativer als die breite Safety-Linie.",
+        "why_not_safest_candidate": "Over 1.5 ist robuster, trägt aber weniger Information über den erwarteten offenen Mechanismus und die beidseitige Chancenproduktion.",
+        "why_safe_is_also_best_decision": "NOT_AVAILABLE",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "4/4",
+        "favourite_robustness": "MEDIUM",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "LOW_SAMPLE",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE",
+          "MUSIALA_OUT"
+        ],
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "nsp_codes": [],
+        "team_ebook": {
+          "home": {
+            "season_sample": "0 Bundesliga matches before target (NOT_EXPECTED current-league sample)",
+            "current_results": "2-1 Borussia Dortmund in Franz Beckenbauer Supercup",
+            "process": "No current Bundesliga xG/shot sample yet; defending-champion prior and recent competitive state retained separately",
+            "availability": "Jamal Musiala confirmed unavailable for Stuttgart; Lennart Karl fit",
+            "regime": "Vincent Kompany continuity",
+            "trust": "MEDIUM"
+          },
+          "away": {
+            "season_sample": "0 Bundesliga matches before target (NOT_EXPECTED current-league sample)",
+            "current_results": "4-0 Hansa Rostock in DFB-Pokal",
+            "process": "Official Bundesliga notes Stuttgart had the league's second-best attack in 2025/26; current-league process sample not yet available",
+            "availability": "No material current event established in the researched sources",
+            "regime": "Early-season competitive context",
+            "trust": "MEDIUM"
+          }
+        },
+        "field_status": {
+          "DF01": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "home": "NOT_EXPECTED",
+            "away": "NOT_EXPECTED",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "home": "NOT_EXPECTED",
+            "away": "NOT_EXPECTED",
+            "trust": "LOW"
+          },
+          "DF06": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "home": "NOT_EXPECTED",
+            "away": "NOT_EXPECTED",
+            "trust": "LOW"
+          },
+          "DF08": {
+            "home": "NOT_EXPECTED",
+            "away": "NOT_EXPECTED",
+            "trust": "LOW"
+          },
+          "DF09": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "LOW"
+          },
+          "DF10": {
+            "home": "DERIVED",
+            "away": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "home": "FOUND_EVENT",
+            "away": "FOUND_NO_EVENT",
+            "trust": "HIGH"
+          },
+          "DF12": {
+            "home": "FOUND_NO_EVENT",
+            "away": "FOUND_NO_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF14": {
+            "home": "NOT_EXPECTED",
+            "away": "NOT_EXPECTED",
+            "trust": "LOW"
+          },
+          "DF15": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          }
+        },
+        "axes": {
+          "CONTROL": "HIGH",
+          "CHAOS": "MEDIUM",
+          "GOAL_PROFILE": "HIGH",
+          "TEMPO": "HIGH",
+          "PHASE_STRUCTURE": "OSCILLATING",
+          "DRAW_GRAVITY": "MEDIUM"
+        },
+        "anchor": "Bayerns Heimkontrolle und höhere Baseline treffen auf Stuttgarts intensives Pressing und offensiven Vorjahresoutput, wodurch Ballgewinne beider Seiten einen offenen 2–4-Tore-Korridor stützen.",
+        "prime_world": "Bayern controls more territory but Stuttgart's pressure keeps the game from becoming sterile; Bayern generates the larger chance share and the match reaches at least three goals through one or two scoring paths.",
+        "counterworld": "Stuttgart's press disrupts Bayern's first build-up phase and creates enough transition threat to keep the game level deep into the second half rather than allowing clean Bayern control.",
+        "game_state": {
+          "1:0": "Bayern can increase territorial control, while Stuttgart must press higher; transition volume remains alive.",
+          "0:1": "Bayern must accelerate and Stuttgart can attack space behind the rest defence; chaos rises.",
+          "1:1": "Both teams retain incentive to attack; the Prime World gains plausibility."
+        },
+        "modal_score": "3:1",
+        "four_score_cluster": [
+          "3:1",
+          "2:1",
+          "3:2",
+          "2:2"
+        ],
+        "score_band": "2–4",
+        "prediction_map": [
+          "Over 1.5",
+          "Over 2.5",
+          "Bayern München O1.5 Team Goals",
+          "1"
+        ],
+        "candidates": [
+          {
+            "candidate_id": "BAY-STU-C1",
+            "prediction": "Over 1.5",
+            "market_axis": "TOTAL",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "Beide Seiten besitzen belastbare Torpfade, auch wenn Bayerns Kontrolle dominiert.",
+            "mapping_sentence": "Die breite Total-Linie überlebt sowohl Bayern-Kontrolle als auch einen Stuttgart-Torpfad.",
+            "anchor_reference": "Bayerns Heimkontrolle und höhere Baseline treffen auf Stuttgarts intensives Pressing und offensiven Vorjahresoutput, wodurch Ballgewinne beider Seiten einen offenen 2–4-Tore-Korridor stützen.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 2,
+            "R": 3,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 9,
+            "robustness": "HIGH",
+            "state_sensitivity": "LOW",
+            "path_eligibility": [
+              "SAFE"
+            ],
+            "flags": []
+          },
+          {
+            "candidate_id": "BAY-STU-C2",
+            "prediction": "Over 2.5",
+            "market_axis": "TOTAL",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "Stuttgarts Pressing und Bayerns Heimangriff erhöhen die Wahrscheinlichkeit eines offenen statt sterilen Kontrollspiels.",
+            "mapping_sentence": "Die Linie bildet den modellierten 2–4-Tore-Korridor informativer ab als Over 1.5.",
+            "anchor_reference": "Bayerns Heimkontrolle und höhere Baseline treffen auf Stuttgarts intensives Pressing und offensiven Vorjahresoutput, wodurch Ballgewinne beider Seiten einen offenen 2–4-Tore-Korridor stützen.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 3,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "state_sensitivity": "MEDIUM",
+            "path_eligibility": [
+              "BALANCED"
+            ],
+            "flags": [
+              "LOW_SAMPLE"
+            ]
+          },
+          {
+            "candidate_id": "BAY-STU-C3",
+            "prediction": "Bayern München O1.5 Team Goals",
+            "market_axis": "TG",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "Bayern besitzt den stärkeren eigenen Torpfad und wiederholt Zugang in Stuttgarts letzte Linie.",
+            "mapping_sentence": "Der Ausdruck fokussiert die dominante Scoring-Seite, verliert aber gegen einen sterilen 1:0/1:1-Tail.",
+            "anchor_reference": "Bayerns Heimkontrolle und höhere Baseline treffen auf Stuttgarts intensives Pressing und offensiven Vorjahresoutput, wodurch Ballgewinne beider Seiten einen offenen 2–4-Tore-Korridor stützen.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 3,
+            "R": 1,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              },
+              {
+                "name": "STATE_SENSITIVE",
+                "value": -1
+              }
+            ],
+            "score_total": 7,
+            "robustness": "LOW",
+            "state_sensitivity": "HIGH",
+            "path_eligibility": [
+              "AGGRESSIVE"
+            ],
+            "flags": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "candidate_id": "BAY-STU-C4",
+            "prediction": "1",
+            "market_axis": "DIR",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "Bayern hat die klare Heim- und Strength-Kante.",
+            "mapping_sentence": "Der reine Sieg bildet Kontrolle ab, ist aber gegen Draw- und Transition-Tail weniger robust.",
+            "anchor_reference": "Bayerns Heimkontrolle und höhere Baseline treffen auf Stuttgarts intensives Pressing und offensiven Vorjahresoutput, wodurch Ballgewinne beider Seiten einen offenen 2–4-Tore-Korridor stützen.",
+            "cluster_coverage": "3/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 2,
+            "R": 1,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              },
+              {
+                "name": "STATE_SENSITIVE",
+                "value": -1
+              }
+            ],
+            "score_total": 6,
+            "robustness": "LOW",
+            "state_sensitivity": "HIGH",
+            "path_eligibility": [
+              "AGGRESSIVE"
+            ],
+            "flags": [
+              "STATE_SENSITIVE"
+            ]
+          }
+        ],
+        "world_stability": "STABLE",
+        "robustness": "MEDIUM",
+        "shock_test": {
+          "S1": "BLEIBT",
+          "S2": "BIEGT",
+          "S3": "BIEGT"
+        },
+        "repair_summary": [
+          {
+            "field": "Daily Data Snapshot / Step 0",
+            "routes": [
+              "latest.json resolution",
+              "immutable manifest.json",
+              "immutable fixtures.json",
+              "snapshot team payload attempt",
+              "WEB_FALLBACK repair for unreadable/missing team fields"
+            ],
+            "result": "FOUND",
+            "note": "Validated Daily Snapshot bound first: latest.json resolved to immutable snap_20260828_030122 with matching date, hash, cutoff and manifest. Fixture/manifest data were used as the primary basis. Immutable team payload URLs remained transport-blocked by Safe-Open, so missing team-field content was repaired through the existing external search routes; snapshot values were not replaced silently."
+          },
+          {
+            "field": "DF03–DF09 season/process",
+            "routes": [
+              "Bundesliga official match centre",
+              "FootyStats Bundesliga/team pages",
+              "Open Search"
+            ],
+            "result": "PARTIAL",
+            "note": "Bundesliga Matchday 1 means current-league quantitative sample is genuinely absent; recent competitive matches used only as current-state support."
+          },
+          {
+            "field": "DF11 current team status",
+            "routes": [
+              "Bundesliga official match centre",
+              "Open Search"
+            ],
+            "result": "FOUND_EVENT",
+            "note": "Musiala out; Karl fit."
+          }
+        ],
+        "sources": [
+          {
+            "name": "ECOBET Daily Snapshot manifest",
+            "used_for": "Snapshot identity, hash, cutoff, bundle diagnostics and lineage",
+            "trust": "HIGH"
+          },
+          {
+            "name": "ECOBET Daily Snapshot fixtures",
+            "used_for": "Fixture presence, discovery evidence, kickoff where present, team feature coverage",
+            "trust": "HIGH"
+          },
+          {
+            "name": "Bundesliga official",
+            "used_for": "Fixture, current competitive context, team-status confirmation, historical attack context",
+            "trust": "HIGH"
+          },
+          {
+            "name": "FootyStats",
+            "used_for": "Current Bundesliga zero-sample verification / statistical route",
+            "trust": "MEDIUM"
+          }
+        ]
+      },
+      "result_settlement": {
+        "result_status": "UNSETTLED",
+        "score_90_plus_stoppage": null,
+        "competition_final_score": null,
+        "went_extra_time": null,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "UNSETTLED",
+        "balanced_result": "UNSETTLED",
+        "aggressive_result": "UNSETTLED",
+        "favourite_result": "UNSETTLED",
+        "result_sources": [],
+        "reason": "final 90-minute result not yet confirmed (postponed/abandoned/unfinished)"
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No confirmed final result to compare against."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "NONE",
+        "basis": "No confirmed result is available for this fixture."
+      },
+      "failure_cluster": [],
+      "audit_flags": [
+        "RESULT_UNSETTLED"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "FRA-2026-08-28-LILLE-PSG",
+      "snapshot_id": "RUNSNAP_2026-08-28T16-10-00+02-00",
+      "data_snapshot_id": "snap_20260828_030122",
+      "data_snapshot_coverage": "PARTIAL",
+      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+      "snapshot_fixture_missing": false,
+      "fixture": {
+        "kickoff": "20:45",
+        "home": "Lille",
+        "away": "Paris Saint-Germain",
+        "competition": "Ligue 1",
+        "phase": "Matchday 2"
+      },
+      "competition_metadata": {
+        "competition_id": "FRA_LIGUE_1",
+        "competition_name": "Ligue 1",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 50
+      },
+      "committed_model": {
+        "fixture_id": "FRA-2026-08-28-LILLE-PSG",
+        "kickoff": "20:45",
+        "competition": "Ligue 1",
+        "competition_id": "FRA_LIGUE_1",
+        "competition_name": "Ligue 1",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 50,
+        "phase": "Matchday 2",
+        "home": "Lille",
+        "away": "Paris Saint-Germain",
+        "data_snapshot_id": "snap_20260828_030122",
+        "data_snapshot_coverage": "PARTIAL",
+        "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+        "snapshot_fixture_missing": false,
+        "board_status": "COMMITTED",
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-28T16:10:00+02:00",
+        "match_validation": "PASS",
+        "world_type": "CONTROL_BUT_FRAGILE_AWAY",
+        "safe": "Over 1.5",
+        "balanced": "PSG O0.5 Team Goals",
+        "aggressive": "BTTS Yes",
+        "favourite": "PSG O0.5 Team Goals",
+        "favourite_decision_reason": "PSG O0.5 Team Goals ist die klarste datengetragene Konstante: sie bewahrt PSGs stärkeren Angriffs- und Kontrollpfad, ohne einen Auswärtssieg zu erzwingen oder Lilles Transition-Tail auszublenden.",
+        "why_not_safest_candidate": "Over 1.5 deckt mehr Gesamtverläufe breit ab, bildet aber die zentrale PSG-spezifische Scoring-Kante weniger präzise ab.",
+        "why_safe_is_also_best_decision": "NOT_AVAILABLE",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "4/4",
+        "favourite_robustness": "HIGH",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "LOW_SAMPLE",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE",
+          "PSG_AVAILABILITY_EVENTS"
+        ],
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "nsp_codes": [],
+        "team_ebook": {
+          "home": {
+            "season_sample": "1 league match (VERY_LOW)",
+            "current_results": "2-0 away win at Angers",
+            "process": "FootyStats: 11 shots; away xG display 1.53 in the one-match sample",
+            "availability": "Tanguy Nianzou and Hamza Igamane reported unavailable",
+            "regime": "Current-season sample VERY_LOW",
+            "trust": "MEDIUM"
+          },
+          "away": {
+            "season_sample": "1 league match (VERY_LOW)",
+            "current_results": "2-2 draw with Rennes after recovering from 0-2",
+            "process": "FootyStats: 19 shots, 1.40 xG in the opening league sample",
+            "availability": "João Neves illness; Nuno Mendes suspension reported in current FotMob status",
+            "regime": "Luis Enrique continuity",
+            "trust": "MEDIUM"
+          }
+        },
+        "field_status": {
+          "DF01": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "LOW"
+          },
+          "DF06": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF08": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF09": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "LOW"
+          },
+          "DF10": {
+            "home": "DERIVED",
+            "away": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "home": "FOUND_EVENT",
+            "away": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "home": "PARTIAL",
+            "away": "FOUND_NO_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF14": {
+            "home": "NOT_EXPECTED",
+            "away": "NOT_EXPECTED",
+            "trust": "LOW"
+          },
+          "DF15": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          }
+        },
+        "axes": {
+          "CONTROL": "HIGH",
+          "CHAOS": "MEDIUM",
+          "GOAL_PROFILE": "HIGH",
+          "TEMPO": "HIGH",
+          "PHASE_STRUCTURE": "OSCILLATING",
+          "DRAW_GRAVITY": "MEDIUM"
+        },
+        "anchor": "PSG's superior attacking baseline and 19-shot opening process meet a Lille side willing to press and transition, creating a reliable PSG scoring path but a live Lille counter-path.",
+        "prime_world": "PSG controls more possession and produces the clearer repeatable scoring path, but Lille's press prevents fully sterile away control and keeps transition risk alive.",
+        "counterworld": "Lille's pressure creates high-value transition attacks early, PSG again has to chase from a difficult state, and the match becomes a two-way scoring contest.",
+        "game_state": {
+          "1:0": "PSG must accelerate; transition volume rises and Lille gains counter space.",
+          "0:1": "PSG can control more conservatively while Lille presses higher; PSG's second-goal route stays live.",
+          "1:1": "Both scoring paths remain active and the game can oscillate rather than close."
+        },
+        "modal_score": "1:2",
+        "four_score_cluster": [
+          "1:2",
+          "1:1",
+          "0:2",
+          "2:2"
+        ],
+        "score_band": "2–4",
+        "prediction_map": [
+          "Over 1.5",
+          "PSG O0.5 Team Goals",
+          "X2 PSG",
+          "BTTS Yes"
+        ],
+        "candidates": [
+          {
+            "candidate_id": "LIL-PSG-C1",
+            "prediction": "Over 1.5",
+            "market_axis": "TOTAL",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "At least one PSG goal plus a second goal from either side is structurally well supported.",
+            "mapping_sentence": "The line spans both PSG control and Lille transition without requiring a specific winner.",
+            "anchor_reference": "PSG's superior attacking baseline and 19-shot opening process meet a Lille side willing to press and transition, creating a reliable PSG scoring path but a live Lille counter-path.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 2,
+            "R": 3,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 9,
+            "robustness": "HIGH",
+            "state_sensitivity": "LOW",
+            "path_eligibility": [
+              "SAFE"
+            ],
+            "flags": []
+          },
+          {
+            "candidate_id": "LIL-PSG-C2",
+            "prediction": "PSG O0.5 Team Goals",
+            "market_axis": "TG",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "PSG has the most reliable single-team scoring path.",
+            "mapping_sentence": "This directly expresses the strongest repeatable feature while remaining robust to a draw.",
+            "anchor_reference": "PSG's superior attacking baseline and 19-shot opening process meet a Lille side willing to press and transition, creating a reliable PSG scoring path but a live Lille counter-path.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 3,
+            "R": 3,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 10,
+            "robustness": "HIGH",
+            "state_sensitivity": "LOW",
+            "path_eligibility": [
+              "BALANCED"
+            ],
+            "flags": [
+              "LOW_SAMPLE"
+            ]
+          },
+          {
+            "candidate_id": "LIL-PSG-C3",
+            "prediction": "X2 PSG",
+            "market_axis": "DIR",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "PSG's strength baseline makes the away not-lose path stronger than a Lille win path.",
+            "mapping_sentence": "X2 renders direction but is less direct than the scoring anchor.",
+            "anchor_reference": "PSG's superior attacking baseline and 19-shot opening process meet a Lille side willing to press and transition, creating a reliable PSG scoring path but a live Lille counter-path.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 2,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "state_sensitivity": "MEDIUM",
+            "path_eligibility": [
+              "SAFE"
+            ],
+            "flags": []
+          },
+          {
+            "candidate_id": "LIL-PSG-C4",
+            "prediction": "BTTS Yes",
+            "market_axis": "BTTS",
+            "supported_world": "COUNTERWORLD",
+            "world_sentence": "Lille's press/transition route can punish PSG's opening-game defensive vulnerability.",
+            "mapping_sentence": "BTTS captures both scoring routes but breaks if PSG turns control into a 0:2-style away win.",
+            "anchor_reference": "PSG's superior attacking baseline and 19-shot opening process meet a Lille side willing to press and transition, creating a reliable PSG scoring path but a live Lille counter-path.",
+            "cluster_coverage": "3/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 2,
+            "F": 3,
+            "R": 1,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              },
+              {
+                "name": "STATE_SENSITIVE",
+                "value": -1
+              }
+            ],
+            "score_total": 6,
+            "robustness": "LOW",
+            "state_sensitivity": "HIGH",
+            "path_eligibility": [
+              "AGGRESSIVE"
+            ],
+            "flags": [
+              "STATE_SENSITIVE"
+            ]
+          }
+        ],
+        "world_stability": "STABLE",
+        "robustness": "HIGH",
+        "shock_test": {
+          "S1": "BLEIBT",
+          "S2": "BIEGT",
+          "S3": "BIEGT"
+        },
+        "repair_summary": [
+          {
+            "field": "Daily Data Snapshot / Step 0",
+            "routes": [
+              "latest.json resolution",
+              "immutable manifest.json",
+              "immutable fixtures.json",
+              "snapshot team payload attempt",
+              "WEB_FALLBACK repair for unreadable/missing team fields"
+            ],
+            "result": "FOUND",
+            "note": "Validated Daily Snapshot bound first: latest.json resolved to immutable snap_20260828_030122 with matching date, hash, cutoff and manifest. Fixture/manifest data were used as the primary basis. Immutable team payload URLs remained transport-blocked by Safe-Open, so missing team-field content was repaired through the existing external search routes; snapshot values were not replaced silently."
+          },
+          {
+            "field": "DF07/DF08 current process",
+            "routes": [
+              "FootyStats team statistics",
+              "current result reports",
+              "Open Search"
+            ],
+            "result": "FOUND",
+            "note": "One-match process samples located for both teams; sample remains VERY_LOW and is penalised."
+          },
+          {
+            "field": "DF11 current team status",
+            "routes": [
+              "FotMob current match status",
+              "Open Search"
+            ],
+            "result": "FOUND_EVENT",
+            "note": "Lille: Nianzou/Igamane; PSG: João Neves/Nuno Mendes."
+          }
+        ],
+        "sources": [
+          {
+            "name": "ECOBET Daily Snapshot manifest",
+            "used_for": "Snapshot identity, hash, cutoff, bundle diagnostics and lineage",
+            "trust": "HIGH"
+          },
+          {
+            "name": "ECOBET Daily Snapshot fixtures",
+            "used_for": "Fixture presence, discovery evidence, kickoff where present, team feature coverage",
+            "trust": "HIGH"
+          },
+          {
+            "name": "Paris Saint-Germain official",
+            "used_for": "Fixture date and 20:45 kickoff",
+            "trust": "HIGH"
+          },
+          {
+            "name": "FootyStats",
+            "used_for": "Current xG/shots/sample context",
+            "trust": "MEDIUM"
+          },
+          {
+            "name": "FotMob",
+            "used_for": "Current availability and H2H support",
+            "trust": "MEDIUM"
+          }
+        ]
+      },
+      "result_settlement": {
+        "result_status": "UNSETTLED",
+        "score_90_plus_stoppage": null,
+        "competition_final_score": null,
+        "went_extra_time": null,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "UNSETTLED",
+        "balanced_result": "UNSETTLED",
+        "aggressive_result": "UNSETTLED",
+        "favourite_result": "UNSETTLED",
+        "result_sources": [],
+        "reason": "final 90-minute result not yet confirmed (postponed/abandoned/unfinished)"
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No confirmed final result to compare against."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "NONE",
+        "basis": "No confirmed result is available for this fixture."
+      },
+      "failure_cluster": [],
+      "audit_flags": [
+        "RESULT_UNSETTLED"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ITA-2026-08-28-MILAN-VENEZIA",
+      "snapshot_id": "RUNSNAP_2026-08-28T16-10-00+02-00",
+      "data_snapshot_id": "snap_20260828_030122",
+      "data_snapshot_coverage": "PARTIAL",
+      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+      "snapshot_fixture_missing": false,
+      "fixture": {
+        "kickoff": "20:45",
+        "home": "Milan",
+        "away": "Venezia",
+        "competition": "Serie A",
+        "phase": "Matchday 2"
+      },
+      "competition_metadata": {
+        "competition_id": "ITA_SERIE_A",
+        "competition_name": "Serie A",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 40
+      },
+      "committed_model": {
+        "fixture_id": "ITA-2026-08-28-MILAN-VENEZIA",
+        "kickoff": "20:45",
+        "competition": "Serie A",
+        "competition_id": "ITA_SERIE_A",
+        "competition_name": "Serie A",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 40,
+        "phase": "Matchday 2",
+        "home": "Milan",
+        "away": "Venezia",
+        "data_snapshot_id": "snap_20260828_030122",
+        "data_snapshot_coverage": "PARTIAL",
+        "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+        "snapshot_fixture_missing": false,
+        "board_status": "COMMITTED",
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-28T16:10:00+02:00",
+        "match_validation": "PASS",
+        "world_type": "CONTROL_HOME",
+        "safe": "1X Milan",
+        "balanced": "DNB(1) Milan",
+        "aggressive": "1",
+        "favourite": "DNB(1) Milan",
+        "favourite_decision_reason": "DNB(1) bewahrt Milans strukturelle Heim- und Kontrollkante, behandelt den 1:1-Tail aber ehrlicher als der reine Sieg und trägt mehr Richtungsinformation als Milan O0.5 Team Goals.",
+        "why_not_safest_candidate": "1X ist robuster, aber als Safety-Shell weniger informativ über die modellierte Milan-Siegkante.",
+        "why_safe_is_also_best_decision": "NOT_AVAILABLE",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "4/4",
+        "favourite_robustness": "MEDIUM",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "LOW_SAMPLE",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE",
+          "ATTACK_AVAILABILITY_PENALTY"
+        ],
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "nsp_codes": [],
+        "team_ebook": {
+          "home": {
+            "season_sample": "1 league match (VERY_LOW)",
+            "current_results": "2-1 away win at Torino",
+            "process": "FootyStats route reports 19 shots and 4 SOT in the one-match league sample",
+            "availability": "Rafael Leão and Santiago Giménez reported unavailable in the current FotMob match status",
+            "regime": "Ruben Amorim in first home league match; new-regime sample VERY_LOW",
+            "trust": "MEDIUM"
+          },
+          "away": {
+            "season_sample": "1 league match (VERY_LOW)",
+            "current_results": "0-2 home loss to Lecce",
+            "process": "FootyStats route reports 19 shots and 7 SOT in the one-match league sample; result/process divergence remains possible",
+            "availability": "Matías Moreno, Marin Sverko, Andrea Adorante reported unavailable",
+            "regime": "Current-season role sample VERY_LOW",
+            "trust": "MEDIUM"
+          }
+        },
+        "field_status": {
+          "DF01": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "LOW"
+          },
+          "DF06": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "LOW"
+          },
+          "DF08": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF09": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "LOW"
+          },
+          "DF10": {
+            "home": "DERIVED",
+            "away": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "home": "FOUND_EVENT",
+            "away": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "home": "FOUND_EVENT",
+            "away": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF14": {
+            "home": "NOT_EXPECTED",
+            "away": "NOT_EXPECTED",
+            "trust": "LOW"
+          },
+          "DF15": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          }
+        },
+        "axes": {
+          "CONTROL": "HIGH",
+          "CHAOS": "LOW",
+          "GOAL_PROFILE": "MEDIUM",
+          "TEMPO": "MEDIUM",
+          "PHASE_STRUCTURE": "STABLE",
+          "DRAW_GRAVITY": "MEDIUM"
+        },
+        "anchor": "Milan should own territory and chance volume at San Siro, but the confirmed Leão/Giménez absences reduce finishing certainty enough that draw protection is more faithful than a pure home-win renderer.",
+        "prime_world": "Milan monopolises more territory and builds the clearer scoring path; the match stays mostly controlled and Milan is more likely to edge it than to be dragged into a shootout.",
+        "counterworld": "Venezia's opening-day shot volume translates better than the 0-2 result, while Milan's attacking absences make possession sterile enough for a 1:1 state to persist.",
+        "game_state": {
+          "1:0": "Milan can lower risk and control territory; Venezia must open and becomes more transition-exposed.",
+          "0:1": "Milan must raise tempo; attacking absences make the recovery path less clean and chaos increases.",
+          "1:1": "Draw gravity rises sharply and the pure home-win candidate loses robustness."
+        },
+        "modal_score": "2:0",
+        "four_score_cluster": [
+          "2:0",
+          "1:0",
+          "2:1",
+          "1:1"
+        ],
+        "score_band": "1–3",
+        "prediction_map": [
+          "1X Milan",
+          "DNB(1) Milan",
+          "1",
+          "Milan O0.5 Team Goals"
+        ],
+        "candidates": [
+          {
+            "candidate_id": "MIL-VEN-C1",
+            "prediction": "1X Milan",
+            "market_axis": "DIR",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "Milan is the controller but has a real sterile/draw tail.",
+            "mapping_sentence": "1X preserves the control edge and explicitly carries the draw tail created by attacking absences.",
+            "anchor_reference": "Milan should own territory and chance volume at San Siro, but the confirmed Leão/Giménez absences reduce finishing certainty enough that draw protection is more faithful than a pure home-win renderer.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 2,
+            "R": 3,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 9,
+            "robustness": "HIGH",
+            "state_sensitivity": "LOW",
+            "path_eligibility": [
+              "SAFE"
+            ],
+            "flags": []
+          },
+          {
+            "candidate_id": "MIL-VEN-C2",
+            "prediction": "DNB(1) Milan",
+            "market_axis": "DIR",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "Milan remains more likely to convert territorial control into the winning goal, while the draw is material.",
+            "mapping_sentence": "DNB(1) renders the directional edge more informatively than 1X without pretending the draw tail is absent.",
+            "anchor_reference": "Milan should own territory and chance volume at San Siro, but the confirmed Leão/Giménez absences reduce finishing certainty enough that draw protection is more faithful than a pure home-win renderer.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 3,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "state_sensitivity": "MEDIUM",
+            "path_eligibility": [
+              "BALANCED"
+            ],
+            "flags": [
+              "LOW_SAMPLE"
+            ]
+          },
+          {
+            "candidate_id": "MIL-VEN-C3",
+            "prediction": "1",
+            "market_axis": "DIR",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "Milan's home control creates the clearer win path.",
+            "mapping_sentence": "The pure win is a narrower rendering and breaks on the modeled 1:1 tail.",
+            "anchor_reference": "Milan should own territory and chance volume at San Siro, but the confirmed Leão/Giménez absences reduce finishing certainty enough that draw protection is more faithful than a pure home-win renderer.",
+            "cluster_coverage": "3/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 3,
+            "R": 1,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              },
+              {
+                "name": "STATE_SENSITIVE",
+                "value": -1
+              }
+            ],
+            "score_total": 7,
+            "robustness": "LOW",
+            "state_sensitivity": "HIGH",
+            "path_eligibility": [
+              "AGGRESSIVE"
+            ],
+            "flags": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "candidate_id": "MIL-VEN-C4",
+            "prediction": "Milan O0.5 Team Goals",
+            "market_axis": "TG",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "Milan has the clearest single-team scoring path.",
+            "mapping_sentence": "The team-goal line survives the draw tail but discards much of the direction information.",
+            "anchor_reference": "Milan should own territory and chance volume at San Siro, but the confirmed Leão/Giménez absences reduce finishing certainty enough that draw protection is more faithful than a pure home-win renderer.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 1,
+            "R": 3,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 8,
+            "robustness": "HIGH",
+            "state_sensitivity": "LOW",
+            "path_eligibility": [
+              "SAFE"
+            ],
+            "flags": [
+              "SUBSET_OR_DUPLICATE"
+            ]
+          }
+        ],
+        "world_stability": "STABLE",
+        "robustness": "MEDIUM",
+        "shock_test": {
+          "S1": "BIEGT",
+          "S2": "BIEGT",
+          "S3": "BRICHT"
+        },
+        "repair_summary": [
+          {
+            "field": "Daily Data Snapshot / Step 0",
+            "routes": [
+              "latest.json resolution",
+              "immutable manifest.json",
+              "immutable fixtures.json",
+              "snapshot team payload attempt",
+              "WEB_FALLBACK repair for unreadable/missing team fields"
+            ],
+            "result": "FOUND",
+            "note": "Validated Daily Snapshot bound first: latest.json resolved to immutable snap_20260828_030122 with matching date, hash, cutoff and manifest. Fixture/manifest data were used as the primary basis. Immutable team payload URLs remained transport-blocked by Safe-Open, so missing team-field content was repaired through the existing external search routes; snapshot values were not replaced silently."
+          },
+          {
+            "field": "DF07/DF08 current process",
+            "routes": [
+              "FootyStats team statistics",
+              "current match reports",
+              "Open Search"
+            ],
+            "result": "PARTIAL",
+            "note": "Shot volume available for both teams; complete provider-consistent xG/phase profile remained incomplete at one-match sample."
+          },
+          {
+            "field": "DF11 current team status",
+            "routes": [
+              "FotMob current match status",
+              "Open Search"
+            ],
+            "result": "FOUND_EVENT",
+            "note": "Milan: Leão/Giménez; Venezia: Moreno/Sverko/Adorante."
+          }
+        ],
+        "sources": [
+          {
+            "name": "ECOBET Daily Snapshot manifest",
+            "used_for": "Snapshot identity, hash, cutoff, bundle diagnostics and lineage",
+            "trust": "HIGH"
+          },
+          {
+            "name": "ECOBET Daily Snapshot fixtures",
+            "used_for": "Fixture presence, discovery evidence, kickoff where present, team feature coverage",
+            "trust": "HIGH"
+          },
+          {
+            "name": "Lega Serie A / official schedule",
+            "used_for": "Fixture identity and kickoff",
+            "trust": "HIGH"
+          },
+          {
+            "name": "FootyStats",
+            "used_for": "Current shots/process sample",
+            "trust": "MEDIUM"
+          },
+          {
+            "name": "FotMob",
+            "used_for": "Current availability, results and H2H support",
+            "trust": "MEDIUM"
+          },
+          {
+            "name": "AC Milan official / current result route",
+            "used_for": "Opening result context",
+            "trust": "HIGH"
+          }
+        ]
+      },
+      "result_settlement": {
+        "result_status": "UNSETTLED",
+        "score_90_plus_stoppage": null,
+        "competition_final_score": null,
+        "went_extra_time": null,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "UNSETTLED",
+        "balanced_result": "UNSETTLED",
+        "aggressive_result": "UNSETTLED",
+        "favourite_result": "UNSETTLED",
+        "result_sources": [],
+        "reason": "final 90-minute result not yet confirmed (postponed/abandoned/unfinished)"
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No confirmed final result to compare against."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "NONE",
+        "basis": "No confirmed result is available for this fixture."
+      },
+      "failure_cluster": [],
+      "audit_flags": [
+        "RESULT_UNSETTLED"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ENG-2026-08-28-CRYSTAL-PALACE-MANCHESTER-CITY",
+      "snapshot_id": "RUNSNAP_2026-08-28T16-10-00+02-00",
+      "data_snapshot_id": "snap_20260828_030122",
+      "data_snapshot_coverage": "PARTIAL",
+      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+      "snapshot_fixture_missing": false,
+      "fixture": {
+        "kickoff": "21:00",
+        "home": "Crystal Palace",
+        "away": "Manchester City",
+        "competition": "Premier League",
+        "phase": "Matchweek 2"
+      },
+      "competition_metadata": {
+        "competition_id": "ENG_PREMIER_LEAGUE",
+        "competition_name": "Premier League",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 10
+      },
+      "committed_model": {
+        "fixture_id": "ENG-2026-08-28-CRYSTAL-PALACE-MANCHESTER-CITY",
+        "kickoff": "21:00",
+        "competition": "Premier League",
+        "competition_id": "ENG_PREMIER_LEAGUE",
+        "competition_name": "Premier League",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 10,
+        "phase": "Matchweek 2",
+        "home": "Crystal Palace",
+        "away": "Manchester City",
+        "data_snapshot_id": "snap_20260828_030122",
+        "data_snapshot_coverage": "PARTIAL",
+        "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+        "snapshot_fixture_missing": false,
+        "board_status": "COMMITTED",
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-28T16:10:00+02:00",
+        "match_validation": "PASS",
+        "world_type": "CONTROL_BUT_FRAGILE_AWAY",
+        "safe": "Manchester City O0.5 Team Goals",
+        "balanced": "X2 Manchester City",
+        "aggressive": "2",
+        "favourite": "X2 Manchester City",
+        "favourite_decision_reason": "X2 rendert Citys erwartete Kontroll- und Strength-Kante, lässt aber den durch Palace' Chancenprozess sichtbaren Draw-Tail im Modell statt ihn mit einem reinen Auswärtssieg zu überfahren.",
+        "why_not_safest_candidate": "City O0.5 Team Goals ist robuster, bildet aber die modellierte Richtungs- und Kontrollkante deutlich weniger vollständig ab.",
+        "why_safe_is_also_best_decision": "NOT_AVAILABLE",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "4/4",
+        "favourite_robustness": "MEDIUM",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "LOW_SAMPLE",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE",
+          "REGIME_CHANGE",
+          "PALACE_RESULT_PROCESS_DIVERGENCE"
+        ],
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "nsp_codes": [],
+        "team_ebook": {
+          "home": {
+            "season_sample": "1 league match (VERY_LOW)",
+            "current_results": "0-2 away loss at Everton",
+            "process": "FotMob match route: 58% possession, 11 shots, about 1.96 xG despite the loss; provider values differ slightly elsewhere, so FotMob kept as the selected match-process definition",
+            "availability": "Chadi Riad and Ismaïla Sarr reported unavailable",
+            "regime": "Pierre Sage home debut / new-regime sample VERY_LOW",
+            "trust": "MEDIUM"
+          },
+          "away": {
+            "season_sample": "1 league match (VERY_LOW)",
+            "current_results": "2-1 home win over Bournemouth",
+            "process": "FootyStats current team route: 13 shots and displayed 0.68 xG in the opening sample; one-match definition treated cautiously",
+            "availability": "Jérémy Doku reported unavailable",
+            "regime": "Enzo Maresca new-regime sample VERY_LOW; possession-control principles remain the structural cue, not a reputation substitute",
+            "trust": "MEDIUM"
+          }
+        },
+        "field_status": {
+          "DF01": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF05": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "LOW"
+          },
+          "DF06": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "home": "FOUND",
+            "away": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF08": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF09": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "LOW"
+          },
+          "DF10": {
+            "home": "DERIVED",
+            "away": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "home": "FOUND_EVENT",
+            "away": "FOUND_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "home": "FOUND_EVENT",
+            "away": "FOUND_EVENT",
+            "trust": "HIGH"
+          },
+          "DF13": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF14": {
+            "home": "NOT_EXPECTED",
+            "away": "NOT_EXPECTED",
+            "trust": "LOW"
+          },
+          "DF15": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "home": "CONFLICT",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          }
+        },
+        "axes": {
+          "CONTROL": "HIGH",
+          "CHAOS": "MEDIUM",
+          "GOAL_PROFILE": "MEDIUM",
+          "TEMPO": "MEDIUM",
+          "PHASE_STRUCTURE": "OSCILLATING",
+          "DRAW_GRAVITY": "MEDIUM"
+        },
+        "anchor": "City should control more possession and territory, but Palace's strong chance creation in the Everton defeat creates enough draw/upset tail that the away not-lose renderer is stronger than a pure City win.",
+        "prime_world": "City owns more of the ball and territory and creates the clearer repeatable scoring path; Palace still carries enough transition/chance threat to keep the margin narrow.",
+        "counterworld": "Palace converts the chance quality it failed to convert at Everton, forces City to chase, and turns the match into a higher-chaos state with real draw or home-upset exposure.",
+        "game_state": {
+          "1:0": "City must accelerate and Palace can counter into larger spaces; chaos and Palace upset tail rise.",
+          "0:1": "City can slow the game through possession; Palace must push and becomes more transition-exposed.",
+          "1:1": "Draw gravity becomes material; X2 remains coherent while the pure City win bends."
+        },
+        "modal_score": "1:2",
+        "four_score_cluster": [
+          "1:2",
+          "1:1",
+          "0:2",
+          "1:3"
+        ],
+        "score_band": "2–4",
+        "prediction_map": [
+          "Manchester City O0.5 Team Goals",
+          "X2 Manchester City",
+          "2",
+          "Over 1.5"
+        ],
+        "candidates": [
+          {
+            "candidate_id": "CRY-MCI-C1",
+            "prediction": "Manchester City O0.5 Team Goals",
+            "market_axis": "TG",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "City's control and attacking baseline provide the most reliable single scoring path.",
+            "mapping_sentence": "The team-goal expression is very robust but loses directional information.",
+            "anchor_reference": "City should control more possession and territory, but Palace's strong chance creation in the Everton defeat creates enough draw/upset tail that the away not-lose renderer is stronger than a pure City win.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 2,
+            "R": 3,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 9,
+            "robustness": "HIGH",
+            "state_sensitivity": "LOW",
+            "path_eligibility": [
+              "SAFE"
+            ],
+            "flags": []
+          },
+          {
+            "candidate_id": "CRY-MCI-C2",
+            "prediction": "X2 Manchester City",
+            "market_axis": "DIR",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "City has the stronger baseline and expected control, while Palace's current process makes the draw a real branch.",
+            "mapping_sentence": "X2 directly captures the control edge plus draw tail without overreaching to the away win.",
+            "anchor_reference": "City should control more possession and territory, but Palace's strong chance creation in the Everton defeat creates enough draw/upset tail that the away not-lose renderer is stronger than a pure City win.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 3,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "state_sensitivity": "MEDIUM",
+            "path_eligibility": [
+              "BALANCED"
+            ],
+            "flags": [
+              "LOW_SAMPLE"
+            ]
+          },
+          {
+            "candidate_id": "CRY-MCI-C3",
+            "prediction": "2",
+            "market_axis": "DIR",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "City is more likely to turn control into the winning goal.",
+            "mapping_sentence": "The pure away win breaks on the modeled 1:1 tail and is state-sensitive to Palace's transition scoring.",
+            "anchor_reference": "City should control more possession and territory, but Palace's strong chance creation in the Everton defeat creates enough draw/upset tail that the away not-lose renderer is stronger than a pure City win.",
+            "cluster_coverage": "3/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 3,
+            "R": 1,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              },
+              {
+                "name": "STATE_SENSITIVE",
+                "value": -1
+              }
+            ],
+            "score_total": 7,
+            "robustness": "LOW",
+            "state_sensitivity": "HIGH",
+            "path_eligibility": [
+              "AGGRESSIVE"
+            ],
+            "flags": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "candidate_id": "CRY-MCI-C4",
+            "prediction": "Over 1.5",
+            "market_axis": "TOTAL",
+            "supported_world": "COUNTERWORLD",
+            "world_sentence": "Palace's chance production and City's scoring baseline can create two or more goals even without clean City control.",
+            "mapping_sentence": "The broad total survives both worlds but is less specific to the control/draw mechanism.",
+            "anchor_reference": "City should control more possession and territory, but Palace's strong chance creation in the Everton defeat creates enough draw/upset tail that the away not-lose renderer is stronger than a pure City win.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 2,
+            "F": 1,
+            "R": 3,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 7,
+            "robustness": "HIGH",
+            "state_sensitivity": "LOW",
+            "path_eligibility": [
+              "SAFE"
+            ],
+            "flags": []
+          }
+        ],
+        "world_stability": "STABLE",
+        "robustness": "MEDIUM",
+        "shock_test": {
+          "S1": "BIEGT",
+          "S2": "BIEGT",
+          "S3": "BIEGT"
+        },
+        "repair_summary": [
+          {
+            "field": "Daily Data Snapshot / Step 0",
+            "routes": [
+              "latest.json resolution",
+              "immutable manifest.json",
+              "immutable fixtures.json",
+              "snapshot team payload attempt",
+              "WEB_FALLBACK repair for unreadable/missing team fields"
+            ],
+            "result": "FOUND",
+            "note": "Validated Daily Snapshot bound first: latest.json resolved to immutable snap_20260828_030122 with matching date, hash, cutoff and manifest. Fixture/manifest data were used as the primary basis. Immutable team payload URLs remained transport-blocked by Safe-Open, so missing team-field content was repaired through the existing external search routes; snapshot values were not replaced silently."
+          },
+          {
+            "field": "DF07/DF08 current process",
+            "routes": [
+              "FotMob current match data",
+              "FootyStats team pages",
+              "FBref route",
+              "Open Search"
+            ],
+            "result": "PARTIAL",
+            "note": "Palace process is well evidenced; City current one-match xG differs by provider/definition and remains PARTIAL rather than blended."
+          },
+          {
+            "field": "DF11/DF12 current events and regime",
+            "routes": [
+              "Premier League / club official context",
+              "FotMob current status",
+              "Open Search"
+            ],
+            "result": "FOUND_EVENT",
+            "note": "Palace Riad/Sarr; City Doku; both clubs in new-manager regimes."
+          }
+        ],
+        "sources": [
+          {
+            "name": "ECOBET Daily Snapshot manifest",
+            "used_for": "Snapshot identity, hash, cutoff, bundle diagnostics and lineage",
+            "trust": "HIGH"
+          },
+          {
+            "name": "ECOBET Daily Snapshot fixtures",
+            "used_for": "Fixture presence, discovery evidence, kickoff where present, team feature coverage",
+            "trust": "HIGH"
+          },
+          {
+            "name": "Premier League official",
+            "used_for": "Fixture and competition context",
+            "trust": "HIGH"
+          },
+          {
+            "name": "Manchester City official",
+            "used_for": "20:00 BST kickoff confirmation and current fixture context",
+            "trust": "HIGH"
+          },
+          {
+            "name": "FotMob",
+            "used_for": "Palace opening-match process, current availability and H2H support",
+            "trust": "MEDIUM"
+          },
+          {
+            "name": "FootyStats",
+            "used_for": "Current team statistics route",
+            "trust": "MEDIUM"
+          }
+        ]
+      },
+      "result_settlement": {
+        "result_status": "UNSETTLED",
+        "score_90_plus_stoppage": null,
+        "competition_final_score": null,
+        "went_extra_time": null,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "UNSETTLED",
+        "balanced_result": "UNSETTLED",
+        "aggressive_result": "UNSETTLED",
+        "favourite_result": "UNSETTLED",
+        "result_sources": [],
+        "reason": "final 90-minute result not yet confirmed (postponed/abandoned/unfinished)"
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No confirmed final result to compare against."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "NONE",
+        "basis": "No confirmed result is available for this fixture."
+      },
+      "failure_cluster": [],
+      "audit_flags": [
+        "RESULT_UNSETTLED"
+      ]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "ESP-2026-08-28-ALAVES-VILLARREAL",
+      "snapshot_id": "RUNSNAP_2026-08-28T16-10-00+02-00",
+      "data_snapshot_id": "snap_20260828_030122",
+      "data_snapshot_coverage": "PARTIAL",
+      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+      "snapshot_fixture_missing": false,
+      "fixture": {
+        "kickoff": "21:30",
+        "home": "Deportivo Alavés",
+        "away": "Villarreal",
+        "competition": "La Liga",
+        "phase": "Matchday 3"
+      },
+      "competition_metadata": {
+        "competition_id": "ESP_LA_LIGA",
+        "competition_name": "La Liga",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 30
+      },
+      "committed_model": {
+        "fixture_id": "ESP-2026-08-28-ALAVES-VILLARREAL",
+        "kickoff": "21:30",
+        "competition": "La Liga",
+        "competition_id": "ESP_LA_LIGA",
+        "competition_name": "La Liga",
+        "competition_group": "DOMESTIC",
+        "competition_type": "domestic_league",
+        "display_order": 30,
+        "phase": "Matchday 3",
+        "home": "Deportivo Alavés",
+        "away": "Villarreal",
+        "data_snapshot_id": "snap_20260828_030122",
+        "data_snapshot_coverage": "PARTIAL",
+        "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+        "snapshot_fixture_missing": false,
+        "board_status": "COMMITTED",
+        "confirmation_status": "NOT_APPLICABLE",
+        "commit_status": "COMMITTED",
+        "commit_time": "2026-08-28T16:10:00+02:00",
+        "match_validation": "PASS",
+        "world_type": "GOALS_OPEN",
+        "safe": "Over 1.5",
+        "balanced": "BTTS Yes",
+        "aggressive": "Over 2.5",
+        "favourite": "BTTS Yes",
+        "favourite_decision_reason": "BTTS Yes bildet die wichtigste Interaktion besser ab als ein bloßes Over: Alavés besitzt einen realen Heim-/Chance-Creation-Pfad, Villarreal einen stabilen eigenen Torpfad, während Villarreal zugleich in beiden Ligaspielen zwei Gegentore zugelassen hat.",
+        "why_not_safest_candidate": "Over 1.5 ist breiter und robuster, verwässert aber die zentrale Erkenntnis, dass zwei eigenständige Scoring-Pfade den Matchkorridor tragen.",
+        "why_safe_is_also_best_decision": "NOT_AVAILABLE",
+        "favourite_specificity": "MEDIUM",
+        "favourite_cluster_coverage": "4/4",
+        "favourite_robustness": "MEDIUM",
+        "numerical_p_raw": "NOT_AVAILABLE",
+        "numerical_p_raw_available": "NO",
+        "p_raw_tiebreak_required": "NO",
+        "model_probability_band": "NOT_AVAILABLE",
+        "model_price_band": "NOT_AVAILABLE",
+        "ampel": "YELLOW",
+        "flags": [
+          "LOW_SAMPLE",
+          "NUMERICAL_P_RAW_NOT_AVAILABLE",
+          "ALAVES_GARCES_SUSPENDED"
+        ],
+        "data_readiness": "CONDITIONAL",
+        "match_core_status": "PARTIAL",
+        "nsp_codes": [],
+        "team_ebook": {
+          "home": {
+            "season_sample": "2 league matches (VERY_LOW)",
+            "current_results": "3-0 Getafe; 1-1 Rayo Vallecano",
+            "process": "FootyStats: 1.77 xG, 0.88 xGA, 16.5 shots/match; home split 1.96 xG / 0.78 xGA from one home match",
+            "availability": "Facundo Garcés suspended",
+            "regime": "No stable split inference beyond VERY_LOW sample",
+            "trust": "MEDIUM"
+          },
+          "away": {
+            "season_sample": "2 league matches (VERY_LOW)",
+            "current_results": "2-2 Racing Santander; 2-2 Atlético Madrid",
+            "process": "FootyStats: 1.16 xG, 1.31 xGA, 12.5 shots/match",
+            "availability": "No unavailable player reported on the current FotMob match status",
+            "regime": "Two-match league sample VERY_LOW",
+            "trust": "MEDIUM"
+          }
+        },
+        "field_status": {
+          "DF01": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF02": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF03": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF04": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "HIGH"
+          },
+          "DF05": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "LOW"
+          },
+          "DF06": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF07": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF08": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF09": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "LOW"
+          },
+          "DF10": {
+            "home": "DERIVED",
+            "away": "DERIVED",
+            "trust": "MEDIUM"
+          },
+          "DF11": {
+            "home": "FOUND_EVENT",
+            "away": "FOUND_NO_EVENT",
+            "trust": "MEDIUM"
+          },
+          "DF12": {
+            "home": "PARTIAL",
+            "away": "PARTIAL",
+            "trust": "MEDIUM"
+          },
+          "DF13": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF14": {
+            "home": "NOT_EXPECTED",
+            "away": "NOT_EXPECTED",
+            "trust": "LOW"
+          },
+          "DF15": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          },
+          "DF16": {
+            "home": "FOUND",
+            "away": "FOUND",
+            "trust": "MEDIUM"
+          }
+        },
+        "axes": {
+          "CONTROL": "MEDIUM",
+          "CHAOS": "HIGH",
+          "GOAL_PROFILE": "HIGH",
+          "TEMPO": "HIGH",
+          "PHASE_STRUCTURE": "OSCILLATING",
+          "DRAW_GRAVITY": "MEDIUM"
+        },
+        "anchor": "Alavés' strong two-match chance balance meets a Villarreal side that has scored and conceded twice in both league games, producing two independent scoring paths and a live transition game.",
+        "prime_world": "Both teams create genuine scoring chances; Alavés' home pressure and Villarreal's transition/finishing route repeatedly exchange threat, keeping both teams on the scoresheet.",
+        "counterworld": "Alavés protects central space better than Villarreal's first two opponents and turns its early lead into a more controlled home game, suppressing Villarreal's second scoring wave.",
+        "game_state": {
+          "1:0": "Villarreal must open and increases both its own scoring route and Alavés counter chances.",
+          "0:1": "Alavés must push higher; BTTS remains live but defensive transition exposure rises.",
+          "1:1": "The match remains open and both sides have plausible paths to a second goal."
+        },
+        "modal_score": "1:1",
+        "four_score_cluster": [
+          "1:1",
+          "2:1",
+          "1:2",
+          "2:2"
+        ],
+        "score_band": "2–4",
+        "prediction_map": [
+          "Over 1.5",
+          "BTTS Yes",
+          "Over 2.5",
+          "Match Goals 2–4"
+        ],
+        "candidates": [
+          {
+            "candidate_id": "ALA-VIL-C1",
+            "prediction": "Over 1.5",
+            "market_axis": "TOTAL",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "Both teams have credible scoring routes and Villarreal's first two league games were open.",
+            "mapping_sentence": "The broad total survives most plausible distributions but does not fully express the two-way scoring structure.",
+            "anchor_reference": "Alavés' strong two-match chance balance meets a Villarreal side that has scored and conceded twice in both league games, producing two independent scoring paths and a live transition game.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 2,
+            "R": 3,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 9,
+            "robustness": "HIGH",
+            "state_sensitivity": "LOW",
+            "path_eligibility": [
+              "SAFE"
+            ],
+            "flags": []
+          },
+          {
+            "candidate_id": "ALA-VIL-C2",
+            "prediction": "BTTS Yes",
+            "market_axis": "BTTS",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "Alavés has created efficiently at home/current season while Villarreal has both scored and conceded twice in both league matches.",
+            "mapping_sentence": "BTTS directly renders the two independent scoring paths and the four-score cluster.",
+            "anchor_reference": "Alavés' strong two-match chance balance meets a Villarreal side that has scored and conceded twice in both league games, producing two independent scoring paths and a live transition game.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 3,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 9,
+            "robustness": "MEDIUM",
+            "state_sensitivity": "MEDIUM",
+            "path_eligibility": [
+              "BALANCED"
+            ],
+            "flags": [
+              "LOW_SAMPLE"
+            ]
+          },
+          {
+            "candidate_id": "ALA-VIL-C3",
+            "prediction": "Over 2.5",
+            "market_axis": "TOTAL",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "The open Villarreal state and Alavés chance creation can push the match beyond two goals.",
+            "mapping_sentence": "It is the narrower goals renderer and fails on the 1:1 branch.",
+            "anchor_reference": "Alavés' strong two-match chance balance meets a Villarreal side that has scored and conceded twice in both league games, producing two independent scoring paths and a live transition game.",
+            "cluster_coverage": "3/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 3,
+            "R": 1,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              },
+              {
+                "name": "STATE_SENSITIVE",
+                "value": -1
+              }
+            ],
+            "score_total": 7,
+            "robustness": "LOW",
+            "state_sensitivity": "HIGH",
+            "path_eligibility": [
+              "AGGRESSIVE"
+            ],
+            "flags": [
+              "STATE_SENSITIVE"
+            ]
+          },
+          {
+            "candidate_id": "ALA-VIL-C4",
+            "prediction": "Match Goals 2–4",
+            "market_axis": "RANGE",
+            "supported_world": "PRIME_WORLD",
+            "world_sentence": "The cluster is concentrated between two and four total goals.",
+            "mapping_sentence": "The range captures cluster concentration but is exposed to a 0:1/3:2 tail.",
+            "anchor_reference": "Alavés' strong two-match chance balance meets a Villarreal side that has scored and conceded twice in both league games, producing two independent scoring paths and a live transition game.",
+            "cluster_coverage": "4/4",
+            "p_raw": "NOT_AVAILABLE",
+            "W": 3,
+            "F": 2,
+            "R": 2,
+            "D": 2,
+            "penalties": [
+              {
+                "name": "LOW_SAMPLE",
+                "value": -1
+              }
+            ],
+            "score_total": 8,
+            "robustness": "MEDIUM",
+            "state_sensitivity": "MEDIUM",
+            "path_eligibility": [
+              "SAFE"
+            ],
+            "flags": []
+          }
+        ],
+        "world_stability": "STABLE",
+        "robustness": "MEDIUM",
+        "shock_test": {
+          "S1": "BLEIBT",
+          "S2": "BIEGT",
+          "S3": "BRICHT"
+        },
+        "repair_summary": [
+          {
+            "field": "Daily Data Snapshot / Step 0",
+            "routes": [
+              "latest.json resolution",
+              "immutable manifest.json",
+              "immutable fixtures.json",
+              "snapshot team payload attempt",
+              "WEB_FALLBACK repair for unreadable/missing team fields"
+            ],
+            "result": "FOUND",
+            "note": "Validated Daily Snapshot bound first: latest.json resolved to immutable snap_20260828_030122 with matching date, hash, cutoff and manifest. Fixture/manifest data were used as the primary basis. Immutable team payload URLs remained transport-blocked by Safe-Open, so missing team-field content was repaired through the existing external search routes; snapshot values were not replaced silently."
+          },
+          {
+            "field": "DF07/DF08 current process",
+            "routes": [
+              "FootyStats team statistics",
+              "FotMob current form",
+              "Open Search"
+            ],
+            "result": "FOUND",
+            "note": "Two-match team process located for both sides; sample remains VERY_LOW."
+          },
+          {
+            "field": "DF11 current team status",
+            "routes": [
+              "FotMob current match status",
+              "Villarreal official context",
+              "Open Search"
+            ],
+            "result": "FOUND_EVENT",
+            "note": "Alavés: Garcés suspended; Villarreal: no unavailable player reported."
+          }
+        ],
+        "sources": [
+          {
+            "name": "ECOBET Daily Snapshot manifest",
+            "used_for": "Snapshot identity, hash, cutoff, bundle diagnostics and lineage",
+            "trust": "HIGH"
+          },
+          {
+            "name": "ECOBET Daily Snapshot fixtures",
+            "used_for": "Fixture presence, discovery evidence, kickoff where present, team feature coverage",
+            "trust": "HIGH"
+          },
+          {
+            "name": "Villarreal CF official",
+            "used_for": "Fixture and 21:30 kickoff confirmation",
+            "trust": "HIGH"
+          },
+          {
+            "name": "FootyStats",
+            "used_for": "Current xG/xGA/shots profiles",
+            "trust": "MEDIUM"
+          },
+          {
+            "name": "FotMob",
+            "used_for": "Current availability, form and H2H support",
+            "trust": "MEDIUM"
+          }
+        ]
+      },
+      "result_settlement": {
+        "result_status": "UNSETTLED",
+        "score_90_plus_stoppage": null,
+        "competition_final_score": null,
+        "went_extra_time": null,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "UNSETTLED",
+        "balanced_result": "UNSETTLED",
+        "aggressive_result": "UNSETTLED",
+        "favourite_result": "UNSETTLED",
+        "result_sources": [],
+        "reason": "final 90-minute result not yet confirmed (postponed/abandoned/unfinished)"
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No confirmed final result to compare against."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "NONE",
+        "basis": "No confirmed result is available for this fixture."
+      },
+      "failure_cluster": [],
+      "audit_flags": [
+        "RESULT_UNSETTLED"
+      ]
+    }
+  ]
+}
