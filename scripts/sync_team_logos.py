@@ -24,7 +24,36 @@ UEFA={
  ('Atalanta','Italy'),('Braga','Portugal'),('Ajax','Netherlands'),('Freiburg','Germany'),('Monaco','France'),('Copenhagen','Denmark'),('Midtjylland','Denmark'),('Red Star Belgrade','Serbia'),('Gent','Belgium'),('Panathinaikos','Greece'),('Pafos','Cyprus'),('Brighton & Hove Albion','England'),('Lugano','Switzerland'),('Getafe','Spain'),('KuPS Kuopio','Finland'),('Twente','Netherlands'),('Lincoln Red Imps','Gibraltar'),('Borac Banja Luka','Bosnia and Herzegovina'),('Sint-Truidense','Belgium'),('Brann','Norway'),('Hearts','Scotland'),('Kairat Almaty','Kazakhstan'),('Trabzonspor','Turkey'),('Universitatea Craiova','Romania'),('Riga','Latvia'),('Hajduk Split','Croatia'),('Jablonec','Czechia'),('Nordsjælland','Denmark'),('Aarhus','Denmark'),("Inter Club d'Escaldes",'Andorra'),('Thun','Switzerland'),('CSKA Sofia','Bulgaria'),('Kauno Žalgiris','Lithuania'),('Mjällby','Sweden'),('Iberia 1999','Georgia'),('Egnatia','Albania')]
 }
 ALIASES={
- 'inter':['Inter Milan','Internazionale'],'paris saint germain':['PSG','Paris SG'],'bayern munchen':['Bayern Munich'],'atletico de madrid':['Atletico Madrid'],'bodo glimt':['Bodo Glimt'],'rb leipzig':['Leipzig'],'ac milan':['Milan'],'lyon':['Olympique Lyonnais'],'marseille':['Olympique Marseille'],'union saint gilloise':['Union SG'],'red bull salzburg':['Salzburg','RB Salzburg'],'dinamo zagreb':['GNK Dinamo'],'sparta praha':['Sparta Prague'],'slavia praha':['Slavia Prague'],'viktoria plzen':['Viktoria Plzen'],'hapoel beer sheva':["Hapoel Be'er Sheva",'H. Beer-Sheva'],'nec nijmegen':['N.E.C.','NEC'],'red star belgrade':['Crvena Zvezda'],'copenhagen':['FC Copenhagen','København'],'gent':['KAA Gent'],'hearts':['Heart of Midlothian'],'universitatea craiova':['U. Craiova'],'nordsjaelland':['Nordsjælland','FC Nordsjaelland'],'aarhus':['AGF Aarhus','AGF'],'inter club d escaldes':['Inter Escaldes'],'iberia 1999':['Iberia Tbilisi']}
+ 'inter':['Inter Milan','Internazionale'],
+ 'paris saint germain':['PSG','Paris SG'],
+ 'bayern munchen':['Bayern Munich'],
+ 'atletico de madrid':['Atletico Madrid'],
+ 'athletic bilbao':['Athletic Club'],
+ 'bodo glimt':['Bodo Glimt'],
+ 'rb leipzig':['Leipzig'],
+ 'milan':['AC Milan'],
+ 'lyon':['Olympique Lyonnais'],
+ 'marseille':['Olympique Marseille'],
+ 'stade rennais':['Rennes'],
+ 'union saint gilloise':['Union SG'],
+ 'red bull salzburg':['Salzburg','RB Salzburg'],
+ 'dinamo zagreb':['GNK Dinamo'],
+ 'sparta praha':['Sparta Prague'],
+ 'slavia praha':['Slavia Prague'],
+ 'viktoria plzen':['Viktoria Plzen'],
+ 'hapoel beer sheva':["Hapoel Be'er Sheva",'H. Beer-Sheva'],
+ 'nec nijmegen':['N.E.C.','NEC'],
+ 'red star belgrade':['Crvena Zvezda'],
+ 'copenhagen':['FC Copenhagen','København'],
+ 'gent':['KAA Gent'],
+ 'hearts':['Heart of Midlothian'],
+ 'universitatea craiova':['U. Craiova'],
+ 'nordsjaelland':['Nordsjælland','FC Nordsjaelland'],
+ 'aarhus':['AGF Aarhus','AGF'],
+ 'inter club d escaldes':['Inter Escaldes'],
+ 'iberia 1999':['Iberia Tbilisi'],
+ 'koln':['Cologne','1. FC Köln'],
+}
 COUNTRY={'Czechia':['czech_republic','czechia'],'Bosnia and Herzegovina':['bosnia_and_herzegovina','bosnia'],'Turkey':['turkey','turkiye']}
 
 def get(url):
@@ -34,6 +63,18 @@ def fold(s): return ''.join(c for c in unicodedata.normalize('NFKD',s) if not un
 def norm(s):
  s=fold(s).lower().replace('&',' and '); s=re.sub(r'\b(fc|afc|cf|sc|sv|fk|sk|ac|as|ssc|rc|tsg|vfb|gnk)\b',' ',s); return ' '.join(re.sub(r'[^a-z0-9]+',' ',s).split())
 def slug(s): return norm(s).replace(' and ','_').replace(' ','_')
+def canonical_key(name):
+ n=norm(name)
+ for key,values in ALIASES.items():
+  ck=norm(key)
+  if n==ck or any(n==norm(v) for v in values): return ck
+ return n
+def alias_norms(name):
+ ck=canonical_key(name); wanted={norm(name),ck}
+ for key,values in ALIASES.items():
+  if norm(key)==ck:
+   wanted.add(norm(key)); wanted.update(norm(v) for v in values)
+ return wanted
 
 def league_teams():
  out=[]
@@ -55,7 +96,7 @@ def svg_index():
  return out
 
 def score(name,country,c):
- ctry,n,p=c; wanted={norm(name),*(norm(a) for a in ALIASES.get(norm(name),[]))}; cn=norm(n)
+ ctry,n,p=c; wanted=alias_norms(name); cn=norm(n)
  ns=1.0 if cn in wanted else max(SequenceMatcher(None,w,cn).ratio() for w in wanted)
  for w in wanted:
   if w and (w in cn or cn in w): ns=max(ns,.90+.08*min(len(w),len(cn))/max(len(w),len(cn)))
@@ -65,7 +106,9 @@ def score(name,country,c):
 def main():
  teams={}
  def add(name,country,comp):
-  k=(norm(name),country); teams.setdefault(k,{'name':name,'country':country,'competitions':set(),'aliases':set()}); teams[k]['competitions'].add(comp); teams[k]['aliases'].add(name)
+  k=(canonical_key(name),country)
+  teams.setdefault(k,{'name':name,'country':country,'competitions':set(),'aliases':set()})
+  teams[k]['competitions'].add(comp); teams[k]['aliases'].add(name)
  for row in league_teams(): add(*row)
  for comp,rows in UEFA.items():
   for name,country in rows: add(name,country,comp)
@@ -73,7 +116,7 @@ def main():
  for t in sorted(teams.values(),key=lambda x:(x['country'],x['name'])):
   ranked=sorted(((score(t['name'],t['country'],c),c) for c in idx),reverse=True,key=lambda z:z[0]); bests,best=ranked[0]
   if bests<1.0:
-   unresolved.append({'name':t['name'],'country':t['country'],'competitions':sorted(t['competitions']),'best':{'score':round(bests,4),'path':best[2]}}); continue
+   unresolved.append({'name':t['name'],'country':t['country'],'competitions':sorted(t['competitions']),'aliases':sorted(t['aliases']),'best':{'score':round(bests,4),'path':best[2]}}); continue
   dest=OUT/(slug(t['name'])+'.svg'); raw='https://raw.githubusercontent.com/JoseArroyave/football-logos/main/'+quote(best[2],safe='/'); data=get(raw)
   if b'<svg' not in data[:600].lower() and b'<?xml' not in data[:600].lower(): unresolved.append({'name':t['name'],'error':'not_svg','source':best[2]}); continue
   dest.write_bytes(data)
