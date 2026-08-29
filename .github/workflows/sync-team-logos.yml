@@ -5,7 +5,7 @@ on:
     branches:
       - team-logos-2026-27
     paths:
-      - scripts/sync_team_logos.py
+      - logos/scripts/sync_team_logos.py
       - .github/workflows/sync-team-logos.yml
   workflow_dispatch:
 
@@ -23,16 +23,16 @@ jobs:
         with:
           python-version: '3.12'
       - name: Download and map club crests
-        run: python scripts/sync_team_logos.py
+        run: python logos/scripts/sync_team_logos.py
       - name: Commit generated logo library
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/team-logos
+          git add logos/assets/team-logos
           if git diff --cached --quiet; then
             echo "No logo changes."
             exit 0
           fi
-          git commit -m "Add 2026-27 team logo library"
+          git commit -m "Update 2026-27 team logo library"
           git push origin HEAD:team-logos-2026-27
