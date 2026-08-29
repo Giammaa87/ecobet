@@ -3,9 +3,9 @@
   "record_type": "ecobet_team_logo_manifest",
   "season": "2026/27",
   "counts": {
-    "requested_unique_teams": 178,
-    "resolved": 175,
-    "unresolved": 3
+    "requested_unique_teams": 174,
+    "resolved": 174,
+    "unresolved": 0
   },
   "teams": [
     {
@@ -791,19 +791,6 @@
       "match_score": 1.12
     },
     {
-      "name": "Marseille",
-      "country": "France",
-      "competitions": [
-        "UEFA-Europa League"
-      ],
-      "aliases": [
-        "Marseille"
-      ],
-      "file": "assets/team-logos/marseille.svg",
-      "source_path": "logos/france/Marseille.svg",
-      "match_score": 1.12
-    },
-    {
       "name": "OGC Nice",
       "country": "France",
       "competitions": [
@@ -833,14 +820,16 @@
       "name": "Olympique Marseille",
       "country": "France",
       "competitions": [
-        "FRA-Ligue 1"
+        "FRA-Ligue 1",
+        "UEFA-Europa League"
       ],
       "aliases": [
+        "Marseille",
         "Olympique Marseille"
       ],
       "file": "assets/team-logos/olympique_marseille.svg",
       "source_path": "logos/france/Marseille.svg",
-      "match_score": 1.0579
+      "match_score": 1.12
     },
     {
       "name": "Paris FC",
@@ -898,19 +887,6 @@
       "match_score": 1.12
     },
     {
-      "name": "Rennes",
-      "country": "France",
-      "competitions": [
-        "UEFA-Europa League"
-      ],
-      "aliases": [
-        "Rennes"
-      ],
-      "file": "assets/team-logos/rennes.svg",
-      "source_path": "logos/france/Rennes.svg",
-      "match_score": 1.12
-    },
-    {
       "name": "Stade Brestois 29",
       "country": "France",
       "competitions": [
@@ -924,6 +900,21 @@
       "match_score": 1.0435
     },
     {
+      "name": "Stade Rennais FC",
+      "country": "France",
+      "competitions": [
+        "FRA-Ligue 1",
+        "UEFA-Europa League"
+      ],
+      "aliases": [
+        "Rennes",
+        "Stade Rennais FC"
+      ],
+      "file": "assets/team-logos/stade_rennais.svg",
+      "source_path": "logos/france/Rennes.svg",
+      "match_score": 1.12
+    },
+    {
       "name": "Iberia 1999",
       "country": "Georgia",
       "competitions": [
@@ -935,6 +926,19 @@
       "file": "assets/team-logos/iberia_1999.svg",
       "source_path": "logos/georgia/Iberia.svg",
       "match_score": 1.0636
+    },
+    {
+      "name": "1.FC Köln",
+      "country": "Germany",
+      "competitions": [
+        "GER-Bundesliga"
+      ],
+      "aliases": [
+        "1.FC Köln"
+      ],
+      "file": "assets/team-logos/1_koln.svg",
+      "source_path": "logos/germany/Cologne.svg",
+      "match_score": 1.12
     },
     {
       "name": "1.FC Union Berlin",
@@ -992,25 +996,14 @@
       "name": "Bayern Munich",
       "country": "Germany",
       "competitions": [
-        "GER-Bundesliga"
-      ],
-      "aliases": [
-        "Bayern Munich"
-      ],
-      "file": "assets/team-logos/bayern_munich.svg",
-      "source_path": "logos/germany/Bayern_München.svg",
-      "match_score": 1.0089
-    },
-    {
-      "name": "Bayern München",
-      "country": "Germany",
-      "competitions": [
+        "GER-Bundesliga",
         "UEFA-Champions League"
       ],
       "aliases": [
+        "Bayern Munich",
         "Bayern München"
       ],
-      "file": "assets/team-logos/bayern_munchen.svg",
+      "file": "assets/team-logos/bayern_munich.svg",
       "source_path": "logos/germany/Bayern_München.svg",
       "match_score": 1.12
     },
@@ -1452,30 +1445,19 @@
       "match_score": 1.0644
     },
     {
-      "name": "Inter",
-      "country": "Italy",
-      "competitions": [
-        "UEFA-Champions League"
-      ],
-      "aliases": [
-        "Inter"
-      ],
-      "file": "assets/team-logos/inter.svg",
-      "source_path": "logos/italy/Inter.svg",
-      "match_score": 1.12
-    },
-    {
       "name": "Inter Milan",
       "country": "Italy",
       "competitions": [
-        "ITA-Serie A"
+        "ITA-Serie A",
+        "UEFA-Champions League"
       ],
       "aliases": [
+        "Inter",
         "Inter Milan"
       ],
       "file": "assets/team-logos/inter_milan.svg",
       "source_path": "logos/italy/Inter.svg",
-      "match_score": 1.0564
+      "match_score": 1.12
     },
     {
       "name": "Juventus FC",
@@ -1935,6 +1917,19 @@
       "file": "assets/team-logos/celje.svg",
       "source_path": "logos/slovenia/Celje.svg",
       "match_score": 1.12
+    },
+    {
+      "name": "Athletic Bilbao",
+      "country": "Spain",
+      "competitions": [
+        "ESP-La Liga"
+      ],
+      "aliases": [
+        "Athletic Bilbao"
+      ],
+      "file": "assets/team-logos/athletic_bilbao.svg",
+      "source_path": "logos/spain/Athletic_Club_Bilbao.svg",
+      "match_score": 1.072
     },
     {
       "name": "Atlético de Madrid",
