@@ -104,6 +104,9 @@ def score(name,country,c):
  return ns+(.12 if norm(ctry).replace(' ','_') in allowed else -.08)
 
 def main():
+ # Rebuild the SVG directory from scratch so old aliases/season entries cannot linger.
+ for old_logo in OUT.glob('*.svg'):
+  old_logo.unlink()
  teams={}
  def add(name,country,comp):
   k=(canonical_key(name),country)
