@@ -2,13 +2,15 @@
 from __future__ import annotations
 
 import json
+import time
 from pathlib import Path
+from urllib.error import HTTPError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 OUT = Path('logos/assets/competition-logos')
 OUT.mkdir(parents=True, exist_ok=True)
-UA = 'ECOBET-CompetitionLogoSync/1.0'
+UA = 'ECOBET-CompetitionLogoSync/1.0 (+https://github.com/Giammaa87/ecobet)'
 
 COMPETITIONS = [
     {'id':'ENG-Premier League','name':'Premier League','file':'premier-league.svg','source':'wikimedia_commons','source_file':'Premier_League.svg','aliases':['Premier League','ENG-Premier League','EPL']},
@@ -16,15 +18,22 @@ COMPETITIONS = [
     {'id':'ESP-La Liga','name':'La Liga','file':'la-liga.svg','source':'wikimedia_commons','source_file':'LaLiga_2023_Horizontal_Logo.svg','aliases':['La Liga','LaLiga','ESP-La Liga']},
     {'id':'ITA-Serie A','name':'Serie A','file':'serie-a.svg','source':'wikimedia_commons','source_file':'Serie_A.svg','aliases':['Serie A','ITA-Serie A']},
     {'id':'FRA-Ligue 1','name':'Ligue 1','file':'ligue-1.svg','source':'wikimedia_commons','source_file':"Ligue_1_McDonald's_logo.svg",'aliases':['Ligue 1','FRA-Ligue 1',"Ligue 1 McDonald's"]},
-    {'id':'UEFA-Champions League','name':'UEFA Champions League','file':'champions-league.svg','source':'wikimedia_commons','source_file':'UEFA_Champions_League_logo.svg','aliases':['UEFA Champions League','Champions League','UCL']},
+    {'id':'UEFA-Champions League','name':'UEFA Champions League','file':'champions-league.svg','source':'uefa_official','source_url':'https://img.uefa.com/imgml/uefacom/ucl/logo_light.svg','aliases':['UEFA Champions League','Champions League','UCL']},
     {'id':'UEFA-Europa League','name':'UEFA Europa League','file':'europa-league.svg','source':'uefa_official','source_url':'https://img.uefa.com/imgml/uefacom/uel/logo_light.svg','aliases':['UEFA Europa League','Europa League','UEL']},
     {'id':'UEFA-Conference League','name':'UEFA Conference League','file':'conference-league.svg','source':'uefa_official','source_url':'https://img.uefa.com/imgml/uefacom/uecl/logo_light.svg','aliases':['UEFA Conference League','Conference League','UECL']},
 ]
 
 
-def fetch(url: str) -> bytes:
-    request = Request(url, headers={'User-Agent': UA})
-    return urlopen(request, timeout=60).read()
+def fetch(url: str, attempts: int = 5) -> bytes:
+    for attempt in range(attempts):
+        try:
+            request = Request(url, headers={'User-Agent': UA, 'Accept': 'image/svg+xml,*/*;q=0.8'})
+            return urlopen(request, timeout=60).read()
+        except HTTPError as exc:
+            if exc.code != 429 or attempt == attempts - 1:
+                raise
+            time.sleep(2 ** attempt + 1)
+    raise RuntimeError('download failed')
 
 
 def commons_url(filename: str) -> str:
@@ -47,6 +56,8 @@ def main() -> None:
             entry['path'] = str(destination).replace('\\', '/')
             entry['source_url'] = url
             manifest_entries.append(entry)
+            if competition['source'] == 'wikimedia_commons':
+                time.sleep(1.5)
         except Exception as exc:
             unresolved.append({'id':competition['id'],'name':competition['name'],'source_url':url,'error':str(exc)})
 
