@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "record_type": "RUN_AUDIT_RECORD",
+  "audit_generated_at": "2026-08-30T00:30:00+02:00",
+  "original_run_immutable": true,
+  "run_id": "RUN_2026-08-29_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260829T1421",
+  "source_run_record": {
+    "filename": "2026-08-29_1421.json",
+    "git_blob_sha": "51695955a2bc19d586ebd4a197165beaf0a3ef3c",
+    "immutability": "UNCHANGED",
+    "original_run_mutated_by_audit": false
+  },
+  "audit_recovery": {
+    "scheduled_audit_started_at": "2026-08-29T23:30:12+02:00",
+    "scheduled_audit_failed_at": "2026-08-29T23:30:22+02:00",
+    "scheduled_failure": "exactly one official immutable run is required for 2026-08-29",
+    "cause": "runs/index.json contained three runs for 2026-08-29; 14:21 is retained as the official run",
+    "prediction_changes": 0
+  },
+  "date": "2026-08-29",
+  "timezone": "Europe/Zurich",
+  "settlement_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+  "match_counts": {
+    "scope_committed_original": 22,
+    "result_confirmed": 22,
+    "unsettled": 0
+  },
+  "proof_counters": {
+    "matches_in_original_run": 22,
+    "match_audit_records": 22,
+    "result_confirmed": 22,
+    "result_unsettled": 0,
+    "predictions_rewritten": 0,
+    "real_odds_used_as_input": 0,
+    "tickets_created": "NO"
+  },
+  "model_kpis": {
+    "safe": {"HIT": 15, "MISS": 7, "PUSH": 0, "UNMAPPABLE": 0, "decisive_total": 22, "hit_rate_percent": 68.2},
+    "balanced": {"HIT": 11, "MISS": 10, "PUSH": 1, "UNMAPPABLE": 0, "decisive_total": 21, "hit_rate_percent": 52.4},
+    "aggressive": {"HIT": 8, "MISS": 12, "PUSH": 1, "UNMAPPABLE": 1, "decisive_total": 20, "hit_rate_percent": 40.0},
+    "favourite": {"HIT": 11, "MISS": 10, "PUSH": 1, "UNMAPPABLE": 0, "decisive_total": 21, "hit_rate_percent": 52.4}
+  },
+  "result_sources_summary": [
+    "Reuters",
+    "Bundesliga official",
+    "LaLiga official",
+    "Cadena SER",
+    "Europa Press",
+    "Juventus official",
+    "RC Lens official",
+    "Football.fr"
+  ],
+  "match_audit_records": [
+    {"match":"Liverpool vs Nottingham Forest","competition":"Premier League","score":"2-2","safe":{"prediction":"Liverpool or Draw (1X)","result":"HIT"},"balanced":{"prediction":"Liverpool to win","result":"MISS"},"aggressive":{"prediction":"Liverpool Over 1.5 Team Goals","result":"HIT"},"favourite":{"prediction":"Liverpool to win","result":"MISS"},"result_sources":["Reuters"]},
+    {"match":"Coventry City vs Hull City","competition":"Premier League","score":"0-1","safe":{"prediction":"Coventry City or Draw (1X)","result":"MISS"},"balanced":{"prediction":"Coventry City DNB","result":"MISS"},"aggressive":{"prediction":"Coventry City to win","result":"MISS"},"favourite":{"prediction":"Coventry City DNB","result":"MISS"},"result_sources":["Reuters"]},
+    {"match":"Bournemouth vs Everton","competition":"Premier League","score":"1-1","safe":{"prediction":"Over 1.5 Goals","result":"HIT"},"balanced":{"prediction":"Bournemouth Over 0.5 Team Goals","result":"HIT"},"aggressive":{"prediction":"Both Teams to Score","result":"HIT"},"favourite":{"prediction":"Bournemouth Over 0.5 Team Goals","result":"HIT"},"result_sources":["Reuters"]},
+    {"match":"Tottenham vs Newcastle","competition":"Premier League","score":"0-2","safe":{"prediction":"Over 1.5 Goals","result":"HIT"},"balanced":{"prediction":"Both Teams to Score","result":"MISS"},"aggressive":{"prediction":"Over 2.5 Goals","result":"MISS"},"favourite":{"prediction":"Both Teams to Score","result":"MISS"},"result_sources":["Reuters"]},
+    {"match":"SV Elversberg vs Bayer 04 Leverkusen","competition":"Bundesliga","score":"3-2","safe":{"prediction":"Leverkusen or Draw (X2)","result":"MISS"},"balanced":{"prediction":"Leverkusen DNB","result":"MISS"},"aggressive":{"prediction":"Leverkusen to win","result":"MISS"},"favourite":{"prediction":"Leverkusen DNB","result":"MISS"},"result_sources":["Reuters","Bundesliga official"]},
+    {"match":"RB Leipzig vs Borussia Mönchengladbach","competition":"Bundesliga","score":"3-0","safe":{"prediction":"RB Leipzig or Draw (1X)","result":"HIT"},"balanced":{"prediction":"RB Leipzig to win","result":"HIT"},"aggressive":{"prediction":"RB Leipzig Over 1.5 Team Goals","result":"HIT"},"favourite":{"prediction":"RB Leipzig to win","result":"HIT"},"result_sources":["Reuters","Bundesliga official"]},
+    {"match":"1. FC Union Berlin vs Eintracht Frankfurt","competition":"Bundesliga","score":"3-3","safe":{"prediction":"Eintracht Frankfurt or Draw (X2)","result":"HIT"},"balanced":{"prediction":"Eintracht Frankfurt Over 0.5 Team Goals","result":"HIT"},"aggressive":{"prediction":"Eintracht Frankfurt DNB","result":"PUSH"},"favourite":{"prediction":"Eintracht Frankfurt Over 0.5 Team Goals","result":"HIT"},"result_sources":["Reuters","Bundesliga official"]},
+    {"match":"1. FSV Mainz 05 vs SC Paderborn 07","competition":"Bundesliga","score":"0-0","safe":{"prediction":"Mainz or Draw (1X)","result":"HIT"},"balanced":{"prediction":"Mainz DNB","result":"PUSH"},"aggressive":{"prediction":"Mainz to win","result":"MISS"},"favourite":{"prediction":"Mainz DNB","result":"PUSH"},"result_sources":["Reuters","Bundesliga official"]},
+    {"match":"1. FC Köln vs TSG Hoffenheim","competition":"Bundesliga","score":"3-2","safe":{"prediction":"TSG Hoffenheim or Draw (X2)","result":"MISS"},"balanced":{"prediction":"TSG Hoffenheim Over 0.5 Team Goals","result":"HIT"},"aggressive":{"prediction":"TSG Hoffenheim DNB","result":"MISS"},"favourite":{"prediction":"TSG Hoffenheim Over 0.5 Team Goals","result":"HIT"},"result_sources":["Reuters","Bundesliga official"]},
+    {"match":"Borussia Dortmund vs Hamburger SV","competition":"Bundesliga","score":"2-0","safe":{"prediction":"Dortmund or Draw (1X)","result":"HIT"},"balanced":{"prediction":"Dortmund to win","result":"HIT"},"aggressive":{"prediction":"Dortmund Over 1.5 Team Goals","result":"HIT"},"favourite":{"prediction":"Dortmund to win","result":"HIT"},"result_sources":["Reuters","Bundesliga official"]},
+    {"match":"Levante UD vs Real Betis","competition":"La Liga","score":"5-2","safe":{"prediction":"Real Betis or Draw (X2)","result":"MISS"},"balanced":{"prediction":"Real Betis DNB","result":"MISS"},"aggressive":{"prediction":"Real Betis to win","result":"MISS"},"favourite":{"prediction":"Real Betis DNB","result":"MISS"},"result_sources":["LaLiga official"]},
+    {"match":"Real Sociedad vs RCD Espanyol de Barcelona","competition":"La Liga","score":"2-1","safe":{"prediction":"Over 1.5 Goals","result":"HIT"},"balanced":{"prediction":"Both Teams to Score","result":"HIT"},"aggressive":{"prediction":"RCD Espanyol de Barcelona DNB","result":"MISS"},"favourite":{"prediction":"Both Teams to Score","result":"HIT"},"result_sources":["LaLiga official","Cadena SER"]},
+    {"match":"Sevilla FC vs Atlético de Madrid","competition":"La Liga","score":"1-3","safe":{"prediction":"Over 1.5 Goals","result":"HIT"},"balanced":{"prediction":"Both Teams to Score","result":"HIT"},"aggressive":{"prediction":"Over 2.5 Goals","result":"HIT"},"favourite":{"prediction":"Both Teams to Score","result":"HIT"},"result_sources":["Europa Press","Cadena SER"]},
+    {"match":"Monza vs Udinese","competition":"Serie A","score":"2-3","safe":{"prediction":"Over 1.5 Goals","result":"HIT"},"balanced":{"prediction":"Both Teams to Score","result":"HIT"},"aggressive":{"prediction":"NOT_AVAILABLE","result":"UNMAPPABLE"},"favourite":{"prediction":"Both Teams to Score","result":"HIT"},"result_sources":["Reuters"]},
+    {"match":"Sassuolo vs Torino","competition":"Serie A","score":"2-1","safe":{"prediction":"Over 1.5 Goals","result":"HIT"},"balanced":{"prediction":"Both Teams to Score","result":"HIT"},"aggressive":{"prediction":"Over 2.5 Goals","result":"HIT"},"favourite":{"prediction":"Both Teams to Score","result":"HIT"},"result_sources":["Reuters","Torino official"]},
+    {"match":"Fiorentina vs Frosinone","competition":"Serie A","score":"0-3","safe":{"prediction":"Fiorentina or Draw (1X)","result":"MISS"},"balanced":{"prediction":"Fiorentina DNB","result":"MISS"},"aggressive":{"prediction":"Fiorentina to win","result":"MISS"},"favourite":{"prediction":"Fiorentina DNB","result":"MISS"},"result_sources":["Reuters","ANSA"]},
+    {"match":"Juventus vs Parma","competition":"Serie A","score":"2-0","safe":{"prediction":"Juventus or Draw (1X)","result":"HIT"},"balanced":{"prediction":"Juventus to win","result":"HIT"},"aggressive":{"prediction":"Juventus Over 1.5 Team Goals","result":"HIT"},"favourite":{"prediction":"Juventus to win","result":"HIT"},"result_sources":["Reuters","Juventus official"]},
+    {"match":"Strasbourg vs Lens","competition":"Ligue 1","score":"2-1","safe":{"prediction":"Lens or Draw (X2)","result":"MISS"},"balanced":{"prediction":"Lens DNB","result":"MISS"},"aggressive":{"prediction":"Lens to win","result":"MISS"},"favourite":{"prediction":"Lens DNB","result":"MISS"},"result_sources":["Reuters","RC Lens official"]},
+    {"match":"AJ Auxerre vs Angers","competition":"Ligue 1","score":"1-3","safe":{"prediction":"AJ Auxerre or Draw (1X)","result":"MISS"},"balanced":{"prediction":"AJ Auxerre DNB","result":"MISS"},"aggressive":{"prediction":"AJ Auxerre to win","result":"MISS"},"favourite":{"prediction":"AJ Auxerre DNB","result":"MISS"},"result_sources":["Reuters"]},
+    {"match":"Lorient vs Troyes","competition":"Ligue 1","score":"1-2","safe":{"prediction":"Under 3.5 Goals","result":"HIT"},"balanced":{"prediction":"Under 2.5 Goals","result":"MISS"},"aggressive":{"prediction":"Lorient to win","result":"MISS"},"favourite":{"prediction":"Under 2.5 Goals","result":"MISS"},"result_sources":["Reuters","Football.fr"]},
+    {"match":"Lyon vs Le Havre","competition":"Ligue 1","score":"1-1","safe":{"prediction":"Lyon or Draw (1X)","result":"HIT"},"balanced":{"prediction":"Lyon to win","result":"MISS"},"aggressive":{"prediction":"Lyon Over 1.5 Team Goals","result":"MISS"},"favourite":{"prediction":"Lyon to win","result":"MISS"},"result_sources":["Reuters"]},
+    {"match":"Brest vs Toulouse","competition":"Ligue 1","score":"2-2","safe":{"prediction":"Over 1.5 Goals","result":"HIT"},"balanced":{"prediction":"Both Teams to Score","result":"HIT"},"aggressive":{"prediction":"Over 2.5 Goals","result":"HIT"},"favourite":{"prediction":"Both Teams to Score","result":"HIT"},"result_sources":["Reuters"]}
+  ],
+  "run_integrity": "PASS",
+  "output_integrity": "PASS",
+  "result_settlement_status": "COMPLETE",
+  "data_integrity_flags": [
+    "ALL_22_RESULTS_CONFIRMED",
+    "ORIGINAL_1421_RUN_IMMUTABLE",
+    "NO_PREDICTION_REWRITE",
+    "DNB_DRAW_SETTLED_AS_PUSH",
+    "SCHEDULED_2330_PRECHECK_FAILURE_REPAIRED_MANUALLY"
+  ]
+}
