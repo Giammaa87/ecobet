@@ -10,7 +10,7 @@ UA='ECOBET-TeamLogoSync/1.0'
 OUT=Path('assets/team-logos'); OUT.mkdir(parents=True,exist_ok=True)
 LEAGUES={
  'ENG-Premier League':('England - Premier League','England'),
- 'ESP-La Liga':('Spain - La Liga','Spain'),
+ 'ESP-La Liga':('Spain - LaLiga','Spain'),
  'ITA-Serie A':('Italy - Serie A','Italy'),
  'GER-Bundesliga':('Germany - Bundesliga','Germany'),
  'FRA-Ligue 1':('France - Ligue 1','France'),
