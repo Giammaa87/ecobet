@@ -1,127 +1,22 @@
 {
   "schema_version": "1.0",
   "record_type": "audit_index",
-  "generated_at": "2026-08-30T00:30:00+02:00",
+  "generated_at": "2026-08-30T00:51:00+02:00",
   "dates": {
-    "2026-08-11": [
-      {
-        "id": "2026-08-11_1534",
-        "run_id": "RUN_2026-08-11_FOCUS_5_PLUS_UEFA_CEST_1534",
-        "file": "ECOBET_2026-08-11_RESULT_AUDIT.json",
-        "generated_at": "2026-08-11T23:27:13+02:00"
-      }
-    ],
-    "2026-08-12": [
-      {
-        "id": "2026-08-12_1012",
-        "run_id": "RUN_2026-08-12_FOCUS_5_PLUS_UEFA_CEST_1012_RERUN",
-        "file": "ECOBET_2026-08-12_RESULT_AUDIT.json",
-        "generated_at": "2026-08-12T22:17:00+02:00"
-      }
-    ],
-    "2026-08-13": [
-      {
-        "id": "2026-08-13_1002_rerun",
-        "run_id": "RUN_2026-08-13_FOCUS_5_PLUS_UEFA_CEST_1002_RERUN",
-        "file": "ECOBET_2026-08-13_RESULT_AUDIT.json",
-        "generated_at": "2026-08-14T00:27:00+02:00"
-      }
-    ],
-    "2026-08-18": [
-      {
-        "id": "2026-08-18_1737",
-        "run_id": "RUN_2026-08-18_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260818T173744",
-        "file": "ECOBET_2026-08-18_RESULT_AUDIT.json",
-        "generated_at": "2026-08-18T23:44:29+02:00"
-      }
-    ],
-    "2026-08-19": [
-      {
-        "id": "2026-08-19_1334",
-        "run_id": "RUN_2026-08-19_FOCUS_5_PLUS_UEFA_CEST_1334",
-        "file": "ECOBET_2026-08-19_RESULT_AUDIT.json",
-        "generated_at": "2026-08-20T15:43:00+02:00"
-      }
-    ],
-    "2026-08-20": [
-      {
-        "id": "2026-08-20_1342",
-        "run_id": "RUN_2026-08-20_FOCUS_5_PLUS_UEFA_CEST_1342",
-        "file": "ECOBET_2026-08-20_RESULT_AUDIT.json",
-        "generated_at": "2026-08-21T00:15:00+02:00"
-      }
-    ],
-    "2026-08-21": [
-      {
-        "id": "2026-08-21_1610",
-        "run_id": "RUN_2026-08-21_FOCUS_5_PLUS_UEFA_CEST_1610",
-        "file": "ECOBET_2026-08-21_RESULT_AUDIT.json",
-        "generated_at": "2026-08-22T00:31:00+02:00"
-      }
-    ],
-    "2026-08-22": [
-      {
-        "id": "2026-08-22_1218",
-        "run_id": "RUN_2026-08-22_FOCUS_5_PLUS_UEFA_CEST_1218_COMPLETE_RETRY",
-        "file": "ECOBET_2026-08-22_RESULT_AUDIT.json",
-        "generated_at": "2026-08-22T23:40:00+02:00"
-      }
-    ],
-    "2026-08-23": [
-      {
-        "id": "2026-08-23_1153",
-        "run_id": "RUN_2026-08-23_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260823T1013",
-        "file": "ECOBET_2026-08-23_RESULT_AUDIT.json",
-        "generated_at": "2026-08-24T01:29:00+02:00"
-      }
-    ],
-    "2026-08-24": [
-      {
-        "id": "2026-08-24_1127",
-        "run_id": "RUN_2026-08-24_FOCUS_5_PLUS_UEFA_Europe-Zurich_112700",
-        "file": "ECOBET_2026-08-24_RESULT_AUDIT.json",
-        "generated_at": "2026-08-25T02:06:00+02:00"
-      }
-    ],
-    "2026-08-25": [
-      {
-        "id": "2026-08-25_1115",
-        "run_id": "RUN_2026-08-25_FOCUS_5_PLUS_UEFA_Europe-Zurich_111500",
-        "file": "ECOBET_2026-08-25_RESULT_AUDIT.json",
-        "generated_at": "2026-08-26T18:52:00+02:00"
-      }
-    ],
-    "2026-08-26": [
-      {
-        "id": "2026-08-26_1023",
-        "run_id": "RUN_2026-08-26_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260826T1023",
-        "file": "ECOBET_2026-08-26_RESULT_AUDIT.json",
-        "generated_at": "2026-08-27T00:21:19+02:00"
-      }
-    ],
-    "2026-08-27": [
-      {
-        "id": "2026-08-27_1024",
-        "run_id": "RUN_2026-08-27_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_FINAL",
-        "file": "ECOBET_2026-08-27_RESULT_AUDIT.json",
-        "generated_at": "2026-08-28T02:09:00+02:00"
-      }
-    ],
-    "2026-08-28": [
-      {
-        "id": "2026-08-28_1610",
-        "run_id": "RUN_2026-08-28_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260828T1610",
-        "file": "ECOBET_2026-08-28_RESULT_AUDIT.json",
-        "generated_at": "2026-08-29T02:24:00+02:00"
-      }
-    ],
-    "2026-08-29": [
-      {
-        "id": "2026-08-29_1421",
-        "run_id": "RUN_2026-08-29_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260829T1421",
-        "file": "ECOBET_2026-08-29_RESULT_AUDIT.json",
-        "generated_at": "2026-08-30T00:30:00+02:00"
-      }
-    ]
+    "2026-08-11": [{"id":"2026-08-11_1534","run_id":"RUN_2026-08-11_FOCUS_5_PLUS_UEFA_CEST_1534","file":"ECOBET_2026-08-11_RESULT_AUDIT.json","generated_at":"2026-08-11T23:27:13+02:00"}],
+    "2026-08-12": [{"id":"2026-08-12_1012","run_id":"RUN_2026-08-12_FOCUS_5_PLUS_UEFA_CEST_1012_RERUN","file":"ECOBET_2026-08-12_RESULT_AUDIT.json","generated_at":"2026-08-12T22:17:00+02:00"}],
+    "2026-08-13": [{"id":"2026-08-13_1002_rerun","run_id":"RUN_2026-08-13_FOCUS_5_PLUS_UEFA_CEST_1002_RERUN","file":"ECOBET_2026-08-13_RESULT_AUDIT.json","generated_at":"2026-08-14T00:27:00+02:00"}],
+    "2026-08-18": [{"id":"2026-08-18_1737","run_id":"RUN_2026-08-18_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260818T173744","file":"ECOBET_2026-08-18_RESULT_AUDIT.json","generated_at":"2026-08-18T23:44:29+02:00"}],
+    "2026-08-19": [{"id":"2026-08-19_1334","run_id":"RUN_2026-08-19_FOCUS_5_PLUS_UEFA_CEST_1334","file":"ECOBET_2026-08-19_RESULT_AUDIT.json","generated_at":"2026-08-20T15:43:00+02:00"}],
+    "2026-08-20": [{"id":"2026-08-20_1342","run_id":"RUN_2026-08-20_FOCUS_5_PLUS_UEFA_CEST_1342","file":"ECOBET_2026-08-20_RESULT_AUDIT.json","generated_at":"2026-08-21T00:15:00+02:00"}],
+    "2026-08-21": [{"id":"2026-08-21_1610","run_id":"RUN_2026-08-21_FOCUS_5_PLUS_UEFA_CEST_1610","file":"ECOBET_2026-08-21_RESULT_AUDIT.json","generated_at":"2026-08-22T00:31:00+02:00"}],
+    "2026-08-22": [{"id":"2026-08-22_1218","run_id":"RUN_2026-08-22_FOCUS_5_PLUS_UEFA_CEST_1218_COMPLETE_RETRY","file":"ECOBET_2026-08-22_RESULT_AUDIT.json","generated_at":"2026-08-22T23:40:00+02:00"}],
+    "2026-08-23": [{"id":"2026-08-23_1153","run_id":"RUN_2026-08-23_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260823T1013","file":"ECOBET_2026-08-23_RESULT_AUDIT.json","generated_at":"2026-08-24T01:29:00+02:00"}],
+    "2026-08-24": [{"id":"2026-08-24_1127","run_id":"RUN_2026-08-24_FOCUS_5_PLUS_UEFA_Europe-Zurich_112700","file":"ECOBET_2026-08-24_RESULT_AUDIT.json","generated_at":"2026-08-25T02:06:00+02:00"}],
+    "2026-08-25": [{"id":"2026-08-25_1115","run_id":"RUN_2026-08-25_FOCUS_5_PLUS_UEFA_Europe-Zurich_111500","file":"ECOBET_2026-08-25_RESULT_AUDIT.json","generated_at":"2026-08-26T18:52:00+02:00"}],
+    "2026-08-26": [{"id":"2026-08-26_1023","run_id":"RUN_2026-08-26_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260826T1023","file":"ECOBET_2026-08-26_RESULT_AUDIT.json","generated_at":"2026-08-27T00:21:19+02:00"}],
+    "2026-08-27": [{"id":"2026-08-27_1024","run_id":"RUN_2026-08-27_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_FINAL","file":"ECOBET_2026-08-27_RESULT_AUDIT.json","generated_at":"2026-08-28T02:09:00+02:00"}],
+    "2026-08-28": [{"id":"2026-08-28_1610","run_id":"RUN_2026-08-28_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260828T1610","file":"ECOBET_2026-08-28_RESULT_AUDIT.json","generated_at":"2026-08-29T02:24:00+02:00"}],
+    "2026-08-29": [{"id":"2026-08-29_1421","run_id":"RUN_2026-08-29_FOCUS_5_PLUS_UEFA_EUROPE-ZURICH_20260829T1421","file":"ECOBET_2026-08-29_RESULT_AUDIT.json","generated_at":"2026-08-30T00:51:00+02:00"}]
   }
 }
