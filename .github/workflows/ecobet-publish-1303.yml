@@ -1,0 +1,48 @@
+name: ECOBET Publish 1303
+
+on:
+  push:
+    paths:
+      - '.github/workflows/ecobet-publish-1303.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reconstruct validated run
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat tmp/ecobet_2026-08-29_1303.part{1..7} | base64 -d | gzip -d > runs/2026-08-29_1303.json
+          echo '2fa62503778151b96be504074c57e555dc3dc2261539fc4df8d5037be7babc6a  runs/2026-08-29_1303.json' | sha256sum -c -
+          python - <<'PY'
+          import json
+          p='runs/index.json'
+          with open(p, encoding='utf-8') as f:
+              d=json.load(f)
+          arr=d.setdefault('dates', {}).setdefault('2026-08-29', [])
+          rid='2026-08-29_1303'
+          if rid not in arr:
+              arr.append(rid)
+          d['generated_at']='2026-08-29T13:03:00+02:00'
+          with open(p,'w',encoding='utf-8',newline='\n') as f:
+              json.dump(d,f,ensure_ascii=False,indent=2)
+              f.write('\n')
+          PY
+      - name: Commit publication
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f tmp/ecobet_2026-08-29_1303.part{1..7}
+          rm -f .github/workflows/ecobet-publish-1303.yml
+          git config user.name 'ECOBET Publisher'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Publish ECOBET run 2026-08-29_1303'
+          git push
