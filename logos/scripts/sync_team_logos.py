@@ -7,7 +7,7 @@ from urllib.parse import quote
 from urllib.request import Request,urlopen
 
 UA='ECOBET-TeamLogoSync/1.0'
-OUT=Path('assets/team-logos'); OUT.mkdir(parents=True,exist_ok=True)
+OUT=Path('logos/assets/team-logos'); OUT.mkdir(parents=True,exist_ok=True)
 LEAGUES={
  'ENG-Premier League':('England - Premier League','England'),
  'ESP-La Liga':('Spain - LaLiga','Spain'),

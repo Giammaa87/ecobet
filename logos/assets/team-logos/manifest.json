@@ -17,7 +17,7 @@
       "aliases": [
         "Egnatia"
       ],
-      "file": "assets/team-logos/egnatia.svg",
+      "file": "logos/assets/team-logos/egnatia.svg",
       "source_path": "logos/albania/Egnatia.svg",
       "match_score": 1.12
     },
@@ -30,7 +30,7 @@
       "aliases": [
         "Inter Club d'Escaldes"
       ],
-      "file": "assets/team-logos/inter_club_d_escaldes.svg",
+      "file": "logos/assets/team-logos/inter_club_d_escaldes.svg",
       "source_path": "logos/andorra/Inter_Escaldes.svg",
       "match_score": 1.12
     },
@@ -43,7 +43,7 @@
       "aliases": [
         "Ararat-Armenia"
       ],
-      "file": "assets/team-logos/ararat_armenia.svg",
+      "file": "logos/assets/team-logos/ararat_armenia.svg",
       "source_path": "logos/armenia/Ararat-Armenia.svg",
       "match_score": 1.12
     },
@@ -56,7 +56,7 @@
       "aliases": [
         "LASK"
       ],
-      "file": "assets/team-logos/lask.svg",
+      "file": "logos/assets/team-logos/lask.svg",
       "source_path": "logos/austria/LASK.svg",
       "match_score": 1.12
     },
@@ -69,7 +69,7 @@
       "aliases": [
         "Red Bull Salzburg"
       ],
-      "file": "assets/team-logos/red_bull_salzburg.svg",
+      "file": "logos/assets/team-logos/red_bull_salzburg.svg",
       "source_path": "logos/austria/Salzburg.svg",
       "match_score": 1.12
     },
@@ -82,7 +82,7 @@
       "aliases": [
         "Sturm Graz"
       ],
-      "file": "assets/team-logos/sturm_graz.svg",
+      "file": "logos/assets/team-logos/sturm_graz.svg",
       "source_path": "logos/austria/Sturm_Graz.svg",
       "match_score": 1.12
     },
@@ -95,7 +95,7 @@
       "aliases": [
         "Sabah"
       ],
-      "file": "assets/team-logos/sabah.svg",
+      "file": "logos/assets/team-logos/sabah.svg",
       "source_path": "logos/azerbaijan/Sabah.svg",
       "match_score": 1.12
     },
@@ -108,7 +108,7 @@
       "aliases": [
         "Anderlecht"
       ],
-      "file": "assets/team-logos/anderlecht.svg",
+      "file": "logos/assets/team-logos/anderlecht.svg",
       "source_path": "logos/belgium/RSC_Anderlecht.svg",
       "match_score": 1.0771
     },
@@ -121,7 +121,7 @@
       "aliases": [
         "Club Brugge"
       ],
-      "file": "assets/team-logos/club_brugge.svg",
+      "file": "logos/assets/team-logos/club_brugge.svg",
       "source_path": "logos/belgium/Club_Brugge.svg",
       "match_score": 1.12
     },
@@ -134,7 +134,7 @@
       "aliases": [
         "Gent"
       ],
-      "file": "assets/team-logos/gent.svg",
+      "file": "logos/assets/team-logos/gent.svg",
       "source_path": "logos/belgium/KAA_Gent.svg",
       "match_score": 1.12
     },
@@ -147,7 +147,7 @@
       "aliases": [
         "Sint-Truidense"
       ],
-      "file": "assets/team-logos/sint_truidense.svg",
+      "file": "logos/assets/team-logos/sint_truidense.svg",
       "source_path": "logos/belgium/Sint-Truidense_VV.svg",
       "match_score": 1.0859
     },
@@ -160,7 +160,7 @@
       "aliases": [
         "Union Saint-Gilloise"
       ],
-      "file": "assets/team-logos/union_saint_gilloise.svg",
+      "file": "logos/assets/team-logos/union_saint_gilloise.svg",
       "source_path": "logos/belgium/Union_Saint-Gilloise.svg",
       "match_score": 1.12
     },
@@ -173,7 +173,7 @@
       "aliases": [
         "Borac Banja Luka"
       ],
-      "file": "assets/team-logos/borac_banja_luka.svg",
+      "file": "logos/assets/team-logos/borac_banja_luka.svg",
       "source_path": "logos/bosnia-and-herzegovina/Borac_Banja_Luka.svg",
       "match_score": 1.12
     },
@@ -186,7 +186,7 @@
       "aliases": [
         "CSKA Sofia"
       ],
-      "file": "assets/team-logos/cska_sofia.svg",
+      "file": "logos/assets/team-logos/cska_sofia.svg",
       "source_path": "logos/bulgaria/CSKA-Sofia.svg",
       "match_score": 1.12
     },
@@ -199,7 +199,7 @@
       "aliases": [
         "Levski Sofia"
       ],
-      "file": "assets/team-logos/levski_sofia.svg",
+      "file": "logos/assets/team-logos/levski_sofia.svg",
       "source_path": "logos/bulgaria/Levski_Sofia.svg",
       "match_score": 1.12
     },
@@ -212,7 +212,7 @@
       "aliases": [
         "Dinamo Zagreb"
       ],
-      "file": "assets/team-logos/dinamo_zagreb.svg",
+      "file": "logos/assets/team-logos/dinamo_zagreb.svg",
       "source_path": "logos/croatia/GNK_Dinamo_Zagreb.svg",
       "match_score": 1.12
     },
@@ -225,7 +225,7 @@
       "aliases": [
         "Hajduk Split"
       ],
-      "file": "assets/team-logos/hajduk_split.svg",
+      "file": "logos/assets/team-logos/hajduk_split.svg",
       "source_path": "logos/croatia/Hajduk_Split.svg",
       "match_score": 1.12
     },
@@ -238,7 +238,7 @@
       "aliases": [
         "Omonia"
       ],
-      "file": "assets/team-logos/omonia.svg",
+      "file": "logos/assets/team-logos/omonia.svg",
       "source_path": "logos/cyprus/Omonia_Aradippou.svg",
       "match_score": 1.05
     },
@@ -251,7 +251,7 @@
       "aliases": [
         "Pafos"
       ],
-      "file": "assets/team-logos/pafos.svg",
+      "file": "logos/assets/team-logos/pafos.svg",
       "source_path": "logos/cyprus/Pafos.svg",
       "match_score": 1.12
     },
@@ -264,7 +264,7 @@
       "aliases": [
         "Jablonec"
       ],
-      "file": "assets/team-logos/jablonec.svg",
+      "file": "logos/assets/team-logos/jablonec.svg",
       "source_path": "logos/czech-republic/Jablonec.svg",
       "match_score": 1.12
     },
@@ -277,7 +277,7 @@
       "aliases": [
         "Slavia Praha"
       ],
-      "file": "assets/team-logos/slavia_praha.svg",
+      "file": "logos/assets/team-logos/slavia_praha.svg",
       "source_path": "logos/czech-republic/SK_Slavia_Praha.svg",
       "match_score": 1.12
     },
@@ -290,7 +290,7 @@
       "aliases": [
         "Sparta Praha"
       ],
-      "file": "assets/team-logos/sparta_praha.svg",
+      "file": "logos/assets/team-logos/sparta_praha.svg",
       "source_path": "logos/czech-republic/AC_Sparta_Praha.svg",
       "match_score": 1.12
     },
@@ -303,7 +303,7 @@
       "aliases": [
         "Viktoria Plzeň"
       ],
-      "file": "assets/team-logos/viktoria_plzen.svg",
+      "file": "logos/assets/team-logos/viktoria_plzen.svg",
       "source_path": "logos/czech-republic/Viktoria_Plzeň.svg",
       "match_score": 1.12
     },
@@ -316,7 +316,7 @@
       "aliases": [
         "Aarhus"
       ],
-      "file": "assets/team-logos/aarhus.svg",
+      "file": "logos/assets/team-logos/aarhus.svg",
       "source_path": "logos/denmark/AGF.svg",
       "match_score": 1.12
     },
@@ -329,7 +329,7 @@
       "aliases": [
         "Copenhagen"
       ],
-      "file": "assets/team-logos/copenhagen.svg",
+      "file": "logos/assets/team-logos/copenhagen.svg",
       "source_path": "logos/denmark/F.C._Copenhagen.svg",
       "match_score": 1.0771
     },
@@ -342,7 +342,7 @@
       "aliases": [
         "Midtjylland"
       ],
-      "file": "assets/team-logos/midtjylland.svg",
+      "file": "logos/assets/team-logos/midtjylland.svg",
       "source_path": "logos/denmark/FC_Midtjylland.svg",
       "match_score": 1.12
     },
@@ -355,7 +355,7 @@
       "aliases": [
         "Nordsjælland"
       ],
-      "file": "assets/team-logos/nordsj_lland.svg",
+      "file": "logos/assets/team-logos/nordsj_lland.svg",
       "source_path": "logos/denmark/FC_Nordsjælland.svg",
       "match_score": 1.12
     },
@@ -370,7 +370,7 @@
         "AFC Bournemouth",
         "Bournemouth"
       ],
-      "file": "assets/team-logos/bournemouth.svg",
+      "file": "logos/assets/team-logos/bournemouth.svg",
       "source_path": "logos/england/Bournemouth.svg",
       "match_score": 1.12
     },
@@ -385,7 +385,7 @@
         "Arsenal",
         "Arsenal FC"
       ],
-      "file": "assets/team-logos/arsenal.svg",
+      "file": "logos/assets/team-logos/arsenal.svg",
       "source_path": "logos/england/Arsenal.svg",
       "match_score": 1.12
     },
@@ -399,7 +399,7 @@
       "aliases": [
         "Aston Villa"
       ],
-      "file": "assets/team-logos/aston_villa.svg",
+      "file": "logos/assets/team-logos/aston_villa.svg",
       "source_path": "logos/england/Aston_Villa.svg",
       "match_score": 1.12
     },
@@ -412,7 +412,7 @@
       "aliases": [
         "Brentford FC"
       ],
-      "file": "assets/team-logos/brentford.svg",
+      "file": "logos/assets/team-logos/brentford.svg",
       "source_path": "logos/england/Brentford.svg",
       "match_score": 1.12
     },
@@ -426,7 +426,7 @@
       "aliases": [
         "Brighton & Hove Albion"
       ],
-      "file": "assets/team-logos/brighton_hove_albion.svg",
+      "file": "logos/assets/team-logos/brighton_hove_albion.svg",
       "source_path": "logos/england/Brighton.svg",
       "match_score": 1.0467
     },
@@ -439,7 +439,7 @@
       "aliases": [
         "Chelsea FC"
       ],
-      "file": "assets/team-logos/chelsea.svg",
+      "file": "logos/assets/team-logos/chelsea.svg",
       "source_path": "logos/england/Chelsea.svg",
       "match_score": 1.12
     },
@@ -452,7 +452,7 @@
       "aliases": [
         "Coventry City"
       ],
-      "file": "assets/team-logos/coventry_city.svg",
+      "file": "logos/assets/team-logos/coventry_city.svg",
       "source_path": "logos/england/Coventry_City.svg",
       "match_score": 1.12
     },
@@ -466,7 +466,7 @@
       "aliases": [
         "Crystal Palace"
       ],
-      "file": "assets/team-logos/crystal_palace.svg",
+      "file": "logos/assets/team-logos/crystal_palace.svg",
       "source_path": "logos/england/Crystal_Palace.svg",
       "match_score": 1.12
     },
@@ -479,7 +479,7 @@
       "aliases": [
         "Everton FC"
       ],
-      "file": "assets/team-logos/everton.svg",
+      "file": "logos/assets/team-logos/everton.svg",
       "source_path": "logos/england/Everton.svg",
       "match_score": 1.12
     },
@@ -492,7 +492,7 @@
       "aliases": [
         "Fulham FC"
       ],
-      "file": "assets/team-logos/fulham.svg",
+      "file": "logos/assets/team-logos/fulham.svg",
       "source_path": "logos/england/Fulham.svg",
       "match_score": 1.12
     },
@@ -505,7 +505,7 @@
       "aliases": [
         "Hull City"
       ],
-      "file": "assets/team-logos/hull_city.svg",
+      "file": "logos/assets/team-logos/hull_city.svg",
       "source_path": "logos/england/Hull_City.svg",
       "match_score": 1.12
     },
@@ -518,7 +518,7 @@
       "aliases": [
         "Ipswich Town"
       ],
-      "file": "assets/team-logos/ipswich_town.svg",
+      "file": "logos/assets/team-logos/ipswich_town.svg",
       "source_path": "logos/england/Ipswich.svg",
       "match_score": 1.0667
     },
@@ -531,7 +531,7 @@
       "aliases": [
         "Leeds United"
       ],
-      "file": "assets/team-logos/leeds_united.svg",
+      "file": "logos/assets/team-logos/leeds_united.svg",
       "source_path": "logos/england/Leeds_United.svg",
       "match_score": 1.12
     },
@@ -546,7 +546,7 @@
         "Liverpool",
         "Liverpool FC"
       ],
-      "file": "assets/team-logos/liverpool.svg",
+      "file": "logos/assets/team-logos/liverpool.svg",
       "source_path": "logos/england/Liverpool_FC.svg",
       "match_score": 1.12
     },
@@ -560,7 +560,7 @@
       "aliases": [
         "Manchester City"
       ],
-      "file": "assets/team-logos/manchester_city.svg",
+      "file": "logos/assets/team-logos/manchester_city.svg",
       "source_path": "logos/england/Manchester_City.svg",
       "match_score": 1.12
     },
@@ -574,7 +574,7 @@
       "aliases": [
         "Manchester United"
       ],
-      "file": "assets/team-logos/manchester_united.svg",
+      "file": "logos/assets/team-logos/manchester_united.svg",
       "source_path": "logos/england/Manchester_United.svg",
       "match_score": 1.12
     },
@@ -587,7 +587,7 @@
       "aliases": [
         "Newcastle United"
       ],
-      "file": "assets/team-logos/newcastle_united.svg",
+      "file": "logos/assets/team-logos/newcastle_united.svg",
       "source_path": "logos/england/Newcastle.svg",
       "match_score": 1.065
     },
@@ -600,7 +600,7 @@
       "aliases": [
         "Nottingham Forest"
       ],
-      "file": "assets/team-logos/nottingham_forest.svg",
+      "file": "logos/assets/team-logos/nottingham_forest.svg",
       "source_path": "logos/england/Nottingham_Forest.svg",
       "match_score": 1.12
     },
@@ -615,7 +615,7 @@
         "Sunderland",
         "Sunderland AFC"
       ],
-      "file": "assets/team-logos/sunderland.svg",
+      "file": "logos/assets/team-logos/sunderland.svg",
       "source_path": "logos/england/Sunderland.svg",
       "match_score": 1.12
     },
@@ -628,7 +628,7 @@
       "aliases": [
         "Tottenham Hotspur"
       ],
-      "file": "assets/team-logos/tottenham_hotspur.svg",
+      "file": "logos/assets/team-logos/tottenham_hotspur.svg",
       "source_path": "logos/england/Tottenham.svg",
       "match_score": 1.0624
     },
@@ -641,7 +641,7 @@
       "aliases": [
         "KuPS Kuopio"
       ],
-      "file": "assets/team-logos/kups_kuopio.svg",
+      "file": "logos/assets/team-logos/kups_kuopio.svg",
       "source_path": "logos/finland/KuPS.svg",
       "match_score": 1.0491
     },
@@ -654,7 +654,7 @@
       "aliases": [
         "AJ Auxerre"
       ],
-      "file": "assets/team-logos/aj_auxerre.svg",
+      "file": "logos/assets/team-logos/aj_auxerre.svg",
       "source_path": "logos/france/Auxerre.svg",
       "match_score": 1.076
     },
@@ -669,7 +669,7 @@
         "AS Monaco",
         "Monaco"
       ],
-      "file": "assets/team-logos/monaco.svg",
+      "file": "logos/assets/team-logos/monaco.svg",
       "source_path": "logos/france/AS_Monaco.svg",
       "match_score": 1.12
     },
@@ -682,7 +682,7 @@
       "aliases": [
         "Angers SCO"
       ],
-      "file": "assets/team-logos/angers_sco.svg",
+      "file": "logos/assets/team-logos/angers_sco.svg",
       "source_path": "logos/france/Angers.svg",
       "match_score": 1.068
     },
@@ -695,7 +695,7 @@
       "aliases": [
         "ESTAC Troyes"
       ],
-      "file": "assets/team-logos/estac_troyes.svg",
+      "file": "logos/assets/team-logos/estac_troyes.svg",
       "source_path": "logos/france/Troyes.svg",
       "match_score": 1.06
     },
@@ -708,7 +708,7 @@
       "aliases": [
         "FC Lorient"
       ],
-      "file": "assets/team-logos/lorient.svg",
+      "file": "logos/assets/team-logos/lorient.svg",
       "source_path": "logos/france/Lorient_FC.svg",
       "match_score": 1.12
     },
@@ -721,7 +721,7 @@
       "aliases": [
         "FC Toulouse"
       ],
-      "file": "assets/team-logos/toulouse.svg",
+      "file": "logos/assets/team-logos/toulouse.svg",
       "source_path": "logos/france/Toulouse.svg",
       "match_score": 1.12
     },
@@ -734,7 +734,7 @@
       "aliases": [
         "LOSC Lille"
       ],
-      "file": "assets/team-logos/losc_lille.svg",
+      "file": "logos/assets/team-logos/losc_lille.svg",
       "source_path": "logos/france/Lille.svg",
       "match_score": 1.06
     },
@@ -747,7 +747,7 @@
       "aliases": [
         "Le Havre AC"
       ],
-      "file": "assets/team-logos/le_havre.svg",
+      "file": "logos/assets/team-logos/le_havre.svg",
       "source_path": "logos/france/Le_Havre_AC.svg",
       "match_score": 1.12
     },
@@ -760,7 +760,7 @@
       "aliases": [
         "Le Mans FC"
       ],
-      "file": "assets/team-logos/le_mans.svg",
+      "file": "logos/assets/team-logos/le_mans.svg",
       "source_path": "logos/france/Le_Mans_FC.svg",
       "match_score": 1.12
     },
@@ -773,7 +773,7 @@
       "aliases": [
         "Lille"
       ],
-      "file": "assets/team-logos/lille.svg",
+      "file": "logos/assets/team-logos/lille.svg",
       "source_path": "logos/france/Lille.svg",
       "match_score": 1.12
     },
@@ -786,7 +786,7 @@
       "aliases": [
         "Lyon"
       ],
-      "file": "assets/team-logos/lyon.svg",
+      "file": "logos/assets/team-logos/lyon.svg",
       "source_path": "logos/france/Olympique_Lyonnais.svg",
       "match_score": 1.12
     },
@@ -799,7 +799,7 @@
       "aliases": [
         "OGC Nice"
       ],
-      "file": "assets/team-logos/ogc_nice.svg",
+      "file": "logos/assets/team-logos/ogc_nice.svg",
       "source_path": "logos/france/Nice.svg",
       "match_score": 1.06
     },
@@ -812,7 +812,7 @@
       "aliases": [
         "Olympique Lyon"
       ],
-      "file": "assets/team-logos/olympique_lyon.svg",
+      "file": "logos/assets/team-logos/olympique_lyon.svg",
       "source_path": "logos/france/Olympique_Lyonnais.svg",
       "match_score": 1.0822
     },
@@ -827,7 +827,7 @@
         "Marseille",
         "Olympique Marseille"
       ],
-      "file": "assets/team-logos/olympique_marseille.svg",
+      "file": "logos/assets/team-logos/olympique_marseille.svg",
       "source_path": "logos/france/Marseille.svg",
       "match_score": 1.12
     },
@@ -840,7 +840,7 @@
       "aliases": [
         "Paris FC"
       ],
-      "file": "assets/team-logos/paris.svg",
+      "file": "logos/assets/team-logos/paris.svg",
       "source_path": "logos/france/Paris_FC.svg",
       "match_score": 1.12
     },
@@ -854,7 +854,7 @@
       "aliases": [
         "Paris Saint-Germain"
       ],
-      "file": "assets/team-logos/paris_saint_germain.svg",
+      "file": "logos/assets/team-logos/paris_saint_germain.svg",
       "source_path": "logos/france/Paris_Saint-Germain_(PSG).svg",
       "match_score": 1.0861
     },
@@ -869,7 +869,7 @@
         "Lens",
         "RC Lens"
       ],
-      "file": "assets/team-logos/lens.svg",
+      "file": "logos/assets/team-logos/lens.svg",
       "source_path": "logos/france/RC_Lens.svg",
       "match_score": 1.12
     },
@@ -882,7 +882,7 @@
       "aliases": [
         "RC Strasbourg Alsace"
       ],
-      "file": "assets/team-logos/strasbourg_alsace.svg",
+      "file": "logos/assets/team-logos/strasbourg_alsace.svg",
       "source_path": "logos/france/RC_Strasbourg_Alsace.svg",
       "match_score": 1.12
     },
@@ -895,7 +895,7 @@
       "aliases": [
         "Stade Brestois 29"
       ],
-      "file": "assets/team-logos/stade_brestois_29.svg",
+      "file": "logos/assets/team-logos/stade_brestois_29.svg",
       "source_path": "logos/france/Brest.svg",
       "match_score": 1.0435
     },
@@ -910,7 +910,7 @@
         "Rennes",
         "Stade Rennais FC"
       ],
-      "file": "assets/team-logos/stade_rennais.svg",
+      "file": "logos/assets/team-logos/stade_rennais.svg",
       "source_path": "logos/france/Rennes.svg",
       "match_score": 1.12
     },
@@ -923,7 +923,7 @@
       "aliases": [
         "Iberia 1999"
       ],
-      "file": "assets/team-logos/iberia_1999.svg",
+      "file": "logos/assets/team-logos/iberia_1999.svg",
       "source_path": "logos/georgia/Iberia.svg",
       "match_score": 1.0636
     },
@@ -936,7 +936,7 @@
       "aliases": [
         "1.FC Köln"
       ],
-      "file": "assets/team-logos/1_koln.svg",
+      "file": "logos/assets/team-logos/1_koln.svg",
       "source_path": "logos/germany/Cologne.svg",
       "match_score": 1.12
     },
@@ -949,7 +949,7 @@
       "aliases": [
         "1.FC Union Berlin"
       ],
-      "file": "assets/team-logos/1_union_berlin.svg",
+      "file": "logos/assets/team-logos/1_union_berlin.svg",
       "source_path": "logos/germany/Union_Berlin.svg",
       "match_score": 1.0886
     },
@@ -962,7 +962,7 @@
       "aliases": [
         "1.FSV Mainz 05"
       ],
-      "file": "assets/team-logos/1_fsv_mainz_05.svg",
+      "file": "logos/assets/team-logos/1_fsv_mainz_05.svg",
       "source_path": "logos/germany/Mainz_05.svg",
       "match_score": 1.0657
     },
@@ -975,7 +975,7 @@
       "aliases": [
         "Bayer 04 Leverkusen"
       ],
-      "file": "assets/team-logos/bayer_04_leverkusen.svg",
+      "file": "logos/assets/team-logos/bayer_04_leverkusen.svg",
       "source_path": "logos/germany/Bayer_Leverkusen.svg",
       "match_score": 1.0343
     },
@@ -988,7 +988,7 @@
       "aliases": [
         "Bayer Leverkusen"
       ],
-      "file": "assets/team-logos/bayer_leverkusen.svg",
+      "file": "logos/assets/team-logos/bayer_leverkusen.svg",
       "source_path": "logos/germany/Bayer_Leverkusen.svg",
       "match_score": 1.12
     },
@@ -1003,7 +1003,7 @@
         "Bayern Munich",
         "Bayern München"
       ],
-      "file": "assets/team-logos/bayern_munich.svg",
+      "file": "logos/assets/team-logos/bayern_munich.svg",
       "source_path": "logos/germany/Bayern_München.svg",
       "match_score": 1.12
     },
@@ -1017,7 +1017,7 @@
       "aliases": [
         "Borussia Dortmund"
       ],
-      "file": "assets/team-logos/borussia_dortmund.svg",
+      "file": "logos/assets/team-logos/borussia_dortmund.svg",
       "source_path": "logos/germany/Borussia_Dortmund.svg",
       "match_score": 1.12
     },
@@ -1030,7 +1030,7 @@
       "aliases": [
         "Borussia Mönchengladbach"
       ],
-      "file": "assets/team-logos/borussia_monchengladbach.svg",
+      "file": "logos/assets/team-logos/borussia_monchengladbach.svg",
       "source_path": "logos/germany/Borussia_Mönchengladbach.svg",
       "match_score": 1.12
     },
@@ -1043,7 +1043,7 @@
       "aliases": [
         "Eintracht Frankfurt"
       ],
-      "file": "assets/team-logos/eintracht_frankfurt.svg",
+      "file": "logos/assets/team-logos/eintracht_frankfurt.svg",
       "source_path": "logos/germany/Eintracht_Frankfurt.svg",
       "match_score": 1.12
     },
@@ -1056,7 +1056,7 @@
       "aliases": [
         "FC Augsburg"
       ],
-      "file": "assets/team-logos/augsburg.svg",
+      "file": "logos/assets/team-logos/augsburg.svg",
       "source_path": "logos/germany/Augsburg.svg",
       "match_score": 1.12
     },
@@ -1069,7 +1069,7 @@
       "aliases": [
         "FC Schalke 04"
       ],
-      "file": "assets/team-logos/schalke_04.svg",
+      "file": "logos/assets/team-logos/schalke_04.svg",
       "source_path": "logos/germany/Schalke_04.svg",
       "match_score": 1.12
     },
@@ -1082,7 +1082,7 @@
       "aliases": [
         "Hamburger SV"
       ],
-      "file": "assets/team-logos/hamburger.svg",
+      "file": "logos/assets/team-logos/hamburger.svg",
       "source_path": "logos/germany/Hamburger_SV.svg",
       "match_score": 1.12
     },
@@ -1095,7 +1095,7 @@
       "aliases": [
         "Hoffenheim"
       ],
-      "file": "assets/team-logos/hoffenheim.svg",
+      "file": "logos/assets/team-logos/hoffenheim.svg",
       "source_path": "logos/germany/Hoffenheim.svg",
       "match_score": 1.12
     },
@@ -1109,7 +1109,7 @@
       "aliases": [
         "RB Leipzig"
       ],
-      "file": "assets/team-logos/rb_leipzig.svg",
+      "file": "logos/assets/team-logos/rb_leipzig.svg",
       "source_path": "logos/germany/RB_Leipzig.svg",
       "match_score": 1.12
     },
@@ -1124,7 +1124,7 @@
         "Freiburg",
         "SC Freiburg"
       ],
-      "file": "assets/team-logos/freiburg.svg",
+      "file": "logos/assets/team-logos/freiburg.svg",
       "source_path": "logos/germany/Freiburg.svg",
       "match_score": 1.12
     },
@@ -1137,7 +1137,7 @@
       "aliases": [
         "SC Paderborn 07"
       ],
-      "file": "assets/team-logos/paderborn_07.svg",
+      "file": "logos/assets/team-logos/paderborn_07.svg",
       "source_path": "logos/germany/SC_Paderborn.svg",
       "match_score": 1.08
     },
@@ -1150,7 +1150,7 @@
       "aliases": [
         "SV 07 Elversberg"
       ],
-      "file": "assets/team-logos/07_elversberg.svg",
+      "file": "logos/assets/team-logos/07_elversberg.svg",
       "source_path": "logos/germany/SV_Elversberg.svg",
       "match_score": 1.0815
     },
@@ -1163,7 +1163,7 @@
       "aliases": [
         "SV Werder Bremen"
       ],
-      "file": "assets/team-logos/werder_bremen.svg",
+      "file": "logos/assets/team-logos/werder_bremen.svg",
       "source_path": "logos/germany/Werder_Bremen.svg",
       "match_score": 1.12
     },
@@ -1176,7 +1176,7 @@
       "aliases": [
         "TSG 1899 Hoffenheim"
       ],
-      "file": "assets/team-logos/1899_hoffenheim.svg",
+      "file": "logos/assets/team-logos/1899_hoffenheim.svg",
       "source_path": "logos/germany/Hoffenheim.svg",
       "match_score": 1.0733
     },
@@ -1190,7 +1190,7 @@
       "aliases": [
         "VfB Stuttgart"
       ],
-      "file": "assets/team-logos/stuttgart.svg",
+      "file": "logos/assets/team-logos/stuttgart.svg",
       "source_path": "logos/germany/VfB_Stuttgart.svg",
       "match_score": 1.12
     },
@@ -1203,7 +1203,7 @@
       "aliases": [
         "Lincoln Red Imps"
       ],
-      "file": "assets/team-logos/lincoln_red_imps.svg",
+      "file": "logos/assets/team-logos/lincoln_red_imps.svg",
       "source_path": "logos/gibraltar/Lincoln_Red_Imps.svg",
       "match_score": 1.12
     },
@@ -1216,7 +1216,7 @@
       "aliases": [
         "AEK Athens"
       ],
-      "file": "assets/team-logos/aek_athens.svg",
+      "file": "logos/assets/team-logos/aek_athens.svg",
       "source_path": "logos/greece/AEK_Athens.svg",
       "match_score": 1.12
     },
@@ -1229,7 +1229,7 @@
       "aliases": [
         "OFI Crete"
       ],
-      "file": "assets/team-logos/ofi_crete.svg",
+      "file": "logos/assets/team-logos/ofi_crete.svg",
       "source_path": "logos/greece/OFI.svg",
       "match_score": 1.0467
     },
@@ -1242,7 +1242,7 @@
       "aliases": [
         "Olympiacos"
       ],
-      "file": "assets/team-logos/olympiacos.svg",
+      "file": "logos/assets/team-logos/olympiacos.svg",
       "source_path": "logos/greece/Olympiacos.svg",
       "match_score": 1.12
     },
@@ -1255,7 +1255,7 @@
       "aliases": [
         "Panathinaikos"
       ],
-      "file": "assets/team-logos/panathinaikos.svg",
+      "file": "logos/assets/team-logos/panathinaikos.svg",
       "source_path": "logos/greece/Panathinaikos.svg",
       "match_score": 1.12
     },
@@ -1268,7 +1268,7 @@
       "aliases": [
         "Ferencváros"
       ],
-      "file": "assets/team-logos/ferencvaros.svg",
+      "file": "logos/assets/team-logos/ferencvaros.svg",
       "source_path": "logos/hungary/Ferencváros.svg",
       "match_score": 1.12
     },
@@ -1281,7 +1281,7 @@
       "aliases": [
         "Hapoel Beer-Sheva"
       ],
-      "file": "assets/team-logos/hapoel_beer_sheva.svg",
+      "file": "logos/assets/team-logos/hapoel_beer_sheva.svg",
       "source_path": "logos/israel/Hapoel_Be'er_Sheva.svg",
       "match_score": 1.12
     },
@@ -1295,7 +1295,7 @@
       "aliases": [
         "AC Milan"
       ],
-      "file": "assets/team-logos/milan.svg",
+      "file": "logos/assets/team-logos/milan.svg",
       "source_path": "logos/italy/Milan.svg",
       "match_score": 1.12
     },
@@ -1308,7 +1308,7 @@
       "aliases": [
         "AC Monza"
       ],
-      "file": "assets/team-logos/monza.svg",
+      "file": "logos/assets/team-logos/monza.svg",
       "source_path": "logos/italy/Monza.svg",
       "match_score": 1.12
     },
@@ -1321,7 +1321,7 @@
       "aliases": [
         "ACF Fiorentina"
       ],
-      "file": "assets/team-logos/acf_fiorentina.svg",
+      "file": "logos/assets/team-logos/acf_fiorentina.svg",
       "source_path": "logos/italy/Fiorentina.svg",
       "match_score": 1.0771
     },
@@ -1336,7 +1336,7 @@
         "AS Roma",
         "Roma"
       ],
-      "file": "assets/team-logos/roma.svg",
+      "file": "logos/assets/team-logos/roma.svg",
       "source_path": "logos/italy/Roma.svg",
       "match_score": 1.12
     },
@@ -1349,7 +1349,7 @@
       "aliases": [
         "Atalanta"
       ],
-      "file": "assets/team-logos/atalanta.svg",
+      "file": "logos/assets/team-logos/atalanta.svg",
       "source_path": "logos/italy/Atalanta.svg",
       "match_score": 1.12
     },
@@ -1362,7 +1362,7 @@
       "aliases": [
         "Atalanta BC"
       ],
-      "file": "assets/team-logos/atalanta_bc.svg",
+      "file": "logos/assets/team-logos/atalanta_bc.svg",
       "source_path": "logos/italy/Atalanta.svg",
       "match_score": 1.0782
     },
@@ -1375,7 +1375,7 @@
       "aliases": [
         "Bologna FC 1909"
       ],
-      "file": "assets/team-logos/bologna_1909.svg",
+      "file": "logos/assets/team-logos/bologna_1909.svg",
       "source_path": "logos/italy/Bologna.svg",
       "match_score": 1.0667
     },
@@ -1388,7 +1388,7 @@
       "aliases": [
         "Cagliari Calcio"
       ],
-      "file": "assets/team-logos/cagliari_calcio.svg",
+      "file": "logos/assets/team-logos/cagliari_calcio.svg",
       "source_path": "logos/italy/Cagliari.svg",
       "match_score": 1.0627
     },
@@ -1401,7 +1401,7 @@
       "aliases": [
         "Como"
       ],
-      "file": "assets/team-logos/como.svg",
+      "file": "logos/assets/team-logos/como.svg",
       "source_path": "logos/italy/Como_1907.svg",
       "match_score": 1.0556
     },
@@ -1414,7 +1414,7 @@
       "aliases": [
         "Como 1907"
       ],
-      "file": "assets/team-logos/como_1907.svg",
+      "file": "logos/assets/team-logos/como_1907.svg",
       "source_path": "logos/italy/Como_1907.svg",
       "match_score": 1.12
     },
@@ -1427,7 +1427,7 @@
       "aliases": [
         "Frosinone Calcio"
       ],
-      "file": "assets/team-logos/frosinone_calcio.svg",
+      "file": "logos/assets/team-logos/frosinone_calcio.svg",
       "source_path": "logos/italy/Frosinone_Calcio.svg",
       "match_score": 1.12
     },
@@ -1440,7 +1440,7 @@
       "aliases": [
         "Genoa CFC"
       ],
-      "file": "assets/team-logos/genoa_cfc.svg",
+      "file": "logos/assets/team-logos/genoa_cfc.svg",
       "source_path": "logos/italy/Genoa.svg",
       "match_score": 1.0644
     },
@@ -1455,7 +1455,7 @@
         "Inter",
         "Inter Milan"
       ],
-      "file": "assets/team-logos/inter_milan.svg",
+      "file": "logos/assets/team-logos/inter_milan.svg",
       "source_path": "logos/italy/Inter.svg",
       "match_score": 1.12
     },
@@ -1470,7 +1470,7 @@
         "Juventus",
         "Juventus FC"
       ],
-      "file": "assets/team-logos/juventus.svg",
+      "file": "logos/assets/team-logos/juventus.svg",
       "source_path": "logos/italy/Juventus.svg",
       "match_score": 1.12
     },
@@ -1483,7 +1483,7 @@
       "aliases": [
         "Parma Calcio 1913"
       ],
-      "file": "assets/team-logos/parma_calcio_1913.svg",
+      "file": "logos/assets/team-logos/parma_calcio_1913.svg",
       "source_path": "logos/italy/Parma.svg",
       "match_score": 1.0435
     },
@@ -1496,7 +1496,7 @@
       "aliases": [
         "SS Lazio"
       ],
-      "file": "assets/team-logos/ss_lazio.svg",
+      "file": "logos/assets/team-logos/ss_lazio.svg",
       "source_path": "logos/italy/Lazio.svg",
       "match_score": 1.07
     },
@@ -1511,7 +1511,7 @@
         "Napoli",
         "SSC Napoli"
       ],
-      "file": "assets/team-logos/napoli.svg",
+      "file": "logos/assets/team-logos/napoli.svg",
       "source_path": "logos/italy/Napoli.svg",
       "match_score": 1.12
     },
@@ -1524,7 +1524,7 @@
       "aliases": [
         "Torino FC"
       ],
-      "file": "assets/team-logos/torino.svg",
+      "file": "logos/assets/team-logos/torino.svg",
       "source_path": "logos/italy/Torino.svg",
       "match_score": 1.12
     },
@@ -1537,7 +1537,7 @@
       "aliases": [
         "US Lecce"
       ],
-      "file": "assets/team-logos/us_lecce.svg",
+      "file": "logos/assets/team-logos/us_lecce.svg",
       "source_path": "logos/italy/Lecce.svg",
       "match_score": 1.07
     },
@@ -1550,7 +1550,7 @@
       "aliases": [
         "US Sassuolo"
       ],
-      "file": "assets/team-logos/us_sassuolo.svg",
+      "file": "logos/assets/team-logos/us_sassuolo.svg",
       "source_path": "logos/italy/Sassuolo.svg",
       "match_score": 1.0782
     },
@@ -1563,7 +1563,7 @@
       "aliases": [
         "Udinese Calcio"
       ],
-      "file": "assets/team-logos/udinese_calcio.svg",
+      "file": "logos/assets/team-logos/udinese_calcio.svg",
       "source_path": "logos/italy/Udinese.svg",
       "match_score": 1.06
     },
@@ -1576,7 +1576,7 @@
       "aliases": [
         "Venezia FC"
       ],
-      "file": "assets/team-logos/venezia.svg",
+      "file": "logos/assets/team-logos/venezia.svg",
       "source_path": "logos/italy/Venezia.svg",
       "match_score": 1.12
     },
@@ -1589,7 +1589,7 @@
       "aliases": [
         "Kairat Almaty"
       ],
-      "file": "assets/team-logos/kairat_almaty.svg",
+      "file": "logos/assets/team-logos/kairat_almaty.svg",
       "source_path": "logos/kazakhstan/Kairat.svg",
       "match_score": 1.0569
     },
@@ -1602,7 +1602,7 @@
       "aliases": [
         "Riga"
       ],
-      "file": "assets/team-logos/riga.svg",
+      "file": "logos/assets/team-logos/riga.svg",
       "source_path": "logos/latvia/Riga.svg",
       "match_score": 1.12
     },
@@ -1615,7 +1615,7 @@
       "aliases": [
         "Kauno Žalgiris"
       ],
-      "file": "assets/team-logos/kauno_zalgiris.svg",
+      "file": "logos/assets/team-logos/kauno_zalgiris.svg",
       "source_path": "logos/lithuania/Kauno_Žalgiris.svg",
       "match_score": 1.12
     },
@@ -1628,7 +1628,7 @@
       "aliases": [
         "AZ Alkmaar"
       ],
-      "file": "assets/team-logos/az_alkmaar.svg",
+      "file": "logos/assets/team-logos/az_alkmaar.svg",
       "source_path": "logos/netherlands/AZ_Alkmaar.svg",
       "match_score": 1.12
     },
@@ -1641,7 +1641,7 @@
       "aliases": [
         "Ajax"
       ],
-      "file": "assets/team-logos/ajax.svg",
+      "file": "logos/assets/team-logos/ajax.svg",
       "source_path": "logos/netherlands/Ajax.svg",
       "match_score": 1.12
     },
@@ -1654,7 +1654,7 @@
       "aliases": [
         "Feyenoord"
       ],
-      "file": "assets/team-logos/feyenoord.svg",
+      "file": "logos/assets/team-logos/feyenoord.svg",
       "source_path": "logos/netherlands/Feyenoord.svg",
       "match_score": 1.12
     },
@@ -1667,7 +1667,7 @@
       "aliases": [
         "NEC Nijmegen"
       ],
-      "file": "assets/team-logos/nec_nijmegen.svg",
+      "file": "logos/assets/team-logos/nec_nijmegen.svg",
       "source_path": "logos/netherlands/N.E.C._Nijmegen.svg",
       "match_score": 1.0486
     },
@@ -1680,7 +1680,7 @@
       "aliases": [
         "PSV Eindhoven"
       ],
-      "file": "assets/team-logos/psv_eindhoven.svg",
+      "file": "logos/assets/team-logos/psv_eindhoven.svg",
       "source_path": "logos/netherlands/PSV_Eindhoven.svg",
       "match_score": 1.12
     },
@@ -1693,7 +1693,7 @@
       "aliases": [
         "Twente"
       ],
-      "file": "assets/team-logos/twente.svg",
+      "file": "logos/assets/team-logos/twente.svg",
       "source_path": "logos/netherlands/Twente.svg",
       "match_score": 1.12
     },
@@ -1706,7 +1706,7 @@
       "aliases": [
         "Bodø/Glimt"
       ],
-      "file": "assets/team-logos/bod_glimt.svg",
+      "file": "logos/assets/team-logos/bod_glimt.svg",
       "source_path": "logos/norway/BodøGlimt.svg",
       "match_score": 1.12
     },
@@ -1719,7 +1719,7 @@
       "aliases": [
         "Brann"
       ],
-      "file": "assets/team-logos/brann.svg",
+      "file": "logos/assets/team-logos/brann.svg",
       "source_path": "logos/norway/Brann.svg",
       "match_score": 1.12
     },
@@ -1732,7 +1732,7 @@
       "aliases": [
         "Lillestrøm"
       ],
-      "file": "assets/team-logos/lillestr_m.svg",
+      "file": "logos/assets/team-logos/lillestr_m.svg",
       "source_path": "logos/norway/Lillestrøm.svg",
       "match_score": 1.12
     },
@@ -1745,7 +1745,7 @@
       "aliases": [
         "Viking"
       ],
-      "file": "assets/team-logos/viking.svg",
+      "file": "logos/assets/team-logos/viking.svg",
       "source_path": "logos/norway/Viking_FK.svg",
       "match_score": 1.12
     },
@@ -1758,7 +1758,7 @@
       "aliases": [
         "Jagiellonia Białystok"
       ],
-      "file": "assets/team-logos/jagiellonia_bia_ystok.svg",
+      "file": "logos/assets/team-logos/jagiellonia_bia_ystok.svg",
       "source_path": "logos/poland/Jagiellonia_Białystok.svg",
       "match_score": 1.12
     },
@@ -1771,7 +1771,7 @@
       "aliases": [
         "Lech Poznań"
       ],
-      "file": "assets/team-logos/lech_poznan.svg",
+      "file": "logos/assets/team-logos/lech_poznan.svg",
       "source_path": "logos/poland/Lech_Poznań.svg",
       "match_score": 1.12
     },
@@ -1784,7 +1784,7 @@
       "aliases": [
         "Benfica"
       ],
-      "file": "assets/team-logos/benfica.svg",
+      "file": "logos/assets/team-logos/benfica.svg",
       "source_path": "logos/portugal/Benfica.svg",
       "match_score": 1.12
     },
@@ -1797,7 +1797,7 @@
       "aliases": [
         "Braga"
       ],
-      "file": "assets/team-logos/braga.svg",
+      "file": "logos/assets/team-logos/braga.svg",
       "source_path": "logos/portugal/SC_Braga.svg",
       "match_score": 1.12
     },
@@ -1810,7 +1810,7 @@
       "aliases": [
         "Porto"
       ],
-      "file": "assets/team-logos/porto.svg",
+      "file": "logos/assets/team-logos/porto.svg",
       "source_path": "logos/portugal/FC_Porto.svg",
       "match_score": 1.12
     },
@@ -1823,7 +1823,7 @@
       "aliases": [
         "Sporting CP"
       ],
-      "file": "assets/team-logos/sporting_cp.svg",
+      "file": "logos/assets/team-logos/sporting_cp.svg",
       "source_path": "logos/portugal/Sporting_CP.svg",
       "match_score": 1.12
     },
@@ -1836,7 +1836,7 @@
       "aliases": [
         "Torreense"
       ],
-      "file": "assets/team-logos/torreense.svg",
+      "file": "logos/assets/team-logos/torreense.svg",
       "source_path": "logos/portugal/S.C.U._Torreense.svg",
       "match_score": 1.068
     },
@@ -1849,7 +1849,7 @@
       "aliases": [
         "Universitatea Craiova"
       ],
-      "file": "assets/team-logos/universitatea_craiova.svg",
+      "file": "logos/assets/team-logos/universitatea_craiova.svg",
       "source_path": "logos/romania/Universitatea_Craiova.svg",
       "match_score": 1.12
     },
@@ -1862,7 +1862,7 @@
       "aliases": [
         "Celtic"
       ],
-      "file": "assets/team-logos/celtic.svg",
+      "file": "logos/assets/team-logos/celtic.svg",
       "source_path": "logos/scotland/Celtic.svg",
       "match_score": 1.12
     },
@@ -1875,7 +1875,7 @@
       "aliases": [
         "Hearts"
       ],
-      "file": "assets/team-logos/hearts.svg",
+      "file": "logos/assets/team-logos/hearts.svg",
       "source_path": "logos/scotland/Hearts.svg",
       "match_score": 1.12
     },
@@ -1888,7 +1888,7 @@
       "aliases": [
         "Red Star Belgrade"
       ],
-      "file": "assets/team-logos/red_star_belgrade.svg",
+      "file": "logos/assets/team-logos/red_star_belgrade.svg",
       "source_path": "logos/serbia/Crvena_Zvezda.svg",
       "match_score": 1.12
     },
@@ -1901,7 +1901,7 @@
       "aliases": [
         "Slovan Bratislava"
       ],
-      "file": "assets/team-logos/slovan_bratislava.svg",
+      "file": "logos/assets/team-logos/slovan_bratislava.svg",
       "source_path": "logos/slovakia/Slovan_Bratislava.svg",
       "match_score": 1.12
     },
@@ -1914,7 +1914,7 @@
       "aliases": [
         "Celje"
       ],
-      "file": "assets/team-logos/celje.svg",
+      "file": "logos/assets/team-logos/celje.svg",
       "source_path": "logos/slovenia/Celje.svg",
       "match_score": 1.12
     },
@@ -1927,7 +1927,7 @@
       "aliases": [
         "Athletic Bilbao"
       ],
-      "file": "assets/team-logos/athletic_bilbao.svg",
+      "file": "logos/assets/team-logos/athletic_bilbao.svg",
       "source_path": "logos/spain/Athletic_Club_Bilbao.svg",
       "match_score": 1.072
     },
@@ -1941,7 +1941,7 @@
       "aliases": [
         "Atlético de Madrid"
       ],
-      "file": "assets/team-logos/atletico_de_madrid.svg",
+      "file": "logos/assets/team-logos/atletico_de_madrid.svg",
       "source_path": "logos/spain/Atletico_Madrid.svg",
       "match_score": 1.12
     },
@@ -1954,7 +1954,7 @@
       "aliases": [
         "CA Osasuna"
       ],
-      "file": "assets/team-logos/ca_osasuna.svg",
+      "file": "logos/assets/team-logos/ca_osasuna.svg",
       "source_path": "logos/spain/Osasuna.svg",
       "match_score": 1.076
     },
@@ -1967,7 +1967,7 @@
       "aliases": [
         "Celta Vigo"
       ],
-      "file": "assets/team-logos/celta_vigo.svg",
+      "file": "logos/assets/team-logos/celta_vigo.svg",
       "source_path": "logos/spain/Celta.svg",
       "match_score": 1.06
     },
@@ -1980,7 +1980,7 @@
       "aliases": [
         "Celta de Vigo"
       ],
-      "file": "assets/team-logos/celta_de_vigo.svg",
+      "file": "logos/assets/team-logos/celta_de_vigo.svg",
       "source_path": "logos/spain/Celta.svg",
       "match_score": 1.0508
     },
@@ -1993,7 +1993,7 @@
       "aliases": [
         "Deportivo A Coruña"
       ],
-      "file": "assets/team-logos/deportivo_a_coruna.svg",
+      "file": "logos/assets/team-logos/deportivo_a_coruna.svg",
       "source_path": "logos/spain/Deportivo_La_Coruña.svg",
       "match_score": 1.093
     },
@@ -2006,7 +2006,7 @@
       "aliases": [
         "Deportivo Alavés"
       ],
-      "file": "assets/team-logos/deportivo_alaves.svg",
+      "file": "logos/assets/team-logos/deportivo_alaves.svg",
       "source_path": "logos/spain/Deportivo_Alavés.svg",
       "match_score": 1.12
     },
@@ -2019,7 +2019,7 @@
       "aliases": [
         "Elche CF"
       ],
-      "file": "assets/team-logos/elche.svg",
+      "file": "logos/assets/team-logos/elche.svg",
       "source_path": "logos/spain/Elche.svg",
       "match_score": 1.12
     },
@@ -2034,7 +2034,7 @@
         "Barcelona",
         "FC Barcelona"
       ],
-      "file": "assets/team-logos/barcelona.svg",
+      "file": "logos/assets/team-logos/barcelona.svg",
       "source_path": "logos/spain/Barcelona.svg",
       "match_score": 1.12
     },
@@ -2049,7 +2049,7 @@
         "Getafe",
         "Getafe CF"
       ],
-      "file": "assets/team-logos/getafe.svg",
+      "file": "logos/assets/team-logos/getafe.svg",
       "source_path": "logos/spain/Getafe.svg",
       "match_score": 1.12
     },
@@ -2062,7 +2062,7 @@
       "aliases": [
         "Levante UD"
       ],
-      "file": "assets/team-logos/levante_ud.svg",
+      "file": "logos/assets/team-logos/levante_ud.svg",
       "source_path": "logos/spain/Levante.svg",
       "match_score": 1.076
     },
@@ -2075,7 +2075,7 @@
       "aliases": [
         "Málaga CF"
       ],
-      "file": "assets/team-logos/malaga.svg",
+      "file": "logos/assets/team-logos/malaga.svg",
       "source_path": "logos/spain/Málaga.svg",
       "match_score": 1.12
     },
@@ -2088,7 +2088,7 @@
       "aliases": [
         "RCD Espanyol Barcelona"
       ],
-      "file": "assets/team-logos/rcd_espanyol_barcelona.svg",
+      "file": "logos/assets/team-logos/rcd_espanyol_barcelona.svg",
       "source_path": "logos/spain/Barcelona.svg",
       "match_score": 1.0527
     },
@@ -2101,7 +2101,7 @@
       "aliases": [
         "Racing Santander"
       ],
-      "file": "assets/team-logos/racing_santander.svg",
+      "file": "logos/assets/team-logos/racing_santander.svg",
       "source_path": "logos/spain/Racing_Santander.svg",
       "match_score": 1.12
     },
@@ -2114,7 +2114,7 @@
       "aliases": [
         "Rayo Vallecano"
       ],
-      "file": "assets/team-logos/rayo_vallecano.svg",
+      "file": "logos/assets/team-logos/rayo_vallecano.svg",
       "source_path": "logos/spain/Rayo_Vallecano.svg",
       "match_score": 1.12
     },
@@ -2127,7 +2127,7 @@
       "aliases": [
         "Real Betis"
       ],
-      "file": "assets/team-logos/real_betis.svg",
+      "file": "logos/assets/team-logos/real_betis.svg",
       "source_path": "logos/spain/Real_Betis.svg",
       "match_score": 1.12
     },
@@ -2140,7 +2140,7 @@
       "aliases": [
         "Real Betis Balompié"
       ],
-      "file": "assets/team-logos/real_betis_balompie.svg",
+      "file": "logos/assets/team-logos/real_betis_balompie.svg",
       "source_path": "logos/spain/Real_Betis.svg",
       "match_score": 1.0621
     },
@@ -2154,7 +2154,7 @@
       "aliases": [
         "Real Madrid"
       ],
-      "file": "assets/team-logos/real_madrid.svg",
+      "file": "logos/assets/team-logos/real_madrid.svg",
       "source_path": "logos/spain/Real_Madrid.svg",
       "match_score": 1.12
     },
@@ -2168,7 +2168,7 @@
       "aliases": [
         "Real Sociedad"
       ],
-      "file": "assets/team-logos/real_sociedad.svg",
+      "file": "logos/assets/team-logos/real_sociedad.svg",
       "source_path": "logos/spain/Real_Sociedad.svg",
       "match_score": 1.12
     },
@@ -2181,7 +2181,7 @@
       "aliases": [
         "Sevilla FC"
       ],
-      "file": "assets/team-logos/sevilla.svg",
+      "file": "logos/assets/team-logos/sevilla.svg",
       "source_path": "logos/spain/Sevilla.svg",
       "match_score": 1.12
     },
@@ -2194,7 +2194,7 @@
       "aliases": [
         "Valencia CF"
       ],
-      "file": "assets/team-logos/valencia.svg",
+      "file": "logos/assets/team-logos/valencia.svg",
       "source_path": "logos/spain/Valencia.svg",
       "match_score": 1.12
     },
@@ -2209,7 +2209,7 @@
         "Villarreal",
         "Villarreal CF"
       ],
-      "file": "assets/team-logos/villarreal.svg",
+      "file": "logos/assets/team-logos/villarreal.svg",
       "source_path": "logos/spain/Villarreal.svg",
       "match_score": 1.12
     },
@@ -2222,7 +2222,7 @@
       "aliases": [
         "Mjällby"
       ],
-      "file": "assets/team-logos/mjallby.svg",
+      "file": "logos/assets/team-logos/mjallby.svg",
       "source_path": "logos/sweden/Mjällby.svg",
       "match_score": 1.12
     },
@@ -2235,7 +2235,7 @@
       "aliases": [
         "Lugano"
       ],
-      "file": "assets/team-logos/lugano.svg",
+      "file": "logos/assets/team-logos/lugano.svg",
       "source_path": "logos/switzerland/Lugano.svg",
       "match_score": 1.12
     },
@@ -2248,7 +2248,7 @@
       "aliases": [
         "Thun"
       ],
-      "file": "assets/team-logos/thun.svg",
+      "file": "logos/assets/team-logos/thun.svg",
       "source_path": "logos/switzerland/Thun.svg",
       "match_score": 1.12
     },
@@ -2261,7 +2261,7 @@
       "aliases": [
         "Beşiktaş"
       ],
-      "file": "assets/team-logos/besiktas.svg",
+      "file": "logos/assets/team-logos/besiktas.svg",
       "source_path": "logos/turkey/Beşiktaş.svg",
       "match_score": 1.12
     },
@@ -2274,7 +2274,7 @@
       "aliases": [
         "Fenerbahçe"
       ],
-      "file": "assets/team-logos/fenerbahce.svg",
+      "file": "logos/assets/team-logos/fenerbahce.svg",
       "source_path": "logos/turkey/Fenerbahçe.svg",
       "match_score": 1.12
     },
@@ -2287,7 +2287,7 @@
       "aliases": [
         "Galatasaray"
       ],
-      "file": "assets/team-logos/galatasaray.svg",
+      "file": "logos/assets/team-logos/galatasaray.svg",
       "source_path": "logos/turkey/Galatasaray.svg",
       "match_score": 1.12
     },
@@ -2300,7 +2300,7 @@
       "aliases": [
         "Trabzonspor"
       ],
-      "file": "assets/team-logos/trabzonspor.svg",
+      "file": "logos/assets/team-logos/trabzonspor.svg",
       "source_path": "logos/turkey/Trabzonspor.svg",
       "match_score": 1.12
     },
@@ -2313,7 +2313,7 @@
       "aliases": [
         "Shakhtar Donetsk"
       ],
-      "file": "assets/team-logos/shakhtar_donetsk.svg",
+      "file": "logos/assets/team-logos/shakhtar_donetsk.svg",
       "source_path": "logos/ukraine/Shakhtar.svg",
       "match_score": 1.06
     }
