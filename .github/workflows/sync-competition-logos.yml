@@ -1,0 +1,38 @@
+name: Sync ECOBET competition logos
+
+on:
+  push:
+    branches:
+      - competition-logos-2026-27
+    paths:
+      - logos/scripts/sync_competition_logos.py
+      - .github/workflows/sync-competition-logos.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: competition-logos-2026-27
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download competition logos
+        run: python logos/scripts/sync_competition_logos.py
+      - name: Commit competition logo library
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add logos/assets/competition-logos
+          if git diff --cached --quiet; then
+            echo "No competition logo changes."
+            exit 0
+          fi
+          git commit -m "Add 2026-27 competition logo library"
+          git push origin HEAD:competition-logos-2026-27
