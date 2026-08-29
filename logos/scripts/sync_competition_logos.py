@@ -65,6 +65,7 @@ COMPETITIONS = [
         'file': 'europa-league.svg',
         'source': 'wikimedia_commons',
         'source_file': 'UEFA_Europa_League_logo_(2024_version).svg',
+        'source_url': 'https://upload.wikimedia.org/wikipedia/commons/1/1b/UEFA_Europa_League_logo_%282024_version%29.svg',
         'aliases': ['UEFA Europa League', 'Europa League', 'UEL'],
     },
     {
@@ -73,6 +74,7 @@ COMPETITIONS = [
         'file': 'conference-league.svg',
         'source': 'wikimedia_commons',
         'source_file': 'UEFA_Conference_League_logo_(2024_version).svg',
+        'source_url': 'https://upload.wikimedia.org/wikipedia/commons/2/26/UEFA_Conference_League_logo_%282024_version%29.svg',
         'aliases': ['UEFA Conference League', 'Conference League', 'UECL'],
     },
 ]
@@ -92,7 +94,7 @@ def main() -> None:
     unresolved = []
 
     for competition in COMPETITIONS:
-        url = commons_url(competition['source_file'])
+        url = competition.get('source_url') or commons_url(competition['source_file'])
         try:
             data = fetch(url)
             head = data[:1000].lower()
