@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "record_type": "ecobet_competition_logo_manifest",
+  "season": "2026/27",
+  "counts": {
+    "requested": 8,
+    "resolved": 8,
+    "unresolved": 0
+  },
+  "competitions": [
+    {
+      "id": "ENG-Premier League",
+      "name": "Premier League",
+      "file": "premier-league.svg",
+      "source": "wikimedia_commons",
+      "source_file": "Premier_League.svg",
+      "aliases": [
+        "Premier League",
+        "ENG-Premier League",
+        "EPL"
+      ],
+      "path": "logos/assets/competition-logos/premier-league.svg",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Premier_League.svg"
+    },
+    {
+      "id": "GER-Bundesliga",
+      "name": "Bundesliga",
+      "file": "bundesliga.svg",
+      "source": "wikimedia_commons",
+      "source_file": "Bundesliga_logo.svg",
+      "aliases": [
+        "Bundesliga",
+        "GER-Bundesliga"
+      ],
+      "path": "logos/assets/competition-logos/bundesliga.svg",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bundesliga_logo.svg"
+    },
+    {
+      "id": "ESP-La Liga",
+      "name": "La Liga",
+      "file": "la-liga.svg",
+      "source": "wikimedia_commons",
+      "source_file": "LaLiga_2023_Horizontal_Logo.svg",
+      "aliases": [
+        "La Liga",
+        "LaLiga",
+        "ESP-La Liga"
+      ],
+      "path": "logos/assets/competition-logos/la-liga.svg",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/LaLiga_2023_Horizontal_Logo.svg"
+    },
+    {
+      "id": "ITA-Serie A",
+      "name": "Serie A",
+      "file": "serie-a.svg",
+      "source": "wikimedia_commons",
+      "source_file": "Serie_A.svg",
+      "aliases": [
+        "Serie A",
+        "ITA-Serie A"
+      ],
+      "path": "logos/assets/competition-logos/serie-a.svg",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Serie_A.svg"
+    },
+    {
+      "id": "FRA-Ligue 1",
+      "name": "Ligue 1",
+      "file": "ligue-1.svg",
+      "source": "wikimedia_commons",
+      "source_file": "Ligue_1_McDonald's_logo.svg",
+      "aliases": [
+        "Ligue 1",
+        "FRA-Ligue 1",
+        "Ligue 1 McDonald's"
+      ],
+      "path": "logos/assets/competition-logos/ligue-1.svg",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ligue_1_McDonald%27s_logo.svg"
+    },
+    {
+      "id": "UEFA-Champions League",
+      "name": "UEFA Champions League",
+      "file": "champions-league.svg",
+      "source": "uefa_official",
+      "source_url": "https://img.uefa.com/imgml/uefacom/ucl/logo_light.svg",
+      "aliases": [
+        "UEFA Champions League",
+        "Champions League",
+        "UCL"
+      ],
+      "path": "logos/assets/competition-logos/champions-league.svg"
+    },
+    {
+      "id": "UEFA-Europa League",
+      "name": "UEFA Europa League",
+      "file": "europa-league.svg",
+      "source": "uefa_official",
+      "source_url": "https://img.uefa.com/imgml/uefacom/uel/logo_light.svg",
+      "aliases": [
+        "UEFA Europa League",
+        "Europa League",
+        "UEL"
+      ],
+      "path": "logos/assets/competition-logos/europa-league.svg"
+    },
+    {
+      "id": "UEFA-Conference League",
+      "name": "UEFA Conference League",
+      "file": "conference-league.svg",
+      "source": "uefa_official",
+      "source_url": "https://img.uefa.com/imgml/uefacom/uecl/logo_light.svg",
+      "aliases": [
+        "UEFA Conference League",
+        "Conference League",
+        "UECL"
+      ],
+      "path": "logos/assets/competition-logos/conference-league.svg"
+    }
+  ]
+}
