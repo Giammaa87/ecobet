@@ -131,9 +131,10 @@ def main() -> None:
         json.dumps(unresolved, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
     )
 
-    if unresolved:
-        raise SystemExit(json.dumps(manifest['counts']))
     print(json.dumps(manifest['counts']))
+    if unresolved:
+        print(json.dumps(unresolved, ensure_ascii=False, indent=2))
+        raise SystemExit(1)
 
 
 if __name__ == '__main__':
