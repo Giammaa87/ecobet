@@ -1,0 +1,66 @@
+name: ECOBET one-shot card paths patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/ecobet-card-paths-one-shot.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/show-decision-paths-on-cards
+          fetch-depth: 0
+
+      - name: Patch match card decision paths
+        shell: python
+        run: |
+          from pathlib import Path
+
+          p = Path("index.html")
+          s = p.read_text(encoding="utf-8")
+
+          css_anchor = '.decision b{color:var(--accent);font-size:.95rem}.match-card.nsp .decision b{color:var(--warn)}'
+          css_add = '.decision-copy{min-width:0;flex:1}.card-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:9px}.card-path{min-width:0;padding:7px 8px;border:1px solid rgba(84,127,150,.22);border-radius:9px;background:rgba(5,15,21,.28)}.card-path small{display:block;color:var(--dim);font-size:.53rem;letter-spacing:.08em;text-transform:uppercase}.card-path b{display:block;margin-top:3px;color:var(--text);font-size:.67rem;line-height:1.25;overflow-wrap:anywhere}'
+          if s.count(css_anchor) != 1:
+              raise SystemExit(f"CSS anchor count = {s.count(css_anchor)}, expected 1")
+          s = s.replace(css_anchor, css_anchor + css_add, 1)
+
+          start = s.index('function matchCard(m,i){')
+          end = s.index('\nfunction openDetail', start)
+          old = s[start:end]
+          if 'ECOBET Decision' not in old or 'card-paths' in old:
+              raise SystemExit('Unexpected matchCard source; refusing to patch')
+
+          new = '''function matchCard(m,i){const nsp=isNSP(m),f=nsp?'NO STABLE PREDICTION':fav(m),bands=teamScoreBands(m);return `<article class="match-card panel ${nsp?'nsp':''}" data-i="${i}" title="Matchbericht öffnen"><div><div class="match-top"><span>${competitionEntity(m.competition_name||m.competition,'sm')}</span><span>${show(m.kickoff)}</span></div><div class="match-teams">${teamEntity(m.home,'sm')} <span style="color:var(--dim)">–</span> ${teamEntity(m.away,'sm')}</div></div><div class="decision"><div class="decision-copy"><div><small>${nsp?'ECOBET Status':'FAVOURITE'}</small><b>${show(f)}</b></div>${!nsp?`<div class="card-paths">${[['SAFE',m.safe],['BALANCED',m.balanced],['AGGRESSIVE',m.aggressive]].map(([k,v])=>`<div class="card-path"><small>${k}</small><b>${show(v)}</b></div>`).join('')}</div>`:''}</div><span class="chip ${chipClass(nsp?'YELLOW':m.favourite_robustness)}" title="Robustheit der Favourite-Entscheidung">${nsp?'NSP':show(m.favourite_robustness||m.robustness)}</span></div><div class="chips"><span class="chip blue" title="World Type">${show(m.world_type)}</span><span class="chip ${chipClass(m.favourite_cluster_coverage)}" title="Cluster Coverage">Cluster ${show(m.favourite_cluster_coverage)}</span><span class="chip" title="Match Score Band ist Diagnose, kein zwingender Wettmarkt">Match ${show(scoreBand(m))} Tore</span>${present(bands.home)?`<span class="chip">${esc(m.home)} ${esc(bands.home)}</span>`:''}${present(bands.away)?`<span class="chip">${esc(m.away)} ${esc(bands.away)}</span>`:''}</div></article>`}'''
+          s = s[:start] + new + s[end:]
+
+          if s.count('class="card-paths"') != 1:
+              raise SystemExit('card-paths verification failed')
+          if "[['SAFE',m.safe],['BALANCED',m.balanced],['AGGRESSIVE',m.aggressive]]" not in s:
+              raise SystemExit('decision path verification failed')
+
+          p.write_text(s, encoding="utf-8")
+
+      - name: Validate and commit branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          grep -F 'class="card-paths"' index.html >/dev/null
+          grep -F "[['SAFE',m.safe],['BALANCED',m.balanced],['AGGRESSIVE',m.aggressive]]" index.html >/dev/null
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No change required"
+            exit 0
+          fi
+          git commit -m "Show decision paths on match cards"
+          git push origin HEAD:fix/show-decision-paths-on-cards
