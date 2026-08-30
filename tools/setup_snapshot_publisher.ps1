@@ -17,9 +17,22 @@ function Run-Git {
         [Parameter(Mandatory=$true)][string]$WorkingDirectory,
         [Parameter(Mandatory=$true)][string[]]$Arguments
     )
-    $out = & git -C $WorkingDirectory @Arguments 2>&1
-    if ($LASTEXITCODE -ne 0) {
-        throw "git $($Arguments -join ' ') failed:`n$($out -join "`n")"
+
+    # Windows PowerShell 5.1 can surface normal native stderr output (for
+    # example Git progress messages) as NativeCommandError when the caller
+    # uses $ErrorActionPreference='Stop'. For native processes the exit code,
+    # not the stderr stream, is authoritative.
+    $previousErrorActionPreference = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    try {
+        $out = & git -C $WorkingDirectory @Arguments 2>&1
+        $exitCode = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $previousErrorActionPreference
+    }
+
+    if ($exitCode -ne 0) {
+        throw "git $($Arguments -join ' ') failed (exit $exitCode):`n$($out -join "`n")"
     }
     return $out
 }
@@ -38,9 +51,18 @@ New-Item -ItemType Directory -Path $publisherParent -Force | Out-Null
 
 if (-not (Test-Path $PublisherRepo)) {
     Write-Host "Creating dedicated publisher clone: $PublisherRepo"
-    $cloneOut = & git clone --branch main --single-branch $Remote $PublisherRepo 2>&1
-    if ($LASTEXITCODE -ne 0) {
-        throw "git clone failed:`n$($cloneOut -join "`n")"
+
+    $previousErrorActionPreference = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    try {
+        $cloneOut = & git clone --branch main --single-branch $Remote $PublisherRepo 2>&1
+        $cloneExitCode = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $previousErrorActionPreference
+    }
+
+    if ($cloneExitCode -ne 0) {
+        throw "git clone failed (exit $cloneExitCode):`n$($cloneOut -join "`n")"
     }
 } elseif (-not (Test-Path (Join-Path $PublisherRepo '.git'))) {
     throw "Publisher path exists but is not a Git repository: $PublisherRepo"
