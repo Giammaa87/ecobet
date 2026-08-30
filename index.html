@@ -94,13 +94,17 @@ footer{padding:24px 0 42px;color:var(--dim);font-size:.72rem}
    ========================================================= */
 .logo-fallback{display:grid;place-items:center;position:relative;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(244,249,252,.96));border:1px solid rgba(255,255,255,.88);font-size:.48rem;font-weight:900;color:#183446;flex:0 0 auto;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.22),0 0 0 1px rgba(255,255,255,.16)}.logo-fallback>span,.logo-fallback>.entity-logo{grid-area:1/1}.logo-fallback>span{transition:opacity .18s ease}
 .entity-logo{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.18)) saturate(1.08) brightness(1.02);padding:3px;box-sizing:border-box}
-.team-logo-sm,.competition-logo-sm{width:30px;height:30px}.team-logo-md,.competition-logo-md{width:40px;height:40px}.team-logo-lg{width:56px;height:56px}.competition-logo-sm{width:32px;height:32px}.competition-logo-md{width:42px;height:42px}
-.team-entity,.competition-entity{display:inline-flex;align-items:center;gap:9px;vertical-align:middle;min-width:0;line-height:1.1}.team-entity>span:last-child,.competition-entity>span:last-child{min-width:0;display:inline-block;line-height:1.12}
+.team-logo-sm{width:28px;height:28px}.team-logo-md{width:34px;height:34px}.team-logo-lg{width:48px;height:48px}.competition-logo-sm{width:32px;height:32px}.competition-logo-md{width:42px;height:42px}
+.team-entity,.competition-entity{display:inline-flex;align-items:center;gap:8px;vertical-align:middle;min-width:0;line-height:1.1}.team-entity>span:last-child,.competition-entity>span:last-child{min-width:0;display:inline-block;line-height:1.12}
 .match-teams .team-entity{font-size:inherit}.match-teams{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.match-teams .team-entity,.radar-match .team-entity,.topread-teams .team-entity{align-items:center}.match-teams .team-entity>span:last-child,.radar-match .team-entity>span:last-child{line-height:1.05}
 .match-top .competition-entity,.radar-head .competition-entity{font-size:inherit;color:#e6f1f8}.filter-chip .competition-entity{gap:6px}.filter-chip .competition-logo-sm{width:24px;height:24px}
 .detail-head h2{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.detail-head .competition-entity{color:var(--muted)}
-.team-entity .logo-fallback{background:transparent;border:0;box-shadow:none;border-radius:0;overflow:visible;color:#d8e7f3}
-.team-entity .entity-logo{padding:0;filter:drop-shadow(0 3px 8px rgba(0,0,0,.22)) saturate(1.06) brightness(1.02)}
+.team-entity .logo-fallback{background:transparent;border:0;box-shadow:none;border-radius:0;overflow:visible;color:#d8e7f3;display:inline-flex;align-items:center;justify-content:center}
+.team-entity .logo-fallback.team-logo-sm{width:28px;height:28px;min-width:28px;min-height:28px}
+.team-entity .logo-fallback.team-logo-md{width:34px;height:34px;min-width:34px;min-height:34px}
+.team-entity .logo-fallback.team-logo-lg{width:48px;height:48px;min-width:48px;min-height:48px}
+.team-entity .entity-logo{width:100%;height:100%;object-fit:contain;object-position:center;padding:2px;box-sizing:border-box;filter:drop-shadow(0 2px 6px rgba(0,0,0,.20)) saturate(1.04) brightness(1.01)}
 .team-entity .logo-fallback>span{background:none;border:0;padding:0;min-width:auto;min-height:auto;display:block}
 .competition-entity .logo-fallback{background:linear-gradient(180deg,rgba(255,255,255,.995),rgba(247,250,252,.98));border-color:rgba(255,255,255,.96);box-shadow:0 12px 28px rgba(0,0,0,.24),0 0 0 1px rgba(255,255,255,.18),0 0 18px rgba(255,255,255,.08)}
 .match-top .competition-entity .logo-fallback,.radar-head .competition-entity .logo-fallback,.mom-league .competition-entity .logo-fallback,.topread-comp .competition-entity .logo-fallback{transform:scale(1.06)}
