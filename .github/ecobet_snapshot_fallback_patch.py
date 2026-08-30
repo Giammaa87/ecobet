@@ -32,9 +32,13 @@ new_render = r'''function renderDataFabric(m,fs){const current=renderSignalBlock
 s = s[:start] + new_render + s[end:]
 
 old_team = '<details><summary>Team E-Books</summary><div class="inside"><div class="detail-grid">${teamBox(te.home,m.home)}${teamBox(te.away,m.away)}</div></div></details>'
-if s.count(old_team) != 1:
-    raise SystemExit(f"team details fragment count={s.count(old_team)}")
-s = s.replace(old_team, '${renderTeamEbookSection(m,te)}', 1)
+detail_start = s.index("function detailHTML(m){")
+detail_end = s.index("\nfunction deepMetric", detail_start)
+detail = s[detail_start:detail_end]
+if detail.count(old_team) != 1:
+    raise SystemExit(f"live detail team fragment count={detail.count(old_team)}")
+detail = detail.replace(old_team, '${renderTeamEbookSection(m,te)}', 1)
+s = s[:detail_start] + detail + s[detail_end:]
 
 start = s.index("function openDetail(i,sync=true){")
 end = s.index("\n$('#detailClose')", start)
