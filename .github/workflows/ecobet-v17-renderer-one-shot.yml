@@ -29,13 +29,36 @@ jobs:
           grep -F 'function renderDataFabric(m,fs)' index.html >/dev/null
           grep -F 'Data Fabric · Signalblöcke / Compatibility' index.html >/dev/null
           python - <<'PY'
+          from html.parser import HTMLParser
           from pathlib import Path
-          s = Path('index.html').read_text(encoding='utf-8')
-          a = s.rfind('<script>')
-          b = s.rfind('</script>')
-          if a < 0 or b <= a:
-              raise SystemExit('script block not found')
-          Path('/tmp/ecobet-inline.js').write_text(s[a+8:b], encoding='utf-8')
+
+          class ScriptParser(HTMLParser):
+              def __init__(self):
+                  super().__init__(convert_charrefs=False)
+                  self.in_script = False
+                  self.current = []
+                  self.scripts = []
+              def handle_starttag(self, tag, attrs):
+                  if tag.lower() == 'script':
+                      self.in_script = True
+                      self.current = []
+              def handle_endtag(self, tag):
+                  if tag.lower() == 'script' and self.in_script:
+                      self.scripts.append(''.join(self.current))
+                      self.in_script = False
+              def handle_data(self, data):
+                  if self.in_script:
+                      self.current.append(data)
+
+          parser = ScriptParser()
+          parser.feed(Path('index.html').read_text(encoding='utf-8'))
+          scripts = [x for x in parser.scripts if x.strip()]
+          if not scripts:
+              raise SystemExit('no inline scripts found')
+          app = max(scripts, key=len)
+          if 'function renderDataFabric(m,fs)' not in app:
+              raise SystemExit('patched app script not found')
+          Path('/tmp/ecobet-inline.js').write_text(app, encoding='utf-8')
           PY
           node --check /tmp/ecobet-inline.js
           git config user.name "github-actions[bot]"
