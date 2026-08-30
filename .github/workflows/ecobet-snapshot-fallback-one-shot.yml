@@ -1,0 +1,51 @@
+name: ECOBET one-shot snapshot team-data fallback
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/ecobet-snapshot-fallback-one-shot.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/snapshot-team-data-fallback
+          fetch-depth: 0
+
+      - name: Apply guarded snapshot fallback patch
+        run: |
+          set -euo pipefail
+          python .github/ecobet_snapshot_fallback_patch.py
+          rm .github/ecobet_snapshot_fallback_patch.py
+          git diff --check
+          grep -F 'async function hydrateMatchSnapshot(m)' index.html >/dev/null
+          grep -F 'Team E-Books · Snapshot Fallback' index.html >/dev/null
+          grep -F 'return renderSnapshotFabric(m)' index.html >/dev/null
+
+      - name: Validate app JavaScript
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('index.html').read_text(encoding='utf-8')
+          marker='<script>\nconst BASE ='
+          a=s.index(marker)+len('<script>\n')
+          b=s.index('</script>',a)
+          Path('/tmp/ecobet-app.js').write_text(s[a:b],encoding='utf-8')
+          PY
+          node --check /tmp/ecobet-app.js
+
+      - name: Commit patch branch
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/ecobet_snapshot_fallback_patch.py
+          git commit -m "Load snapshot team data when run E-Books are absent"
+          git push origin HEAD:fix/snapshot-team-data-fallback
