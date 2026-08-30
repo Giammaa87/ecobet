@@ -1,0 +1,91 @@
+name: ECOBET one-shot Data Fabric v1.7 renderer patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/ecobet-v17-renderer-one-shot.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/data-fabric-v17-renderer
+          fetch-depth: 0
+
+      - name: Patch Team E-Books and Data Fabric renderer
+        shell: python
+        run: |
+          from pathlib import Path
+
+          p = Path("index.html")
+          s = p.read_text(encoding="utf-8")
+
+          css_anchor = '.df-no-evidence{color:var(--dim);font-style:italic}.tech summary .priority{color:var(--accent);font-size:.62rem;margin-left:7px}'
+          css_add = '.tb-signals{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}.tb-signal{font-size:.58rem;border:1px solid rgba(84,127,150,.28);border-radius:8px;padding:5px 7px;color:var(--muted);background:rgba(0,0,0,.12)}.tb-signal b{color:var(--text);margin-left:3px}.df-section-title{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:14px 0 8px}.df-section-title h4{margin:0}.df-mode-note{padding:10px 11px;border:1px solid rgba(57,189,248,.22);border-radius:10px;background:rgba(57,189,248,.05);color:var(--muted);font-size:.7rem;line-height:1.45}.df-legacy-note{padding:9px 10px;margin:9px 0;border-left:2px solid var(--dim);background:rgba(4,14,20,.24);color:var(--dim);font-size:.68rem}.sb-code{font:850 .72rem/1 var(--mono);color:var(--accent)}.sb-name{display:block;margin-top:4px;color:var(--muted);font-size:.66rem}.df-compat{margin-top:12px;border-top:1px solid rgba(84,127,150,.18);padding-top:10px}.df-compat summary{padding:8px 0!important;color:var(--muted);font-size:.72rem}.tb-empty{color:var(--dim);font-size:.72rem;padding:8px 0}'
+          if s.count(css_anchor) != 1:
+              raise SystemExit(f"CSS anchor count = {s.count(css_anchor)}, expected 1")
+          s = s.replace(css_anchor, css_anchor + css_add, 1)
+
+          start = s.index('function teamBox(t,name){')
+          end = s.index('\nfunction candidateTable(m){', start)
+          old = s[start:end]
+          if 'renderFieldStatus' not in old or 'fieldRepairEvidence' not in old:
+              raise SystemExit('Unexpected TeamBook/Data Fabric renderer source; refusing to patch')
+
+          new = r'''const SB_NAMES={SB01:'Fixture / Competition Context',SB02:'Relative Strength Baseline',SB03:'Attacking Process',SB04:'Defensive Process',SB05:'Territorial Pressure & Control',SB06:'Home/Away Role Structure',SB07:'Form, Trajectory & Baseline Divergence',SB08:'Finishing Efficiency & Regression',SB09:'Goal / Result Distribution Profile',SB10:'Match Phase Profile',SB11:'Discipline & Defensive Style',SB12:'Set-Piece / Corner Pressure',SB13:'Rest, Load & Match Density',SB14:'H2H & Structural Context',SB15:'Data Quality, PIT & Lineage',SB16:'Entity / Team Mapping & Coverage',SB17:'Cross-Signal Layer'};
+const DF_NAMES={DF01:'Fixture Identity / Kickoff',DF02:'Wettbewerb / Phase / Tabelle',DF03:'Saisonprofil',DF04:'Form L5/L10',DF05:'Heim/Auswärts',DF06:'Tore / Ergebnisprofile',DF07:'xG / xGA',DF08:'Shots / SOT',DF09:'1H / 2H Phasen',DF10:'Belastung / Rest',DF11:'Teamstatus',DF12:'Trainer / Regime',DF13:'H2H',DF14:'Team/Liga DNA',DF15:'Entity Registry',DF16:'Quality / Lineage'};
+function firstObject(...xs){for(const x of xs){const o=obj(x);if(Object.keys(o).length)return o}return {}}
+function statusText(v){if(typeof v==='string'||typeof v==='number'||typeof v==='boolean')return v;const o=obj(v);return o.status??o.readiness??o.coverage??o.state??o.value??o.result??o.trust??'NOT_AVAILABLE'}
+function compactEvidence(v){if(v===null||v===undefined||v==='')return '';if(Array.isArray(v))return v.map(compactEvidence).filter(Boolean).join(' · ');if(typeof v==='object')return Object.entries(v).slice(0,10).map(([k,x])=>`${k}: ${typeof x==='object'?compactEvidence(x):show(x)}`).filter(Boolean).join(' · ');return String(v)}
+function teamSignalMap(t){t=obj(t);return firstObject(t.signal_block_status_map,t.signal_blocks,obj(t.data_quality).signal_block_status_map,obj(t.data_fabric).signal_block_status_map)}
+function teamBox(t,name){t=obj(t);if(!Object.keys(t).length)return `<div class="teambook-card panel"><div class="teambook-head"><div><h4>${show(name)}</h4><small>Team E-Book</small></div></div><div class="tb-empty">In diesem gespeicherten Run sind für dieses Team keine Team-E-Book-Daten enthalten.</div></div>`;const sp=obj(t.season_profile),dq=obj(t.data_quality),recent=t.recent_form?.value||t.L5||t.current_results;const xg=teamMetric(t,'xg'),xga=teamMetric(t,'xga'),ppg=teamMetric(t,'ppg'),gf=teamMetric(t,'gf'),ga=teamMetric(t,'ga'),completeness=t.team_data_completeness||dq.team_data_completeness||teamMetric(t,'completeness'),trust=t.team_data_trust||dq.team_data_trust||dq.trust||t.trust,featureCount=t.feature_schema_observed_size??t.snapshot_feature_count_declared??t.feature_count,vectorStatus=t.feature_vector_status??t.raw_core_status,schemaAudit=t.schema_audit_status??t.feature_schema_audit_status,mapping=t.current_season_mapping_status??dq.current_season_mapping_status,entityConfidence=t.entity_confidence??t.entity_mapping_confidence;const metrics=[tbMetric('xG',xg,true),tbMetric('xGA',xga,true),tbMetric('PPG',ppg),present(gf)||present(ga)?tbMetric('GF / GA',`${present(gf)?gf:'—'} / ${present(ga)?ga:'—'}`):'',tbMetric('Features',featureCount),tbMetric('Vector',vectorStatus),tbMetric('Schema Audit',schemaAudit),tbMetric('Completeness',completeness),tbMetric('Trust',trust)].filter(Boolean).join('');const sm=teamSignalMap(t),signals=Object.entries(sm).sort(([a],[b])=>a.localeCompare(b,undefined,{numeric:true})).map(([k,v])=>`<span class="tb-signal" title="${esc(SB_NAMES[k]||k)}">${esc(k)} <b>${show(statusText(v))}</b></span>`).join('');const sourceLineage=compactEvidence(t.source_lineage||dq.source_lineage),fallbacks=compactEvidence(t.local_fallback_actions||dq.local_fallback_actions),repairs=compactEvidence(t.residual_repair_actions||dq.residual_repair_actions),conflicts=compactEvidence(t.conflicts||dq.conflicts);const subtitle=[t.role,sp.season||t.season||t.season_sample,t.competition].filter(present).map(show).join(' · ');return `<div class="teambook-card panel"><div class="teambook-head"><div><h4>${show(t.team||t.team_name||name)}</h4><small>${subtitle||'Point-in-time Team E-Book'}</small></div>${present(trust)?`<span class="chip ${chipClass(trust)}">${show(trust)}</span>`:''}</div>${metrics?`<div class="tb-metrics">${metrics}</div>`:''}<div class="tb-lines">${tbLine('Current Sample',t.current_sample_class)}${tbLine('L5 / L10',t.l5_l10)}${tbLine('Role Split',t.role_split)}${tbLine('Aktuelle Resultate',recent)}${tbLine('Prozess / xG-Kontext',t.process)}${tbLine('Shots / SOT',t.shots_sot)}${tbLine('Phase Profile',t.phase_profile)}${tbLine('Load / Rest',t.load_rest)}${tbLine('Current Season Mapping',mapping)}${tbLine('Entity Confidence',entityConfidence)}${tbLine('Snapshot Coverage',t.data_snapshot_coverage)}${tbLine('Data Source Mode',t.data_source_mode)}${tbLine('Verfügbarkeit / Optional Context',t.availability||obj(t.optional_current_context).availability)}${tbLine('Regime / Optional Context',t.regime||obj(t.optional_current_context).regime)}${tbLine('Source Lineage',sourceLineage)}${tbLine('Local Fallbacks',fallbacks)}${tbLine('Residual Repair',repairs)}${tbLine('Conflicts',conflicts)}</div>${signals?`<div class="df-section-title"><h4>Signalblöcke</h4><span class="chip green">SB01–SB17</span></div><div class="tb-signals">${signals}</div>`:''}</div>`}
+function fieldRepairEvidence(m,code){const hits=arr(m.repair_summary).filter(r=>String(r?.field||'').toUpperCase().includes(String(code).toUpperCase()));if(!hits.length)return null;return hits.map(r=>({label:r.field||code,note:r.note||r.result||'',result:r.result||''}))}
+function matchSignalMap(m){const direct=firstObject(m.signal_block_status_map,m.signal_blocks,obj(m.data_fabric).signal_block_status_map,obj(m.match_ebook_evidence).signal_block_status_map,obj(m.match_ebook).signal_block_status_map);if(Object.keys(direct).length)return direct;const te=obj(m.team_ebook),home=teamSignalMap(te.home),away=teamSignalMap(te.away),keys=[...new Set([...Object.keys(home),...Object.keys(away)])];return Object.fromEntries(keys.map(k=>[k,{home:home[k],away:away[k]}]))}
+function renderSignalBlocks(m){const sm=matchSignalMap(m),rows=Object.entries(sm).sort(([a],[b])=>a.localeCompare(b,undefined,{numeric:true}));if(!rows.length)return '';return `<div class="df-section-title"><h4>Data Fabric v1.7 · Signalblöcke</h4><span class="chip green">READINESS AUTHORITY</span></div><div class="df-mode-note">SB01–SB17 sind ab Data Fabric v1.7 die normative Readiness-Struktur. Kleine Samples oder einzelne PARTIAL-Werte sind nicht automatisch ein Hard Gate; entscheidend ist die Lesbarkeit des gesamten Signalblocks und Matches.</div><div class="df-grid" style="margin-top:9px">${rows.map(([k,v])=>{const o=obj(v),home=o.home!==undefined?statusText(o.home):null,away=o.away!==undefined?statusText(o.away):null,overall=o.status??o.readiness??o.coverage??(typeof v!=='object'?v:null),trust=o.trust;return `<div class="df-row"><div class="df-top"><div><span class="sb-code">${esc(k)}</span><span class="sb-name">${esc(SB_NAMES[k]||'Signalblock')}</span></div>${present(trust)?`<span class="chip ${chipClass(trust)}">Trust ${show(trust)}</span>`:''}</div><div class="df-status">${present(overall)?`<span class="chip ${chipClass(overall)}">${show(overall)}</span>`:''}${present(home)?`<span class="chip">HOME ${show(home)}</span>`:''}${present(away)?`<span class="chip">AWAY ${show(away)}</span>`:''}</div>${present(o.note||o.evidence||o.reason)?`<div class="df-evidence">${show(o.note||o.evidence||o.reason)}</div>`:''}</div>`}).join('')}</div>`}
+function renderLegacyDF(m,fs){const rows=Object.entries(obj(fs));if(!rows.length)return '';return `<div class="df-legacy-note">DF01–DF16 werden ab v1.7 nur noch als Legacy Compatibility View angezeigt. Sie bleiben für Replay, ältere Runs und Migration sichtbar, sind aber nicht mehr alleinige Readiness-Autorität.</div><div class="df-grid">${rows.map(([k,v])=>{v=obj(v);const evidence=fieldRepairEvidence(m,k);return `<div class="df-row"><div class="df-top"><div><span class="df-code">${esc(k)}</span><span class="sb-name">${esc(DF_NAMES[k]||'Legacy Data Family')}</span></div><span class="chip ${chipClass(v.trust)}">Trust ${show(v.trust)}</span></div><div class="df-status"><span class="chip">HOME ${show(v.home||v.status)}</span><span class="chip">AWAY ${show(v.away||v.status)}</span></div>${evidence?`<div class="df-evidence">${evidence.map(e=>`<b>${show(e.label)}${present(e.result)?` · ${show(e.result)}`:''}</b><div>${show(e.note)}</div>`).join('<br>')}</div>`:`<div class="df-evidence df-no-evidence">Kein separater Evidence-Text für ${esc(k)} im Run-Record gespeichert.</div>`}</div>`}).join('')}</div>`}
+function renderDataFabric(m,fs){const current=renderSignalBlocks(m),legacy=renderLegacyDF(m,fs);if(current&&legacy)return `${current}<details class="df-compat"><summary>DF01–DF16 · Legacy Compatibility View</summary>${legacy}</details>`;if(current)return current;if(legacy)return `<div class="df-mode-note">Dieser gespeicherte Run enthält noch keine SB01–SB17-Struktur. Deshalb wird seine vorhandene DF01–DF16-Struktur als historischer/kompatibler Datenstand dargestellt.</div>${legacy}`;return '<div class="empty">Keine Data-Fabric-Statusdaten im gespeicherten Run vorhanden.</div>'}'''
+          s = s[:start] + new + s[end:]
+
+          old_detail = '<details><summary>Data Fabric · DF01–DF16</summary><div class="inside">${renderFieldStatus(m,fs)}</div></details>'
+          new_detail = '<details><summary>Data Fabric · SB01–SB17 / DF Compatibility</summary><div class="inside">${renderDataFabric(m,fs)}</div></details>'
+          if s.count(old_detail) != 1:
+              raise SystemExit(f"Detail Data Fabric anchor count = {s.count(old_detail)}, expected 1")
+          s = s.replace(old_detail, new_detail, 1)
+
+          required = ['function renderDataFabric(m,fs)', 'SB01–SB17', 'Legacy Compatibility View', 'function teamSignalMap(t)']
+          for marker in required:
+              if marker not in s:
+                  raise SystemExit(f"verification marker missing: {marker}")
+          if 'renderFieldStatus(m,fs)' in s:
+              raise SystemExit('old renderFieldStatus call still present')
+
+          p.write_text(s, encoding="utf-8")
+
+      - name: Validate HTML JavaScript and commit branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          grep -F 'function renderDataFabric(m,fs)' index.html >/dev/null
+          grep -F 'Data Fabric · SB01–SB17 / DF Compatibility' index.html >/dev/null
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('index.html').read_text(encoding='utf-8')
+          a=s.rfind('<script>')
+          b=s.rfind('</script>')
+          if a < 0 or b <= a:
+              raise SystemExit('script block not found')
+          Path('/tmp/ecobet-inline.js').write_text(s[a+8:b],encoding='utf-8')
+          PY
+          node --check /tmp/ecobet-inline.js
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Update Team E-Books and Data Fabric v1.7 renderer"
+          git push origin HEAD:fix/data-fabric-v17-renderer
