@@ -48,7 +48,10 @@ function Update-PythonPathAssignment {
     )
 
     $raw = Get-Content -Raw -Encoding UTF8 $File
-    $pattern = "(?m)^$([regex]::Escape($Variable))\s*=\s*Path\(r[\"'][^\"']+[\"']\)\s*$"
+    # Keep this regex deliberately simple and PowerShell-5.1-safe. It is
+    # anchored to one exact variable assignment line and therefore does not
+    # need quote-character matching inside the regex itself.
+    $pattern = '(?m)^' + [regex]::Escape($Variable) + '\s*=\s*Path\(r.*\)\s*$'
     $escapedValue = $Value.Replace("'", "\\'")
     $replacement = "$Variable = Path(r'$escapedValue')"
 
