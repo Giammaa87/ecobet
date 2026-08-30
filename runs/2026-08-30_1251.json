@@ -1,0 +1,373 @@
+{
+  "schema_version": "1.0",
+  "record_type": "assistant_snapshot_prediction_run",
+  "run": {
+    "date": "2026-08-30",
+    "timezone": "Europe/Zurich",
+    "snapshot_id": "snap_20260830_121300",
+    "snapshot_hash": "sha256:539e7d69987db47f0f852b9e9dd0b60e164603a5e9cf96e91f5368f8657d9958",
+    "n_fixtures": 15,
+    "official_production_run": false,
+    "authority_binding": "NONE",
+    "mode": "SNAPSHOT_ONLY",
+    "post_cutoff_web_data_used": false,
+    "numerical_p_raw": "NOT_CALCULATED",
+    "note": "Independent assistant snapshot run. Not produced by the local ECOBET Production Runner and not authority-bound."
+  },
+  "matches": [
+    {
+      "fixture_id": "DISC_267d01d0570a",
+      "kickoff": "15:00",
+      "competition": "Premier League",
+      "home": "Sunderland",
+      "away": "Fulham",
+      "status": "PREDICTED",
+      "safe": "Under 4.5 Total Goals",
+      "balanced": "Under 3.5 Total Goals",
+      "aggressive": "Under 2.5 Total Goals",
+      "favourite": "Under 3.5 Total Goals",
+      "ampel": "YELLOW",
+      "modal_score": "0-1",
+      "four_score_cluster": [
+        "0-1",
+        "1-1",
+        "1-0",
+        "0-2"
+      ],
+      "flags": [
+        "LOW_SCORING_PROFILE",
+        "DIRECTION_CONFLICT"
+      ],
+      "reason": "Both venue profiles are low-output and Fulham's away scoring is particularly weak; direction is less stable than the total."
+    },
+    {
+      "fixture_id": "DISC_5391cbf5152d",
+      "kickoff": "15:00",
+      "competition": "Premier League",
+      "home": "Leeds United",
+      "away": "Brentford",
+      "status": "PREDICTED",
+      "safe": "Leeds United or Draw (1X)",
+      "balanced": "Leeds United Draw No Bet",
+      "aggressive": "Leeds United to win",
+      "favourite": "Leeds United Draw No Bet",
+      "ampel": "GREEN",
+      "modal_score": "1-0",
+      "four_score_cluster": [
+        "1-0",
+        "1-1",
+        "2-0",
+        "2-1"
+      ],
+      "flags": [
+        "DRAW_H2H"
+      ],
+      "reason": "Leeds' recent home process and defence are materially stronger than Brentford's recent away output; H2H draw branches justify DNB over a naked win."
+    },
+    {
+      "fixture_id": "DISC_e14fcdd8002d",
+      "kickoff": "15:00",
+      "competition": "Premier League",
+      "home": "Chelsea",
+      "away": "Brighton",
+      "status": "PREDICTED",
+      "safe": "Brighton or Draw (X2)",
+      "balanced": "Brighton Draw No Bet",
+      "aggressive": "Brighton to win",
+      "favourite": "Brighton Draw No Bet",
+      "ampel": "YELLOW",
+      "modal_score": "1-1",
+      "four_score_cluster": [
+        "1-1",
+        "1-2",
+        "0-1",
+        "2-2"
+      ],
+      "flags": [
+        "DIRECTION_CONFLICT",
+        "CHELSEA_HOME_WEAKNESS"
+      ],
+      "reason": "Chelsea's recent home evidence is weak while Brighton carry a viable away xG profile and competitive H2H branches."
+    },
+    {
+      "fixture_id": "DISC_f9934ee4b94a",
+      "kickoff": "17:30",
+      "competition": "Premier League",
+      "home": "Manchester United",
+      "away": "Ipswich Town",
+      "status": "PREDICTED",
+      "safe": "Manchester United or Draw (1X)",
+      "balanced": "Manchester United to win",
+      "aggressive": "Manchester United Over 1.5 Team Goals",
+      "favourite": "Manchester United to win",
+      "ampel": "GREEN",
+      "modal_score": "2-1",
+      "four_score_cluster": [
+        "2-1",
+        "2-0",
+        "3-1",
+        "1-0"
+      ],
+      "flags": [],
+      "reason": "Manchester United's stable home strength is strongly opposed by Ipswich's poor away results and defensive profile."
+    },
+    {
+      "fixture_id": "DISC_3feb76261367",
+      "kickoff": "15:30",
+      "competition": "Bundesliga",
+      "home": "Freiburg",
+      "away": "Werder Bremen",
+      "status": "NSP",
+      "safe": "NSP",
+      "balanced": "NSP",
+      "aggressive": "NSP",
+      "favourite": "NSP",
+      "ampel": "RED",
+      "modal_score": "NOT_AVAILABLE",
+      "four_score_cluster": [],
+      "flags": [
+        "SNAPSHOT_TEAM_DATA_MISSING"
+      ],
+      "nsp_codes": [
+        "SNAPSHOT_TEAM_DATA_MISSING"
+      ],
+      "reason": "The fixture is present but neither team has a usable team reference/file in this snapshot. Fail closed."
+    },
+    {
+      "fixture_id": "DISC_d41748e9e796",
+      "kickoff": "17:30",
+      "competition": "Bundesliga",
+      "home": "Augsburg",
+      "away": "Schalke",
+      "status": "NSP",
+      "safe": "NSP",
+      "balanced": "NSP",
+      "aggressive": "NSP",
+      "favourite": "NSP",
+      "ampel": "RED",
+      "modal_score": "NOT_AVAILABLE",
+      "four_score_cluster": [],
+      "flags": [
+        "SNAPSHOT_TEAM_DATA_MISSING"
+      ],
+      "nsp_codes": [
+        "SNAPSHOT_TEAM_DATA_MISSING"
+      ],
+      "reason": "The fixture is present but neither team has a usable team reference/file in this snapshot. Fail closed."
+    },
+    {
+      "fixture_id": "DISC_4f737c279557",
+      "kickoff": "17:00",
+      "competition": "La Liga",
+      "home": "Real Madrid",
+      "away": "Málaga",
+      "status": "PREDICTED",
+      "safe": "Real Madrid or Draw (1X)",
+      "balanced": "Real Madrid to win",
+      "aggressive": "Real Madrid Over 1.5 Team Goals",
+      "favourite": "Real Madrid to win",
+      "ampel": "YELLOW",
+      "modal_score": "2-0",
+      "four_score_cluster": [
+        "2-0",
+        "3-0",
+        "2-1",
+        "1-0"
+      ],
+      "flags": [
+        "DATA_CONDITIONAL",
+        "OPPONENT_SAMPLE_MISSING"
+      ],
+      "reason": "Real Madrid have a strong and stable home anchor, but Málaga's historical sample is essentially unavailable in the snapshot."
+    },
+    {
+      "fixture_id": "DISC_c659b12ca971",
+      "kickoff": "19:30",
+      "competition": "La Liga",
+      "home": "Deportivo La Coruña",
+      "away": "Valencia",
+      "status": "PREDICTED",
+      "safe": "Valencia or Draw (X2)",
+      "balanced": "Valencia Draw No Bet",
+      "aggressive": "Valencia to win",
+      "favourite": "Valencia Draw No Bet",
+      "ampel": "YELLOW",
+      "modal_score": "0-1",
+      "four_score_cluster": [
+        "0-1",
+        "1-1",
+        "0-2",
+        "1-2"
+      ],
+      "flags": [
+        "DATA_CONDITIONAL",
+        "HOME_SAMPLE_MISSING"
+      ],
+      "reason": "Valencia's away sample is solid, but Deportivo's usable historical sample is effectively absent; DNB preserves the directional edge without overstating certainty."
+    },
+    {
+      "fixture_id": "DISC_5ea272083b01",
+      "kickoff": "21:30",
+      "competition": "La Liga",
+      "home": "Celta Vigo",
+      "away": "Athletic Club",
+      "status": "PREDICTED",
+      "safe": "Over 1.5 Total Goals",
+      "balanced": "Celta Vigo Draw No Bet",
+      "aggressive": "Over 2.5 Total Goals",
+      "favourite": "Over 1.5 Total Goals",
+      "ampel": "GREEN",
+      "modal_score": "2-1",
+      "four_score_cluster": [
+        "2-1",
+        "1-1",
+        "2-0",
+        "1-2"
+      ],
+      "flags": [],
+      "reason": "Celta's home games and Athletic's away games both sustain a broad multi-goal world; the total is more robust than the directional split."
+    },
+    {
+      "fixture_id": "DISC_1c9c9987bb7a",
+      "kickoff": "18:30",
+      "competition": "Serie A",
+      "home": "Napoli",
+      "away": "Como",
+      "status": "PREDICTED",
+      "safe": "Under 4.5 Total Goals",
+      "balanced": "Under 3.5 Total Goals",
+      "aggressive": "Under 2.5 Total Goals",
+      "favourite": "Under 3.5 Total Goals",
+      "ampel": "YELLOW",
+      "modal_score": "1-1",
+      "four_score_cluster": [
+        "1-1",
+        "1-0",
+        "2-1",
+        "0-1"
+      ],
+      "flags": [
+        "DIRECTION_CONFLICT"
+      ],
+      "reason": "Napoli have the home edge but Como's away record is unusually strong; the shared robust feature is a controlled total rather than a clean direction."
+    },
+    {
+      "fixture_id": "DISC_a5eb55b9fd8a",
+      "kickoff": "20:45",
+      "competition": "Serie A",
+      "home": "Cagliari",
+      "away": "Inter",
+      "status": "PREDICTED",
+      "safe": "Inter or Draw (X2)",
+      "balanced": "Inter to win",
+      "aggressive": "Inter Over 1.5 Team Goals",
+      "favourite": "Inter to win",
+      "ampel": "YELLOW",
+      "modal_score": "0-2",
+      "four_score_cluster": [
+        "0-2",
+        "0-1",
+        "1-2",
+        "1-3"
+      ],
+      "flags": [
+        "DISCOVERY_UNCONFIRMED"
+      ],
+      "reason": "Inter's away strength and dominant H2H versus Cagliari support the win; fixture discovery status prevents a green confidence label."
+    },
+    {
+      "fixture_id": "DISC_b1c3a351a0c7",
+      "kickoff": "20:45",
+      "competition": "Serie A",
+      "home": "Lazio",
+      "away": "Genoa",
+      "status": "PREDICTED",
+      "safe": "Lazio or Draw (1X)",
+      "balanced": "Lazio Draw No Bet",
+      "aggressive": "Lazio to win",
+      "favourite": "Lazio Draw No Bet",
+      "ampel": "YELLOW",
+      "modal_score": "1-0",
+      "four_score_cluster": [
+        "1-0",
+        "1-1",
+        "2-0",
+        "2-1"
+      ],
+      "flags": [
+        "LAZIO_HOME_PROCESS_MIXED"
+      ],
+      "reason": "Genoa's away scoring is very weak and Lazio dominate the H2H, but Lazio's own recent home process is not strong enough for a clean green win call."
+    },
+    {
+      "fixture_id": "DISC_a72ccce2cfb2",
+      "kickoff": "15:00",
+      "competition": "Ligue 1",
+      "home": "Paris FC",
+      "away": "Nice",
+      "status": "PREDICTED",
+      "safe": "Paris FC or Draw (1X)",
+      "balanced": "Paris FC Draw No Bet",
+      "aggressive": "Paris FC to win",
+      "favourite": "Paris FC Draw No Bet",
+      "ampel": "YELLOW",
+      "modal_score": "1-1",
+      "four_score_cluster": [
+        "1-1",
+        "1-0",
+        "2-1",
+        "0-1"
+      ],
+      "flags": [
+        "SEASON_TRANSITION",
+        "HOME_CURRENT_SEASON_SAMPLE_MISSING"
+      ],
+      "reason": "Paris FC's cross-season home evidence and recent venue profile are positive, while Nice's away profile is weaker; season-transition uncertainty argues for DNB."
+    },
+    {
+      "fixture_id": "DISC_b913888ddd77",
+      "kickoff": "17:15",
+      "competition": "Ligue 1",
+      "home": "Rennes",
+      "away": "Le Mans",
+      "status": "PREDICTED",
+      "safe": "Rennes Over 0.5 Team Goals",
+      "balanced": "Rennes Draw No Bet",
+      "aggressive": "Rennes to win",
+      "favourite": "Rennes Over 0.5 Team Goals",
+      "ampel": "YELLOW",
+      "modal_score": "NOT_RELIABLE",
+      "four_score_cluster": [],
+      "flags": [
+        "DATA_CONDITIONAL",
+        "OPPONENT_SAMPLE_MISSING",
+        "DISCOVERY_UNCONFIRMED"
+      ],
+      "reason": "Rennes' own scoring evidence supports at least one goal, but Le Mans has almost no usable historical sample; a directional win would overstate the available opponent evidence."
+    },
+    {
+      "fixture_id": "DISC_71eff0f24803",
+      "kickoff": "20:45",
+      "competition": "Ligue 1",
+      "home": "AS Monaco",
+      "away": "Marseille",
+      "status": "PREDICTED",
+      "safe": "AS Monaco or Draw (1X)",
+      "balanced": "AS Monaco Draw No Bet",
+      "aggressive": "AS Monaco to win",
+      "favourite": "AS Monaco Draw No Bet",
+      "ampel": "YELLOW",
+      "modal_score": "2-1",
+      "four_score_cluster": [
+        "2-1",
+        "1-1",
+        "2-0",
+        "1-0"
+      ],
+      "flags": [
+        "DISCOVERY_UNCONFIRMED"
+      ],
+      "reason": "Monaco's home record and same-venue H2H are stronger, while Marseille's recent away finishing/results are weak despite respectable xG; DNB is the better-balanced expression."
+    }
+  ]
+}
