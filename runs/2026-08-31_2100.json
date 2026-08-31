@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "record_type": "assistant_snapshot_prediction_run",
+  "run": {
+    "date": "2026-08-31",
+    "timezone": "Europe/Zurich",
+    "generated_at": "2026-08-31T14:49:27+02:00",
+    "snapshot_id": "snap_20260831_030804",
+    "snapshot_hash": "sha256:85c6499e777fafb75f09a1bd7dab66ac1fc4bce21175a4faa0aa6fb23b69ba52",
+    "fixture_scope_basis": "DAILY_SNAPSHOT_REFERENCE",
+    "n_fixtures": 5,
+    "official_production_run": false,
+    "qualification_run": false,
+    "authority_binding": "NONE",
+    "mode": "SNAPSHOT_ONLY_REFERENCE_WITH_RETROSPECTIVE_ROMA_ADDITION",
+    "post_cutoff_web_data_used": false,
+    "numerical_p_raw": "NOT_CALCULATED",
+    "publish_allowed": true,
+    "note": "Independent assistant snapshot reference run. Not produced by the local ECOBET Production Runner and not authority-bound. Published only as a non-official reference. Lecce–Roma was added retrospectively after kickoff using only the pre-match Daily Snapshot; no match result or post-match data was used.",
+    "amended_at": "2026-08-31T21:00:12+02:00"
+  },
+  "reference_basis": {
+    "primary": "ECOBET Daily Snapshot snap_20260831_030804",
+    "scope": [
+      "Aston Villa vs Arsenal",
+      "CA Osasuna vs Getafe CF",
+      "FC Barcelona vs Rayo Vallecano",
+      "Lecce vs Roma",
+      "Atalanta vs Bologna"
+    ],
+    "selection_principle": "Favourite is the most plausible expression of the match world, not automatically the mathematically easiest or highest-base-rate market.",
+    "post_match_result_used": false,
+    "roma_lecce_note": "Lecce vs Roma was present in the 2026-08-31 Daily Snapshot with discovery_confirmed=false. Its assistant prediction was reconstructed after kickoff strictly from the point-in-time snapshot whose cutoff excludes the fixture itself."
+  },
+  "matches": [
+    {
+      "fixture_id": "DISC_d352b28fa450",
+      "kickoff": "18:30",
+      "competition": "Serie A",
+      "home": "Lecce",
+      "away": "Roma",
+      "status": "PREDICTED",
+      "safe": "Roma or Draw (X2)",
+      "balanced": "Roma Draw No Bet",
+      "aggressive": "Roma to win",
+      "favourite": "Roma to win",
+      "ampel": "YELLOW",
+      "modal_score": "0-2",
+      "four_score_cluster": [
+        "0-2",
+        "0-1",
+        "1-2",
+        "1-1"
+      ],
+      "flags": [
+        "DISCOVERY_UNCONFIRMED_IN_SNAPSHOT",
+        "RETROSPECTIVE_PREMATCH_RECONSTRUCTION"
+      ],
+      "reason": "The pre-match snapshot points strongly toward Roma: Roma carried dominant recent form and process, while Lecce's cross-season home profile was weak. The H2H was also heavily Roma-sided, including five wins and one draw across the six available meetings. The away win is the most plausible match-world expression, but the unconfirmed discovery status keeps the confidence label at yellow.",
+      "prediction_origin": "RETROSPECTIVE_PREMATCH_DATA_RECONSTRUCTION",
+      "post_match_result_used": false
+    },
+    {
+      "fixture_id": "DISC_9ff2c14d6840",
+      "kickoff": "19:30",
+      "competition": "La Liga",
+      "home": "CA Osasuna",
+      "away": "Getafe CF",
+      "status": "PREDICTED",
+      "safe": "Under 4.5 Total Goals",
+      "balanced": "Under 3.5 Total Goals",
+      "aggressive": "Under 2.5 Total Goals",
+      "favourite": "Under 3.5 Total Goals",
+      "ampel": "GREEN",
+      "modal_score": "1-0",
+      "four_score_cluster": [
+        "1-0",
+        "1-1",
+        "0-0",
+        "2-0"
+      ],
+      "flags": [
+        "LOW_TO_MEDIUM_SCORING_WORLD",
+        "OSASUNA_HOME_PROCESS_POSITIVE",
+        "GETAFE_GAME_STATE_COMPACT"
+      ],
+      "reason": "Osasuna's current start and home process are positive, but the strongest shared match-world signal is a controlled total. The snapshot shows Osasuna at only 1.0 goals for and 0.5 against per current-season match, with the broader recent profile also strongly concentrated below four total goals.",
+      "prediction_origin": "PRE_MATCH_ASSISTANT_REFERENCE"
+    },
+    {
+      "fixture_id": "DISC_818145b0ead0",
+      "kickoff": "20:45",
+      "competition": "Serie A",
+      "home": "Atalanta",
+      "away": "Bologna",
+      "status": "PREDICTED",
+      "safe": "Atalanta or Draw (1X)",
+      "balanced": "Atalanta Draw No Bet",
+      "aggressive": "Atalanta to win",
+      "favourite": "Atalanta Draw No Bet",
+      "ampel": "YELLOW",
+      "modal_score": "2-1",
+      "four_score_cluster": [
+        "2-1",
+        "1-1",
+        "1-0",
+        "2-0"
+      ],
+      "flags": [
+        "ATALANTA_HOME_EDGE",
+        "BOLOGNA_COMPETITIVE_PROCESS",
+        "EUROPEAN_LOAD_ROTATION_RISK"
+      ],
+      "reason": "Atalanta have the home and early-form edge, but European workload and possible rotation reduce confidence in a clean home-win call. Bologna remain competitive enough for the draw branch to deserve protection, making DNB the more plausible favourite.",
+      "prediction_origin": "PRE_MATCH_ASSISTANT_REFERENCE"
+    },
+    {
+      "fixture_id": "DISC_f41038852254",
+      "kickoff": "21:00",
+      "competition": "Premier League",
+      "home": "Aston Villa",
+      "away": "Arsenal",
+      "status": "PREDICTED",
+      "safe": "Arsenal or Draw (X2)",
+      "balanced": "Arsenal Draw No Bet",
+      "aggressive": "Arsenal to win",
+      "favourite": "Arsenal Draw No Bet",
+      "ampel": "YELLOW",
+      "modal_score": "1-2",
+      "four_score_cluster": [
+        "1-2",
+        "1-1",
+        "0-2",
+        "0-1"
+      ],
+      "flags": [
+        "ARSENAL_STRENGTH_EDGE",
+        "VILLA_HOME_H2H_RESPECT",
+        "EARLY_SEASON_SAMPLE"
+      ],
+      "reason": "Arsenal enter with the clearer strength and form edge, while Villa's historical home resistance against Arsenal makes DNB a more plausible expression than forcing the naked away win.",
+      "prediction_origin": "PRE_MATCH_ASSISTANT_REFERENCE"
+    },
+    {
+      "fixture_id": "DISC_023a908f8df4",
+      "kickoff": "21:30",
+      "competition": "La Liga",
+      "home": "FC Barcelona",
+      "away": "Rayo Vallecano",
+      "status": "PREDICTED",
+      "safe": "FC Barcelona or Draw (1X)",
+      "balanced": "FC Barcelona to win",
+      "aggressive": "FC Barcelona Over 1.5 Team Goals",
+      "favourite": "FC Barcelona to win",
+      "ampel": "GREEN",
+      "modal_score": "2-0",
+      "four_score_cluster": [
+        "2-0",
+        "2-1",
+        "3-0",
+        "1-0"
+      ],
+      "flags": [
+        "BARCELONA_STRONG_HOME_ANCHOR",
+        "BARCELONA_PERFECT_START",
+        "RAYO_H2H_RESISTANCE"
+      ],
+      "reason": "Barcelona's 7-0 aggregate start after two league matches creates a strong home anchor. Rayo's history of making this matchup uncomfortable keeps the projection away from an extreme scoreline, but the home win remains the most plausible world.",
+      "prediction_origin": "PRE_MATCH_ASSISTANT_REFERENCE"
+    }
+  ]
+}
