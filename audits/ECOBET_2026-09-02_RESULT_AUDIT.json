@@ -1,0 +1,143 @@
+{
+  "serialization_note": "Audit JSON derived from N_ECOBET_OUTPUT_AND_AUDIT_v1.3 RUN_AUDIT_RECORD / MATCH_AUDIT_RECORD semantics. No dedicated settlement_record schema is claimed.",
+  "audit_generated_at": "2026-09-02T23:30:06+02:00",
+  "original_run_immutable": true,
+  "run_audit_record": {
+    "record_type": "RUN_AUDIT_RECORD",
+    "run_id": "RUN_2026-09-02_FOCUS_5_PLUS_UEFA_CEST_0500",
+    "snapshot_id": "ECOBET_RUNSNAP_2026-09-02_0500",
+    "source_run_official": true,
+    "source_run_type": "run_record",
+    "source_run_record": {
+      "filename": "2026-09-02_0500.json",
+      "sha256": "3cac355ba89d6bca93167df5adad9ac6974f4f32f6d922dc4cc008a353190ea2",
+      "immutability": "UNCHANGED"
+    },
+    "data_snapshot_provenance": {
+      "data_snapshot_status": "AVAILABLE",
+      "data_snapshot_id": "snap_20260902_031708",
+      "data_snapshot_date": "2026-09-02",
+      "data_snapshot_generated_at": "2026-09-02T03:17:08.311195+02:00",
+      "data_snapshot_data_cutoff": "2026-09-02T03:17:08.311195+02:00",
+      "data_snapshot_db_updated_at": "2026-09-02T03:00:09",
+      "data_snapshot_hash": "sha256:800d0012a335c591ff548e8eafa392db6bce8f09b8ba6a66feac7dc066ae784d",
+      "data_snapshot_schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+      "data_snapshot_url": "https://giammaa87.github.io/ecobet/data/2026-09-02/snap_20260902_031708/manifest.json"
+    },
+    "fixture_reconciliation_summary": "EQUAL",
+    "source_mode_distribution": {
+      "SNAPSHOT": 0,
+      "SNAPSHOT_PLUS_REPAIR": 0,
+      "WEB_FALLBACK": 0
+    },
+    "date_range": {
+      "from": "2026-09-02",
+      "to": "2026-09-02"
+    },
+    "timezone": "Europe/Zurich",
+    "scope": [
+      "Premier League",
+      "Bundesliga",
+      "La Liga",
+      "Serie A",
+      "Ligue 1",
+      "UEFA Champions League",
+      "UEFA Europa League",
+      "UEFA Conference League"
+    ],
+    "norm_versions": {
+      "MASTER_OS": "1.5",
+      "DATA_FABRIC_AND_EBOOKS": "1.7",
+      "OUTPUT_AND_AUDIT": "1.3"
+    },
+    "match_counts": {
+      "scope_committed_original": 0,
+      "result_confirmed": 0,
+      "unsettled": 0
+    },
+    "n_fixtures": 0,
+    "n_settled": 0,
+    "readiness_distribution": {
+      "READY": 0,
+      "CONDITIONAL": 0,
+      "NOT_READY": 0
+    },
+    "world_stability_distribution": {
+      "UNKNOWN": 0,
+      "STABLE": 0,
+      "VERY_STABLE": 0,
+      "ULTRA_STABLE": 0
+    },
+    "ampel_distribution": {
+      "GREEN": 0,
+      "YELLOW": 0,
+      "RED": 0
+    },
+    "nsp_count": 0,
+    "proof_counters": {
+      "matches_in_original_run": 0,
+      "match_audit_records": 0,
+      "result_confirmed": 0,
+      "result_unsettled": 0,
+      "predictions_rewritten": 0,
+      "real_odds_used_as_input": 0,
+      "tickets_created": "NO"
+    },
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "result_settlement_status": "COMPLETE",
+    "audit_status": "COMPLETE_NO_FIXTURES",
+    "audit_basis": "CONFIRMED_ZERO_FIXTURE_RUN",
+    "model_kpis": {
+      "safe": {
+        "HIT": 0,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "decisive_total": 0,
+        "hit_rate_percent": null
+      },
+      "balanced": {
+        "HIT": 0,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "decisive_total": 0,
+        "hit_rate_percent": null
+      },
+      "aggressive": {
+        "HIT": 0,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "decisive_total": 0,
+        "hit_rate_percent": null
+      },
+      "favourite": {
+        "HIT": 0,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "decisive_total": 0,
+        "hit_rate_percent": null
+      }
+    },
+    "data_integrity_flags": [
+      "ORIGINAL_RUN_IMMUTABLE",
+      "CONFIRMED_ZERO_NO_MATCHES_TO_SETTLE"
+    ],
+    "notes": [
+      "Original committed Predictions and Run Record remain unchanged.",
+      "Heute keine Spiele zum Auditieren."
+    ]
+  },
+  "match_audit_records": []
+}
