@@ -1,0 +1,227 @@
+{
+  "serialization_note": "Corrected result audit derived from N_ECOBET_OUTPUT_AND_AUDIT_v1.3 semantics. The original run and original 2026-09-03 23:30 audit remain immutable; only result settlement is corrected from independently verified final 90-minute results.",
+  "audit_generated_at": "2026-09-04T01:48:28+02:00",
+  "original_run_immutable": true,
+  "correction_record": {
+    "correction_type": "RESULT_SETTLEMENT_CORRECTION",
+    "corrects_file": "ECOBET_2026-09-03_RESULT_AUDIT.json",
+    "corrects_blob_sha": "1c6be5d231e335aeeee84deb720e7c6e81c37621",
+    "original_audit_generated_at": "2026-09-03T23:30:04+02:00",
+    "correction_reason": "Original audit produced two UNSETTLED records with empty result_sources although both fixtures had completed. Final results were subsequently verified from current public sources.",
+    "predictions_rewritten": 0
+  },
+  "run_audit_record": {
+    "record_type": "RUN_AUDIT_RECORD",
+    "run_id": "RUN_2026-09-03_FOCUS_5_PLUS_UEFA_CEST_0500",
+    "snapshot_id": "ECOBET_RUNSNAP_2026-09-03_0500",
+    "source_run_official": true,
+    "source_run_type": "run_record",
+    "source_run_record": {
+      "filename": "2026-09-03_0500.json",
+      "sha256": "3e5db38ca8d9842c9894bb19c9fa672e3f2fdc81fffc6b468ad4817ebf80ac47",
+      "immutability": "UNCHANGED"
+    },
+    "data_snapshot_provenance": {
+      "data_snapshot_status": "AVAILABLE",
+      "data_snapshot_id": "snap_20260903_031646",
+      "data_snapshot_date": "2026-09-03",
+      "data_snapshot_generated_at": "2026-09-03T03:16:46.354983+02:00",
+      "data_snapshot_data_cutoff": "2026-09-03T03:16:46.354983+02:00",
+      "data_snapshot_db_updated_at": "2026-09-03T03:00:05",
+      "data_snapshot_hash": "sha256:17233c0a40f92ad300ff3b3d8b96881e963927967bb53910619c6b812e0bd1f9",
+      "data_snapshot_schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+      "data_snapshot_url": "https://giammaa87.github.io/ecobet/data/2026-09-03/snap_20260903_031646/manifest.json"
+    },
+    "fixture_reconciliation_summary": "DIVERGENT",
+    "source_mode_distribution": {
+      "SNAPSHOT": 0,
+      "SNAPSHOT_PLUS_REPAIR": 2,
+      "WEB_FALLBACK": 0
+    },
+    "date_range": {
+      "from": "2026-09-03",
+      "to": "2026-09-03"
+    },
+    "timezone": "Europe/Zurich",
+    "scope": [
+      "Premier League",
+      "Bundesliga",
+      "La Liga",
+      "Serie A",
+      "Ligue 1",
+      "UEFA Champions League",
+      "UEFA Europa League",
+      "UEFA Conference League"
+    ],
+    "norm_versions": {
+      "MASTER_OS": "1.5",
+      "DATA_FABRIC_AND_EBOOKS": "1.7",
+      "OUTPUT_AND_AUDIT": "1.3"
+    },
+    "match_counts": {
+      "scope_committed_original": 2,
+      "result_confirmed": 2,
+      "unsettled": 0
+    },
+    "n_fixtures": 2,
+    "n_settled": 2,
+    "readiness_distribution": {
+      "READY": 2,
+      "CONDITIONAL": 0,
+      "NOT_READY": 0
+    },
+    "world_stability_distribution": {
+      "UNKNOWN": 1,
+      "STABLE": 1,
+      "VERY_STABLE": 0,
+      "ULTRA_STABLE": 0
+    },
+    "ampel_distribution": {
+      "GREEN": 0,
+      "YELLOW": 1,
+      "RED": 1
+    },
+    "nsp_count": 0,
+    "proof_counters": {
+      "matches_in_original_run": 2,
+      "match_audit_records": 2,
+      "result_confirmed": 2,
+      "result_unsettled": 0,
+      "predictions_rewritten": 0,
+      "real_odds_used_as_input": 0,
+      "tickets_created": "NO"
+    },
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "result_settlement_status": "COMPLETE",
+    "audit_status": "COMPLETE",
+    "audit_basis": "VERIFIED_FINAL_90_MINUTE_RESULTS_MANUAL_CORRECTION",
+    "model_kpis": {
+      "safe": {"HIT": 1, "MISS": 1, "PUSH": 0, "VOID": 0, "UNSETTLED": 0, "UNMAPPABLE": 0, "decisive_total": 2, "hit_rate_percent": 50.0},
+      "balanced": {"HIT": 1, "MISS": 1, "PUSH": 0, "VOID": 0, "UNSETTLED": 0, "UNMAPPABLE": 0, "decisive_total": 2, "hit_rate_percent": 50.0},
+      "aggressive": {"HIT": 1, "MISS": 1, "PUSH": 0, "VOID": 0, "UNSETTLED": 0, "UNMAPPABLE": 0, "decisive_total": 2, "hit_rate_percent": 50.0},
+      "favourite": {"HIT": 1, "MISS": 1, "PUSH": 0, "VOID": 0, "UNSETTLED": 0, "UNMAPPABLE": 0, "decisive_total": 2, "hit_rate_percent": 50.0},
+      "modal_score": {"hits": 1, "total": 2, "unmappable": 0, "hit_rate_percent": 50.0},
+      "four_score_cluster": {"hits": 1, "total": 2, "unmappable": 0, "hit_rate_percent": 50.0},
+      "score_band": {"hits": 1, "total": 2, "unmappable": 0, "hit_rate_percent": 50.0},
+      "world_verdict_distribution": {"COUNTER": 1, "MIXED": 1}
+    },
+    "settlement_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+    "data_integrity_flags": [
+      "ORIGINAL_RUN_IMMUTABLE",
+      "ORIGINAL_AUDIT_PRESERVED",
+      "RESULT_SETTLEMENT_CORRECTED_FROM_VERIFIED_PUBLIC_SOURCES"
+    ],
+    "notes": [
+      "Original committed predictions and Run Record remain unchanged.",
+      "The original 23:30 audit is preserved as a forensic record; its result lookup returned no sources and left both fixtures UNSETTLED.",
+      "This corrected audit activates only verified final-result settlement and resolves the already committed structured PATHS_BUILD prediction paths for settlement."
+    ]
+  },
+  "match_audit_records": [
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "DISC-70F9BB43BE5D235CEA53",
+      "snapshot_id": "ECOBET_RUNSNAP_2026-09-03_0500",
+      "data_snapshot_id": "snap_20260903_031646",
+      "data_snapshot_coverage": "FULL",
+      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+      "fixture": {"kickoff": "2026-09-03T19:00:00+00:00", "home": "Real Sociedad", "away": "Celta", "competition": "La Liga", "phase": "NOT_AVAILABLE"},
+      "competition_metadata": {"competition_id": "ESP-La Liga", "competition_name": "La Liga", "competition_group": "DOMESTIC", "competition_type": "domestic_league", "display_order": 30},
+      "committed_model": {
+        "fixture_id": "DISC-70F9BB43BE5D235CEA53",
+        "home": "Real Sociedad",
+        "away": "Celta",
+        "world_type": "CONTROL_BUT_FRAGILE_HOME",
+        "world_stability": "STABLE",
+        "ampel": "YELLOW",
+        "data_readiness": "READY",
+        "nsp_codes": [],
+        "safe": "Over 1.5 full-time goals",
+        "balanced": "Full-time total goals: 2-4",
+        "aggressive": "Both teams to score: Yes",
+        "favourite": "Full-time total goals: 2-4",
+        "favourite_prediction": "Full-time total goals: 2-4",
+        "prediction_path_resolution": "RESOLVED_FROM_COMMITTED_STRUCTURED_STAGE_OUTPUTS_PATHS_BUILD_PATHS",
+        "modal_score": "2-1",
+        "four_score_cluster": ["2-1", "1-1", "2-0", "3-1"],
+        "score_band": "2-4",
+        "prime_world": {"mechanism": "Real Sociedad impose home territory, pressing, and superior chance volume against Celta's low-output away attack, building an advantage that survives some second-half instability."},
+        "counterworld": {"mechanism": "Celta absorb Real Sociedad's territorial pressure in a compact block, keep the score level through the hosts' initial chance-volume advantage, then exploit transition space and Real Sociedad's second-half defensive instability to prevent durable home scoreboard control."}
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "settlement_basis": "90_PLUS_STOPPAGE",
+        "score_90_plus_stoppage": "0-0",
+        "competition_final_score": "0-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS",
+        "result_sources": [
+          {"name": "Cadena SER", "trust": "INDEPENDENT_SPORTS_MEDIA", "url": "https://cadenaser.com/nacional/2026/09/03/real-sociedad-0-0-celta-de-vigo-resumen-resultado-y-goles-del-partido-de-la-jornada-6-de-laliga-ea-sports-cadena-ser/"},
+          {"name": "LALIGA", "trust": "OFFICIAL_COMPETITION_SOURCE", "url": "https://www.laliga.com/es-DE/partido/temporada-2026-2027-laliga-ea-sports-real-sociedad-rc-celta-6"}
+        ],
+        "reason": "Final 90-minute result independently verified after the original automated result lookup returned no sources."
+      },
+      "score_cluster_audit": {"modal_score_hit": false, "cluster_hit": false, "score_band_hit": false},
+      "world_verdict": {"verdict": "COUNTER", "evidence_level": "RESULT_PLUS_MATCH_REPORT", "basis": "The 0-0 directly contradicts the PRIME scoreboard-control outcome and is consistent with Celta absorbing pressure and preventing durable Real Sociedad scoreboard control."},
+      "failure_cluster": [],
+      "audit_flags": ["RESULT_SETTLEMENT_CORRECTED_AFTER_SOURCE_LOOKUP_FAILURE"]
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "DISC-A25AA23528A880932DCE",
+      "snapshot_id": "ECOBET_RUNSNAP_2026-09-03_0500",
+      "data_snapshot_id": "snap_20260903_031646",
+      "data_snapshot_coverage": "FULL",
+      "data_source_mode": "SNAPSHOT_PLUS_REPAIR",
+      "fixture": {"kickoff": "2026-09-03T18:45:00+00:00", "home": "Toulouse", "away": "Lille", "competition": "Ligue 1", "phase": "NOT_AVAILABLE"},
+      "competition_metadata": {"competition_id": "FRA-Ligue 1", "competition_name": "Ligue 1", "competition_group": "DOMESTIC", "competition_type": "domestic_league", "display_order": 50},
+      "committed_model": {
+        "fixture_id": "DISC-A25AA23528A880932DCE",
+        "home": "Toulouse",
+        "away": "Lille",
+        "world_type": "CONTROL_BUT_FRAGILE_AWAY",
+        "world_stability": "UNKNOWN",
+        "ampel": "RED",
+        "data_readiness": "READY",
+        "nsp_codes": [],
+        "safe": "Lille over 0.5 team goals",
+        "balanced": "Under 3.5 total goals",
+        "aggressive": "Lille or draw",
+        "favourite": "Lille over 0.5 team goals",
+        "favourite_prediction": "Lille over 0.5 team goals",
+        "prediction_path_resolution": "RESOLVED_FROM_COMMITTED_STRUCTURED_STAGE_OUTPUTS_PATHS_BUILD_PATHS",
+        "modal_score": "0-1",
+        "four_score_cluster": ["1-1", "0-1", "1-2", "0-2"],
+        "score_band": "1-3",
+        "prime_world": {"mechanism": "Lille's stronger defensive suppression, chance quality, and away efficiency establish territorial and outcome control, while Toulouse's home pressure keeps that control fragile rather than dominant."},
+        "counterworld": {"mechanism": "Toulouse's home pressing and shot-volume pressure repeatedly pins Lille back; Lille's recent away tendency to concede substantial shot volume converts territorial stress into enough home threat to neutralize Lille's defensive-efficiency advantage."}
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "settlement_basis": "90_PLUS_STOPPAGE",
+        "score_90_plus_stoppage": "0-1",
+        "competition_final_score": "0-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {"name": "LOSC", "trust": "OFFICIAL_CLUB_SOURCE", "url": "https://losc.fr/actualites/2026-09-03/toulouse-losc-le-compte-rendu"},
+          {"name": "Football.fr", "trust": "INDEPENDENT_SPORTS_MEDIA", "url": "https://www.football.fr/ligue-1/ligue-1-lille-un-hold-up-de-leader-831149.html"}
+        ],
+        "reason": "Final 90-minute result independently verified after the original automated result lookup returned no sources."
+      },
+      "score_cluster_audit": {"modal_score_hit": true, "cluster_hit": true, "score_band_hit": true},
+      "world_verdict": {"verdict": "MIXED", "evidence_level": "RESULT_PLUS_MATCH_REPORT", "basis": "The 0-1 outcome matches Lille's directional PRIME outcome, but match reports describe sustained Toulouse pressure and a goalkeeper-led Lille resistance rather than clear Lille territorial control."},
+      "failure_cluster": [],
+      "audit_flags": ["RESULT_SETTLEMENT_CORRECTED_AFTER_SOURCE_LOOKUP_FAILURE"]
+    }
+  ]
+}
