@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "record_type": "audit_index",
-  "generated_at": "2026-09-04T23:37:03+02:00",
+  "generated_at": "2026-09-05T00:02:46+02:00",
   "dates": {
     "2026-08-11": [
       {
@@ -168,7 +168,7 @@
         "id": "2026-09-04_1123_corrected",
         "run_id": null,
         "file": "ECOBET_2026-09-04_RESULT_AUDIT.json",
-        "generated_at": "2026-09-04T23:37:03+02:00"
+        "generated_at": "2026-09-05T00:02:46+02:00"
       }
     ]
   }
