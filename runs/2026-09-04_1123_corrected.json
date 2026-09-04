@@ -21,13 +21,21 @@
     "run_status": "COMPLETE",
     "run_integrity": "PASS",
     "publish_allowed": true,
-    "note": "Presentation correction of the 2026-09-04 production run. The original 09:35 production artifact remains immutable as the audit source. Only the three NSP favourites caused by the exhausted final tiebreak are corrected here from their already persisted candidate structures. ClubElo is used only as an independent plausibility cross-check, not as decision authority. Permanent Decision Engine Change C remains pending."
+    "decision_paths_repaired": true,
+    "decision_paths_source": "SOURCE_PRODUCTION_RUN_PATHS_BUILD.paths",
+    "note": "Presentation correction of the 2026-09-04 production run. The original 09:35 production artifact remains immutable as the audit source. Only the three NSP favourites caused by the exhausted final tiebreak are corrected here from their already persisted candidate structures. SAFE/BALANCED/AGGRESSIVE are copied verbatim from the source run's persisted PATHS_BUILD.paths and are not reconstructed. ClubElo is used only as an independent plausibility cross-check, not as decision authority. Permanent Decision Engine Change C remains pending."
   },
   "reference_basis": {
     "source_production_run": "runs/2026-09-04_0935.json",
     "selection_principle": "Favourite is the most plausible robust expression of the match world, not automatically the safest or highest-base-rate market.",
     "correction_scope": "Only the three source-run NSP decisions caused by NSP_P_RAW_TIEBREAK_UNAVAILABLE are replaced. The other three favourites remain unchanged.",
     "correction_method": "Manual application of the proposed structural final-tiebreak principles to the persisted source-run candidates: lower state sensitivity, explicit structural tail exposure, then score-lead clarity. No synthetic p_raw, odds, random ordering or candidate-ID fallback is used.",
+    "decision_paths_repair": {
+      "source": "runs/2026-09-04_0935.json -> persisted PATHS_BUILD.paths",
+      "method": "VERBATIM_COPY",
+      "reconstructed": false,
+      "matches_repaired": 6
+    },
     "unchanged_fixture_ids": [
       "DISC-15BBCE7AC50585F94D64",
       "DISC-554CF1708F32CF1113A5",
@@ -84,7 +92,12 @@
       "world_stability": "STABLE",
       "ampel": "YELLOW",
       "modal_score": "2-1",
-      "four_score_cluster": ["2-1", "3-1", "2-2", "3-2"],
+      "four_score_cluster": [
+        "2-1",
+        "3-1",
+        "2-2",
+        "3-2"
+      ],
       "score_band": "3-5",
       "data_snapshot_id": "snap_20260904_030748",
       "data_snapshot_coverage": "FULL",
@@ -92,9 +105,9 @@
       "nsp_codes": [],
       "board_status": "COMMITTED",
       "commit_status": "COMMITTED",
-      "safe": "NOT_AVAILABLE",
-      "balanced": "NOT_AVAILABLE",
-      "aggressive": "NOT_AVAILABLE",
+      "safe": "Paris Saint-Germain draw no bet",
+      "balanced": "Full-time total goals over 2.5",
+      "aggressive": "Both teams to score: Yes",
       "prediction_origin": "SOURCE_PRODUCTION_RUN_UNCHANGED",
       "favourite_decision_reason": "Unchanged from source production run 2026-09-04_0935."
     },
@@ -114,7 +127,12 @@
       "world_stability": "STABLE",
       "ampel": "YELLOW",
       "modal_score": "2-0",
-      "four_score_cluster": ["2-0", "2-1", "1-0", "1-1"],
+      "four_score_cluster": [
+        "2-0",
+        "2-1",
+        "1-0",
+        "1-1"
+      ],
       "score_band": "1-3",
       "data_snapshot_id": "snap_20260904_030748",
       "data_snapshot_coverage": "FULL",
@@ -122,10 +140,15 @@
       "nsp_codes": [],
       "board_status": "COMMITTED",
       "commit_status": "COMMITTED",
-      "safe": "NOT_AVAILABLE",
-      "balanced": "NOT_AVAILABLE",
-      "aggressive": "NOT_AVAILABLE",
-      "flags": ["MANUAL_DECISION_CORRECTION", "SOURCE_NSP_P_RAW_TIEBREAK_UNAVAILABLE", "DECISION_ENGINE_CHANGE_C_PENDING", "CLUBELO_CROSS_CHECK_ONLY"],
+      "safe": "Under 4.5 Total Goals",
+      "balanced": "Lyon Over 0.5 Team Goals",
+      "aggressive": "Lyon or Draw",
+      "flags": [
+        "MANUAL_DECISION_CORRECTION",
+        "SOURCE_NSP_P_RAW_TIEBREAK_UNAVAILABLE",
+        "DECISION_ENGINE_CHANGE_C_PENDING",
+        "CLUBELO_CROSS_CHECK_ONLY"
+      ],
       "prediction_origin": "MANUAL_STRUCTURAL_FINAL_TIE_CORRECTION",
       "favourite_decision_reason": "The persisted top candidates remained tied after the existing p_raw skip and specificity fallback. Lyon or Draw keeps LOW_TO_MEDIUM state sensitivity and has score_lead_clear=true, while Lyon Over 0.5 Team Goals has the same state sensitivity but no clear score lead and Under 4.5 has MEDIUM state sensitivity. ClubElo independently supports the Lyon strength edge (+107.5 in the available snapshot) but did not determine the selection."
     },
@@ -143,7 +166,12 @@
       "world_stability": "STABLE",
       "ampel": "YELLOW",
       "modal_score": "1-2",
-      "four_score_cluster": ["1-2", "0-2", "1-3", "2-3"],
+      "four_score_cluster": [
+        "1-2",
+        "0-2",
+        "1-3",
+        "2-3"
+      ],
       "score_band": "2-4",
       "data_snapshot_id": "snap_20260904_030748",
       "data_snapshot_coverage": "FULL",
@@ -151,9 +179,9 @@
       "nsp_codes": [],
       "board_status": "COMMITTED",
       "commit_status": "COMMITTED",
-      "safe": "NOT_AVAILABLE",
-      "balanced": "NOT_AVAILABLE",
-      "aggressive": "NOT_AVAILABLE",
+      "safe": "Liverpool to win",
+      "balanced": "Over 2.5 total goals",
+      "aggressive": "Both teams to score: Yes",
       "prediction_origin": "SOURCE_PRODUCTION_RUN_UNCHANGED",
       "favourite_decision_reason": "Unchanged from source production run 2026-09-04_0935."
     },
@@ -173,7 +201,12 @@
       "world_stability": "STABLE",
       "ampel": "YELLOW",
       "modal_score": "1-2",
-      "four_score_cluster": ["1-2", "0-2", "1-1", "1-3"],
+      "four_score_cluster": [
+        "1-2",
+        "0-2",
+        "1-1",
+        "1-3"
+      ],
       "score_band": "2-4",
       "data_snapshot_id": "snap_20260904_030748",
       "data_snapshot_coverage": "FULL",
@@ -181,10 +214,15 @@
       "nsp_codes": [],
       "board_status": "COMMITTED",
       "commit_status": "COMMITTED",
-      "safe": "NOT_AVAILABLE",
-      "balanced": "NOT_AVAILABLE",
-      "aggressive": "NOT_AVAILABLE",
-      "flags": ["MANUAL_DECISION_CORRECTION", "SOURCE_NSP_P_RAW_TIEBREAK_UNAVAILABLE", "DECISION_ENGINE_CHANGE_C_PENDING", "CLUBELO_CROSS_CHECK_ONLY"],
+      "safe": "Under 4.5 total goals",
+      "balanced": "Real Madrid draw no bet",
+      "aggressive": "Both teams to score: Yes",
+      "flags": [
+        "MANUAL_DECISION_CORRECTION",
+        "SOURCE_NSP_P_RAW_TIEBREAK_UNAVAILABLE",
+        "DECISION_ENGINE_CHANGE_C_PENDING",
+        "CLUBELO_CROSS_CHECK_ONLY"
+      ],
       "prediction_origin": "MANUAL_STRUCTURAL_FINAL_TIE_CORRECTION",
       "favourite_decision_reason": "Real Madrid draw no bet and Under 4.5 remained tied on the existing primary metrics and both have LOW state sensitivity and clear score lead. The total carries explicit TAIL_EXPOSURE_HIGH, while DNB does not; BTTS Yes is additionally weaker on robustness and state sensitivity. ClubElo independently shows a clear Real Madrid strength edge (+175.8 in the available snapshot) but was not used as decision authority."
     },
@@ -202,7 +240,12 @@
       "world_stability": "STABLE",
       "ampel": "YELLOW",
       "modal_score": "0-1",
-      "four_score_cluster": ["0-1", "1-1", "0-2", "1-2"],
+      "four_score_cluster": [
+        "0-1",
+        "1-1",
+        "0-2",
+        "1-2"
+      ],
       "score_band": "1-3",
       "data_snapshot_id": "snap_20260904_030748",
       "data_snapshot_coverage": "FULL",
@@ -210,9 +253,9 @@
       "nsp_codes": [],
       "board_status": "COMMITTED",
       "commit_status": "COMMITTED",
-      "safe": "NOT_AVAILABLE",
-      "balanced": "NOT_AVAILABLE",
-      "aggressive": "NOT_AVAILABLE",
+      "safe": "Under 3.5 total goals",
+      "balanced": "Genoa under 1.5 team goals",
+      "aggressive": "Como draw no bet",
       "prediction_origin": "SOURCE_PRODUCTION_RUN_UNCHANGED",
       "favourite_decision_reason": "Unchanged from source production run 2026-09-04_0935."
     },
@@ -232,7 +275,12 @@
       "world_stability": "UNKNOWN",
       "ampel": "YELLOW",
       "modal_score": "2-1",
-      "four_score_cluster": ["2-1", "2-2", "3-1", "3-2"],
+      "four_score_cluster": [
+        "2-1",
+        "2-2",
+        "3-1",
+        "3-2"
+      ],
       "score_band": "3-5",
       "data_snapshot_id": "snap_20260904_030748",
       "data_snapshot_coverage": "FULL",
@@ -240,10 +288,15 @@
       "nsp_codes": [],
       "board_status": "COMMITTED",
       "commit_status": "COMMITTED",
-      "safe": "NOT_AVAILABLE",
-      "balanced": "NOT_AVAILABLE",
-      "aggressive": "NOT_AVAILABLE",
-      "flags": ["MANUAL_DECISION_CORRECTION", "SOURCE_NSP_P_RAW_TIEBREAK_UNAVAILABLE", "DECISION_ENGINE_CHANGE_C_PENDING", "CLUBELO_CROSS_CHECK_ONLY"],
+      "safe": "VfB Stuttgart draw no bet",
+      "balanced": "Over 2.5 full-time goals",
+      "aggressive": "Total goals 3-5 inclusive",
+      "flags": [
+        "MANUAL_DECISION_CORRECTION",
+        "SOURCE_NSP_P_RAW_TIEBREAK_UNAVAILABLE",
+        "DECISION_ENGINE_CHANGE_C_PENDING",
+        "CLUBELO_CROSS_CHECK_ONLY"
+      ],
       "prediction_origin": "MANUAL_STRUCTURAL_FINAL_TIE_CORRECTION",
       "favourite_decision_reason": "Over 2.5 and Stuttgart draw no bet remained tied through the existing fallback. Over 2.5 has LOW_TO_MEDIUM state sensitivity versus MEDIUM for Stuttgart DNB, while both carry the same visible DATA_AXIS_GAP penalty. The source score corridor is 3-5. ClubElo independently shows a large Stuttgart strength edge (+195.7), and a ClubElo-based goal model corroborates an approximately 3.8-goal match expectation; neither is used as ECOBET decision authority."
     }
