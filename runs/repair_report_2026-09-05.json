@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "base_run": "2026-09-05_1238",
+  "correction_run": "2026-09-05_1422",
+  "base_bytes_before": 38476526,
+  "correction_bytes_before": 19890,
+  "match_count_base": 22,
+  "match_count_correction": 22,
+  "match_count_merged": 22,
+  "nsp_matches_before": 12,
+  "nsp_matches_correction": 0,
+  "nsp_matches_merged": 0,
+  "not_available_before": {
+    "safe": 22,
+    "balanced": 22,
+    "aggressive": 22
+  },
+  "not_available_correction": {
+    "safe": 10,
+    "balanced": 10,
+    "aggressive": 10
+  },
+  "not_available_merged": {
+    "safe": 10,
+    "balanced": 10,
+    "aggressive": 10
+  },
+  "inherited_paths_from_1238": {
+    "safe": 0,
+    "balanced": 0,
+    "aggressive": 0
+  },
+  "corrected_paths_from_1422": {
+    "safe": 12,
+    "balanced": 12,
+    "aggressive": 12
+  },
+  "inter_top_level_keys": {
+    "base": 42,
+    "correction": 24,
+    "merged": 43
+  },
+  "inter_recovered_key_paths": [
+    "reasoning_provenance.structured_stage_outputs.MATCH_CONTEXT_OPEN.match_context.source_lineage[1].source_evidence.competitions[0].format",
+    "reasoning_provenance.structured_stage_outputs.MATCH_CONTEXT_OPEN.match_context.source_lineage[1].source_evidence.competitions[0].competitors[0].form",
+    "reasoning_provenance.structured_stage_outputs.MATCH_CONTEXT_OPEN.match_context.source_lineage[1].source_evidence.competitions[0].competitors[1].form",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_REPAIR_RESULT.SEARCH_EXHAUSTION_BY_FIELD.DF04_FORM_L5_MATCH_LIST",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_REPAIR_RESULT.SEARCH_EXHAUSTION_BY_FIELD.DF04_FORM_L5_WDL",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_REPAIR_RESULT.SEARCH_EXHAUSTION_BY_FIELD.DF04_FORM_L5_GOALS",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_REPAIR_RESULT.SEARCH_EXHAUSTION_BY_FIELD.DF04_FORM_L10_MATCH_LIST",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_REPAIR_RESULT.SEARCH_EXHAUSTION_BY_FIELD.DF04_FORM_L10_WDL",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_REPAIR_RESULT.SEARCH_EXHAUSTION_BY_FIELD.DF04_FORM_L10_GOALS",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_HOME.CORE_FIELD_STATUS_MAP.DF04_FORM_L5_MATCH_LIST",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_HOME.CORE_FIELD_STATUS_MAP.DF04_FORM_L5_WDL",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_HOME.CORE_FIELD_STATUS_MAP.DF04_FORM_L5_GOALS",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_HOME.CORE_FIELD_STATUS_MAP.DF04_FORM_L10_MATCH_LIST",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_HOME.CORE_FIELD_STATUS_MAP.DF04_FORM_L10_WDL",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_HOME.CORE_FIELD_STATUS_MAP.DF04_FORM_L10_GOALS",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_HOME.AXES.CURRENT_FORM",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_AWAY.CORE_FIELD_STATUS_MAP.DF04_FORM_L5_MATCH_LIST",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_AWAY.CORE_FIELD_STATUS_MAP.DF04_FORM_L5_WDL",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_AWAY.CORE_FIELD_STATUS_MAP.DF04_FORM_L5_GOALS",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_AWAY.CORE_FIELD_STATUS_MAP.DF04_FORM_L10_MATCH_LIST",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_AWAY.CORE_FIELD_STATUS_MAP.DF04_FORM_L10_WDL",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_AWAY.CORE_FIELD_STATUS_MAP.DF04_FORM_L10_GOALS",
+    "reasoning_provenance.structured_stage_outputs.DATA_FABRIC_EXECUTE.MATCH_DATA_READINESS_EVALUATION.TEAM_EBOOK_AWAY.AXES.CURRENT_FORM"
+  ],
+  "inter_decision_paths": {
+    "safe": "Inter or draw (1X)",
+    "balanced": "Inter draw no bet",
+    "aggressive": "Inter to win",
+    "nsp_codes": [],
+    "kickoff": "2026-09-05T16:00:00+00:00"
+  },
+  "merged_bytes_after": 21732293
+}
