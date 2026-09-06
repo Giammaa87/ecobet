@@ -1,209 +1,61 @@
-name: One-time repair Sep 5 corrected run
+name: One-time apply index V3.3
 
 on:
   push:
     paths:
-      - 'runs/.repair_sep5_trigger'
+      - 'runs/.index_v33_trigger'
 
 permissions:
   contents: write
 
 jobs:
-  repair:
+  patch-index:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Merge full 1238 payload with 1422 corrections
+      - name: Verify V3.2 base
         shell: bash
         run: |
-          python3 - <<'PY'
-          import copy
-          import json
-          import os
-          from pathlib import Path
+          set -euo pipefail
+          actual="$(git hash-object index.html)"
+          expected="204ab2d629e1a61b5520fe642f1186ac2a0f975e"
+          echo "current index blob: $actual"
+          test "$actual" = "$expected"
 
-          base_path = Path('runs/2026-09-05_1238.json')
-          corr_path = Path('runs/2026-09-05_1422.json')
-          report_path = Path('runs/repair_report_2026-09-05.json')
-
-          if not base_path.exists() or not corr_path.exists():
-              raise SystemExit('Required run file missing')
-          if base_path.stat().st_size < 1_000_000:
-              raise SystemExit(f'Base run unexpectedly small: {base_path.stat().st_size}')
-
-          with base_path.open('r', encoding='utf-8') as f:
-              base = json.load(f)
-          with corr_path.open('r', encoding='utf-8') as f:
-              corr = json.load(f)
-
-          def deep_merge(a, b):
-              if isinstance(a, dict) and isinstance(b, dict):
-                  out = copy.deepcopy(a)
-                  for k, v in b.items():
-                      out[k] = deep_merge(out[k], v) if k in out else copy.deepcopy(v)
-                  return out
-              return copy.deepcopy(b)
-
-          # Preserve every full-run field, but let correction metadata override it.
-          corr_without_matches = {k: v for k, v in corr.items() if k != 'matches'}
-          merged = deep_merge(base, corr_without_matches)
-
-          base_matches = base.get('matches') or []
-          corr_matches = corr.get('matches') or []
-          base_by_id = {m.get('fixture_id'): m for m in base_matches if m.get('fixture_id')}
-          corr_by_id = {m.get('fixture_id'): m for m in corr_matches if m.get('fixture_id')}
-
-          if len(base_matches) != len(corr_matches):
-              raise SystemExit(f'Match count mismatch: base={len(base_matches)} correction={len(corr_matches)}')
-
-          merged_matches = []
-          seen = set()
-          inherited_paths = {'safe': 0, 'balanced': 0, 'aggressive': 0}
-          corrected_paths = {'safe': 0, 'balanced': 0, 'aggressive': 0}
-
-          for bm in base_matches:
-              fid = bm.get('fixture_id')
-              cm = corr_by_id.get(fid)
-              if cm is None:
-                  mm = copy.deepcopy(bm)
-              else:
-                  mm = deep_merge(bm, cm)
-
-                  # 1422 is sparse. NOT_AVAILABLE means the correction did not
-                  # republish that PATHS_BUILD value; it must not erase the full
-                  # 1238 Safe/Balanced/Aggressive path.
-                  for key in ('safe', 'balanced', 'aggressive'):
-                      cv = cm.get(key)
-                      bv = bm.get(key)
-                      if cv in (None, '', 'NOT_AVAILABLE') and bv not in (None, '', 'NOT_AVAILABLE'):
-                          mm[key] = copy.deepcopy(bv)
-                          inherited_paths[key] += 1
-                      elif cv not in (None, '', 'NOT_AVAILABLE'):
-                          corrected_paths[key] += 1
-
-                  # Empty nsp_codes in 1422 is an intentional correction and
-                  # MUST replace the 11 NSPs from 1238.
-                  if 'nsp_codes' in cm:
-                      mm['nsp_codes'] = copy.deepcopy(cm['nsp_codes'])
-
-              merged_matches.append(mm)
-              if fid:
-                  seen.add(fid)
-
-          # Defensive: keep any correction-only fixture instead of dropping it.
-          for cm in corr_matches:
-              fid = cm.get('fixture_id')
-              if fid not in seen:
-                  merged_matches.append(copy.deepcopy(cm))
-
-          merged['matches'] = merged_matches
-
-          def nsp_count(doc):
-              return sum(1 for m in (doc.get('matches') or []) if m.get('nsp_codes'))
-
-          def not_available_count(doc, key):
-              return sum(1 for m in (doc.get('matches') or []) if m.get(key) in (None, '', 'NOT_AVAILABLE'))
-
-          def find_match(doc, home, away):
-              for m in doc.get('matches') or []:
-                  if m.get('home') == home and m.get('away') == away:
-                      return m
-              return {}
-
-          def matching_key_paths(obj, needles, prefix='', out=None):
-              if out is None:
-                  out = []
-              if len(out) >= 80:
-                  return out
-              if isinstance(obj, dict):
-                  for k, v in obj.items():
-                      p = f'{prefix}.{k}' if prefix else str(k)
-                      lk = str(k).lower().replace('-', '_')
-                      if any(n in lk for n in needles):
-                          out.append(p)
-                          if len(out) >= 80:
-                              return out
-                      matching_key_paths(v, needles, p, out)
-              elif isinstance(obj, list):
-                  for i, v in enumerate(obj[:50]):
-                      matching_key_paths(v, needles, f'{prefix}[{i}]', out)
-                      if len(out) >= 80:
-                          return out
-              return out
-
-          inter_base = find_match(base, 'Inter', 'Napoli')
-          inter_corr = find_match(corr, 'Inter', 'Napoli')
-          inter_merged = find_match(merged, 'Inter', 'Napoli')
-
-          report = {
-              'status': 'PASS',
-              'base_run': '2026-09-05_1238',
-              'correction_run': '2026-09-05_1422',
-              'base_bytes_before': base_path.stat().st_size,
-              'correction_bytes_before': corr_path.stat().st_size,
-              'match_count_base': len(base_matches),
-              'match_count_correction': len(corr_matches),
-              'match_count_merged': len(merged_matches),
-              'nsp_matches_before': nsp_count(base),
-              'nsp_matches_correction': nsp_count(corr),
-              'nsp_matches_merged': nsp_count(merged),
-              'not_available_before': {k: not_available_count(base, k) for k in ('safe','balanced','aggressive')},
-              'not_available_correction': {k: not_available_count(corr, k) for k in ('safe','balanced','aggressive')},
-              'not_available_merged': {k: not_available_count(merged, k) for k in ('safe','balanced','aggressive')},
-              'inherited_paths_from_1238': inherited_paths,
-              'corrected_paths_from_1422': corrected_paths,
-              'inter_top_level_keys': {
-                  'base': len(inter_base.keys()),
-                  'correction': len(inter_corr.keys()),
-                  'merged': len(inter_merged.keys()),
-              },
-              'inter_recovered_key_paths': matching_key_paths(
-                  inter_merged,
-                  ('momentum','last_five','last5','last_5','form','team_box','teambox')
-              ),
-              'inter_decision_paths': {
-                  'safe': inter_merged.get('safe'),
-                  'balanced': inter_merged.get('balanced'),
-                  'aggressive': inter_merged.get('aggressive'),
-                  'nsp_codes': inter_merged.get('nsp_codes'),
-                  'kickoff': inter_merged.get('kickoff'),
-              },
-          }
-
-          # Sanity gates: never publish a thin correction again.
-          if len(merged_matches) != len(base_matches):
-              raise SystemExit('Merged fixture count changed unexpectedly')
-          if report['nsp_matches_merged'] != report['nsp_matches_correction']:
-              raise SystemExit('NSP correction was not preserved')
-          if len(inter_merged.keys()) < len(inter_base.keys()):
-              raise SystemExit('Inter full payload was not preserved')
-
-          tmp = corr_path.with_suffix('.json.tmp')
-          with tmp.open('w', encoding='utf-8') as f:
-              json.dump(merged, f, ensure_ascii=False, separators=(',', ':'))
-          os.replace(tmp, corr_path)
-
-          report['merged_bytes_after'] = corr_path.stat().st_size
-          report['status'] = 'PASS'
-          with report_path.open('w', encoding='utf-8') as f:
-              json.dump(report, f, ensure_ascii=False, indent=2)
-              f.write('\n')
-
-          if corr_path.stat().st_size < 1_000_000:
-              raise SystemExit(f'Merged run still unexpectedly small: {corr_path.stat().st_size}')
-
-          print(json.dumps(report, ensure_ascii=False, indent=2))
-          PY
-
-      - name: Commit repaired full corrected run
+      - name: Apply audited V3.2 to V3.3 patch
         shell: bash
         run: |
+          set -euo pipefail
+          cat \
+            runs/.index_v33_patch_01 \
+            runs/.index_v33_patch_02 \
+            runs/.index_v33_patch_03 \
+            runs/.index_v33_patch_04 \
+            runs/.index_v33_patch_05 \
+            | tr -d '\n\r' \
+            | base64 -d > /tmp/index_v33.patch
+          patch --batch -p0 < /tmp/index_v33.patch
+          actual="$(git hash-object index.html)"
+          expected="c51cdd95611741467e4ba27ca0c32d616b1cf75c"
+          echo "patched index blob: $actual"
+          test "$actual" = "$expected"
+
+      - name: Commit V3.3 and remove temporary patch files
+        shell: bash
+        run: |
+          set -euo pipefail
           git config user.name 'ecobet-repair-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add runs/2026-09-05_1422.json runs/repair_report_2026-09-05.json
-          git diff --cached --quiet && exit 0
-          git commit -m 'Restore full payload in corrected Sep 5 run'
+          git add index.html
+          git rm -f \
+            runs/.index_v33_patch_01 \
+            runs/.index_v33_patch_02 \
+            runs/.index_v33_patch_03 \
+            runs/.index_v33_patch_04 \
+            runs/.index_v33_patch_05 \
+            runs/.index_v33_trigger
+          git commit -m 'Fix effective decision paths in index'
           git push
