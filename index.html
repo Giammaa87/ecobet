@@ -3,22 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ECOBET – Momentum / Last 5 Hotfix Loader</title>
+<title>ECOBET – Full targeted hotfix</title>
 <style>
-  html,body{margin:0;min-height:100%;background:#081015;color:#e9f2f5;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-  .boot{max-width:760px;margin:10vh auto;padding:24px;border:1px solid #25404c;border-radius:18px;background:#0e1a21}
-  .boot h1{margin:0 0 10px;font-size:1.25rem}
-  .boot p{color:#91a7b1;line-height:1.55}
-  .ok{color:#31e6a1}.bad{color:#ff6577}
-  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+html,body{margin:0;min-height:100%;background:#081015;color:#e9f2f5;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.boot{max-width:820px;margin:9vh auto;padding:24px;border:1px solid #25404c;border-radius:18px;background:#0e1a21}
+.boot h1{margin:0 0 10px;font-size:1.3rem}.boot p{color:#91a7b1;line-height:1.55}.bad{color:#ff6577}
 </style>
 </head>
 <body>
-<div class="boot" id="boot">
-  <h1>ECOBET Momentum / Last 5 Hotfix</h1>
-  <p>Die bestehende ECOBET V2.2L wird geladen und ausschliesslich an zwei Stellen gepatcht:
-  Matchdetails erhalten wieder <b>Team Momentum · Last 5</b>, und beim Öffnen eines Matches
-  werden die Auditdaten vor dem finalen Detail-Render geladen.</p>
+<div class="boot">
+  <h1>ECOBET Full Targeted Hotfix</h1>
+  <p>Basis: bestehende V2.2L. Enthalten: Momentum + Last 5, 12:38 Basis / 14:22 Decision Overlay,
+  Zurich Kickoff HH:mm und Score Cluster unter den Entscheidungspfaden.</p>
   <p id="status">Basis wird geladen …</p>
 </div>
 
@@ -26,66 +22,215 @@
 (async function(){
   const status = document.getElementById('status');
 
-  // Commit-pinned basis: current production HTML before this hotfix.
-  // Dadurch lädt diese Ersatzdatei NICHT sich selbst, nachdem sie als index.html hochgeladen wurde.
+  // Pinned production basis so replacing index.html cannot recurse into itself.
   const BASE =
     'https://raw.githubusercontent.com/Giammaa87/ecobet/6aa510d9f270fbefc81c9efc6e5c1a5391c5f6a3/index.html';
 
   try {
     const response = await fetch(BASE, {cache:'no-store'});
     if (!response.ok) throw new Error('Basis-HTML HTTP ' + response.status);
-
     let source = await response.text();
     let patches = 0;
 
-    // FIX 1:
-    // Team Momentum + die fünf HIT/MISS/PUSH-Punkte wieder direkt in den Matchdetails anzeigen.
+    /* =========================================================
+       1) MOMENTUM + LAST 5 IN MATCH DETAILS
+       ========================================================= */
     const detailNeedle =
       '<div class="chips"><span class="chip ${chipClass(m.data_readiness)}">${show(m.data_readiness)}</span><span class="chip ${chipClass(m.world_stability)}">${show(m.world_stability)}</span><span class="chip">${show(m.world_type)}</span></div></div><section class="decision-card panel">';
 
     const detailReplacement =
       '<div class="chips"><span class="chip ${chipClass(m.data_readiness)}">${show(m.data_readiness)}</span><span class="chip ${chipClass(m.world_stability)}">${show(m.world_stability)}</span><span class="chip">${show(m.world_type)}</span></div></div><section class="cluster panel"><h3 style="margin-top:0">Team Momentum · Last 5</h3>${runMomentumPair(m)}</section><section class="decision-card panel">';
 
-    if (source.includes(detailNeedle)) {
-      source = source.replace(detailNeedle, detailReplacement);
-      patches++;
-    } else {
-      throw new Error('Detail-Renderstelle nicht gefunden – Hotfix wurde NICHT angewendet.');
-    }
+    if (!source.includes(detailNeedle)) throw new Error('Momentum Detail-Renderstelle nicht gefunden.');
+    source = source.replace(detailNeedle, detailReplacement);
+    patches++;
 
-    // FIX 2:
-    // Beim ersten Öffnen kann auditCache noch leer sein. Snapshot + Audit-Historie gemeinsam laden
-    // und danach das Detail nochmals rendern. Damit erscheinen Momentum und Last-5-Punkte zuverlässig.
     const loadNeedle =
       'if(sync)syncURL();hydrateMatchSnapshot(m).then(()=>{';
-
     const loadReplacement =
       'if(sync)syncURL();Promise.all([hydrateMatchSnapshot(m),ensureAuditData().catch(e=>{console.warn("Momentum audit fallback failed",e);return []})]).then(()=>{';
 
-    if (source.includes(loadNeedle)) {
-      source = source.replace(loadNeedle, loadReplacement);
-      patches++;
-    } else {
-      throw new Error('OpenDetail-Ladestelle nicht gefunden – Hotfix wurde NICHT angewendet.');
+    if (!source.includes(loadNeedle)) throw new Error('OpenDetail-Ladestelle nicht gefunden.');
+    source = source.replace(loadNeedle, loadReplacement);
+    patches++;
+
+    /* =========================================================
+       2) KICKOFF: EUROPE/ZURICH, HH:mm
+       Does not mutate stored run data; presentation only.
+       ========================================================= */
+    const helperNeedle = 'function matchCard(m,i){';
+    const helperCode = `
+function kickoffHHMM(v){
+  if(!present(v))return '—';
+  const raw=String(v);
+  const d=new Date(raw);
+  if(!Number.isNaN(d.getTime())){
+    try{
+      return new Intl.DateTimeFormat('de-CH',{
+        timeZone:'Europe/Zurich',
+        hour:'2-digit',
+        minute:'2-digit',
+        hour12:false
+      }).format(d);
+    }catch(e){}
+  }
+  const mm=raw.match(/(?:T|\\s)(\\d{2}):(\\d{2})/);
+  return mm?mm[1]+':'+mm[2]:show(v);
+}
+`;
+    if (!source.includes(helperNeedle)) throw new Error('matchCard Marker nicht gefunden.');
+    source = source.replace(helperNeedle, helperCode + helperNeedle);
+    source = source.replaceAll('${show(m.kickoff)}', '${kickoffHHMM(m.kickoff)}');
+    patches++;
+
+    /* =========================================================
+       3) 12:38 FULL BASIS + 14:22 DECISION-ONLY WHITELIST OVERLAY
+       Only applies when 2026-09-05_1422 is selected.
+       Team data / E-books / snapshot detail / L5 stay from 1238.
+       ========================================================= */
+    const oldLoader =
+`async function loadSelectedRun(preserveRoute=false){const id=$('#runId').value;if(!id)return;$('#analysisCards').innerHTML='<div class="loading panel">Run wird geladen …</div>';try{state.currentRunId=id;state.currentRun=normalizeRun(await getJSON(\`runs/\${id}.json\`));if(!preserveRoute)state.analysisCompetition='ALLE';renderAnalyses();if(state.activeView==='topreads')renderTopReads();syncURL()}catch(e){$('#analysisCards').innerHTML=\`<div class="error panel">\${esc(e.message)}</div>\`}}`;
+
+    const newLoader =
+`function overlay1422DecisionFields(baseMatch,fixMatch){
+  if(!fixMatch)return baseMatch;
+  const out={...baseMatch};
+
+  // Explicit whitelist: only corrected decision/release fields may cross from 14:22.
+  const keys=[
+    'ampel',
+    'safe','balanced','aggressive',
+    'favourite','favorite','favourite_prediction','favorite_prediction',
+    'favourite_decision','favorite_decision','favourite_decision_reason','favorite_decision_reason',
+    'favourite_robustness','favorite_robustness','robustness',
+    'favourite_specificity','favorite_specificity',
+    'favourite_cluster_coverage','favorite_cluster_coverage',
+    'nsp_codes','nsp_code','nsp_reason','nsp_reasons','is_nsp',
+    'board_status','commit_status',
+    'decision_paths','prediction_map','candidates',
+    'secondary_prediction','secondary_read','secondary_pick',
+    'alternative_prediction','alternative_read','alternative_pick'
+  ];
+  for(const k of keys){
+    if(Object.prototype.hasOwnProperty.call(fixMatch,k)) out[k]=fixMatch[k];
+  }
+
+  // Structured decision-engine containers are copied only as decision containers.
+  for(const k of ['decision_engine','decision_engine_output']){
+    if(fixMatch[k] && typeof fixMatch[k]==='object'){
+      const src=fixMatch[k], dst={...(out[k]||{})};
+      for(const dk of ['decision_paths','paths','favourite_decision','favorite_decision','candidates','prediction_map']){
+        if(Object.prototype.hasOwnProperty.call(src,dk)) dst[dk]=src[dk];
+      }
+      out[k]=dst;
+    }
+  }
+
+  // Preserve complete 12:38 team/data payload by construction.
+  return out;
+}
+
+function merge1238With1422(baseRun,fixRun){
+  const base=normalizeRun(baseRun), fix=normalizeRun(fixRun);
+  const byFixture=new Map();
+  const byTeams=new Map();
+
+  for(const m of fix.matches||[]){
+    if(m.fixture_id!=null) byFixture.set(String(m.fixture_id),m);
+    byTeams.set((teamIdentityKey(m.home)||'')+'|'+(teamIdentityKey(m.away)||''),m);
+  }
+
+  const matches=(base.matches||[]).map(m=>{
+    let f=null;
+    if(m.fixture_id!=null) f=byFixture.get(String(m.fixture_id))||null;
+    if(!f) f=byTeams.get((teamIdentityKey(m.home)||'')+'|'+(teamIdentityKey(m.away)||''))||null;
+    return overlay1422DecisionFields(m,f);
+  });
+
+  return {
+    ...base,
+    meta:{...(base.meta||{}),...(fix.meta||{}),
+      display_basis_run:'2026-09-05_1238',
+      decision_overlay_run:'2026-09-05_1422',
+      overlay_mode:'DECISION_WHITELIST'
+    },
+    matches
+  };
+}
+
+async function loadSelectedRun(preserveRoute=false){
+  const id=$('#runId').value;
+  if(!id)return;
+  $('#analysisCards').innerHTML='<div class="loading panel">Run wird geladen …</div>';
+  try{
+    state.currentRunId=id;
+
+    if(id==='2026-09-05_1422'){
+      const [baseRaw,fixRaw]=await Promise.all([
+        getJSON('runs/2026-09-05_1238.json'),
+        getJSON('runs/2026-09-05_1422.json')
+      ]);
+      state.currentRun=merge1238With1422(baseRaw,fixRaw);
+    }else{
+      state.currentRun=normalizeRun(await getJSON(\`runs/\${id}.json\`));
     }
 
-    if (patches !== 2) throw new Error('Unerwartete Patch-Anzahl: ' + patches);
+    if(!preserveRoute)state.analysisCompetition='ALLE';
+    renderAnalyses();
+    if(state.activeView==='topreads')renderTopReads();
+    syncURL();
+  }catch(e){
+    $('#analysisCards').innerHTML=\`<div class="error panel">\${esc(e.message)}</div>\`;
+  }
+}`;
 
-    // Identifikationsmarker, ohne die bestehende Versionslogik zu verändern.
+    if (!source.includes(oldLoader)) throw new Error('loadSelectedRun Original nicht exakt gefunden.');
+    source = source.replace(oldLoader, newLoader);
+    patches++;
+
+    /* =========================================================
+       4) SCORE CLUSTER BELOW DECISION PATHS
+       Work only inside detailHTML source segment.
+       ========================================================= */
+    const fnStart = source.indexOf('function detailHTML(m){');
+    const fnEnd = source.indexOf('\nfunction deepMetric(', fnStart);
+    if (fnStart < 0 || fnEnd < 0) throw new Error('detailHTML Funktion nicht gefunden.');
+
+    let detailFn = source.slice(fnStart, fnEnd);
+
+    const scoreStart = detailFn.indexOf('${c.length||present(scoreBand(m))||hasTeamScoreBands(m)?`<section class="cluster panel"><h3 style="margin-top:0">Score Cluster</h3>');
+    const pathsStart = detailFn.indexOf('${!nsp?`<section class="cluster panel"><h3 style="margin-top:0">Entscheidungspfade</h3>');
+
+    if (scoreStart < 0 || pathsStart < 0 || pathsStart <= scoreStart)
+      throw new Error('Score/Decision Block Reihenfolge nicht erkannt.');
+
+    const techStart = detailFn.indexOf('<section class="tech panel">', pathsStart);
+    if (techStart < 0) throw new Error('Tech Block nach Entscheidungspfaden nicht gefunden.');
+
+    // Locate end of Score expression immediately before Decision expression.
+    const scoreExpr = detailFn.slice(scoreStart, pathsStart);
+    const pathsExpr = detailFn.slice(pathsStart, techStart);
+
+    // Swap only these two rendered blocks.
+    detailFn = detailFn.slice(0, scoreStart) + pathsExpr + scoreExpr + detailFn.slice(techStart);
+    source = source.slice(0, fnStart) + detailFn + source.slice(fnEnd);
+    patches++;
+
+    if (patches !== 5) throw new Error('Unerwartete Patch-Anzahl: ' + patches);
+
     source = source.replace(
       '</head>',
-      '<!-- ECOBET HOTFIX 2026-09-06: restore Team Momentum + Last 5 in match details -->\n</head>'
+      '<!-- ECOBET HOTFIX 2026-09-06: Momentum/L5 + 1238 basis/1422 decision whitelist + Zurich HH:mm + Score Cluster order -->\n</head>'
     );
 
-    // Vollständige gepatchte ECOBET-Seite in dieses Dokument einsetzen.
     document.open();
     document.write(source);
     document.close();
 
   } catch (err) {
     console.error(err);
-    status.className = 'bad';
-    status.textContent = 'Hotfix konnte nicht gestartet werden: ' + (err && err.message ? err.message : String(err));
+    status.className='bad';
+    status.textContent='Hotfix konnte nicht gestartet werden: '+(err&&err.message?err.message:String(err));
   }
 })();
 </script>
