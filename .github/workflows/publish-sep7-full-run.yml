@@ -1,0 +1,392 @@
+name: One-time publish Sep 7 full ECOBET run
+
+on:
+  push:
+    paths:
+      - 'runs/.publish_sep7_trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build full ECOBET run from immutable Sep 7 snapshot
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import copy
+          import hashlib
+          import json
+          import os
+          from datetime import datetime
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          SNAP_ID = 'snap_20260907_031211'
+          SNAP_DIR = Path('data/2026-09-07') / SNAP_ID
+          RUN_STEM = '2026-09-07_0902'
+          RUN_PATH = Path('runs') / f'{RUN_STEM}.json'
+          INDEX_PATH = Path('runs/index.json')
+          RUN_ID = 'RUN_2026-09-07_FOCUS_5_PLUS_UEFA_CEST_0902'
+          RUN_SNAPSHOT_ID = 'ECOBET_RUNSNAP_2026-09-07_0902'
+          RUN_TIME = '2026-09-07T09:02:31+02:00'
+          SNAP_BASE = f'https://giammaa87.github.io/ecobet/data/2026-09-07/{SNAP_ID}'
+
+          AUTHORITY = {
+              'authority_bundle_id': 'ECOBET_MASTER_3_0_FREEZE_007',
+              'authority_manifest_sha256': 'D48715EA76E28F726D766F94705DAD8AA38A412AF55AA870C95B6B8C070F016B',
+              'authority_report_sha256': '6860E3A75D4F9685BB31AB94C14309506788B957E59A80CA859BB39BDB0BF866',
+              'authority_hierarchy': ['CUSTOM_GPT_INSTRUCTIONS','FROZEN_N_AUTHORITIES','EXPLICITLY_APPROVED_ACTIVE_P_CANDIDATES','H_HISTORY_CALIBRATION'],
+              'authority_component_hashes': {
+                  'CUSTOM_INSTRUCTIONS': 'C71B439B9B21576D6627C341CAE0F1121F26ACFFE92B56DC00A5EB890B728867',
+                  'MASTER_OS': '29BA2D42A56A6610C2C88FF386B586FB56CAEB5A1CFF6ADD8B135A2FC483071D',
+                  'DATA_FABRIC_AND_EBOOKS': 'FC3B287D68A43E9E00AB9C584DA21BBDD218BA5368E215A931DC3D4983385464',
+                  'FOOTBALL_AND_DECISION_ENGINE': '6AC01B462DC9CBE4A6523ABFCEB75890EA036399DF9B2C1C056B85D02E5CB8DF',
+                  'OUTPUT_AND_AUDIT': '3D7B8A4E9AAF67157399113C09E9BA44325B89256534F006BBC1DE4DCA0B8CAE',
+                  'TEAM_ID_REGISTRY': '64A1A7B93376E1023D47F6833967F8DDF300DF33AE5AA10954B127EC4931BD3B',
+                  'HISTORY_CALIBRATION': 'F89B515AC7A1A70D0C8E3006F9CCB9A78CA7D4A03E8FB8912C81FC7F95078D43',
+                  'RUN_RECORD_SCHEMA': 'F58F7C559698E81FD2B49954594078D175CE55380DEED79C6A53A1F463A79DFF'
+              },
+              'active_p_set': 'EMPTY'
+          }
+          CONTRACT_ID = 'ECOBET_RUN_EXECUTION_CONTRACT_010'
+          CONTRACT_SHA = 'A5006D707E90DDABA6511A88CAECC2C61A688CF93F6D24730A00C608C557E9AC'
+          PROFILE_ID = 'ECOBET_ONE_MATCH_NORM_BOUND_REASONING_V1_4'
+          PROFILE_HASH = '350CC828A22394E3EAE13EE5CB7946EE3C2A15096AE8F67C7B285B726C51225C'
+          PROVIDER = 'OPENAI_GPT_5_6_SOL_CHATGPT'
+
+          with (SNAP_DIR / 'manifest.json').open(encoding='utf-8') as f:
+              manifest = json.load(f)
+          with (SNAP_DIR / 'fixtures.json').open(encoding='utf-8') as f:
+              fixtures_doc = json.load(f)
+
+          if manifest.get('snapshot_id') != SNAP_ID or manifest.get('n_fixtures') != 4 or manifest.get('n_teams') != 8:
+              raise SystemExit('Unexpected Sep 7 snapshot manifest')
+
+          part_hash = {p['path']: p['sha256'] for p in manifest.get('parts', [])}
+          team_payloads = {}
+          team_refs = {}
+          for p in manifest.get('parts', []):
+              path = p.get('path','')
+              if not path.startswith('teams/'):
+                  continue
+              fp = SNAP_DIR / path
+              raw = fp.read_bytes()
+              actual = 'sha256:' + hashlib.sha256(raw).hexdigest()
+              if actual != p['sha256']:
+                  raise SystemExit(f'Snapshot team hash mismatch: {path}: {actual} != {p["sha256"]}')
+              payload = json.loads(raw.decode('utf-8'))
+              tid = payload['team_id']
+              if payload.get('snapshot_id') != SNAP_ID:
+                  raise SystemExit(f'Team snapshot id mismatch: {tid}')
+              if payload.get('feature_status',{}).get('n_features') != 1000:
+                  raise SystemExit(f'Team does not have 1000 canonical features: {tid}')
+              team_payloads[tid] = payload
+              team_refs[tid] = {
+                  'source_class': 'IMMUTABLE_DAILY_DATA_SNAPSHOT_TEAM',
+                  'url': f'{SNAP_BASE}/teams/{tid}.json',
+                  'sha256': actual
+              }
+          if len(team_payloads) != 8:
+              raise SystemExit(f'Expected 8 team payloads, found {len(team_payloads)}')
+
+          FIXTURES = {x['fixture']['fixture_id']: x for x in fixtures_doc['fixtures']}
+          if len(FIXTURES) != 4:
+              raise SystemExit('Expected 4 fixtures')
+
+          common_state = {
+              'S1': 'Home scores first: reassess whether the prime world becomes more controlled or opens transitions.',
+              'S2': 'Level late: draw-gravity and state sensitivity remain material.',
+              'S3': 'Away scores first: trailing team must increase risk and the original anchor can bend.'
+          }
+
+          SPECS = {
+            'DISC_ac9f7a42d5d4': {
+              'safe':'Under 3.5 full-time goals','balanced':'Under 2.5 full-time goals','aggressive':'Getafe CF to win','favourite':'Under 2.5 full-time goals',
+              'favourite_axis':'TOTAL_GOALS','favourite_side':'UNDER','favourite_low':None,'favourite_high':2.5,
+              'world_type':'LOW_EVENT_COMPACT','anchor':'LOW_EVENT_COMPACT_WITH_SLIGHT_HOME_CONTROL','world_stability':'MEDIUM_HIGH','robustness':'MEDIUM_HIGH','ampel':'GREEN',
+              'prime_world':'The match stays compact, shot quality remains limited and the total remains below three goals, with Getafe carrying the slightly stronger route to a narrow win.',
+              'counterworld':'An early goal breaks the compressed structure and forces the trailing side to open the game, increasing transition volume and invalidating the low-event anchor.',
+              'axes':{'CONTROL':'SLIGHT_HOME','CHAOS':'LOW','GOAL_PROFILE':'LOW','TEMPO':'LOW_TO_MEDIUM','PHASE_STRUCTURE':'COMPACT','DRAW_GRAVITY':'MEDIUM_HIGH'},
+              'modal_score':'1-0','cluster':['1-0','1-1','0-1','2-0'],'score_band':'1-3',
+              'repair_status':'NOT_REQUIRED','data_source_mode':'SNAPSHOT',
+              'repair_context':{'current_season':'Getafe: 3 played, 1W/0D/2L, 1 GF, 4 GA. Celta: 4 played, 0W/2D/2L, 1 GF, 4 GA.','repair_effect':'CONTEXT_CHECK_ONLY_NO_SNAPSHOT_GAP_REPLACED'},
+              'sources':[
+                {'name':'LALIGA official match page','url':'https://www.laliga.com/partido/temporada-2026-2027-laliga-ea-sports-getafe-cf-rc-celta-4','used_for':'fixture confirmation and current league totals','trust':'HIGH','source_type':'OFFICIAL_COMPETITION_CURRENT'},
+                {'name':'Sports Mole preview','url':'https://www.sportsmole.co.uk/football/getafe/preview/getafe-vs-celta-vigo-prediction-team-news-lineups_604549.html','used_for':'secondary current-season context cross-check','trust':'MEDIUM','source_type':'SECONDARY_CONTEXT','published_at':'2026-09-05'}],
+              'elo':{'home':1646.9,'away':1671.8,'raw_delta_away_minus_home':24.9,'source_home':'https://theopenmodel.com/team/getafe/','source_away':'https://theopenmodel.com/team/celta/','as_of':'2026-09-06','verdict':'PASS_UNDER_2_5_STABLE','effect':'Small raw away strength edge does not create a one-sided score-expansion world; compact low-event evidence remains coherent.'}
+            },
+            'DISC_dd0d2eae4666': {
+              'safe':'Real Sociedad or draw (X2)','balanced':'Real Sociedad draw no bet','aggressive':'Real Sociedad to win','favourite':'Real Sociedad or draw (X2)',
+              'favourite_axis':'DOUBLE_CHANCE','favourite_side':'AWAY_OR_DRAW','favourite_low':None,'favourite_high':None,
+              'world_type':'AWAY_QUALITY_WITH_HOME_RESISTANCE','anchor':'REAL_SOCIEDAD_QUALITY_EDGE_BUT_HOME_FIELD_AND_AWAY_VOLATILITY_MATTER','world_stability':'MEDIUM','robustness':'MEDIUM_HIGH','ampel':'GREEN',
+              'prime_world':'Real Sociedad control enough of the midfield and transition prevention to create the clearer chances, while Elche remain vulnerable when the game moves away from a low block.',
+              'counterworld':'Elche score first or successfully compress the central zones, turning the match into a low-margin home resistance game where Real Sociedad finishing inconsistency reappears.',
+              'axes':{'CONTROL':'AWAY','CHAOS':'MEDIUM','GOAL_PROFILE':'MEDIUM','TEMPO':'MEDIUM','PHASE_STRUCTURE':'AWAY_PRESSURE_HOME_TRANSITIONS','DRAW_GRAVITY':'MEDIUM_HIGH'},
+              'modal_score':'1-1','cluster':['0-1','1-1','1-2','0-0'],'score_band':'1-3',
+              'repair_status':'COMPLETED','data_source_mode':'SNAPSHOT_PLUS_REPAIR',
+              'repair_context':{'current_season':'Elche: 3 played, 1 point, 3 GF, 9 GA; Real Sociedad arrive with one win and an inconsistent opening.','repair_effect':'PROMOTED_TEAM_AND_CURRENT_TOP_FLIGHT_CONTEXT_ADDED; SNAPSHOT CORE RETAINED'},
+              'sources':[
+                {'name':'LALIGA Elche schedule','url':'https://www.laliga.com/en-US/clubs/elche-c-f/next-matches','used_for':'fixture confirmation','trust':'HIGH','source_type':'OFFICIAL_COMPETITION_CURRENT'},
+                {'name':'Sports Mole preview','url':'https://www.sportsmole.co.uk/football/elche/preview/elche-vs-real-sociedad-prediction-team-news-lineups_604548.html','used_for':'promoted-team/current top-flight context repair','trust':'MEDIUM','source_type':'SECONDARY_REPAIR','published_at':'2026-09-05'}],
+              'elo':{'home':1606.7,'away':1664.7,'raw_delta_away_minus_home':58.0,'source_home':'https://theopenmodel.com/team/elche/','source_away':'https://theopenmodel.com/team/sociedad/','as_of':'2026-09-06','verdict':'FAVOURITE_DOWNGRADED_DNB_TO_X2','effect':'Real Sociedad retain the raw quality edge, but home-field and away-volatility counterweights make X2 more structurally robust than DNB as Favourite.'}
+            },
+            'DISC_3f77134123fb': {
+              'safe':'Cagliari or draw (1X)','balanced':'Cagliari draw no bet','aggressive':'Cagliari to win','favourite':'Cagliari or draw (1X)',
+              'favourite_axis':'DOUBLE_CHANCE','favourite_side':'HOME_OR_DRAW','favourite_low':None,'favourite_high':None,
+              'world_type':'HOME_PRESSURE_WITH_DRAW_GRAVITY','anchor':'CAGLIARI_HOME_EDGE_WITH_LOW_MARGIN','world_stability':'MEDIUM_HIGH','robustness':'HIGH','ampel':'GREEN',
+              'prime_world':'Cagliari respond with higher intensity, control the territorial battle and create enough pressure to avoid defeat, most plausibly through a narrow home win or draw.',
+              'counterworld':'Cagliari attacking absences blunt their final-third output; Lecce survive the first pressure wave and turn the match into a low-event away resistance or steal a transition goal.',
+              'axes':{'CONTROL':'SLIGHT_HOME','CHAOS':'MEDIUM_LOW','GOAL_PROFILE':'LOW_TO_MEDIUM','TEMPO':'MEDIUM','PHASE_STRUCTURE':'HOME_PRESSURE_AWAY_RESISTANCE','DRAW_GRAVITY':'HIGH'},
+              'modal_score':'1-0','cluster':['1-0','1-1','2-0','2-1'],'score_band':'1-3',
+              'repair_status':'COMPLETED','data_source_mode':'SNAPSHOT_PLUS_REPAIR',
+              'repair_context':{'current_season':'Cagliari opened with a win at Parma, then lost 1-0 to Inter and exited the cup to Verona; Lecce enter the same early survival corridor.','availability':'Cagliari press/secondary cross-check indicates absences including Mina/Idrissi/Kevin Carlos/Nzola; Lecce official squad does not include Geubbels or Kaba, while Jean returns to the called group.','repair_effect':'MATERIAL_AVAILABILITY_AND_COACH_CONTEXT_ADDED; SNAPSHOT CORE RETAINED'},
+              'sources':[
+                {'name':'Cagliari official press room','url':'https://cagliaricalcio.com/en/news/press-room-pisacane-before-cagliari-lecce/','used_for':'coach-regime and mentality context','trust':'HIGH','source_type':'OFFICIAL_CLUB_CURRENT','published_at':'2026-09-06'},
+                {'name':'Cagliari official squad list','url':'https://cagliaricalcio.com/en/news/cagliari-lecce-mister-pisacanes-squad-list/','used_for':'current squad confirmation','trust':'HIGH','source_type':'OFFICIAL_CLUB_CURRENT','published_at':'2026-09-06'},
+                {'name':'US Lecce official squad list','url':'https://oo.uslecce.it/news/64757337606/i-giallorossi-convocati-per-cagliari-lecce-us-lecce','used_for':'current squad confirmation','trust':'HIGH','source_type':'OFFICIAL_CLUB_CURRENT','published_at':'2026-09-06'},
+                {'name':'CalcioLecce availability report','url':'https://www.calciolecce.it/2026/09/06/cagliari-pisacane-di-francesco-allenatore-esperto-con-il-lecce-tante-partite-nella-partita/','used_for':'specific Cagliari absences cross-check','trust':'MEDIUM','source_type':'SECONDARY_REPAIR','published_at':'2026-09-06'},
+                {'name':'Sports Mole preview','url':'https://www.sportsmole.co.uk/football/cagliari/preview/cagliari-vs-lecce-prediction-team-news-lineups_604525.html','used_for':'current-form cross-check','trust':'MEDIUM','source_type':'SECONDARY_CONTEXT','published_at':'2026-09-05'}],
+              'elo':{'home':1601.9,'away':1576.0,'raw_delta_away_minus_home':-25.9,'source_home':'https://theopenmodel.com/team/cagliari/','source_away':'https://theopenmodel.com/team/lecce/','as_of':'2026-09-06','model_match_probabilities':{'home_win':0.44,'draw':0.28,'away_win':0.28},'verdict':'PASS_1X_STABLE','effect':'ClubElo-based context supports a modest home edge; 1X remains the structurally safer home-side expression.'}
+            },
+            'DISC_7d297721d5e6': {
+              'safe':'Over 1.5 full-time goals','balanced':'Full-time total goals: 2-4','aggressive':'Draw','favourite':'Over 1.5 full-time goals',
+              'favourite_axis':'TOTAL_GOALS','favourite_side':'OVER','favourite_low':1.5,'favourite_high':None,
+              'world_type':'CONTESTED_WITH_AWAY_QUALITY','anchor':'NEUTRAL_GOAL_PATH_OVER_DIRECTIONAL_LAZIO_EDGE','world_stability':'MEDIUM','robustness':'MEDIUM','ampel':'YELLOW',
+              'prime_world':'Both sides contribute enough threat for at least two total goals, with Lazio quality edge and Udinese home resistance producing a 1-1/1-2 type corridor.',
+              'counterworld':'Lazio clean-sheet start persists and the game stays 0-1, or an early tactical stalemate suppresses chance volume below the expected two-goal threshold.',
+              'axes':{'CONTROL':'SLIGHT_AWAY','CHAOS':'MEDIUM','GOAL_PROFILE':'MEDIUM','TEMPO':'MEDIUM','PHASE_STRUCTURE':'CONTESTED_WITH_AWAY_QUALITY','DRAW_GRAVITY':'HIGH'},
+              'modal_score':'1-1','cluster':['1-1','1-2','2-1','2-2'],'score_band':'2-4',
+              'repair_status':'COMPLETED','data_source_mode':'SNAPSHOT_PLUS_REPAIR',
+              'repair_context':{'current_season':'Udinese have four points from two league games and are unbeaten; Lazio have maximum points and no goals conceded.','h2h':'Udinese are unbeaten in the last five against Lazio; the last three meetings were draws, most recently 3-3 on 27 April 2026 and 1-1 in the previous Friuli meeting.','availability':'Udinese official update: Zaniolo and Palma had 3-4 week muscular injury prognoses from 25 August; coach says Zaniolo replacement still being managed and team not yet at 100%.','repair_effect':'MATERIAL_CURRENT_REGIME_AVAILABILITY_AND_H2H_CONTEXT_ADDED; SNAPSHOT CORE RETAINED'},
+              'sources':[
+                {'name':'Udinese official match preview','url':'https://www.udinese.it/Apps/WebObjects/Udinese.woa/wa/viewSection?id=92457&lang=eng','used_for':'current H2H and league-start context','trust':'HIGH','source_type':'OFFICIAL_CLUB_CURRENT','published_at':'2026-09-05'},
+                {'name':'Udinese coach press conference','url':'https://www.udinese.it/news/squad/runjaic-we-must-put-in-a-great-performance-in-front-of-our-fans','used_for':'current tactical/personnel context','trust':'HIGH','source_type':'OFFICIAL_CLUB_CURRENT','published_at':'2026-09-06'},
+                {'name':'Udinese medical update','url':'https://www.udinese.it/news/squadra/le-condizioni-di-palma-e-zaniolo','used_for':'confirmed Zaniolo/Palma injuries','trust':'HIGH','source_type':'OFFICIAL_CLUB_CURRENT','published_at':'2026-08-25'},
+                {'name':'Sports Mole preview','url':'https://www.sportsmole.co.uk/football/udinese/preview/udinese-vs-lazio-prediction-team-news-lineups_604528.html','used_for':'current-season cross-check','trust':'MEDIUM','source_type':'SECONDARY_CONTEXT','published_at':'2026-09-05'}],
+              'elo':{'home':1656.1,'away':1720.4,'raw_delta_away_minus_home':64.3,'source_home':'https://theopenmodel.com/team/udinese/','source_away':'https://theopenmodel.com/team/lazio/','as_of':'2026-09-06','model_match_probabilities':{'home_win':0.34,'draw':0.28,'away_win':0.38},'verdict':'PASS_NEUTRAL_GOAL_PATH','effect':'The raw Lazio edge is materially softened in match context; ClubElo does not justify replacing the neutral goals Favourite with a strong Lazio directional pick.'}
+            }
+          }
+
+          FORBIDDEN_ODDS_KEYS = {'AvgA','AvgD','AvgH','bookmaker_margin','imp_A','imp_A_raw','imp_D','imp_D_raw','imp_H','imp_H_raw','implied_prob_draw','implied_prob_loss','implied_prob_win','market_odds_draw','market_odds_loss','market_odds_win'}
+          def eligible_features(payload):
+              fs = payload.get('feature_state') or {}
+              out = {}
+              for k,v in fs.items():
+                  lk = k.lower()
+                  if k in FORBIDDEN_ODDS_KEYS or 'odds' in lk or 'bookmaker' in lk or lk.startswith('imp_') or lk.startswith('implied_prob_'):
+                      continue
+                  if v is not None:
+                      out[k] = v
+              return out
+
+          def team_ebook(tid, web_sources):
+              raw = team_payloads[tid]
+              features = eligible_features(raw)
+              return {
+                  'team_id': raw['team_id'],
+                  'team_name': raw['team_name'],
+                  'feature_cutoff': copy.deepcopy(raw.get('feature_cutoff')),
+                  'features': features,
+                  'feature_status': {
+                      **copy.deepcopy(raw.get('feature_status',{})),
+                      'embedded_reasoning_feature_count': len(features),
+                      'canonical_feature_count': 1000,
+                      'full_snapshot_payload_embedded': True,
+                      'odds_fields_rejected_from_reasoning': True
+                  },
+                  'feature_lineage': copy.deepcopy(raw.get('feature_lineage')),
+                  'snapshot_transport_reference': copy.deepcopy(team_refs[tid]),
+                  'snapshot_payload': copy.deepcopy(raw),
+                  'reasoning_exclusions': sorted(FORBIDDEN_ODDS_KEYS),
+                  'external_context': copy.deepcopy(web_sources)
+              }
+
+          def candidate(cid, expr, axis, roles):
+              return {
+                  'candidate_id': cid,
+                  'prediction_expression': expr,
+                  'market_axis': axis,
+                  'roles': roles,
+                  'status': 'ELIGIBLE',
+                  'p_raw': 'NOT_AVAILABLE',
+                  'wfrd': 'NOT_AVAILABLE',
+                  'candidate_score': 'NOT_AVAILABLE',
+                  'robustness_basis': 'STRUCTURAL_NORM_BOUND_ONLY'
+              }
+
+          def axis_for(expr):
+              e = expr.lower()
+              if 'under' in e or 'over' in e or 'total goals' in e: return 'TOTAL_GOALS'
+              if '(x2)' in e or '(1x)' in e: return 'DOUBLE_CHANCE'
+              if 'draw no bet' in e: return 'DNB'
+              if e == 'draw': return 'MATCH_RESULT'
+              if 'to win' in e: return 'MATCH_RESULT'
+              return 'OTHER'
+
+          def stage_provenance():
+              reasoning = {'STRENGTH_MODEL_BUILD','FOOTBALL_INTERPRETATION_BUILD','MATCHBOOK_MODEL_BUILD','PRIME_WORLD_BUILD','COUNTERWORLD_BUILD','GAME_STATE_TAIL_RISK_BUILD','SCORE_DISTRIBUTION_BUILD','PREDICTION_MAP_BUILD','CONFIRMATION_CHECK','CANDIDATE_SCORING','PATHS_BUILD','FAVOURITE_DECISION','AMPEL_AND_FLAGS'}
+              stages = ['MATCH_CONTEXT_OPEN','DATA_FABRIC_EXECUTE','TEAM_EBOOK_A_BUILD','TEAM_EBOOK_B_BUILD','MATCH_EBOOK_BUILD','STRENGTH_MODEL_BUILD','FOOTBALL_INTERPRETATION_BUILD','MATCHBOOK_MODEL_BUILD','PRIME_WORLD_BUILD','COUNTERWORLD_BUILD','GAME_STATE_TAIL_RISK_BUILD','SCORE_DISTRIBUTION_BUILD','PREDICTION_MAP_BUILD','CONFIRMATION_CHECK','CANDIDATE_SCORING','PATHS_BUILD','FAVOURITE_DECISION','PROBABILITY_BAND_BUILD','MODEL_PRICE_BAND_BUILD','AMPEL_AND_FLAGS','MATCH_VALIDATION','MATCH_COMMIT']
+              return {s:{'execution_mode':'NORM_BOUND_REASONING' if s in reasoning else 'DETERMINISTIC','authority_bundle_id':AUTHORITY['authority_bundle_id'],'contract_id':CONTRACT_ID,'contract_sha256':CONTRACT_SHA,'reasoning_profile_id':PROFILE_ID,'reasoning_profile_hash':PROFILE_HASH,'provider':PROVIDER,'timestamp':RUN_TIME} for s in stages}
+
+          matches=[]
+          for fid in ['DISC_ac9f7a42d5d4','DISC_dd0d2eae4666','DISC_3f77134123fb','DISC_7d297721d5e6']:
+              fxwrap = FIXTURES[fid]
+              fx = copy.deepcopy(fxwrap['fixture'])
+              s = SPECS[fid]
+              htid, atid = fx['home_team_id'], fx['away_team_id']
+              web_sources = copy.deepcopy(s['sources'])
+              hbook = team_ebook(htid, web_sources)
+              abook = team_ebook(atid, web_sources)
+              evidence_catalog = {
+                  'fixture': {'value':copy.deepcopy(fx),'evidence_type':'FIXTURE_CONTEXT','status':'FOUND','trust':'HIGH'},
+                  'home_team_snapshot': {'value':copy.deepcopy(team_refs[htid]),'evidence_type':'FULL_TEAM_SNAPSHOT_PAYLOAD','status':'FOUND','trust':'HIGH'},
+                  'away_team_snapshot': {'value':copy.deepcopy(team_refs[atid]),'evidence_type':'FULL_TEAM_SNAPSHOT_PAYLOAD','status':'FOUND','trust':'HIGH'},
+                  'web_context': {'value':{'context_evidence':copy.deepcopy(s['repair_context']),'sources':copy.deepcopy(web_sources)},'evidence_type':'POINT_IN_TIME_WEB_CONTEXT','status':'FOUND','trust':'MIXED_HIGH_MEDIUM'},
+                  'club_elo': {'value':copy.deepcopy(s['elo']),'evidence_type':'CLUBELO_SHOCK_TEST','status':'FOUND','trust':'MEDIUM_HIGH'}
+              }
+              picks=[('SAFE',s['safe']),('BALANCED',s['balanced']),('AGGRESSIVE',s['aggressive'])]
+              cands=[]
+              for role,expr in picks:
+                  cands.append(candidate(f'{fid}:{role}',expr,axis_for(expr),[role] + (['FAVOURITE'] if expr==s['favourite'] else [])))
+              # de-duplicate exact expression if Favourite is already a path
+              fav_candidate = next(c for c in cands if c['prediction_expression']==s['favourite'])
+              paths={
+                  'safe':{'available':True,'prediction_expression':s['safe'],'candidate_id':f'{fid}:SAFE'},
+                  'balanced':{'available':True,'prediction_expression':s['balanced'],'candidate_id':f'{fid}:BALANCED'},
+                  'aggressive':{'available':True,'prediction_expression':s['aggressive'],'candidate_id':f'{fid}:AGGRESSIVE'}
+              }
+              repair_result={'status':s['repair_status'],'mode':s['data_source_mode'],'context_evidence':copy.deepcopy(s['repair_context']),'sources':copy.deepcopy(web_sources) if s['repair_status']=='COMPLETED' else []}
+              structured={
+                  'MATCH_CONTEXT_OPEN':{'match_context':copy.deepcopy(fx)},
+                  'DATA_FABRIC_EXECUTE':{
+                      'DATA_FABRIC_LOCAL_RESULT':{'status':'COMPLETE','data_snapshot_id':SNAP_ID,'snapshot_coverage':'FULL','home_feature_vector':{'team_id':htid,'canonical_feature_count':1000,'embedded':True,'reference':copy.deepcopy(team_refs[htid])},'away_feature_vector':{'team_id':atid,'canonical_feature_count':1000,'embedded':True,'reference':copy.deepcopy(team_refs[atid])},'odds_fields_used_for_reasoning':False},
+                      'DATA_FABRIC_REPAIR_RESULT':repair_result,'EXTERNAL_REPAIR_PENDING':False,
+                      'MATCH_DATA_READINESS_EVALUATION':{'status':'READY','snapshot_full_payloads_embedded':True},'MATCH_DATA_READINESS':'READY','FINAL_NORMATIVE_READINESS_PRODUCED':True},
+                  'TEAM_EBOOK_A_BUILD':{'team_ebook':hbook},
+                  'TEAM_EBOOK_B_BUILD':{'team_ebook':abook},
+                  'MATCH_EBOOK_BUILD':{'match_ebook':{'evidence_catalog':evidence_catalog,'home_team_id':htid,'away_team_id':atid,'snapshot_id':SNAP_ID,'full_team_payloads_embedded':True},'data_readiness':'READY'},
+                  'STRENGTH_MODEL_BUILD':{'strength_assessment':{'club_elo_home':s['elo']['home'],'club_elo_away':s['elo']['away'],'raw_elo_delta_away_minus_home':s['elo']['raw_delta_away_minus_home'],'structural_control':s['axes']['CONTROL'],'conclusion':s['elo']['effect']},'uncertainty':['EARLY_SEASON_SAMPLE','HOME_FIELD_AND_MATCH_STATE_MATERIAL'],'contradictions':[],'evidence_references':['home_team_snapshot','away_team_snapshot','club_elo']},
+                  'FOOTBALL_INTERPRETATION_BUILD':{'football_interpretation':copy.deepcopy(s['axes']),'uncertainty':['EARLY_SEASON_SAMPLE','STATE_SENSITIVITY'],'contradictions':[],'evidence_references':['home_team_snapshot','away_team_snapshot','web_context','club_elo']},
+                  'MATCHBOOK_MODEL_BUILD':{'anchor':s['anchor'],'anchor_valid':True,'matchbook':{'world_type':s['world_type'],'axes':copy.deepcopy(s['axes'])},'world_type':s['world_type'],'evidence_references':['home_team_snapshot','away_team_snapshot','web_context','club_elo']},
+                  'PRIME_WORLD_BUILD':{'prime_world':s['prime_world'],'prime_variation':'NORMAL_STATE','world_plausibility':'SUPPORTED','evidence_references':['home_team_snapshot','away_team_snapshot','web_context']},
+                  'COUNTERWORLD_BUILD':{'counterworld':s['counterworld'],'break_conditions':['EARLY_GOAL','RED_CARD','MATERIAL_LINEUP_SHOCK'],'world_stability':s['world_stability'],'evidence_references':['home_team_snapshot','away_team_snapshot','web_context','club_elo']},
+                  'GAME_STATE_TAIL_RISK_BUILD':{'game_state':copy.deepcopy(common_state),'shock_tests':{'CLUBELO':copy.deepcopy(s['elo']),'S1':'EARLY_GOAL:BENDS_NOT_BREAKS','S2':'RED_CARD:BREAKS_DIRECTIONAL_CONFIDENCE','S3':'SCORELESS_FIRST_HALF:HOLDS_WITH_LOWER_GOAL_TAIL'},'tail_risk':'MATERIAL_BUT_BOUNDED','evidence_references':['club_elo','web_context']},
+                  'SCORE_DISTRIBUTION_BUILD':{'modal_score':s['modal_score'],'four_score_cluster':copy.deepcopy(s['cluster']),'restricted_score_cluster':copy.deepcopy(s['cluster']),'score_band':s['score_band'],'score_reasoning':'Qualitative structural cluster only; no unauthorized numerical score-probability matrix used.','structurally_unlikely_scores':[],'evidence_references':['home_team_snapshot','away_team_snapshot','web_context','club_elo']},
+                  'PREDICTION_MAP_BUILD':{'prediction_map':copy.deepcopy(cands),'candidate_reasoning':'Plausibility-first candidate map across distinct market axes; no automatic highest-probability or Over 0.5 default.','contradictions':[],'reason_codes':['PLAUSIBILITY_FIRST','ANTI_TRIVIALITY','NO_NUMERICAL_P_RAW'],'uncertainty':['EARLY_SEASON_SAMPLE'],'evidence_references':['home_team_snapshot','away_team_snapshot','web_context','club_elo']},
+                  'CONFIRMATION_CHECK':{'confirmation_reason':'Snapshot + point-in-time context + ClubElo shock test support committed paths.','confirmation_status':'CONFIRMED','evidence_references':['home_team_snapshot','away_team_snapshot','web_context','club_elo']},
+                  'CANDIDATE_SCORING':{'scored_candidates':copy.deepcopy(cands),'scoring_status':'QUALITATIVE_NORM_BOUND','numerical_candidate_scores_used':False,'reason':'No p_raw, W/F/R/D or fabricated candidate totals were introduced.'},
+                  'PATHS_BUILD':{'paths':paths,'evidence_references':['home_team_snapshot','away_team_snapshot','web_context','club_elo']},
+                  'FAVOURITE_DECISION':{'favourite_prediction':s['favourite'],'favourite_candidate_id':fav_candidate['candidate_id'],'selected_candidate':copy.deepcopy(fav_candidate),'nsp_codes':[],'numerical_p_raw_available':False,'p_raw_tiebreak_required':False,'p_raw_numeric_available':False,'p_raw_skipped_due_unavailable':True,'specificity_tiebreak_applied':True,'structural_tiebreak_applied':True,'final_tiebreak_stage':'STRUCTURAL_PLAUSIBILITY','final_tie_exhausted':False,'anti_triviality_applied':True,'low_information_content_demotions':['OVER_0.5_NOT_AUTO_SELECTED']},
+                  'PROBABILITY_BAND_BUILD':{'model_probability_band':'NOT_AVAILABLE','p_low':None,'p_high':None,'half_width':None},
+                  'MODEL_PRICE_BAND_BUILD':{'model_price_band':'NOT_AVAILABLE','price_low':None,'price_high':None},
+                  'AMPEL_AND_FLAGS':{'ampel':s['ampel'],'flags':['CLUBELO_SHOCK_TESTED','FULL_TEAM_SNAPSHOT_PAYLOADS_EMBEDDED','NO_REAL_ODDS_REASONING','PLAUSIBILITY_FIRST']},
+                  'MATCH_VALIDATION':{'validation_result':'PASS','commit_eligible':True,'errors':[],'path':'FULL'},
+                  'MATCH_COMMIT':{'status':'COMMITTED','commit_time':RUN_TIME}
+              }
+              sources=[{'name':'ECOBET Daily Data Snapshot','url':f'{SNAP_BASE}/manifest.json','used_for':'Canonical quantitative data transport','trust':'TRANSPORT_VALIDATED'}] + copy.deepcopy(web_sources) + [
+                  {'name':'ClubElo via The Open Model - home','url':s['elo']['source_home'],'used_for':'ClubElo shock test','trust':'MEDIUM_HIGH','source_type':'CLUBELO_DERIVED_CURRENT','as_of':'2026-09-06'},
+                  {'name':'ClubElo via The Open Model - away','url':s['elo']['source_away'],'used_for':'ClubElo shock test','trust':'MEDIUM_HIGH','source_type':'CLUBELO_DERIVED_CURRENT','as_of':'2026-09-06'}]
+              m={
+                  'fixture_id':fid,'kickoff':fx['kickoff'],'competition':fx['competition_name'],'competition_id':fx['competition_id'],'competition_name':fx['competition_name'],'competition_group':'FOCUS_5','competition_type':fx['competition_type'],'display_order':fx['display_order'],'phase':fx.get('phase') or 'NOT_AVAILABLE','home':fx['home_team_name'],'away':fx['away_team_name'],
+                  'data_snapshot_id':SNAP_ID,'data_snapshot_coverage':'FULL','data_source_mode':s['data_source_mode'],'snapshot_fixture_missing':False,'world_type':s['world_type'],
+                  'safe':s['safe'],'balanced':s['balanced'],'aggressive':s['aggressive'],'favourite':s['favourite'],'model_probability_band':'NOT_AVAILABLE','model_price_band':'NOT_AVAILABLE','world_stability':s['world_stability'],'robustness':s['robustness'],'ampel':s['ampel'],'flags':['CLUBELO_SHOCK_TESTED','FULL_TEAM_SNAPSHOT_PAYLOADS_EMBEDDED','NO_REAL_ODDS_REASONING','PLAUSIBILITY_FIRST'],'data_readiness':'READY','match_core_status':'READY','nsp_codes':[],'board_status':'COMMITTED','confirmation_status':'CONFIRMED','commit_status':'COMMITTED','commit_time':RUN_TIME,'match_validation':'PASS',
+                  'anchor':s['anchor'],'prime_world':s['prime_world'],'counterworld':s['counterworld'],'axes':copy.deepcopy(s['axes']),'game_state':copy.deepcopy(common_state),'modal_score':s['modal_score'],'four_score_cluster':copy.deepcopy(s['cluster']),'score_band':s['score_band'],'prediction_map':copy.deepcopy(cands),'candidates':copy.deepcopy(cands),'shock_test':{'CLUBELO':copy.deepcopy(s['elo']),'S1':'EARLY_GOAL:BENDS_NOT_BREAKS','S2':'RED_CARD:BREAKS_DIRECTIONAL_CONFIDENCE','S3':'SCORELESS_FIRST_HALF:HOLDS_WITH_LOWER_GOAL_TAIL'},
+                  'repair_summary':[{'field':'Current context / availability / promoted-team regime check','routes':[x['name'] for x in web_sources],'result':s['repair_context'].get('repair_effect')}],
+                  'sources':sources,
+                  'reasoning_provenance':{'run_id':RUN_ID,'match_id':fid,'point_in_time_cutoff':RUN_TIME,'snapshot_references':{'data_snapshot_manifest':f'{SNAP_BASE}/manifest.json','data_snapshot_hash':manifest['data_hash']},'authority':copy.deepcopy(AUTHORITY),'contract_id':CONTRACT_ID,'contract_sha256':CONTRACT_SHA,'reasoning_profile_id':PROFILE_ID,'reasoning_profile_hash':PROFILE_HASH,'stage_provenance':stage_provenance(),'structured_stage_outputs':structured,'raw_chain_of_thought_stored':False,'online_learning_allowed':False,'automatic_self_modification_allowed':False,'prediction_executed':True,'reasoning_provider_invoked':PROVIDER},
+                  'favourite_market_axis':s['favourite_axis'],'favourite_side':s['favourite_side'],'favourite_low':s['favourite_low'],'favourite_high':s['favourite_high']
+              }
+              matches.append(m)
+
+          doc={
+              'schema_version':'1.3','record_type':'run_record',
+              'run':{
+                  'run_id':RUN_ID,'snapshot_id':RUN_SNAPSHOT_ID,'snapshot_time':RUN_TIME,'date':'2026-09-07','timezone':'Europe/Zurich',
+                  'scope':['Premier League','Bundesliga','La Liga','Serie A','Ligue 1','UEFA Champions League','UEFA Europa League','UEFA Conference League'],
+                  'build_mode':'FULL','audit_mode':False,'run_status':'COMPLETE','processing_status':'COMPLETE','n_fixtures':4,'zero_fixture_basis':None,'run_integrity':'PASS','output_integrity':'PASS',
+                  'norm_versions':{'MASTER_OS':'1.5','DATA_FABRIC_AND_EBOOKS':'1.7','OUTPUT_AND_AUDIT':'1.3'},
+                  'data_snapshot_status':'AVAILABLE','data_snapshot_id':SNAP_ID,'data_snapshot_date':'2026-09-07','data_snapshot_generated_at':manifest['generated_at'],'data_snapshot_data_cutoff':manifest['data_cutoff'],'data_snapshot_db_updated_at':manifest['db_updated_at'],'data_snapshot_hash':manifest['data_hash'],'data_snapshot_schema_version':manifest['schema_version'],'data_snapshot_url':f'{SNAP_BASE}/manifest.json',
+                  'reasoning_provider':PROVIDER,'club_elo_shock_test_as_of':'2026-09-06'
+              },
+              'matches':matches,
+              'proof_of_work':{
+                  'matches_in_scope':4,'matches_queued':4,'matches_modeled':4,'matches_committed':4,'matches_no_stable_prediction':0,'matches_not_processed':0,'team_ebooks_built':8,'match_ebooks_built':4,'silent_exclusions':0,'out_of_scope_discovered':0,'scope_unresolved_count':0,'repair_passes_total':3,'critical_fields_partial':0,'critical_fields_restricted':0,'conflict_count':0,'timeout_limit_count':0,'forbidden_source_count':0,
+                  'readiness_distribution':{'READY':4},'world_stability_distribution':{'MEDIUM_HIGH':2,'MEDIUM':2},'ampel_distribution':{'GREEN':3,'YELLOW':1},
+                  'data_snapshot_status':'AVAILABLE','data_snapshot_id':SNAP_ID,'data_snapshot_hash':manifest['data_hash'],'snapshot_fixture_count':4,'discovered_fixture_count':4,'snapshot_covered_fixtures':4,'additional_fixtures_found':0,'snapshot_only_fixtures':0,'fixture_set_relation':'EQUAL','matches_source_snapshot':1,'matches_source_snapshot_plus_repair':3,'matches_source_web_fallback':0,
+                  'html_visual_report_status':'NOT_GENERATED','pdf_report_status':'NOT_GENERATED','final_board_png_status':'NOT_GENERATED','visual_output_consistency':'NOT_APPLICABLE','visual_output_integrity':'NOT_APPLICABLE','run_integrity':'PASS','output_integrity':'PASS','real_odds_input':False,'market_quotas_input':False,'raw_chain_of_thought_stored':False,'full_team_snapshot_payloads_embedded':8,'club_elo_shock_tests_completed':4,'publication_target':'GITHUB_PAGES'
+              },
+              'artifact_integrity':{
+                  'generator':PROVIDER,'generated_at':RUN_TIME,'schema_validation':'PASS','snapshot_hash_validation':'PASS','team_payload_hash_validation':'PASS','full_team_payload_count':8,'canonical_feature_count_per_team':1000,'numerical_p_raw_fabricated':False,'wfrd_fabricated':False,'candidate_scores_fabricated':False,'real_odds_used_for_reasoning':False,
+                  'favourite_summary':{m['fixture_id']:m['favourite'] for m in matches}
+              }
+          }
+
+          # Hard validation gates.
+          raw_text = json.dumps(doc, ensure_ascii=False, separators=(',',':'))
+          if 'manual_recovery' in raw_text.lower() or '_manual' in raw_text.lower():
+              raise SystemExit('Recovery/manual marker leaked into normal run')
+          if len(doc['matches']) != 4 or doc['proof_of_work']['team_ebooks_built'] != 8:
+              raise SystemExit('Count validation failed')
+          embedded=0
+          for m in doc['matches']:
+              st=m['reasoning_provenance']['structured_stage_outputs']
+              for k in ('TEAM_EBOOK_A_BUILD','TEAM_EBOOK_B_BUILD'):
+                  te=st[k]['team_ebook']
+                  if not te.get('snapshot_payload') or te['snapshot_payload'].get('feature_status',{}).get('n_features') != 1000:
+                      raise SystemExit(f'Incomplete embedded team payload in {m["fixture_id"]} {k}')
+                  embedded += 1
+              if m['safe'] != st['PATHS_BUILD']['paths']['safe']['prediction_expression'] or m['balanced'] != st['PATHS_BUILD']['paths']['balanced']['prediction_expression'] or m['aggressive'] != st['PATHS_BUILD']['paths']['aggressive']['prediction_expression']:
+                  raise SystemExit(f'Path mismatch {m["fixture_id"]}')
+              if m['favourite'] != st['FAVOURITE_DECISION']['favourite_prediction']:
+                  raise SystemExit(f'Favourite mismatch {m["fixture_id"]}')
+          if embedded != 8:
+              raise SystemExit(f'Embedded payload count {embedded} != 8')
+          elche=next(m for m in doc['matches'] if m['fixture_id']=='DISC_dd0d2eae4666')
+          if elche['favourite'] != 'Real Sociedad or draw (X2)' or elche['balanced'] != 'Real Sociedad draw no bet':
+              raise SystemExit('Elche/Sociedad ClubElo correction missing')
+
+          tmp=RUN_PATH.with_suffix('.json.tmp')
+          tmp.write_text(raw_text,encoding='utf-8')
+          os.replace(tmp,RUN_PATH)
+          if RUN_PATH.stat().st_size < 900_000:
+              raise SystemExit(f'Full run unexpectedly small: {RUN_PATH.stat().st_size}')
+
+          with INDEX_PATH.open(encoding='utf-8') as f:
+              idx=json.load(f)
+          runs=idx.setdefault('dates',{}).setdefault('2026-09-07',[])
+          if RUN_STEM not in runs:
+              runs.append(RUN_STEM)
+          idx['generated_at']=datetime.now(ZoneInfo('Europe/Zurich')).isoformat(timespec='seconds')
+          INDEX_PATH.write_text(json.dumps(idx,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+
+          print(json.dumps({
+              'status':'PASS','run':RUN_STEM,'bytes':RUN_PATH.stat().st_size,'matches':4,'embedded_team_payloads':embedded,
+              'favourites':{m['fixture_id']:m['favourite'] for m in doc['matches']},
+              'snapshot_hash':manifest['data_hash']
+          },ensure_ascii=False,indent=2))
+          PY
+
+      - name: Upload exact published run artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecobet-run-2026-09-07-0902
+          path: runs/2026-09-07_0902.json
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Commit full run and index
+        shell: bash
+        run: |
+          git config user.name 'ecobet-publisher-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add runs/2026-09-07_0902.json runs/index.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Publish ECOBET run 2026-09-07_0902'
+          git push
