@@ -1,0 +1,143 @@
+name: Normalize Sep 7 ECOBET market labels
+
+on:
+  push:
+    paths:
+      - 'runs/.normalize_sep7_trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Normalize prediction expressions
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path('runs/2026-09-07_0902.json')
+          with path.open('r', encoding='utf-8') as f:
+              doc = json.load(f)
+
+          def normalize_exact(value, home, away):
+              if not isinstance(value, str):
+                  return value
+              v = value.strip()
+              exact = {
+                  f'{home} or draw (1X)': '1X',
+                  f'{home} or draw': '1X',
+                  f'{away} or draw (X2)': 'X2',
+                  f'{away} or draw': 'X2',
+                  f'{home} to win': '1',
+                  f'{away} to win': '2',
+                  f'{home} draw no bet': 'DNB 1',
+                  f'{away} draw no bet': 'DNB 2',
+                  'Draw': 'X',
+                  'draw': 'X',
+                  'Under 1.5 full-time goals': 'Under 1.5',
+                  'Under 2.5 full-time goals': 'Under 2.5',
+                  'Under 3.5 full-time goals': 'Under 3.5',
+                  'Under 4.5 full-time goals': 'Under 4.5',
+                  'Over 0.5 full-time goals': 'Over 0.5',
+                  'Over 1.5 full-time goals': 'Over 1.5',
+                  'Over 2.5 full-time goals': 'Over 2.5',
+                  'Over 3.5 full-time goals': 'Over 3.5',
+                  'Over 4.5 full-time goals': 'Over 4.5',
+                  'Full-time total goals: 2-4': '2-4 Goals',
+                  'Full-time total goals: 1-3': '1-3 Goals',
+                  'Full-time total goals: 1-4': '1-4 Goals',
+              }
+              return exact.get(v, value)
+
+          def recurse(obj, home, away):
+              if isinstance(obj, dict):
+                  return {k: recurse(v, home, away) for k, v in obj.items()}
+              if isinstance(obj, list):
+                  return [recurse(v, home, away) for v in obj]
+              if isinstance(obj, str):
+                  return normalize_exact(obj, home, away)
+              return obj
+
+          before = {}
+          after = {}
+          for i, m in enumerate(doc.get('matches') or []):
+              home = m.get('home')
+              away = m.get('away')
+              fid = m.get('fixture_id')
+              before[fid] = {k:m.get(k) for k in ('safe','balanced','aggressive','favourite')}
+              doc['matches'][i] = recurse(m, home, away)
+              nm = doc['matches'][i]
+              after[fid] = {k:nm.get(k) for k in ('safe','balanced','aggressive','favourite')}
+
+          # Update artifact summary from normalized match values.
+          if isinstance(doc.get('artifact_integrity'), dict):
+              doc['artifact_integrity']['favourite_summary'] = {
+                  m['fixture_id']: m.get('favourite') for m in doc.get('matches', [])
+              }
+              doc['artifact_integrity']['market_labels_normalized'] = True
+              doc['artifact_integrity']['market_label_notation'] = '1/X/2/1X/X2/DNB 1/DNB 2 + concise totals'
+
+          # Validation: duplicated prediction expressions must agree.
+          for m in doc.get('matches') or []:
+              st = m['reasoning_provenance']['structured_stage_outputs']
+              paths = st['PATHS_BUILD']['paths']
+              assert m['safe'] == paths['safe']['prediction_expression'], (m['fixture_id'],'safe')
+              assert m['balanced'] == paths['balanced']['prediction_expression'], (m['fixture_id'],'balanced')
+              assert m['aggressive'] == paths['aggressive']['prediction_expression'], (m['fixture_id'],'aggressive')
+              assert m['favourite'] == st['FAVOURITE_DECISION']['favourite_prediction'], (m['fixture_id'],'favourite')
+              fav = st['FAVOURITE_DECISION']['selected_candidate']['prediction_expression']
+              assert m['favourite'] == fav, (m['fixture_id'],'selected_candidate')
+
+          expected = {
+              'DISC_ac9f7a42d5d4': {'safe':'Under 3.5','balanced':'Under 2.5','aggressive':'1','favourite':'Under 2.5'},
+              'DISC_dd0d2eae4666': {'safe':'X2','balanced':'DNB 2','aggressive':'2','favourite':'X2'},
+              'DISC_3f77134123fb': {'safe':'1X','balanced':'DNB 1','aggressive':'1','favourite':'1X'},
+              'DISC_7d297721d5e6': {'safe':'Over 1.5','balanced':'2-4 Goals','aggressive':'X','favourite':'Over 1.5'},
+          }
+          for m in doc.get('matches') or []:
+              got = {k:m.get(k) for k in ('safe','balanced','aggressive','favourite')}
+              assert got == expected[m['fixture_id']], (m['fixture_id'],got,expected[m['fixture_id']])
+
+          text = json.dumps(doc, ensure_ascii=False, separators=(',', ':'))
+          forbidden = [' or draw (1X)',' or draw (X2)',' draw no bet',' to win','full-time goals','Full-time total goals:']
+          # Only inspect prediction-bearing values globally; narrative prose may naturally contain 'to win'.
+          def collect_predictions(obj, key=None, out=None):
+              if out is None: out=[]
+              pred_keys={'safe','balanced','aggressive','favourite','prediction_expression','favourite_prediction'}
+              if isinstance(obj, dict):
+                  for k,v in obj.items():
+                      if k in pred_keys and isinstance(v,str): out.append(v)
+                      collect_predictions(v,k,out)
+              elif isinstance(obj,list):
+                  for v in obj: collect_predictions(v,key,out)
+              return out
+          preds=collect_predictions(doc)
+          for p in preds:
+              if any(x in p for x in forbidden):
+                  raise SystemExit(f'Unnormalized prediction expression remains: {p}')
+
+          tmp = path.with_suffix('.json.tmp')
+          tmp.write_text(text, encoding='utf-8')
+          os.replace(tmp, path)
+
+          print(json.dumps({'status':'PASS','before':before,'after':after,'prediction_values_checked':len(preds)}, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Commit normalized run
+        shell: bash
+        run: |
+          git config user.name 'ecobet-normalizer-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add runs/2026-09-07_0902.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Normalize ECOBET market labels for 2026-09-07_0902'
+          git push
