@@ -73,7 +73,7 @@
   "matches": [
     {
       "fixture_id": "DISC_44c4109db7d0",
-      "kickoff": "18:45",
+      "kickoff": "2026-09-09T16:45:00+00:00",
       "competition": "UEFA Champions League",
       "home": "Barcelona",
       "away": "Feyenoord",
@@ -106,7 +106,7 @@
     },
     {
       "fixture_id": "DISC_8d7845323628",
-      "kickoff": "18:45",
+      "kickoff": "2026-09-09T16:45:00+00:00",
       "competition": "UEFA Champions League",
       "home": "VfB Stuttgart",
       "away": "Viking",
@@ -134,7 +134,7 @@
     },
     {
       "fixture_id": "DISC_2e9b10be38c8",
-      "kickoff": "21:00",
+      "kickoff": "2026-09-09T19:00:00+00:00",
       "competition": "UEFA Champions League",
       "home": "Liverpool",
       "away": "Atlético Madrid",
@@ -166,7 +166,7 @@
     },
     {
       "fixture_id": "DISC_388e42d05a51",
-      "kickoff": "21:00",
+      "kickoff": "2026-09-09T19:00:00+00:00",
       "competition": "UEFA Champions League",
       "home": "Paris Saint-Germain",
       "away": "Slovan Bratislava",
@@ -199,7 +199,7 @@
     },
     {
       "fixture_id": "DISC_6c1567e15ecc",
-      "kickoff": "21:00",
+      "kickoff": "2026-09-09T19:00:00+00:00",
       "competition": "UEFA Champions League",
       "home": "Sporting CP",
       "away": "Galatasaray",
@@ -231,7 +231,7 @@
     },
     {
       "fixture_id": "DISC_c5a3351c0b46",
-      "kickoff": "21:00",
+      "kickoff": "2026-09-09T19:00:00+00:00",
       "competition": "UEFA Champions League",
       "home": "Napoli",
       "away": "Arsenal",
