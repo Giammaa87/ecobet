@@ -1,0 +1,326 @@
+{
+  "schema_version": "1.0",
+  "record_type": "assistant_snapshot_prediction_run",
+  "run": {
+    "date": "2026-09-10",
+    "timezone": "Europe/Zurich",
+    "snapshot_id": "snap_20260910_110638",
+    "snapshot_hash": "sha256:695b45b45a119e6ed314dca309d27be5127580ce55fba2aa2ec10f67479bb4c4",
+    "snapshot_generated_at": "2026-09-10T11:06:38.869336+02:00",
+    "snapshot_raw_fixture_count": 7,
+    "n_fixtures": 6,
+    "official_production_run": false,
+    "authority_binding": "NONE",
+    "mode": "SNAPSHOT_PLUS_CURRENT_V2_CLUBELO_SANITY_CHECK",
+    "post_cutoff_web_data_used": true,
+    "numerical_p_raw": "NOT_CALCULATED",
+    "generated_at": "2026-09-10T14:59:34+02:00",
+    "current_v2_basis": {
+      "current_db_version": "current_team_v2_3e0bfbeaeb7d6b3c",
+      "content_hash": "sha256:3e0bfbeaeb7d6b3cc11cb5aaa602665796b44b6868f392ea8c9820aa848fc8ea",
+      "source_cutoff": "2026-09-10T11:06:38.869336+02:00",
+      "team_record_count": 214,
+      "source_inventory_count": 701
+    },
+    "target_snapshot_status": {
+      "status": "NOT_BUILT_YET",
+      "current_v2_used": true,
+      "club_elo_used": true,
+      "player_statistics_used": false,
+      "predicted_xi_used": false,
+      "note": "Manual pre-target reconstruction. Current V2 is primary; Club Elo is used only as a sanity/shock check. Player statistics and Predicted XI are not yet used."
+    },
+    "production_run_context": {
+      "started_at": "2026-09-10T13:29:48+02:00",
+      "completed_at": "2026-09-10T13:38:29+02:00",
+      "scheduler_result": 0,
+      "production_status": "PUBLICATION_DEFERRED_NOT_RESOLVED",
+      "production_run_integrity": "PARTIAL",
+      "production_processed_match_count": 0,
+      "production_publication_executed": false,
+      "production_technical_failure_count": 1,
+      "integrity_hold_reference": "DISC-12C2C5C65E4FEDA24429",
+      "remaining_queue_references": [
+        "DISC-12C2C5C65E4FEDA24429",
+        "DISC-33D400AF2632177485A7",
+        "DISC-500B1A006B4DF3B9DAF2",
+        "DISC-56E4DE3D063C4BCD1672",
+        "DISC-A3086920B6A9DB670DD1",
+        "DISC-D7F90D192F46758E4983"
+      ]
+    },
+    "deduplication": {
+      "raw_snapshot_fixtures": 7,
+      "canonical_matches": 6,
+      "duplicate_group": [
+        "DISC_70a5cdd9609e",
+        "DISC_4cfa732043c3"
+      ],
+      "canonical_fixture_id": "DISC_70a5cdd9609e",
+      "reason": "Same Bayern Munich-Bodø/Glimt match and kickoff discovered independently by ESPN and FOTMOB; the fully mapped team-ID record is retained."
+    },
+    "representation_gate": {
+      "status": "PASS",
+      "kickoff_format": "UTC ISO-8601 with seconds and explicit +00:00 offset",
+      "fixture_id_policy": "Immutable canonical snapshot fixture_id retained",
+      "team_name_policy": "Canonical selected snapshot fixture display names retained",
+      "audit_reference": "2026-09-09 reconstructed run after kickoff timestamp repair"
+    },
+    "note": "Independent assistant reconstruction for 2026-09-10 using the immutable ECOBET snapshot, persisted Current Team Database V2, the withheld/unfinished 05:00 Production context, and Club Elo as a sanity/shock check. Published manually after user review; not the official Production Runner output.",
+    "output_filename": "2026-09-10_1459.json",
+    "market_notation": {
+      "1": "home win",
+      "2": "away win",
+      "1X": "home or draw",
+      "X2": "away or draw",
+      "O2.5": "over 2.5 total goals",
+      "DNB1": "home draw no bet",
+      "DNB2": "away draw no bet"
+    },
+    "manual_publication": {
+      "published_at": "2026-09-10T16:47:37+02:00",
+      "destination": "Giammaa87/ecobet:runs/2026-09-10_1459.json"
+    },
+    "club_elo_shock_test": {
+      "checked_at": "2026-09-10T16:47:37+02:00",
+      "source": "ClubElo latest ratings dataset dated 2026-09-10",
+      "role": "sanity_check_only_not_primary_model_input",
+      "matches_checked": 6,
+      "predictions_confirmed": 5,
+      "predictions_revised": 1,
+      "revised_fixture": "Manchester United-Sabah FK",
+      "revision": "favourite 1X -> 1",
+      "note": "Elo is used to detect material strength-direction shocks; it is not used to infer totals."
+    },
+    "production_comparison": {
+      "status": "PENDING",
+      "note": "Manual Favourite decisions are compared later against the withheld/unfinished Production Run."
+    }
+  },
+  "matches": [
+    {
+      "fixture_id": "DISC_4894540215a5",
+      "kickoff": "2026-09-10T16:45:00+00:00",
+      "competition": "UEFA Champions League",
+      "home": "PSV Eindhoven",
+      "away": "Shakhtar Donetsk",
+      "status": "PREDICTED",
+      "safe": "1X",
+      "balanced": "O2.5",
+      "aggressive": "1",
+      "favourite": "1X",
+      "ampel": "RED",
+      "modal_score": "NOT_RELIABLE",
+      "four_score_cluster": [],
+      "flags": [
+        "DATA_CONDITIONAL",
+        "HOME_SEED_ONLY",
+        "OPPONENT_OBSERVED_THIN",
+        "CURRENT_PSV_METRICS_NOT_MATERIALIZED",
+        "SCORE_DISTRIBUTION_NOT_RELIABLE"
+      ],
+      "reason": "PSV is identity-resolved with a validated 34-match 2025-26 seed, but its seed metrics are not materialized in Current V2. Shakhtar are OBSERVED_THIN: last 10 all competitions 1.7 PPG, 1.7 GF and 1.1 GA, but the last 5 fall to 0.8 PPG with 1.8 GA. Home protection is therefore the least assumption-heavy direction; totals and the home win remain higher-variance expressions.",
+      "club_elo_check": {
+        "home_elo": 1794,
+        "away_elo": 1681,
+        "delta_home_minus_away": 113,
+        "alignment": "CONFIRMS",
+        "note": "Club Elo gives PSV a moderate home-side edge; the thin Current V2 evidence still justifies keeping 1X as the favourite."
+      }
+    },
+    {
+      "fixture_id": "DISC_ae489885d97e",
+      "kickoff": "2026-09-10T16:45:00+00:00",
+      "competition": "UEFA Champions League",
+      "home": "Fenerbahçe",
+      "away": "Roma",
+      "status": "PREDICTED",
+      "safe": "X2",
+      "balanced": "2",
+      "aggressive": "O2.5",
+      "favourite": "X2",
+      "ampel": "YELLOW",
+      "modal_score": "1-2",
+      "four_score_cluster": [
+        "0-1",
+        "1-1",
+        "1-2",
+        "0-2"
+      ],
+      "flags": [
+        "DATA_CONDITIONAL",
+        "HOME_PARTIAL_V2",
+        "AWAY_FULL_FEATURE_VECTOR",
+        "AWAY_STRENGTH_EDGE",
+        "DISCOVERY_UNCONFIRMED"
+      ],
+      "reason": "Roma carry the clear data edge. Their last 5 all competitions are 3.0 PPG, 3.0 GF and 0.4 GA with 2.63 xG for and 0.67 xG against; their away last-5 cross-season sample is 2.4 PPG and 2.6 GF. Fenerbahçe are PARTIAL at 1.6 PPG, 1.0 GF and 1.2 GA over the last 5. X2 protects the away-strength signal, while the straight away win is the balanced step-up.",
+      "club_elo_check": {
+        "home_elo": 1778,
+        "away_elo": 1851,
+        "delta_home_minus_away": -73,
+        "alignment": "CONFIRMS",
+        "note": "Club Elo gives Roma a modest away-side strength edge, consistent with X2 as the robust direction."
+      }
+    },
+    {
+      "fixture_id": "DISC_70a5cdd9609e",
+      "kickoff": "2026-09-10T19:00:00+00:00",
+      "competition": "UEFA Champions League",
+      "home": "Bayern Munich",
+      "away": "Bodo/Glimt",
+      "status": "PREDICTED",
+      "safe": "1X",
+      "balanced": "1",
+      "aggressive": "O2.5",
+      "favourite": "O2.5",
+      "ampel": "YELLOW",
+      "modal_score": "3-1",
+      "four_score_cluster": [
+        "2-1",
+        "3-1",
+        "3-2",
+        "4-1"
+      ],
+      "flags": [
+        "DATA_CONDITIONAL",
+        "HOME_FULL_FEATURE_VECTOR",
+        "OPPONENT_PARTIAL_V2",
+        "DISCOVERY_DUPLICATE_RESOLVED",
+        "HIGH_TOTALS_CORRIDOR"
+      ],
+      "reason": "Bayern's home profile is dominant: home last 10 cross-season 2.5 PPG, 4.2 GF, 1.4 GA and 100% over 2.5, with home xG 3.77 for versus 1.48 against. Bodø/Glimt remain dangerous in a thinner sample (last 5: 2.4 PPG, 2.0 GF, 1.6 GA). The home direction is strong, but the broadest supported world is a high-scoring Bayern-led match.",
+      "club_elo_check": {
+        "home_elo": 2043,
+        "away_elo": 1789,
+        "delta_home_minus_away": 254,
+        "alignment": "CONFIRMS",
+        "note": "Club Elo strongly supports Bayern in the direction market. Elo does not itself justify the totals market, so the existing high-total favourite is not revised."
+      }
+    },
+    {
+      "fixture_id": "DISC_2d60070af2dd",
+      "kickoff": "2026-09-10T19:00:00+00:00",
+      "competition": "UEFA Champions League",
+      "home": "Slavia Prague",
+      "away": "Lens",
+      "status": "PREDICTED",
+      "safe": "X2",
+      "balanced": "2",
+      "aggressive": "O2.5",
+      "favourite": "X2",
+      "ampel": "YELLOW",
+      "modal_score": "1-2",
+      "four_score_cluster": [
+        "0-1",
+        "1-1",
+        "1-2",
+        "1-3"
+      ],
+      "flags": [
+        "DATA_CONDITIONAL",
+        "HOME_OBSERVED_THIN",
+        "AWAY_FULL_FEATURE_VECTOR",
+        "AWAY_STRENGTH_EDGE"
+      ],
+      "reason": "Slavia's current observed profile is very weak: last 5 all competitions 0.2 PPG, 0.6 GF and 2.8 GA; last 10 are 0.4 PPG, 0.7 GF and 2.3 GA. Lens are materially stronger overall (last 5: 1.8 PPG, 2.2 GF, 1.2 GA; xG 1.92 for versus 1.04 against), although their away sample is less dominant. X2 is the robust expression; the away win is the balanced escalation.",
+      "club_elo_check": {
+        "home_elo": 1763,
+        "away_elo": 1815,
+        "delta_home_minus_away": -52,
+        "alignment": "CONFIRMS",
+        "note": "Club Elo gives Lens a modest away-side edge, consistent with X2 while not making the straight away win low-risk."
+      }
+    },
+    {
+      "fixture_id": "DISC_3c52ba993b33",
+      "kickoff": "2026-09-10T19:00:00+00:00",
+      "competition": "UEFA Champions League",
+      "home": "Manchester United",
+      "away": "Sabah FK",
+      "status": "PREDICTED",
+      "safe": "1X",
+      "balanced": "1",
+      "aggressive": "O2.5",
+      "favourite": "1",
+      "ampel": "YELLOW",
+      "modal_score": "2-1",
+      "four_score_cluster": [
+        "1-0",
+        "2-0",
+        "2-1",
+        "3-1"
+      ],
+      "flags": [
+        "DATA_CONDITIONAL",
+        "HOME_FULL_FEATURE_VECTOR",
+        "OPPONENT_SMALL_SAMPLE_N4",
+        "CROSS_LEAGUE_COMPARABILITY",
+        "ELO_DIRECTION_UPGRADE"
+      ],
+      "reason": "Manchester United have the deeper evidence: last 5 all competitions 2.0 PPG, 2.2 GF, 1.2 GA with 2.38 xG for; their home last 10 cross-season are 2.7 PPG and 2.6 GF. Sabah FK are 4-for-4 in the available Current V2 sample (3.0 PPG, 1.75 GF, 0.25 GA), but that sample is only four matches and lacks comparable xG/shot depth. The Club Elo shock check adds a material 1886 vs 1563 (+323) home-side strength gap, so the final ladder remains 1X / 1 / O2.5 but the Favourite is upgraded from 1X to the straight Manchester United win.",
+      "club_elo_check": {
+        "home_elo": 1886,
+        "away_elo": 1563,
+        "delta_home_minus_away": 323,
+        "alignment": "REVISED",
+        "note": "Club Elo shows a material +323 home-side strength gap. This is strong enough to upgrade the Favourite from 1X to the straight Manchester United win, while 1X remains the Safe selection."
+      }
+    },
+    {
+      "fixture_id": "DISC_716b85c19ac8",
+      "kickoff": "2026-09-10T19:00:00+00:00",
+      "competition": "UEFA Champions League",
+      "home": "Como",
+      "away": "RB Leipzig",
+      "status": "PREDICTED",
+      "safe": "1X",
+      "balanced": "1",
+      "aggressive": "O2.5",
+      "favourite": "1X",
+      "ampel": "YELLOW",
+      "modal_score": "2-1",
+      "four_score_cluster": [
+        "1-1",
+        "2-0",
+        "2-1",
+        "3-1"
+      ],
+      "flags": [
+        "BOTH_FULL_FEATURE_VECTOR",
+        "HOME_FORM_EDGE",
+        "AWAY_DEFENSIVE_EXPOSURE",
+        "CROSS_LEAGUE_COMPARABILITY"
+      ],
+      "reason": "Como's current profile is stronger than the name-value matchup suggests: last 5 all competitions 2.6 PPG, 1.8 GF, 0.6 GA with 2.16 xG for and 0.92 against; their home last 5 cross-season xG is 2.42 for versus 0.61 against. Leipzig's away last 5 are only 1.2 PPG, 1.4 GF and 2.2 GA with 1.55 xG for versus 2.44 against. That makes Como 1X the preferred robust world, with the home win as the balanced higher-risk call.",
+      "club_elo_check": {
+        "home_elo": 1807,
+        "away_elo": 1827,
+        "delta_home_minus_away": -20,
+        "alignment": "NO_MATERIAL_CONTRADICTION",
+        "note": "Club Elo gives Leipzig only a 20-point raw edge. That is too small to overturn Como 1X given the strong Current V2 home-form signal and home context."
+      }
+    }
+  ],
+  "reconstruction": {
+    "snapshot_source": "data/2026-09-10/snap_20260910_110638/",
+    "snapshot_fixture_ids_used": [
+      "DISC_4894540215a5",
+      "DISC_ae489885d97e",
+      "DISC_70a5cdd9609e",
+      "DISC_2d60070af2dd",
+      "DISC_3c52ba993b33",
+      "DISC_716b85c19ac8"
+    ],
+    "excluded_snapshot_fixture_ids": [
+      "DISC_4cfa732043c3"
+    ],
+    "current_v2_version": "current_team_v2_3e0bfbeaeb7d6b3c",
+    "current_v2_content_hash": "sha256:3e0bfbeaeb7d6b3cc11cb5aaa602665796b44b6868f392ea8c9820aa848fc8ea",
+    "production_outputs_reused": false,
+    "production_metadata_reused": true,
+    "integrity_statement": "The original Production Runner correctly blocked publication. This file is a separate assistant-generated snapshot run and must not be labelled as the official 05:00 Production output.",
+    "club_elo_shock_test_used": true,
+    "club_elo_checked_at": "2026-09-10T16:47:37+02:00"
+  }
+}
