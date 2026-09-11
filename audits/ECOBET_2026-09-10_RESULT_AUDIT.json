@@ -1,0 +1,680 @@
+{
+  "serialization_note": "Audit JSON derived from N_ECOBET_OUTPUT_AND_AUDIT_v1.3 RUN_AUDIT_RECORD / MATCH_AUDIT_RECORD semantics. No dedicated settlement_record schema is claimed.",
+  "audit_generated_at": "2026-09-11T23:19:57+02:00",
+  "original_run_immutable": true,
+  "run_audit_record": {
+    "record_type": "RUN_AUDIT_RECORD",
+    "run_id": null,
+    "snapshot_id": "snap_20260910_110638",
+    "source_run_official": false,
+    "source_run_type": "assistant_snapshot_prediction_run",
+    "source_run_record": {
+      "filename": "2026-09-10_1459.json",
+      "sha256": "df89e876f723c46317968cdfdc2b3457247c6cc7ddbc8be5bfabb0c02430b251",
+      "immutability": "UNCHANGED"
+    },
+    "data_snapshot_provenance": {
+      "data_snapshot_status": null,
+      "data_snapshot_id": null,
+      "data_snapshot_date": null,
+      "data_snapshot_generated_at": null,
+      "data_snapshot_data_cutoff": null,
+      "data_snapshot_db_updated_at": null,
+      "data_snapshot_hash": null,
+      "data_snapshot_schema_version": null,
+      "data_snapshot_url": null
+    },
+    "fixture_reconciliation_summary": null,
+    "source_mode_distribution": {
+      "SNAPSHOT": 0,
+      "SNAPSHOT_PLUS_REPAIR": 0,
+      "WEB_FALLBACK": 0
+    },
+    "date_range": {
+      "from": "2026-09-10",
+      "to": "2026-09-10"
+    },
+    "timezone": "Europe/Zurich",
+    "scope": null,
+    "norm_versions": null,
+    "match_counts": {
+      "scope_committed_original": 6,
+      "result_confirmed": 6,
+      "unsettled": 0
+    },
+    "n_fixtures": 6,
+    "n_settled": 6,
+    "readiness_distribution": null,
+    "world_stability_distribution": null,
+    "ampel_distribution": null,
+    "nsp_count": 0,
+    "proof_counters": {
+      "matches_in_original_run": 6,
+      "match_audit_records": 6,
+      "result_confirmed": 6,
+      "result_unsettled": 0,
+      "predictions_rewritten": 0,
+      "real_odds_used_as_input": 0,
+      "tickets_created": "NO"
+    },
+    "result_resolution_telemetry": {
+      "RESULT_PRIMARY_PROVIDER": "API_FOOTBALL",
+      "PRIMARY_DATE_REQUESTS": 1,
+      "PRIMARY_FIXTURES_RETURNED": 174,
+      "PRIMARY_MATCHES_RESOLVED": 6,
+      "PRIMARY_MATCHES_NOT_FOUND": 0,
+      "PRIMARY_MATCHES_AMBIGUOUS": 0,
+      "PRIMARY_PROVIDER_FAILURES": 0,
+      "OPEN_SEARCH_FALLBACK_ATTEMPTS": 0,
+      "OPEN_SEARCH_FALLBACK_RESOLVED": 0,
+      "OPEN_SEARCH_FALLBACK_FAILED": 0,
+      "SPORTING_TRUE_UNSETTLED": 0,
+      "TECHNICAL_RESULT_FAILURES": 0,
+      "RESULTS_CONFIRMED": 6,
+      "RESULTS_TOTAL": 6,
+      "DISTINCT_FIXTURE_DATES": [
+        "2026-09-10"
+      ]
+    },
+    "run_integrity": null,
+    "output_integrity": "PASS",
+    "result_settlement_status": "COMPLETE",
+    "audit_status": "COMPLETE",
+    "audit_basis": null,
+    "model_kpis": {
+      "safe": {
+        "HIT": 6,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "decisive_total": 6,
+        "hit_rate_percent": 100.0
+      },
+      "balanced": {
+        "HIT": 4,
+        "MISS": 2,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "decisive_total": 6,
+        "hit_rate_percent": 66.7
+      },
+      "aggressive": {
+        "HIT": 4,
+        "MISS": 2,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "decisive_total": 6,
+        "hit_rate_percent": 66.7
+      },
+      "favourite": {
+        "HIT": 6,
+        "MISS": 0,
+        "PUSH": 0,
+        "VOID": 0,
+        "UNSETTLED": 0,
+        "UNMAPPABLE": 0,
+        "decisive_total": 6,
+        "hit_rate_percent": 100.0
+      }
+    },
+    "data_integrity_flags": [
+      "ORIGINAL_RUN_IMMUTABLE"
+    ],
+    "notes": [
+      "Original committed Predictions and Run Record remain unchanged."
+    ]
+  },
+  "match_audit_records": [
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "DISC_4894540215a5",
+      "snapshot_id": "snap_20260910_110638",
+      "data_snapshot_id": null,
+      "data_snapshot_coverage": null,
+      "data_source_mode": null,
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "2026-09-10T16:45:00+00:00",
+        "home": "PSV Eindhoven",
+        "away": "Shakhtar Donetsk",
+        "competition": "UEFA Champions League",
+        "phase": null
+      },
+      "competition_metadata": {
+        "competition_id": null,
+        "competition_name": null,
+        "competition_group": null,
+        "competition_type": null,
+        "display_order": null
+      },
+      "committed_model": {
+        "fixture_id": "DISC_4894540215a5",
+        "kickoff": "2026-09-10T16:45:00+00:00",
+        "competition": "UEFA Champions League",
+        "home": "PSV Eindhoven",
+        "away": "Shakhtar Donetsk",
+        "status": "PREDICTED",
+        "safe": "1X",
+        "balanced": "O2.5",
+        "aggressive": "1",
+        "favourite": "1X",
+        "ampel": "RED",
+        "modal_score": "NOT_RELIABLE",
+        "four_score_cluster": [],
+        "flags": [
+          "DATA_CONDITIONAL",
+          "HOME_SEED_ONLY",
+          "OPPONENT_OBSERVED_THIN",
+          "CURRENT_PSV_METRICS_NOT_MATERIALIZED",
+          "SCORE_DISTRIBUTION_NOT_RELIABLE"
+        ],
+        "reason": "PSV is identity-resolved with a validated 34-match 2025-26 seed, but its seed metrics are not materialized in Current V2. Shakhtar are OBSERVED_THIN: last 10 all competitions 1.7 PPG, 1.7 GF and 1.1 GA, but the last 5 fall to 0.8 PPG with 1.8 GA. Home protection is therefore the least assumption-heavy direction; totals and the home win remain higher-variance expressions.",
+        "club_elo_check": {
+          "home_elo": 1794,
+          "away_elo": 1681,
+          "delta_home_minus_away": 113,
+          "alignment": "CONFIRMS",
+          "note": "Club Elo gives PSV a moderate home-side edge; the thin Current V2 evidence still justifies keeping 1X as the favourite."
+        }
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "1-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "role": "final result confirmation",
+            "url": "https://www.api-football.com/fixtures/id/1635708"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No calculation formula is defined in N_ECOBET_OUTPUT_AND_AUDIT_v1.3."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "Result-only evidence does not establish PRIME_WORLD or COUNTERWORLD."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "DISC_ae489885d97e",
+      "snapshot_id": "snap_20260910_110638",
+      "data_snapshot_id": null,
+      "data_snapshot_coverage": null,
+      "data_source_mode": null,
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "2026-09-10T16:45:00+00:00",
+        "home": "Fenerbahçe",
+        "away": "Roma",
+        "competition": "UEFA Champions League",
+        "phase": null
+      },
+      "competition_metadata": {
+        "competition_id": null,
+        "competition_name": null,
+        "competition_group": null,
+        "competition_type": null,
+        "display_order": null
+      },
+      "committed_model": {
+        "fixture_id": "DISC_ae489885d97e",
+        "kickoff": "2026-09-10T16:45:00+00:00",
+        "competition": "UEFA Champions League",
+        "home": "Fenerbahçe",
+        "away": "Roma",
+        "status": "PREDICTED",
+        "safe": "X2",
+        "balanced": "2",
+        "aggressive": "O2.5",
+        "favourite": "X2",
+        "ampel": "YELLOW",
+        "modal_score": "1-2",
+        "four_score_cluster": [
+          "0-1",
+          "1-1",
+          "1-2",
+          "0-2"
+        ],
+        "flags": [
+          "DATA_CONDITIONAL",
+          "HOME_PARTIAL_V2",
+          "AWAY_FULL_FEATURE_VECTOR",
+          "AWAY_STRENGTH_EDGE",
+          "DISCOVERY_UNCONFIRMED"
+        ],
+        "reason": "Roma carry the clear data edge. Their last 5 all competitions are 3.0 PPG, 3.0 GF and 0.4 GA with 2.63 xG for and 0.67 xG against; their away last-5 cross-season sample is 2.4 PPG and 2.6 GF. Fenerbahçe are PARTIAL at 1.6 PPG, 1.0 GF and 1.2 GA over the last 5. X2 protects the away-strength signal, while the straight away win is the balanced step-up.",
+        "club_elo_check": {
+          "home_elo": 1778,
+          "away_elo": 1851,
+          "delta_home_minus_away": -73,
+          "alignment": "CONFIRMS",
+          "note": "Club Elo gives Roma a modest away-side strength edge, consistent with X2 as the robust direction."
+        }
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "1-1",
+        "competition_final_score": "1-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "role": "final result confirmation",
+            "url": "https://www.api-football.com/fixtures/id/1635659"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": true,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No calculation formula is defined in N_ECOBET_OUTPUT_AND_AUDIT_v1.3."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "Result-only evidence does not establish PRIME_WORLD or COUNTERWORLD."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "DISC_70a5cdd9609e",
+      "snapshot_id": "snap_20260910_110638",
+      "data_snapshot_id": null,
+      "data_snapshot_coverage": null,
+      "data_source_mode": null,
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "2026-09-10T19:00:00+00:00",
+        "home": "Bayern Munich",
+        "away": "Bodo/Glimt",
+        "competition": "UEFA Champions League",
+        "phase": null
+      },
+      "competition_metadata": {
+        "competition_id": null,
+        "competition_name": null,
+        "competition_group": null,
+        "competition_type": null,
+        "display_order": null
+      },
+      "committed_model": {
+        "fixture_id": "DISC_70a5cdd9609e",
+        "kickoff": "2026-09-10T19:00:00+00:00",
+        "competition": "UEFA Champions League",
+        "home": "Bayern Munich",
+        "away": "Bodo/Glimt",
+        "status": "PREDICTED",
+        "safe": "1X",
+        "balanced": "1",
+        "aggressive": "O2.5",
+        "favourite": "O2.5",
+        "ampel": "YELLOW",
+        "modal_score": "3-1",
+        "four_score_cluster": [
+          "2-1",
+          "3-1",
+          "3-2",
+          "4-1"
+        ],
+        "flags": [
+          "DATA_CONDITIONAL",
+          "HOME_FULL_FEATURE_VECTOR",
+          "OPPONENT_PARTIAL_V2",
+          "DISCOVERY_DUPLICATE_RESOLVED",
+          "HIGH_TOTALS_CORRIDOR"
+        ],
+        "reason": "Bayern's home profile is dominant: home last 10 cross-season 2.5 PPG, 4.2 GF, 1.4 GA and 100% over 2.5, with home xG 3.77 for versus 1.48 against. Bodø/Glimt remain dangerous in a thinner sample (last 5: 2.4 PPG, 2.0 GF, 1.6 GA). The home direction is strong, but the broadest supported world is a high-scoring Bayern-led match.",
+        "club_elo_check": {
+          "home_elo": 2043,
+          "away_elo": 1789,
+          "delta_home_minus_away": 254,
+          "alignment": "CONFIRMS",
+          "note": "Club Elo strongly supports Bayern in the direction market. Elo does not itself justify the totals market, so the existing high-total favourite is not revised."
+        }
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "5-0",
+        "competition_final_score": "5-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "role": "final result confirmation",
+            "url": "https://www.api-football.com/fixtures/id/1635632"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No calculation formula is defined in N_ECOBET_OUTPUT_AND_AUDIT_v1.3."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "Result-only evidence does not establish PRIME_WORLD or COUNTERWORLD."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "DISC_2d60070af2dd",
+      "snapshot_id": "snap_20260910_110638",
+      "data_snapshot_id": null,
+      "data_snapshot_coverage": null,
+      "data_source_mode": null,
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "2026-09-10T19:00:00+00:00",
+        "home": "Slavia Prague",
+        "away": "Lens",
+        "competition": "UEFA Champions League",
+        "phase": null
+      },
+      "competition_metadata": {
+        "competition_id": null,
+        "competition_name": null,
+        "competition_group": null,
+        "competition_type": null,
+        "display_order": null
+      },
+      "committed_model": {
+        "fixture_id": "DISC_2d60070af2dd",
+        "kickoff": "2026-09-10T19:00:00+00:00",
+        "competition": "UEFA Champions League",
+        "home": "Slavia Prague",
+        "away": "Lens",
+        "status": "PREDICTED",
+        "safe": "X2",
+        "balanced": "2",
+        "aggressive": "O2.5",
+        "favourite": "X2",
+        "ampel": "YELLOW",
+        "modal_score": "1-2",
+        "four_score_cluster": [
+          "0-1",
+          "1-1",
+          "1-2",
+          "1-3"
+        ],
+        "flags": [
+          "DATA_CONDITIONAL",
+          "HOME_OBSERVED_THIN",
+          "AWAY_FULL_FEATURE_VECTOR",
+          "AWAY_STRENGTH_EDGE"
+        ],
+        "reason": "Slavia's current observed profile is very weak: last 5 all competitions 0.2 PPG, 0.6 GF and 2.8 GA; last 10 are 0.4 PPG, 0.7 GF and 2.3 GA. Lens are materially stronger overall (last 5: 1.8 PPG, 2.2 GF, 1.2 GA; xG 1.92 for versus 1.04 against), although their away sample is less dominant. X2 is the robust expression; the away win is the balanced escalation.",
+        "club_elo_check": {
+          "home_elo": 1763,
+          "away_elo": 1815,
+          "delta_home_minus_away": -52,
+          "alignment": "CONFIRMS",
+          "note": "Club Elo gives Lens a modest away-side edge, consistent with X2 while not making the straight away win low-risk."
+        }
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "2-3",
+        "competition_final_score": "2-3",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "role": "final result confirmation",
+            "url": "https://www.api-football.com/fixtures/id/1635729"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No calculation formula is defined in N_ECOBET_OUTPUT_AND_AUDIT_v1.3."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "Result-only evidence does not establish PRIME_WORLD or COUNTERWORLD."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "DISC_3c52ba993b33",
+      "snapshot_id": "snap_20260910_110638",
+      "data_snapshot_id": null,
+      "data_snapshot_coverage": null,
+      "data_source_mode": null,
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "2026-09-10T19:00:00+00:00",
+        "home": "Manchester United",
+        "away": "Sabah FK",
+        "competition": "UEFA Champions League",
+        "phase": null
+      },
+      "competition_metadata": {
+        "competition_id": null,
+        "competition_name": null,
+        "competition_group": null,
+        "competition_type": null,
+        "display_order": null
+      },
+      "committed_model": {
+        "fixture_id": "DISC_3c52ba993b33",
+        "kickoff": "2026-09-10T19:00:00+00:00",
+        "competition": "UEFA Champions League",
+        "home": "Manchester United",
+        "away": "Sabah FK",
+        "status": "PREDICTED",
+        "safe": "1X",
+        "balanced": "1",
+        "aggressive": "O2.5",
+        "favourite": "1",
+        "ampel": "YELLOW",
+        "modal_score": "2-1",
+        "four_score_cluster": [
+          "1-0",
+          "2-0",
+          "2-1",
+          "3-1"
+        ],
+        "flags": [
+          "DATA_CONDITIONAL",
+          "HOME_FULL_FEATURE_VECTOR",
+          "OPPONENT_SMALL_SAMPLE_N4",
+          "CROSS_LEAGUE_COMPARABILITY",
+          "ELO_DIRECTION_UPGRADE"
+        ],
+        "reason": "Manchester United have the deeper evidence: last 5 all competitions 2.0 PPG, 2.2 GF, 1.2 GA with 2.38 xG for; their home last 10 cross-season are 2.7 PPG and 2.6 GF. Sabah FK are 4-for-4 in the available Current V2 sample (3.0 PPG, 1.75 GF, 0.25 GA), but that sample is only four matches and lacks comparable xG/shot depth. The Club Elo shock check adds a material 1886 vs 1563 (+323) home-side strength gap, so the final ladder remains 1X / 1 / O2.5 but the Favourite is upgraded from 1X to the straight Manchester United win.",
+        "club_elo_check": {
+          "home_elo": 1886,
+          "away_elo": 1563,
+          "delta_home_minus_away": 323,
+          "alignment": "REVISED",
+          "note": "Club Elo shows a material +323 home-side strength gap. This is strong enough to upgrade the Favourite from 1X to the straight Manchester United win, while 1X remains the Safe selection."
+        }
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "4-0",
+        "competition_final_score": "4-0",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "role": "final result confirmation",
+            "url": "https://www.api-football.com/fixtures/id/1635697"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No calculation formula is defined in N_ECOBET_OUTPUT_AND_AUDIT_v1.3."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "Result-only evidence does not establish PRIME_WORLD or COUNTERWORLD."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    },
+    {
+      "record_type": "MATCH_AUDIT_RECORD",
+      "match_id": "DISC_716b85c19ac8",
+      "snapshot_id": "snap_20260910_110638",
+      "data_snapshot_id": null,
+      "data_snapshot_coverage": null,
+      "data_source_mode": null,
+      "snapshot_fixture_missing": null,
+      "fixture": {
+        "kickoff": "2026-09-10T19:00:00+00:00",
+        "home": "Como",
+        "away": "RB Leipzig",
+        "competition": "UEFA Champions League",
+        "phase": null
+      },
+      "competition_metadata": {
+        "competition_id": null,
+        "competition_name": null,
+        "competition_group": null,
+        "competition_type": null,
+        "display_order": null
+      },
+      "committed_model": {
+        "fixture_id": "DISC_716b85c19ac8",
+        "kickoff": "2026-09-10T19:00:00+00:00",
+        "competition": "UEFA Champions League",
+        "home": "Como",
+        "away": "RB Leipzig",
+        "status": "PREDICTED",
+        "safe": "1X",
+        "balanced": "1",
+        "aggressive": "O2.5",
+        "favourite": "1X",
+        "ampel": "YELLOW",
+        "modal_score": "2-1",
+        "four_score_cluster": [
+          "1-1",
+          "2-0",
+          "2-1",
+          "3-1"
+        ],
+        "flags": [
+          "BOTH_FULL_FEATURE_VECTOR",
+          "HOME_FORM_EDGE",
+          "AWAY_DEFENSIVE_EXPOSURE",
+          "CROSS_LEAGUE_COMPARABILITY"
+        ],
+        "reason": "Como's current profile is stronger than the name-value matchup suggests: last 5 all competitions 2.6 PPG, 1.8 GF, 0.6 GA with 2.16 xG for and 0.92 against; their home last 5 cross-season xG is 2.42 for versus 0.61 against. Leipzig's away last 5 are only 1.2 PPG, 1.4 GF and 2.2 GA with 1.55 xG for versus 2.44 against. That makes Como 1X the preferred robust world, with the home win as the balanced higher-risk call.",
+        "club_elo_check": {
+          "home_elo": 1807,
+          "away_elo": 1827,
+          "delta_home_minus_away": -20,
+          "alignment": "NO_MATERIAL_CONTRADICTION",
+          "note": "Club Elo gives Leipzig only a 20-point raw edge. That is too small to overturn Como 1X given the strong Current V2 home-form signal and home context."
+        }
+      },
+      "result_settlement": {
+        "result_status": "CONFIRMED",
+        "score_90_plus_stoppage": "4-1",
+        "competition_final_score": "4-1",
+        "went_extra_time": false,
+        "settlement_time_semantics": "90_MINUTES_PLUS_STOPPAGE_ONLY",
+        "safe_result": "HIT",
+        "balanced_result": "HIT",
+        "aggressive_result": "HIT",
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "role": "final result confirmation",
+            "url": "https://www.api-football.com/fixtures/id/1635648"
+          }
+        ]
+      },
+      "score_cluster_audit": {
+        "modal_score_hit": false,
+        "cluster_hit": false,
+        "score_band_hit": false,
+        "result_distance_from_modal": {
+          "status": "NOT_AVAILABLE",
+          "reason": "No calculation formula is defined in N_ECOBET_OUTPUT_AND_AUDIT_v1.3."
+        }
+      },
+      "world_verdict": {
+        "verdict": "UNDETERMINED",
+        "evidence_level": "RESULT_ONLY",
+        "basis": "Result-only evidence does not establish PRIME_WORLD or COUNTERWORLD."
+      },
+      "failure_cluster": [],
+      "audit_flags": []
+    }
+  ]
+}
