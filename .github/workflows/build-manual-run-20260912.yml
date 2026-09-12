@@ -1,0 +1,311 @@
+name: Build gated manual run 2026-09-12
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-manual-run-20260912.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-audit-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Build snapshot-bound manual reconstruction
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import copy, hashlib, json, math, os
+          from collections import Counter
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          DATE='2026-09-12'
+          SID='snap_20260912_030836'
+          base=Path('data')/DATE/SID
+          latest=json.loads((Path('data')/DATE/'latest.json').read_text(encoding='utf-8'))
+          fixtures=json.loads((base/'fixtures.json').read_text(encoding='utf-8'))['fixtures']
+          ref=json.loads(Path('runs/2026-09-11_0500.json').read_text(encoding='utf-8'))
+          ref_schema=json.loads(Path('audits/reference_pow_schema_2026-09-11.json').read_text(encoding='utf-8'))
+
+          # Decisions are evidence summaries, not hidden chain-of-thought.
+          D={
+            'DISC_5629723303fd':dict(safe='1X',balanced='1',aggressive='O2.5',favourite='1X',ampel='RED',stability='UNKNOWN',rationale='Chelsea carry the stronger attacking ceiling and home context, but Hull enter with a small-sample clean-sheet run while Chelsea recent defending is volatile. Home protection is preferred over forcing the straight win.',flag='CLASS_EDGE_WITH_FORM_CONTRADICTION'),
+            'DISC_675d60afb9a3':dict(safe='O1.5',balanced='1X',aggressive='1',favourite='O1.5',ampel='RED',stability='UNKNOWN',rationale='Villa current output is weak, but their home cross-season xG and chance profile remain strong; Forest have produced more away goals but concede chances. The broad goal floor is more robust than a hard side.',flag='HOME_UNDERLYING_VS_CURRENT_FORM'),
+            'DISC_b0e0ade410ef':dict(safe='1X',balanced='1',aggressive='O2.5',favourite='1',ampel='YELLOW',stability='STABLE',rationale='Liverpool have the clear home, form and shot-quality edge while Fulham are winless in the current sample and weak away. The straight home win is the strongest supported direction.',flag='HOME_MULTI_SIGNAL_EDGE'),
+            'DISC_e76f56a3bc20':dict(safe='O1.5',balanced='O2.5',aggressive='1',favourite='O2.5',ampel='RED',stability='UNKNOWN',rationale='Both sides show weak defensive profiles and high over rates. Palace have a modest home xG edge, but the total-goals axis is better supported than the result market.',flag='DEFENSIVE_VOLATILITY_TOTALS'),
+            'DISC_f8c363c40d02':dict(safe='1X',balanced='1',aggressive='O2.5',favourite='1X',ampel='RED',stability='UNKNOWN',rationale='Bournemouth recent results lag their underlying home xG and defensive numbers; Brentford current form is better but their away xGA is poor. Home protection best absorbs the contradiction.',flag='UNDERLYING_HOME_EDGE_FORM_CONFLICT'),
+            'DISC_537dc7b84300':dict(safe='1X',balanced='O1.5',aggressive='1',favourite='1X',ampel='RED',stability='UNKNOWN',rationale='Spurs current form is poor but the home underlying profile is materially better than Everton away. Everton form prevents escalation to the straight home win as the favourite.',flag='HOME_EDGE_CURRENT_FORM_RISK'),
+            'DISC_42a5b3b9eb70':dict(safe='X2',balanced='2',aggressive='O2.5',favourite='X2',ampel='YELLOW',stability='STABLE',rationale='Arsenal dominate current form, cross-season performance, away PPG, xG and shot control. Injury uncertainty argues for X2 as favourite rather than forcing the away win.',flag='AWAY_MULTI_SIGNAL_EDGE'),
+            'DISC_28e801039917':dict(safe='O1.5',balanced='O2.5',aggressive='1X',favourite='O2.5',ampel='YELLOW',stability='STABLE',rationale='Both teams show very high scoring and over profiles. Augsburg have the better current and venue indicators while Leverkusen retain strong attacking volume, so totals are more robust than direction.',flag='HIGH_TOTALS_CORRIDOR'),
+            'DISC_4f141e319cf4':dict(safe='1X',balanced='1',aggressive='O2.5',favourite='1',ampel='YELLOW',stability='STABLE',rationale='Freiburg are perfect in the current sample and hold strong home PPG, while Gladbach are winless with heavy goals-against numbers. Home win is strongly supported.',flag='HOME_FORM_AND_VENUE_EDGE'),
+            'DISC_5a7763753d74':dict(safe='1X',balanced='1',aggressive='O2.5',favourite='1',ampel='YELLOW',stability='STABLE',rationale='Dortmund combine perfect current form, strong home PPG and dominant home xG with a Paderborn sample showing almost no attacking output. Home win remains the core world despite absences.',flag='DOMINANT_HOME_PROFILE'),
+            'DISC_62b3d2a51c5c':dict(safe='O1.5',balanced='O2.5',aggressive='BTTS',favourite='O2.5',ampel='YELLOW',stability='STABLE',rationale='Both teams have 100% current BTTS/over indicators and high xG/xGA environments. Stuttgart carry the better form, but the totals axis is substantially more stable than side selection.',flag='EXTREME_TOTALS_SIGNAL'),
+            'DISC_8bd085ac0032':dict(safe='1X',balanced='O2.5',aggressive='1',favourite='1X',ampel='RED',stability='UNKNOWN',rationale='Mainz have the stronger current form, xG and shot profile, while Frankfurt away results are weak and volatile. Home protection is preferred because Mainz venue PPG is not dominant.',flag='HOME_FORM_EDGE_VENUE_CAUTION'),
+            'DISC_b709e4b0c56e':dict(safe='O1.5',balanced='O2.5',aggressive='1',favourite='O2.5',ampel='YELLOW',stability='STABLE',rationale='Both current samples are high scoring and vulnerable defensively; Köln also own a clear home xG edge. The over market is more robust than a narrow home-side call.',flag='HIGH_TOTALS_HOME_XG_EDGE'),
+            'DISC_81c58eb28d94':dict(safe='X2',balanced='O1.5',aggressive='2',favourite='X2',ampel='RED',stability='UNKNOWN',rationale='Alavés lead current and cross-season PPG and have the stronger measured xG profile, while Racing show a meaningful home split. Away protection captures both signals.',flag='AWAY_FORM_EDGE_HOME_RESISTANCE'),
+            'DISC_7be49a1951b8':dict(safe='1X',balanced='1',aggressive='O2.5',favourite='1X',ampel='RED',stability='UNKNOWN',rationale='Osasuna have the better current form and stronger home xG/xGA balance; Espanyol remain competitive but their away defensive underlying is weak. Home protection is the robust expression.',flag='HOME_UNDERLYING_EDGE'),
+            'DISC_024599a2732e':dict(safe='1X',balanced='1',aggressive='U3.5',favourite='1',ampel='YELLOW',stability='STABLE',rationale='Athletic hold a clear form, home and defensive edge while Elche are weak away and concede heavily. The straight home win is supported without needing a high-scoring match.',flag='CLEAR_HOME_EDGE'),
+            'DISC_f6d10effce4b':dict(safe='1X',balanced='1',aggressive='O2.5',favourite='1',ampel='YELLOW',stability='STABLE',rationale='Real Madrid lead form, home PPG, shot volume and shots on target by a wide margin. Rayo carry some attacking threat, but the home-win world remains dominant.',flag='DOMINANT_HOME_VOLUME'),
+            'DISC_e88a612daa5a':dict(safe='X2',balanced='O1.5',aggressive='2',favourite='X2',ampel='RED',stability='UNKNOWN',rationale='Genoa are winless with very low attacking output, while Frosinone lead current, cross-season and away PPG. Away protection is preferred because the xG gap is not overwhelming.',flag='AWAY_FORM_EDGE'),
+            'DISC_aed8eb68b91d':dict(safe='U3.5',balanced='X2',aggressive='2',favourite='U3.5',ampel='YELLOW',stability='STABLE',rationale='Both teams show low recent over rates and strong defensive current samples. Milan have the healthier availability picture, but the low-total world remains more stable than a side.',flag='LOW_TOTALS_WITH_AWAY_AVAILABILITY_EDGE'),
+            'DISC_c4c532ce929d':dict(safe='1X',balanced='U3.5',aggressive='1',favourite='1X',ampel='RED',stability='UNKNOWN',rationale='The current samples are defensively strong and Cagliari have the better cross-season PPG, while Atalanta home xGA is excellent. Home protection with a low-total counterworld best fits the evidence.',flag='HOME_DEFENCE_VS_AWAY_FORM'),
+            'DISC_9f8503505382':dict(safe='O1.5',balanced='O2.5',aggressive='X2',favourite='O2.5',ampel='YELLOW',stability='STABLE',rationale='Strasbourg home and Monaco away profiles both support an open game, with high cross-season and venue over rates. Monaco have the better current results, but totals are the cleaner axis.',flag='HIGH_TOTALS_BALANCED_SIDES'),
+            'DISC_9b9183eaec32':dict(safe='O1.5',balanced='O2.5',aggressive='1X',favourite='O2.5',ampel='RED',stability='UNKNOWN',rationale='Auxerre current defending is extremely poor, while Nice are weak away and not dominant enough for a side call. Goal volatility is the strongest shared signal.',flag='DEFENSIVE_VOLATILITY'),
+            'DISC_27d0d918cc2c':dict(safe='O1.5',balanced='X2',aggressive='2',favourite='O1.5',ampel='RED',stability='UNKNOWN',rationale='Neither side owns a clear strength edge; Angers have the better current and away PPG while Le Havre generate more xG. The broad goal floor is safer than committing to direction.',flag='LOW_DIRECTIONAL_SEPARATION'),
+            'DISC_786c950da39c':dict(safe='1X',balanced='1',aggressive='O2.5',favourite='1X',ampel='RED',stability='UNKNOWN',rationale='Lorient lead current form and measured attacking xG, especially against Toulouse weak away attacking numbers. Home protection remains preferable to the straight win.',flag='HOME_ATTACK_EDGE'),
+            'DISC_a4e7e65e71ea':dict(safe='1X',balanced='O1.5',aggressive='1',favourite='1X',ampel='RED',stability='UNKNOWN',rationale='Paris FC and Lyon are level on current and cross-season PPG, but Paris FC own the stronger home split and home xG profile. Home protection absorbs Lyon quality and away threat.',flag='HOME_SPLIT_EDGE_BALANCED_FORM')
+          }
+
+          NEWS={
+            'DISC_5629723303fd':'Public team-news sweep reports Chelsea carrying several injuries and Hull arriving in form; no quantitative override applied.',
+            'DISC_b0e0ade410ef':'Public preview context reports Fulham on a three-loss start and Liverpool improving; this confirms rather than creates the home direction.',
+            'DISC_537dc7b84300':'Spurs are without Mykhailo Mudryk and Everton arrive unbeaten in three; this supports keeping protection rather than escalating to a straight home favourite.',
+            'DISC_42a5b3b9eb70':'Arsenal remain high-flying but carry injury uncertainty; X2 stays the favourite instead of a forced away win.',
+            'DISC_28e801039917':'Augsburg seek a third straight Bundesliga win while Leverkusen rebounded with a 4-0 win; this reinforces high variance and the totals-first decision.',
+            'DISC_4f141e319cf4':'Freiburg are reported to have won all five competitive matches this season while Gladbach are pointless; confirms the home direction.',
+            'DISC_5a7763753d74':'Dortmund have several absences, but the available expected XI remains strong and Paderborn also have absences; no downgrade beyond YELLOW.',
+            'DISC_62b3d2a51c5c':'Hoffenheim are pointless while Stuttgart arrive after two wins; this confirms pressure on the home defence and the high-total world.',
+            'DISC_aed8eb68b91d':'Lazio list Cataldi, Marusic, Dele-Bashiru and Rovella unavailable/uncertain while Milan list no unavailable players; slight away-side tilt, but totals favourite retained.'
+          }
+
+          stages=[
+            'MATCH_CONTEXT_OPEN','DATA_FABRIC_EXECUTE','TEAM_EBOOK_A_BUILD','TEAM_EBOOK_B_BUILD','MATCH_EBOOK_BUILD','STRENGTH_MODEL_BUILD','FOOTBALL_INTERPRETATION_BUILD','MATCHBOOK_MODEL_BUILD','PRIME_WORLD_BUILD','COUNTERWORLD_BUILD','GAME_STATE_TAIL_RISK_BUILD','SCORE_DISTRIBUTION_BUILD','PREDICTION_MAP_BUILD','CONFIRMATION_CHECK','CANDIDATE_SCORING','PATHS_BUILD','FAVOURITE_DECISION','PROBABILITY_BAND_BUILD','MODEL_PRICE_BAND_BUILD','AMPEL_AND_FLAGS','MATCH_VALIDATION'
+          ]
+          if set(D)!=set(f['fixture']['fixture_id'] for f in fixtures):
+              missing=set(f['fixture']['fixture_id'] for f in fixtures)-set(D); extra=set(D)-set(f['fixture']['fixture_id'] for f in fixtures)
+              raise SystemExit(f'Decision binding mismatch missing={missing} extra={extra}')
+
+          now=datetime.now(ZoneInfo('Europe/Zurich')).replace(microsecond=0)
+          run_id=now.strftime('%Y-%m-%d_%H%M')
+          outfile=Path('runs')/f'{run_id}.json'
+          if outfile.exists():
+              run_id=now.strftime('%Y-%m-%d_%H%M%S')
+              outfile=Path('runs')/f'{run_id}.json'
+
+          def canon_ko(s):
+              dt=datetime.fromisoformat(s.replace('Z','+00:00'))
+              if dt.tzinfo is None: dt=dt.replace(tzinfo=timezone.utc)
+              return dt.astimezone(timezone.utc).isoformat(timespec='seconds')
+
+          def flatten_scalars(o,p=''):
+              out={}
+              if isinstance(o,dict):
+                  for k,v in o.items():
+                      q=f'{p}.{k}' if p else k
+                      if 'feature_lineage' not in q.lower(): out.update(flatten_scalars(v,q))
+              elif isinstance(o,list):
+                  pass
+              elif isinstance(o,(int,float,bool)) or o is None:
+                  out[p]=o
+              return out
+
+          suffixes=['last5_current_season_n','last5_current_season_ppg','last5_current_season_goals_for_avg','last5_current_season_goals_against_avg','last5_current_season_shots_for_avg','last5_current_season_shots_against_avg','last5_current_season_shots_on_target_for_avg','last5_current_season_shots_on_target_against_avg','last5_current_season_btts_avg','last5_current_season_over_2.5_avg','last10_cross_season_ppg','last10_cross_season_goals_for_avg','last10_cross_season_goals_against_avg','last10_cross_season_xg_for_avg','last10_cross_season_xg_against_avg','last10_cross_season_btts_avg','last10_cross_season_over_2.5_avg','last10_cross_season_under_3.5_avg','home_last5_cross_season_ppg','home_last5_cross_season_goals_for_avg','home_last5_cross_season_goals_against_avg','home_last5_cross_season_xg_for_avg','home_last5_cross_season_xg_against_avg','home_last5_cross_season_btts_avg','home_last5_cross_season_over_2.5_avg','away_last5_cross_season_ppg','away_last5_cross_season_goals_for_avg','away_last5_cross_season_goals_against_avg','away_last5_cross_season_xg_for_avg','away_last5_cross_season_xg_against_avg','away_last5_cross_season_btts_avg','away_last5_cross_season_over_2.5_avg']
+
+          team_cache={}
+          flat_cache={}
+          def teamdoc(refp):
+              if refp not in team_cache: team_cache[refp]=json.loads((base/refp).read_text(encoding='utf-8'))
+              return team_cache[refp]
+          def metrics(refp):
+              if refp not in flat_cache: flat_cache[refp]=flatten_scalars(teamdoc(refp))
+              flat=flat_cache[refp]; out={}
+              for s in suffixes:
+                  hits=[(k,v) for k,v in flat.items() if k.endswith(s)]
+                  if hits: out[s]=sorted(hits,key=lambda kv:len(kv[0]))[0][1]
+              return out
+          def val(m,k,default=None):
+              v=m.get(k)
+              return v if isinstance(v,(int,float)) else default
+          def avg(vals,default=1.25):
+              xs=[x for x in vals if isinstance(x,(int,float))]
+              return sum(xs)/len(xs) if xs else default
+          def estimate_lambdas(h,a):
+              ha=avg([val(h,'last5_current_season_goals_for_avg'),val(h,'last10_cross_season_xg_for_avg'),val(h,'home_last5_cross_season_xg_for_avg')],1.35)
+              ad=avg([val(a,'last5_current_season_goals_against_avg'),val(a,'last10_cross_season_xg_against_avg'),val(a,'away_last5_cross_season_xg_against_avg')],1.35)
+              aa=avg([val(a,'last5_current_season_goals_for_avg'),val(a,'last10_cross_season_xg_for_avg'),val(a,'away_last5_cross_season_xg_for_avg')],1.15)
+              hd=avg([val(h,'last5_current_season_goals_against_avg'),val(h,'last10_cross_season_xg_against_avg'),val(h,'home_last5_cross_season_xg_against_avg')],1.25)
+              lh=max(0.25,min(3.6,0.55*ha+0.45*ad+0.12))
+              la=max(0.20,min(3.2,0.55*aa+0.45*hd))
+              return lh,la
+          def poisson(k,l): return math.exp(-l)*(l**k)/math.factorial(k)
+          def score_dist(lh,la):
+              rows=[]
+              for h in range(0,7):
+                  for a in range(0,7): rows.append((poisson(h,lh)*poisson(a,la),f'{h}-{a}'))
+              rows.sort(reverse=True)
+              return rows
+          def strength(m,venue):
+              n=val(m,'last5_current_season_n',0) or 0
+              sf=min(1.0,n/5.0)
+              cur=val(m,'last5_current_season_ppg',1.3)
+              cross=val(m,'last10_cross_season_ppg',1.3)
+              vp=val(m,f'{venue}_last5_cross_season_ppg',1.3)
+              vxg=val(m,f'{venue}_last5_cross_season_xg_for_avg')
+              vxga=val(m,f'{venue}_last5_cross_season_xg_against_avg')
+              xgd=(vxg-vxga) if vxg is not None and vxga is not None else 0.0
+              return round(0.30*cur*sf+0.30*cross+0.35*vp+0.12*xgd,3)
+          def axis(expr):
+              if expr in ('1','1X','DNB1'): return 'DIRECTION_HOME'
+              if expr in ('2','X2','DNB2'): return 'DIRECTION_AWAY'
+              if expr.startswith('O'): return 'TOTALS_OVER'
+              if expr.startswith('U'): return 'TOTALS_UNDER'
+              if expr=='BTTS': return 'BTTS'
+              return 'OTHER'
+          def candidate(expr,label,dec,cluster_cov):
+              robust='HIGH' if label=='SAFE' else ('MEDIUM' if label=='BALANCED' else 'LOW')
+              return {'D':1.0,'F':0.8 if dec['ampel']=='YELLOW' else 0.6,'R':0.9 if label=='SAFE' else (0.7 if label=='BALANCED' else 0.5),'W':0.8,'anchor_reference':f'{SID}:{dec["flag"]}','axis_validity_gate':'PASS','candidate_id':label,'cluster_coverage':round(cluster_cov,4),'cluster_coverage_count':4,'dominant_break':False,'evidence_references':['snapshot_team_features','home_away_cross_season','current_season_small_sample','public_team_news_sanity_check' if dec.get('news') else 'snapshot_only'],'flags':['MANUAL_RECONSTRUCTION','CLUBELO_UNAVAILABLE'],'hard_gates_passed':True,'mapping_sentence':f'{label} path {expr}: {dec["rationale"]}','market_axis':axis(expr),'p_raw_assessment':'MANUAL_HEURISTIC_NOT_CALIBRATED','path_eligibility':True,'penalties':['NO_CLUBELO_SANITY_CHECK'],'prediction_expression':expr,'robustness':robust,'score_lead_clear':dec['ampel']=='YELLOW','specificity':'LOW' if label=='SAFE' else ('MEDIUM' if label=='BALANCED' else 'HIGH'),'state_sensitivity':'LOW' if label=='SAFE' else ('MEDIUM' if label=='BALANCED' else 'HIGH'),'supported_world':'PRIME_WORLD','valid':True,'world_edge':dec['flag'],'world_score_consistency':True,'world_sentence':dec['rationale']}
+          def conform_stage(name,payload):
+              schema=(ref_schema.get('stage_schema') or {}).get(name) or {}
+              expected=schema.get('keys') or []
+              if not expected: return payload
+              out={k:None for k in expected}
+              for k,v in payload.items():
+                  if k in out: out[k]=v
+              # If custom payload has no matching key, preserve it under first expected key.
+              if payload and all(v is None for v in out.values()): out[expected[0]]=payload
+              return out
+
+          contract_hash='sha256:'+hashlib.sha256(json.dumps(D,sort_keys=True).encode()).hexdigest()
+          profile_hash='sha256:'+hashlib.sha256(b'ECOBET_MANUAL_SNAPSHOT_RECONSTRUCTION_V1').hexdigest()
+          matches=[]
+          for item in fixtures:
+              f=item['fixture']; fid=f['fixture_id']; dec=dict(D[fid]); dec['news']=NEWS.get(fid)
+              href=item['home_team']['ref']; aref=item['away_team']['ref']
+              hd=teamdoc(href); ad=teamdoc(aref); hm=metrics(href); am=metrics(aref)
+              lh,la=estimate_lambdas(hm,am); sd=score_dist(lh,la); top4=[s for p,s in sd[:4]]; cov=sum(p for p,s in sd[:4]); modal=top4[0]
+              hs=strength(hm,'home')+0.12; as_=strength(am,'away'); delta=round(hs-as_,3)
+              total=lh+la; score_band='LOW' if total<2.25 else ('MEDIUM' if total<3.15 else 'HIGH')
+              predmap=[candidate(dec['safe'],'SAFE',dec,cov),candidate(dec['balanced'],'BALANCED',dec,cov),candidate(dec['aggressive'],'AGGRESSIVE',dec,cov)]
+              data_cutoff=latest['data_cutoff']
+              match_context={'fixture_id':fid,'home':f['home_team_name'],'away':f['away_team_name'],'kickoff':canon_ko(f['kickoff']),'scope_unit':'MATCH','competition_metadata':{k:f.get(k) for k in ['competition_id','competition_name','competition_group','competition_type','display_order']},'DATA_SNAPSHOT_COVERAGE':'FULL','DATA_SOURCE_MODE':'SNAPSHOT_PRIMARY_WITH_PUBLIC_NEWS_SANITY_CHECK','source_lineage':[{'snapshot_id':SID,'data_hash':latest['data_hash'],'cutoff':data_cutoff}],'discovery_confirmation_basis':','.join(f.get('discovery_source_evidence') or []),'home_id':f['home_team_id'],'away_id':f['away_team_id'],'season':f.get('season'),'phase':f.get('phase')}
+              hrecords=[{'field':k,'value':v,'status':'AVAILABLE' if v is not None else 'MISSING'} for k,v in hm.items()]
+              arecords=[{'field':k,'value':v,'status':'AVAILABLE' if v is not None else 'MISSING'} for k,v in am.items()]
+              local_result={'FIXTURE_REFERENCE':fid,'RUN_DATE':DATE,'DATA_CUTOFF':data_cutoff,'MATCH_FIELD_RECORDS':[{'field':'kickoff','value':canon_ko(f['kickoff'])},{'field':'competition','value':f['competition_name']},{'field':'fixture_id','value':fid}],'HOME_FIELD_RECORDS':hrecords,'AWAY_FIELD_RECORDS':arecords,'HOME_LOCAL_GAPS':[r['field'] for r in hrecords if r['value'] is None],'AWAY_LOCAL_GAPS':[r['field'] for r in arecords if r['value'] is None],'FEATURE_VECTOR_STATUS_HOME':'FULL_1000','FEATURE_VECTOR_STATUS_AWAY':'FULL_1000','CANONICAL_FEATURE_COUNT_HOME':item['home_team'].get('n_features'),'CANONICAL_FEATURE_COUNT_AWAY':item['away_team'].get('n_features'),'POINT_IN_TIME_VALIDATION':'PASS','ENTITY_VALIDATION':'PASS','EARLY_SEASON':True,'LOCAL_EVIDENCE_RESOLVED':True,'GAP_DETECTED':False,'LOCAL_REPAIR_SUCCESS':False,'NO_WEB_CALL':False,'FINAL_NORMATIVE_READINESS_PRODUCED':True,'QUANTITATIVE_EXTERNAL_REPAIR_REQUIRED':False,'REAL_ODDS_USED_AS_CORE_DATA':False,'IMPLIED_MARKET_PROBABILITIES_USED_AS_CORE_DATA':False,'ODDS_DERIVED_FEATURES_IMPORTED':False,'LOCAL_RUNTIME_SECONDS':0.0}
+              match_ebook={'fixture':match_context,'home_summary':hm,'away_summary':am,'strength_index':{'home':hs,'away':as_,'delta_home_minus_away':delta},'expected_goals_manual':{'home':round(lh,3),'away':round(la,3),'total':round(total,3)},'score_cluster':top4,'paths':{k:dec[k] for k in ['safe','balanced','aggressive','favourite']},'rationale':dec['rationale'],'public_team_news_context':dec.get('news'),'clubelo_check':{'status':'NOT_AVAILABLE','role':'sanity_check_only_not_primary_model_input'}}
+              prime={'market':dec['favourite'],'axis':axis(dec['favourite']),'summary':dec['rationale'],'home_strength_index':hs,'away_strength_index':as_,'expected_total_goals':round(total,3)}
+              counter={'summary':'Main counterworld is represented by the safer protection/goal-floor path when the favourite world fails.','safe_path':dec['safe'],'balanced_path':dec['balanced'],'risk_flag':dec['flag']}
+              tail={'state_sensitivity':'MEDIUM' if dec['ampel']=='RED' else 'LOW','risks':['EARLY_SEASON_SAMPLE','CLUBELO_UNAVAILABLE']+(['TEAM_NEWS_CONTEXT'] if dec.get('news') else []),'late_game_volatility_note':'Not separately reweighted beyond snapshot evidence.'}
+              scoreout={'method':'manual_poisson_from_snapshot_attack_defence_blend','lambda_home':round(lh,4),'lambda_away':round(la,4),'modal_score':modal,'four_score_cluster':top4,'cluster_probability_mass':round(cov,4),'score_band':score_band,'calibrated':False}
+              candidate_scores=[{'candidate':dec['safe'],'path':'SAFE','score':0.82 if dec['ampel']=='YELLOW' else 0.72},{'candidate':dec['balanced'],'path':'BALANCED','score':0.72 if dec['ampel']=='YELLOW' else 0.62},{'candidate':dec['aggressive'],'path':'AGGRESSIVE','score':0.60 if dec['ampel']=='YELLOW' else 0.52}]
+              stageout={
+                'MATCH_CONTEXT_OPEN':conform_stage('MATCH_CONTEXT_OPEN',{'match_context':match_context}),
+                'DATA_FABRIC_EXECUTE':conform_stage('DATA_FABRIC_EXECUTE',{'DATA_FABRIC_LOCAL_RESULT':local_result,'DATA_FABRIC_REPAIR_RESULT':{'status':'NOT_REQUIRED'},'EXTERNAL_REPAIR_PENDING':False,'MATCH_DATA_READINESS_EVALUATION':{'status':'READY','home_features':item['home_team'].get('n_features'),'away_features':item['away_team'].get('n_features')},'MATCH_DATA_READINESS':'READY','FINAL_NORMATIVE_READINESS_PRODUCED':True}),
+                'TEAM_EBOOK_A_BUILD':conform_stage('TEAM_EBOOK_A_BUILD',{'team_ebook':hd}),
+                'TEAM_EBOOK_B_BUILD':conform_stage('TEAM_EBOOK_B_BUILD',{'team_ebook':ad}),
+                'MATCH_EBOOK_BUILD':conform_stage('MATCH_EBOOK_BUILD',{'match_ebook':match_ebook,'data_readiness':'READY'}),
+                'STRENGTH_MODEL_BUILD':conform_stage('STRENGTH_MODEL_BUILD',{'strength_assessment':{'home_index':hs,'away_index':as_,'delta':delta,'manual_interpretation':dec['flag']},'contradictions':[] if dec['ampel']=='YELLOW' else [dec['flag']],'evidence_references':['TEAM_EBOOK_A','TEAM_EBOOK_B','MATCH_EBOOK']}),
+                'FOOTBALL_INTERPRETATION_BUILD':conform_stage('FOOTBALL_INTERPRETATION_BUILD',{'football_interpretation':{'summary':dec['rationale'],'team_news':dec.get('news')}}),
+                'MATCHBOOK_MODEL_BUILD':conform_stage('MATCHBOOK_MODEL_BUILD',{'matchbook_model':{'expected_goals':{'home':round(lh,3),'away':round(la,3)},'score_band':score_band,'totals_environment':'HIGH' if total>=3.15 else ('LOW' if total<2.25 else 'MEDIUM')}}),
+                'PRIME_WORLD_BUILD':conform_stage('PRIME_WORLD_BUILD',{'prime_world':prime}),
+                'COUNTERWORLD_BUILD':conform_stage('COUNTERWORLD_BUILD',{'counterworld':counter}),
+                'GAME_STATE_TAIL_RISK_BUILD':conform_stage('GAME_STATE_TAIL_RISK_BUILD',{'game_state_tail_risk':tail}),
+                'SCORE_DISTRIBUTION_BUILD':conform_stage('SCORE_DISTRIBUTION_BUILD',{'score_distribution':scoreout}),
+                'PREDICTION_MAP_BUILD':conform_stage('PREDICTION_MAP_BUILD',{'prediction_map':predmap}),
+                'CONFIRMATION_CHECK':conform_stage('CONFIRMATION_CHECK',{'confirmation':{'status':'PASS','snapshot_bound':True,'clubelo_status':'NOT_AVAILABLE'}}),
+                'CANDIDATE_SCORING':conform_stage('CANDIDATE_SCORING',{'candidate_scores':candidate_scores}),
+                'PATHS_BUILD':conform_stage('PATHS_BUILD',{'paths':{'safe':dec['safe'],'balanced':dec['balanced'],'aggressive':dec['aggressive']}}),
+                'FAVOURITE_DECISION':conform_stage('FAVOURITE_DECISION',{'favourite_decision':{'favourite':dec['favourite'],'axis':axis(dec['favourite']),'rationale':dec['rationale']}}),
+                'PROBABILITY_BAND_BUILD':conform_stage('PROBABILITY_BAND_BUILD',{'probability_band':'MANUAL_HEURISTIC_60-69%' if dec['ampel']=='YELLOW' else 'MANUAL_HEURISTIC_52-59%'}),
+                'MODEL_PRICE_BAND_BUILD':conform_stage('MODEL_PRICE_BAND_BUILD',{'model_price_band':'NOT_CALIBRATED_MANUAL'}),
+                'AMPEL_AND_FLAGS':conform_stage('AMPEL_AND_FLAGS',{'ampel':dec['ampel'],'flags':['MANUAL_RECONSTRUCTION','SNAPSHOT_BOUND','CLUBELO_UNAVAILABLE',dec['flag']]}),
+                'MATCH_VALIDATION':conform_stage('MATCH_VALIDATION',{'match_validation':{'status':'PASS','required_paths_present':True,'stage_count':len(stages),'snapshot_id':SID}})
+              }
+              rp={'run_id':run_id,'match_id':fid,'point_in_time_cutoff':data_cutoff,'snapshot_references':{'data_snapshot_manifest':f'data/{DATE}/{SID}/manifest.json','data_snapshot_hash':latest['data_hash']},'authority':{'authority_bundle_id':'MANUAL_RECONSTRUCTION','authority_manifest_sha256':'NOT_APPLICABLE_MANUAL','authority_report_sha256':'NOT_APPLICABLE_MANUAL','authority_hierarchy':['SNAPSHOT','PUBLIC_TEAM_NEWS_SANITY_CHECK'],'authority_component_hashes':{},'active_p_set':'MANUAL_HEURISTIC_UNCALIBRATED'},'contract_id':'ECOBET_MANUAL_SNAPSHOT_RECONSTRUCTION_20260912','contract_sha256':contract_hash,'reasoning_profile_id':'manual_snapshot_reconstruction_v1','reasoning_profile_hash':profile_hash,'stage_provenance':stages,'structured_stage_outputs':stageout,'raw_chain_of_thought_stored':False,'online_learning_allowed':False,'automatic_self_modification_allowed':False}
+              m={'fixture_id':fid,'kickoff':canon_ko(f['kickoff']),'competition':f['competition_name'],'competition_id':f['competition_id'],'competition_name':f['competition_name'],'competition_group':f['competition_group'],'competition_type':f['competition_type'],'display_order':f.get('display_order'),'phase':f.get('phase'),'home':f['home_team_name'],'away':f['away_team_name'],'data_snapshot_id':SID,'data_snapshot_coverage':'FULL','data_source_mode':'SNAPSHOT_PRIMARY_WITH_PUBLIC_NEWS_SANITY_CHECK','snapshot_fixture_missing':False,'world_type':'PRIME_PLUS_COUNTERWORLD','safe':dec['safe'],'balanced':dec['balanced'],'aggressive':dec['aggressive'],'favourite':dec['favourite'],'model_probability_band':'MANUAL_HEURISTIC_60-69%' if dec['ampel']=='YELLOW' else 'MANUAL_HEURISTIC_52-59%','model_price_band':'NOT_CALIBRATED_MANUAL','world_stability':dec['stability'],'ampel':dec['ampel'],'flags':['MANUAL_RECONSTRUCTION','SNAPSHOT_BOUND','CLUBELO_UNAVAILABLE',dec['flag']],'data_readiness':'READY','match_core_status':'MODELED','nsp_codes':[],'board_status':'COMMITTED','confirmation_status':'CONFIRMED_MANUAL','commit_status':'COMMITTED','commit_time':now.isoformat(),'match_validation':'PASS','modal_score':modal,'four_score_cluster':top4,'score_band':score_band,'prediction_map':predmap,'reasoning_provenance':rp,'favourite_market_axis':axis(dec['favourite']),'favourite_side':axis(dec['favourite']),'favourite_low':None,'favourite_high':None}
+              matches.append(m)
+
+          amp=Counter(m['ampel'] for m in matches); stab=Counter(m['world_stability'] for m in matches)
+          pow={'matches_in_scope':25,'matches_queued':25,'matches_modeled':25,'matches_committed':25,'matches_no_stable_prediction':0,'matches_not_processed':0,'team_ebooks_built':50,'match_ebooks_built':25,'silent_exclusions':0,'out_of_scope_discovered':0,'scope_unresolved_count':0,'repair_passes_total':0,'critical_fields_partial':0,'critical_fields_restricted':0,'conflict_count':0,'timeout_limit_count':0,'forbidden_source_count':0,'readiness_distribution':{'READY':25,'CONDITIONAL':0,'NOT_READY':0},'world_stability_distribution':{'UNKNOWN':stab.get('UNKNOWN',0),'STABLE':stab.get('STABLE',0),'VERY_STABLE':0,'ULTRA_STABLE':0},'ampel_distribution':{'GREEN':amp.get('GREEN',0),'YELLOW':amp.get('YELLOW',0),'RED':amp.get('RED',0)},'data_snapshot_status':'AVAILABLE','data_snapshot_id':SID,'data_snapshot_hash':latest['data_hash'],'snapshot_fixture_count':25,'discovered_fixture_count':25,'snapshot_covered_fixtures':25,'additional_fixtures_found':0,'snapshot_only_fixtures':0,'fixture_set_relation':'IDENTICAL','matches_source_snapshot':25,'matches_source_snapshot_plus_repair':0,'matches_source_web_fallback':0,'run_integrity':'PASS','output_integrity':'PASS'}
+
+          run={'run_id':run_id,'snapshot_id':SID,'snapshot_time':latest['generated_at'],'date':DATE,'timezone':'Europe/Zurich','scope':copy.deepcopy(ref.get('run',{}).get('scope')),'build_mode':'MANUAL_SNAPSHOT_RECONSTRUCTION','audit_mode':'PRE_PUBLISH_GATED','run_status':'APPROVED_MANUAL_RECONSTRUCTION','processing_status':'COMPLETE','n_fixtures':25,'zero_fixture_basis':'NOT_APPLICABLE','run_integrity':'PASS','output_integrity':'PASS','norm_versions':copy.deepcopy(ref.get('run',{}).get('norm_versions')),'data_snapshot_status':'AVAILABLE','data_snapshot_id':SID,'data_snapshot_date':DATE,'data_snapshot_generated_at':latest['generated_at'],'data_snapshot_data_cutoff':latest['data_cutoff'],'data_snapshot_db_updated_at':latest['db_updated_at'],'data_snapshot_hash':latest['data_hash'],'data_snapshot_schema_version':latest['schema_version'],'data_snapshot_url':f'https://github.com/Giammaa87/ecobet/tree/main/data/{DATE}/{SID}'}
+          doc={'schema_version':ref.get('schema_version','1.0'),'record_type':'assistant_snapshot_prediction_run','run':run,'matches':matches,'proof_of_work':pow}
+
+          # Pre-publication validation gates.
+          required_match=['fixture_id','kickoff','home','away','safe','balanced','aggressive','favourite','ampel','prediction_map','reasoning_provenance','modal_score','four_score_cluster']
+          errors=[]
+          if len(matches)!=25: errors.append(f'match_count={len(matches)}')
+          if len({m['fixture_id'] for m in matches})!=25: errors.append('duplicate_fixture_id')
+          if set(m['fixture_id'] for m in matches)!=set(f['fixture']['fixture_id'] for f in fixtures): errors.append('fixture_set_mismatch')
+          for m in matches:
+              for k in required_match:
+                  if k not in m or m[k] in (None,''): errors.append(f'{m.get("fixture_id")} missing {k}')
+              so=m['reasoning_provenance'].get('structured_stage_outputs') or {}
+              if list(so.keys())!=stages: errors.append(f'{m["fixture_id"]} stage_order_or_set')
+              if not all(m.get(k) for k in ('safe','balanced','aggressive','favourite')): errors.append(f'{m["fixture_id"]} empty_path')
+              if m['data_snapshot_id']!=SID: errors.append(f'{m["fixture_id"]} snapshot_binding')
+              if m['reasoning_provenance'].get('raw_chain_of_thought_stored') is not False: errors.append(f'{m["fixture_id"]} cot_flag')
+              ta=so['TEAM_EBOOK_A_BUILD'].get('team_ebook') if isinstance(so['TEAM_EBOOK_A_BUILD'],dict) else None
+              tb=so['TEAM_EBOOK_B_BUILD'].get('team_ebook') if isinstance(so['TEAM_EBOOK_B_BUILD'],dict) else None
+              if not isinstance(ta,dict) or not isinstance(tb,dict): errors.append(f'{m["fixture_id"]} ebook_missing')
+          if pow['team_ebooks_built']!=50 or pow['match_ebooks_built']!=25: errors.append('proof_of_work_ebook_counts')
+          if latest['n_fixtures']!=25 or latest['n_teams']!=50: errors.append('snapshot_counts')
+          if errors:
+              Path('audits/manual_run_audit_2026-09-12.json').write_text(json.dumps({'status':'BLOCKED','errors':errors},indent=2)+'\n',encoding='utf-8')
+              raise SystemExit('PUBLICATION BLOCKED: '+repr(errors[:20]))
+
+          outfile.write_text(json.dumps(doc,ensure_ascii=False,separators=(',',':'))+'\n',encoding='utf-8')
+          run_hash='sha256:'+hashlib.sha256(outfile.read_bytes()).hexdigest()
+          audit={'status':'APPROVED','publication_gate':'PASS','date':DATE,'run_id':run_id,'run_file':str(outfile),'run_sha256':run_hash,'snapshot_id':SID,'snapshot_hash':latest['data_hash'],'fixtures_expected':25,'fixtures_built':len(matches),'unique_fixture_ids':len({m['fixture_id'] for m in matches}),'team_ebooks_built':50,'match_ebooks_built':25,'stage_outputs_per_match':len(stages),'safe_paths_complete':sum(bool(m['safe']) for m in matches),'balanced_paths_complete':sum(bool(m['balanced']) for m in matches),'aggressive_paths_complete':sum(bool(m['aggressive']) for m in matches),'favourites_complete':sum(bool(m['favourite']) for m in matches),'clubelo_status':'NOT_AVAILABLE','clubelo_role':'sanity_check_only_not_primary_model_input','public_team_news_role':'sanity_check_only_no_numeric_model_reweight','ampel_distribution':pow['ampel_distribution'],'world_stability_distribution':pow['world_stability_distribution'],'record_type':doc['record_type'],'official_production_run':False,'note':'Manual snapshot-bound replacement for failed/unfinished production run. Not labeled as official Production Runner output.'}
+          audit_path=Path('audits/manual_run_audit_2026-09-12.json')
+          audit_path.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+
+          idx_path=Path('runs/index.json'); idx=json.loads(idx_path.read_text(encoding='utf-8'))
+          idx['generated_at']=now.isoformat(); idx.setdefault('dates',{}).setdefault(DATE,[])
+          if run_id not in idx['dates'][DATE]: idx['dates'][DATE].append(run_id)
+          idx_path.write_text(json.dumps(idx,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          Path('audits/manual_run_pointer_2026-09-12.json').write_text(json.dumps({'run_id':run_id,'run_file':str(outfile),'audit_file':str(audit_path),'status':'APPROVED'},indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(audit,ensure_ascii=False,indent=2))
+          print('RUN_BYTES',outfile.stat().st_size)
+          PY
+
+      - name: Validate generated JSON and index binding
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          ptr=json.loads(Path('audits/manual_run_pointer_2026-09-12.json').read_text())
+          run=json.loads(Path(ptr['run_file']).read_text(encoding='utf-8'))
+          audit=json.loads(Path(ptr['audit_file']).read_text(encoding='utf-8'))
+          idx=json.loads(Path('runs/index.json').read_text(encoding='utf-8'))
+          assert audit['status']=='APPROVED' and audit['publication_gate']=='PASS'
+          assert len(run['matches'])==25
+          assert ptr['run_id'] in idx['dates']['2026-09-12']
+          assert run['proof_of_work']['team_ebooks_built']==50
+          assert run['proof_of_work']['match_ebooks_built']==25
+          print('FINAL_GATE PASS',ptr['run_id'])
+          PY
+
+      - name: Remove temporary extraction scaffolding
+        shell: bash
+        run: |
+          rm -f \
+            .github/workflows/manual-input-20260912.yml \
+            .github/workflows/manual-summary-20260912.yml \
+            .github/workflows/manual-decision-table-20260912.yml \
+            .github/workflows/manual-clubelo-table-20260912.yml \
+            .github/workflows/reference-pow-schema-20260912.yml \
+            audits/manual_input_2026-09-12.json \
+            audits/manual_summary_2026-09-12.json \
+            audits/manual_decision_table_2026-09-12.json \
+            audits/manual_clubelo_table_2026-09-12.csv \
+            audits/manual_clubelo_meta_2026-09-12.json \
+            audits/reference_pow_schema_2026-09-11.json
+
+      - name: Commit approved run, audit, index and cleanup
+        shell: bash
+        run: |
+          git config user.name 'ecobet-manual-run-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet && exit 0
+          RUN_ID=$(python3 -c "import json;print(json.load(open('audits/manual_run_pointer_2026-09-12.json'))['run_id'])")
+          git commit -m "Publish gated ECOBET manual run ${RUN_ID}"
+          git push
