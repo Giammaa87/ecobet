@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "clubelo_source": null,
+  "clubelo_rows": 0,
+  "fixture_count": 25,
+  "role": "sanity_check_only_not_primary_model_input"
+}
