@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Extract 11 Sep proof-of-work schema
+      - name: Extract 11 Sep proof-of-work and stage schema
         shell: bash
         run: |
           python3 - <<'PY'
@@ -21,19 +21,27 @@ jobs:
           from pathlib import Path
           ref=json.loads(Path('runs/2026-09-11_0500.json').read_text(encoding='utf-8'))
           pow=ref.get('proof_of_work')
-          def desc(o,depth=0,maxdepth=4):
+          first=(ref.get('matches') or [{}])[0]
+          stages=((first.get('reasoning_provenance') or {}).get('structured_stage_outputs') or {})
+
+          def desc(o,depth=0,maxdepth=3):
               if depth>=maxdepth:
                   if isinstance(o,dict): return {'type':'dict','keys':list(o.keys())}
                   if isinstance(o,list): return {'type':'list','len':len(o),'item_type':type(o[0]).__name__ if o else None}
                   return {'type':type(o).__name__}
               if isinstance(o,dict):
-                  return {'type':'dict','keys':list(o.keys()),'children':{k:desc(v,depth+1,maxdepth) for k,v in list(o.items())[:20]}}
+                  return {'type':'dict','keys':list(o.keys()),'children':{k:desc(v,depth+1,maxdepth) for k,v in list(o.items())[:30]}}
               if isinstance(o,list):
                   return {'type':'list','len':len(o),'sample':desc(o[0],depth+1,maxdepth) if o else None}
               return {'type':type(o).__name__,'sample':o if isinstance(o,(str,int,float,bool)) else None}
-          out={'reference':'runs/2026-09-11_0500.json','proof_of_work_schema':desc(pow)}
+
+          stage_schema={}
+          if isinstance(stages,dict):
+              for name,val in stages.items():
+                  stage_schema[name]=desc(val,0,2)
+          out={'reference':'runs/2026-09-11_0500.json','proof_of_work_schema':desc(pow),'stage_names':list(stages.keys()) if isinstance(stages,dict) else [],'stage_schema':stage_schema}
           Path('audits/reference_pow_schema_2026-09-11.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-          print('pow type',type(pow).__name__)
+          print('pow type',type(pow).__name__,'stages',len(stage_schema))
           PY
       - name: Commit schema
         shell: bash
@@ -42,5 +50,5 @@ jobs:
           git config user.email 'actions@users.noreply.github.com'
           git add audits/reference_pow_schema_2026-09-11.json
           git diff --cached --quiet && exit 0
-          git commit -m 'Extract 2026-09-11 proof-of-work schema'
+          git commit -m 'Extend 2026-09-11 proof-of-work stage schema'
           git push
