@@ -1,0 +1,183 @@
+{
+  "reference": "runs/2026-09-11_0500.json",
+  "proof_of_work_schema": {
+    "type": "dict",
+    "keys": [
+      "matches_in_scope",
+      "matches_queued",
+      "matches_modeled",
+      "matches_committed",
+      "matches_no_stable_prediction",
+      "matches_not_processed",
+      "team_ebooks_built",
+      "match_ebooks_built",
+      "silent_exclusions",
+      "out_of_scope_discovered",
+      "scope_unresolved_count",
+      "repair_passes_total",
+      "critical_fields_partial",
+      "critical_fields_restricted",
+      "conflict_count",
+      "timeout_limit_count",
+      "forbidden_source_count",
+      "readiness_distribution",
+      "world_stability_distribution",
+      "ampel_distribution",
+      "data_snapshot_status",
+      "data_snapshot_id",
+      "data_snapshot_hash",
+      "snapshot_fixture_count",
+      "discovered_fixture_count",
+      "snapshot_covered_fixtures",
+      "additional_fixtures_found",
+      "snapshot_only_fixtures",
+      "fixture_set_relation",
+      "matches_source_snapshot",
+      "matches_source_snapshot_plus_repair",
+      "matches_source_web_fallback",
+      "run_integrity",
+      "output_integrity"
+    ],
+    "children": {
+      "matches_in_scope": {
+        "type": "int",
+        "sample": 4
+      },
+      "matches_queued": {
+        "type": "int",
+        "sample": 4
+      },
+      "matches_modeled": {
+        "type": "int",
+        "sample": 4
+      },
+      "matches_committed": {
+        "type": "int",
+        "sample": 4
+      },
+      "matches_no_stable_prediction": {
+        "type": "int",
+        "sample": 0
+      },
+      "matches_not_processed": {
+        "type": "int",
+        "sample": 0
+      },
+      "team_ebooks_built": {
+        "type": "int",
+        "sample": 8
+      },
+      "match_ebooks_built": {
+        "type": "int",
+        "sample": 4
+      },
+      "silent_exclusions": {
+        "type": "int",
+        "sample": 0
+      },
+      "out_of_scope_discovered": {
+        "type": "int",
+        "sample": 0
+      },
+      "scope_unresolved_count": {
+        "type": "int",
+        "sample": 0
+      },
+      "repair_passes_total": {
+        "type": "int",
+        "sample": 0
+      },
+      "critical_fields_partial": {
+        "type": "int",
+        "sample": 0
+      },
+      "critical_fields_restricted": {
+        "type": "int",
+        "sample": 0
+      },
+      "conflict_count": {
+        "type": "int",
+        "sample": 0
+      },
+      "timeout_limit_count": {
+        "type": "int",
+        "sample": 0
+      },
+      "forbidden_source_count": {
+        "type": "int",
+        "sample": 0
+      },
+      "readiness_distribution": {
+        "type": "dict",
+        "keys": [
+          "READY",
+          "CONDITIONAL",
+          "NOT_READY"
+        ],
+        "children": {
+          "READY": {
+            "type": "int",
+            "sample": 4
+          },
+          "CONDITIONAL": {
+            "type": "int",
+            "sample": 0
+          },
+          "NOT_READY": {
+            "type": "int",
+            "sample": 0
+          }
+        }
+      },
+      "world_stability_distribution": {
+        "type": "dict",
+        "keys": [
+          "UNKNOWN",
+          "STABLE",
+          "VERY_STABLE",
+          "ULTRA_STABLE"
+        ],
+        "children": {
+          "UNKNOWN": {
+            "type": "int",
+            "sample": 3
+          },
+          "STABLE": {
+            "type": "int",
+            "sample": 1
+          },
+          "VERY_STABLE": {
+            "type": "int",
+            "sample": 0
+          },
+          "ULTRA_STABLE": {
+            "type": "int",
+            "sample": 0
+          }
+        }
+      },
+      "ampel_distribution": {
+        "type": "dict",
+        "keys": [
+          "GREEN",
+          "YELLOW",
+          "RED"
+        ],
+        "children": {
+          "GREEN": {
+            "type": "int",
+            "sample": 0
+          },
+          "YELLOW": {
+            "type": "int",
+            "sample": 1
+          },
+          "RED": {
+            "type": "int",
+            "sample": 3
+          }
+        }
+      }
+    }
+  }
+}
