@@ -1,0 +1,46 @@
+name: One-time reference PoW schema 2026-09-12
+
+on:
+  push:
+    paths:
+      - '.github/workflows/reference-pow-schema-20260912.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract 11 Sep proof-of-work schema
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          ref=json.loads(Path('runs/2026-09-11_0500.json').read_text(encoding='utf-8'))
+          pow=ref.get('proof_of_work')
+          def desc(o,depth=0,maxdepth=4):
+              if depth>=maxdepth:
+                  if isinstance(o,dict): return {'type':'dict','keys':list(o.keys())}
+                  if isinstance(o,list): return {'type':'list','len':len(o),'item_type':type(o[0]).__name__ if o else None}
+                  return {'type':type(o).__name__}
+              if isinstance(o,dict):
+                  return {'type':'dict','keys':list(o.keys()),'children':{k:desc(v,depth+1,maxdepth) for k,v in list(o.items())[:20]}}
+              if isinstance(o,list):
+                  return {'type':'list','len':len(o),'sample':desc(o[0],depth+1,maxdepth) if o else None}
+              return {'type':type(o).__name__,'sample':o if isinstance(o,(str,int,float,bool)) else None}
+          out={'reference':'runs/2026-09-11_0500.json','proof_of_work_schema':desc(pow)}
+          Path('audits/reference_pow_schema_2026-09-11.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('pow type',type(pow).__name__)
+          PY
+      - name: Commit schema
+        shell: bash
+        run: |
+          git config user.name 'ecobet-manual-run-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add audits/reference_pow_schema_2026-09-11.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Extract 2026-09-11 proof-of-work schema'
+          git push
