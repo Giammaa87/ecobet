@@ -1,0 +1,83 @@
+name: One-time manual summary 2026-09-12
+
+on:
+  push:
+    paths:
+      - '.github/workflows/manual-summary-20260912.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build decision summary and reference schema
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, math
+          from pathlib import Path
+
+          inp=json.loads(Path('audits/manual_input_2026-09-12.json').read_text(encoding='utf-8'))
+          ref=json.loads(Path('runs/2026-09-11_0500.json').read_text(encoding='utf-8'))
+
+          suffixes=[
+            'last5_current_season_n','last5_current_season_ppg','last5_current_season_goals_for_avg','last5_current_season_goals_against_avg','last5_current_season_xg_for_avg','last5_current_season_xg_against_avg','last5_current_season_shots_for_avg','last5_current_season_shots_against_avg','last5_current_season_shots_on_target_for_avg','last5_current_season_shots_on_target_against_avg','last5_current_season_btts_avg','last5_current_season_over_1.5_avg','last5_current_season_over_2.5_avg','last5_current_season_over_3.5_avg',
+            'last10_cross_season_n','last10_cross_season_ppg','last10_cross_season_goals_for_avg','last10_cross_season_goals_against_avg','last10_cross_season_xg_for_avg','last10_cross_season_xg_against_avg','last10_cross_season_btts_avg','last10_cross_season_over_2.5_avg','last10_cross_season_under_3.5_avg',
+            'home_last5_cross_season_n','home_last5_cross_season_ppg','home_last5_cross_season_goals_for_avg','home_last5_cross_season_goals_against_avg','home_last5_cross_season_xg_for_avg','home_last5_cross_season_xg_against_avg','home_last5_cross_season_btts_avg','home_last5_cross_season_over_2.5_avg',
+            'away_last5_cross_season_n','away_last5_cross_season_ppg','away_last5_cross_season_goals_for_avg','away_last5_cross_season_goals_against_avg','away_last5_cross_season_xg_for_avg','away_last5_cross_season_xg_against_avg','away_last5_cross_season_btts_avg','away_last5_cross_season_over_2.5_avg',
+            'first_half_last5_goals_for_avg','first_half_last5_goals_against_avg','first_half_last5_over_0_5_avg','first_half_last5_over_1_5_avg',
+            'second_half_last5_goals_for_avg','second_half_last5_goals_against_avg','second_half_last5_over_0_5_avg','second_half_last5_over_1_5_avg',
+            'AvgH','AvgD','AvgA','bookmaker_margin'
+          ]
+
+          def pull(team):
+              feats=team.get('selected_numeric_features',{})
+              out={}
+              for suffix in suffixes:
+                  hits=[(k,v) for k,v in feats.items() if k.endswith(suffix)]
+                  if hits:
+                      # Prefer shortest path if aliases exist.
+                      k,v=sorted(hits,key=lambda kv:len(kv[0]))[0]
+                      out[suffix]=v
+              return {'team_id':team.get('team_id'),'team_name':team.get('team_name'),'metrics':out,'feature_count':team.get('selected_feature_count')}
+
+          matches=[]
+          for m in inp['matches']:
+              f=m['fixture']
+              matches.append({
+                'fixture_id':f.get('fixture_id'),'kickoff':f.get('kickoff'),'competition':f.get('competition_name'),'home':f.get('home_team_name'),'away':f.get('away_team_name'),
+                'home_team':pull(m['home_team']),'away_team':pull(m['away_team'])
+              })
+
+          first=(ref.get('matches') or [{}])[0]
+          def shallow(o,depth=0):
+              if depth>=2:
+                  if isinstance(o,dict): return list(o.keys())
+                  if isinstance(o,list): return {'len':len(o),'item_type':type(o[0]).__name__ if o else None}
+                  return type(o).__name__
+              if isinstance(o,dict): return {k:shallow(v,depth+1) for k,v in o.items()}
+              if isinstance(o,list): return {'len':len(o),'first':shallow(o[0],depth+1) if o else None}
+              return type(o).__name__
+
+          out={
+            'status':'PASS','date':'2026-09-12','snapshot_id':'snap_20260912_030836','fixture_count':len(matches),
+            'reference':{'top_level_keys':list(ref.keys()),'run_keys':list((ref.get('run') or {}).keys()),'first_match_keys':list(first.keys()),'first_match_shallow_shape':shallow(first)},
+            'matches':matches
+          }
+          p=Path('audits/manual_summary_2026-09-12.json')
+          p.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('bytes',p.stat().st_size,'fixtures',len(matches))
+          if len(matches)!=25: raise SystemExit('fixture count mismatch')
+          PY
+      - name: Commit summary
+        shell: bash
+        run: |
+          git config user.name 'ecobet-manual-run-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add audits/manual_summary_2026-09-12.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Summarize 2026-09-12 manual run inputs'
+          git push
