@@ -1,0 +1,97 @@
+name: One-time manual input 2026-09-12
+
+on:
+  push:
+    paths:
+      - '.github/workflows/manual-input-20260912.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Extract compact decision input
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, re
+          from pathlib import Path
+
+          date='2026-09-12'
+          sid='snap_20260912_030836'
+          base=Path('data')/date/sid
+          with (base/'fixtures.json').open(encoding='utf-8') as f:
+              fxdoc=json.load(f)
+          fixtures=fxdoc.get('fixtures', [])
+
+          with Path('runs/2026-09-11_0500.json').open(encoding='utf-8') as f:
+              ref=json.load(f)
+
+          wanted = re.compile(r'(last5|last10|current_season|cross_season|goals_for|goals_against|goal_diff|xg_for|xg_against|xg_diff|npxg|ppg|points_avg|win_avg|draw_avg|loss_avg|btts|over_1[._]5|over_2[._]5|over_3[._]5|under_3[._]5|shots_for|shots_against|shots_on_target|shot_accuracy|conversion|clean_sheet|scoreless|first_half|second_half|AvgH$|AvgD$|AvgA$|bookmaker_margin)', re.I)
+
+          def walk_scalars(obj, prefix=''):
+              if isinstance(obj, dict):
+                  for k,v in obj.items():
+                      p=f'{prefix}.{k}' if prefix else str(k)
+                      yield from walk_scalars(v,p)
+              elif isinstance(obj, list):
+                  return
+              elif isinstance(obj,(int,float,bool)) or obj is None:
+                  yield prefix,obj
+
+          cache={}
+          def compact_team(team_ref):
+              p=base/team_ref
+              key=str(p)
+              if key in cache: return cache[key]
+              with p.open(encoding='utf-8') as f:
+                  doc=json.load(f)
+              selected={}
+              for path,val in walk_scalars(doc):
+                  lk=path.lower()
+                  if 'feature_lineage' in lk: continue
+                  if wanted.search(path): selected[path]=val
+              selected=dict(sorted(selected.items()))
+              cache[key]={
+                  'team_id':doc.get('team_id'),
+                  'team_name':doc.get('team_name'),
+                  'selected_numeric_features':selected,
+                  'selected_feature_count':len(selected),
+              }
+              return cache[key]
+
+          matches=[]
+          for item in fixtures:
+              f=item.get('fixture',item)
+              h=item.get('home_team',{})
+              a=item.get('away_team',{})
+              matches.append({'fixture':f,'home_team':compact_team(h['ref']),'away_team':compact_team(a['ref'])})
+
+          first=(ref.get('matches') or [{}])[0]
+          ref_summary={
+              'top_level_keys':list(ref.keys()),
+              'run_keys':list((ref.get('run') or {}).keys()),
+              'first_match_keys':list(first.keys()),
+          }
+          out={'status':'PASS','date':date,'snapshot_id':sid,'fixture_count':len(matches),'reference_run':'runs/2026-09-11_0500.json','reference_summary':ref_summary,'matches':matches}
+          dest=Path('audits/manual_input_2026-09-12.json')
+          dest.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('fixtures',len(matches),'bytes',dest.stat().st_size)
+          if len(matches)!=25: raise SystemExit(f'Expected 25 fixtures, got {len(matches)}')
+          PY
+
+      - name: Commit compact decision input
+        shell: bash
+        run: |
+          git config user.name 'ecobet-manual-run-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add audits/manual_input_2026-09-12.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Prepare compact manual run input for 2026-09-12'
+          git push
