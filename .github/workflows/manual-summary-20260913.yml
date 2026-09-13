@@ -1,0 +1,71 @@
+name: One-time manual summary 2026-09-13
+
+on:
+  push:
+    paths:
+      - '.github/workflows/manual-summary-20260913.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build compact evidence summary
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import csv, io, json, math
+          from pathlib import Path
+          inp=json.loads(Path('audits/manual_input_2026-09-13.json').read_text(encoding='utf-8'))
+          fields=['id','ko','comp','home','away','hn','an','hcp','acp','hxp','axp','hvp','avp','hgf','agf','hga','aga','hxg','axg','hxga','axga','hvxg','avxg','hvxga','avxga','hshots','ashots','hsot','asot','ho25','ao25','hvo25','avo25','hbtts','abtts','hvbtts','avbtts','hstrength','astrength','delta','lambda_h','lambda_a','total']
+          def v(m,k,d=None):
+              x=m.get(k); return x if isinstance(x,(int,float)) else d
+          def avg(xs,d):
+              a=[x for x in xs if isinstance(x,(int,float))]; return sum(a)/len(a) if a else d
+          def strength(m,venue):
+              n=v(m,'last5_current_season_n',0) or 0
+              sf=min(0.45,n/10.0)  # explicit early-season damping
+              cur=v(m,'last5_current_season_ppg',1.3)
+              cross=v(m,'last10_cross_season_ppg',1.3)
+              vp=v(m,f'{venue}_last5_cross_season_ppg',1.3)
+              vxg=v(m,f'{venue}_last5_cross_season_xg_for_avg')
+              vxga=v(m,f'{venue}_last5_cross_season_xg_against_avg')
+              xgd=(vxg-vxga) if vxg is not None and vxga is not None else 0.0
+              return 0.18*cur*sf + 0.36*cross + 0.38*vp + 0.12*xgd
+          def lambdas(h,a):
+              hn=v(h,'last5_current_season_n',0) or 0; an=v(a,'last5_current_season_n',0) or 0
+              hw=min(0.25,hn/20.0); aw=min(0.25,an/20.0)
+              hlong=avg([v(h,'last10_cross_season_xg_for_avg'),v(h,'home_last5_cross_season_xg_for_avg'),v(h,'last10_cross_season_goals_for_avg')],1.35)
+              alongdef=avg([v(a,'last10_cross_season_xg_against_avg'),v(a,'away_last5_cross_season_xg_against_avg'),v(a,'last10_cross_season_goals_against_avg')],1.35)
+              along=avg([v(a,'last10_cross_season_xg_for_avg'),v(a,'away_last5_cross_season_xg_for_avg'),v(a,'last10_cross_season_goals_for_avg')],1.15)
+              hlongdef=avg([v(h,'last10_cross_season_xg_against_avg'),v(h,'home_last5_cross_season_xg_against_avg'),v(h,'last10_cross_season_goals_against_avg')],1.25)
+              hcur=v(h,'last5_current_season_goals_for_avg',hlong); acurdef=v(a,'last5_current_season_goals_against_avg',alongdef)
+              acur=v(a,'last5_current_season_goals_for_avg',along); hcurdef=v(h,'last5_current_season_goals_against_avg',hlongdef)
+              ha=(1-hw)*hlong+hw*hcur; ad=(1-aw)*alongdef+aw*acurdef
+              aa=(1-aw)*along+aw*acur; hd=(1-hw)*hlongdef+hw*hcurdef
+              return max(.25,min(3.5,.56*ha+.44*ad+.10)),max(.20,min(3.2,.56*aa+.44*hd))
+          out=io.StringIO(); w=csv.DictWriter(out,fieldnames=fields); w.writeheader()
+          for x in inp['matches']:
+              f=x['fixture']; h=x['home_metrics']; a=x['away_metrics']; hs=strength(h,'home')+.10; ass=strength(a,'away'); lh,la=lambdas(h,a)
+              row={'id':f['fixture_id'],'ko':f['kickoff'],'comp':f['competition_name'],'home':f['home_team_name'],'away':f['away_team_name'],
+                   'hn':v(h,'last5_current_season_n'),'an':v(a,'last5_current_season_n'),'hcp':v(h,'last5_current_season_ppg'),'acp':v(a,'last5_current_season_ppg'),'hxp':v(h,'last10_cross_season_ppg'),'axp':v(a,'last10_cross_season_ppg'),'hvp':v(h,'home_last5_cross_season_ppg'),'avp':v(a,'away_last5_cross_season_ppg'),
+                   'hgf':v(h,'last5_current_season_goals_for_avg'),'agf':v(a,'last5_current_season_goals_for_avg'),'hga':v(h,'last5_current_season_goals_against_avg'),'aga':v(a,'last5_current_season_goals_against_avg'),'hxg':v(h,'last10_cross_season_xg_for_avg'),'axg':v(a,'last10_cross_season_xg_for_avg'),'hxga':v(h,'last10_cross_season_xg_against_avg'),'axga':v(a,'last10_cross_season_xg_against_avg'),'hvxg':v(h,'home_last5_cross_season_xg_for_avg'),'avxg':v(a,'away_last5_cross_season_xg_for_avg'),'hvxga':v(h,'home_last5_cross_season_xg_against_avg'),'avxga':v(a,'away_last5_cross_season_xg_against_avg'),
+                   'hshots':v(h,'last5_current_season_shots_for_avg'),'ashots':v(a,'last5_current_season_shots_for_avg'),'hsot':v(h,'last5_current_season_shots_on_target_for_avg'),'asot':v(a,'last5_current_season_shots_on_target_for_avg'),'ho25':v(h,'last10_cross_season_over_2.5_avg'),'ao25':v(a,'last10_cross_season_over_2.5_avg'),'hvo25':v(h,'home_last5_cross_season_over_2.5_avg'),'avo25':v(a,'away_last5_cross_season_over_2.5_avg'),'hbtts':v(h,'last10_cross_season_btts_avg'),'abtts':v(a,'last10_cross_season_btts_avg'),'hvbtts':v(h,'home_last5_cross_season_btts_avg'),'avbtts':v(a,'away_last5_cross_season_btts_avg'),
+                   'hstrength':round(hs,3),'astrength':round(ass,3),'delta':round(hs-ass,3),'lambda_h':round(lh,3),'lambda_a':round(la,3),'total':round(lh+la,3)}
+              w.writerow(row)
+          p=Path('audits/manual_summary_2026-09-13.csv'); p.write_text(out.getvalue(),encoding='utf-8')
+          print('PASS rows',len(inp['matches']),'bytes',p.stat().st_size)
+          PY
+      - name: Commit compact summary
+        shell: bash
+        run: |
+          git config user.name 'ecobet-manual-run-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git pull --rebase origin main
+          git add audits/manual_summary_2026-09-13.csv
+          git diff --cached --quiet && exit 0
+          git commit -m 'Summarize 2026-09-13 manual run inputs'
+          git push
