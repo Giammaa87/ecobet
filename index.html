@@ -316,7 +316,12 @@ function applyRunCorrection(raw,correction,runId){
   const target=patched.matches||patched.match_records||patched.run?.matches;
   for(const match of target){
     const delta=correction.fixtures[match?.fixture_id];
-    if(delta&&typeof delta==='object')Object.assign(match,delta);
+    if(delta&&typeof delta==='object'){
+      Object.assign(match,delta);
+      // Renderer-only provenance: correction values, including
+      // NOT_AVAILABLE, must not fall through to stale PATHS_BUILD stages.
+      match._corrected_axes=['safe','balanced','aggressive'].filter(key=>Object.prototype.hasOwnProperty.call(delta,key));
+    }
   }
   return patched;
 }
@@ -327,10 +332,8 @@ function decisionPathStage(m){
 }
 function effectiveDecisionPath(m,key){
   const top=m?.[key];
-  // A serialized top-level axis is authoritative, including the explicit
-  // NOT_AVAILABLE contract used by correction overlays.  Only an absent
-  // property may consult historical PATHS_BUILD evidence.
-  if(Object.prototype.hasOwnProperty.call(m||{},key))return {value:top,source:'RUN'};
+  if(Array.isArray(m?._corrected_axes)&&m._corrected_axes.includes(key))return {value:top,source:'CORRECTION'};
+  if(present(top))return {value:top,source:'RUN'};
   const stage=decisionPathStage(m),paths=obj(stage.paths),row=obj(paths[key]);
   const expr=row.prediction_expression??row.prediction??row.expression??row.pick;
   if(row.available!==false&&present(expr))return {value:expr,source:'PREMATCH PATHS_BUILD'};
