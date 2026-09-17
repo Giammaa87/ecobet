@@ -327,7 +327,10 @@ function decisionPathStage(m){
 }
 function effectiveDecisionPath(m,key){
   const top=m?.[key];
-  if(present(top))return {value:top,source:'RUN'};
+  // A serialized top-level axis is authoritative, including the explicit
+  // NOT_AVAILABLE contract used by correction overlays.  Only an absent
+  // property may consult historical PATHS_BUILD evidence.
+  if(Object.prototype.hasOwnProperty.call(m||{},key))return {value:top,source:'RUN'};
   const stage=decisionPathStage(m),paths=obj(stage.paths),row=obj(paths[key]);
   const expr=row.prediction_expression??row.prediction??row.expression??row.pick;
   if(row.available!==false&&present(expr))return {value:expr,source:'PREMATCH PATHS_BUILD'};
