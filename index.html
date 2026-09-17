@@ -308,6 +308,18 @@ const trendSelectionLabel=(path,competition,team)=>`${trendPathLabel(path)} · $
 async function getJSON(path){const r=await fetch(BASE+path,{cache:'no-store'});if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);return r.json()}
 function setConnected(ok=true){$('#connectionText').textContent=ok?'Live JSON verbunden':'Datenverbindung fehlerhaft';$('#connectionDot').style.background=ok?'var(--accent)':'var(--bad)'}
 function normalizeRun(raw){return {meta:raw.run||raw.run_record||{},matches:raw.matches||raw.match_records||raw.run?.matches||[]}}
+function applyRunCorrection(raw,correction,runId){
+  if(!correction||correction.record_type!=='run_output_correction_overlay'||correction.base_run!==runId||!correction.fixtures||typeof correction.fixtures!=='object')return raw;
+  const matches=raw.matches||raw.match_records||raw.run?.matches;
+  if(!Array.isArray(matches))return raw;
+  const patched=structuredClone(raw);
+  const target=patched.matches||patched.match_records||patched.run?.matches;
+  for(const match of target){
+    const delta=correction.fixtures[match?.fixture_id];
+    if(delta&&typeof delta==='object')Object.assign(match,delta);
+  }
+  return patched;
+}
 function fav(m){return m.favourite??m.favourite_prediction??m.prediction?.favourite??'NOT_AVAILABLE'}
 function decisionPathStage(m){
   const rp=obj(m?.reasoning_provenance),so=obj(rp.structured_stage_outputs),direct=obj(so.PATHS_BUILD),alt=obj(so.paths_build),legacy=obj(m?.structured_stage_outputs?.PATHS_BUILD);
@@ -331,7 +343,7 @@ function decisionPathCard(m,key,label){
   const reason=!available&&r.reason?`<span class="path-source">${esc(r.reason)}</span>`:'';
   return `<div class="path ${cls}"><small>${esc(label)}</small><b>${available?show(r.value):'—'}</b>${source}${reason}</div>`
 }
-function isNSP(m){return arr(m.nsp_codes).length>0||/NSP|NO_STABLE/.test(String(m.board_status||'').toUpperCase())||String(fav(m)).toUpperCase()==='NO_STABLE_PREDICTION'}
+function isNSP(m){if(typeof m?.match_status==='string')return m.match_status.toUpperCase()!=='PREDICTED';return arr(m.nsp_codes).length>0||/NSP|NO_STABLE/.test(String(m.board_status||'').toUpperCase())||String(fav(m)).toUpperCase()==='NO_STABLE_PREDICTION'}
 function worldText(w){if(typeof w==='string')return w;if(!w)return '';return w.statement||w.mechanism||w.summary||w.world_type||''}
 function scoreBand(m){return m.score_band??m.score_cluster?.score_band??'NOT_AVAILABLE'}
 function cluster(m){return arr(m.four_score_cluster).length?arr(m.four_score_cluster):arr(m.score_cluster?.four_score_cluster)}
@@ -498,7 +510,7 @@ async function initRuns(){try{state.analysisCompetition=initialRoute.comp?normal
 function indexRunId(x){if(typeof x==='string')return x;if(!x||typeof x!=='object')return String(x||'');return x.id||x.file?.replace(/\.json$/,'')||x.run_file?.replace(/\.json$/,'')||x.run_id||''}
 function findRunDate(id){for(const [d,items] of Object.entries(state.runIndex?.dates||{})){if(arr(items).some(x=>indexRunId(x)===id))return d}return null}
 function fillRunIds(){const d=$('#runDate').value;const ids=arr(state.runIndex?.dates?.[d]).map(indexRunId).filter(Boolean);$('#runId').innerHTML=ids.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('')}
-async function loadSelectedRun(preserveRoute=false){const id=$('#runId').value;if(!id)return;$('#analysisCards').innerHTML='<div class="loading panel">Run wird geladen …</div>';try{state.currentRunId=id;state.currentRun=normalizeRun(await getJSON(`runs/${id}.json`));if(!preserveRoute)state.analysisCompetition='ALLE';renderAnalyses();if(state.activeView==='topreads')renderTopReads();syncURL()}catch(e){$('#analysisCards').innerHTML=`<div class="error panel">${esc(e.message)}</div>`}}
+async function loadSelectedRun(preserveRoute=false){const id=$('#runId').value;if(!id)return;$('#analysisCards').innerHTML='<div class="loading panel">Run wird geladen …</div>';try{state.currentRunId=id;const raw=await getJSON(`runs/${id}.json`),correction=await optionalJSON(`corrections/runs/${id}.json`);state.currentRun=normalizeRun(applyRunCorrection(raw,correction,id));if(!preserveRoute)state.analysisCompetition='ALLE';renderAnalyses();if(state.activeView==='topreads')renderTopReads();syncURL()}catch(e){$('#analysisCards').innerHTML=`<div class="error panel">${esc(e.message)}</div>`}}
 $('#layoutGrid').onclick=()=>{state.analysisLayout='grid';$('#layoutGrid').classList.add('active');$('#layoutList').classList.remove('active');renderAnalysisMatches();syncURL()};$('#layoutList').onclick=()=>{state.analysisLayout='list';$('#layoutList').classList.add('active');$('#layoutGrid').classList.remove('active');renderAnalysisMatches();syncURL()};
 $('#modeDecision').onclick=()=>{state.analysisMode='decision';renderAnalyses();syncURL()};$('#modeQuality').onclick=()=>{state.analysisMode='quality';renderAnalyses();syncURL()};
 function runScope(meta,matches){const explicit=arr(meta.scope).length?arr(meta.scope):arr(meta.competitions);return sortedCompetitions(explicit.length?explicit:matches.map(m=>m.competition_name||m.competition))}

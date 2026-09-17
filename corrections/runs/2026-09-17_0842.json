@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "record_type": "run_output_correction_overlay",
+  "correction_date": "2026-09-17",
+  "base_run": "2026-09-17_0842",
+  "base_snapshot_id": "snap_20260917_030136",
+  "correction_type": "OUTPUT_SEMANTIC_CORRECTION",
+  "correction_reason": [
+    "FAVOURITE_MATCH_STATUS_DECOUPLING",
+    "AGGRESSIVE_MARKET_CONTRACT_CORRECTION"
+  ],
+  "result_used_for_pick_selection": false,
+  "post_kickoff_data_used": false,
+  "new_llm_calls": 0,
+  "new_api_calls": 0,
+  "new_web_calls": 0,
+  "fixtures": {
+    "DISC-07E52AC52BFC4DE7E1DA": {
+      "match_status": "PREDICTED",
+      "safe": "Under 3.5 total goals",
+      "balanced": "NOT_AVAILABLE",
+      "aggressive": "NOT_AVAILABLE",
+      "favourite": "NO_STABLE_PREDICTION",
+      "favourite_status": "NO_STABLE_PREDICTION",
+      "nsp_codes": []
+    },
+    "DISC-C729ABC8D101732B0A71": {
+      "match_status": "PREDICTED",
+      "safe": "Villarreal or Draw (X2)",
+      "balanced": "Under 3.5 total goals",
+      "aggressive": "NOT_AVAILABLE",
+      "favourite": "NO_STABLE_PREDICTION",
+      "favourite_status": "NO_STABLE_PREDICTION",
+      "nsp_codes": []
+    }
+  }
+}
