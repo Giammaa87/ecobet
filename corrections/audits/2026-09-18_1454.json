@@ -1,0 +1,65 @@
+{
+  "record_type": "audit_settlement_correction_overlay",
+  "schema_version": "1.0",
+  "base_audit_file": "ECOBET_2026-09-18_RESULT_AUDIT.json",
+  "run_id": "RUN_2026-09-18_FOCUS_5_PLUS_UEFA_CEST_1454",
+  "reason": "Canonical market normalization for RCD Espanyol de Barcelona vs Elche CF: team-relative display labels map to standard home-side markets.",
+  "matches": {
+    "DISC-CBE9DE6D6B9FE200F441": {
+      "canonical_market_mapping": {
+        "safe": "1X",
+        "balanced": "DNB 1",
+        "aggressive": "1",
+        "favourite": "1X"
+      },
+      "result_settlement": {
+        "safe_result": "MISS",
+        "balanced_result": "MISS",
+        "aggressive_result": "MISS",
+        "favourite_result": "MISS"
+      }
+    }
+  },
+  "model_kpis": {
+    "safe": {
+      "HIT": 3,
+      "MISS": 1,
+      "PUSH": 0,
+      "VOID": 0,
+      "UNSETTLED": 0,
+      "UNMAPPABLE": 0,
+      "decisive_total": 4,
+      "hit_rate_percent": 75
+    },
+    "balanced": {
+      "HIT": 2,
+      "MISS": 2,
+      "PUSH": 0,
+      "VOID": 0,
+      "UNSETTLED": 0,
+      "UNMAPPABLE": 0,
+      "decisive_total": 4,
+      "hit_rate_percent": 50
+    },
+    "aggressive": {
+      "HIT": 0,
+      "MISS": 2,
+      "PUSH": 0,
+      "VOID": 0,
+      "UNSETTLED": 2,
+      "UNMAPPABLE": 0,
+      "decisive_total": 2,
+      "hit_rate_percent": 0
+    },
+    "favourite": {
+      "HIT": 3,
+      "MISS": 1,
+      "PUSH": 0,
+      "VOID": 0,
+      "UNSETTLED": 0,
+      "UNMAPPABLE": 0,
+      "decisive_total": 4,
+      "hit_rate_percent": 75
+    }
+  }
+}
