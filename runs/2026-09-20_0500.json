@@ -1,0 +1,3100 @@
+{
+  "schema_version": "manual_recovery_1.0",
+  "record_type": "run_record_manual_recovery",
+  "run": {
+    "run_id": "RUN_2026-09-20_FOCUS_5_PLUS_UEFA_CEST_0500",
+    "run_date": "2026-09-20",
+    "run_started_at": "2026-09-20T05:00:02+02:00",
+    "run_ended_at": "2026-09-20T05:21:19+02:00",
+    "run_status": "FAIL",
+    "snapshot_id": "snap_20260920_030211",
+    "snapshot_cutoff": "2026-09-20T05:00:02+02:00",
+    "current_v2_pointer": "current_team_v2_5c5d9f3bce6e09f5",
+    "fixture_count": 20,
+    "original_run_status": "FAIL",
+    "recovery_status": "COMPLETE_MANUAL_RECOVERY",
+    "recovery_id": "RUN_2026-09-20_MANUAL_RECOVERY_DECISION_LAYER"
+  },
+  "matches": [
+    {
+      "fixture_id": "DISC-07593A120471A8284574",
+      "kickoff": "2026-09-20T13:00:00+00:00",
+      "competition": "Premier League",
+      "home": "AFC Bournemouth",
+      "away": "Liverpool",
+      "data_readiness": "READY",
+      "world_type": "GOALS_OPEN",
+      "anchor": "An open, state-sensitive fixture with Liverpool's structural edge opposed by Bournemouth's credible home chance-creation route.",
+      "prime_world": "An open match in which Liverpool's structural quality gives them a modest edge while Bournemouth's home chance generation prevents a stable control projection.",
+      "counterworld": "Bournemouth's home attack and Liverpool's away defensive vulnerability outweigh Liverpool's structural-strength prior, producing a home-leaning or draw outcome in an open match.",
+      "modal_score": "1-1",
+      "four_score_cluster": [
+        "1-1",
+        "1-2",
+        "2-1",
+        "2-2"
+      ],
+      "score_band": "2-4",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1866.0,
+        "away_team_rating": 1933.0,
+        "rating_difference": -67.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "bournemouth",
+          "source_file_sha256": "1A7DECEFCA2D139FB63CFC36F1074B92119046FB86B4D289CD38F1893563B3DC",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "liverpool",
+          "source_file_sha256": "A0D04E05E41B055D54A6E2B82C7BCF9ABC1CE6BBD03344169F4E9121939A7156",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Over 1.5 goals",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "BTTS Yes",
+          "cluster_coverage": "4/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Over 2.5 goals",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Over 1.5 goals",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "BTTS Yes",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Over 2.5 goals",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "BTTS Yes",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-0C265DD0F74DA4528325",
+      "kickoff": "2026-09-20T15:30:00+00:00",
+      "competition": "Premier League",
+      "home": "Fulham",
+      "away": "Manchester United",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_BUT_FRAGILE_AWAY",
+      "anchor": "Manchester United possess the stronger structural rating and stronger cross-season all-competitions performance, but the away edge is moderated by recent league and away-form fragility.",
+      "prime_world": "Manchester United exert more sustained control and exploit Fulham's current defensive weakness, while Fulham retain enough home chance creation to keep the margin narrow.",
+      "counterworld": "Fulham's home initiative and chance volume produce a level or home-leading match state, forcing Manchester United into a more open chase.",
+      "modal_score": "1-1",
+      "four_score_cluster": [
+        "0-1",
+        "1-1",
+        "1-2",
+        "0-2"
+      ],
+      "score_band": "1-3",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1806.0,
+        "away_team_rating": 1879.0,
+        "rating_difference": -73.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "fulham",
+          "source_file_sha256": "8EA5C14C3F497D81242D362126E15C81B1D0DE24B27F9560AB487CB1BC4D0E9C",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "manchester_united",
+          "source_file_sha256": "BB236A996B64CD315FD76B3E65F79D037A95B81DD7A03AFE5B50061CBDBABAD6",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Under 4.5 goals",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Manchester United X2",
+          "cluster_coverage": "4/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Manchester United to win",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Under 4.5 goals",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Manchester United X2",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Manchester United to win",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Manchester United X2",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-1519C6E9A57E149519C6",
+      "kickoff": "2026-09-20T17:30:00+00:00",
+      "competition": "Bundesliga",
+      "home": "SC Paderborn 07",
+      "away": "TSG Hoffenheim",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_BUT_FRAGILE_AWAY",
+      "anchor": "Paderborn's current domestic profile shows very limited scoring and chance creation, while Hoffenheim retain the stronger structural prior and a more credible attacking route.",
+      "prime_world": "Hoffenheim create the more credible chances and Paderborn's current scoring weakness prevents sustained home threat, leading to a narrow away-controlled outcome.",
+      "counterworld": "Paderborn's pressing and home setting disrupt Hoffenheim's buildup, producing a low-scoring draw or narrow home-resilient game rather than a clear away result.",
+      "modal_score": "NOT_AVAILABLE",
+      "four_score_cluster": [],
+      "score_band": "1-3",
+      "restricted_score_cluster": true,
+      "clubelo": {
+        "home_team_rating": 1654.0,
+        "away_team_rating": 1738.0,
+        "rating_difference": -84.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "bundesliga_sc_paderborn",
+          "source_file_sha256": "2222A5F97C8844D67C1C5B24C0E9A3355D4BBE105112FC110B3B7C7DAD8DCFDA",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "bundesliga_hoffenheim",
+          "source_file_sha256": "7B3E4FCCC069798772D287E4293BF16123CC67231077FECD777C2A6D89241EA2",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Under 4.5 goals",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Hoffenheim X2",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Hoffenheim to win",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Under 4.5 goals",
+          "W": 2,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalty_sum": 0,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Hoffenheim X2",
+          "W": 2,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalty_sum": 0,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Hoffenheim to win",
+          "W": 2,
+          "F": 3,
+          "R": 1,
+          "D": 2,
+          "penalty_sum": -1,
+          "score_total": 7,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "NO_STABLE_PREDICTION",
+      "favourite_decision_reason": "RESTRICTED_SCORE_CLUSTER: Der Export enthält keinen normativ freigegebenen Four-Score-Cluster; die Paths sind als Recovery-Renderer sichtbar, aber kein Favourite wird erzwungen.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🔴",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE",
+        "RESTRICTED_SCORE_CLUSTER",
+        "FOOTBALL_NSP"
+      ]
+    },
+    {
+      "fixture_id": "DISC-30579C4718659E5EA04E",
+      "kickoff": "2026-09-20T18:45:00+00:00",
+      "competition": "Ligue 1",
+      "home": "Marseille",
+      "away": "Paris Saint-Germain",
+      "data_readiness": "READY",
+      "world_type": "GOALS_OPEN",
+      "anchor": "The best-supported common outcome space is a competitive match with enough attacking capacity for multiple total goals, without a stable directional edge.",
+      "prime_world": "Competitive, open match: PSG's structural quality is met by Marseille's home attacking capacity, yielding several ordinary multi-goal score paths without a firm winner projection.",
+      "counterworld": "Marseille turn home pressure into an early lead, forcing PSG into a higher-risk chase and creating a two-sided, higher-variance match.",
+      "modal_score": "1-1",
+      "four_score_cluster": [
+        "1-1",
+        "1-2",
+        "2-1",
+        "2-2"
+      ],
+      "score_band": "2-4",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1765.0,
+        "away_team_rating": 1954.0,
+        "rating_difference": -189.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "ligue_1_marseille",
+          "source_file_sha256": "EE81ADB3E8AB0B0C95D8F19E12E2925BB5DED27ECA8CC60331D0A53A19931EAD",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "ligue_1_paris_saint_germain",
+          "source_file_sha256": "B5DC7F91CEB92ADFC11444C6DEF346F7FE7D351972300F662BFE94E5DFC2F3A7",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Over 1.5 goals",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "BTTS Yes",
+          "cluster_coverage": "4/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Over 2.5 goals",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Over 1.5 goals",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "BTTS Yes",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Over 2.5 goals",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Over 1.5 goals",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-31DCA7426C0042305E1E",
+      "kickoff": "2026-09-20T13:00:00+00:00",
+      "competition": "Serie A",
+      "home": "Parma",
+      "away": "Genoa",
+      "data_readiness": "READY",
+      "world_type": "BALANCED_NARROW",
+      "anchor": "Neither team has a validated scoring or control edge; the fixture is anchored in a narrow, state-sensitive contest.",
+      "prime_world": "A narrow, initially cautious contest with low attacking certainty and no durable control advantage.",
+      "counterworld": "An early goal creates a state-dependent match in which the trailing side must open up; either team can then exploit the opponent's fragile defensive process.",
+      "modal_score": "0-0",
+      "four_score_cluster": [
+        "0-0",
+        "0-1",
+        "1-0",
+        "1-1"
+      ],
+      "score_band": "1-3",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1642.0,
+        "away_team_rating": 1666.0,
+        "rating_difference": -24.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "serie_a_parma",
+          "source_file_sha256": "616E9D88355BB6551DA6EF807C5A380A1E960857DB8604C9C8E254BE9A1CD2C6",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "serie_a_genoa",
+          "source_file_sha256": "E4150BBBC655051D4ABBCB4EBCD17CCCE481B0E99411B3B69FCF74459D90F1E8",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Under 3.5 goals",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Under 2.5 goals",
+          "cluster_coverage": "4/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "BTTS No",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Under 3.5 goals",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Under 2.5 goals",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "BTTS No",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Under 3.5 goals",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-3BB147DA6D5FAC0CE62B",
+      "kickoff": "2026-09-20T13:00:00+00:00",
+      "competition": "Serie A",
+      "home": "Frosinone",
+      "away": "Como",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_AWAY",
+      "anchor": "Como possess the stronger structural prior, recent form, chance creation, and defensive control profile; Frosinone's home context prevents an unconditional away-side conclusion.",
+      "prime_world": "Como establish more of the territory and better chance flow, while Frosinone's home response keeps the margin narrow.",
+      "counterworld": "Frosinone use home intensity and early attacking output to force Como into a transition-heavy, level or home-leaning match.",
+      "modal_score": "1-2",
+      "four_score_cluster": [
+        "0-1",
+        "1-1",
+        "0-2",
+        "1-2"
+      ],
+      "score_band": "2-4",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1679.0,
+        "away_team_rating": 1817.0,
+        "rating_difference": -138.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "serie_a_frosinone",
+          "source_file_sha256": "FF91B4F017EFAD8268E54543DFA1632A89C697E907EAC4845B19B6449FDFD212",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "serie_a_como",
+          "source_file_sha256": "092A1DD15EB2E134424CD93D5C33E067BE8416420CD02A5B0C846268027CA0CE",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Como X2",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Como DNB",
+          "cluster_coverage": "4/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Como to win",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Como X2",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Como DNB",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Como to win",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Como X2",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-42A1213805911A5E0766",
+      "kickoff": "2026-09-20T13:00:00+00:00",
+      "competition": "Ligue 1",
+      "home": "Auxerre",
+      "away": "Brest",
+      "data_readiness": "READY",
+      "world_type": "GOALS_OPEN",
+      "anchor": "Both teams have current-season scoring and defensive evidence consistent with a multi-goal, non-one-sided game.",
+      "prime_world": "A competitive, goals-open match in which neither defence reliably suppresses the other; the central outcome corridor is a draw or one-goal result.",
+      "counterworld": "Auxerre's home setting and Brest's longer cross-season defensive weakness produce a narrow home result or low-scoring draw rather than an open Brest-positive game.",
+      "modal_score": "NOT_AVAILABLE",
+      "four_score_cluster": [],
+      "score_band": "2-4",
+      "restricted_score_cluster": true,
+      "clubelo": {
+        "home_team_rating": 1644.0,
+        "away_team_rating": 1678.0,
+        "rating_difference": -34.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "ligue_1_auxerre",
+          "source_file_sha256": "E13DEB3ADFC61E59A5BCCD03009B5461648B08BE3E4913730489925CFA22FEE1",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "ligue_1_brest",
+          "source_file_sha256": "C8FE50E0664A77867689CB755AED3E9F377A2F87242531422716CC86AE5CCC48",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Over 1.5 goals",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "BTTS Yes",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Over 2.5 goals",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Over 1.5 goals",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalty_sum": 0,
+          "score_total": 10,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "BTTS Yes",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalty_sum": 0,
+          "score_total": 10,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Over 2.5 goals",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 2,
+          "penalty_sum": -1,
+          "score_total": 8,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "NO_STABLE_PREDICTION",
+      "favourite_decision_reason": "RESTRICTED_SCORE_CLUSTER: Der Export enthält keinen normativ freigegebenen Four-Score-Cluster; die Paths sind als Recovery-Renderer sichtbar, aber kein Favourite wird erzwungen.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🔴",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE",
+        "RESTRICTED_SCORE_CLUSTER",
+        "FOOTBALL_NSP"
+      ]
+    },
+    {
+      "fixture_id": "DISC-450C9648CE0F6B55B63F",
+      "kickoff": "2026-09-20T10:30:00+00:00",
+      "competition": "Serie A",
+      "home": "Fiorentina",
+      "away": "Napoli",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_BUT_FRAGILE_AWAY",
+      "anchor": "Napoli hold the stronger independent structural prior and clearer broader current-form profile, while Fiorentina's home venue and chance creation make that away edge fragile.",
+      "prime_world": "Napoli control more of the match and generate the clearer decisive phases, with Fiorentina limited to a narrow home response route.",
+      "counterworld": "Fiorentina's home pressure and high-event recent profile produces an early lead, forcing Napoli into a more open chase and protecting the home side through transitions.",
+      "modal_score": "NOT_AVAILABLE",
+      "four_score_cluster": [],
+      "score_band": "1-3",
+      "restricted_score_cluster": true,
+      "clubelo": {
+        "home_team_rating": 1720.0,
+        "away_team_rating": 1835.0,
+        "rating_difference": -115.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "serie_a_fiorentina",
+          "source_file_sha256": "5A4F6BE604C32E31B3F883D049C6725D14FE556DEB0127BEAACCD1505B53AF0D",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "serie_a_napoli",
+          "source_file_sha256": "6A2207EDBFA52C58DA5221B47247E016A9E04D1923B2C7EA28D987B3C13AECBF",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Napoli X2",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Napoli DNB",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Napoli to win",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Napoli X2",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalty_sum": 0,
+          "score_total": 10,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Napoli DNB",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalty_sum": 0,
+          "score_total": 10,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Napoli to win",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 2,
+          "penalty_sum": -1,
+          "score_total": 8,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "NO_STABLE_PREDICTION",
+      "favourite_decision_reason": "RESTRICTED_SCORE_CLUSTER: Der Export enthält keinen normativ freigegebenen Four-Score-Cluster; die Paths sind als Recovery-Renderer sichtbar, aber kein Favourite wird erzwungen.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🔴",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE",
+        "RESTRICTED_SCORE_CLUSTER",
+        "FOOTBALL_NSP"
+      ]
+    },
+    {
+      "fixture_id": "DISC-4D14B5000C881930027D",
+      "kickoff": "2026-09-20T16:30:00+00:00",
+      "competition": "La Liga",
+      "home": "Villarreal CF",
+      "away": "Levante UD",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_BUT_FRAGILE_HOME",
+      "anchor": "Villarreal possess the independent structural edge and the stronger home attacking profile, while Levante's current fixture-scoped away attack has been limited.",
+      "prime_world": "Villarreal control territory and create the clearer opportunities at home; Levante's current fixture-scoped attack struggles to sustain scoring pressure.",
+      "counterworld": "Levante keep the match level into the later phases, exploit Villarreal's defensive exposure, and convert the home side's high-volume but inefficient attacking pattern into a draw or away-edge outcome.",
+      "modal_score": "2-1",
+      "four_score_cluster": [
+        "2-1",
+        "2-0",
+        "1-1",
+        "3-1"
+      ],
+      "score_band": "2-4",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1794.0,
+        "away_team_rating": 1712.0,
+        "rating_difference": 82.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "la_liga_villarreal",
+          "source_file_sha256": "DEAAEB3A8DFB8670D07132C8AB9B644D27538A1B5E51A6AD4DD88A50215CDC9C",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "la_liga_levante",
+          "source_file_sha256": "AA266915B3155AA876925B209BFB01851CE75985AADECFA88A7E7D8F53A27F94",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Villarreal 1X",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Villarreal to win",
+          "cluster_coverage": "3/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Villarreal O1.5 team goals",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Villarreal 1X",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Villarreal to win",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Villarreal O1.5 team goals",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Villarreal to win",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-55DB7E7FA0F6B99180DC",
+      "kickoff": "2026-09-20T15:30:00+00:00",
+      "competition": "Bundesliga",
+      "home": "FC Schalke 04",
+      "away": "SV Elversberg",
+      "data_readiness": "READY",
+      "world_type": "GOALS_OPEN",
+      "anchor": "Elversberg's stronger current results and scoring output versus Schalke's weaker current chance creation and defensive xG profile.",
+      "prime_world": "Elversberg create the more credible attacking threat against Schalke's weak current defensive process; both sides' defensive exposure keeps the goal environment open.",
+      "counterworld": "Schalke contain the opening phase and convert a low-event home-state into a narrow draw or home result while Elversberg's defensive exposure is not punished.",
+      "modal_score": "1-2",
+      "four_score_cluster": [
+        "1-2",
+        "1-3",
+        "2-2",
+        "2-3"
+      ],
+      "score_band": "3-5",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1649.0,
+        "away_team_rating": 1674.0,
+        "rating_difference": -25.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "bundesliga_schalke_04",
+          "source_file_sha256": "7EA502F42BC09F1E03AF880D93A0C8CDC0BA3822F077E4C8427A53198717682B",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "bundesliga_sv_elversberg",
+          "source_file_sha256": "92C026623BA7DB052930A67715A271010F203BF3B435AB6985872519E734D20F",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Over 2.5 goals",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "BTTS Yes",
+          "cluster_coverage": "4/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Over 3.5 goals",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Over 2.5 goals",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "BTTS Yes",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Over 3.5 goals",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Over 2.5 goals",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-A0267A8C3F698A6680A3",
+      "kickoff": "2026-09-20T13:00:00+00:00",
+      "competition": "Premier League",
+      "home": "Leeds United",
+      "away": "Crystal Palace",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_BUT_FRAGILE_HOME",
+      "anchor": "Leeds' home-control route, moderated by Palace's structural parity and transition capacity.",
+      "prime_world": "Leeds establish territorial control, contain Palace's early transition opportunities, and keep the match in a narrow home-leaning corridor.",
+      "counterworld": "Crystal Palace withstand Leeds' early pressure, exploit transition space, and turn the game into an away-leaning or high-variance contest.",
+      "modal_score": "1-0",
+      "four_score_cluster": [
+        "1-0",
+        "1-1",
+        "2-0",
+        "2-1"
+      ],
+      "score_band": "1-3",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1817.0,
+        "away_team_rating": 1824.0,
+        "rating_difference": -7.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "leeds_united",
+          "source_file_sha256": "584431C001B5A56359D9887892D5DA0BC61EC67148F9B8CE763787732CF8606C",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "crystal_palace",
+          "source_file_sha256": "B18A8E13235E722C5C17C52AE69648426CC0FB160916B951EA8454EC4FFC8CE5",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Leeds 1X",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Under 3.5 goals",
+          "cluster_coverage": "4/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Leeds to win",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Leeds 1X",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Under 3.5 goals",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Leeds to win",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Leeds 1X",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-AF8B646D008CFFCDADD0",
+      "kickoff": "2026-09-20T16:00:00+00:00",
+      "competition": "Serie A",
+      "home": "Juventus",
+      "away": "Atalanta",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_HOME",
+      "anchor": "Juventus have the stronger current chance-creation and defensive-control profile at home, while Atalanta show a material defensive and xG deficit.",
+      "prime_world": "Juventus establish territorial control, generate the clearer chances, and keep Atalanta largely dependent on isolated transitions.",
+      "counterworld": "Atalanta withstands Juventus pressure, exploits Juventus's occasional concession risk, and turns the match into a level or away-leaning second-half contest.",
+      "modal_score": "1-0",
+      "four_score_cluster": [
+        "1-0",
+        "2-0",
+        "1-1",
+        "2-1"
+      ],
+      "score_band": "1-3",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1836.0,
+        "away_team_rating": 1812.0,
+        "rating_difference": 24.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "serie_a_juventus",
+          "source_file_sha256": "C451F2BC448A00E903C1062D42EDC2EFA8E37095159713511A647BC8FA3D4A47",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "serie_a_atalanta",
+          "source_file_sha256": "6241FC154E729BA79877FF75C9C61EAD281496A2BFCE21709192E28BD7532952",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Juventus 1X",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Juventus to win",
+          "cluster_coverage": "3/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Juventus O1.5 team goals",
+          "cluster_coverage": "2/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Juventus 1X",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Juventus to win",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Juventus O1.5 team goals",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Juventus to win",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-B308720DEFD8D4359DCC",
+      "kickoff": "2026-09-20T15:15:00+00:00",
+      "competition": "Ligue 1",
+      "home": "Nice",
+      "away": "Lille",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_BUT_FRAGILE_AWAY",
+      "anchor": "Lille hold the stronger current-form and structural-strength profile, while Nice's home setting and uncertainty prevent a stable favourite conclusion.",
+      "prime_world": "Lille establish more control, restrict Nice's scoring opportunities, and create a narrow away-win route without requiring an open match.",
+      "counterworld": "Nice keep the match compressed, resist Lille's early control, and turn the contest into a low-scoring draw or narrow home result.",
+      "modal_score": "0-1",
+      "four_score_cluster": [
+        "0-1",
+        "0-2",
+        "1-1",
+        "1-2"
+      ],
+      "score_band": "1-3",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1660.0,
+        "away_team_rating": 1787.0,
+        "rating_difference": -127.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "ligue_1_nice",
+          "source_file_sha256": "7F97FE9D5F2D0AC67CEF8C8D668B579154ED75BE62C66A3303E7ECB88F8991E8",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "ligue_1_lille",
+          "source_file_sha256": "327D52501529E01919AC3A24CE112A9E68521E1951C699874E737219F1F6E89F",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Lille X2",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Lille DNB",
+          "cluster_coverage": "4/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Lille to win",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Lille X2",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Lille DNB",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Lille to win",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Lille X2",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-B8092A7F7EBB4532B97F",
+      "kickoff": "2026-09-20T14:15:00+00:00",
+      "competition": "La Liga",
+      "home": "Atlético de Madrid",
+      "away": "Real Madrid",
+      "data_readiness": "READY",
+      "world_type": "UNKNOWN_WORLD",
+      "anchor": "No market anchor is valid: the active supported market set is empty.",
+      "prime_world": "Real Madrid's structural rating, current attacking production, and all-competitions form provide the stronger baseline, while Atlético keep the opening phase competitive at home.",
+      "counterworld": "Atlético contain the opening phase, score from limited but high-value home opportunities, and force Real Madrid into a more state-dependent chasing game.",
+      "modal_score": "1-1",
+      "four_score_cluster": [
+        "1-1",
+        "1-2",
+        "2-1",
+        "2-2"
+      ],
+      "score_band": "2-4",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1898.0,
+        "away_team_rating": 1977.0,
+        "rating_difference": -79.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "la_liga_atletico_madrid",
+          "source_file_sha256": "B4C7A88E734946F05E605C7C917039D47FDDFFA90C85AC7F3CBA3870B3DFB96D",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "la_liga_real_madrid",
+          "source_file_sha256": "9CCF33BA696698BB8101DF1E4A7CE7C627C4D799F2C143F180AC24F2A81810C0",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Over 1.5 goals",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "BTTS Yes",
+          "cluster_coverage": "4/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Over 2.5 goals",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Over 1.5 goals",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "BTTS Yes",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Over 2.5 goals",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "BTTS Yes",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-C098E033E6634A3A3260",
+      "kickoff": "2026-09-20T13:30:00+00:00",
+      "competition": "Bundesliga",
+      "home": "Bayer 04 Leverkusen",
+      "away": "RB Leipzig",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_BUT_FRAGILE_HOME",
+      "anchor": "Leverkusen home-control world, fragile to Leipzig transitions and a goal-active finish.",
+      "prime_world": "Leverkusen establish home control and retain the better chance-creation platform, but Leipzig's transition game prevents the world from becoming one-sided.",
+      "counterworld": "Leipzig absorb pressure, exploit space behind Leverkusen's advanced shape, and turn the match into an exchange-led contest or an away-edge result.",
+      "modal_score": "2-1",
+      "four_score_cluster": [
+        "2-1",
+        "2-2",
+        "3-1",
+        "3-2"
+      ],
+      "score_band": "3-5",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1866.0,
+        "away_team_rating": 1823.0,
+        "rating_difference": 43.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "bundesliga_bayer_leverkusen",
+          "source_file_sha256": "E1E2119A217C05EC7114F06F3E79C04CE96A496AE1AE2E5F71C1210495419330",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "bundesliga_rb_leipzig",
+          "source_file_sha256": "90199492063F2470DB1990C6CE69C5124553FBC6A8825DD5FCCA375834FD2ED1",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Over 2.5 goals",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "BTTS Yes",
+          "cluster_coverage": "4/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Leverkusen to win",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Over 2.5 goals",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "BTTS Yes",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Leverkusen to win",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Over 2.5 goals",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-E2D5DF5092E887531D47",
+      "kickoff": "2026-09-20T16:30:00+00:00",
+      "competition": "La Liga",
+      "home": "RC Deportivo",
+      "away": "Real Betis",
+      "data_readiness": "READY",
+      "world_type": "BALANCED_NARROW",
+      "anchor": "Balanced fixture with Betis territorial upside but no stable away-control edge.",
+      "prime_world": "A competitive, narrow match where Betis have the clearer possession route but neither side removes the other's scoring path.",
+      "counterworld": "An early Deportivo goal produces an open, transition-led match in which Betis chase and both teams retain credible scoring routes.",
+      "modal_score": "1-1",
+      "four_score_cluster": [
+        "1-1",
+        "0-1",
+        "1-2",
+        "2-1"
+      ],
+      "score_band": "2-4",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": null,
+        "away_team_rating": 1819.0,
+        "rating_difference": null,
+        "home_rating_as_of": null,
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "UNAVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "la_liga_deportivo_la_coruna",
+          "source_file_sha256": null,
+          "observation_kind": null
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "la_liga_real_betis",
+          "source_file_sha256": "FA3D38D9CFEF815E62F6043D3CD83191D1E2034D769503246828B1CD865FA5E3",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Under 4.5 goals",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Betis X2",
+          "cluster_coverage": "3/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "BTTS Yes",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Under 4.5 goals",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Betis X2",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "BTTS Yes",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Under 4.5 goals",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-E3A185907F8959FCDA46",
+      "kickoff": "2026-09-20T19:00:00+00:00",
+      "competition": "La Liga",
+      "home": "Valencia CF",
+      "away": "Real Sociedad",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_BUT_FRAGILE_AWAY",
+      "anchor": "Real Sociedad have a modest structural edge, while Valencia's current home attack is especially weak; the away side's defensive fragility prevents a strong directional anchor.",
+      "prime_world": "Real Sociedad control more of the ball and territory against Valencia's low-output current home attack, but their own defensive weakness keeps the margin narrow.",
+      "counterworld": "An early Valencia goal produces a reactive, more open match in which Real Sociedad's defensive instability prevents sustained away control.",
+      "modal_score": "0-1",
+      "four_score_cluster": [
+        "0-1",
+        "1-1",
+        "0-2",
+        "1-2"
+      ],
+      "score_band": "1-3",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1747.0,
+        "away_team_rating": 1762.0,
+        "rating_difference": -15.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "la_liga_valencia",
+          "source_file_sha256": "3D276B2FC2A3C114F1E13606DC1EECFD59AD2E3F35A2D319E400553F524EB314",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "la_liga_real_sociedad",
+          "source_file_sha256": "E61DE11C47ACF87BBAF98593D823ED996D1E5BB05FFE8A95C8188CC53588C853",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Real Sociedad X2",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Under 3.5 goals",
+          "cluster_coverage": "4/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Real Sociedad to win",
+          "cluster_coverage": "3/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Real Sociedad X2",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Under 3.5 goals",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Real Sociedad to win",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Real Sociedad X2",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-E5252FAC9319A58A9F14",
+      "kickoff": "2026-09-20T18:45:00+00:00",
+      "competition": "Serie A",
+      "home": "Milan",
+      "away": "Lecce",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_BUT_FRAGILE_HOME",
+      "anchor": "Milan home control with a tight first half and stronger second-half scoring potential.",
+      "prime_world": "Milan establish territorial control, create the clearer chances and are most likely to edge a contained match.",
+      "counterworld": "A low-event opening leaves Milan frustrated; Lecce remain live through counterattacks and a late game-state shift.",
+      "modal_score": "1-0",
+      "four_score_cluster": [
+        "1-0",
+        "2-0",
+        "1-1",
+        "2-1"
+      ],
+      "score_band": "1-3",
+      "restricted_score_cluster": false,
+      "clubelo": {
+        "home_team_rating": 1819.0,
+        "away_team_rating": 1619.0,
+        "rating_difference": 200.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "serie_a_ac_milan",
+          "source_file_sha256": "687351BB1777AF43242397AE3A44BE7E59CA58E68BF8CCAD4DF2DE88533DF73F",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "serie_a_lecce",
+          "source_file_sha256": "D1DF2C52D4E5BA6B77518C82425CCE02687BC5B37551B99BBA3423A75714AC00",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Milan 1X",
+          "cluster_coverage": "4/4",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Milan to win",
+          "cluster_coverage": "3/4",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Milan O1.5 team goals",
+          "cluster_coverage": "2/4",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Milan 1X",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Milan to win",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 3,
+          "penalty_sum": 0,
+          "score_total": 11,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Milan O1.5 team goals",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 3,
+          "penalty_sum": -1,
+          "score_total": 9,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "Milan to win",
+      "favourite_decision_reason": "Der Candidate bildet Anchor und dominante Spielwelt mit ausreichender Cluster-Abdeckung ab, ohne einen verbotenen Markt oder reale Quoten zu verwenden.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🟡",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "fixture_id": "DISC-EF9A59CB5E66C5CAFD55",
+      "kickoff": "2026-09-20T13:00:00+00:00",
+      "competition": "Premier League",
+      "home": "Manchester City",
+      "away": "Sunderland",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_HOME",
+      "anchor": "Manchester City have the stronger current and cross-season performance profile, reinforced by the independent ClubElo structural prior.",
+      "prime_world": "Manchester City impose sustained territorial control, create the clearer chances and convert their home-strength edge into a win.",
+      "counterworld": "Sunderland defend compactly, keep the first half level, and turn the match into a narrow second-half contest rather than sustained home control.",
+      "modal_score": "NOT_AVAILABLE",
+      "four_score_cluster": [],
+      "score_band": "1-3",
+      "restricted_score_cluster": true,
+      "clubelo": {
+        "home_team_rating": 2035.0,
+        "away_team_rating": 1740.0,
+        "rating_difference": 295.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "manchester_city",
+          "source_file_sha256": "DD6A9E83A7029458BF0F07DA76C29D9B7F21829E513DD4055CFE07DE6DE40757",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "sunderland",
+          "source_file_sha256": "811B0CE93396F5771972AA00ECE3E498CBAC1E774EAD3F127EACD8510FD5E24D",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Manchester City 1X",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Manchester City to win",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Manchester City O1.5 team goals",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Manchester City 1X",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalty_sum": 0,
+          "score_total": 10,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Manchester City to win",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalty_sum": 0,
+          "score_total": 10,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Manchester City O1.5 team goals",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 2,
+          "penalty_sum": -1,
+          "score_total": 8,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "NO_STABLE_PREDICTION",
+      "favourite_decision_reason": "RESTRICTED_SCORE_CLUSTER: Der Export enthält keinen normativ freigegebenen Four-Score-Cluster; die Paths sind als Recovery-Renderer sichtbar, aber kein Favourite wird erzwungen.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🔴",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE",
+        "RESTRICTED_SCORE_CLUSTER",
+        "FOOTBALL_NSP"
+      ]
+    },
+    {
+      "fixture_id": "DISC-F4F94453705CBAE1EC8C",
+      "kickoff": "2026-09-20T12:00:00+00:00",
+      "competition": "La Liga",
+      "home": "Getafe CF",
+      "away": "Málaga CF",
+      "data_readiness": "READY",
+      "world_type": "CONTROL_BUT_FRAGILE_HOME",
+      "anchor": "Getafe home control in a low-tempo match, with Málaga's limited current attacking output restricting the away side's sustainable scoring route.",
+      "prime_world": "Getafe control territory and suppress Málaga sufficiently for a low-event match, while their own modest attack keeps the margin narrow.",
+      "counterworld": "An early Málaga transition goal converts the match into a chase; Getafe's current scoring limitations then make a draw or away result viable and raise the upper-goal tail.",
+      "modal_score": "NOT_AVAILABLE",
+      "four_score_cluster": [],
+      "score_band": "1-3",
+      "restricted_score_cluster": true,
+      "clubelo": {
+        "home_team_rating": 1695.0,
+        "away_team_rating": 1669.0,
+        "rating_difference": 26.0,
+        "home_rating_as_of": "2026-09-19",
+        "away_rating_as_of": "2026-09-19",
+        "source": "RT1_CLUBELO_HISTORY",
+        "coverage_status": "AVAILABLE",
+        "point_in_time_rule": "STRICTLY_BEFORE_FIXTURE_DATE_AND_NOT_AFTER_EVIDENCE_CUTOFF",
+        "home_evidence_identity": {
+          "canonical_team_id": "la_liga_getafe",
+          "source_file_sha256": "A0AECE938F4ACE283D3B64EB29DF6A58D0A489986823D6AB17D79CC26A14C465",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "away_evidence_identity": {
+          "canonical_team_id": "la_liga_malaga",
+          "source_file_sha256": "BB501376C7ECE54E7304C0538D0561D30FE117A368C7A52EB545A7EB4C47F4DD",
+          "observation_kind": "LOCAL_DAILY_CURRENT_CAPTURE"
+        },
+        "CLUBELO_DUPLICATE_SIGNAL_FOUND": true,
+        "CLUBELO_DOUBLE_COUNT_PREVENTED": true,
+        "duplicate_signal_paths": [
+          "$.prior_stage_outputs.DATA_FABRIC_EXECUTE.DATA_FABRIC_LOCAL_RESULT.HOME_LOCAL_GAPS",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_A_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.first_half_season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.season_to_date_loss_avg",
+          "$.prior_stage_outputs.TEAM_EBOOK_B_BUILD.team_ebook.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.away.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.away.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.away.features.season_to_date_loss_avg",
+          "$.team_ebooks.away.features.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.h2h_all_available_losses",
+          "$.team_ebooks.home.feature_lineage.by_feature.season_to_date_loss_avg",
+          "$.team_ebooks.home.feature_lineage.by_feature.second_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.first_half_season_to_date_loss_avg",
+          "$.team_ebooks.home.features.season_to_date_loss_avg",
+          "$.team_ebooks.home.features.second_half_season_to_date_loss_avg"
+        ],
+        "ADJUSTMENT_ELO_USED": false
+      },
+      "paths": [
+        {
+          "path": "SAFE",
+          "prediction": "Under 3.5 goals",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "HIGH",
+          "reason": "Breiteste robuste Abbildung der vorhandenen Prime-/Counterworld und des Score-Korridors."
+        },
+        {
+          "path": "BALANCED",
+          "prediction": "Getafe 1X",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "MEDIUM",
+          "reason": "Spezifischere Abbildung des Anchors bei noch tragfähiger State-Robustness."
+        },
+        {
+          "path": "AGGRESSIVE",
+          "prediction": "Getafe to win",
+          "cluster_coverage": "NOT_AVAILABLE",
+          "robustness": "LOW_TO_MEDIUM",
+          "reason": "Engere Prime-World-Abbildung mit bewusst höherem Tail- und Game-State-Risiko."
+        }
+      ],
+      "candidate_audit": [
+        {
+          "prediction": "Under 3.5 goals",
+          "W": 3,
+          "F": 2,
+          "R": 3,
+          "D": 2,
+          "penalty_sum": 0,
+          "score_total": 10,
+          "shock_test": {
+            "S1": "BLEIBT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Getafe 1X",
+          "W": 3,
+          "F": 3,
+          "R": 2,
+          "D": 2,
+          "penalty_sum": 0,
+          "score_total": 10,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BLEIBT",
+            "S3": "BIEGT"
+          }
+        },
+        {
+          "prediction": "Getafe to win",
+          "W": 3,
+          "F": 3,
+          "R": 1,
+          "D": 2,
+          "penalty_sum": -1,
+          "score_total": 8,
+          "shock_test": {
+            "S1": "BIEGT",
+            "S2": "BIEGT",
+            "S3": "BRICHT"
+          }
+        }
+      ],
+      "favourite": "NO_STABLE_PREDICTION",
+      "favourite_decision_reason": "RESTRICTED_SCORE_CLUSTER: Der Export enthält keinen normativ freigegebenen Four-Score-Cluster; die Paths sind als Recovery-Renderer sichtbar, aber kein Favourite wird erzwungen.",
+      "model_probability_band": "NOT_AVAILABLE",
+      "model_price_band": "NOT_AVAILABLE",
+      "numerical_p_raw": "NOT_AVAILABLE",
+      "numerical_p_raw_available": "NO",
+      "p_raw_tiebreak_required": "NO",
+      "ampel": "🔴",
+      "decision_flags": [
+        "MANUAL_RECOVERY",
+        "NUMERICAL_P_RAW_NOT_AVAILABLE",
+        "RESTRICTED_SCORE_CLUSTER",
+        "FOOTBALL_NSP"
+      ]
+    }
+  ],
+  "proof_of_work": {
+    "recovery_id": "RUN_2026-09-20_MANUAL_RECOVERY_DECISION_LAYER",
+    "recovery_timestamp": "2026-09-20T12:46:00+02:00",
+    "basis": "Original 2026-09-20 FULL_EXPORT retained unchanged; only a separate manual_recovery decision layer is appended.",
+    "root_cause": "Original run reached football worlds but failed mandatory path completeness because the active supported market/candidate set was empty or blocked.",
+    "method": "Re-materialize allowed prediction axes from existing anchors/worlds/score distributions; apply W/F/R/D and shock-test logic; no real odds.",
+    "original_run_status": "FAIL",
+    "recovery_status": "COMPLETE_MANUAL_RECOVERY",
+    "fixture_count": 20,
+    "favourite_prediction_count": 15,
+    "football_nsp_count": 5,
+    "technical_nsp_count": 0,
+    "real_odds_used": 0,
+    "tickets_created": false
+  }
+}
