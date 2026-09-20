@@ -6,14 +6,16 @@
     "run_date": "2026-09-20",
     "run_started_at": "2026-09-20T05:00:02+02:00",
     "run_ended_at": "2026-09-20T05:21:19+02:00",
-    "run_status": "FAIL",
+    "run_status": "RECOVERED_DECISION_BOARD",
     "snapshot_id": "snap_20260920_030211",
     "snapshot_cutoff": "2026-09-20T05:00:02+02:00",
     "current_v2_pointer": "current_team_v2_5c5d9f3bce6e09f5",
     "fixture_count": 20,
     "original_run_status": "FAIL",
     "recovery_status": "COMPLETE_MANUAL_RECOVERY",
-    "recovery_id": "RUN_2026-09-20_MANUAL_RECOVERY_DECISION_LAYER"
+    "recovery_id": "RUN_2026-09-20_MANUAL_RECOVERY_DECISION_LAYER",
+    "date": "2026-09-20",
+    "data_snapshot_id": "snap_20260920_030211"
   },
   "matches": [
     {
@@ -37,9 +39,9 @@
       "score_band": "2-4",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1866.0,
-        "away_team_rating": 1933.0,
-        "rating_difference": -67.0,
+        "home_team_rating": 1866,
+        "away_team_rating": 1933,
+        "rating_difference": -67,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -168,7 +170,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Over 1.5 goals",
+      "balanced": "BTTS Yes",
+      "aggressive": "Over 2.5 goals",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-0C265DD0F74DA4528325",
@@ -191,9 +197,9 @@
       "score_band": "1-3",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1806.0,
-        "away_team_rating": 1879.0,
-        "rating_difference": -73.0,
+        "home_team_rating": 1806,
+        "away_team_rating": 1879,
+        "rating_difference": -73,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -322,7 +328,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Under 4.5 goals",
+      "balanced": "Manchester United X2",
+      "aggressive": "Manchester United to win",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-1519C6E9A57E149519C6",
@@ -340,9 +350,9 @@
       "score_band": "1-3",
       "restricted_score_cluster": true,
       "clubelo": {
-        "home_team_rating": 1654.0,
-        "away_team_rating": 1738.0,
-        "rating_difference": -84.0,
+        "home_team_rating": 1654,
+        "away_team_rating": 1738,
+        "rating_difference": -84,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -473,7 +483,11 @@
         "NUMERICAL_P_RAW_NOT_AVAILABLE",
         "RESTRICTED_SCORE_CLUSTER",
         "FOOTBALL_NSP"
-      ]
+      ],
+      "safe": "Under 4.5 goals",
+      "balanced": "Hoffenheim X2",
+      "aggressive": "Hoffenheim to win",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-30579C4718659E5EA04E",
@@ -496,9 +510,9 @@
       "score_band": "2-4",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1765.0,
-        "away_team_rating": 1954.0,
-        "rating_difference": -189.0,
+        "home_team_rating": 1765,
+        "away_team_rating": 1954,
+        "rating_difference": -189,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -627,7 +641,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Over 1.5 goals",
+      "balanced": "BTTS Yes",
+      "aggressive": "Over 2.5 goals",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-31DCA7426C0042305E1E",
@@ -650,9 +668,9 @@
       "score_band": "1-3",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1642.0,
-        "away_team_rating": 1666.0,
-        "rating_difference": -24.0,
+        "home_team_rating": 1642,
+        "away_team_rating": 1666,
+        "rating_difference": -24,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -781,7 +799,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Under 3.5 goals",
+      "balanced": "Under 2.5 goals",
+      "aggressive": "BTTS No",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-3BB147DA6D5FAC0CE62B",
@@ -804,9 +826,9 @@
       "score_band": "2-4",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1679.0,
-        "away_team_rating": 1817.0,
-        "rating_difference": -138.0,
+        "home_team_rating": 1679,
+        "away_team_rating": 1817,
+        "rating_difference": -138,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -935,7 +957,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Como X2",
+      "balanced": "Como DNB",
+      "aggressive": "Como to win",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-42A1213805911A5E0766",
@@ -953,9 +979,9 @@
       "score_band": "2-4",
       "restricted_score_cluster": true,
       "clubelo": {
-        "home_team_rating": 1644.0,
-        "away_team_rating": 1678.0,
-        "rating_difference": -34.0,
+        "home_team_rating": 1644,
+        "away_team_rating": 1678,
+        "rating_difference": -34,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -1086,7 +1112,11 @@
         "NUMERICAL_P_RAW_NOT_AVAILABLE",
         "RESTRICTED_SCORE_CLUSTER",
         "FOOTBALL_NSP"
-      ]
+      ],
+      "safe": "Over 1.5 goals",
+      "balanced": "BTTS Yes",
+      "aggressive": "Over 2.5 goals",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-450C9648CE0F6B55B63F",
@@ -1104,9 +1134,9 @@
       "score_band": "1-3",
       "restricted_score_cluster": true,
       "clubelo": {
-        "home_team_rating": 1720.0,
-        "away_team_rating": 1835.0,
-        "rating_difference": -115.0,
+        "home_team_rating": 1720,
+        "away_team_rating": 1835,
+        "rating_difference": -115,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -1237,7 +1267,11 @@
         "NUMERICAL_P_RAW_NOT_AVAILABLE",
         "RESTRICTED_SCORE_CLUSTER",
         "FOOTBALL_NSP"
-      ]
+      ],
+      "safe": "Napoli X2",
+      "balanced": "Napoli DNB",
+      "aggressive": "Napoli to win",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-4D14B5000C881930027D",
@@ -1260,9 +1294,9 @@
       "score_band": "2-4",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1794.0,
-        "away_team_rating": 1712.0,
-        "rating_difference": 82.0,
+        "home_team_rating": 1794,
+        "away_team_rating": 1712,
+        "rating_difference": 82,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -1391,7 +1425,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Villarreal 1X",
+      "balanced": "Villarreal to win",
+      "aggressive": "Villarreal O1.5 team goals",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-55DB7E7FA0F6B99180DC",
@@ -1414,9 +1452,9 @@
       "score_band": "3-5",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1649.0,
-        "away_team_rating": 1674.0,
-        "rating_difference": -25.0,
+        "home_team_rating": 1649,
+        "away_team_rating": 1674,
+        "rating_difference": -25,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -1545,7 +1583,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Over 2.5 goals",
+      "balanced": "BTTS Yes",
+      "aggressive": "Over 3.5 goals",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-A0267A8C3F698A6680A3",
@@ -1568,9 +1610,9 @@
       "score_band": "1-3",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1817.0,
-        "away_team_rating": 1824.0,
-        "rating_difference": -7.0,
+        "home_team_rating": 1817,
+        "away_team_rating": 1824,
+        "rating_difference": -7,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -1699,7 +1741,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Leeds 1X",
+      "balanced": "Under 3.5 goals",
+      "aggressive": "Leeds to win",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-AF8B646D008CFFCDADD0",
@@ -1722,9 +1768,9 @@
       "score_band": "1-3",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1836.0,
-        "away_team_rating": 1812.0,
-        "rating_difference": 24.0,
+        "home_team_rating": 1836,
+        "away_team_rating": 1812,
+        "rating_difference": 24,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -1853,7 +1899,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Juventus 1X",
+      "balanced": "Juventus to win",
+      "aggressive": "Juventus O1.5 team goals",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-B308720DEFD8D4359DCC",
@@ -1876,9 +1926,9 @@
       "score_band": "1-3",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1660.0,
-        "away_team_rating": 1787.0,
-        "rating_difference": -127.0,
+        "home_team_rating": 1660,
+        "away_team_rating": 1787,
+        "rating_difference": -127,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -2007,7 +2057,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Lille X2",
+      "balanced": "Lille DNB",
+      "aggressive": "Lille to win",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-B8092A7F7EBB4532B97F",
@@ -2030,9 +2084,9 @@
       "score_band": "2-4",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1898.0,
-        "away_team_rating": 1977.0,
-        "rating_difference": -79.0,
+        "home_team_rating": 1898,
+        "away_team_rating": 1977,
+        "rating_difference": -79,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -2161,7 +2215,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Over 1.5 goals",
+      "balanced": "BTTS Yes",
+      "aggressive": "Over 2.5 goals",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-C098E033E6634A3A3260",
@@ -2184,9 +2242,9 @@
       "score_band": "3-5",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1866.0,
-        "away_team_rating": 1823.0,
-        "rating_difference": 43.0,
+        "home_team_rating": 1866,
+        "away_team_rating": 1823,
+        "rating_difference": 43,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -2315,7 +2373,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Over 2.5 goals",
+      "balanced": "BTTS Yes",
+      "aggressive": "Leverkusen to win",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-E2D5DF5092E887531D47",
@@ -2339,7 +2401,7 @@
       "restricted_score_cluster": false,
       "clubelo": {
         "home_team_rating": null,
-        "away_team_rating": 1819.0,
+        "away_team_rating": 1819,
         "rating_difference": null,
         "home_rating_as_of": null,
         "away_rating_as_of": "2026-09-19",
@@ -2469,7 +2531,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Under 4.5 goals",
+      "balanced": "Betis X2",
+      "aggressive": "BTTS Yes",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-E3A185907F8959FCDA46",
@@ -2492,9 +2558,9 @@
       "score_band": "1-3",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1747.0,
-        "away_team_rating": 1762.0,
-        "rating_difference": -15.0,
+        "home_team_rating": 1747,
+        "away_team_rating": 1762,
+        "rating_difference": -15,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -2623,7 +2689,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Real Sociedad X2",
+      "balanced": "Under 3.5 goals",
+      "aggressive": "Real Sociedad to win",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-E5252FAC9319A58A9F14",
@@ -2646,9 +2716,9 @@
       "score_band": "1-3",
       "restricted_score_cluster": false,
       "clubelo": {
-        "home_team_rating": 1819.0,
-        "away_team_rating": 1619.0,
-        "rating_difference": 200.0,
+        "home_team_rating": 1819,
+        "away_team_rating": 1619,
+        "rating_difference": 200,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -2777,7 +2847,11 @@
       "decision_flags": [
         "MANUAL_RECOVERY",
         "NUMERICAL_P_RAW_NOT_AVAILABLE"
-      ]
+      ],
+      "safe": "Milan 1X",
+      "balanced": "Milan to win",
+      "aggressive": "Milan O1.5 team goals",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-EF9A59CB5E66C5CAFD55",
@@ -2795,9 +2869,9 @@
       "score_band": "1-3",
       "restricted_score_cluster": true,
       "clubelo": {
-        "home_team_rating": 2035.0,
-        "away_team_rating": 1740.0,
-        "rating_difference": 295.0,
+        "home_team_rating": 2035,
+        "away_team_rating": 1740,
+        "rating_difference": 295,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -2928,7 +3002,11 @@
         "NUMERICAL_P_RAW_NOT_AVAILABLE",
         "RESTRICTED_SCORE_CLUSTER",
         "FOOTBALL_NSP"
-      ]
+      ],
+      "safe": "Manchester City 1X",
+      "balanced": "Manchester City to win",
+      "aggressive": "Manchester City O1.5 team goals",
+      "commit_status": "COMMITTED"
     },
     {
       "fixture_id": "DISC-F4F94453705CBAE1EC8C",
@@ -2946,9 +3024,9 @@
       "score_band": "1-3",
       "restricted_score_cluster": true,
       "clubelo": {
-        "home_team_rating": 1695.0,
-        "away_team_rating": 1669.0,
-        "rating_difference": 26.0,
+        "home_team_rating": 1695,
+        "away_team_rating": 1669,
+        "rating_difference": 26,
         "home_rating_as_of": "2026-09-19",
         "away_rating_as_of": "2026-09-19",
         "source": "RT1_CLUBELO_HISTORY",
@@ -3079,7 +3157,11 @@
         "NUMERICAL_P_RAW_NOT_AVAILABLE",
         "RESTRICTED_SCORE_CLUSTER",
         "FOOTBALL_NSP"
-      ]
+      ],
+      "safe": "Under 3.5 goals",
+      "balanced": "Getafe 1X",
+      "aggressive": "Getafe to win",
+      "commit_status": "COMMITTED"
     }
   ],
   "proof_of_work": {
