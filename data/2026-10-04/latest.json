@@ -1,0 +1,19 @@
+{
+  "schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+  "date": "2026-10-04",
+  "snapshot_id": "snap_20261004_013406",
+  "data_hash": "sha256:312b9b3908ef6d8cbd467bf8177c51eed8f19731d236d2dc62b841f07d173e6d",
+  "generated_at": "2026-10-04T01:34:06.064427+02:00",
+  "data_cutoff": "2026-10-04T01:34:06.064427+02:00",
+  "db_updated_at": "2026-10-04T01:32:30",
+  "n_fixtures": 0,
+  "n_teams": 0,
+  "zero_fixture_basis": "CONFIRMED_ZERO",
+  "zero_fixture_reason": "every active competition's fixture identity independently confirmed zero",
+  "resolves_to": {
+    "manifest": "snap_20261004_013406/manifest.json",
+    "fixtures": "snap_20261004_013406/fixtures.json",
+    "team_template": "snap_20261004_013406/teams/<team_id>.json"
+  },
+  "note": "Resolution-Endpoint. Der eigentliche Datenverbund liegt unveraenderlich unter <snapshot_id>/ und ist ueber data_hash gebunden."
+}
