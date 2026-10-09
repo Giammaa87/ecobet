@@ -1,360 +1,652 @@
 {
-  "schema_version": "ECOBET_NONCANONICAL_THREE_FIXTURE_RUN_PRESENTATION_V1",
-  "document_name": "run 09.10.26.json",
-  "run_date": "2026-10-09",
-  "record_type": "MIXED_SOURCE_RUN_AND_ESTIMATES",
-  "canonical_run_record_v2_1": false,
-  "disclosure": "User-requested public export. Only Malaga–Espanyol has a validated ECOBET V2 Run Record. Dortmund and Lens failed before the model and have independent estimates/no-bet, not sealed ECOBET predictions. This document does not replace or pass the official Run Record schema.",
-  "source_snapshot": {
-    "schema_version": "ECOBET_DAILY_DATA_V2_FULL",
-    "snapshot_id": "snap_20261009_182704",
-    "github_path": "data/2026-10-09/latest.json",
-    "note": "Current snapshot fixture IDs linked to original attempt IDs using legacy_match_id; archive observations predate this newer snapshot."
+  "record_type": "run",
+  "schema_version": "1.0",
+  "run": {
+    "run_id": "RUN_2026-10-09_MANUAL_RECOVERY_A3_A4_A5",
+    "snapshot_id": "MANUAL_RECOVERY_2026_10_09_A3_A4_A5",
+    "snapshot_time": "2026-10-09T18:27:04.805149+02:00",
+    "date": "2026-10-09",
+    "timezone": "Europe/Zurich",
+    "scope": [
+      "Bundesliga",
+      "La Liga",
+      "Ligue 1"
+    ],
+    "build_mode": "MANUAL_RECOVERY_FROM_ARCHIVED_EVIDENCE",
+    "audit_mode": false,
+    "run_status": "PARTIAL_CANONICAL_WITH_MANUAL_ESTIMATES",
+    "processing_status": "1_CANONICAL_2_MANUAL_UNSEALED",
+    "n_fixtures": 3,
+    "requested_fixtures": 3,
+    "canonical_fixture_count": 1,
+    "unsealed_fixture_count": 2,
+    "run_integrity": "NOT_A_CANONICAL_THREE_FIXTURE_RUN",
+    "output_integrity": "MANUAL_EXPORT_NOT_AUDITED",
+    "data_snapshot_status": "AVAILABLE",
+    "data_snapshot_id": "snap_20261009_182704",
+    "data_snapshot_date": "2026-10-09",
+    "data_snapshot_generated_at": "2026-10-09T18:27:04.805149+02:00",
+    "data_snapshot_hash": "sha256:1284c411cc1932d8320a907bcc22e024b0939e0cf5aad25390dc65ab3a57a117",
+    "data_snapshot_schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+    "data_snapshot_url": "https://giammaa87.github.io/ecobet/data/2026-10-09/snap_20261009_182704/manifest.json",
+    "provenance_notice": "This is a manually compiled viewer-compatible run. Málaga carries an original A3 V2.1 sealed prediction; Dortmund and Lens were manually reasoned using the archived snapshot and are NOT TERRA_HIGH model calls or sealed ECOBET outcomes.",
+    "publication_authorization": "Owner explicitly requested replacement and website visibility on 2026-10-09"
   },
-  "coverage": {
-    "fixtures_expected": 3,
-    "canonical_completed": 1,
-    "canonical_failed": 2,
-    "daily_coverage_complete": false
-  },
-  "fixtures": [
+  "matches": [
     {
-      "fixture_identity": {
-        "fixture_id": "ESP2627_25712972b714",
-        "legacy_match_id": "ESP2627_e3123cfebb99",
-        "competition_id": "ESP-La Liga",
-        "home_team_name": "Malaga",
-        "away_team_name": "Espanyol",
-        "scheduled_date": "2026-10-09"
+      "fixture_id": "GER2627_1412604b7886",
+      "legacy_match_id": "GER2627_2c311e388746",
+      "home": "Borussia Dortmund",
+      "away": "Werder Bremen",
+      "home_team": "Borussia Dortmund",
+      "away_team": "Werder Bremen",
+      "competition": "Bundesliga",
+      "competition_name": "Bundesliga",
+      "competition_id": "GER-Bundesliga",
+      "season": "2026-2027",
+      "scheduled_date": "2026-10-09",
+      "kickoff": null,
+      "kickoff_status": "NOT_CONFIRMED_IN_LATEST_DATA_FEED",
+      "match_status": "PREDICTED",
+      "favourite": "Dortmund Sieg (manuelle Analyse)",
+      "safe": "1X · Dortmund oder Unentschieden",
+      "balanced": "Sieg Borussia Dortmund (1)",
+      "aggressive": "Dortmund -1,5 Asian Handicap (hohes Risiko)",
+      "favourite_team": "Borussia Dortmund",
+      "favourite_prediction": "Dortmund Sieg (manuelle Analyse)",
+      "prediction_source": "MANUAL_UNSEALED_A4_FAILED_CONTEXT",
+      "prediction_validation": "MANUAL_UNSEALED_A4_FAILED_CONTEXT",
+      "data_readiness": "CONDITIONAL",
+      "data_snapshot_coverage": "FULL",
+      "data_snapshot_id": "snap_20261009_182704",
+      "data_snapshot_status": "AVAILABLE",
+      "ampel": "YELLOW",
+      "favourite_robustness": "UNQUALIFIED",
+      "favourite_cluster_coverage": "NOT_VALIDATED",
+      "world_type": "HOME_CONTROL_WITH_AWAY_TRANSITION_RISK",
+      "prime_world": "Dortmund generates markedly better chances and controls Bremen's weaker away attacking process; territorial pressure produces 2+ credible home goals.",
+      "competing_world": "Bremen can score in transition; both teams scoring remains possible and weakens the win-to-nil scenario.",
+      "board_status": "MANUAL_UNSEALED",
+      "commit_status": "NOT_CANONICALLY_COMMITTED",
+      "match_book": {
+        "status": "MANUAL_NOT_CANONICAL",
+        "summary": "Dortmund's sustained attacking and recent clean-sheet profile clash with Bremen's high away concessions and lower away creation. Bremen's recent goal involvement still creates a counter-scoring risk. The direct home win is a stronger thesis than win to nil; -1.5 depends on Dortmund translating process dominance into goals.",
+        "supporting_facts": [
+          "Home team season xG-for 2.1488, xG-against 1.0625, n=4",
+          "Dortmund home current-season xG-for 2.2291, xG-against 0.7088, n=2",
+          "Bremen away current-season xG-for 1.0652, xG-against 1.9992, n=2",
+          "Dortmund last5: 5 wins; Bremen last5: 2 wins, 1 draw, 2 losses"
+        ],
+        "opposing_facts": [
+          "Bremen season BTTS 4/4",
+          "Dortmund home/away samples n=2"
+        ],
+        "limitations": [
+          "A4 Match Context V2 failed: no canonical Match Book or model validation"
+        ]
       },
-      "attempt_id": "A3",
-      "processing_state": "REGULAR_READY",
-      "scope_membership": "IN_SCOPE",
-      "prediction_status": "SEALED_VALID_SOURCE_RECORD",
-      "source_run_record": "MALAGA_A3/run_record_v2_1.json",
-      "source_execution_root": "ECOBET_LRUN_f0158658a3b24dc1a4787d564e771c08",
-      "prediction": {
-        "final_paths": {
-          "safe": {
-            "status": "AVAILABLE",
-            "role": "SAFE",
-            "path": {
-              "market_expression": "Espanyol or Draw (X2)",
-              "market_family": "DIRECTION",
-              "variant": "X2",
-              "path_id": "safe:C_X2"
-            }
+      "team_books": {
+        "home": {
+          "team_id": "bundesliga_borussia_dortmund",
+          "status": "MANUALLY_INTERPRETED_ARCHIVED_TEAM_FEATURES",
+          "source": "DORTMUND_A4/system1_snapshot/teams/bundesliga_borussia_dortmund.json",
+          "season_to_date": {
+            "n": 4,
+            "xg_for_avg": 2.148793,
+            "xg_against_avg": 1.062462,
+            "goals_for_avg": 2.25,
+            "goals_against_avg": 0.5,
+            "ppg": 3,
+            "btts_avg": 0.25
           },
-          "balanced": {
-            "status": "AVAILABLE",
-            "role": "BALANCED",
-            "path": {
-              "market_expression": "Under 3.5 Goals",
-              "market_family": "FULL_TIME_TOTALS",
-              "variant": "UNDER_N_5",
-              "line": "3.5",
-              "path_id": "balanced:C_UNDER_3_5"
-            }
+          "venue_sample": {
+            "venue": "HOME",
+            "n": 2,
+            "xg_for_avg": 2.229065,
+            "xg_against_avg": 0.708764,
+            "goals_for_avg": 2.5,
+            "goals_against_avg": 0,
+            "ppg": 3
           },
-          "aggressive": {
-            "status": "LOCAL_NSP",
-            "role": "AGGRESSIVE",
-            "path": null,
-            "reason_codes": [
-              "AGGRESSIVE_NSP"
-            ]
-          }
-        },
-        "favourite": {
-          "exists": true,
-          "expression": "Under 3.5 Goals",
-          "source_role": "BALANCED",
-          "path_id": "balanced:C_UNDER_3_5"
-        },
-        "favourite_team": {
-          "value": null,
-          "status": "NOT_SEPARATELY_RECORDED_IN_RUN_RECORD",
-          "directional_lean": "Espanyol",
-          "note": "A directional lean is not the selected betting favourite."
-        },
-        "betting_book": {
-          "status": "AVAILABLE",
-          "favourite_path_id": "balanced:C_UNDER_3_5",
-          "final_path_ids": [
-            "safe:C_X2",
-            "balanced:C_UNDER_3_5"
-          ],
-          "probability_band_ref": null,
-          "model_price_band_ref": null,
-          "summary": "Pre-odds betting book; no odds, price or stake."
-        },
-        "match_book": {
-          "status": "COMPLETE",
-          "summary": "Malaga's scoring process is weak while their defensive process is exposed; Espanyol have the clearer scoring route, but their defensive concessions preserve a draw and early-home-goal variation."
-        },
-        "team_books": {
-          "home": {
-            "status": "COMPLETE",
-            "team_id": "la_liga_malaga",
-            "state_summary": "Malaga average 0.81 xG-for, 0.43 goals-for and 2.00 xG-against across seven current-season matches. No wins and three draws."
+          "recent_last5": {
+            "n": 5,
+            "wins": 5,
+            "draws": 0,
+            "losses": 0,
+            "xg_for_avg": 2.39386,
+            "xg_against_avg": 0.956092
           },
-          "away": {
-            "status": "COMPLETE",
-            "team_id": "la_liga_espanyol",
-            "state_summary": "Espanyol average 1.35 xG-for and 1.43 goals-for across seven current-season matches; they concede 1.46 xG per match."
-          }
+          "state_summary": "Strong control and creation, five recent wins; defensive home strength with very limited venue sample."
         },
-        "score_state_cluster": {
-          "status": "COMPLETE",
-          "modal_score": "0-1",
-          "coverage_summary": "0-1 and 0-2 Espanyol, 1-1 draw variation"
-        },
-        "model_probability_band": {
-          "status": "NOT_AVAILABLE",
-          "lower": null,
-          "upper": null
-        },
-        "model_price_band": {
-          "status": "NOT_AVAILABLE",
-          "lower": null,
-          "upper": null
-        },
-        "p_raw": {
-          "status": "NOT_AVAILABLE",
-          "value": null
+        "away": {
+          "team_id": "bundesliga_werder_bremen",
+          "status": "MANUALLY_INTERPRETED_ARCHIVED_TEAM_FEATURES",
+          "source": "DORTMUND_A4/system1_snapshot/teams/bundesliga_werder_bremen.json",
+          "season_to_date": {
+            "n": 4,
+            "xg_for_avg": 1.321443,
+            "xg_against_avg": 1.580552,
+            "goals_for_avg": 2,
+            "goals_against_avg": 2,
+            "ppg": 1.75,
+            "btts_avg": 1
+          },
+          "venue_sample": {
+            "venue": "AWAY",
+            "n": 2,
+            "xg_for_avg": 1.065208,
+            "xg_against_avg": 1.99918,
+            "goals_for_avg": 1,
+            "goals_against_avg": 2.5,
+            "ppg": 0.5
+          },
+          "recent_last5": {
+            "n": 5,
+            "wins": 2,
+            "draws": 1,
+            "losses": 2,
+            "xg_for_avg": 1.163278,
+            "xg_against_avg": 1.939268
+          },
+          "state_summary": "Away defense concedes high-quality chances; can score but less consistently away."
         }
       },
-      "core_binding": {
-        "prediction_core_exists": true,
+      "betting_book": {
+        "status": "MANUAL_PRE_ODDS",
+        "favourite": "Dortmund Sieg",
+        "safe": "1X",
+        "balanced": "1",
+        "aggressive": "Dortmund -1.5",
+        "model_price_band_ref": null,
+        "probability_band_ref": null,
+        "fragility": [
+          "Bremen transition goals",
+          "Dortmund finishing variance",
+          "N=2 venue sample"
+        ],
+        "summary": "Home-control direction. No verified market probability, odds, staking, canonical favourite selection or model seal."
+      },
+      "score_cluster": {
+        "modal_score": "2-0",
+        "score_band": "2–4",
+        "four_score_cluster": [
+          "2-0",
+          "2-1",
+          "3-1",
+          "1-1"
+        ]
+      },
+      "four_score_cluster": [
+        "2-0",
+        "2-1",
+        "3-1",
+        "1-1"
+      ],
+      "score_band": "2–4",
+      "match_thesis": "Dortmund's 2.15 season xG for and 2.23 home xG for confront Bremen's 2.00 away xG against. Bremen create about 1.07 away xG, whereas Dortmund allow only about 0.71 home xG; the stronger home win case is supported by these roles, not by ClubElo.",
+      "reasoning_provenance": {
+        "source": "MANUAL_UNSEALED_A4_FAILED_CONTEXT",
+        "model": "NO_NEW_MODEL_CALL_FOR_THIS_EXPORT",
+        "method": "TEAM_BOOK_AND_MATCH_BOOK_MANUAL_COMPARISON_NOT_CLUBELO_ONLY",
+        "source_files": [
+          "A4 snapshot teams",
+          "A4 fixture selection",
+          "A4 ClubElo only context"
+        ],
+        "limitations": [
+          "Missing fixture-specific Match Context V2",
+          "Not TERRA_HIGH validated",
+          "No V2.1 prediction core or Run Record"
+        ]
+      },
+      "score_state_cluster": {
+        "modal_score": "2-0",
+        "score_scenarios": [
+          {
+            "score": "2-0",
+            "role": "MODAL"
+          },
+          {
+            "score": "2-1",
+            "role": "ALTERNATIVE"
+          },
+          {
+            "score": "3-1",
+            "role": "ALTERNATIVE"
+          },
+          {
+            "score": "1-1",
+            "role": "ALTERNATIVE"
+          }
+        ]
+      },
+      "evidence_summary": [
+        "DORTMUND_A4/system1_snapshot/teams/bundesliga_borussia_dortmund.json",
+        "DORTMUND_A4/system1_snapshot/teams/bundesliga_werder_bremen.json"
+      ],
+      "process_failure": {
+        "attempt_id": "A4",
+        "stage": "MATCH_CONTEXT_V2_BUILD",
+        "code": "ACQUISITION_NOT_READY"
+      },
+      "run_record_v2_1_binding": null,
+      "probability_band": null,
+      "model_probability_band": null,
+      "model_price_band": null,
+      "stakes": null,
+      "odds": null,
+      "confidence": "UNVALIDATED_MANUAL_VIEW_EXPORT"
+    },
+    {
+      "fixture_id": "ESP2627_25712972b714",
+      "legacy_match_id": "ESP2627_e3123cfebb99",
+      "home": "Malaga",
+      "away": "Espanyol",
+      "home_team": "Malaga",
+      "away_team": "Espanyol",
+      "competition": "La Liga",
+      "competition_name": "La Liga",
+      "competition_id": "ESP-La Liga",
+      "season": "2026-2027",
+      "scheduled_date": "2026-10-09",
+      "kickoff": "2026-10-09T19:00:00+00:00",
+      "kickoff_status": "VERIFIED_SOURCE",
+      "match_status": "PREDICTED",
+      "favourite": "Unter 3,5 Tore",
+      "safe": "X2 · Espanyol oder Unentschieden",
+      "balanced": "Unter 3,5 Tore",
+      "aggressive": null,
+      "favourite_team": "Espanyol (Richtungsneigung, kein kanonischer Teamfavorit)",
+      "favourite_prediction": "Unter 3,5 Tore",
+      "prediction_source": "CANONICAL_A3_SEALED_VALID",
+      "prediction_validation": "CANONICAL_A3_SEALED_VALID",
+      "data_readiness": "READY",
+      "data_snapshot_coverage": "FULL",
+      "data_snapshot_id": "snap_20261009_182704",
+      "data_snapshot_status": "AVAILABLE",
+      "ampel": "GREEN",
+      "favourite_robustness": "CONDITIONAL",
+      "favourite_cluster_coverage": "PARTIAL",
+      "world_type": "AWAY_CONTROL_WITH_DRAW_CONTAINMENT",
+      "prime_world": "Espanyol exploit Malaga's defensive exposure while Malaga's weak scoring process limits the home response.",
+      "competing_world": "Espanyol's own defensive concessions permit Malaga one goal and a contained 1-1 draw.",
+      "board_status": "A3_SEALED_VALID",
+      "commit_status": "LOCAL_COMMITTED",
+      "match_book": {
+        "status": "CANONICAL_A3_COMPLETE",
+        "summary": "Malaga's current scoring process is weak while their defensive process is highly exposed; Espanyol have the clearer scoring route, but their defensive concessions preserve a draw and an early-home-goal variation."
+      },
+      "team_books": {
+        "home": {
+          "team_id": "la_liga_malaga",
+          "status": "MANUALLY_INTERPRETED_ARCHIVED_TEAM_FEATURES",
+          "source": "DORTMUND_A4/system1_snapshot/teams/la_liga_malaga.json",
+          "season_to_date": {
+            "n": 7,
+            "xg_for_avg": 0.806114,
+            "xg_against_avg": 1.998569,
+            "goals_for_avg": 0.428571,
+            "goals_against_avg": 1.714286,
+            "ppg": 0.428571
+          },
+          "venue_sample": {
+            "venue": "HOME",
+            "n": 3,
+            "xg_for_avg": 1.148164,
+            "xg_against_avg": 2.189607,
+            "goals_for_avg": 0.666667,
+            "goals_against_avg": 1.333333,
+            "ppg": 0.666667
+          },
+          "recent_last5": {
+            "n": 5,
+            "wins": 0,
+            "draws": 1,
+            "losses": 4,
+            "xg_for_avg": 0.811347,
+            "xg_against_avg": 2.303274
+          },
+          "state_summary": "Weak goals and xG-for, exposed defensive line."
+        },
+        "away": {
+          "team_id": "la_liga_espanyol",
+          "status": "MANUALLY_INTERPRETED_ARCHIVED_TEAM_FEATURES",
+          "source": "DORTMUND_A4/system1_snapshot/teams/la_liga_espanyol.json",
+          "season_to_date": {
+            "n": 7,
+            "xg_for_avg": 1.345804,
+            "xg_against_avg": 1.462029,
+            "goals_for_avg": 1.428571,
+            "goals_against_avg": 1.428571,
+            "ppg": 1,
+            "btts_avg": 0.714286
+          },
+          "venue_sample": {
+            "venue": "AWAY",
+            "n": 3,
+            "xg_for_avg": 1.165586,
+            "xg_against_avg": 1.951007,
+            "goals_for_avg": 1.333333,
+            "goals_against_avg": 1.333333,
+            "ppg": 1
+          },
+          "recent_last5": {
+            "n": 5,
+            "wins": 1,
+            "draws": 1,
+            "losses": 3,
+            "xg_for_avg": 1.27833,
+            "xg_against_avg": 1.495344
+          },
+          "state_summary": "Clearer scoring route, vulnerable concessions preserve draw risk."
+        }
+      },
+      "betting_book": {
+        "status": "CANONICAL_A3_AVAILABLE",
+        "favourite": "Under 3.5 Goals",
+        "safe": "X2",
+        "balanced": "Under 3.5 Goals",
+        "aggressive": null,
+        "favourite_path_id": "balanced:C_UNDER_3_5",
+        "final_path_ids": [
+          "safe:C_X2",
+          "balanced:C_UNDER_3_5"
+        ],
+        "model_price_band_ref": null,
+        "probability_band_ref": null,
+        "summary": "Pre-odds Football Betting Book, no odds or stake."
+      },
+      "score_cluster": {
+        "modal_score": "0-1",
+        "score_band": "1–3",
+        "four_score_cluster": [
+          "0-1",
+          "0-2",
+          "1-1",
+          "1-0"
+        ]
+      },
+      "four_score_cluster": [
+        "0-1",
+        "0-2",
+        "1-1",
+        "1-0"
+      ],
+      "score_band": "1–3",
+      "match_thesis": "Espanyol's credible scoring path faces a low-scoring Malaga attacking process; away-control dominant with draw variation.",
+      "reasoning_provenance": {
+        "source": "CANONICAL_A3_SEALED_VALID",
+        "model": "NO_NEW_MODEL_CALL_FOR_THIS_EXPORT",
+        "method": "ORIGINAL_CANONICAL_TERRA_HIGH_PREDICTION_A3_EXTRACT",
+        "source_files": [
+          "MALAGA_A3/run_record_v2_1.json",
+          "MALAGA_A3/sealed_target.json"
+        ],
+        "limitations": [
+          "Site-view extract of archived record, not separately sealed."
+        ]
+      },
+      "score_state_cluster": {
+        "modal_score": "0-1",
+        "score_scenarios": [
+          {
+            "score": "0-1",
+            "role": "MODAL"
+          },
+          {
+            "score": "0-2",
+            "role": "ALTERNATIVE"
+          },
+          {
+            "score": "1-1",
+            "role": "ALTERNATIVE"
+          },
+          {
+            "score": "1-0",
+            "role": "ALTERNATIVE"
+          }
+        ]
+      },
+      "evidence_summary": [
+        "Original V2.1 Run Record file sha256:7aacce15868c620ff8300bba7a564c0ceca1884be300809bd763a1adc2e35a61",
+        "Original Prediction Core sha256:63d80238d8e91fdb9cb94b9a0aa5bce91ad41671b51b768dc617d7bceb5bd7a6"
+      ],
+      "process_failure": null,
+      "run_record_v2_1_binding": {
+        "attempt_id": "A3",
+        "logical_run_id": "ECOBET_LRUN_f0158658a3b24dc1a4787d564e771c08",
+        "record_schema": "ECOBET_RUN_RECORD_V2_1",
+        "source_run_record_sha256": "7aacce15868c620ff8300bba7a564c0ceca1884be300809bd763a1adc2e35a61",
+        "core_sha256": "63d80238d8e91fdb9cb94b9a0aa5bce91ad41671b51b768dc617d7bceb5bd7a6",
         "core_validation_state": "VALID",
-        "core_artifact_id": "prediction_core_v2_63d80238d8e91fdb",
-        "core_hash": "sha256:63d80238d8e91fdb9cb94b9a0aa5bce91ad41671b51b768dc617d7bceb5bd7a6"
-      },
-      "run_record": {
-        "schema_version": "ECOBET_RUN_RECORD_V2_1",
         "integrity": "INTEGRITY_OK",
-        "original_document_embedded": false,
-        "original_document_in_user_zip": "MALAGA_A3/run_record_v2_1.json",
-        "note": "This is an extract, not the original validated full Run Record."
-      }
+        "local_remote_verified": true,
+        "public_v2_publisher_verified": false
+      },
+      "probability_band": null,
+      "model_probability_band": null,
+      "model_price_band": null,
+      "stakes": null,
+      "odds": null,
+      "confidence": "UNVALIDATED_MANUAL_VIEW_EXPORT"
     },
     {
-      "fixture_identity": {
-        "fixture_id": "GER2627_1412604b7886",
-        "legacy_match_id": "GER2627_2c311e388746",
-        "competition_id": "GER-Bundesliga",
-        "home_team_name": "Borussia Dortmund",
-        "away_team_name": "Werder Bremen",
-        "scheduled_date": "2026-10-09"
+      "fixture_id": "FRA2627_15810c05ddee",
+      "legacy_match_id": "FRA2627_b7b2634a5407",
+      "home": "Lens",
+      "away": "Lyon",
+      "home_team": "Lens",
+      "away_team": "Lyon",
+      "competition": "Ligue 1",
+      "competition_name": "Ligue 1",
+      "competition_id": "FRA-Ligue 1",
+      "season": "2026-2027",
+      "scheduled_date": "2026-10-09",
+      "kickoff": null,
+      "kickoff_status": "NOT_CONFIRMED_IN_LATEST_DATA_FEED",
+      "match_status": "PREDICTED",
+      "favourite": "Lens Draw No Bet (manuelle Analyse)",
+      "safe": "1X · Lens oder Unentschieden",
+      "balanced": "Lens Draw No Bet (Asian Handicap 0)",
+      "aggressive": "Sieg Lens (1, hohes Risiko)",
+      "favourite_team": "Lens (knapp, strukturell)",
+      "favourite_prediction": "Lens Draw No Bet (manuelle Analyse)",
+      "prediction_source": "MANUAL_UNSEALED_A5_FAILED_CONTEXT",
+      "prediction_validation": "MANUAL_UNSEALED_A5_FAILED_CONTEXT",
+      "data_readiness": "CONDITIONAL",
+      "data_snapshot_coverage": "FULL",
+      "data_snapshot_id": "snap_20261009_182704",
+      "data_snapshot_status": "AVAILABLE",
+      "ampel": "YELLOW",
+      "favourite_robustness": "UNQUALIFIED",
+      "favourite_cluster_coverage": "NOT_VALIDATED",
+      "world_type": "HOME_CHANCE_CREATION_VS_AWAY_EFFICIENCY",
+      "prime_world": "Lens' robust home chance production confronts Lyon's away creation shortfall; Lens can create more chances than their results suggest.",
+      "competing_world": "Lyon's better form and defensive results carry a counter-world: Lens concede enough to permit Lyon a draw or narrow away win.",
+      "board_status": "MANUAL_UNSEALED",
+      "commit_status": "NOT_CANONICALLY_COMMITTED",
+      "match_book": {
+        "status": "MANUAL_NOT_CANONICAL",
+        "summary": "Lens' underlying attack exceeds its disappointing 1 win, 1 draw and 3 losses; Lyon's 3 wins, 2 draws and 0 losses show stronger results but away attacking creation is less convincing. Lens' defensive exposure (1.66 xGA season) leaves a Lyon scoring scenario live. The contest is not defensively one-sided; protect the Lens thesis through 1X/DNB and avoid overconfident goals thresholds.",
+        "supporting_facts": [
+          "Lens season xG-for 2.5011 and xG-against 1.6582, n=5",
+          "Lens home current season xG-for 3.1091, xG-against 1.3700, n=2",
+          "Lyon season xG-for 1.9914, xG-against 1.1805, n=5",
+          "Lyon away current season xG-for 0.5803, xG-against 1.3664, n=2",
+          "Lens season BTTS 0.8 and Over 2.5 0.8; Lyon away current season BTTS 0.0, a small counter-sample"
+        ],
+        "opposing_facts": [
+          "Lyon last5: 3 wins and 2 draws",
+          "Lens last5: 1 win, 1 draw and 3 losses",
+          "Away and home venue splits each N=2"
+        ],
+        "limitations": [
+          "A5 failed before Match Context V2, so tactical and lineup context are incomplete."
+        ]
       },
-      "attempt_id": "A4",
-      "processing_state": "FAILED",
-      "scope_membership": "IN_SCOPE",
-      "prediction_status": "NON_CANONICAL_ESTIMATE_NOT_ECOBET_RUN",
-      "failure": {
+      "team_books": {
+        "home": {
+          "team_id": "ligue_1_lens",
+          "status": "MANUALLY_INTERPRETED_ARCHIVED_TEAM_FEATURES",
+          "source": "DORTMUND_A4/system1_snapshot/teams/ligue_1_lens.json",
+          "season_to_date": {
+            "n": 5,
+            "xg_for_avg": 2.50107,
+            "xg_against_avg": 1.658156,
+            "goals_for_avg": 1.8,
+            "goals_against_avg": 1.8,
+            "ppg": 0.8,
+            "btts_avg": 0.8,
+            "over_2_5_avg": 0.8
+          },
+          "venue_sample": {
+            "venue": "HOME",
+            "n": 2,
+            "xg_for_avg": 3.109095,
+            "xg_against_avg": 1.369995,
+            "goals_for_avg": 2.5,
+            "goals_against_avg": 1.5,
+            "ppg": 1.5
+          },
+          "recent_last5": {
+            "n": 5,
+            "wins": 1,
+            "draws": 1,
+            "losses": 3,
+            "xg_for_avg": 2.50107,
+            "xg_against_avg": 1.658156
+          },
+          "state_summary": "Strong underlying chance production out of proportion to points; defensive concessions and variance destabilize outright-win calls."
+        },
+        "away": {
+          "team_id": "ligue_1_lyon",
+          "status": "MANUALLY_INTERPRETED_ARCHIVED_TEAM_FEATURES",
+          "source": "DORTMUND_A4/system1_snapshot/teams/ligue_1_lyon.json",
+          "season_to_date": {
+            "n": 5,
+            "xg_for_avg": 1.99136,
+            "xg_against_avg": 1.180493,
+            "goals_for_avg": 2,
+            "goals_against_avg": 0.4,
+            "ppg": 2.2,
+            "btts_avg": 0.4,
+            "clean_sheet_avg": 0.6
+          },
+          "venue_sample": {
+            "venue": "AWAY",
+            "n": 2,
+            "xg_for_avg": 0.580334,
+            "xg_against_avg": 1.366395,
+            "goals_for_avg": 1,
+            "goals_against_avg": 0,
+            "ppg": 2
+          },
+          "recent_last5": {
+            "n": 5,
+            "wins": 3,
+            "draws": 2,
+            "losses": 0,
+            "xg_for_avg": 1.99136,
+            "xg_against_avg": 1.180493
+          },
+          "state_summary": "Strong recent points and goals-against results; however away xG attack is significantly weaker over a small sample."
+        }
+      },
+      "betting_book": {
+        "status": "MANUAL_PRE_ODDS",
+        "favourite": "Lens Draw No Bet",
+        "safe": "1X",
+        "balanced": "DNB Lens",
+        "aggressive": "Lens Sieg",
+        "model_price_band_ref": null,
+        "probability_band_ref": null,
+        "fragility": [
+          "Lyon's superior recent results",
+          "Lens' finishing inefficiency and 1.66 season xG conceded",
+          "N=2 venue sample"
+        ],
+        "summary": "Home xG process versus visiting form. Avoid invented confidence bands, odds and stakes; separate manual market ideas from a qualified prediction."
+      },
+      "score_cluster": {
+        "modal_score": "2-1",
+        "score_band": "2–4",
+        "four_score_cluster": [
+          "2-1",
+          "1-1",
+          "2-2",
+          "1-2"
+        ]
+      },
+      "four_score_cluster": [
+        "2-1",
+        "1-1",
+        "2-2",
+        "1-2"
+      ],
+      "score_band": "2–4",
+      "match_thesis": "Lens produces 2.50 xG per season match and 3.11 at home (n=2), but has only 0.8 PPG over five league games; Lyon posts 2.2 PPG with just 0.58 away xG for (n=2). Lens is a home-process lean with high result and finishing uncertainty; 1X or DNB is preferable to claiming strong outright-win confidence.",
+      "reasoning_provenance": {
+        "source": "MANUAL_UNSEALED_A5_FAILED_CONTEXT",
+        "model": "NO_NEW_MODEL_CALL_FOR_THIS_EXPORT",
+        "method": "TEAM_BOOK_AND_MATCH_BOOK_MANUAL_COMPARISON_NOT_CLUBELO_ONLY",
+        "source_files": [
+          "A5 snapshot teams",
+          "A5 fixture selection"
+        ],
+        "limitations": [
+          "Missing fixture-specific Match Context V2",
+          "Not TERRA_HIGH validated",
+          "No V2.1 prediction core or Run Record"
+        ]
+      },
+      "score_state_cluster": {
+        "modal_score": "2-1",
+        "score_scenarios": [
+          {
+            "score": "2-1",
+            "role": "MODAL"
+          },
+          {
+            "score": "1-1",
+            "role": "ALTERNATIVE"
+          },
+          {
+            "score": "2-2",
+            "role": "ALTERNATIVE"
+          },
+          {
+            "score": "1-2",
+            "role": "ALTERNATIVE"
+          }
+        ]
+      },
+      "evidence_summary": [
+        "LENS_A5/system1_snapshot/teams/ligue_1_lens.json",
+        "LENS_A5/system1_snapshot/teams/ligue_1_lyon.json"
+      ],
+      "process_failure": {
+        "attempt_id": "A5",
         "stage": "MATCH_CONTEXT_V2_BUILD",
-        "reason": "ACQUISITION_NOT_READY"
+        "code": "ACQUISITION_NOT_READY"
       },
-      "prediction": {
-        "final_paths": {
-          "safe": {
-            "role": "SAFE",
-            "status": "ESTIMATE_ONLY",
-            "path": null
-          },
-          "balanced": {
-            "role": "BALANCED",
-            "status": "ESTIMATE_ONLY",
-            "path": null
-          },
-          "aggressive": {
-            "role": "AGGRESSIVE",
-            "status": "NOT_AVAILABLE",
-            "path": null
-          }
-        },
-        "favourite": {
-          "exists": false,
-          "status": "NOT_CANONICALLY_DETERMINED",
-          "expression": null,
-          "path_id": null
-        },
-        "favourite_team": {
-          "value": "Borussia Dortmund",
-          "status": "INDEPENDENT_CLUBELO_LEAN_NOT_ECOBET_FAVOURITE"
-        },
-        "betting_book": {
-          "status": "NOT_PRODUCED",
-          "summary": "No canonical betting book; pre-match odds, probability bands and stake are unavailable.",
-          "final_path_ids": [],
-          "model_price_band_ref": null,
-          "probability_band_ref": null
-        },
-        "match_book": {
-          "status": "NOT_PRODUCED",
-          "summary": "The canonical Match Book was not generated because the run stopped at Match Context V2.",
-          "independent_commentary": "ClubElo advantage favors Dortmund; lacks verified fixture-specific Match Context V2, so no approved ECOBET betting thesis."
-        },
-        "team_books": {
-          "home": {
-            "status": "NOT_PRODUCED"
-          },
-          "away": {
-            "status": "NOT_PRODUCED"
-          }
-        },
-        "score_state_cluster": {
-          "status": "NOT_PRODUCED",
-          "modal_score": null,
-          "score_scenarios": []
-        },
-        "model_probability_band": {
-          "status": "NOT_AVAILABLE",
-          "lower": null,
-          "upper": null
-        },
-        "model_price_band": {
-          "status": "NOT_AVAILABLE",
-          "lower": null,
-          "upper": null
-        },
-        "p_raw": {
-          "status": "NOT_AVAILABLE",
-          "value": null
-        },
-        "evidence_status": "INSUFFICIENT_FOR_SEALED_PREDICTION"
-      },
-      "source_evidence": {
-        "clubelo_home": 1900,
-        "clubelo_away": 1688,
-        "clubelo_difference_home_minus_away": 212,
-        "fixture_specific_context_v2": null
-      },
-      "core_binding": {
-        "prediction_core_exists": false,
-        "core_validation_state": "NOT_REACHED",
-        "core_artifact_id": null,
-        "core_hash": null
-      },
-      "run_record": {
-        "schema_version": "ECOBET_RUN_RECORD_V2_1",
-        "status": "NOT_CREATED",
-        "integrity": null
-      }
-    },
-    {
-      "fixture_identity": {
-        "fixture_id": "FRA2627_15810c05ddee",
-        "legacy_match_id": "FRA2627_b7b2634a5407",
-        "competition_id": "FRA-Ligue 1",
-        "home_team_name": "Lens",
-        "away_team_name": "Lyon",
-        "scheduled_date": "2026-10-09"
-      },
-      "attempt_id": "A5",
-      "processing_state": "FAILED",
-      "scope_membership": "IN_SCOPE",
-      "prediction_status": "NON_CANONICAL_ESTIMATE_NOT_ECOBET_RUN",
-      "failure": {
-        "stage": "MATCH_CONTEXT_V2_BUILD",
-        "reason": "ACQUISITION_NOT_READY"
-      },
-      "prediction": {
-        "final_paths": {
-          "safe": {
-            "role": "SAFE",
-            "status": "NOT_AVAILABLE",
-            "path": null
-          },
-          "balanced": {
-            "role": "BALANCED",
-            "status": "NOT_AVAILABLE",
-            "path": null
-          },
-          "aggressive": {
-            "role": "AGGRESSIVE",
-            "status": "NOT_AVAILABLE",
-            "path": null
-          }
-        },
-        "favourite": {
-          "exists": false,
-          "status": "NOT_CANONICALLY_DETERMINED",
-          "expression": null,
-          "path_id": null
-        },
-        "favourite_team": {
-          "value": null,
-          "status": "INDEPENDENT_CLUBELO_LEAN_NOT_ECOBET_FAVOURITE"
-        },
-        "betting_book": {
-          "status": "NOT_PRODUCED",
-          "summary": "No canonical betting book; pre-match odds, probability bands and stake are unavailable.",
-          "final_path_ids": [],
-          "model_price_band_ref": null,
-          "probability_band_ref": null
-        },
-        "match_book": {
-          "status": "NOT_PRODUCED",
-          "summary": "The canonical Match Book was not generated because the run stopped at Match Context V2.",
-          "independent_commentary": "Narrow ClubElo advantage to Lens is not sufficient for a robust standalone market selection; no-bet is an assessment rather than a canonical path."
-        },
-        "team_books": {
-          "home": {
-            "status": "NOT_PRODUCED"
-          },
-          "away": {
-            "status": "NOT_PRODUCED"
-          }
-        },
-        "score_state_cluster": {
-          "status": "NOT_PRODUCED",
-          "modal_score": null,
-          "score_scenarios": []
-        },
-        "model_probability_band": {
-          "status": "NOT_AVAILABLE",
-          "lower": null,
-          "upper": null
-        },
-        "model_price_band": {
-          "status": "NOT_AVAILABLE",
-          "lower": null,
-          "upper": null
-        },
-        "p_raw": {
-          "status": "NOT_AVAILABLE",
-          "value": null
-        },
-        "evidence_status": "INSUFFICIENT_FOR_SEALED_PREDICTION"
-      },
-      "source_evidence": {
-        "clubelo_home": 1812,
-        "clubelo_away": 1800,
-        "clubelo_difference_home_minus_away": 12,
-        "fixture_specific_context_v2": null
-      },
-      "core_binding": {
-        "prediction_core_exists": false,
-        "core_validation_state": "NOT_REACHED",
-        "core_artifact_id": null,
-        "core_hash": null
-      },
-      "run_record": {
-        "schema_version": "ECOBET_RUN_RECORD_V2_1",
-        "status": "NOT_CREATED",
-        "integrity": null
-      }
+      "run_record_v2_1_binding": null,
+      "probability_band": null,
+      "model_probability_band": null,
+      "model_price_band": null,
+      "stakes": null,
+      "odds": null,
+      "confidence": "UNVALIDATED_MANUAL_VIEW_EXPORT"
     }
   ],
-  "lifecycle": {
-    "local_run_published_finalized_for_malaga": true,
-    "public_v2_predictions_canonically_published": false,
-    "github_publication_of_this_export": true
-  },
-  "missing_artifacts": [
-    "Dortmund: validated Target, Football, Prediction Core, Run Record, Output/Audit",
-    "Lens: validated Target, Football, Prediction Core, Run Record, Output/Audit"
-  ],
-  "source_zip": "ECOBET_2026-10-09_three_match_evidence_A3_A4_A5(1).zip"
+  "proof_of_work": {
+    "fixture_counts": {
+      "expected": 3,
+      "records_visible": 3,
+      "verified_v2_1": 1,
+      "manual_unsealed": 2
+    },
+    "integrity_status": "MIXED_SOURCE_DISCLOSED",
+    "no_new_model_calls": true,
+    "source_archive": "ECOBET_2026-10-09_three_match_evidence_A3_A4_A5(1).zip"
+  }
 }
