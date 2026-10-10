@@ -1,0 +1,523 @@
+{
+  "schema_version": "1.4",
+  "record_type": "run_record",
+  "run": {
+    "run_id": "RUN_2026-10-10_D110_EUROPE_ZURICH",
+    "snapshot_id": "snap_20261010_104541",
+    "snapshot_time": "2026-10-10T10:45:41.303879+02:00",
+    "date": "2026-10-10",
+    "timezone": "Europe/Zurich",
+    "scope": [
+      "Bundesliga",
+      "La Liga",
+      "Ligue 1",
+      "Premier League"
+    ],
+    "build_mode": "D110_RECOVERY",
+    "audit_mode": false,
+    "run_status": "COMPLETE",
+    "run_integrity": "PASS",
+    "output_integrity": "PASS",
+    "data_snapshot_status": "AVAILABLE",
+    "data_snapshot_id": "snap_20261010_104541",
+    "data_snapshot_date": "2026-10-10",
+    "data_snapshot_generated_at": "2026-10-10T10:45:41.303879+02:00",
+    "data_snapshot_data_cutoff": "2026-10-10T10:45:41.303879+02:00",
+    "data_snapshot_hash": "sha256:fc110df12b0b361258e4ba613fdaf53f50721ebe07d88f87c4a70b10db3178c2",
+    "data_snapshot_schema_version": "ECOBET_DAILY_DATA_V2_FULL",
+    "norm_versions": {
+      "master_os": "2.3",
+      "football_decision_engine": "2.3",
+      "prediction_core": "2.1",
+      "output_audit": "2.3"
+    },
+    "v23_provenance": {
+      "logical_run_id": "D110",
+      "daily_run_hash": "sha256:a727ff91bbc0aecddec2335020087b04f4f3f50cc5c67ed1932eb2692597b681",
+      "daily_audit_hash": "sha256:a4331d0c77e970e71ff0a0de1991dfe5df507121221def907de9f476a3386c8a",
+      "target_hash": "sha256:9e0fcd76ae04974953558bb91e39caac08c52018be5969da74f8f547d1acf9c8",
+      "completed_fixture_count": 7,
+      "blocked_fixture_count": 17,
+      "publication_authorized_for": "D110_ONE_TIME_OWNER_PUBLICATION"
+    }
+  },
+  "matches": [
+    {
+      "fixture_id": "ENG2627_bc7efa4cc662",
+      "kickoff": "2026-10-10T14:00:00+00:00",
+      "competition": "Premier League",
+      "competition_id": "ENG_PREMIER_LEAGUE",
+      "home": "Ipswich Town",
+      "away": "Fulham",
+      "safe": "Over 0.5 Match Goals",
+      "balanced": "Both Teams To Score — Yes",
+      "aggressive": "NOT_AVAILABLE",
+      "favourite": "Over 0.5 Match Goals",
+      "ampel": "YELLOW",
+      "flags": [
+        "D110",
+        "PREDICTION_CORE_SEALED",
+        "CLUB_ELO_ONLY"
+      ],
+      "data_readiness": "VALIDATED",
+      "match_core_status": "SEALED",
+      "nsp_codes": [],
+      "world_type": "W_PRIMARY_OPEN",
+      "anchor": "Mutual defensive vulnerability creates an open exchange with a strong route to at least one goal and a credible bilateral scoring corridor.",
+      "prime_world": "Early defensive vulnerability produces an exchange in which both sides retain a credible scoring route.",
+      "counterworld": "Early chances do not convert and the match remains a low-event stalemate.; Ipswich's scoring route fails while Fulham convert one narrow away-side chance.",
+      "modal_score": "1:1",
+      "four_score_cluster": [
+        "1:1",
+        "1:2",
+        "2:1",
+        "0:1"
+      ],
+      "score_band": "NOT_AVAILABLE",
+      "sources": [
+        {
+          "name": "D110 sealed Prediction Core",
+          "trust": "SEALED",
+          "sha256": "sha256:3d37abe74fbe55b88d707a881997a566284d157a6b99263a5cc82d4f0e7751d0"
+        },
+        {
+          "name": "D110 primary Football validation",
+          "trust": "SEALED",
+          "sha256": "sha256:c56446004589a8c2668f565939361e73b37d1fe9c8c0c08126539cd837892947"
+        },
+        {
+          "name": "D110 Football Decision package",
+          "trust": "SEALED",
+          "sha256": "sha256:948aa3e1402ef5a5c3781273a534d1d4c86afa109243ec36f2970a0fdf277f0e"
+        },
+        {
+          "name": "D110 Raw Snapshot",
+          "trust": "TRANSPORT_VALIDATED",
+          "snapshot_id": "snap_20261010_104541",
+          "sha256": "sha256:fc110df12b0b361258e4ba613fdaf53f50721ebe07d88f87c4a70b10db3178c2"
+        }
+      ],
+      "publication_status": "VALIDATED_PUBLISHED",
+      "published_at": "2026-10-10T13:28:29Z",
+      "v23_evidence": {
+        "fixture_outcome_hash": "sha256:68896c4df7fb585f8819c04f5a32c5e8b67a750e9bea01d43de863584a278f50",
+        "prediction_core_seal": "sha256:3d37abe74fbe55b88d707a881997a566284d157a6b99263a5cc82d4f0e7751d0",
+        "target_hash": "sha256:9e0fcd76ae04974953558bb91e39caac08c52018be5969da74f8f547d1acf9c8",
+        "football_evidence": {
+          "primary": "sha256:c56446004589a8c2668f565939361e73b37d1fe9c8c0c08126539cd837892947",
+          "decision_package": "sha256:948aa3e1402ef5a5c3781273a534d1d4c86afa109243ec36f2970a0fdf277f0e"
+        }
+      }
+    },
+    {
+      "fixture_id": "ENG2627_b3f00a3ebaf6",
+      "kickoff": "2026-10-10T14:00:00+00:00",
+      "competition": "Premier League",
+      "competition_id": "ENG_PREMIER_LEAGUE",
+      "home": "Chelsea",
+      "away": "Bournemouth",
+      "safe": "Over 1.5 Match Goals",
+      "balanced": "Both Teams To Score — Yes",
+      "aggressive": "NOT_AVAILABLE",
+      "favourite": "Over 1.5 Match Goals",
+      "ampel": "YELLOW",
+      "flags": [
+        "D110",
+        "PREDICTION_CORE_SEALED",
+        "CLUB_ELO_ONLY"
+      ],
+      "data_readiness": "VALIDATED",
+      "match_core_status": "SEALED",
+      "nsp_codes": [],
+      "world_type": "W_PRIMARY_OPEN_GAME",
+      "anchor": "Chelsea's open defensive record combines with Bournemouth's recurrent current-season BTTS profile, creating two live scoring routes and a low total-goal floor.",
+      "prime_world": "Both teams establish scoring routes in an open game; Chelsea's own scoring output supplies the extra-goal path without making the result axis stable.",
+      "counterworld": "Bournemouth's current-season draw tendency combines with Chelsea's inability to keep a clean sheet, producing a bilateral draw rather than a Chelsea separation.",
+      "modal_score": "2:1",
+      "four_score_cluster": [
+        "2:1",
+        "3:1",
+        "1:1",
+        "2:2"
+      ],
+      "score_band": "NOT_AVAILABLE",
+      "sources": [
+        {
+          "name": "D110 sealed Prediction Core",
+          "trust": "SEALED",
+          "sha256": "sha256:28d9464e96c7fd1b7701ed994a9eeb137659adeb028878de8440066629244c20"
+        },
+        {
+          "name": "D110 primary Football validation",
+          "trust": "SEALED",
+          "sha256": "sha256:94f805a6d9641ab8941bf63c985e76044b197f381d662797e47fb2dec66c3716"
+        },
+        {
+          "name": "D110 Football Decision package",
+          "trust": "SEALED",
+          "sha256": "sha256:0a8fcbe02a42af52f42fb02f08d77c751c598d28cf14c6a79d51e3fce0752dd5"
+        },
+        {
+          "name": "D110 Raw Snapshot",
+          "trust": "TRANSPORT_VALIDATED",
+          "snapshot_id": "snap_20261010_104541",
+          "sha256": "sha256:fc110df12b0b361258e4ba613fdaf53f50721ebe07d88f87c4a70b10db3178c2"
+        }
+      ],
+      "publication_status": "VALIDATED_PUBLISHED",
+      "published_at": "2026-10-10T13:28:29Z",
+      "v23_evidence": {
+        "fixture_outcome_hash": "sha256:cf863e909dd2de3238294d77542378930dac5b7e092c25685455f46a1ef9f1af",
+        "prediction_core_seal": "sha256:28d9464e96c7fd1b7701ed994a9eeb137659adeb028878de8440066629244c20",
+        "target_hash": "sha256:9e0fcd76ae04974953558bb91e39caac08c52018be5969da74f8f547d1acf9c8",
+        "football_evidence": {
+          "primary": "sha256:94f805a6d9641ab8941bf63c985e76044b197f381d662797e47fb2dec66c3716",
+          "decision_package": "sha256:0a8fcbe02a42af52f42fb02f08d77c751c598d28cf14c6a79d51e3fce0752dd5"
+        }
+      }
+    },
+    {
+      "fixture_id": "GER2627_da775a1139b0",
+      "kickoff": "2026-10-10T13:30:00+00:00",
+      "competition": "Bundesliga",
+      "competition_id": "GER_BUNDESLIGA",
+      "home": "Hoffenheim",
+      "away": "Hamburger SV",
+      "safe": "Over 1.5 match goals",
+      "balanced": "Hoffenheim draw no bet",
+      "aggressive": "NOT_AVAILABLE",
+      "favourite": "Over 1.5 match goals",
+      "ampel": "YELLOW",
+      "flags": [
+        "D110",
+        "PREDICTION_CORE_SEALED",
+        "CLUB_ELO_ONLY"
+      ],
+      "data_readiness": "VALIDATED",
+      "match_core_status": "SEALED",
+      "nsp_codes": [],
+      "world_type": "W_PRIMARY_HOME_PRESSURE_OPEN_DEFENCE",
+      "anchor": "Hoffenheim's established attacking process and early scoring channel meet Hamburg's weak defensive process; Hamburg's limited current scoring makes the central corridor home-led, while Hoffenheim's own defensive volatility preserves an open draw branch.",
+      "prime_world": "Hoffenheim's high creation and early pressure convert against Hamburg's persistent defensive concession profile; Hamburg's weak current scoring leaves the central outcome home-led, with two or more total goals.",
+      "counterworld": "Hoffenheim dominate enough of the ball and chance volume to score, but their defensive openness lets Hamburg's transition path supply an equaliser and create a 1-1-type draw.",
+      "modal_score": "2:0",
+      "four_score_cluster": [
+        "2:0",
+        "2:1",
+        "3:1",
+        "1:1"
+      ],
+      "score_band": "NOT_AVAILABLE",
+      "sources": [
+        {
+          "name": "D110 sealed Prediction Core",
+          "trust": "SEALED",
+          "sha256": "sha256:bac1bb8cd48f1cc154a5d17d03a0a0e5f3eb1d6000412c3e83fb525a048df791"
+        },
+        {
+          "name": "D110 primary Football validation",
+          "trust": "SEALED",
+          "sha256": "sha256:0385237dc2708f4129cd669c1a064b88cecd0bf1ee4c4898c040bd22e40af323"
+        },
+        {
+          "name": "D110 Football Decision package",
+          "trust": "SEALED",
+          "sha256": "sha256:d412dd54687a2730e9f912d633840c02292ebee3655afdf441363cd9c3c6186b"
+        },
+        {
+          "name": "D110 Raw Snapshot",
+          "trust": "TRANSPORT_VALIDATED",
+          "snapshot_id": "snap_20261010_104541",
+          "sha256": "sha256:fc110df12b0b361258e4ba613fdaf53f50721ebe07d88f87c4a70b10db3178c2"
+        }
+      ],
+      "publication_status": "VALIDATED_PUBLISHED",
+      "published_at": "2026-10-10T13:28:29Z",
+      "v23_evidence": {
+        "fixture_outcome_hash": "sha256:4b037af3cba08ff94561d69ee1917f2ccf9c478eb620af3f1c6370ebac10470c",
+        "prediction_core_seal": "sha256:bac1bb8cd48f1cc154a5d17d03a0a0e5f3eb1d6000412c3e83fb525a048df791",
+        "target_hash": "sha256:9e0fcd76ae04974953558bb91e39caac08c52018be5969da74f8f547d1acf9c8",
+        "football_evidence": {
+          "primary": "sha256:0385237dc2708f4129cd669c1a064b88cecd0bf1ee4c4898c040bd22e40af323",
+          "decision_package": "sha256:d412dd54687a2730e9f912d633840c02292ebee3655afdf441363cd9c3c6186b"
+        }
+      }
+    },
+    {
+      "fixture_id": "GER2627_6b276e472666",
+      "kickoff": "2026-10-10T13:30:00+00:00",
+      "competition": "Bundesliga",
+      "competition_id": "GER_BUNDESLIGA",
+      "home": "Union Berlin",
+      "away": "SV Elversberg",
+      "safe": "Over 0.5 Match Goals",
+      "balanced": "Over 1.5 Match Goals",
+      "aggressive": "NOT_AVAILABLE",
+      "favourite": "Over 0.5 Match Goals",
+      "ampel": "YELLOW",
+      "flags": [
+        "D110",
+        "PREDICTION_CORE_SEALED",
+        "CLUB_ELO_ONLY"
+      ],
+      "data_readiness": "VALIDATED",
+      "match_core_status": "SEALED",
+      "nsp_codes": [],
+      "world_type": "WORLD_OPEN_EXPOSURE",
+      "anchor": "Union's elevated concession and xG-against profile combines with Elversberg's positive scoring output to create an open match whose central corridor is two or more goals, with Elversberg especially able to exploit Union's exposure.",
+      "prime_world": "Union's defensive exposure permits Elversberg chances and goals; Elversberg's own concession profile and Union's response capacity keep reciprocal scoring and further goals live.",
+      "counterworld": "An unusually contained match suppresses Union's response and limits Elversberg to a single goal or none.",
+      "modal_score": "1:2",
+      "four_score_cluster": [
+        "1:2",
+        "1:1",
+        "0:2",
+        "2:2",
+        "0:1"
+      ],
+      "score_band": "NOT_AVAILABLE",
+      "sources": [
+        {
+          "name": "D110 sealed Prediction Core",
+          "trust": "SEALED",
+          "sha256": "sha256:427ff1d73feeebd190ae01c0cb6b55a3e547d8f71683ebd84036393c65d32296"
+        },
+        {
+          "name": "D110 primary Football validation",
+          "trust": "SEALED",
+          "sha256": "sha256:011bb5de85af3941db3103bc83360ad1b721e227329a2203abac70e32af7d2e5"
+        },
+        {
+          "name": "D110 Football Decision package",
+          "trust": "SEALED",
+          "sha256": "sha256:cd79305f7228cae399ab2b32ce0c996a39280d268741acb98d0694fca590ab77"
+        },
+        {
+          "name": "D110 Raw Snapshot",
+          "trust": "TRANSPORT_VALIDATED",
+          "snapshot_id": "snap_20261010_104541",
+          "sha256": "sha256:fc110df12b0b361258e4ba613fdaf53f50721ebe07d88f87c4a70b10db3178c2"
+        }
+      ],
+      "publication_status": "VALIDATED_PUBLISHED",
+      "published_at": "2026-10-10T13:28:29Z",
+      "v23_evidence": {
+        "fixture_outcome_hash": "sha256:9f5066a936d42e828d5f9412e1ae59bb5d88cad90e5e8f5238e003f1f8253aff",
+        "prediction_core_seal": "sha256:427ff1d73feeebd190ae01c0cb6b55a3e547d8f71683ebd84036393c65d32296",
+        "target_hash": "sha256:9e0fcd76ae04974953558bb91e39caac08c52018be5969da74f8f547d1acf9c8",
+        "football_evidence": {
+          "primary": "sha256:011bb5de85af3941db3103bc83360ad1b721e227329a2203abac70e32af7d2e5",
+          "decision_package": "sha256:cd79305f7228cae399ab2b32ce0c996a39280d268741acb98d0694fca590ab77"
+        }
+      }
+    },
+    {
+      "fixture_id": "ESP2627_e998f5340945",
+      "kickoff": "2026-10-10T19:00:00+00:00",
+      "competition": "La Liga",
+      "competition_id": "ESP_LA_LIGA",
+      "home": "Real Madrid",
+      "away": "Villarreal",
+      "safe": "Real Madrid or Draw (1X)",
+      "balanced": "Over 1.5 Match Goals",
+      "aggressive": "NOT_AVAILABLE",
+      "favourite": "Over 1.5 Match Goals",
+      "ampel": "YELLOW",
+      "flags": [
+        "D110",
+        "PREDICTION_CORE_SEALED",
+        "CLUB_ELO_ONLY"
+      ],
+      "data_readiness": "VALIDATED",
+      "match_core_status": "SEALED",
+      "nsp_codes": [],
+      "world_type": "W_PRIMARY_HOME_CONTROL",
+      "anchor": "Real Madrid's superior current chance creation and home control create the main scoring pressure; Villarreal's own chance creation and clean-sheet gap keep an away reply live.",
+      "prime_world": "Real Madrid impose superior home-led creation and early control; Villarreal can score once, but the central outcome remains a home-led multi-goal match.",
+      "counterworld": "Villarreal's high creation and Real Madrid's non-zero concession route convert the fixture into a bilateral contest, with 2-2 the coherent competing branch.",
+      "modal_score": "2:1",
+      "four_score_cluster": [
+        "2:1",
+        "3:1",
+        "2:2",
+        "1:0"
+      ],
+      "score_band": "NOT_AVAILABLE",
+      "sources": [
+        {
+          "name": "D110 sealed Prediction Core",
+          "trust": "SEALED",
+          "sha256": "sha256:39288fddcc462e6c753cc474e15b7cc5abd6a3ada7ec943eb250d1428539b425"
+        },
+        {
+          "name": "D110 primary Football validation",
+          "trust": "SEALED",
+          "sha256": "sha256:aaee48be39b35402892e5a7ca1857807748485824aec8a9f3980b35a838c0106"
+        },
+        {
+          "name": "D110 Football Decision package",
+          "trust": "SEALED",
+          "sha256": "sha256:1efbccc293e6f43b66f3ecb6397fc0acf2e30105e9cf1a570dac3b59908c0a96"
+        },
+        {
+          "name": "D110 Raw Snapshot",
+          "trust": "TRANSPORT_VALIDATED",
+          "snapshot_id": "snap_20261010_104541",
+          "sha256": "sha256:fc110df12b0b361258e4ba613fdaf53f50721ebe07d88f87c4a70b10db3178c2"
+        }
+      ],
+      "publication_status": "VALIDATED_PUBLISHED",
+      "published_at": "2026-10-10T13:28:29Z",
+      "v23_evidence": {
+        "fixture_outcome_hash": "sha256:649d0ec25c11457f64a1a2cfba7fc53248697a9f7a7a1d509af36f09649d1d8b",
+        "prediction_core_seal": "sha256:39288fddcc462e6c753cc474e15b7cc5abd6a3ada7ec943eb250d1428539b425",
+        "target_hash": "sha256:9e0fcd76ae04974953558bb91e39caac08c52018be5969da74f8f547d1acf9c8",
+        "football_evidence": {
+          "primary": "sha256:aaee48be39b35402892e5a7ca1857807748485824aec8a9f3980b35a838c0106",
+          "decision_package": "sha256:1efbccc293e6f43b66f3ecb6397fc0acf2e30105e9cf1a570dac3b59908c0a96"
+        }
+      }
+    },
+    {
+      "fixture_id": "ESP2627_725c98dea4b9",
+      "kickoff": "2026-10-10T16:30:00+00:00",
+      "competition": "La Liga",
+      "competition_id": "ESP_LA_LIGA",
+      "home": "Barcelona",
+      "away": "Getafe",
+      "safe": "Barcelona to win",
+      "balanced": "Over 2.5 match goals",
+      "aggressive": "Barcelona to score in 1st half",
+      "favourite": "Barcelona to win",
+      "ampel": "YELLOW",
+      "flags": [
+        "D110",
+        "PREDICTION_CORE_SEALED",
+        "CLUB_ELO_ONLY"
+      ],
+      "data_readiness": "VALIDATED",
+      "match_core_status": "SEALED",
+      "nsp_codes": [],
+      "world_type": "W_PRIMARY_HOME_CONTROL",
+      "anchor": "Barcelona's current high-volume attack and first-half strength should impose territory and scoring pressure on a Getafe side with low current scoring output and a negative defensive process.",
+      "prime_world": "Barcelona establish early territory and sustained chance creation; Getafe's limited attack is mostly contained, producing a Barcelona-led two- or three-goal victory corridor.",
+      "counterworld": "Barcelona remain the stronger attacking side, but Getafe convert an isolated counter or set piece, opening a 3-1-type route.",
+      "modal_score": "3:0",
+      "four_score_cluster": [
+        "3:0",
+        "2:0",
+        "3:1",
+        "1:1"
+      ],
+      "score_band": "NOT_AVAILABLE",
+      "sources": [
+        {
+          "name": "D110 sealed Prediction Core",
+          "trust": "SEALED",
+          "sha256": "sha256:f9c7cecf4055950e1c90816613e7f6e7060c85369cda72b2613cb7d6643fd6eb"
+        },
+        {
+          "name": "D110 primary Football validation",
+          "trust": "SEALED",
+          "sha256": "sha256:b53950585b87f0a69e60f148d4e4f9a586b1692bc193ff6b67d25dce22b95dca"
+        },
+        {
+          "name": "D110 Football Decision package",
+          "trust": "SEALED",
+          "sha256": "sha256:11f9799b85433ef69dbac89d0ee87a8e1b9fdf27969197c149bbfe78ecb39469"
+        },
+        {
+          "name": "D110 Raw Snapshot",
+          "trust": "TRANSPORT_VALIDATED",
+          "snapshot_id": "snap_20261010_104541",
+          "sha256": "sha256:fc110df12b0b361258e4ba613fdaf53f50721ebe07d88f87c4a70b10db3178c2"
+        }
+      ],
+      "publication_status": "VALIDATED_PUBLISHED",
+      "published_at": "2026-10-10T13:28:29Z",
+      "v23_evidence": {
+        "fixture_outcome_hash": "sha256:32983420f6261e8b2fa76252b6e66ee784aad30397ddfaaf11cf4152a807743c",
+        "prediction_core_seal": "sha256:f9c7cecf4055950e1c90816613e7f6e7060c85369cda72b2613cb7d6643fd6eb",
+        "target_hash": "sha256:9e0fcd76ae04974953558bb91e39caac08c52018be5969da74f8f547d1acf9c8",
+        "football_evidence": {
+          "primary": "sha256:b53950585b87f0a69e60f148d4e4f9a586b1692bc193ff6b67d25dce22b95dca",
+          "decision_package": "sha256:11f9799b85433ef69dbac89d0ee87a8e1b9fdf27969197c149bbfe78ecb39469"
+        }
+      }
+    },
+    {
+      "fixture_id": "FRA2627_e5fdec4684b9",
+      "kickoff": "2026-10-10T18:45:00+00:00",
+      "competition": "Ligue 1",
+      "competition_id": "FRA_LIGUE_1",
+      "home": "Paris Saint-Germain",
+      "away": "Le Mans",
+      "safe": "Full-time total goals over 0.5",
+      "balanced": "Paris Saint-Germain over 0.5 team goals",
+      "aggressive": "Paris Saint-Germain draw no bet",
+      "favourite": "Full-time total goals over 0.5",
+      "ampel": "YELLOW",
+      "flags": [
+        "D110",
+        "PREDICTION_CORE_SEALED",
+        "CLUB_ELO_ONLY"
+      ],
+      "data_readiness": "VALIDATED",
+      "match_core_status": "SEALED",
+      "nsp_codes": [],
+      "world_type": "W_HOME_CONTROL",
+      "anchor": "PSG creation and territorial pressure are the central mechanism, amplified by Le Mans' high recent xG-against profile; Le Mans' own scoring record keeps a narrower exchange route alive.",
+      "prime_world": "PSG sustain superior chance generation and turn Le Mans' defensive openness into a controlled, goal-led home result.",
+      "counterworld": "Le Mans' live scoring route combines with PSG creation to produce an exchange match in which the draw remains real.",
+      "modal_score": "2:0",
+      "four_score_cluster": [
+        "2:0",
+        "2:1",
+        "1:1",
+        "0:1"
+      ],
+      "score_band": "NOT_AVAILABLE",
+      "sources": [
+        {
+          "name": "D110 sealed Prediction Core",
+          "trust": "SEALED",
+          "sha256": "sha256:cbc36f37d5edad25f565c5632138238d52239a6f9bca55514c17e03649294fb2"
+        },
+        {
+          "name": "D110 primary Football validation",
+          "trust": "SEALED",
+          "sha256": "sha256:ae272affa97a342770a246484445dc9502b74277a794f4146d011c9b7e09fb9e"
+        },
+        {
+          "name": "D110 Football Decision package",
+          "trust": "SEALED",
+          "sha256": "sha256:d32d84e159e7c1129a470edb8fca483d5411de35e092d02e7dfcea4a0b508941"
+        },
+        {
+          "name": "D110 Raw Snapshot",
+          "trust": "TRANSPORT_VALIDATED",
+          "snapshot_id": "snap_20261010_104541",
+          "sha256": "sha256:fc110df12b0b361258e4ba613fdaf53f50721ebe07d88f87c4a70b10db3178c2"
+        }
+      ],
+      "publication_status": "VALIDATED_PUBLISHED",
+      "published_at": "2026-10-10T13:28:29Z",
+      "v23_evidence": {
+        "fixture_outcome_hash": "sha256:b6c5b18656ad349c7aef61c1658c4b9e2255acd5cc9a815c724c1bad50c49f31",
+        "prediction_core_seal": "sha256:cbc36f37d5edad25f565c5632138238d52239a6f9bca55514c17e03649294fb2",
+        "target_hash": "sha256:9e0fcd76ae04974953558bb91e39caac08c52018be5969da74f8f547d1acf9c8",
+        "football_evidence": {
+          "primary": "sha256:ae272affa97a342770a246484445dc9502b74277a794f4146d011c9b7e09fb9e",
+          "decision_package": "sha256:d32d84e159e7c1129a470edb8fca483d5411de35e092d02e7dfcea4a0b508941"
+        }
+      }
+    }
+  ],
+  "proof_of_work": {
+    "matches_in_scope": 24,
+    "matches_committed": 7,
+    "matches_blocked_not_published": 17,
+    "silent_exclusions": 0,
+    "publisher_mode": "ONE_TIME_D110_OWNER_AUTHORIZED"
+  }
+}
