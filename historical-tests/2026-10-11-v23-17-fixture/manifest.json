@@ -1,0 +1,36 @@
+{
+  "adapter_content_hash": "sha256:1b4144acca43b9ad08f4a58365b91c3b4c6ce870b233b2c5320cbbc1c7713a61",
+  "adapter_file_sha256": "sha256:0b5d4645fb153e966aacbeeb349e238653d614647a40a60195bbcfd7ddea45cc",
+  "classification": "HISTORICAL_NONPRODUCTION_TEST_ARCHIVE",
+  "data_flow": [
+    "index.html",
+    "adapter.json"
+  ],
+  "fixture_count": 17,
+  "forbidden_production_paths": [
+    "runs/index.json",
+    "runs/*.json",
+    "audits/",
+    "data/",
+    "Stage13",
+    "Freeze009",
+    "scheduler"
+  ],
+  "production_assertions": {
+    "freeze_gate_bypassed": false,
+    "run_index_mutated": false,
+    "scheduler_used": false,
+    "stage13_executed": false
+  },
+  "qualification_summary": {
+    "diagnostic_only": 9,
+    "qualified_prematch": 8
+  },
+  "route": "historical-tests/2026-10-11-v23-17-fixture/",
+  "schema_version": "ECOBET_HISTORICAL_TEST_STATIC_MANIFEST_V1",
+  "source_board": {
+    "content_hash": "sha256:917948c93aa3053420e1b75793e2b080a5c11fe4aab597d2e678952299a883d7",
+    "file_sha256": "sha256:d13c42bae0e98f6eac150ed902d272cec3baad5fd6a299dbcaa0fa7130a53120",
+    "path": "ECOBET_V23_PREDICTION_BOARD_2026-10-11/prediction_board.json"
+  }
+}
