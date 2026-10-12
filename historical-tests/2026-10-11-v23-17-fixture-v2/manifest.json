@@ -1,0 +1,41 @@
+{
+  "classification": "HISTORICAL_NONPRODUCTION_DIAGNOSTIC_BOARD_RECONCILED",
+  "counts": {
+    "aggressive": 9,
+    "balanced": 17,
+    "favourite": 16,
+    "safe": 17
+  },
+  "data_flow": [
+    "index.html",
+    "adapter.json",
+    "result-audit.html",
+    "result_audit.json"
+  ],
+  "production_assertions": {
+    "freeze_gate_bypassed": false,
+    "run_index_mutated": false,
+    "scheduler_used": false,
+    "stage13_executed": false
+  },
+  "qualified_settlement": {
+    "hit": 26,
+    "hit_rate_percent": 89.66,
+    "market_decisions": 29,
+    "miss": 3,
+    "not_evaluable": 0,
+    "push": 0,
+    "settled": 29,
+    "void": 0
+  },
+  "route": "historical-tests/2026-10-11-v23-17-fixture-v2/",
+  "schema_version": "ECOBET_HISTORICAL_TEST_STATIC_MANIFEST_V2",
+  "source_audit": {
+    "content_hash": "sha256:e68f71d93a9687a583b83a0f4a2a770dc082dc8f021a5c6d00c1c9cbcff1d178",
+    "file_sha256": "sha256:85f46d69628469d5880c3c93085314e2ee8273c809d10866be4863eb75acf70e"
+  },
+  "source_board": {
+    "content_hash": "sha256:9561b302b5f2cd62045320865b37a5a661f380182b2d91ad055e2e8bb6c5c881",
+    "file_sha256": "sha256:052de4f5a700fbcd80117e306b793d936c99ff1fc2f3302a961ed8e3a241d8d7"
+  }
+}

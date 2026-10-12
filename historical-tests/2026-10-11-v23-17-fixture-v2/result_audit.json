@@ -1,0 +1,1138 @@
+{
+  "audit_content_hash": "sha256:e68f71d93a9687a583b83a0f4a2a770dc082dc8f021a5c6d00c1c9cbcff1d178",
+  "classification": "HISTORICAL_NONPRODUCTION_RESEARCH_AUDIT_RECONCILED",
+  "corrections": [
+    "Lecce-Bologna: 0-1 HT; balance 1H under is HIT.",
+    "Sassuolo-Milan: 1-1 FT, 0-0 HT; both goals second half.",
+    "Troyes-Marseille: 0-2 FT, 0-0 HT.",
+    "Liverpool-Manchester City: 0-3 FT, 0-0 HT; all goals second half.",
+    "Crystal Palace-Nottingham Forest: the 11 October Palace home fixture, 3-1 FT / 2-1 HT, not the later reverse fixture."
+  ],
+  "diagnostic_research_only": {
+    "hit": 16,
+    "hit_rate_percent": 61.54,
+    "market_decisions": 30,
+    "miss": 10,
+    "not_evaluable": 4,
+    "push": 0,
+    "settled": 26,
+    "void": 0
+  },
+  "fixtures": [
+    {
+      "fixture": {
+        "away_team_id": "serie_a_roma",
+        "away_team_name": "Roma",
+        "competition_id": "ITA_SERIE_A",
+        "fixture_id": "ITA2627_3f5958a95939",
+        "home_team_id": "serie_a_como",
+        "home_team_name": "Como",
+        "kickoff": "2026-10-11T10:30:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "ft": [
+          0,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ],
+        "source": "https://www.legaseriea.it/serie-a/news/como-roma-2026-2027-0-0-cronaca-risultato-gol"
+      },
+      "qualification": {
+        "classification": "RETROSPECTIVE_DIAGNOSTIC_ONLY",
+        "production_eligible": false,
+        "reason": "New call after kickoff, explicitly diagnostic only; sealed historical Football View only, no live or result input.",
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "settlements": [
+        {
+          "decision_status": "NSP",
+          "market": null,
+          "rule": "NO_DECISION",
+          "settlement": "NOT_APPLICABLE",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C_BTTS_YES",
+          "decision_status": "AVAILABLE",
+          "market": "Both teams to score — Yes",
+          "rule": "FT_BTTS",
+          "settlement": "MISS",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C_HOME_GOAL_O05",
+          "decision_status": "AVAILABLE",
+          "market": "Como over 0.5 team goals",
+          "rule": "FT_TEAM_TOTAL",
+          "settlement": "MISS",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C_HOME_GOAL_O05",
+          "decision_status": "AVAILABLE",
+          "market": "Como over 0.5 team goals",
+          "rule": "FT_TEAM_TOTAL",
+          "settlement": "MISS",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "la_liga_celta_vigo",
+        "away_team_name": "Celta Vigo",
+        "competition_id": "ESP_LA_LIGA",
+        "fixture_id": "ESP2627_8a2104dac698",
+        "home_team_id": "la_liga_elche",
+        "home_team_name": "Elche",
+        "kickoff": "2026-10-11T12:00:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "ft": [
+          0,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ],
+        "source": "https://www.laliga.com/en-CA/match/temporada-2026-2027-laliga-ea-sports-elche-cf-rc-celta-8"
+      },
+      "qualification": {
+        "classification": "RETROSPECTIVE_DIAGNOSTIC_ONLY",
+        "production_eligible": false,
+        "reason": "New call after kickoff, explicitly diagnostic only; sealed historical Football View only, no live or result input.",
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "settlements": [
+        {
+          "candidate_id": "C2_BTTS_YES",
+          "decision_status": "AVAILABLE",
+          "market": "Both teams to score — Yes",
+          "rule": "FT_BTTS",
+          "settlement": "MISS",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C3_HOME_OVER_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Elche over 0.5 team goals",
+          "rule": "FT_TEAM_TOTAL",
+          "settlement": "MISS",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C1_FT_OVER_1_5",
+          "decision_status": "AVAILABLE",
+          "market": "Full-time over 1.5 goals",
+          "rule": "FT_TOTAL",
+          "settlement": "MISS",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C1_FT_OVER_1_5",
+          "decision_status": "AVAILABLE",
+          "market": "Full-time over 1.5 goals",
+          "rule": "FT_TOTAL",
+          "settlement": "MISS",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "everton",
+        "away_team_name": "Everton",
+        "competition_id": "ENG_PREMIER_LEAGUE",
+        "fixture_id": "ENG2627_438ae550bb6f",
+        "home_team_id": "hull_city",
+        "home_team_name": "Hull City",
+        "kickoff": "2026-10-11T13:00:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "ft": [
+          2,
+          2
+        ],
+        "ht": null,
+        "source": "https://www.premierleague.com/en/news/4730161/ten-key-questions-for-matchweek-6s-fixtures"
+      },
+      "qualification": {
+        "classification": "RETROSPECTIVE_DIAGNOSTIC_ONLY",
+        "production_eligible": false,
+        "reason": "New call after kickoff, explicitly diagnostic only; sealed historical Football View only, no live or result input.",
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "settlements": [
+        {
+          "candidate_id": "C_DIRECTION_X2",
+          "decision_status": "AVAILABLE",
+          "market": "Everton or draw (X2)",
+          "rule": "FT_DIRECTION",
+          "settlement": "HIT",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C_TOTALS_UNDER_3_5",
+          "decision_status": "AVAILABLE",
+          "market": "Under 3.5 total goals",
+          "rule": "FT_TOTAL",
+          "settlement": "MISS",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C_TOTALS_UNDER_3_5",
+          "decision_status": "AVAILABLE",
+          "market": "Under 3.5 total goals",
+          "rule": "FT_TOTAL",
+          "settlement": "MISS",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C_PHASE_1H_UNDER_1_5",
+          "decision_status": "AVAILABLE",
+          "market": "First half under 1.5 goals",
+          "rule": "OFFICIAL_HT_EVIDENCE_UNAVAILABLE",
+          "settlement": "NOT_EVALUABLE",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "nottingham_forest",
+        "away_team_name": "Nottingham Forest",
+        "competition_id": "ENG_PREMIER_LEAGUE",
+        "fixture_id": "ENG2627_61f9d8e51543",
+        "home_team_id": "crystal_palace",
+        "home_team_name": "Crystal Palace",
+        "kickoff": "2026-10-11T13:00:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "correction": "Correct 11 October Palace home fixture; source route's reverse-fixture title is not used to identify the settled fixture.",
+        "ft": [
+          3,
+          1
+        ],
+        "ht": [
+          2,
+          1
+        ],
+        "source": "https://www.premierleague.com/en/match/2645543/nottingham-forest-vs-crystal-palace/stats",
+        "timeline_source": "https://www.skysports.com/football/crystal-palace-vs-nottingham-forest/559498"
+      },
+      "qualification": {
+        "classification": "DIAGNOSTIC_ONLY_MECHANICAL_COMPLETION",
+        "production_eligible": false,
+        "reason": "Original attested prematch Primary re-evaluated only through audited mechanical root/scoreline completion; not retroactively relabelled as a prematch output.",
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "settlements": [
+        {
+          "decision_status": "NSP",
+          "market": null,
+          "rule": "NO_DECISION",
+          "settlement": "NOT_APPLICABLE",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C_2H_OVER_05",
+          "decision_status": "AVAILABLE",
+          "market": "Second half over 0.5 goals",
+          "rule": "PHASE_TOTAL",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C_2H_OVER_05",
+          "decision_status": "AVAILABLE",
+          "market": "Second half over 0.5 goals",
+          "rule": "PHASE_TOTAL",
+          "settlement": "HIT",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C_X2",
+          "decision_status": "AVAILABLE",
+          "market": "Nottingham Forest X2",
+          "rule": "FT_DIRECTION",
+          "settlement": "MISS",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "ligue_1_strasbourg",
+        "away_team_name": "Strasbourg",
+        "competition_id": "FRA_LIGUE_1",
+        "fixture_id": "FRA2627_22f1241f964d",
+        "home_team_id": "ligue_1_nice",
+        "home_team_name": "Nice",
+        "kickoff": "2026-10-11T13:00:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": null,
+        "source": "https://www.ogcnice.com/fr/resume/130959/deux-a-la-suite-pour-le-gym.html"
+      },
+      "qualification": {
+        "classification": "DIAGNOSTIC_ONLY_MECHANICAL_COMPLETION",
+        "production_eligible": false,
+        "reason": "Original attested prematch Primary re-evaluated only through audited mechanical root/scoreline completion; not retroactively relabelled as a prematch output.",
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "settlements": [
+        {
+          "decision_status": "NSP",
+          "market": null,
+          "rule": "NO_DECISION",
+          "settlement": "NOT_APPLICABLE",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "c_total_under_3_5",
+          "decision_status": "AVAILABLE",
+          "market": "Under 3.5 total goals",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "c_phase_1h_under_1_5",
+          "decision_status": "AVAILABLE",
+          "market": "1st half under 1.5 goals",
+          "rule": "OFFICIAL_HT_EVIDENCE_UNAVAILABLE",
+          "settlement": "NOT_EVALUABLE",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "c_phase_1h_under_1_5",
+          "decision_status": "AVAILABLE",
+          "market": "1st half under 1.5 goals",
+          "rule": "OFFICIAL_HT_EVIDENCE_UNAVAILABLE",
+          "settlement": "NOT_EVALUABLE",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "serie_a_bologna",
+        "away_team_name": "Bologna",
+        "competition_id": "ITA_SERIE_A",
+        "fixture_id": "ITA2627_619b018968d6",
+        "home_team_id": "serie_a_lecce",
+        "home_team_name": "Lecce",
+        "kickoff": "2026-10-11T13:00:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "correction": "Official report: Bologna led at the interval.",
+        "ft": [
+          1,
+          2
+        ],
+        "ht": [
+          0,
+          1
+        ],
+        "source": "https://www.legaseriea.it/serie-a/news/lecce-bologna-2026-2027-1-2-cronaca-risultato-gol"
+      },
+      "qualification": {
+        "classification": "QUALIFIED_PREMATCH_BASELINE",
+        "production_eligible": true,
+        "reason": "Original attested prematch Primary and original completed chain preserved.",
+        "status": "QUALIFIED"
+      },
+      "settlements": [
+        {
+          "decision_status": "NSP",
+          "market": null,
+          "rule": "NO_DECISION",
+          "settlement": "NOT_APPLICABLE",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C_1H_UNDER_1_5",
+          "decision_status": "AVAILABLE",
+          "market": "First half under 1.5 goals",
+          "rule": "PHASE_TOTAL",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C_FT_OVER_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Full-time over 0.5 goals",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C_FT_OVER_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Full-time over 0.5 goals",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "serie_a_monza",
+        "away_team_name": "Monza",
+        "competition_id": "ITA_SERIE_A",
+        "fixture_id": "ITA2627_bfaa0fcd153d",
+        "home_team_id": "serie_a_lazio",
+        "home_team_name": "Lazio",
+        "kickoff": "2026-10-11T13:00:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "ft": [
+          3,
+          1
+        ],
+        "ht": [
+          2,
+          0
+        ],
+        "source": "https://www.legaseriea.it/serie-a/news/lazio-monza-2026-2027-0-0-cronaca-risultato-gol"
+      },
+      "qualification": {
+        "classification": "QUALIFIED_PREMATCH_BASELINE",
+        "production_eligible": true,
+        "reason": "Original attested prematch Primary and original completed chain preserved.",
+        "status": "QUALIFIED"
+      },
+      "settlements": [
+        {
+          "candidate_id": "C2_LAZIO_WIN",
+          "decision_status": "AVAILABLE",
+          "market": "Lazio to Win",
+          "rule": "FT_WIN",
+          "settlement": "HIT",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C3_LAZIO_HOME_OVER_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Lazio Over 0.5 Team Goals",
+          "rule": "FT_TEAM_TOTAL",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C3_LAZIO_HOME_OVER_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Lazio Over 0.5 Team Goals",
+          "rule": "FT_TEAM_TOTAL",
+          "settlement": "HIT",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C1_LAZIO_1X",
+          "decision_status": "AVAILABLE",
+          "market": "Lazio or Draw (1X)",
+          "rule": "FT_DIRECTION",
+          "settlement": "HIT",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "bundesliga_borussia_monchengladbach",
+        "away_team_name": "Borussia Monchengladbach",
+        "competition_id": "GER_BUNDESLIGA",
+        "fixture_id": "GER2627_107b88350a01",
+        "home_team_id": "bundesliga_fc_cologne",
+        "home_team_name": "FC Cologne",
+        "kickoff": "2026-10-11T13:30:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          1
+        ],
+        "source": "https://www.bundesliga.com/en/bundesliga/news/cologne-borussia-monchengladbach-match-report-highlights-matchday-5-said-el-mala-39507"
+      },
+      "qualification": {
+        "classification": "QUALIFIED_PREMATCH_BASELINE",
+        "production_eligible": true,
+        "reason": "Original attested prematch Primary and original completed chain preserved.",
+        "status": "QUALIFIED"
+      },
+      "settlements": [
+        {
+          "candidate_id": "C2_HOME_DNB",
+          "decision_status": "AVAILABLE",
+          "market": "FC Cologne draw no bet",
+          "rule": "FT_DNB",
+          "settlement": "HIT",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C3_2H_OVER_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Second half over 0.5 goals",
+          "rule": "PHASE_TOTAL",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C1_FT_OVER_1_5",
+          "decision_status": "AVAILABLE",
+          "market": "Full-time total goals over 1.5",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C1_FT_OVER_1_5",
+          "decision_status": "AVAILABLE",
+          "market": "Full-time total goals over 1.5",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "la_liga_deportivo_la_coruna",
+        "away_team_name": "Deportivo La Coruna",
+        "competition_id": "ESP_LA_LIGA",
+        "fixture_id": "ESP2627_2435f333fe3d",
+        "home_team_id": "la_liga_real_sociedad",
+        "home_team_name": "Real Sociedad",
+        "kickoff": "2026-10-11T14:15:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "ft": [
+          3,
+          2
+        ],
+        "ht": [
+          2,
+          0
+        ],
+        "source": "https://www.laliga.com/en-BR/match/temporada-2026-2027-laliga-ea-sports-real-sociedad-rc-deportivo-8"
+      },
+      "qualification": {
+        "classification": "QUALIFIED_PREMATCH_BASELINE",
+        "production_eligible": true,
+        "reason": "Original attested prematch Primary and original completed chain preserved.",
+        "status": "QUALIFIED"
+      },
+      "settlements": [
+        {
+          "candidate_id": "C_X2",
+          "decision_status": "AVAILABLE",
+          "market": "Deportivo La Coruna or Draw (X2)",
+          "rule": "FT_DIRECTION",
+          "settlement": "MISS",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C_BTTS_YES",
+          "decision_status": "AVAILABLE",
+          "market": "Both teams to score — Yes",
+          "rule": "FT_BTTS",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C_OVER_15",
+          "decision_status": "AVAILABLE",
+          "market": "Over 1.5 goals",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C_OVER_15",
+          "decision_status": "AVAILABLE",
+          "market": "Over 1.5 goals",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "ligue_1_auxerre",
+        "away_team_name": "Auxerre",
+        "competition_id": "FRA_LIGUE_1",
+        "fixture_id": "FRA2627_e2d2b8322e2a",
+        "home_team_id": "ligue_1_rennes",
+        "home_team_name": "Rennes",
+        "kickoff": "2026-10-11T15:15:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "ft": [
+          4,
+          1
+        ],
+        "ht": null,
+        "source": "https://www.staderennais.com/calendrier"
+      },
+      "qualification": {
+        "classification": "RETROSPECTIVE_DIAGNOSTIC_ONLY",
+        "production_eligible": false,
+        "reason": "New call after kickoff, explicitly diagnostic only; sealed historical Football View only, no live or result input.",
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "settlements": [
+        {
+          "candidate_id": "C_HOME_SCORES_1H",
+          "decision_status": "AVAILABLE",
+          "market": "Rennes to score in the first half",
+          "rule": "OFFICIAL_HT_EVIDENCE_UNAVAILABLE",
+          "settlement": "NOT_EVALUABLE",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C_HOME_TG_O05",
+          "decision_status": "AVAILABLE",
+          "market": "Rennes over 0.5 team goals",
+          "rule": "FT_TEAM_TOTAL",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C_FT_O05",
+          "decision_status": "AVAILABLE",
+          "market": "Over 0.5 match goals",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C_FT_O05",
+          "decision_status": "AVAILABLE",
+          "market": "Over 0.5 match goals",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "manchester_city",
+        "away_team_name": "Manchester City",
+        "competition_id": "ENG_PREMIER_LEAGUE",
+        "fixture_id": "ENG2627_b9a3e8a30773",
+        "home_team_id": "liverpool",
+        "home_team_name": "Liverpool",
+        "kickoff": "2026-10-11T15:30:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "correction": "Official report establishes a goalless first 60 minutes; all goals were second half.",
+        "ft": [
+          0,
+          3
+        ],
+        "ht": [
+          0,
+          0
+        ],
+        "source": "https://www.premierleague.com/en/news/4730421/what-weve-learned-from-sundays-premier-league-matches/"
+      },
+      "qualification": {
+        "classification": "RETROSPECTIVE_DIAGNOSTIC_ONLY",
+        "production_eligible": false,
+        "reason": "New call after kickoff, explicitly diagnostic only; sealed historical Football View only, no live or result input.",
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "settlements": [
+        {
+          "candidate_id": "C_MATCH_RANGE_2_4",
+          "decision_status": "AVAILABLE",
+          "market": "Match total goals 2–4",
+          "rule": "FT_TOTAL_RANGE_INCLUSIVE",
+          "settlement": "HIT",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C_2H_OVER_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Second half over 0.5 goals",
+          "rule": "PHASE_TOTAL",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C_2H_OVER_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Second half over 0.5 goals",
+          "rule": "PHASE_TOTAL",
+          "settlement": "HIT",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C_X2_AWAY",
+          "decision_status": "AVAILABLE",
+          "market": "Manchester City or Draw (X2)",
+          "rule": "FT_DIRECTION",
+          "settlement": "HIT",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "bundesliga_schalke_04",
+        "away_team_name": "Schalke 04",
+        "competition_id": "GER_BUNDESLIGA",
+        "fixture_id": "GER2627_6e90fb324727",
+        "home_team_id": "bundesliga_freiburg",
+        "home_team_name": "Freiburg",
+        "kickoff": "2026-10-11T15:30:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          1
+        ],
+        "source": "https://www.bundesliga.com/en/bundesliga/news/sport-club-freiburg-schalke-match-report-highlights-matchday-5-39510"
+      },
+      "qualification": {
+        "classification": "QUALIFIED_PREMATCH_BASELINE",
+        "production_eligible": true,
+        "reason": "Original attested prematch Primary and original completed chain preserved.",
+        "status": "QUALIFIED"
+      },
+      "settlements": [
+        {
+          "candidate_id": "C_TOTAL_OVER_15",
+          "decision_status": "AVAILABLE",
+          "market": "Over 1.5 match goals",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C_HOME_WIN",
+          "decision_status": "AVAILABLE",
+          "market": "Freiburg to win",
+          "rule": "FT_WIN",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C_HOME_GOAL_05",
+          "decision_status": "AVAILABLE",
+          "market": "Freiburg over 0.5 team goals",
+          "rule": "FT_TEAM_TOTAL",
+          "settlement": "HIT",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C_HOME_GOAL_05",
+          "decision_status": "AVAILABLE",
+          "market": "Freiburg over 0.5 team goals",
+          "rule": "FT_TEAM_TOTAL",
+          "settlement": "HIT",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "serie_a_ac_milan",
+        "away_team_name": "AC Milan",
+        "competition_id": "ITA_SERIE_A",
+        "fixture_id": "ITA2627_94e0c5f6dd00",
+        "home_team_id": "serie_a_sassuolo",
+        "home_team_name": "Sassuolo",
+        "kickoff": "2026-10-11T16:00:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "correction": "Official report: 63rd and 68th minute goals; both in second half.",
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ],
+        "source": "https://www.legaseriea.it/serie-a/news/sassuolo-milan-2026-2027-1-1-cronaca-risultato-gol"
+      },
+      "qualification": {
+        "classification": "QUALIFIED_PREMATCH_BASELINE",
+        "production_eligible": true,
+        "reason": "Original attested prematch Primary and original completed chain preserved.",
+        "status": "QUALIFIED"
+      },
+      "settlements": [
+        {
+          "decision_status": "NSP",
+          "market": null,
+          "rule": "NO_DECISION",
+          "settlement": "NOT_APPLICABLE",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C2_FT_OVER_1_5",
+          "decision_status": "AVAILABLE",
+          "market": "Full-time over 1.5 goals",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C1_2H_OVER_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Second half over 0.5 goals",
+          "rule": "PHASE_TOTAL",
+          "settlement": "HIT",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C1_2H_OVER_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Second half over 0.5 goals",
+          "rule": "PHASE_TOTAL",
+          "settlement": "HIT",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "la_liga_osasuna",
+        "away_team_name": "Osasuna",
+        "competition_id": "ESP_LA_LIGA",
+        "fixture_id": "ESP2627_2663f82f051a",
+        "home_team_id": "la_liga_real_betis",
+        "home_team_name": "Real Betis",
+        "kickoff": "2026-10-11T16:30:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "ft": [
+          5,
+          2
+        ],
+        "ht": [
+          3,
+          0
+        ],
+        "source": "https://www.laliga.com/en-ES/match/temporada-2026-2027-laliga-ea-sports-real-betis-ca-osasuna-8"
+      },
+      "qualification": {
+        "classification": "QUALIFIED_PREMATCH_BASELINE",
+        "production_eligible": true,
+        "reason": "Original attested prematch Primary and original completed chain preserved.",
+        "status": "QUALIFIED"
+      },
+      "settlements": [
+        {
+          "candidate_id": "C_1H_UNDER_1_5",
+          "decision_status": "AVAILABLE",
+          "market": "1st half under 1.5 goals",
+          "rule": "PHASE_TOTAL",
+          "settlement": "MISS",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C_OSASUNA_UNDER_1_5",
+          "decision_status": "AVAILABLE",
+          "market": "Osasuna under 1.5 team goals",
+          "rule": "FT_TEAM_TOTAL",
+          "settlement": "MISS",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C_BETIS_1X",
+          "decision_status": "AVAILABLE",
+          "market": "Real Betis or Draw (1X)",
+          "rule": "FT_DIRECTION",
+          "settlement": "HIT",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C_BETIS_1X",
+          "decision_status": "AVAILABLE",
+          "market": "Real Betis or Draw (1X)",
+          "rule": "FT_DIRECTION",
+          "settlement": "HIT",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "ligue_1_marseille",
+        "away_team_name": "Marseille",
+        "competition_id": "FRA_LIGUE_1",
+        "fixture_id": "FRA2627_0f2a12e2c877",
+        "home_team_id": "ligue_1_troyes",
+        "home_team_name": "Troyes",
+        "kickoff": "2026-10-11T18:45:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "correction": "Corrected official fixture binding: 0-2 FT, 0-0 HT.",
+        "ft": [
+          0,
+          2
+        ],
+        "ht": [
+          0,
+          0
+        ],
+        "source": "https://ligue1.com/fr/match-sheet/l1_championship_match_73874"
+      },
+      "qualification": {
+        "classification": "QUALIFIED_PREMATCH_BASELINE",
+        "production_eligible": true,
+        "reason": "Original attested prematch Primary and original completed chain preserved.",
+        "status": "QUALIFIED"
+      },
+      "settlements": [
+        {
+          "decision_status": "NSP",
+          "market": null,
+          "rule": "NO_DECISION",
+          "settlement": "NOT_APPLICABLE",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C_TOTAL_UNDER_4_5",
+          "decision_status": "AVAILABLE",
+          "market": "Under 4.5 total goals",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C_PHASE_2H_OVER_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Second half over 0.5 goals",
+          "rule": "PHASE_TOTAL",
+          "settlement": "HIT",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C_PHASE_2H_OVER_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Second half over 0.5 goals",
+          "rule": "PHASE_TOTAL",
+          "settlement": "HIT",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "serie_a_juventus",
+        "away_team_name": "Juventus",
+        "competition_id": "ITA_SERIE_A",
+        "fixture_id": "ITA2627_d61233fc65f1",
+        "home_team_id": "serie_a_cagliari",
+        "home_team_name": "Cagliari",
+        "kickoff": "2026-10-11T18:45:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ],
+        "source": "https://www.legaseriea.it/serie-a/news/cagliari-juventus-2026-2027-1-1-cronaca-risultato-gol"
+      },
+      "qualification": {
+        "classification": "DIAGNOSTIC_ONLY_MECHANICAL_COMPLETION",
+        "production_eligible": false,
+        "reason": "Original attested prematch Primary re-evaluated only through audited mechanical root/scoreline completion; not retroactively relabelled as a prematch output.",
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "settlements": [
+        {
+          "decision_status": "NSP",
+          "market": null,
+          "rule": "NO_DECISION",
+          "settlement": "NOT_APPLICABLE",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "C1_AWAY_X2",
+          "decision_status": "AVAILABLE",
+          "market": "Juventus or Draw (X2)",
+          "rule": "FT_DIRECTION",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "candidate_id": "C1_AWAY_X2",
+          "decision_status": "AVAILABLE",
+          "market": "Juventus or Draw (X2)",
+          "rule": "FT_DIRECTION",
+          "settlement": "HIT",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "C2_UNDER_3_5",
+          "decision_status": "AVAILABLE",
+          "market": "Under 3.5 Match Goals",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "SAFE"
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "away_team_id": "la_liga_valencia",
+        "away_team_name": "Valencia",
+        "competition_id": "ESP_LA_LIGA",
+        "fixture_id": "ESP2627_601a07c39252",
+        "home_team_id": "la_liga_racing_santander",
+        "home_team_name": "Racing Santander",
+        "kickoff": "2026-10-11T19:00:00+00:00",
+        "kickoff_resolution_status": "BI03_QUALIFIED_OBSERVED_STATE",
+        "season": "2026-2027"
+      },
+      "official_result": {
+        "ft": [
+          2,
+          2
+        ],
+        "ht": [
+          1,
+          1
+        ],
+        "source": "https://www.valenciacf.com/cronica-empate-entre-el-real-racing-club-de-santander-y-el-valencia-cf-2-2"
+      },
+      "qualification": {
+        "classification": "DIAGNOSTIC_ONLY_MECHANICAL_COMPLETION",
+        "production_eligible": false,
+        "reason": "Original attested prematch Primary re-evaluated only through audited mechanical root/scoreline completion; not retroactively relabelled as a prematch output.",
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "settlements": [
+        {
+          "decision_status": "NSP",
+          "market": null,
+          "rule": "NO_DECISION",
+          "settlement": "NOT_APPLICABLE",
+          "tier": "AGGRESSIVE"
+        },
+        {
+          "candidate_id": "c_over_1_5",
+          "decision_status": "AVAILABLE",
+          "market": "Over 1.5 full-time goals",
+          "rule": "FT_TOTAL",
+          "settlement": "HIT",
+          "tier": "BALANCED"
+        },
+        {
+          "decision_status": "NSP",
+          "market": null,
+          "rule": "NO_DECISION",
+          "settlement": "NOT_APPLICABLE",
+          "tier": "FAVOURITE"
+        },
+        {
+          "candidate_id": "c_home_over_0_5",
+          "decision_status": "AVAILABLE",
+          "market": "Racing Santander over 0.5 team goals",
+          "rule": "FT_TEAM_TOTAL",
+          "settlement": "HIT",
+          "tier": "SAFE"
+        }
+      ]
+    }
+  ],
+  "production_assertions": {
+    "counts_toward_regular_performance": false,
+    "prediction_core_mutated": false,
+    "production_result_audit_invoked": false,
+    "published_run_record_consumed": false
+  },
+  "qualified_favourite_unique_settlement": {
+    "hit": 8,
+    "hit_rate_percent": 100.0,
+    "identical_safe_markets_not_double_counted": 7,
+    "market_decisions": 8,
+    "miss": 0,
+    "not_evaluable": 0,
+    "push": 0,
+    "settled": 8,
+    "unique_favourite_positions": 8,
+    "void": 0
+  },
+  "qualified_prematch_performance": {
+    "hit": 26,
+    "hit_rate_percent": 89.66,
+    "market_decisions": 29,
+    "miss": 3,
+    "not_evaluable": 0,
+    "push": 0,
+    "settled": 29,
+    "void": 0
+  },
+  "schema_version": "ECOBET_HISTORICAL_TEST_RESULT_AUDIT_V2",
+  "settlement_contract": {
+    "phase_evidence_policy": "NO_PHASE_SETTLEMENT_WITHOUT_BOUND_HT",
+    "range_policy": "INCLUSIVE_ENDPOINTS",
+    "semantics": "DISPLAYED_OD07_ALLOWED_MARKET_STANDARD_SETTLEMENT"
+  },
+  "source_board": {
+    "content_hash": "sha256:9561b302b5f2cd62045320865b37a5a661f380182b2d91ad055e2e8bb6c5c881",
+    "file_sha256": "sha256:052de4f5a700fbcd80117e306b793d936c99ff1fc2f3302a961ed8e3a241d8d7",
+    "path": "C:\\Users\\Giamm\\Documents\\Codex\\2026-10-10\\files-pasted-by-the-user-ecobet\\outputs\\ECOBET_V23_PREDICTION_BOARD_RECONCILED_V2_2026-10-12\\prediction_board_reconciled_v2.json"
+  }
+}
