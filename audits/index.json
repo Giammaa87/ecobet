@@ -456,6 +456,22 @@
           "hit_rate": 0.8571428571428571
         },
         "run_id": "2026-10-13_0655"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-10-13_RESULT_AUDIT_V24_CONSUMER_REV_20261025.json",
+        "generated_at": "2026-10-24T22:56:10Z",
+        "id": "2026-10-13_2026-10-13_0655_V24_CONSUMER_REV_20261025",
+        "kpi": {
+          "HIT": 6,
+          "MISS": 1,
+          "NSP": 0,
+          "PENDING": 0,
+          "PUSH": 0,
+          "denominator": 7,
+          "hit_rate": 0.8571428571428571
+        },
+        "run_id": "2026-10-13_0655"
       }
     ],
     "2026-10-14": [
@@ -464,6 +480,22 @@
         "file": "ECOBET_2026-10-14_RESULT_AUDIT_V24.json",
         "generated_at": "2026-10-24T22:51:48Z",
         "id": "2026-10-14_2026-10-14_0008_V24",
+        "kpi": {
+          "HIT": 4,
+          "MISS": 0,
+          "NSP": 0,
+          "PENDING": 0,
+          "PUSH": 0,
+          "denominator": 4,
+          "hit_rate": 1.0
+        },
+        "run_id": "2026-10-14_0008"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-10-14_RESULT_AUDIT_V24_CONSUMER_REV_20261025.json",
+        "generated_at": "2026-10-24T22:56:10Z",
+        "id": "2026-10-14_2026-10-14_0008_V24_CONSUMER_REV_20261025",
         "kpi": {
           "HIT": 4,
           "MISS": 0,
@@ -492,6 +524,22 @@
           "hit_rate": 0.8
         },
         "run_id": "2026-10-15_1058"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-10-15_RESULT_AUDIT_V24_CONSUMER_REV_20261025.json",
+        "generated_at": "2026-10-24T22:56:10Z",
+        "id": "2026-10-15_2026-10-15_1058_V24_CONSUMER_REV_20261025",
+        "kpi": {
+          "HIT": 4,
+          "MISS": 1,
+          "NSP": 2,
+          "PENDING": 0,
+          "PUSH": 0,
+          "denominator": 5,
+          "hit_rate": 0.8
+        },
+        "run_id": "2026-10-15_1058"
       }
     ],
     "2026-10-16": [
@@ -500,6 +548,22 @@
         "file": "ECOBET_2026-10-16_RESULT_AUDIT_V24.json",
         "generated_at": "2026-10-24T22:51:48Z",
         "id": "2026-10-16_2026-10-16_0855_V24",
+        "kpi": {
+          "HIT": 2,
+          "MISS": 1,
+          "NSP": 1,
+          "PENDING": 0,
+          "PUSH": 0,
+          "denominator": 3,
+          "hit_rate": 0.6666666666666666
+        },
+        "run_id": "2026-10-16_0855"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-10-16_RESULT_AUDIT_V24_CONSUMER_REV_20261025.json",
+        "generated_at": "2026-10-24T22:56:10Z",
+        "id": "2026-10-16_2026-10-16_0855_V24_CONSUMER_REV_20261025",
         "kpi": {
           "HIT": 2,
           "MISS": 1,
@@ -528,6 +592,22 @@
           "hit_rate": 0.4444444444444444
         },
         "run_id": "2026-10-17_1204"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-10-17_RESULT_AUDIT_V24_CONSUMER_REV_20261025.json",
+        "generated_at": "2026-10-24T22:56:10Z",
+        "id": "2026-10-17_2026-10-17_1204_V24_CONSUMER_REV_20261025",
+        "kpi": {
+          "HIT": 4,
+          "MISS": 5,
+          "NSP": 0,
+          "PENDING": 0,
+          "PUSH": 0,
+          "denominator": 9,
+          "hit_rate": 0.4444444444444444
+        },
+        "run_id": "2026-10-17_1204"
       }
     ],
     "2026-10-18": [
@@ -536,6 +616,22 @@
         "file": "ECOBET_2026-10-18_RESULT_AUDIT_V24.json",
         "generated_at": "2026-10-24T22:51:48Z",
         "id": "2026-10-18_2026-10-18_1308_V24",
+        "kpi": {
+          "HIT": 7,
+          "MISS": 2,
+          "NSP": 1,
+          "PENDING": 0,
+          "PUSH": 0,
+          "denominator": 9,
+          "hit_rate": 0.7777777777777778
+        },
+        "run_id": "2026-10-18_1308"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-10-18_RESULT_AUDIT_V24_CONSUMER_REV_20261025.json",
+        "generated_at": "2026-10-24T22:56:10Z",
+        "id": "2026-10-18_2026-10-18_1308_V24_CONSUMER_REV_20261025",
         "kpi": {
           "HIT": 7,
           "MISS": 2,
@@ -564,6 +660,22 @@
           "hit_rate": 0.5
         },
         "run_id": "2026-10-19_0126"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-10-19_RESULT_AUDIT_V24_CONSUMER_REV_20261025.json",
+        "generated_at": "2026-10-24T22:56:10Z",
+        "id": "2026-10-19_2026-10-19_0126_V24_CONSUMER_REV_20261025",
+        "kpi": {
+          "HIT": 1,
+          "MISS": 1,
+          "NSP": 1,
+          "PENDING": 0,
+          "PUSH": 0,
+          "denominator": 2,
+          "hit_rate": 0.5
+        },
+        "run_id": "2026-10-19_0126"
       }
     ],
     "2026-10-20": [
@@ -572,6 +684,22 @@
         "file": "ECOBET_2026-10-20_RESULT_AUDIT_V24.json",
         "generated_at": "2026-10-24T22:51:48Z",
         "id": "2026-10-20_2026-10-20_0149_V24",
+        "kpi": {
+          "HIT": 3,
+          "MISS": 2,
+          "NSP": 1,
+          "PENDING": 0,
+          "PUSH": 0,
+          "denominator": 5,
+          "hit_rate": 0.6
+        },
+        "run_id": "2026-10-20_0149"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-10-20_RESULT_AUDIT_V24_CONSUMER_REV_20261025.json",
+        "generated_at": "2026-10-24T22:56:10Z",
+        "id": "2026-10-20_2026-10-20_0149_V24_CONSUMER_REV_20261025",
         "kpi": {
           "HIT": 3,
           "MISS": 2,
@@ -600,10 +728,26 @@
           "hit_rate": 0.631578947368421
         },
         "run_id": "2026-10-24_0809"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-10-24_RESULT_AUDIT_V24_CONSUMER_REV_20261025.json",
+        "generated_at": "2026-10-24T22:56:10Z",
+        "id": "2026-10-24_2026-10-24_0809_V24_CONSUMER_REV_20261025",
+        "kpi": {
+          "HIT": 12,
+          "MISS": 7,
+          "NSP": 0,
+          "PENDING": 0,
+          "PUSH": 0,
+          "denominator": 19,
+          "hit_rate": 0.631578947368421
+        },
+        "run_id": "2026-10-24_0809"
       }
     ]
   },
-  "generated_at": "2026-10-24T22:53:43Z",
+  "generated_at": "2026-10-24T22:56:11Z",
   "record_type": "audit_index",
   "schema_version": "1.0"
 }
