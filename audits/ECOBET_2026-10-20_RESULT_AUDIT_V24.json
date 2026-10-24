@@ -1,0 +1,399 @@
+{
+  "append_only": true,
+  "audit_generated_at": "2026-10-24T22:51:48Z",
+  "audit_id": "2026-10-20_2026-10-20_0149_V24",
+  "authority": {
+    "publication_admission": "C:\\ECOBET\\ecobet_v24_release\\authority\\ECOBET_RESULT_AUDIT_PUBLICATION_APPROVAL_V1.md",
+    "sha256": "sha256:63d5e1cdf4c5fce5363d882e84002d86e6f7eeb4581d05eff2daa6480d7935cd"
+  },
+  "match_audit_records": [
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "MISS",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "MISS"
+          },
+          "safe": {
+            "outcome": "MISS"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-0",
+              "2-1",
+              "3-1",
+              "1-1",
+              "4-1"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "2-0",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UCL2627_3ebfa71dd89f",
+      "immutable_prediction_core_hash": "sha256:4e658f8072fe34b34439e3a35aac75b90d19392b0e4904c9fa6d7ce3afb06c0f",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 0,
+            "home": 2
+          },
+          "identity": "PREVIOUS_GATE_D",
+          "score": {
+            "away": 1,
+            "home": 5
+          },
+          "source": "BSD",
+          "status": "CONFIRMED_BSD_SINGLE_SOURCE"
+        },
+        "evidence_manifest_hash": "sha256:a00c06ab7d3bfc180d43cf17b274e712dccaa4cfd2edc660097cd853aed282ed",
+        "score_90_plus_stoppage": {
+          "away": 1,
+          "home": 5
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:3856048408a45cccd90604fb4116557b320c2c7a8c1435288285000b1011c022"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "NSP",
+          "sealed_original": true,
+          "state": "NSP"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "UNMAPPABLE",
+            "reason": "TEAM_INTERVAL_SIDE_NOT_EXACTLY_BOUND"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-0",
+              "2-1",
+              "1-1",
+              "0-1"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "2-0",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UCL2627_455a1d584107",
+      "immutable_prediction_core_hash": "sha256:202ff56d3c57141e411d47e4da9dac0245fd70d088efc68c82420b407174288e",
+      "result_settlement": {
+        "evidence": {
+          "half_time": null,
+          "identity": "PREVIOUS_GATE_D",
+          "score": {
+            "away": 0,
+            "home": 4
+          },
+          "source": "API_FOOTBALL",
+          "status": "CONFIRMED_API_SINGLE_SOURCE"
+        },
+        "evidence_manifest_hash": "sha256:e6ba78d87ba78b1c25757ec47c6e62603c3e0135171970b2e783425f9835571d",
+        "score_90_plus_stoppage": {
+          "away": 0,
+          "home": 4
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:9c258e31ac5932c7a1ca086d33e67f09c61b7e56ddc4c81e3fcabcca74e843fe"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "HIT"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "1-2",
+              "1-1",
+              "2-2",
+              "2-1",
+              "1-0"
+            ],
+            "outcome": "HIT"
+          },
+          "modal_score": {
+            "original": "1-2",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UCL2627_5b2c664b814b",
+      "immutable_prediction_core_hash": "sha256:2be3af13b7093ca75833fdc70b971a9f9836a385c00ee638ca5dabc6671a9172",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 0,
+            "home": 1
+          },
+          "identity": "PREVIOUS_GATE_D",
+          "score": {
+            "away": 1,
+            "home": 1
+          },
+          "source": "API_FOOTBALL",
+          "status": "CONFIRMED_CROSS_VERIFIED"
+        },
+        "evidence_manifest_hash": "sha256:f63904f15a526074bd73401334d21b54383a19725b1f0d739eee51b9d0130b64",
+        "score_90_plus_stoppage": {
+          "away": 1,
+          "home": 1
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:7c845bb7b1de31188374294d8fc20c3a1ed7b02c0c80feafde3b4bb32fe293a4"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "MISS",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "MISS"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-1",
+              "1-1",
+              "1-2",
+              "1-4"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "2-1",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UCL2627_6b852e75969b",
+      "immutable_prediction_core_hash": "sha256:701530b2bd64dde9febcc56c80db5833fc0f4909ffb676a60c3eb9243b79a691",
+      "result_settlement": {
+        "evidence": {
+          "half_time": null,
+          "identity": "PREVIOUS_GATE_D",
+          "score": {
+            "away": 3,
+            "home": 4
+          },
+          "source": "API_FOOTBALL",
+          "status": "CONFIRMED_API_SINGLE_SOURCE"
+        },
+        "evidence_manifest_hash": "sha256:26a5b15fb504db437aa6c5657dabb99bb007c7443766dd81fb3f3c10bd35466f",
+        "score_90_plus_stoppage": {
+          "away": 3,
+          "home": 4
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:86d48a69504a75ed7a5930adfc35b3ef28a7815604111e3dddca49a818c74565"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "MISS"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "1-1",
+              "2-1",
+              "1-2",
+              "3-2"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "1-1",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UCL2627_abdc3bf2dd3a",
+      "immutable_prediction_core_hash": "sha256:e27401ffc706ef890984677f7b854c0c7514365ab2b672523e13ff2183228405",
+      "result_settlement": {
+        "evidence": {
+          "half_time": null,
+          "identity": "PREVIOUS_GATE_D",
+          "score": {
+            "away": 3,
+            "home": 4
+          },
+          "source": "API_FOOTBALL",
+          "status": "CONFIRMED_API_SINGLE_SOURCE"
+        },
+        "evidence_manifest_hash": "sha256:d4b4323bada4a559ff6eb8ebf9b75e68b512abf479b5df59b6ade2e4dfb86aab",
+        "score_90_plus_stoppage": {
+          "away": 3,
+          "home": 4
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:8ae442126bb85d272d9854f27413470f805d1a217b10b61891c7abea17d03396"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "HIT"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "MISS"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-3",
+              "2-2",
+              "1-3",
+              "3-2"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "2-3",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UCL2627_ddd1ca3c6faa",
+      "immutable_prediction_core_hash": "sha256:43eae3c197b36f1a5ff82862aec0ed3539f77d23245aa92521feb49b778b62d2",
+      "result_settlement": {
+        "evidence": {
+          "half_time": null,
+          "identity": "PREVIOUS_GATE_D",
+          "score": {
+            "away": 2,
+            "home": 4
+          },
+          "source": "API_FOOTBALL",
+          "status": "CONFIRMED_API_SINGLE_SOURCE"
+        },
+        "evidence_manifest_hash": "sha256:279debaffad68e91a97e34744474d250f06da0b40e5087efc857af595f2500dc",
+        "score_90_plus_stoppage": {
+          "away": 2,
+          "home": 4
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:abecba5fec714bb00ada588c72a84ae87087e2cb43f2f12d673213e8f401b3db"
+    }
+  ],
+  "record_type": "result_audit",
+  "run_audit_record": {
+    "match_coverage": 6,
+    "mode": "HISTORICAL_RECOVERY",
+    "model_kpis": {
+      "favourite": {
+        "HIT": 3,
+        "MISS": 2,
+        "NSP": 1,
+        "PENDING": 0,
+        "PUSH": 0,
+        "denominator": 5,
+        "hit_rate": 0.6
+      }
+    },
+    "publication_based_admission": true,
+    "run_id": "2026-10-20_0149"
+  },
+  "schema_version": "ECOBET_RESULT_AUDIT_V2_4"
+}

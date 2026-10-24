@@ -1,0 +1,504 @@
+{
+  "append_only": true,
+  "audit_generated_at": "2026-10-24T22:51:48Z",
+  "audit_id": "2026-10-15_2026-10-15_1058_V24",
+  "authority": {
+    "publication_admission": "C:\\ECOBET\\ecobet_v24_release\\authority\\ECOBET_RESULT_AUDIT_PUBLICATION_APPROVAL_V1.md",
+    "sha256": "sha256:63d5e1cdf4c5fce5363d882e84002d86e6f7eeb4581d05eff2daa6480d7935cd"
+  },
+  "match_audit_records": [
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-0",
+              "3-1",
+              "2-1",
+              "1-1",
+              "3-2",
+              "0-1"
+            ],
+            "outcome": "HIT"
+          },
+          "modal_score": {
+            "original": "2-0",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UECL2627_83d64e0ab619",
+      "immutable_prediction_core_hash": "sha256:fefdc38cfde6baf5224e9504f826b9f3ebb75dcacf9699f8087c56cd2c604906",
+      "result_settlement": {
+        "evidence": {
+          "half_time": null,
+          "identity": {
+            "bsd_kickoff_utc": "2026-10-15T19:00:00Z",
+            "identity_proof_not_score_only": true,
+            "original_kickoff_utc": "2026-10-15T19:00:00Z",
+            "score_pair_agrees_with_official": true,
+            "unique_bsd_event_id": true
+          },
+          "score": {
+            "away": 2,
+            "home": 3
+          },
+          "source": "BSD_EVENTS+UEFA",
+          "status": "E5_OVERLAY_CANDIDATE"
+        },
+        "evidence_manifest_hash": "sha256:046fe7737919a048d7d9c5ad3dd71dff099f970d1dc15782a12cabe21eca9cc5",
+        "score_90_plus_stoppage": {
+          "away": 2,
+          "home": 3
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:0e6d1e3f2089f3b250a7261b42cd027b894399c02d13e352494c791d412871b0"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "NSP",
+          "sealed_original": true,
+          "state": "NSP"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-1",
+              "1-0",
+              "1-1",
+              "2-0",
+              "0-1",
+              "3-2"
+            ],
+            "outcome": "HIT"
+          },
+          "modal_score": {
+            "original": "2-1",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UECL2627_ec6bf8b69f05",
+      "immutable_prediction_core_hash": "sha256:72b37d549c10234ca6cee05de0370fd71985d8880f0d590a24f177d71c56f8e5",
+      "result_settlement": {
+        "evidence": {
+          "half_time": null,
+          "identity": {
+            "bsd_kickoff_utc": "2026-10-15T16:45:00Z",
+            "identity_proof_not_score_only": true,
+            "original_kickoff_utc": "2026-10-15T16:45:00Z",
+            "score_pair_agrees_with_official": true,
+            "unique_bsd_event_id": true
+          },
+          "score": {
+            "away": 1,
+            "home": 1
+          },
+          "source": "BSD_EVENTS+UEFA",
+          "status": "E5_OVERLAY_CANDIDATE"
+        },
+        "evidence_manifest_hash": "sha256:2f0948d6aa81b703ee172d40e6413f157ab91da7b231121338049b4302fe5945",
+        "score_90_plus_stoppage": {
+          "away": 1,
+          "home": 1
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:730cecc14dcef6f2590eaecb97659f8770f1f0b7700cbe17191350dd378b1c8d"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "MISS",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "MISS"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "1-0",
+              "0-0",
+              "1-1",
+              "0-1",
+              "2-2"
+            ],
+            "outcome": "HIT"
+          },
+          "modal_score": {
+            "original": "1-0",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UECL2627_f27d3440a206",
+      "immutable_prediction_core_hash": "sha256:420daa0586b1c76888d953de4640d7fe35b2f32d5e12add425bedb2a4e962950",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity": {
+            "candidate_count": 1,
+            "method": "EXACT_PROVIDER_NAMES_AND_KICKOFF",
+            "provider_away_team_id": 50,
+            "provider_home_team_id": 359,
+            "required_kickoff": "2026-10-15T16:45:00+00:00"
+          },
+          "score": {
+            "away": 1,
+            "home": 1
+          },
+          "source": "BSD_EVENTS",
+          "status": "E4_NUMERIC_OR_EXACT_IDENTITY"
+        },
+        "evidence_manifest_hash": "sha256:7cc3fe9d8e4a39ee8dcdcd994c72c909889eea95420ca2297cf66e899be8557d",
+        "score_90_plus_stoppage": {
+          "away": 1,
+          "home": 1
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:563b7eae9b80f08efd1395ff6df49fc46e2d783de2067ab76a457f79c124bbc2"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-1",
+              "1-1",
+              "2-2",
+              "1-2"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "2-1",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UEL2627_04207eeca7d5",
+      "immutable_prediction_core_hash": "sha256:987d724604be40f291c13056a086eafb7386fc9fdbf3cd1ecd5f3253df149afb",
+      "result_settlement": {
+        "evidence": {
+          "half_time": null,
+          "identity": {
+            "bsd_kickoff_utc": "2026-10-15T19:00:00Z",
+            "identity_proof_not_score_only": true,
+            "original_kickoff_utc": "2026-10-15T19:00:00Z",
+            "score_pair_agrees_with_official": true,
+            "unique_bsd_event_id": true
+          },
+          "score": {
+            "away": 3,
+            "home": 2
+          },
+          "source": "BSD_EVENTS+UEFA",
+          "status": "E5_OVERLAY_CANDIDATE"
+        },
+        "evidence_manifest_hash": "sha256:18ac2ce1f8d09e566d84d6be33ce92a6bbb88dc2aa6fb194647ebdf0fa949c0e",
+        "score_90_plus_stoppage": {
+          "away": 3,
+          "home": 2
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:2f5d5a28a409e8509b4e47cbe636f6c5255a44ba06af7262c051d1122ac1f492"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "NSP",
+          "sealed_original": true,
+          "state": "NSP"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "HIT"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-0",
+              "2-1",
+              "1-0",
+              "1-1",
+              "1-2",
+              "0-0"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "2-0",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UEL2627_8c04a51533e4",
+      "immutable_prediction_core_hash": "sha256:1aead4435d2e8bd487eb11c93fca6beeb082fdf8acba724f5581801bd2f10741",
+      "result_settlement": {
+        "evidence": {
+          "half_time": null,
+          "identity": {
+            "bsd_kickoff_utc": "2026-10-15T16:45:00Z",
+            "identity_proof_not_score_only": true,
+            "original_kickoff_utc": "2026-10-15T16:45:00Z",
+            "score_pair_agrees_with_official": true,
+            "unique_bsd_event_id": true
+          },
+          "score": {
+            "away": 2,
+            "home": 3
+          },
+          "source": "BSD_EVENTS+UEFA",
+          "status": "E5_OVERLAY_CANDIDATE"
+        },
+        "evidence_manifest_hash": "sha256:5166d5160cca802e066b61d61664abae598060bcd58c28e7cc1635ae2eaece09",
+        "score_90_plus_stoppage": {
+          "away": 2,
+          "home": 3
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:e40fdfcf22c52eca19323eda04773569e2fc41d993e15374661f6792d3b3c33a"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "0-1",
+              "0-2",
+              "1-1",
+              "1-0"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "0-1",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UEL2627_b8863f278102",
+      "immutable_prediction_core_hash": "sha256:d96a19a6f21c23b0ab800b4b1ae802463c4d705a8db6db51f3ddb033d9106705",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 0,
+            "home": 1
+          },
+          "identity": {
+            "candidate_count": 1,
+            "method": "EXACT_PROVIDER_NAMES_AND_KICKOFF",
+            "provider_away_team_id": 73,
+            "provider_home_team_id": 49,
+            "required_kickoff": "2026-10-15T19:00:00+00:00"
+          },
+          "score": {
+            "away": 2,
+            "home": 1
+          },
+          "source": "BSD_EVENTS",
+          "status": "E4_NUMERIC_OR_EXACT_IDENTITY"
+        },
+        "evidence_manifest_hash": "sha256:57a3b33d59b92802b95042ded53c6058b896e483852696628d13f703337192be",
+        "score_90_plus_stoppage": {
+          "away": 2,
+          "home": 1
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:001e1815afc63b11d86346eb361506ad8fc2a56ffc3e82cc52ac06def25c05ec"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "1-1",
+              "2-1",
+              "1-2"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "1-1",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UEL2627_bd45f0340d54",
+      "immutable_prediction_core_hash": "sha256:86d8dee870ee5f27e84c97cf7a13137e5325997f0992dad65e5a25a2834beeda",
+      "result_settlement": {
+        "evidence": {
+          "half_time": null,
+          "identity": {
+            "bsd_kickoff_utc": "2026-10-15T19:00:00Z",
+            "identity_proof_not_score_only": true,
+            "original_kickoff_utc": "2026-10-15T19:00:00Z",
+            "score_pair_agrees_with_official": true,
+            "unique_bsd_event_id": true
+          },
+          "score": {
+            "away": 0,
+            "home": 1
+          },
+          "source": "BSD_EVENTS+UEFA",
+          "status": "E5_OVERLAY_CANDIDATE"
+        },
+        "evidence_manifest_hash": "sha256:e80ac33a017d3c2b98b6224c140514cc6fefe2d3df4aba94636b8b0ad1db2ead",
+        "score_90_plus_stoppage": {
+          "away": 0,
+          "home": 1
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:3bd1e7ff223b1f2dae9bb8b927cebab73c9797161a50c2ae3eaa8004954e58f1"
+    }
+  ],
+  "record_type": "result_audit",
+  "run_audit_record": {
+    "match_coverage": 7,
+    "mode": "HISTORICAL_RECOVERY",
+    "model_kpis": {
+      "favourite": {
+        "HIT": 4,
+        "MISS": 1,
+        "NSP": 2,
+        "PENDING": 0,
+        "PUSH": 0,
+        "denominator": 5,
+        "hit_rate": 0.8
+      }
+    },
+    "publication_based_admission": true,
+    "run_id": "2026-10-15_1058"
+  },
+  "schema_version": "ECOBET_RESULT_AUDIT_V2_4"
+}

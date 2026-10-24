@@ -1,0 +1,288 @@
+{
+  "append_only": true,
+  "audit_generated_at": "2026-10-24T22:51:48Z",
+  "audit_id": "2026-10-14_2026-10-14_0008_V24",
+  "authority": {
+    "publication_admission": "C:\\ECOBET\\ecobet_v24_release\\authority\\ECOBET_RESULT_AUDIT_PUBLICATION_APPROVAL_V1.md",
+    "sha256": "sha256:63d5e1cdf4c5fce5363d882e84002d86e6f7eeb4581d05eff2daa6480d7935cd"
+  },
+  "match_audit_records": [
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "1-1",
+              "1-2",
+              "2-1",
+              "0-0"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "1-1",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UCL2627_2a5abf6b3bc8",
+      "immutable_prediction_core_hash": "sha256:7484a9101c93446b7723c8ab57cff369b180af53793663bd068991fbd582ef68",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 1,
+            "home": 1
+          },
+          "identity": "PREVIOUS_GATE_D",
+          "score": {
+            "away": 1,
+            "home": 3
+          },
+          "source": "BSD",
+          "status": "CONFIRMED_BSD_SINGLE_SOURCE"
+        },
+        "evidence_manifest_hash": "sha256:8062305796b7549ebeadde54fc826c7a49928b71a4f10daa2dfdb9a66898aed3",
+        "score_90_plus_stoppage": {
+          "away": 1,
+          "home": 3
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:412b999950e66328dc55a7175897a8076219ff6330d4e935ad7fb689b12a2f18"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-1",
+              "1-1",
+              "2-0",
+              "1-2",
+              "3-2"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "2-1",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UCL2627_5369e6207bae",
+      "immutable_prediction_core_hash": "sha256:270d7a6a69f7a293b372673919c17562c2d7d8345084030bbb0d00a0f001e875",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 3,
+            "home": 0
+          },
+          "identity": "PREVIOUS_GATE_D",
+          "score": {
+            "away": 4,
+            "home": 2
+          },
+          "source": "BSD",
+          "status": "CONFIRMED_BSD_SINGLE_SOURCE"
+        },
+        "evidence_manifest_hash": "sha256:0b4a304aebc43098598c8c446627e9c687f51ea401d1b50552fdc3fcfb4e3fa1",
+        "score_90_plus_stoppage": {
+          "away": 4,
+          "home": 2
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:64d1e10610b5372541c25adfdb6b4021c2983ca67c966b51cde4faa6761176dd"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "0-1",
+              "0-2",
+              "1-1",
+              "1-0",
+              "0-0"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "0-1",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UCL2627_b75a12bc3117",
+      "immutable_prediction_core_hash": "sha256:8ff16355015edc4e281892bdfee6543e52e83a9ccfb7e17d0aa251b441ae759a",
+      "result_settlement": {
+        "evidence": {
+          "half_time": null,
+          "identity": {
+            "bsd_kickoff_utc": "2026-10-14T16:45:00Z",
+            "identity_proof_not_score_only": true,
+            "original_kickoff_utc": "2026-10-14T16:45:00Z",
+            "score_pair_agrees_with_official": true,
+            "unique_bsd_event_id": true
+          },
+          "score": {
+            "away": 6,
+            "home": 3
+          },
+          "source": "BSD_EVENTS+UEFA",
+          "status": "E5_OVERLAY_CANDIDATE"
+        },
+        "evidence_manifest_hash": "sha256:27ab0ddae3c204677660601357a878c5633dfb2254c1280bf3ed4f893f42ddab",
+        "score_90_plus_stoppage": {
+          "away": 6,
+          "home": 3
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:52e397b1f74f1e6e8586ff71e1545c32ac376712d47eb9fd78c924cfa55d27a0"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "MISS"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-1",
+              "2-0",
+              "1-1",
+              "1-2",
+              "1-0"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "2-1",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "UCL2627_f7c7c66d97ea",
+      "immutable_prediction_core_hash": "sha256:348fedc6ff66cb2355ee61f69afe210cec73e1992d3d7c65066c8fcce46f14a0",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 1,
+            "home": 1
+          },
+          "identity": "PREVIOUS_GATE_D",
+          "score": {
+            "away": 4,
+            "home": 3
+          },
+          "source": "BSD",
+          "status": "CONFIRMED_BSD_SINGLE_SOURCE"
+        },
+        "evidence_manifest_hash": "sha256:a24ea6938f768b324f5b8681e72c1912412b0256e3daa54b1f3d06524d009c9a",
+        "score_90_plus_stoppage": {
+          "away": 4,
+          "home": 3
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:24d4bee5333f7c6e60a9e5db4470732c6667052b82535d7adf1d30afb19b8a48"
+    }
+  ],
+  "record_type": "result_audit",
+  "run_audit_record": {
+    "match_coverage": 4,
+    "mode": "HISTORICAL_RECOVERY",
+    "model_kpis": {
+      "favourite": {
+        "HIT": 4,
+        "MISS": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 0,
+        "denominator": 4,
+        "hit_rate": 1.0
+      }
+    },
+    "publication_based_admission": true,
+    "run_id": "2026-10-14_0008"
+  },
+  "schema_version": "ECOBET_RESULT_AUDIT_V2_4"
+}

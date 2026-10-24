@@ -1,0 +1,767 @@
+{
+  "append_only": true,
+  "audit_generated_at": "2026-10-24T22:51:48Z",
+  "audit_id": "2026-10-18_2026-10-18_1308_V24",
+  "authority": {
+    "publication_admission": "C:\\ECOBET\\ecobet_v24_release\\authority\\ECOBET_RESULT_AUDIT_PUBLICATION_APPROVAL_V1.md",
+    "sha256": "sha256:63d5e1cdf4c5fce5363d882e84002d86e6f7eeb4581d05eff2daa6480d7935cd"
+  },
+  "match_audit_records": [
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "HIT"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "0-1",
+              "0-2",
+              "1-1",
+              "2-1"
+            ],
+            "outcome": "HIT"
+          },
+          "modal_score": {
+            "original": "0-1",
+            "outcome": "HIT"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "ENG2627_e3c6e67820fe",
+      "immutable_prediction_core_hash": "sha256:564e495a10b31ff2de499b3cd618e5663565e5560a9ca9ff1317b43f4558d532",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity": {
+            "candidate_count": 1,
+            "canonical_away_team_id": "arsenal",
+            "canonical_home_team_id": "nottingham_forest",
+            "exact_local_fixture_id_crosswalk": true,
+            "existing_bsd_away_team_id": "18",
+            "existing_bsd_home_team_id": "15",
+            "method": "EXISTING_BSD_NUMERIC_TEAM_ID_CHAIN",
+            "provider_away_team_id": 18,
+            "provider_home_team_id": 15
+          },
+          "score": {
+            "away": 1,
+            "home": 0
+          },
+          "source": "BSD_EVENTS",
+          "status": "E4_NUMERIC_OR_EXACT_IDENTITY"
+        },
+        "evidence_manifest_hash": "sha256:33b1e69fb0e82787fd039a4b5b11fe4c0b6e3c6c32c3a92a1523d840185c0e9a",
+        "score_90_plus_stoppage": {
+          "away": 1,
+          "home": 0
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:42de1764c3c17339055f6663292c2815b09d4fe8d08507f032f830c117c23dca"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "HIT"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-0",
+              "3-0",
+              "2-1",
+              "1-1"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "2-0",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "ESP2627_0ff1cfe5defe",
+      "immutable_prediction_core_hash": "sha256:d28d97c57ee5f90184cdfde051c00c5f0c645614bc14d0a1b43ae2d68f72909f",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 0,
+            "home": 2
+          },
+          "identity": {
+            "candidate_count": 1,
+            "canonical_away_team_id": "la_liga_sevilla",
+            "canonical_home_team_id": "la_liga_real_madrid",
+            "exact_local_fixture_id_crosswalk": true,
+            "existing_bsd_away_team_id": "52",
+            "existing_bsd_home_team_id": "57",
+            "method": "EXISTING_BSD_NUMERIC_TEAM_ID_CHAIN",
+            "provider_away_team_id": 52,
+            "provider_home_team_id": 57
+          },
+          "score": {
+            "away": 1,
+            "home": 4
+          },
+          "source": "BSD_EVENTS",
+          "status": "E4_NUMERIC_OR_EXACT_IDENTITY"
+        },
+        "evidence_manifest_hash": "sha256:c6a9a3a6a655981d7c93913067215ccb634db78f4ff42d58068727afa986754d",
+        "score_90_plus_stoppage": {
+          "away": 1,
+          "home": 4
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:f2ce21a9930455a9611facae893d59cf1d498d963646a930102b162f0da0b6d2"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "HIT"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "MISS"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "0-1",
+              "0-2",
+              "1-2",
+              "0-0",
+              "1-1",
+              "1-0"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "0-1",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "ESP2627_67021d3136d4",
+      "immutable_prediction_core_hash": "sha256:f20e5ab3abcbddfa919330f6e5f61a5bc381220ef0547e2a4279387b45738f81",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 2,
+            "home": 0
+          },
+          "identity": {
+            "candidate_count": 1,
+            "canonical_away_team_id": "la_liga_real_sociedad",
+            "canonical_home_team_id": "la_liga_malaga",
+            "exact_local_fixture_id_crosswalk": true,
+            "existing_bsd_away_team_id": "48",
+            "existing_bsd_home_team_id": "1259",
+            "method": "EXISTING_BSD_NUMERIC_TEAM_ID_CHAIN",
+            "provider_away_team_id": 48,
+            "provider_home_team_id": 1259
+          },
+          "score": {
+            "away": 5,
+            "home": 2
+          },
+          "source": "BSD_EVENTS",
+          "status": "E4_NUMERIC_OR_EXACT_IDENTITY"
+        },
+        "evidence_manifest_hash": "sha256:0b75f81efa73b2ed80a13c3f9b7ace1f53491bcaaa27b7350a674a3fe8b5e2d5",
+        "score_90_plus_stoppage": {
+          "away": 5,
+          "home": 2
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:ee3b12c5d8ae7702b67c08f94b8a5611c1ed4a642ac9c3b25dcf571fef4d36d9"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "HIT"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-0",
+              "2-1",
+              "1-0",
+              "1-1",
+              "0-1"
+            ],
+            "outcome": "HIT"
+          },
+          "modal_score": {
+            "original": "2-0",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "FRA2627_0195ade70609",
+      "immutable_prediction_core_hash": "sha256:6c658595e5b162b4416597540819303da0216fd2a4dea096d399bd2fcee4fac7",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 1,
+            "home": 2
+          },
+          "identity": {
+            "candidate_count": 1,
+            "canonical_away_team_id": "ligue_1_nice",
+            "canonical_home_team_id": "ligue_1_lyon",
+            "exact_local_fixture_id_crosswalk": true,
+            "existing_bsd_away_team_id": "103",
+            "existing_bsd_home_team_id": "100",
+            "method": "EXISTING_BSD_NUMERIC_TEAM_ID_CHAIN",
+            "provider_away_team_id": 103,
+            "provider_home_team_id": 100
+          },
+          "score": {
+            "away": 1,
+            "home": 2
+          },
+          "source": "BSD_EVENTS",
+          "status": "E4_NUMERIC_OR_EXACT_IDENTITY"
+        },
+        "evidence_manifest_hash": "sha256:63b9167ad909f8191dc7fa3035f4b60f0d9d87c2192122bdfab83e1ca6a808b4",
+        "score_90_plus_stoppage": {
+          "away": 1,
+          "home": 2
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:5838ea99340fe6f2dda6ac3fa8ce107f67a4073ca92f25e4c1ad17fc13ec56d5"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "HIT"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "MISS"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "1-0",
+              "2-0",
+              "1-1",
+              "2-2",
+              "1-2"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "1-0",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "FRA2627_0d677669a2db",
+      "immutable_prediction_core_hash": "sha256:3a728109471da5ea0fc0dee476cc399039ef8c6b365f5cc48542fbf64296d387",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 1,
+            "home": 2
+          },
+          "identity": {
+            "candidate_count": 1,
+            "canonical_away_team_id": "ligue_1_rennes",
+            "canonical_home_team_id": "ligue_1_paris_fc",
+            "exact_local_fixture_id_crosswalk": true,
+            "existing_bsd_away_team_id": "97",
+            "existing_bsd_home_team_id": "108",
+            "method": "EXISTING_BSD_NUMERIC_TEAM_ID_CHAIN",
+            "provider_away_team_id": 97,
+            "provider_home_team_id": 108
+          },
+          "score": {
+            "away": 3,
+            "home": 4
+          },
+          "source": "BSD_EVENTS",
+          "status": "E4_NUMERIC_OR_EXACT_IDENTITY"
+        },
+        "evidence_manifest_hash": "sha256:70e9583da8de371c43ec8737a54bbe1bb875cdd49918d02f92c5b2a847c77daf",
+        "score_90_plus_stoppage": {
+          "away": 3,
+          "home": 4
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:e3e0c8465e8d849ac0adc34240085267af04b866008e51cc01a9dafdbf5e8073"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "MISS",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "HIT"
+          },
+          "balanced": {
+            "outcome": "MISS"
+          },
+          "safe": {
+            "outcome": "MISS"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "0-1",
+              "1-1",
+              "1-2",
+              "0-0",
+              "1-0",
+              "2-2"
+            ],
+            "outcome": "HIT"
+          },
+          "modal_score": {
+            "original": "0-1",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "FRA2627_9ae60e023e25",
+      "immutable_prediction_core_hash": "sha256:1866dbb35ee0349d9e7c4a378c01da0917148b89a3c4d777b6e76b4528c80c50",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity": {
+            "candidate_count": 1,
+            "canonical_away_team_id": "ligue_1_monaco",
+            "canonical_home_team_id": "ligue_1_lorient",
+            "exact_local_fixture_id_crosswalk": true,
+            "existing_bsd_away_team_id": "101",
+            "existing_bsd_home_team_id": "110",
+            "method": "EXISTING_BSD_NUMERIC_TEAM_ID_CHAIN",
+            "provider_away_team_id": 101,
+            "provider_home_team_id": 110
+          },
+          "score": {
+            "away": 0,
+            "home": 1
+          },
+          "source": "BSD_EVENTS",
+          "status": "E4_NUMERIC_OR_EXACT_IDENTITY"
+        },
+        "evidence_manifest_hash": "sha256:be6e8ec1bdeb73ee212c114da73e814d1411b3e746eacc64e720296788298e1f",
+        "score_90_plus_stoppage": {
+          "away": 0,
+          "home": 1
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:fcb86fc4b547922ae446f07e6ac5f6fa4f750ccd11a3dda18cc515d69812f2f4"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "HIT"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "1-2",
+              "2-2",
+              "2-1",
+              "0-1",
+              "1-3"
+            ],
+            "outcome": "HIT"
+          },
+          "modal_score": {
+            "original": "1-2",
+            "outcome": "HIT"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "GER2627_7c352b87895b",
+      "immutable_prediction_core_hash": "sha256:3dc88abb9a87d10ab130d0b545a668aefbc0e9e531b1d76af3eb5450356cf370",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 1,
+            "home": 0
+          },
+          "identity": {
+            "candidate_count": 1,
+            "canonical_away_team_id": "bundesliga_hoffenheim",
+            "canonical_home_team_id": "bundesliga_borussia_monchengladbach",
+            "exact_local_fixture_id_crosswalk": true,
+            "existing_bsd_away_team_id": "86",
+            "existing_bsd_home_team_id": "95",
+            "method": "EXISTING_BSD_NUMERIC_TEAM_ID_CHAIN",
+            "provider_away_team_id": 86,
+            "provider_home_team_id": 95
+          },
+          "score": {
+            "away": 2,
+            "home": 1
+          },
+          "source": "BSD_EVENTS",
+          "status": "E4_NUMERIC_OR_EXACT_IDENTITY"
+        },
+        "evidence_manifest_hash": "sha256:57a0b0f548a2bf165b70e2613f4b4337c9e2235525eaff5e821018e1ea8a63a6",
+        "score_90_plus_stoppage": {
+          "away": 2,
+          "home": 1
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:8e9f7bea3ecc8e764e6e8640b2e00e92e06927e60efd0ac2800b85747da5ece5"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "HIT",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "HIT"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "2-1",
+              "2-0",
+              "1-1",
+              "0-1"
+            ],
+            "outcome": "HIT"
+          },
+          "modal_score": {
+            "original": "2-1",
+            "outcome": "HIT"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "GER2627_8531c4f12514",
+      "immutable_prediction_core_hash": "sha256:426477150a2310854cc92f302c0e8ff08fba4a53b099b3662ff2341fa0938f9d",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 1,
+            "home": 1
+          },
+          "identity": {
+            "candidate_count": 1,
+            "canonical_away_team_id": "bundesliga_freiburg",
+            "canonical_home_team_id": "bundesliga_bayer_leverkusen",
+            "exact_local_fixture_id_crosswalk": true,
+            "existing_bsd_away_team_id": "89",
+            "existing_bsd_home_team_id": "85",
+            "method": "EXISTING_BSD_NUMERIC_TEAM_ID_CHAIN",
+            "provider_away_team_id": 89,
+            "provider_home_team_id": 85
+          },
+          "score": {
+            "away": 1,
+            "home": 2
+          },
+          "source": "BSD_EVENTS",
+          "status": "E4_NUMERIC_OR_EXACT_IDENTITY"
+        },
+        "evidence_manifest_hash": "sha256:90df947e04911a15141322192af2e780bb7f4eb031e22995f458b0c28b2ba3df",
+        "score_90_plus_stoppage": {
+          "away": 1,
+          "home": 2
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:44b877af7523215226c08bf9f0f2a2f1d18622df32ff5985c25287ab4e091dc2"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "NSP",
+          "sealed_original": true,
+          "state": "NSP"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "HIT"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "HIT"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "1-0",
+              "1-1",
+              "0-1",
+              "2-2"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "1-0",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "ITA2627_95baf948fd5f",
+      "immutable_prediction_core_hash": "sha256:e3062580689ce56984800039269ec5bafa483664bf9b5235c01ccaba558cf51a",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 1,
+            "home": 0
+          },
+          "identity": {
+            "candidate_count": 1,
+            "canonical_away_team_id": "serie_a_lazio",
+            "canonical_home_team_id": "serie_a_juventus",
+            "exact_local_fixture_id_crosswalk": true,
+            "existing_bsd_away_team_id": "70",
+            "existing_bsd_home_team_id": "73",
+            "method": "EXISTING_BSD_NUMERIC_TEAM_ID_CHAIN",
+            "provider_away_team_id": 70,
+            "provider_home_team_id": 73
+          },
+          "score": {
+            "away": 3,
+            "home": 0
+          },
+          "source": "BSD_EVENTS",
+          "status": "E4_NUMERIC_OR_EXACT_IDENTITY"
+        },
+        "evidence_manifest_hash": "sha256:bf531fa1af95f00830da8f8b693a6a1fe20a2cdc59b69ae293698365addb07bf",
+        "score_90_plus_stoppage": {
+          "away": 3,
+          "home": 0
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:338dbb7d922b9409798e8bd8b2c100b0979cc7c846812305a20cebcb40fdaf93"
+    },
+    {
+      "committed_model": {
+        "favourite": {
+          "result": "MISS",
+          "sealed_original": true,
+          "state": "PREDICTION"
+        },
+        "paths": {
+          "aggressive": {
+            "outcome": "NOT_APPLICABLE"
+          },
+          "balanced": {
+            "outcome": "HIT"
+          },
+          "safe": {
+            "outcome": "MISS"
+          }
+        },
+        "score_components": {
+          "four_score_cluster": {
+            "original_scorelines": [
+              "1-0",
+              "2-0",
+              "1-1",
+              "0-1"
+            ],
+            "outcome": "MISS"
+          },
+          "modal_score": {
+            "original": "1-0",
+            "outcome": "MISS"
+          },
+          "score_band": {
+            "outcome": "NOT_APPLICABLE",
+            "reason": "NO_NORMATIVELY_SERIALIZED_SCORE_BAND"
+          }
+        }
+      },
+      "fixture_id": "ITA2627_eda86bb79573",
+      "immutable_prediction_core_hash": "sha256:d65b3fa33facfb0879c62f9917cd79569a1bc83068dc97b7e15ec6b910515581",
+      "result_settlement": {
+        "evidence": {
+          "half_time": {
+            "away": 0,
+            "home": 2
+          },
+          "identity": {
+            "candidate_count": 1,
+            "canonical_away_team_id": "serie_a_atalanta",
+            "canonical_home_team_id": "serie_a_ac_milan",
+            "exact_local_fixture_id_crosswalk": true,
+            "existing_bsd_away_team_id": "71",
+            "existing_bsd_home_team_id": "63",
+            "method": "EXISTING_BSD_NUMERIC_TEAM_ID_CHAIN",
+            "provider_away_team_id": 71,
+            "provider_home_team_id": 63
+          },
+          "score": {
+            "away": 2,
+            "home": 3
+          },
+          "source": "BSD_EVENTS",
+          "status": "E4_NUMERIC_OR_EXACT_IDENTITY"
+        },
+        "evidence_manifest_hash": "sha256:bf94365854fae2abdbb6550cd70905ec8f22d802cba4024f4c970af69b5fb526",
+        "score_90_plus_stoppage": {
+          "away": 2,
+          "home": 3
+        },
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:5fc9a6ee16a0336803e418964857671c1a96829a4f9a7161729d19cf68e94d73"
+    }
+  ],
+  "record_type": "result_audit",
+  "run_audit_record": {
+    "match_coverage": 10,
+    "mode": "HISTORICAL_RECOVERY",
+    "model_kpis": {
+      "favourite": {
+        "HIT": 7,
+        "MISS": 2,
+        "NSP": 1,
+        "PENDING": 0,
+        "PUSH": 0,
+        "denominator": 9,
+        "hit_rate": 0.7777777777777778
+      }
+    },
+    "publication_based_admission": true,
+    "run_id": "2026-10-18_1308"
+  },
+  "schema_version": "ECOBET_RESULT_AUDIT_V2_4"
+}
