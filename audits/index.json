@@ -904,6 +904,25 @@
           "hit_rate": 0.631578947368421
         },
         "run_id": "2026-10-24_0809"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-10-24_RESULT_AUDIT_V24_REV_d6719679124d09b3.json",
+        "generated_at": "2026-10-26T08:18:06Z",
+        "id": "2026-10-24_2026-10-24_0809_V24_REV_d6719679124d09b3",
+        "kpi": {
+          "HIT": 12,
+          "MISS": 7,
+          "NOT_APPLICABLE": 0,
+          "NSP": 0,
+          "PENDING": 0,
+          "PUSH": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 19,
+          "hit_rate": 0.631578947368421
+        },
+        "run_id": "2026-10-24_0809"
       }
     ],
     "2026-10-25": [
@@ -979,10 +998,29 @@
           "hit_rate": 0.9
         },
         "run_id": "2026-10-25_0838"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-10-25_RESULT_AUDIT_V24_REV_a494fbe9e53555d9.json",
+        "generated_at": "2026-10-26T08:18:06Z",
+        "id": "2026-10-25_2026-10-25_0838_V24_REV_a494fbe9e53555d9",
+        "kpi": {
+          "HIT": 18,
+          "MISS": 2,
+          "NOT_APPLICABLE": 0,
+          "NSP": 0,
+          "PENDING": 0,
+          "PUSH": 1,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 20,
+          "hit_rate": 0.9
+        },
+        "run_id": "2026-10-25_0838"
       }
     ]
   },
-  "generated_at": "2026-10-26T08:17:00Z",
+  "generated_at": "2026-10-26T08:18:07Z",
   "record_type": "audit_index",
   "schema_version": "1.0"
 }
