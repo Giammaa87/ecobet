@@ -1,0 +1,1632 @@
+{
+  "append_only": true,
+  "audit_generated_at": "2026-10-26T08:16:59Z",
+  "audit_id": "2026-10-24_2026-10-24_0809_V24_REV_90431acc7fdad7d3",
+  "authority": {
+    "publication_admission": "C:\\ECOBET\\ecobet_v24_release\\authority\\ECOBET_RESULT_AUDIT_PUBLICATION_APPROVAL_V1.md",
+    "sha256": "sha256:63d5e1cdf4c5fce5363d882e84002d86e6f7eeb4581d05eff2daa6480d7935cd"
+  },
+  "match_audit_records": [
+    {
+      "committed_model": {
+        "aggressive": "Arsenal Team Goals Over 1.5",
+        "balanced": "Arsenal to win",
+        "favourite": "Match Total Under 3.5",
+        "favourite_meta": {
+          "expression": "Match Total Under 3.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Under 3.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Arsenal Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_home_over_1_5"
+          },
+          "balanced": {
+            "expression": "Arsenal to win",
+            "outcome": "HIT",
+            "path_id": "balanced:c_home_win"
+          },
+          "safe": {
+            "expression": "Match Total Under 3.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_under_3_5"
+          }
+        },
+        "safe": "Match Total Under 3.5"
+      },
+      "fixture": {
+        "away": "Everton",
+        "competition": null,
+        "home": "Arsenal",
+        "kickoff": "2026-10-24T14:00:00+00:00",
+        "kickoff_utc": "2026-10-24T14:00:00+00:00"
+      },
+      "fixture_id": "ENG2627_3685719ec6f7",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1557437,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 0,
+            "home": 2
+          },
+          "fixture_id": "ENG2627_3685719ec6f7",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 1
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 0,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:9aed94629d796cd7e3eeac487658c2621c8fc95bb4743ef111003035996456a8"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Match Total Over 2.5",
+        "balanced": "Manchester City Team Goals Over 1.5",
+        "favourite": "Manchester City Team Goals Over 1.5",
+        "favourite_meta": {
+          "expression": "Manchester City Team Goals Over 1.5",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Manchester City Team Goals Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Match Total Over 2.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c3_total_over_2_5"
+          },
+          "balanced": {
+            "expression": "Manchester City Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "balanced:c2_away_over_1_5"
+          },
+          "safe": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "HIT",
+            "path_id": "safe:c1_total_over_1_5"
+          }
+        },
+        "safe": "Match Total Over 1.5"
+      },
+      "fixture": {
+        "away": "Manchester City",
+        "competition": null,
+        "home": "Aston Villa",
+        "kickoff": "2026-10-24T11:30:00+00:00",
+        "kickoff_utc": "2026-10-24T11:30:00+00:00"
+      },
+      "fixture_id": "ENG2627_a7645009b0cc",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "MISS",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1557438,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 1,
+            "home": 2
+          },
+          "fixture_id": "ENG2627_a7645009b0cc",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 1
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 1,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:378b5078690c338db5d15333da4c96ca0e3d19d23a08b8682262bb1ba9490eef"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Chelsea Team Goals Over 1.5",
+        "balanced": "Chelsea or Draw",
+        "favourite": "Match Total Over 1.5",
+        "favourite_meta": {
+          "expression": "Match Total Over 1.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Chelsea Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "aggressive:c_home_over_1_5"
+          },
+          "balanced": {
+            "expression": "Chelsea or Draw",
+            "outcome": "MISS",
+            "path_id": "balanced:c_home_1x"
+          },
+          "safe": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_total_over_1_5"
+          }
+        },
+        "safe": "Match Total Over 1.5"
+      },
+      "fixture": {
+        "away": "Tottenham Hotspur",
+        "competition": null,
+        "home": "Chelsea",
+        "kickoff": "2026-10-24T16:30:00+00:00",
+        "kickoff_utc": "2026-10-24T16:30:00+00:00"
+      },
+      "fixture_id": "ENG2627_ac8b3abd17a0",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1557439,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 2,
+            "home": 0
+          },
+          "fixture_id": "ENG2627_ac8b3abd17a0",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 2,
+          "home": 0
+        },
+        "score_90_plus_stoppage": "0-2",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:a30fbc4b61e247d55929347b8ad2bb55d81b811dea2bb0bd46f6a40fcd6b6922"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Both Teams To Score: No",
+        "balanced": "Match Total Under 3.5",
+        "favourite": "Match Total Under 3.5",
+        "favourite_meta": {
+          "expression": "Match Total Under 3.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Under 3.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Both Teams To Score: No",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_btts_no"
+          },
+          "balanced": {
+            "expression": "Match Total Under 3.5",
+            "outcome": "HIT",
+            "path_id": "balanced:c_under_3_5"
+          },
+          "safe": {
+            "expression": "Fulham Team Goals Under 2.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_away_under_2_5"
+          }
+        },
+        "safe": "Fulham Team Goals Under 2.5"
+      },
+      "fixture": {
+        "away": "Fulham",
+        "competition": null,
+        "home": "Coventry City",
+        "kickoff": "2026-10-24T14:00:00+00:00",
+        "kickoff_utc": "2026-10-24T14:00:00+00:00"
+      },
+      "fixture_id": "ENG2627_de0ba32d057a",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1557440,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 1,
+            "home": 0
+          },
+          "fixture_id": "ENG2627_de0ba32d057a",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 1,
+          "home": 0
+        },
+        "score_90_plus_stoppage": "0-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:bcce12fcb72bc629ed0347acfcddea962cf3d21be31d99cbbb568f04f508e582"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Atletico Madrid to win",
+        "balanced": "Atletico Madrid Team Goals Over 1.5",
+        "favourite": "Atletico Madrid Team Goals Over 1.5",
+        "favourite_meta": {
+          "expression": "Atletico Madrid Team Goals Over 1.5",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Atletico Madrid Team Goals Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Atletico Madrid to win",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_home_win"
+          },
+          "balanced": {
+            "expression": "Atletico Madrid Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "balanced:c_home_over_1_5"
+          },
+          "safe": {
+            "expression": "Atletico Madrid or Draw",
+            "outcome": "HIT",
+            "path_id": "safe:c_home_1x"
+          }
+        },
+        "safe": "Atletico Madrid or Draw"
+      },
+      "fixture": {
+        "away": "Deportivo La Coruna",
+        "competition": null,
+        "home": "Atletico Madrid",
+        "kickoff": "2026-10-24T19:00:00+00:00",
+        "kickoff_utc": "2026-10-24T19:00:00+00:00"
+      },
+      "fixture_id": "ESP2627_8e5f0baf27dc",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "MISS",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1570425,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 0,
+            "home": 1
+          },
+          "fixture_id": "ESP2627_8e5f0baf27dc",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 0,
+          "home": 1
+        },
+        "score_90_plus_stoppage": "1-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:d6b3437b412cb8a6018944fff0176a7f47381a6544da6b1a0d5fee5986f287e9"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Racing Santander Team Goals Over 1.5",
+        "balanced": "Both Teams To Score: Yes",
+        "favourite": "Both Teams To Score: Yes",
+        "favourite_meta": {
+          "expression": "Both Teams To Score: Yes",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Both Teams To Score: Yes",
+        "paths": {
+          "aggressive": {
+            "expression": "Racing Santander Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_home_over_15"
+          },
+          "balanced": {
+            "expression": "Both Teams To Score: Yes",
+            "outcome": "HIT",
+            "path_id": "balanced:c_btts_yes"
+          },
+          "safe": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_total_over_15"
+          }
+        },
+        "safe": "Match Total Over 1.5"
+      },
+      "fixture": {
+        "away": "Espanyol",
+        "competition": null,
+        "home": "Racing Santander",
+        "kickoff": "2026-10-24T14:15:00+00:00",
+        "kickoff_utc": "2026-10-24T14:15:00+00:00"
+      },
+      "fixture_id": "ESP2627_a46ea7f1e839",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1570428,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 1,
+            "home": 2
+          },
+          "fixture_id": "ESP2627_a46ea7f1e839",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 1,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:2183349c00587794e33edbf6e98a636edded7ab6a4b65117412a60b91ed19dd4"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Villarreal Team Goals Over 1.5",
+        "balanced": "Valencia Team Goals Under 1.5",
+        "favourite": "Valencia Team Goals Under 1.5",
+        "favourite_meta": {
+          "expression": "Valencia Team Goals Under 1.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Valencia Team Goals Under 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Villarreal Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:C4"
+          },
+          "balanced": {
+            "expression": "Valencia Team Goals Under 1.5",
+            "outcome": "HIT",
+            "path_id": "balanced:C2"
+          },
+          "safe": {
+            "expression": "Match Total Under 4.5",
+            "outcome": "HIT",
+            "path_id": "safe:C1"
+          }
+        },
+        "safe": "Match Total Under 4.5"
+      },
+      "fixture": {
+        "away": "Villarreal",
+        "competition": null,
+        "home": "Valencia",
+        "kickoff": "2026-10-24T16:30:00+00:00",
+        "kickoff_utc": "2026-10-24T16:30:00+00:00"
+      },
+      "fixture_id": "ESP2627_e34c7aca72a1",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1570432,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 2,
+            "home": 1
+          },
+          "fixture_id": "ESP2627_e34c7aca72a1",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 1
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 2,
+          "home": 1
+        },
+        "score_90_plus_stoppage": "1-2",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:53ba6d382462c33af421f5a57cd03a96dcea771e24d8eaddca86da7cf7658858"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Rayo Vallecano Team Goals Over 1.5",
+        "balanced": "Rayo Vallecano Draw No Bet",
+        "favourite": "Rayo Vallecano Draw No Bet",
+        "favourite_meta": {
+          "expression": "Rayo Vallecano Draw No Bet",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Rayo Vallecano Draw No Bet",
+        "paths": {
+          "aggressive": {
+            "expression": "Rayo Vallecano Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "aggressive:cand_home_over_1_5"
+          },
+          "balanced": {
+            "expression": "Rayo Vallecano Draw No Bet",
+            "outcome": "MISS",
+            "path_id": "balanced:cand_home_dnb"
+          },
+          "safe": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "HIT",
+            "path_id": "safe:cand_total_over_1_5"
+          }
+        },
+        "safe": "Match Total Over 1.5"
+      },
+      "fixture": {
+        "away": "Elche",
+        "competition": null,
+        "home": "Rayo Vallecano",
+        "kickoff": "2026-10-24T12:00:00+00:00",
+        "kickoff_utc": "2026-10-24T12:00:00+00:00"
+      },
+      "fixture_id": "ESP2627_ffc61118b45f",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1570429,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 3,
+            "home": 0
+          },
+          "fixture_id": "ESP2627_ffc61118b45f",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 2,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 3,
+          "home": 0
+        },
+        "score_90_plus_stoppage": "0-3",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:93c0c6474be7961d703b2b005b84d8c367ab987ad040f05d358cdb2d41b01a1a"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Match Total Over 2.5",
+        "balanced": "Lens Team Goals Over 0.5",
+        "favourite": "Match Total Over 1.5",
+        "favourite_meta": {
+          "expression": "Match Total Over 1.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Match Total Over 2.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_total_over_2_5"
+          },
+          "balanced": {
+            "expression": "Lens Team Goals Over 0.5",
+            "outcome": "HIT",
+            "path_id": "balanced:c_home_over_0_5"
+          },
+          "safe": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_total_over_1_5"
+          }
+        },
+        "safe": "Match Total Over 1.5"
+      },
+      "fixture": {
+        "away": "Paris FC",
+        "competition": null,
+        "home": "Lens",
+        "kickoff": "2026-10-24T18:45:00+00:00",
+        "kickoff_utc": "2026-10-24T18:45:00+00:00"
+      },
+      "fixture_id": "FRA2627_a6cab881271c",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1552795,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 1,
+            "home": 2
+          },
+          "fixture_id": "FRA2627_a6cab881271c",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 1,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 1,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:2a85e89da557bdf1adcee7fd43ac82edce375ef69e527a8d730ae2670ab82aa1"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Both Teams To Score: Yes",
+        "balanced": "Match Total Over 1.5",
+        "favourite": "Match Total Over 1.5",
+        "favourite_meta": {
+          "expression": "Match Total Over 1.5",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Both Teams To Score: Yes",
+            "outcome": "MISS",
+            "path_id": "aggressive:C3_BTTS_YES"
+          },
+          "balanced": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "MISS",
+            "path_id": "balanced:C2_TOTAL_OVER_1_5"
+          },
+          "safe": {
+            "expression": "FC Cologne Team Goals Over 0.5",
+            "outcome": "MISS",
+            "path_id": "safe:C1_HOME_OVER_0_5"
+          }
+        },
+        "safe": "FC Cologne Team Goals Over 0.5"
+      },
+      "fixture": {
+        "away": "Schalke 04",
+        "competition": null,
+        "home": "FC Cologne",
+        "kickoff": "2026-10-24T13:30:00+00:00",
+        "kickoff_utc": "2026-10-24T13:30:00+00:00"
+      },
+      "fixture_id": "GER2627_152f20f20fdb",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1575201,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 0,
+            "home": 0
+          },
+          "fixture_id": "GER2627_152f20f20fdb",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "MISS",
+        "score_90_detail": {
+          "away": 0,
+          "home": 0
+        },
+        "score_90_plus_stoppage": "0-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:c8f47c0fc423731a3d2e63077afa96257201b37a0ad68949f80cc6530017d9aa"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Match Total Over 2.5",
+        "balanced": "RB Leipzig Team Goals Over 1.5",
+        "favourite": "RB Leipzig Team Goals Over 1.5",
+        "favourite_meta": {
+          "expression": "RB Leipzig Team Goals Over 1.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "RB Leipzig Team Goals Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Match Total Over 2.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_total_o25"
+          },
+          "balanced": {
+            "expression": "RB Leipzig Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "balanced:c_home_o15"
+          },
+          "safe": {
+            "expression": "SV Elversberg Team Goals Under 2.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_away_u25"
+          }
+        },
+        "safe": "SV Elversberg Team Goals Under 2.5"
+      },
+      "fixture": {
+        "away": "SV Elversberg",
+        "competition": null,
+        "home": "RB Leipzig",
+        "kickoff": "2026-10-24T13:30:00+00:00",
+        "kickoff_utc": "2026-10-24T13:30:00+00:00"
+      },
+      "fixture_id": "GER2627_2fc510b242b2",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1575195,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 0,
+            "home": 4
+          },
+          "fixture_id": "GER2627_2fc510b242b2",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 0,
+          "home": 4
+        },
+        "score_90_plus_stoppage": "4-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:fb7cd7dcbd4fd4d7a2df6bc71a8a919dd543aa98e29e14462a91fc3bc91f9518"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Match Total Over 2.5",
+        "balanced": "Match Total Over 1.5",
+        "favourite": "Match Total Over 1.5",
+        "favourite_meta": {
+          "expression": "Match Total Over 1.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Match Total Over 2.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:C4_TOTAL_OVER_2_5"
+          },
+          "balanced": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "HIT",
+            "path_id": "balanced:C2_TOTAL_OVER_1_5"
+          },
+          "safe": {
+            "expression": "Mainz 05 Team Goals Over 0.5",
+            "outcome": "HIT",
+            "path_id": "safe:C1_HOME_OVER_0_5"
+          }
+        },
+        "safe": "Mainz 05 Team Goals Over 0.5"
+      },
+      "fixture": {
+        "away": "Werder Bremen",
+        "competition": null,
+        "home": "Mainz 05",
+        "kickoff": "2026-10-24T13:30:00+00:00",
+        "kickoff_utc": "2026-10-24T13:30:00+00:00"
+      },
+      "fixture_id": "GER2627_723d1a86f276",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1575200,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 3,
+            "home": 2
+          },
+          "fixture_id": "GER2627_723d1a86f276",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 2,
+            "home": 1
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 3,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-3",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:acaca0ee6ceec5a4e401e50bf19fb36402fabb9283ce25d22012d384af014631"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Borussia Dortmund Team Goals Over 2.5",
+        "balanced": "Borussia Dortmund Team Goals Over 1.5",
+        "favourite": "Borussia Dortmund Team Goals Over 1.5",
+        "favourite_meta": {
+          "expression": "Borussia Dortmund Team Goals Over 1.5",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Borussia Dortmund Team Goals Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Borussia Dortmund Team Goals Over 2.5",
+            "outcome": "MISS",
+            "path_id": "aggressive:c_home_over_2_5"
+          },
+          "balanced": {
+            "expression": "Borussia Dortmund Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "balanced:c_home_over_1_5"
+          },
+          "safe": {
+            "expression": "Borussia Dortmund Draw No Bet",
+            "outcome": "HIT",
+            "path_id": "safe:c_home_dnb"
+          }
+        },
+        "safe": "Borussia Dortmund Draw No Bet"
+      },
+      "fixture": {
+        "away": "Eintracht Frankfurt",
+        "competition": null,
+        "home": "Borussia Dortmund",
+        "kickoff": "2026-10-24T16:30:00+00:00",
+        "kickoff_utc": "2026-10-24T16:30:00+00:00"
+      },
+      "fixture_id": "GER2627_c054ed2d4c29",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1575194,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 0,
+            "home": 1
+          },
+          "fixture_id": "GER2627_c054ed2d4c29",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 0,
+          "home": 1
+        },
+        "score_90_plus_stoppage": "1-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:19b4b105446847670776bf73c5f0f3dc98c17f51eccfdc5445278a303826daa4"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Hamburger SV Team Goals Over 1.5",
+        "balanced": "Hamburger SV or Draw",
+        "favourite": "Hamburger SV or Draw",
+        "favourite_meta": {
+          "expression": "Hamburger SV or Draw",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Hamburger SV or Draw",
+        "paths": {
+          "aggressive": {
+            "expression": "Hamburger SV Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "aggressive:c_away_over_15"
+          },
+          "balanced": {
+            "expression": "Hamburger SV or Draw",
+            "outcome": "MISS",
+            "path_id": "balanced:c_x2"
+          },
+          "safe": {
+            "expression": "Hamburger SV Team Goals Over 0.5",
+            "outcome": "MISS",
+            "path_id": "safe:c_away_over_05"
+          }
+        },
+        "safe": "Hamburger SV Team Goals Over 0.5"
+      },
+      "fixture": {
+        "away": "Hamburger SV",
+        "competition": null,
+        "home": "SC Paderborn",
+        "kickoff": "2026-10-24T13:30:00+00:00",
+        "kickoff_utc": "2026-10-24T13:30:00+00:00"
+      },
+      "fixture_id": "GER2627_c7f9a375ea4c",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1575202,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 0,
+            "home": 1
+          },
+          "fixture_id": "GER2627_c7f9a375ea4c",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "MISS",
+        "score_90_detail": {
+          "away": 0,
+          "home": 1
+        },
+        "score_90_plus_stoppage": "1-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:583d13e7e289814b2b89eedfcaef135766e377ede2e3237f18e28da92e73591d"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Match Total Over 2.5",
+        "balanced": "Augsburg Team Goals Over 1.5",
+        "favourite": "Augsburg Team Goals Over 1.5",
+        "favourite_meta": {
+          "expression": "Augsburg Team Goals Over 1.5",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Augsburg Team Goals Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Match Total Over 2.5",
+            "outcome": "MISS",
+            "path_id": "aggressive:c3_total_over_2_5"
+          },
+          "balanced": {
+            "expression": "Augsburg Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "balanced:c2_home_over_1_5"
+          },
+          "safe": {
+            "expression": "Augsburg Draw No Bet",
+            "outcome": "PUSH",
+            "path_id": "safe:c1_home_dnb"
+          }
+        },
+        "safe": "Augsburg Draw No Bet"
+      },
+      "fixture": {
+        "away": "Union Berlin",
+        "competition": null,
+        "home": "Augsburg",
+        "kickoff": "2026-10-24T13:30:00+00:00",
+        "kickoff_utc": "2026-10-24T13:30:00+00:00"
+      },
+      "fixture_id": "GER2627_deb05d29d5e6",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1575199,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 1,
+            "home": 1
+          },
+          "fixture_id": "GER2627_deb05d29d5e6",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "PUSH",
+        "score_90_detail": {
+          "away": 1,
+          "home": 1
+        },
+        "score_90_plus_stoppage": "1-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:5cbc53ae093a263d832241051d53ead08cc1a2ae86ebadf3d1edb8c8d45388f4"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Roma Team Goals 1-2",
+        "balanced": "Roma or Draw",
+        "favourite": "Roma or Draw",
+        "favourite_meta": {
+          "expression": "Roma or Draw",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Roma or Draw",
+        "paths": {
+          "aggressive": {
+            "expression": "Roma Team Goals 1-2",
+            "outcome": "MISS",
+            "path_id": "aggressive:C3"
+          },
+          "balanced": {
+            "expression": "Roma or Draw",
+            "outcome": "HIT",
+            "path_id": "balanced:C2"
+          },
+          "safe": {
+            "expression": "Match Total Under 4.5",
+            "outcome": "MISS",
+            "path_id": "safe:C1"
+          }
+        },
+        "safe": "Match Total Under 4.5"
+      },
+      "fixture": {
+        "away": "Roma",
+        "competition": null,
+        "home": "Napoli",
+        "kickoff": "2026-10-24T16:00:00+00:00",
+        "kickoff_utc": "2026-10-24T16:00:00+00:00"
+      },
+      "fixture_id": "ITA2627_2a2eaa76167c",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1550164,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 3,
+            "home": 3
+          },
+          "fixture_id": "ITA2627_2a2eaa76167c",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 1
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "MISS",
+        "score_90_detail": {
+          "away": 3,
+          "home": 3
+        },
+        "score_90_plus_stoppage": "3-3",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:b7eae37dc973c0e371f90f44a7bece256ad8063731270b9fcdbc413bbc07e182"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Bologna or Draw",
+        "balanced": "Cagliari Team Goals Under 1.5",
+        "favourite": "Match Total Under 3.5",
+        "favourite_meta": {
+          "expression": "Match Total Under 3.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Under 3.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Bologna or Draw",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_away_x2"
+          },
+          "balanced": {
+            "expression": "Cagliari Team Goals Under 1.5",
+            "outcome": "HIT",
+            "path_id": "balanced:c_home_under_1_5"
+          },
+          "safe": {
+            "expression": "Match Total Under 3.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_under_3_5"
+          }
+        },
+        "safe": "Match Total Under 3.5"
+      },
+      "fixture": {
+        "away": "Bologna",
+        "competition": null,
+        "home": "Cagliari",
+        "kickoff": "2026-10-24T13:00:00+00:00",
+        "kickoff_utc": "2026-10-24T13:00:00+00:00"
+      },
+      "fixture_id": "ITA2627_400c0b668357",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1550158,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 2,
+            "home": 0
+          },
+          "fixture_id": "ITA2627_400c0b668357",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 2,
+          "home": 0
+        },
+        "score_90_plus_stoppage": "0-2",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:40a7eb3f7771fe095b72eb924a39cd6c097938292ebb7ea7bb4935154d931a79"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Como Team Goals Over 1.5",
+        "balanced": "Como to win",
+        "favourite": "Como or Draw",
+        "favourite_meta": {
+          "expression": "Como or Draw",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Como or Draw",
+        "paths": {
+          "aggressive": {
+            "expression": "Como Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c3_home_over_1_5"
+          },
+          "balanced": {
+            "expression": "Como to win",
+            "outcome": "HIT",
+            "path_id": "balanced:c2_home_win"
+          },
+          "safe": {
+            "expression": "Como or Draw",
+            "outcome": "HIT",
+            "path_id": "safe:c1_home_1x"
+          }
+        },
+        "safe": "Como or Draw"
+      },
+      "fixture": {
+        "away": "Sassuolo",
+        "competition": null,
+        "home": "Como",
+        "kickoff": "2026-10-24T13:00:00+00:00",
+        "kickoff_utc": "2026-10-24T13:00:00+00:00"
+      },
+      "fixture_id": "ITA2627_d6ed4563e7b5",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1550159,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 0,
+            "home": 2
+          },
+          "fixture_id": "ITA2627_d6ed4563e7b5",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 0,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:e731d41c94061b129b9775851094b86fca9af10b5d8e770057c1207a2cb5a505"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Lazio Team Goals Over 1.5",
+        "balanced": "Lazio to win",
+        "favourite": "Lazio to win",
+        "favourite_meta": {
+          "expression": "Lazio to win",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Lazio to win",
+        "paths": {
+          "aggressive": {
+            "expression": "Lazio Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_home_over_1_5"
+          },
+          "balanced": {
+            "expression": "Lazio to win",
+            "outcome": "HIT",
+            "path_id": "balanced:c_home_win"
+          },
+          "safe": {
+            "expression": "Match Total Under 3.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_under_3_5"
+          }
+        },
+        "safe": "Match Total Under 3.5"
+      },
+      "fixture": {
+        "away": "Parma",
+        "competition": null,
+        "home": "Lazio",
+        "kickoff": "2026-10-24T18:45:00+00:00",
+        "kickoff_utc": "2026-10-24T18:45:00+00:00"
+      },
+      "fixture_id": "ITA2627_f410a229c648",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1550162,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 1,
+            "home": 2
+          },
+          "fixture_id": "ITA2627_f410a229c648",
+          "fresh_provider_response_sha256": "sha256:af590c6393993c9a0a98219a1385d9f9670c3f0aec3832f1b11ca831d71a84bc",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-24\\a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-24&timezone=UTC",
+          "raw_sha256": "sha256:a9b139e8e98d5020688a24f79eea3dc475ab1a6e8a130dc9568823897d115bd2",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-24T22:53:42.914559Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 1,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:cadd762f5e66c6c9c2ab0f840cb1e5a6ce98bab5d157b6e2856bbcdcc52f4bb7"
+    }
+  ],
+  "record_type": "result_audit",
+  "revision_of": "ECOBET_2026-10-24_RESULT_AUDIT_V24.json",
+  "run_audit_record": {
+    "match_coverage": 19,
+    "mode": "DAILY_PRODUCTION",
+    "model_kpis": {
+      "aggressive": {
+        "HIT": 12,
+        "MISS": 7,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 19,
+        "hit_rate": 0.631578947368421
+      },
+      "balanced": {
+        "HIT": 11,
+        "MISS": 8,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 19,
+        "hit_rate": 0.5789473684210527
+      },
+      "favourite": {
+        "HIT": 12,
+        "MISS": 7,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 19,
+        "hit_rate": 0.631578947368421
+      },
+      "safe": {
+        "HIT": 15,
+        "MISS": 3,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 1,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 18,
+        "hit_rate": 0.8333333333333334
+      }
+    },
+    "original_record_path": "C:\\ECOBET\\ecobet_v2\\state\\daily_runs_operational_final\\2026-10-24\\published\\ECOBET_LRUN_29afade2cac54cf381eee8e4a27b02e3\\2026-10-24_0809.json",
+    "original_record_sha256": "sha256:29cd3197b2fed8cfcab07b73e19259a8b340e8f59fa283aed0954c8eef4dc0d0",
+    "publication_based_admission": true,
+    "regular_prediction_count": 19,
+    "run_id": "2026-10-24_0809",
+    "superseded_run_excluded": "2026-10-24_0715"
+  },
+  "schema_version": "ECOBET_RESULT_AUDIT_V2_4"
+}
