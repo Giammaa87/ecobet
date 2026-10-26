@@ -1,0 +1,1541 @@
+{
+  "append_only": true,
+  "audit_generated_at": "2026-10-26T08:10:30Z",
+  "audit_id": "2026-10-24_2026-10-24_0809_V24_REV_7a892876a2095df0",
+  "authority": {
+    "publication_admission": "C:\\ECOBET\\ecobet_v24_release\\authority\\ECOBET_RESULT_AUDIT_PUBLICATION_APPROVAL_V1.md",
+    "sha256": "sha256:63d5e1cdf4c5fce5363d882e84002d86e6f7eeb4581d05eff2daa6480d7935cd"
+  },
+  "match_audit_records": [
+    {
+      "committed_model": {
+        "aggressive": "Arsenal Team Goals Over 1.5",
+        "balanced": "Arsenal to win",
+        "favourite": "Match Total Under 3.5",
+        "favourite_meta": {
+          "expression": "Match Total Under 3.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Under 3.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Arsenal Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_home_over_1_5"
+          },
+          "balanced": {
+            "expression": "Arsenal to win",
+            "outcome": "HIT",
+            "path_id": "balanced:c_home_win"
+          },
+          "safe": {
+            "expression": "Match Total Under 3.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_under_3_5"
+          }
+        },
+        "safe": "Match Total Under 3.5"
+      },
+      "fixture": {
+        "away": "Everton",
+        "competition": null,
+        "home": "Arsenal",
+        "kickoff": "2026-10-24T14:00:00+00:00",
+        "kickoff_utc": "2026-10-24T14:00:00+00:00"
+      },
+      "fixture_id": "ENG2627_3685719ec6f7",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "bsd_event_id": 209605,
+          "evidence_status": "CONFIRMED_BSD_FALLBACK",
+          "final_90": {
+            "away": 0,
+            "home": 2
+          },
+          "fixture_id": "ENG2627_3685719ec6f7",
+          "half_time": {
+            "away": 0,
+            "home": 1
+          },
+          "identity_status": "MATCHED",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "result_status": "finished",
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "CONFIRMED_BSD_FALLBACK"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 0,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:4dfe377dfefbed00011d708b489475796043e213f55a7b84f069a3fdd5dd2154"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Match Total Over 2.5",
+        "balanced": "Manchester City Team Goals Over 1.5",
+        "favourite": "Manchester City Team Goals Over 1.5",
+        "favourite_meta": {
+          "expression": "Manchester City Team Goals Over 1.5",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Manchester City Team Goals Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Match Total Over 2.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c3_total_over_2_5"
+          },
+          "balanced": {
+            "expression": "Manchester City Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "balanced:c2_away_over_1_5"
+          },
+          "safe": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "HIT",
+            "path_id": "safe:c1_total_over_1_5"
+          }
+        },
+        "safe": "Match Total Over 1.5"
+      },
+      "fixture": {
+        "away": "Manchester City",
+        "competition": null,
+        "home": "Aston Villa",
+        "kickoff": "2026-10-24T11:30:00+00:00",
+        "kickoff_utc": "2026-10-24T11:30:00+00:00"
+      },
+      "fixture_id": "ENG2627_a7645009b0cc",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "MISS",
+        "evidence": {
+          "bsd_event_id": 209606,
+          "evidence_status": "CONFIRMED_BSD_FALLBACK",
+          "final_90": {
+            "away": 1,
+            "home": 2
+          },
+          "fixture_id": "ENG2627_a7645009b0cc",
+          "half_time": {
+            "away": 0,
+            "home": 1
+          },
+          "identity_status": "MATCHED",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "result_status": "finished",
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "CONFIRMED_BSD_FALLBACK"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 1,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:d7e0a03610cdf059a7002ea97672e0a5a7daa56fd0619fc573fa263527a71c83"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Chelsea Team Goals Over 1.5",
+        "balanced": "Chelsea or Draw",
+        "favourite": "Match Total Over 1.5",
+        "favourite_meta": {
+          "expression": "Match Total Over 1.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Chelsea Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "aggressive:c_home_over_1_5"
+          },
+          "balanced": {
+            "expression": "Chelsea or Draw",
+            "outcome": "MISS",
+            "path_id": "balanced:c_home_1x"
+          },
+          "safe": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_total_over_1_5"
+          }
+        },
+        "safe": "Match Total Over 1.5"
+      },
+      "fixture": {
+        "away": "Tottenham Hotspur",
+        "competition": null,
+        "home": "Chelsea",
+        "kickoff": "2026-10-24T16:30:00+00:00",
+        "kickoff_utc": "2026-10-24T16:30:00+00:00"
+      },
+      "fixture_id": "ENG2627_ac8b3abd17a0",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "bsd_event_id": 209607,
+          "evidence_status": "CONFIRMED_BSD_FALLBACK",
+          "final_90": {
+            "away": 2,
+            "home": 0
+          },
+          "fixture_id": "ENG2627_ac8b3abd17a0",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "result_status": "finished",
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "CONFIRMED_BSD_FALLBACK"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 2,
+          "home": 0
+        },
+        "score_90_plus_stoppage": "0-2",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:a7c77fdc78a98a856f00273d56dd6009170034db7d4a16642f2ac02beeb5aef5"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Both Teams To Score: No",
+        "balanced": "Match Total Under 3.5",
+        "favourite": "Match Total Under 3.5",
+        "favourite_meta": {
+          "expression": "Match Total Under 3.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Under 3.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Both Teams To Score: No",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_btts_no"
+          },
+          "balanced": {
+            "expression": "Match Total Under 3.5",
+            "outcome": "HIT",
+            "path_id": "balanced:c_under_3_5"
+          },
+          "safe": {
+            "expression": "Fulham Team Goals Under 2.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_away_under_2_5"
+          }
+        },
+        "safe": "Fulham Team Goals Under 2.5"
+      },
+      "fixture": {
+        "away": "Fulham",
+        "competition": null,
+        "home": "Coventry City",
+        "kickoff": "2026-10-24T14:00:00+00:00",
+        "kickoff_utc": "2026-10-24T14:00:00+00:00"
+      },
+      "fixture_id": "ENG2627_de0ba32d057a",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "bsd_event_id": 209608,
+          "evidence_status": "CONFIRMED_BSD_FALLBACK",
+          "final_90": {
+            "away": 1,
+            "home": 0
+          },
+          "fixture_id": "ENG2627_de0ba32d057a",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "result_status": "finished",
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "CONFIRMED_BSD_FALLBACK"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 1,
+          "home": 0
+        },
+        "score_90_plus_stoppage": "0-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:a552a1e3fb858b4246cf779235fdf336c8bf2b68fcf50968199584bc8d0f8581"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Atletico Madrid to win",
+        "balanced": "Atletico Madrid Team Goals Over 1.5",
+        "favourite": "Atletico Madrid Team Goals Over 1.5",
+        "favourite_meta": {
+          "expression": "Atletico Madrid Team Goals Over 1.5",
+          "nsp_reason": null,
+          "result": "PENDING",
+          "state": null
+        },
+        "favourite_prediction": "Atletico Madrid Team Goals Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Atletico Madrid to win",
+            "outcome": "PENDING",
+            "path_id": "aggressive:c_home_win"
+          },
+          "balanced": {
+            "expression": "Atletico Madrid Team Goals Over 1.5",
+            "outcome": "PENDING",
+            "path_id": "balanced:c_home_over_1_5"
+          },
+          "safe": {
+            "expression": "Atletico Madrid or Draw",
+            "outcome": "PENDING",
+            "path_id": "safe:c_home_1x"
+          }
+        },
+        "safe": "Atletico Madrid or Draw"
+      },
+      "fixture": {
+        "away": "Deportivo La Coruna",
+        "competition": null,
+        "home": "Atletico Madrid",
+        "kickoff": "2026-10-24T19:00:00+00:00",
+        "kickoff_utc": "2026-10-24T19:00:00+00:00"
+      },
+      "fixture_id": "ESP2627_8e5f0baf27dc",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "PENDING",
+        "balanced_result": "PENDING",
+        "evidence": {
+          "candidate_count": 0,
+          "evidence_status": "BSD_FALLBACK_ACQUIRED",
+          "fixture_id": "ESP2627_8e5f0baf27dc",
+          "identity_status": "UNMAPPABLE",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "PENDING",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "BSD_FALLBACK_ACQUIRED"
+          }
+        ],
+        "safe_result": "PENDING",
+        "score_90_plus_stoppage": null,
+        "status": "PENDING_RESULT"
+      },
+      "settlement_scope_id": "sha256:993a04927fbccb941a005f694e7fcd446d5d0b4e9f50787360c6ad5b12afc11c"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Racing Santander Team Goals Over 1.5",
+        "balanced": "Both Teams To Score: Yes",
+        "favourite": "Both Teams To Score: Yes",
+        "favourite_meta": {
+          "expression": "Both Teams To Score: Yes",
+          "nsp_reason": null,
+          "result": "PENDING",
+          "state": null
+        },
+        "favourite_prediction": "Both Teams To Score: Yes",
+        "paths": {
+          "aggressive": {
+            "expression": "Racing Santander Team Goals Over 1.5",
+            "outcome": "PENDING",
+            "path_id": "aggressive:c_home_over_15"
+          },
+          "balanced": {
+            "expression": "Both Teams To Score: Yes",
+            "outcome": "PENDING",
+            "path_id": "balanced:c_btts_yes"
+          },
+          "safe": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "PENDING",
+            "path_id": "safe:c_total_over_15"
+          }
+        },
+        "safe": "Match Total Over 1.5"
+      },
+      "fixture": {
+        "away": "Espanyol",
+        "competition": null,
+        "home": "Racing Santander",
+        "kickoff": "2026-10-24T14:15:00+00:00",
+        "kickoff_utc": "2026-10-24T14:15:00+00:00"
+      },
+      "fixture_id": "ESP2627_a46ea7f1e839",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "PENDING",
+        "balanced_result": "PENDING",
+        "evidence": {
+          "candidate_count": 0,
+          "evidence_status": "BSD_FALLBACK_ACQUIRED",
+          "fixture_id": "ESP2627_a46ea7f1e839",
+          "identity_status": "UNMAPPABLE",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "PENDING",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "BSD_FALLBACK_ACQUIRED"
+          }
+        ],
+        "safe_result": "PENDING",
+        "score_90_plus_stoppage": null,
+        "status": "PENDING_RESULT"
+      },
+      "settlement_scope_id": "sha256:2f848c84ffe4c35eda3735c9522aad22d8072be2eea181414fb4817c043bb66a"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Villarreal Team Goals Over 1.5",
+        "balanced": "Valencia Team Goals Under 1.5",
+        "favourite": "Valencia Team Goals Under 1.5",
+        "favourite_meta": {
+          "expression": "Valencia Team Goals Under 1.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Valencia Team Goals Under 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Villarreal Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:C4"
+          },
+          "balanced": {
+            "expression": "Valencia Team Goals Under 1.5",
+            "outcome": "HIT",
+            "path_id": "balanced:C2"
+          },
+          "safe": {
+            "expression": "Match Total Under 4.5",
+            "outcome": "HIT",
+            "path_id": "safe:C1"
+          }
+        },
+        "safe": "Match Total Under 4.5"
+      },
+      "fixture": {
+        "away": "Villarreal",
+        "competition": null,
+        "home": "Valencia",
+        "kickoff": "2026-10-24T16:30:00+00:00",
+        "kickoff_utc": "2026-10-24T16:30:00+00:00"
+      },
+      "fixture_id": "ESP2627_e34c7aca72a1",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "bsd_event_id": 213619,
+          "evidence_status": "CONFIRMED_BSD_FALLBACK",
+          "final_90": {
+            "away": 2,
+            "home": 1
+          },
+          "fixture_id": "ESP2627_e34c7aca72a1",
+          "half_time": {
+            "away": 0,
+            "home": 1
+          },
+          "identity_status": "MATCHED",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "result_status": "finished",
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "CONFIRMED_BSD_FALLBACK"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 2,
+          "home": 1
+        },
+        "score_90_plus_stoppage": "1-2",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:ce64f128b12d0fec446882866c2359f095ad461c34bb481f03ccbdc21d090625"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Rayo Vallecano Team Goals Over 1.5",
+        "balanced": "Rayo Vallecano Draw No Bet",
+        "favourite": "Rayo Vallecano Draw No Bet",
+        "favourite_meta": {
+          "expression": "Rayo Vallecano Draw No Bet",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Rayo Vallecano Draw No Bet",
+        "paths": {
+          "aggressive": {
+            "expression": "Rayo Vallecano Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "aggressive:cand_home_over_1_5"
+          },
+          "balanced": {
+            "expression": "Rayo Vallecano Draw No Bet",
+            "outcome": "MISS",
+            "path_id": "balanced:cand_home_dnb"
+          },
+          "safe": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "HIT",
+            "path_id": "safe:cand_total_over_1_5"
+          }
+        },
+        "safe": "Match Total Over 1.5"
+      },
+      "fixture": {
+        "away": "Elche",
+        "competition": null,
+        "home": "Rayo Vallecano",
+        "kickoff": "2026-10-24T12:00:00+00:00",
+        "kickoff_utc": "2026-10-24T12:00:00+00:00"
+      },
+      "fixture_id": "ESP2627_ffc61118b45f",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "bsd_event_id": 213615,
+          "evidence_status": "CONFIRMED_BSD_FALLBACK",
+          "final_90": {
+            "away": 3,
+            "home": 0
+          },
+          "fixture_id": "ESP2627_ffc61118b45f",
+          "half_time": {
+            "away": 2,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "result_status": "finished",
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "CONFIRMED_BSD_FALLBACK"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 3,
+          "home": 0
+        },
+        "score_90_plus_stoppage": "0-3",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:668e0a05aea67d10618824caed11cdd5e323140c1c6136dc038b22a0cf5bd4c1"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Match Total Over 2.5",
+        "balanced": "Lens Team Goals Over 0.5",
+        "favourite": "Match Total Over 1.5",
+        "favourite_meta": {
+          "expression": "Match Total Over 1.5",
+          "nsp_reason": null,
+          "result": "PENDING",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Match Total Over 2.5",
+            "outcome": "PENDING",
+            "path_id": "aggressive:c_total_over_2_5"
+          },
+          "balanced": {
+            "expression": "Lens Team Goals Over 0.5",
+            "outcome": "PENDING",
+            "path_id": "balanced:c_home_over_0_5"
+          },
+          "safe": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "PENDING",
+            "path_id": "safe:c_total_over_1_5"
+          }
+        },
+        "safe": "Match Total Over 1.5"
+      },
+      "fixture": {
+        "away": "Paris FC",
+        "competition": null,
+        "home": "Lens",
+        "kickoff": "2026-10-24T18:45:00+00:00",
+        "kickoff_utc": "2026-10-24T18:45:00+00:00"
+      },
+      "fixture_id": "FRA2627_a6cab881271c",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "PENDING",
+        "balanced_result": "PENDING",
+        "evidence": {
+          "candidate_count": 0,
+          "evidence_status": "BSD_FALLBACK_ACQUIRED",
+          "fixture_id": "FRA2627_a6cab881271c",
+          "identity_status": "UNMAPPABLE",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "PENDING",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "BSD_FALLBACK_ACQUIRED"
+          }
+        ],
+        "safe_result": "PENDING",
+        "score_90_plus_stoppage": null,
+        "status": "PENDING_RESULT"
+      },
+      "settlement_scope_id": "sha256:1625b6bc77f0e5c2b4789086f29f565bdfc51f537f5e2ce5390901d3987c665f"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Both Teams To Score: Yes",
+        "balanced": "Match Total Over 1.5",
+        "favourite": "Match Total Over 1.5",
+        "favourite_meta": {
+          "expression": "Match Total Over 1.5",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Both Teams To Score: Yes",
+            "outcome": "MISS",
+            "path_id": "aggressive:C3_BTTS_YES"
+          },
+          "balanced": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "MISS",
+            "path_id": "balanced:C2_TOTAL_OVER_1_5"
+          },
+          "safe": {
+            "expression": "FC Cologne Team Goals Over 0.5",
+            "outcome": "MISS",
+            "path_id": "safe:C1_HOME_OVER_0_5"
+          }
+        },
+        "safe": "FC Cologne Team Goals Over 0.5"
+      },
+      "fixture": {
+        "away": "Schalke 04",
+        "competition": null,
+        "home": "FC Cologne",
+        "kickoff": "2026-10-24T13:30:00+00:00",
+        "kickoff_utc": "2026-10-24T13:30:00+00:00"
+      },
+      "fixture_id": "GER2627_152f20f20fdb",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "bsd_event_id": 213722,
+          "evidence_status": "CONFIRMED_BSD_FALLBACK",
+          "final_90": {
+            "away": 0,
+            "home": 0
+          },
+          "fixture_id": "GER2627_152f20f20fdb",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "result_status": "finished",
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "CONFIRMED_BSD_FALLBACK"
+          }
+        ],
+        "safe_result": "MISS",
+        "score_90_detail": {
+          "away": 0,
+          "home": 0
+        },
+        "score_90_plus_stoppage": "0-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:680278ae68fcc3a25b0730250a9a9f8c72d6e4f2f3194985a8f06517755c2f4f"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Match Total Over 2.5",
+        "balanced": "RB Leipzig Team Goals Over 1.5",
+        "favourite": "RB Leipzig Team Goals Over 1.5",
+        "favourite_meta": {
+          "expression": "RB Leipzig Team Goals Over 1.5",
+          "nsp_reason": null,
+          "result": "PENDING",
+          "state": null
+        },
+        "favourite_prediction": "RB Leipzig Team Goals Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Match Total Over 2.5",
+            "outcome": "PENDING",
+            "path_id": "aggressive:c_total_o25"
+          },
+          "balanced": {
+            "expression": "RB Leipzig Team Goals Over 1.5",
+            "outcome": "PENDING",
+            "path_id": "balanced:c_home_o15"
+          },
+          "safe": {
+            "expression": "SV Elversberg Team Goals Under 2.5",
+            "outcome": "PENDING",
+            "path_id": "safe:c_away_u25"
+          }
+        },
+        "safe": "SV Elversberg Team Goals Under 2.5"
+      },
+      "fixture": {
+        "away": "SV Elversberg",
+        "competition": null,
+        "home": "RB Leipzig",
+        "kickoff": "2026-10-24T13:30:00+00:00",
+        "kickoff_utc": "2026-10-24T13:30:00+00:00"
+      },
+      "fixture_id": "GER2627_2fc510b242b2",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "PENDING",
+        "balanced_result": "PENDING",
+        "evidence": {
+          "candidate_count": 0,
+          "evidence_status": "BSD_FALLBACK_ACQUIRED",
+          "fixture_id": "GER2627_2fc510b242b2",
+          "identity_status": "UNMAPPABLE",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "PENDING",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "BSD_FALLBACK_ACQUIRED"
+          }
+        ],
+        "safe_result": "PENDING",
+        "score_90_plus_stoppage": null,
+        "status": "PENDING_RESULT"
+      },
+      "settlement_scope_id": "sha256:f2bbd5a0ead82977fa83b273951c50e97b3bbe43a8f4b42f68f4ede5950d949f"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Match Total Over 2.5",
+        "balanced": "Match Total Over 1.5",
+        "favourite": "Match Total Over 1.5",
+        "favourite_meta": {
+          "expression": "Match Total Over 1.5",
+          "nsp_reason": null,
+          "result": "PENDING",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Match Total Over 2.5",
+            "outcome": "PENDING",
+            "path_id": "aggressive:C4_TOTAL_OVER_2_5"
+          },
+          "balanced": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "PENDING",
+            "path_id": "balanced:C2_TOTAL_OVER_1_5"
+          },
+          "safe": {
+            "expression": "Mainz 05 Team Goals Over 0.5",
+            "outcome": "PENDING",
+            "path_id": "safe:C1_HOME_OVER_0_5"
+          }
+        },
+        "safe": "Mainz 05 Team Goals Over 0.5"
+      },
+      "fixture": {
+        "away": "Werder Bremen",
+        "competition": null,
+        "home": "Mainz 05",
+        "kickoff": "2026-10-24T13:30:00+00:00",
+        "kickoff_utc": "2026-10-24T13:30:00+00:00"
+      },
+      "fixture_id": "GER2627_723d1a86f276",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "PENDING",
+        "balanced_result": "PENDING",
+        "evidence": {
+          "candidate_count": 0,
+          "evidence_status": "BSD_FALLBACK_ACQUIRED",
+          "fixture_id": "GER2627_723d1a86f276",
+          "identity_status": "UNMAPPABLE",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "PENDING",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "BSD_FALLBACK_ACQUIRED"
+          }
+        ],
+        "safe_result": "PENDING",
+        "score_90_plus_stoppage": null,
+        "status": "PENDING_RESULT"
+      },
+      "settlement_scope_id": "sha256:80e6e1438fc85af5fecf4228439ff015f98ee45ec7886095ddd4e294f00b1f26"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Borussia Dortmund Team Goals Over 2.5",
+        "balanced": "Borussia Dortmund Team Goals Over 1.5",
+        "favourite": "Borussia Dortmund Team Goals Over 1.5",
+        "favourite_meta": {
+          "expression": "Borussia Dortmund Team Goals Over 1.5",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Borussia Dortmund Team Goals Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Borussia Dortmund Team Goals Over 2.5",
+            "outcome": "MISS",
+            "path_id": "aggressive:c_home_over_2_5"
+          },
+          "balanced": {
+            "expression": "Borussia Dortmund Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "balanced:c_home_over_1_5"
+          },
+          "safe": {
+            "expression": "Borussia Dortmund Draw No Bet",
+            "outcome": "HIT",
+            "path_id": "safe:c_home_dnb"
+          }
+        },
+        "safe": "Borussia Dortmund Draw No Bet"
+      },
+      "fixture": {
+        "away": "Eintracht Frankfurt",
+        "competition": null,
+        "home": "Borussia Dortmund",
+        "kickoff": "2026-10-24T16:30:00+00:00",
+        "kickoff_utc": "2026-10-24T16:30:00+00:00"
+      },
+      "fixture_id": "GER2627_c054ed2d4c29",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "bsd_event_id": 213724,
+          "evidence_status": "CONFIRMED_BSD_FALLBACK",
+          "final_90": {
+            "away": 0,
+            "home": 1
+          },
+          "fixture_id": "GER2627_c054ed2d4c29",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "result_status": "finished",
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "CONFIRMED_BSD_FALLBACK"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 0,
+          "home": 1
+        },
+        "score_90_plus_stoppage": "1-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:f5acfe1b30effcd29cf39d0f9370b3de703096d1f498c73d9f3cef439a4e60dd"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Hamburger SV Team Goals Over 1.5",
+        "balanced": "Hamburger SV or Draw",
+        "favourite": "Hamburger SV or Draw",
+        "favourite_meta": {
+          "expression": "Hamburger SV or Draw",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Hamburger SV or Draw",
+        "paths": {
+          "aggressive": {
+            "expression": "Hamburger SV Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "aggressive:c_away_over_15"
+          },
+          "balanced": {
+            "expression": "Hamburger SV or Draw",
+            "outcome": "MISS",
+            "path_id": "balanced:c_x2"
+          },
+          "safe": {
+            "expression": "Hamburger SV Team Goals Over 0.5",
+            "outcome": "MISS",
+            "path_id": "safe:c_away_over_05"
+          }
+        },
+        "safe": "Hamburger SV Team Goals Over 0.5"
+      },
+      "fixture": {
+        "away": "Hamburger SV",
+        "competition": null,
+        "home": "SC Paderborn",
+        "kickoff": "2026-10-24T13:30:00+00:00",
+        "kickoff_utc": "2026-10-24T13:30:00+00:00"
+      },
+      "fixture_id": "GER2627_c7f9a375ea4c",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "bsd_event_id": 213728,
+          "evidence_status": "CONFIRMED_BSD_FALLBACK",
+          "final_90": {
+            "away": 0,
+            "home": 1
+          },
+          "fixture_id": "GER2627_c7f9a375ea4c",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "result_status": "finished",
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "CONFIRMED_BSD_FALLBACK"
+          }
+        ],
+        "safe_result": "MISS",
+        "score_90_detail": {
+          "away": 0,
+          "home": 1
+        },
+        "score_90_plus_stoppage": "1-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:168a6ca9742f14427f369f03cda7495d627057de85143b9ba79505b02509e234"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Match Total Over 2.5",
+        "balanced": "Augsburg Team Goals Over 1.5",
+        "favourite": "Augsburg Team Goals Over 1.5",
+        "favourite_meta": {
+          "expression": "Augsburg Team Goals Over 1.5",
+          "nsp_reason": null,
+          "result": "PENDING",
+          "state": null
+        },
+        "favourite_prediction": "Augsburg Team Goals Over 1.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Match Total Over 2.5",
+            "outcome": "PENDING",
+            "path_id": "aggressive:c3_total_over_2_5"
+          },
+          "balanced": {
+            "expression": "Augsburg Team Goals Over 1.5",
+            "outcome": "PENDING",
+            "path_id": "balanced:c2_home_over_1_5"
+          },
+          "safe": {
+            "expression": "Augsburg Draw No Bet",
+            "outcome": "PENDING",
+            "path_id": "safe:c1_home_dnb"
+          }
+        },
+        "safe": "Augsburg Draw No Bet"
+      },
+      "fixture": {
+        "away": "Union Berlin",
+        "competition": null,
+        "home": "Augsburg",
+        "kickoff": "2026-10-24T13:30:00+00:00",
+        "kickoff_utc": "2026-10-24T13:30:00+00:00"
+      },
+      "fixture_id": "GER2627_deb05d29d5e6",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "PENDING",
+        "balanced_result": "PENDING",
+        "evidence": {
+          "candidate_count": 0,
+          "evidence_status": "BSD_FALLBACK_ACQUIRED",
+          "fixture_id": "GER2627_deb05d29d5e6",
+          "identity_status": "UNMAPPABLE",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "PENDING",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "BSD_FALLBACK_ACQUIRED"
+          }
+        ],
+        "safe_result": "PENDING",
+        "score_90_plus_stoppage": null,
+        "status": "PENDING_RESULT"
+      },
+      "settlement_scope_id": "sha256:677a1f0f59dd591fd51f3f48b73420336481f0bb5f4aa560603bd7699d74c2bb"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Roma Team Goals 1-2",
+        "balanced": "Roma or Draw",
+        "favourite": "Roma or Draw",
+        "favourite_meta": {
+          "expression": "Roma or Draw",
+          "nsp_reason": null,
+          "result": "PENDING",
+          "state": null
+        },
+        "favourite_prediction": "Roma or Draw",
+        "paths": {
+          "aggressive": {
+            "expression": "Roma Team Goals 1-2",
+            "outcome": "PENDING",
+            "path_id": "aggressive:C3"
+          },
+          "balanced": {
+            "expression": "Roma or Draw",
+            "outcome": "PENDING",
+            "path_id": "balanced:C2"
+          },
+          "safe": {
+            "expression": "Match Total Under 4.5",
+            "outcome": "PENDING",
+            "path_id": "safe:C1"
+          }
+        },
+        "safe": "Match Total Under 4.5"
+      },
+      "fixture": {
+        "away": "Roma",
+        "competition": null,
+        "home": "Napoli",
+        "kickoff": "2026-10-24T16:00:00+00:00",
+        "kickoff_utc": "2026-10-24T16:00:00+00:00"
+      },
+      "fixture_id": "ITA2627_2a2eaa76167c",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "PENDING",
+        "balanced_result": "PENDING",
+        "evidence": {
+          "candidate_count": 0,
+          "evidence_status": "BSD_FALLBACK_ACQUIRED",
+          "fixture_id": "ITA2627_2a2eaa76167c",
+          "identity_status": "UNMAPPABLE",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "PENDING",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "BSD_FALLBACK_ACQUIRED"
+          }
+        ],
+        "safe_result": "PENDING",
+        "score_90_plus_stoppage": null,
+        "status": "PENDING_RESULT"
+      },
+      "settlement_scope_id": "sha256:be3c8bf6df5c64e5abf814c4cfc17d69ce8eadc06b7a90247f8350f6da11e7a4"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Bologna or Draw",
+        "balanced": "Cagliari Team Goals Under 1.5",
+        "favourite": "Match Total Under 3.5",
+        "favourite_meta": {
+          "expression": "Match Total Under 3.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Under 3.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Bologna or Draw",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_away_x2"
+          },
+          "balanced": {
+            "expression": "Cagliari Team Goals Under 1.5",
+            "outcome": "HIT",
+            "path_id": "balanced:c_home_under_1_5"
+          },
+          "safe": {
+            "expression": "Match Total Under 3.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_under_3_5"
+          }
+        },
+        "safe": "Match Total Under 3.5"
+      },
+      "fixture": {
+        "away": "Bologna",
+        "competition": null,
+        "home": "Cagliari",
+        "kickoff": "2026-10-24T13:00:00+00:00",
+        "kickoff_utc": "2026-10-24T13:00:00+00:00"
+      },
+      "fixture_id": "ITA2627_400c0b668357",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "bsd_event_id": 210128,
+          "evidence_status": "CONFIRMED_BSD_FALLBACK",
+          "final_90": {
+            "away": 2,
+            "home": 0
+          },
+          "fixture_id": "ITA2627_400c0b668357",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "result_status": "finished",
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "CONFIRMED_BSD_FALLBACK"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 2,
+          "home": 0
+        },
+        "score_90_plus_stoppage": "0-2",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:8253566301d65d208a203a69984166e365031a53f88464e881a914fad980bf4d"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Como Team Goals Over 1.5",
+        "balanced": "Como to win",
+        "favourite": "Como or Draw",
+        "favourite_meta": {
+          "expression": "Como or Draw",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Como or Draw",
+        "paths": {
+          "aggressive": {
+            "expression": "Como Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c3_home_over_1_5"
+          },
+          "balanced": {
+            "expression": "Como to win",
+            "outcome": "HIT",
+            "path_id": "balanced:c2_home_win"
+          },
+          "safe": {
+            "expression": "Como or Draw",
+            "outcome": "HIT",
+            "path_id": "safe:c1_home_1x"
+          }
+        },
+        "safe": "Como or Draw"
+      },
+      "fixture": {
+        "away": "Sassuolo",
+        "competition": null,
+        "home": "Como",
+        "kickoff": "2026-10-24T13:00:00+00:00",
+        "kickoff_utc": "2026-10-24T13:00:00+00:00"
+      },
+      "fixture_id": "ITA2627_d6ed4563e7b5",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "bsd_event_id": 210129,
+          "evidence_status": "CONFIRMED_BSD_FALLBACK",
+          "final_90": {
+            "away": 0,
+            "home": 2
+          },
+          "fixture_id": "ITA2627_d6ed4563e7b5",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "result_status": "finished",
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "CONFIRMED_BSD_FALLBACK"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 0,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:60cbb9530b82ca6447c151e8d0ea43b1a0e84c2c343a3b9042de820d15738061"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Lazio Team Goals Over 1.5",
+        "balanced": "Lazio to win",
+        "favourite": "Lazio to win",
+        "favourite_meta": {
+          "expression": "Lazio to win",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Lazio to win",
+        "paths": {
+          "aggressive": {
+            "expression": "Lazio Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_home_over_1_5"
+          },
+          "balanced": {
+            "expression": "Lazio to win",
+            "outcome": "HIT",
+            "path_id": "balanced:c_home_win"
+          },
+          "safe": {
+            "expression": "Match Total Under 3.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_under_3_5"
+          }
+        },
+        "safe": "Match Total Under 3.5"
+      },
+      "fixture": {
+        "away": "Parma",
+        "competition": null,
+        "home": "Lazio",
+        "kickoff": "2026-10-24T18:45:00+00:00",
+        "kickoff_utc": "2026-10-24T18:45:00+00:00"
+      },
+      "fixture_id": "ITA2627_f410a229c648",
+      "immutable_prediction_core_hash": null,
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "bsd_event_id": 210132,
+          "evidence_status": "CONFIRMED_BSD_FALLBACK",
+          "final_90": {
+            "away": 1,
+            "home": 2
+          },
+          "fixture_id": "ITA2627_f410a229c648",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:0c22ffb69e392ce3aafd75d01d1bf8746c63c08b91ee9b1ac357f79e685bd350",
+            "sha256:e1664d6907375b108e352404d2bcbeb23475e5cacc9c1163a70a808d48aae485"
+          ],
+          "result_status": "finished",
+          "retrieved_at": "2026-10-26T08:10:30Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "CONFIRMED_BSD_FALLBACK"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 1,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:a3c22861e69d062df281056173e2d047abd131c3c88ac7c7af2143ab354dfea2"
+    }
+  ],
+  "record_type": "result_audit",
+  "revision_of": "ECOBET_2026-10-24_RESULT_AUDIT_V24.json",
+  "run_audit_record": {
+    "match_coverage": 19,
+    "mode": "DAILY_PRODUCTION",
+    "model_kpis": {
+      "aggressive": {
+        "HIT": 7,
+        "MISS": 5,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 7,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 12,
+        "hit_rate": 0.5833333333333334
+      },
+      "balanced": {
+        "HIT": 6,
+        "MISS": 6,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 7,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 12,
+        "hit_rate": 0.5
+      },
+      "favourite": {
+        "HIT": 7,
+        "MISS": 5,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 7,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 12,
+        "hit_rate": 0.5833333333333334
+      },
+      "safe": {
+        "HIT": 10,
+        "MISS": 2,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 7,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 12,
+        "hit_rate": 0.8333333333333334
+      }
+    },
+    "original_record_path": "C:\\ECOBET\\ecobet_v2\\state\\daily_runs_operational_final\\2026-10-24\\published\\ECOBET_LRUN_29afade2cac54cf381eee8e4a27b02e3\\2026-10-24_0809.json",
+    "original_record_sha256": "sha256:29cd3197b2fed8cfcab07b73e19259a8b340e8f59fa283aed0954c8eef4dc0d0",
+    "publication_based_admission": true,
+    "regular_prediction_count": 19,
+    "run_id": "2026-10-24_0809",
+    "superseded_run_excluded": "2026-10-24_0715"
+  },
+  "schema_version": "ECOBET_RESULT_AUDIT_V2_4"
+}
