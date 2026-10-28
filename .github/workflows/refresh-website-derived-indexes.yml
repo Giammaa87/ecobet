@@ -1,0 +1,43 @@
+name: Refresh ECOBET website derived indexes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'audits/**'
+      - 'corrections/audits/**'
+      - 'data/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ecobet-website-derived-indexes-main
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build immutable indexes from published evidence
+        run: python tools/build_website_phase1_indexes.py .
+      - name: Verify source bindings and settlement equivalence
+        run: python tools/validate_website_phase1.py .
+      - name: Commit validated derived indexes
+        shell: bash
+        run: |
+          git config user.name 'ecobet-website-index-bot'
+          git config user.email 'ecobet-website-index-bot@users.noreply.github.com'
+          git add -- performance team-form
+          if git diff --cached --quiet; then
+            echo 'No derived index update required.'
+            exit 0
+          fi
+          git commit -m 'website: refresh derived indexes'
+          git push origin HEAD:main
