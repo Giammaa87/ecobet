@@ -1,0 +1,236 @@
+{
+  "append_only": true,
+  "audit_generated_at": "2026-10-29T22:30:03Z",
+  "audit_id": "2026-10-29_2026-10-29_0215_V24",
+  "authority": {
+    "publication_admission": "C:\\ECOBET\\ecobet_v24_release\\authority\\ECOBET_RESULT_AUDIT_PUBLICATION_APPROVAL_V1.md",
+    "sha256": "sha256:63d5e1cdf4c5fce5363d882e84002d86e6f7eeb4581d05eff2daa6480d7935cd"
+  },
+  "match_audit_records": [
+    {
+      "committed_model": {
+        "aggressive": "Frosinone Team Goals Over 1.5",
+        "balanced": "Frosinone Draw No Bet",
+        "favourite": "Match Total Under 4.5",
+        "favourite_meta": {
+          "expression": "Match Total Under 4.5",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Under 4.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Frosinone Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_home_over_1_5"
+          },
+          "balanced": {
+            "expression": "Frosinone Draw No Bet",
+            "outcome": "HIT",
+            "path_id": "balanced:c_home_dnb"
+          },
+          "safe": {
+            "expression": "Match Total Under 4.5",
+            "outcome": "MISS",
+            "path_id": "safe:c_under_4_5"
+          }
+        },
+        "safe": "Match Total Under 4.5"
+      },
+      "fixture": {
+        "away": "Lecce",
+        "competition": null,
+        "home": "Frosinone",
+        "kickoff": "2026-10-29T17:30:00+00:00",
+        "kickoff_utc": "2026-10-29T17:30:00+00:00"
+      },
+      "fixture_id": "ITA2627_045632f52eca",
+      "immutable_prediction_core_hash": "sha256:a2251384ee96fe83415809bfa19c714d10de36ac584872b384cfd9f00c12732b",
+      "immutable_prediction_core_hash_basis": "DERIVED_SHA256_OF_IMMUTABLE_ORIGINAL_PREDICTION_CORE",
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "CONFIRMED_API_FOOTBALL",
+          "api_fixture_id": 1550170,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 1,
+            "home": 5
+          },
+          "fixture_id": "ITA2627_045632f52eca",
+          "half_time": {
+            "away": 0,
+            "home": 2
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-29\\7f23e2d2d34d96b65b7c71f4f94b25c551e30ad7d183119ab3edb36488ecd9c4.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-29&timezone=UTC",
+          "raw_sha256": "sha256:7f23e2d2d34d96b65b7c71f4f94b25c551e30ad7d183119ab3edb36488ecd9c4",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-29T22:30:03Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "MISS",
+        "score_90_detail": {
+          "away": 1,
+          "home": 5
+        },
+        "score_90_plus_stoppage": "5-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:ad13d4c14160b026c199f109322714679656d64533ad7362edbd99c0b53efd7b"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Atalanta Draw No Bet",
+        "balanced": "Both Teams To Score: Yes",
+        "favourite": "Both Teams To Score: Yes",
+        "favourite_meta": {
+          "expression": "Both Teams To Score: Yes",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Both Teams To Score: Yes",
+        "paths": {
+          "aggressive": {
+            "expression": "Atalanta Draw No Bet",
+            "outcome": "PUSH",
+            "path_id": "aggressive:c_away_dnb"
+          },
+          "balanced": {
+            "expression": "Both Teams To Score: Yes",
+            "outcome": "HIT",
+            "path_id": "balanced:c_btts_yes"
+          },
+          "safe": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_total_over_1_5"
+          }
+        },
+        "safe": "Match Total Over 1.5"
+      },
+      "fixture": {
+        "away": "Atalanta",
+        "competition": null,
+        "home": "Fiorentina",
+        "kickoff": "2026-10-29T19:45:00+00:00",
+        "kickoff_utc": "2026-10-29T19:45:00+00:00"
+      },
+      "fixture_id": "ITA2627_2b6ac730114f",
+      "immutable_prediction_core_hash": "sha256:9055969428700a11335702bdb8ac94850bafc296586cb3d8bf0a43dd280c1563",
+      "immutable_prediction_core_hash_basis": "DERIVED_SHA256_OF_IMMUTABLE_ORIGINAL_PREDICTION_CORE",
+      "result_settlement": {
+        "aggressive_result": "PUSH",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "CONFIRMED_API_FOOTBALL",
+          "api_fixture_id": 1550169,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 2,
+            "home": 2
+          },
+          "fixture_id": "ITA2627_2b6ac730114f",
+          "half_time": {
+            "away": 1,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-29\\7f23e2d2d34d96b65b7c71f4f94b25c551e30ad7d183119ab3edb36488ecd9c4.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-29&timezone=UTC",
+          "raw_sha256": "sha256:7f23e2d2d34d96b65b7c71f4f94b25c551e30ad7d183119ab3edb36488ecd9c4",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-29T22:30:03Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 2,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-2",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:72b5b9bdc9c11cc4f4a1bdc55e7fc737d6f352d911571491cd04b38995ae8f59"
+    }
+  ],
+  "record_type": "result_audit",
+  "run_audit_record": {
+    "match_coverage": 2,
+    "mode": "DAILY_PRODUCTION",
+    "model_kpis": {
+      "aggressive": {
+        "HIT": 1,
+        "MISS": 0,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 1,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 1,
+        "hit_rate": 1.0
+      },
+      "balanced": {
+        "HIT": 2,
+        "MISS": 0,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 2,
+        "hit_rate": 1.0
+      },
+      "favourite": {
+        "HIT": 1,
+        "MISS": 1,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 2,
+        "hit_rate": 0.5
+      },
+      "safe": {
+        "HIT": 1,
+        "MISS": 1,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 2,
+        "hit_rate": 0.5
+      }
+    },
+    "original_record_path": "C:\\ECOBET\\ecobet_v2\\state\\daily_runs_operational_final\\2026-10-29\\published\\ECOBET_LRUN_971af71efd5c4815961d2ab565e9254b\\2026-10-29_0215.json",
+    "original_record_sha256": "sha256:f420bbb433049874f758719bd9bf6dd24b7144b9accc29d913966ac913919d14",
+    "publication_based_admission": true,
+    "regular_prediction_count": 2,
+    "run_id": "2026-10-29_0215"
+  },
+  "schema_version": "ECOBET_RESULT_AUDIT_V2_4"
+}
