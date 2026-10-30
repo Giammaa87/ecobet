@@ -1,0 +1,400 @@
+{
+  "append_only": true,
+  "audit_generated_at": "2026-10-30T22:30:03Z",
+  "audit_id": "2026-10-30_2026-10-30_0217_V24",
+  "authority": {
+    "publication_admission": "C:\\ECOBET\\ecobet_v24_release\\authority\\ECOBET_RESULT_AUDIT_PUBLICATION_APPROVAL_V1.md",
+    "sha256": "sha256:63d5e1cdf4c5fce5363d882e84002d86e6f7eeb4581d05eff2daa6480d7935cd"
+  },
+  "match_audit_records": [
+    {
+      "committed_model": {
+        "aggressive": "Villarreal Team Goals Over 1.5",
+        "balanced": "Villarreal Draw No Bet",
+        "favourite": "Villarreal Draw No Bet",
+        "favourite_meta": {
+          "expression": "Villarreal Draw No Bet",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Villarreal Draw No Bet",
+        "paths": {
+          "aggressive": {
+            "expression": "Villarreal Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "aggressive:cand_home_over_1_5"
+          },
+          "balanced": {
+            "expression": "Villarreal Draw No Bet",
+            "outcome": "MISS",
+            "path_id": "balanced:cand_home_dnb"
+          },
+          "safe": {
+            "expression": "Match Total Under 4.5",
+            "outcome": "HIT",
+            "path_id": "safe:cand_under_4_5"
+          }
+        },
+        "safe": "Match Total Under 4.5"
+      },
+      "fixture": {
+        "away": "Espanyol",
+        "competition": null,
+        "home": "Villarreal",
+        "kickoff": "2026-10-30T20:00:00+00:00",
+        "kickoff_utc": "2026-10-30T20:00:00+00:00"
+      },
+      "fixture_id": "ESP2627_bdc00797a199",
+      "immutable_prediction_core_hash": "sha256:bd744f7dbf596f99113d974a7a72e07f98e600b34e56ba4f959b6454669400fd",
+      "immutable_prediction_core_hash_basis": "DERIVED_SHA256_OF_IMMUTABLE_ORIGINAL_PREDICTION_CORE",
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "acquisition_status": "CONFIRMED_API_FOOTBALL",
+          "api_fixture_id": 1570442,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 1,
+            "home": 0
+          },
+          "fixture_id": "ESP2627_bdc00797a199",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-30\\2eec65b6b62ce7bf69af83534773469985f6a9fa4c9db6d623888472a63e8e3d.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-30&timezone=UTC",
+          "raw_sha256": "sha256:2eec65b6b62ce7bf69af83534773469985f6a9fa4c9db6d623888472a63e8e3d",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-30T22:30:03Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 1,
+          "home": 0
+        },
+        "score_90_plus_stoppage": "0-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:7f1596765de11be535da75cb90cb20c353a15930a1361e5e7c570c4acc728c0f"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Paris Saint-Germain Team Goals Over 1.5",
+        "balanced": "Paris Saint-Germain to win",
+        "favourite": "Paris Saint-Germain to win",
+        "favourite_meta": {
+          "expression": "Paris Saint-Germain to win",
+          "nsp_reason": null,
+          "result": "UNMAPPABLE",
+          "state": null
+        },
+        "favourite_prediction": "Paris Saint-Germain to win",
+        "paths": {
+          "aggressive": {
+            "expression": "Paris Saint-Germain Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_away_over_1_5"
+          },
+          "balanced": {
+            "expression": "Paris Saint-Germain to win",
+            "outcome": "UNMAPPABLE",
+            "path_id": "balanced:c_away_win"
+          },
+          "safe": {
+            "expression": "Le Havre Team Goals Under 1.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_home_under_1_5"
+          }
+        },
+        "safe": "Le Havre Team Goals Under 1.5"
+      },
+      "fixture": {
+        "away": "Paris Saint-Germain",
+        "competition": null,
+        "home": "Le Havre",
+        "kickoff": "2026-10-30T18:00:00+00:00",
+        "kickoff_utc": "2026-10-30T18:00:00+00:00"
+      },
+      "fixture_id": "FRA2627_2c50ebfffd61",
+      "immutable_prediction_core_hash": "sha256:055ecd7946081a9f4fc1de96d9f1f5da2d9fd4e63d0e64600b9864f6dd2441c1",
+      "immutable_prediction_core_hash_basis": "DERIVED_SHA256_OF_IMMUTABLE_ORIGINAL_PREDICTION_CORE",
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "UNMAPPABLE",
+        "evidence": {
+          "acquisition_status": "CONFIRMED_API_FOOTBALL",
+          "api_fixture_id": 1552801,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 5,
+            "home": 1
+          },
+          "fixture_id": "FRA2627_2c50ebfffd61",
+          "half_time": {
+            "away": 2,
+            "home": 1
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-30\\2eec65b6b62ce7bf69af83534773469985f6a9fa4c9db6d623888472a63e8e3d.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-30&timezone=UTC",
+          "raw_sha256": "sha256:2eec65b6b62ce7bf69af83534773469985f6a9fa4c9db6d623888472a63e8e3d",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-30T22:30:03Z"
+        },
+        "favourite_result": "UNMAPPABLE",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 5,
+          "home": 1
+        },
+        "score_90_plus_stoppage": "1-5",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:42558ecd9992a0341353251054d7d6d23efbfc47008c27873d1bba9a30332d2d"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Both Teams To Score: Yes",
+        "balanced": "Match Total Under 3.5",
+        "favourite": "Match Total Under 3.5",
+        "favourite_meta": {
+          "expression": "Match Total Under 3.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Under 3.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Both Teams To Score: Yes",
+            "outcome": "MISS",
+            "path_id": "aggressive:C3"
+          },
+          "balanced": {
+            "expression": "Match Total Under 3.5",
+            "outcome": "HIT",
+            "path_id": "balanced:C2"
+          },
+          "safe": {
+            "expression": "Match Total Under 4.5",
+            "outcome": "HIT",
+            "path_id": "safe:C1"
+          }
+        },
+        "safe": "Match Total Under 4.5"
+      },
+      "fixture": {
+        "away": "Lens",
+        "competition": null,
+        "home": "Lille",
+        "kickoff": "2026-10-30T20:05:00+00:00",
+        "kickoff_utc": "2026-10-30T20:05:00+00:00"
+      },
+      "fixture_id": "FRA2627_7ffd26b67557",
+      "immutable_prediction_core_hash": "sha256:6dbf854b538241b19e72677018dcfaf3ffef4c07255142bfefcaa36da6729d23",
+      "immutable_prediction_core_hash_basis": "DERIVED_SHA256_OF_IMMUTABLE_ORIGINAL_PREDICTION_CORE",
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "CONFIRMED_API_FOOTBALL",
+          "api_fixture_id": 1552802,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 0,
+            "home": 1
+          },
+          "fixture_id": "FRA2627_7ffd26b67557",
+          "half_time": {
+            "away": 0,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-30\\2eec65b6b62ce7bf69af83534773469985f6a9fa4c9db6d623888472a63e8e3d.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-30&timezone=UTC",
+          "raw_sha256": "sha256:2eec65b6b62ce7bf69af83534773469985f6a9fa4c9db6d623888472a63e8e3d",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-30T22:30:03Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 0,
+          "home": 1
+        },
+        "score_90_plus_stoppage": "1-0",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:5f92c09a79fdb2f684d995e3c887bcf093fa82eac3e5ad1f5068f35801be0ee9"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Mainz 05 Team Goals Over 1.5",
+        "balanced": "Both Teams To Score: Yes",
+        "favourite": "Match Total Over 2.5",
+        "favourite_meta": {
+          "expression": "Match Total Over 2.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Match Total Over 2.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Mainz 05 Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "aggressive:c_away_over_1_5"
+          },
+          "balanced": {
+            "expression": "Both Teams To Score: Yes",
+            "outcome": "HIT",
+            "path_id": "balanced:c_btts_yes"
+          },
+          "safe": {
+            "expression": "Match Total Over 2.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_total_over_2_5"
+          }
+        },
+        "safe": "Match Total Over 2.5"
+      },
+      "fixture": {
+        "away": "Mainz 05",
+        "competition": null,
+        "home": "SV Elversberg",
+        "kickoff": "2026-10-30T19:30:00+00:00",
+        "kickoff_utc": "2026-10-30T19:30:00+00:00"
+      },
+      "fixture_id": "GER2627_0135c14d2877",
+      "immutable_prediction_core_hash": "sha256:af805715775a326605af881ae07b4045fb0f20a1156099c5d761e68824e9dfcf",
+      "immutable_prediction_core_hash_basis": "DERIVED_SHA256_OF_IMMUTABLE_ORIGINAL_PREDICTION_CORE",
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "CONFIRMED_API_FOOTBALL",
+          "api_fixture_id": 1575211,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 1,
+            "home": 4
+          },
+          "fixture_id": "GER2627_0135c14d2877",
+          "half_time": {
+            "away": 0,
+            "home": 3
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-10-30\\2eec65b6b62ce7bf69af83534773469985f6a9fa4c9db6d623888472a63e8e3d.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-10-30&timezone=UTC",
+          "raw_sha256": "sha256:2eec65b6b62ce7bf69af83534773469985f6a9fa4c9db6d623888472a63e8e3d",
+          "result_status": "FT",
+          "retrieved_at": "2026-10-30T22:30:03Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 1,
+          "home": 4
+        },
+        "score_90_plus_stoppage": "4-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:8a978a53b55cbe81dd63726aeb9021c690e9d9f41b680aac1bd30353de7a1cea"
+    }
+  ],
+  "record_type": "result_audit",
+  "run_audit_record": {
+    "match_coverage": 4,
+    "mode": "DAILY_PRODUCTION",
+    "model_kpis": {
+      "aggressive": {
+        "HIT": 1,
+        "MISS": 3,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 4,
+        "hit_rate": 0.25
+      },
+      "balanced": {
+        "HIT": 2,
+        "MISS": 1,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 0,
+        "UNMAPPABLE": 1,
+        "VOID": 0,
+        "denominator": 3,
+        "hit_rate": 0.6666666666666666
+      },
+      "favourite": {
+        "HIT": 2,
+        "MISS": 1,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 0,
+        "UNMAPPABLE": 1,
+        "VOID": 0,
+        "denominator": 3,
+        "hit_rate": 0.6666666666666666
+      },
+      "safe": {
+        "HIT": 4,
+        "MISS": 0,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 0,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 4,
+        "hit_rate": 1.0
+      }
+    },
+    "original_record_path": "C:\\ECOBET\\ecobet_v2\\state\\daily_runs_operational_final\\2026-10-30\\published\\ECOBET_LRUN_01025554cfc843c1b64dd1b0414719b8\\2026-10-30_0217.json",
+    "original_record_sha256": "sha256:b26682d9939d9254aaa62cda1cf5891eb224600d260a26e66da7f3b3837fa4f7",
+    "publication_based_admission": true,
+    "regular_prediction_count": 4,
+    "run_id": "2026-10-30_0217"
+  },
+  "schema_version": "ECOBET_RESULT_AUDIT_V2_4"
+}
