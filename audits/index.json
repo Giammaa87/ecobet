@@ -1142,9 +1142,30 @@
         },
         "run_id": "2026-10-30_0217"
       }
+    ],
+    "2026-10-31": [
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-10-31_RESULT_AUDIT_V24.json",
+        "generated_at": "2026-10-31T22:30:05Z",
+        "id": "2026-10-31_2026-10-31_0259_V24",
+        "kpi": {
+          "HIT": 16,
+          "MISS": 3,
+          "NOT_APPLICABLE": 3,
+          "NSP": 0,
+          "PENDING": 0,
+          "PUSH": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 19,
+          "hit_rate": 0.8421052631578947
+        },
+        "run_id": "2026-10-31_0259"
+      }
     ]
   },
-  "generated_at": "2026-10-30T22:30:06Z",
+  "generated_at": "2026-10-31T22:30:07Z",
   "record_type": "audit_index",
   "schema_version": "1.0"
 }
