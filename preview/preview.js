@@ -36,6 +36,11 @@ const quotePriority=m=>{
  const r=String(m?.favourite_robustness||m?.robustness||"").toUpperCase();
  if(r==="HIGH")p-=10;else if(r==="LOW")p+=22;
  p+=Math.min(issues(m).length,8)*4;
+ const source=obj(m?.__stage12?.prediction);
+ if(source.anomaly?.present===true&&source.anomaly?.favourite_affected===true)p+=40;
+ if(source.fragility?.present===true&&source.fragility?.favourite_affected===true)p+=14;
+ const st=String(source.prediction_stability_light||"").toUpperCase();
+ if(st==="RED")p+=60;else if(st==="GREEN")p-=6;
  return p;
 };
 function showSelected(){
@@ -88,6 +93,9 @@ async function loadBoard(){
   const entry=Object.values(obj(index.entries)).filter(e=>e.publication_id===id).slice(-1)[0];
   if(!entry){el("v3-board-status").textContent="Für "+id+" wurde kein BSD Quotensnapshot veröffentlicht.";el("v3-quotes").innerHTML='<div class="v3-info">ECOBET Predictions sind vorhanden. Für diesen Run fehlen jedoch veröffentlichte BSD Quoten. Es werden keine Ersatzquoten erfunden.</div>';return;}
   const doc=await getJSON(entry.file);if(id!==state.currentRunId)return;
+  const stage=await getStage12ForRun().catch(()=>null);
+  if(id!==state.currentRunId)return;
+  if(stage)attachStage12ToRun(stage);
   const byID=new Map(state.currentRun.matches.map(m=>[matchId(m),m]));X.odds=doc;
   for(const fx of arr(doc.fixtures)){
    const m=byID.get(fx.fixture_id);if(!m||isNSP(m))continue;
@@ -293,6 +301,8 @@ el("v3-top-ranking").onclick=()=>activateView("topreads");
 el("v3-team-open").onclick=loadTeam;
 ["v3-role","v3-risk","v3-league","v3-min-odds","v3-max-odds","v3-market"].forEach(id=>el(id).addEventListener("input",renderQuotes));
 el("v3-odds-slider").addEventListener("input",e=>{el("v3-min-odds").value=e.target.value;el("v3-slider-label").textContent=fmt(e.target.value);renderQuotes()});
+el("v3-risk-slider").addEventListener("input",e=>{el("v3-risk").value=e.target.value;el("v3-risk-label").textContent=({0:"Konservativ",1:"Ausgewogen",2:"Alle verfügbaren"})[e.target.value];renderQuotes()});
+el("v3-risk").addEventListener("change",e=>{el("v3-risk-slider").value=e.target.value;el("v3-risk-label").textContent=({0:"Konservativ",1:"Ausgewogen",2:"Alle verfügbaren"})[e.target.value]});
 el("v3-min-odds").addEventListener("input",e=>{const n=Math.min(10,Math.max(1,num(e.target.value,1)));el("v3-odds-slider").value=n;el("v3-slider-label").textContent=fmt(n)});
 el("v3-slip-clear").onclick=()=>{X.picks.clear();showSelected();renderQuotes()};
 el("v3-stake").addEventListener("input",showSelected);
