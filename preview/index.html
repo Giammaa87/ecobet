@@ -292,7 +292,7 @@ footer{padding:24px 0 42px;color:var(--dim);font-size:.72rem}
 <div id="v3-board-status" class="v3-info">BSD Daten werden beim Öffnen geladen.</div>
 <div class="v3-controlbar panel">
 <label>Entscheidungspfad<select id="v3-role"><option value="ALL">Alle Pfade</option><option value="FAVOURITE">ECOBET Favourite</option><option value="SAFE">SAFE</option><option value="BALANCED">BALANCED</option><option value="AGGRESSIVE">AGGRESSIVE</option></select></label>
-<label>Risikoprofil<select id="v3-risk"><option value="1">Ausgewogen</option><option value="0">Konservativ</option><option value="2">Alle verfügbaren</option></select></label>
+<label>Risikoprofil<select id="v3-risk"><option value="1">Ausgewogen</option><option value="0">Konservativ</option><option value="2">Alle verfügbaren</option></select></label><div class="v3-slider"><div><span>Risikoregler: Filterstufe</span><strong id="v3-risk-label">Ausgewogen</strong></div><input id="v3-risk-slider" type="range" min="0" max="2" step="1" value="1" aria-label="Risikoprofil einstellen"></div>
 <label>Wettbewerb<select id="v3-league"><option value="ALL">Alle Wettbewerbe</option></select></label>
 <label>Mindestquote<input id="v3-min-odds" type="number" min="1" max="100" step=".05" value="1"></label>
 <label>Höchstquote<input id="v3-max-odds" type="number" min="1" max="100" step=".05" value="100"></label>
@@ -305,7 +305,7 @@ footer{padding:24px 0 42px;color:var(--dim);font-size:.72rem}
 </section><section class="view" id="view-teams"><header class="v3-heading"><div><div class="v3-kicker">ECOBET · TEAM INTELLIGENCE</div><h1>Team Books</h1><p>Form, Last Five, xG, xGA und Matchhistorie aus publizierten Team Snapshots, sauber von ECOBET Momentum getrennt.</p></div></header><div class="panel v3-team-chooser"><label>Mannschaft aus dem gewählten Run<select id="v3-team-select"><option>Bitte Run laden</option></select></label><button id="v3-team-open" type="button">Team Book laden</button></div><div id="v3-team-content" class="v3-team-content"><div class="v3-info">Wähle eine Mannschaft, um die verfügbaren Teamdaten aus dem Tages-Snapshot zu laden.</div></div><p class="v3-small">Snapshot Zeit und Herkunft werden stets angegeben. Später erstellte Daten sind kein rückwirkender Bestandteil des ursprünglichen Predictions Runs.</p></section></main>
 
 <div class="detail-overlay" id="detailOverlay" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1"><div class="detail"><div class="detail-close"><button id="detailClose" aria-label="Schliessen">×</button></div><div id="detailBody"></div></div></div>
-<footer><div class="wrap">ECOBET · Fussball-Prognosen · keine reale Quote, keine Tickets · Europe/Zurich</div></footer>
+<footer><div class="wrap">ECOBET · Redesign Test · archivierte BSD Quoten · keine Wettabgabe · Europe/Zurich</div></footer>
 
 <script>
 const BASE = location.protocol === 'file:' ? 'https://giammaa87.github.io/ecobet/' : './';
