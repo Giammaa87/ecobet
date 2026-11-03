@@ -1,19 +1,19 @@
 {
   "schema_version": "ECOBET_DAILY_DATA_V2_FULL",
   "date": "2026-11-03",
-  "snapshot_id": "snap_20261103_032219",
-  "data_hash": "sha256:2c0ee6924280f9db3f96c3d001f59e6b476d08a686e1b1eed4968a00d0a57fbb",
-  "generated_at": "2026-11-03T03:22:19.128598+01:00",
-  "data_cutoff": "2026-11-03T03:22:19.128598+01:00",
-  "db_updated_at": "2026-11-03T03:14:21",
+  "snapshot_id": "snap_20261103_094901",
+  "data_hash": "sha256:a19bb0598777c5f53275f3442cc5db22c6d93a1c3b37b22a642e09aa8f95b19a",
+  "generated_at": "2026-11-03T09:49:01.533186+01:00",
+  "data_cutoff": "2026-11-03T09:49:01.533186+01:00",
+  "db_updated_at": "2026-11-03T09:40:54",
   "n_fixtures": 9,
   "n_teams": 18,
   "zero_fixture_basis": "NOT_APPLICABLE",
   "zero_fixture_reason": null,
   "resolves_to": {
-    "manifest": "snap_20261103_032219/manifest.json",
-    "fixtures": "snap_20261103_032219/fixtures.json",
-    "team_template": "snap_20261103_032219/teams/<team_id>.json"
+    "manifest": "snap_20261103_094901/manifest.json",
+    "fixtures": "snap_20261103_094901/fixtures.json",
+    "team_template": "snap_20261103_094901/teams/<team_id>.json"
   },
   "note": "Resolution-Endpoint. Der eigentliche Datenverbund liegt unveraenderlich unter <snapshot_id>/ und ist ueber data_hash gebunden."
 }
