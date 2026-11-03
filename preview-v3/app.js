@@ -151,6 +151,19 @@ function compareTable(h,a){
  return '<div class="metric-table-wrap"><table class="compare metric-table"><thead><tr><th>Kennzahl</th><th>Heim</th><th>Auswärts</th></tr></thead><tbody>'+
  metrics.map(k=>'<tr><td>'+safe(metricName[k])+'</td><td>'+fmt(f[k],k.includes("_n")||k.endsWith("wins")||k.endsWith("draws")||k.endsWith("losses")?0:2)+'</td><td>'+fmt(g[k],k.includes("_n")||k.endsWith("wins")||k.endsWith("draws")||k.endsWith("losses")?0:2)+'</td></tr>').join("")+'</tbody></table></div>';
 }
+function formCoverage(t){
+ const f=obj(t?.feature_state);
+ const total=N(f.last5_all_competitions_n);
+ const hasXG=N(f.last5_all_competitions_xg_for_n_available);
+ const hasXGA=N(f.last5_all_competitions_xg_against_n_available);
+ if(total===null)return '<div class="time-note">Datenabdeckung: Das vollständige Last Five Fenster ist nicht vorhanden.</div>';
+ const xg=hasXG===null?'nicht ausgewiesen':hasXG+' von '+total;
+ const xga=hasXGA===null?'nicht ausgewiesen':hasXGA+' von '+total;
+ const quality=(hasXG!==null&&hasXG<total)||(hasXGA!==null&&hasXGA<total);
+ return '<div class="form-coverage '+(quality?'partial':'complete')+'"><strong>Statistikabdeckung</strong>'+
+ '<span>xG: '+xg+' Spielen · xGA: '+xga+' Spielen</span>'+
+ (quality?'<small>Fehlende Werte werden weder als 0 noch als geschätzte Zahlen dargestellt. Durchschnittswerte basieren nur auf verfügbaren Spielen.</small>':'')+'</div>';
+}
 function formCards(t){
  const history=arr(t?.match_history?.matches).filter(x=>x.d&&x.res).sort((a,b)=>a.d.localeCompare(b.d)).slice(-5);
  if(!history.length)return '<p class="small muted">Keine einzelnen Spiele im zugehörigen Tages Snapshot verfügbar.</p>';
@@ -207,9 +220,9 @@ async function openReport(fixture,quiet=false){
  const sourceTag=!tr?'<div class="notice warn">Die Langtextübersetzung für diesen älteren Run ist noch nicht freigegeben. Keine englischen Texte in der Analyse und keine erfundenen Zusammenfassungen.</div>':"";
  const sec=(id,num,title,body)=>'<section class="report-section" id="'+id+'"><div class="eyebrow">'+num+'</div><h3>'+title+'</h3>'+body+'</section>';
  const report=reportHeader(m,p)+
- '<div class="report-highlights"><div><div class="eyebrow">ECOBET Favourite</div><strong>'+market(m.favourite)+'</strong><p>'+safe(lead)+'</p></div><aside><div><span class="muted">Stabilität</span><b>'+stateName(stability(m))+'</b></div><div><span class="muted">Quotenstatus</span><b>'+(quote.find(x=>x.role==="FAVOURITE")?.available?"BSD "+fmt(quote.find(x=>x.role==="FAVOURITE").odds,3):"Keine BSD Quote")+'</b></div><div><span class="muted">Datenbasis</span><b>'+safe(day?.pointer?.snapshot_id||"Nicht verfügbar")+'</b></div></aside></div>'+
+ '<div class="report-highlights"><div><div class="eyebrow">ECOBET Favourite</div><strong>'+market(m.favourite)+'</strong><p class="small muted">Wettentscheidung des veröffentlichten ECOBET Runs. Die Spielthese steht in der Übersicht und die vertiefte Begründung im Match Book.</p></div><aside><div><span class="muted">Stabilität</span><b>'+stateName(stability(m))+'</b></div><div><span class="muted">Quotenstatus</span><b>'+(quote.find(x=>x.role==="FAVOURITE")?.available?"BSD "+fmt(quote.find(x=>x.role==="FAVOURITE").odds,3):"Keine BSD Quote")+'</b></div><div><span class="muted">Datenbasis</span><b>'+safe(day?.pointer?.snapshot_id||"Nicht verfügbar")+'</b></div></aside></div>'+
  '<div class="report-body"><article class="report-article">'+sourceTag+
- sec("spielthese","01 · Match Book","Spielanalyse und Spielthese",'<p class="lead">'+safe(lead)+'</p><p>'+safe(intro)+'</p>')+
+ sec("spielthese","01 · Match Book","Detaillierte Matchanalyse",'<p class="lead">'+safe(intro)+'</p>')+
  sec("teams","02 · Team Intelligence","Team Books und objektive Leistungswerte",
  '<div class="opposite"><div class="inset"><h4>'+safe(m.home)+'</h4><p>'+(tr?safe(tr.home):'Keine geprüfte deutsche Team Book Langfassung vorhanden.')+'</p></div><div class="inset"><h4>'+safe(m.away)+'</h4><p>'+(tr?safe(tr.away):'Keine geprüfte deutsche Team Book Langfassung vorhanden.')+'</p></div></div>'+
  '<div class="figure"><h4>Strukturelle Spielstärke und Adjustment Elo</h4><div class="metric-table-wrap"><table class="compare"><thead><tr><th>Kennzahl</th><th>'+safe(m.home)+'</th><th>'+safe(m.away)+'</th></tr></thead><tbody>'+
@@ -217,11 +230,13 @@ async function openReport(fixture,quiet=false){
  '<div class="figure"><h4>Einzeldaten aus dem Tages Snapshot</h4>'+compareTable(home,away)+'</div>'+
  '<div class="figure"><h4>Kennzahlen aus dem versiegelten Stage12 Teamprofil</h4><div class="opposite"><div class="inset" style="padding:12px"><b>'+safe(m.home)+'</b><div class="table-wrap"><table class="compare"><thead><tr><th>Kennzahl</th><th>Wert</th><th>Spiele</th></tr></thead><tbody>'+metricRows(p?.team_performance?.home)+'</tbody></table></div></div><div class="inset" style="padding:12px"><b>'+safe(m.away)+'</b><div class="table-wrap"><table class="compare"><thead><tr><th>Kennzahl</th><th>Wert</th><th>Spiele</th></tr></thead><tbody>'+metricRows(p?.team_performance?.away)+'</tbody></table></div></div></div></div>'+
  '<div class="time-note">Run Veröffentlichung: '+ztime(S.stage?.publication_identity?.published_at_utc)+'. Team Snapshot: '+val(day?.pointer?.data_cutoff)+'. Falls der Snapshot später erstellt wurde, sind diese Statistiken zusätzlicher Kontext und nicht Teil des damaligen Modellentscheids.</div>')+
- sec("form","03 · Form und Momentum","Last Five und Team Momentum",
- '<p>Die sportliche Form bezieht sich auf tatsächlich gespielte Begegnungen. ECOBET Team Momentum misst dagegen die bisherigen Treffer und Fehler der Modellprognosen für ein Team.</p>'+
- '<h4>'+safe(m.home)+' · letzte fünf dokumentierte Spiele</h4>'+formCards(home)+
- '<h4>'+safe(m.away)+' · letzte fünf dokumentierte Spiele</h4>'+formCards(away)+
- '<div id="report-momentum" class="notice">Historische ECOBET Team Treffer werden bei Bedarf aus den Performance Audits ergänzt.</div>')+
+ sec("form","03 · Sportliche Form","Last Five: tatsächliche Spiele",
+ '<p>Fünf chronologisch letzte dokumentierte Spiele, unabhängig vom Wettbewerbstyp. xG und xGA erscheinen nur dann, wenn sie für das einzelne Spiel im publizierten Snapshot vorhanden sind.</p>'+
+ '<h4>'+safe(m.home)+' · letzte fünf dokumentierte Spiele</h4>'+formCoverage(home)+formCards(home)+
+ '<h4>'+safe(m.away)+' · letzte fünf dokumentierte Spiele</h4>'+formCoverage(away)+formCards(away))+
+ sec("momentum","04 · ECOBET Performance","Team Momentum: ECOBET Trefferbilanz",
+ '<p>Team Momentum misst ausschliesslich die Treffer und Fehler der historischen ECOBET Favourites. Es ist keine sportliche Last Five Form und wird getrennt von den Mannschaftsresultaten ausgewertet.</p>'+
+ '<div id="report-momentum" class="notice">Historische ECOBET Treffer werden aus den veröffentlichten Performance Audits geladen.</div>')+
  sec("welten","04 · Match Worlds","Spielverlauf und Gegenwelten",'<div class="opposite"><div class="inset"><h4>Hauptszenario</h4><p>'+safe(tr?.prime||"Das Szenario ist im Originalrecord dokumentiert. Eine geprüfte deutsche Fassung ist noch nicht verfügbar.")+'</p></div><div class="inset"><h4>Gegenszenario</h4><p>'+safe(tr?.counter||"Die Gegenwelt ist im Originalrecord dokumentiert. Eine geprüfte deutsche Fassung ist noch nicht verfügbar.")+'</p></div></div><h4>Scoreline Szenarien</h4><div class="score-row">'+arr(p?.score_state_cluster?.score_scenarios).map(x=>'<span class="score">'+safe(x.score)+'</span>').join("")+'</div><p>'+safe(tr?.cluster||"Die statistischen Scoreline Ergebnisse sind dem veröffentlichten Record entnommen.")+'</p>')+
  sec("aufstellungen","05 · Spieler und Aufstellungen","Prognostizierte Formationen",'<p>Die prognostizierte Aufstellung ist keine bestätigte Startelf. Es werden nur die im Record verfügbaren Informationen dargestellt.</p><div class="opposite">'+xi(p,m.home,"home")+xi(p,m.away,"away")+'</div>')+
  sec("betting","06 · Betting Book","Entscheidungswege und Fragility",'<p>Diese Pfade stammen unverändert aus dem veröffentlichten ECOBET Run. Das Betting Board ergänzt nur tatsächlich verfügbare BSD Quoten.</p>'+reportPaths(m,p,quote)+
@@ -278,7 +293,13 @@ function filteredQuotes(){
 }
 function renderQuotes(){
  const rows=filteredQuotes(),a=rows.filter(x=>x.available);
- feedback("board-status",S.id+" · "+rows.length+" publizierte Marktpfade angezeigt · "+a.length+" mit BSD Quote. Fehlende Quoten bleiben sichtbar.");
+ const fav=S.odds.filter(x=>x.role==="FAVOURITE");
+ const favAvail=fav.filter(x=>x.available).length;
+ const uniqueMarkets=new Set(S.odds.filter(x=>x.available).map(x=>x.fixtureId+"|"+x.market)).size;
+ const missing=new Map();
+ for(const x of S.odds.filter(x=>!x.available))missing.set(x.reason,(missing.get(x.reason)||0)+1);
+ const reasonText=[missing.get("PROVIDER_MARKET_NOT_COVERED")?missing.get("PROVIDER_MARKET_NOT_COVERED")+" Märkte nicht abgedeckt":null,missing.get("PROVIDER_LINE_NOT_OFFERED")?missing.get("PROVIDER_LINE_NOT_OFFERED")+" Torlinie nicht angeboten":null].filter(Boolean).join(" · ");
+ feedback("board-status",S.id+" · "+rows.length+" Pfade im aktuellen Filter, "+a.length+" bepreist. Run gesamt: "+uniqueMarkets+" unterschiedliche Märkte mit BSD Quote, "+favAvail+" von "+fav.length+" Favourites bepreist. "+(reasonText?"Fehlend: "+reasonText+". ":"")+"Das sind Lücken des BSD Quotensnapshots, keine fehlenden Football Predictions.");
  $("quotes").innerHTML=rows.length?rows.map(x=>{
   const picked=S.selection.get(x.fixtureId)?.key===x.key;
   return '<article class="quote panel"><div><div class="pills">'+pill(x.role)+pill(stateName(stability(x.match)),stability(x.match)==="YELLOW"?"yellow":"")+'</div><h4>'+safe(matchF(x.match))+'</h4><p>'+market(x.market)+'</p><div class="small dim">'+(x.available?"BSD Snapshot: "+ztime(x.updated):"Ohne Quote: "+reasonName(x.reason))+'</div></div><div class="controls"><b>'+ (x.available?fmt(x.odds,3):"—")+'</b><button class="btn '+(picked?"secondary":"")+' small" data-pick="'+safe(x.key)+'"'+(x.available?"":" disabled")+' type="button">'+(picked?"Entfernen":x.available?"Hinzufügen":"Nicht verfügbar")+'</button></div></article>';
@@ -489,7 +510,7 @@ openReport=async function(id,quiet=false){
  '<div class="report-explanation"><h4>Die Spielthese</h4><p>'+safe(t?.thesis||"Keine freigegebene deutsche Langtextfassung für diesen historischen Lauf. Die vorhandenen statistischen Daten sind weiterhin einsehbar.")+'</p></div>'+
  '<div class="report-teaser"><article class="inset"><span class="figurelabel">Team Intelligence</span><h4>Team Books und Einzeldaten</h4><p>Last Five, xG, xGA, ClubElo, Adjustment Elo und Aufstellungsinformationen.</p><button type="button" class="btn secondary small" data-go="teams">Teamdaten öffnen</button></article><article class="inset"><span class="figurelabel">Betting Intelligence</span><h4>Risiken und Entscheidungswege</h4><p>Alle vier Pfade mit Fragility und Quotenstatus.</p><button type="button" class="btn secondary small" data-go="betting">Betting Book öffnen</button></article></div>';
  article.prepend(overview);
- const sections=[["uebersicht","Übersicht"],["spielthese","Match Book"],["teams","Team Books"],["form","Last Five & Momentum"],["welten","Spielwelten"],["aufstellungen","Aufstellungen"],["betting","Betting Book"],["quellen","Quellen"]];
+ const sections=[["uebersicht","Übersicht"],["spielthese","Match Book"],["teams","Team Books"],["form","Last Five"],["momentum","ECOBET Momentum"],["welten","Spielwelten"],["aufstellungen","Aufstellungen"],["betting","Betting Book"],["quellen","Quellen"]];
  const nav=document.createElement("div");nav.className="report-tabs";nav.setAttribute("role","tablist");
  nav.innerHTML=sections.map(([k,v],i)=>'<button type="button" data-tab="'+k+'" aria-selected="'+(!i)+'" class="'+(!i?"active":"")+'">'+v+'</button>').join("");
  body.before(nav);
