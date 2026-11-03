@@ -82,6 +82,27 @@
    ],
    "run_date": "2026-10-29"
   },
+  "ODDS_2026-10-30_0217_20261030T021730Z": {
+   "bytes_sha256": "sha256:c91c34311563b12e31e797631d63aea26a3369f85099deb8ed93a59d92502a3b",
+   "content_hash": "sha256:45fef2cf338a73167d01754bd7c6d52f4d692cd62e5cc4702db45b6f0c33542c",
+   "coverage": {
+    "available": 10,
+    "by_reason": {
+     "PROVIDER_LINE_NOT_OFFERED": 2,
+     "PROVIDER_MARKET_NOT_COVERED": 4
+    },
+    "fixtures": 4,
+    "not_available": 6,
+    "role_markets": 16
+   },
+   "file": "odds/ODDS_2026-10-30_0217_20261030T021730Z.json",
+   "logical_run_id": "ECOBET_LRUN_01025554cfc843c1b64dd1b0414719b8",
+   "publication_id": "2026-10-30_0217",
+   "retrieved_at": [
+    "2026-10-30T02:17:29Z"
+   ],
+   "run_date": "2026-10-30"
+  },
   "ODDS_2026-11-02_1307_20261102T143528Z": {
    "bytes_sha256": "sha256:9840c36d6e8d8b1e7d1f2baed476e451975114282ed0095605081be289c90e7d",
    "content_hash": "sha256:d18c6a7aa22b4483f53ff8d1caa7dec7b822ee10787c0217f42b1c503ef2b872",
