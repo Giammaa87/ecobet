@@ -38,7 +38,8 @@ function market(x){
   .replace(/\bBTTS No\b/gi,"Nicht beide treffen")
   .replace(/\bMatch\b/gi,"Spiel"));
 }
-const stateName=x=>({"YELLOW":"Gelb","GREEN":"Grün","RED":"Rot","STABLE":"Stabil","CONDITIONAL":"Eingeschränkt","AVAILABLE":"Verfügbar","NOT_AVAILABLE":"Nicht verfügbar"}[String(x)]||val(x));
+const stateName=x=>({"YELLOW":"Gelb","GREEN":"Grün","RED":"Rot","STABLE":"Stabil","CONDITIONAL":"Eingeschränkt","READY":"Bereit","PARTIAL":"Teilweise","FULL":"Vollständig","NOT_READY":"Nicht bereit","NOT_APPLICABLE":"Nicht anwendbar","AVAILABLE":"Verfügbar","NOT_AVAILABLE":"Nicht verfügbar"}[String(x)]||val(x));
+const reasonName=x=>({"PROVIDER_MARKET_NOT_COVERED":"Wettmarkt beim Datenanbieter nicht abgedeckt","PROVIDER_LINE_NOT_OFFERED":"Gewünschte Torlinie nicht angeboten","PROVIDER_EVENT_NOT_FOUND":"Spiel beim Anbieter nicht gefunden","PROVIDER_QUOTE_NOT_AVAILABLE":"Keine Quote vom Anbieter","NO_PROVIDER_QUOTE":"Keine Anbieterquote","EVENT_NOT_PRE_MATCH":"Kein gültiger Quotenstand vor Spielbeginn"}[String(x)]||"Keine verfügbare BSD Quote");
 const stability=m=>m.ampel||S.stageMap.get(m.fixture_id)?.prediction?.prediction_stability_light||"Nicht klassifiziert";
 const pill=(label,c="")=>'<span class="pill '+c+'">'+safe(label)+'</span>';
 const positive=x=>x==="HIT",negative=x=>x==="MISS";
@@ -111,7 +112,7 @@ function renderList(){
  const color=badge==="Gelb"?"yellow":badge==="Rot"||technical(m)?"red":badge==="Grün"?"green":"";
  const summary=ECOBET_DE_20261103[matchF(m)];
  const q=S.odds.find(x=>x.fixtureId===m.fixture_id&&x.role==="FAVOURITE"&&x.available);
- return '<article class="match panel"><div class="match-top"><span>'+safe(m.competition||"Wettbewerb")+'</span><span>'+ztime(m.kickoff)+'</span></div><h3>'+safe(matchF(m))+'</h3><div class="favourite"><small>ECOBET Favourite</small><b>'+market(m.favourite)+'</b></div><div class="pills">'+pill(badge,color)+pill(m.data_readiness||"Datenstatus")+'</div><div class="foot"><span>'+safe(summary?"Deutsche Matchanalyse vorhanden":"Statistische Analyse verfügbar")+'</span><button data-match="'+safe(m.fixture_id)+'" type="button">Spielanalyse ansehen ↗</button></div></article>';
+ return '<article class="match panel"><div class="match-top"><span>'+safe(m.competition||"Wettbewerb")+'</span><span>'+ztime(m.kickoff)+'</span></div><h3>'+safe(matchF(m))+'</h3><div class="favourite"><small>ECOBET Favourite</small><b>'+market(m.favourite)+'</b></div><div class="pills">'+pill(badge,color)+pill(stateName(m.data_readiness||"Datenstatus"))+'</div><div class="foot"><span>'+safe(summary?"Deutsche Matchanalyse vorhanden":"Statistische Analyse verfügbar")+'</span><button data-match="'+safe(m.fixture_id)+'" type="button">Spielanalyse ansehen ↗</button></div></article>';
  }).join(""):'<div class="notice">Kein Spiel für diesen Filter.</div>';
  $("match-list").querySelectorAll("[data-match]").forEach(e=>e.onclick=()=>openReport(e.dataset.match));
 }
@@ -280,7 +281,7 @@ function renderQuotes(){
  feedback("board-status",S.id+" · "+rows.length+" publizierte Marktpfade angezeigt · "+a.length+" mit BSD Quote. Fehlende Quoten bleiben sichtbar.");
  $("quotes").innerHTML=rows.length?rows.map(x=>{
   const picked=S.selection.get(x.fixtureId)?.key===x.key;
-  return '<article class="quote panel"><div><div class="pills">'+pill(x.role)+pill(stateName(stability(x.match)),stability(x.match)==="YELLOW"?"yellow":"")+'</div><h4>'+safe(matchF(x.match))+'</h4><p>'+market(x.market)+'</p><div class="small dim">'+(x.available?"BSD Snapshot: "+ztime(x.updated):"Ohne Quote: "+safe(x.reason||"Markt nicht verfügbar"))+'</div></div><div class="controls"><b>'+ (x.available?fmt(x.odds,3):"—")+'</b><button class="btn '+(picked?"secondary":"")+' small" data-pick="'+safe(x.key)+'"'+(x.available?"":" disabled")+' type="button">'+(picked?"Entfernen":x.available?"Hinzufügen":"Nicht verfügbar")+'</button></div></article>';
+  return '<article class="quote panel"><div><div class="pills">'+pill(x.role)+pill(stateName(stability(x.match)),stability(x.match)==="YELLOW"?"yellow":"")+'</div><h4>'+safe(matchF(x.match))+'</h4><p>'+market(x.market)+'</p><div class="small dim">'+(x.available?"BSD Snapshot: "+ztime(x.updated):"Ohne Quote: "+reasonName(x.reason))+'</div></div><div class="controls"><b>'+ (x.available?fmt(x.odds,3):"—")+'</b><button class="btn '+(picked?"secondary":"")+' small" data-pick="'+safe(x.key)+'"'+(x.available?"":" disabled")+' type="button">'+(picked?"Entfernen":x.available?"Hinzufügen":"Nicht verfügbar")+'</button></div></article>';
  }).join(""):'<div class="notice">Für diese Filter sind keine Marktpfade vorhanden.</div>';
  $("quotes").querySelectorAll("[data-pick]").forEach(b=>b.onclick=()=>{const x=S.odds.find(y=>y.key===b.dataset.pick);if(!x||!x.available)return;if(S.selection.get(x.fixtureId)?.key===x.key)S.selection.delete(x.fixtureId);else S.selection.set(x.fixtureId,x);renderSlip();renderQuotes()});
 }
