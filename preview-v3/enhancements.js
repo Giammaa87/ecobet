@@ -108,7 +108,7 @@ function group(rows,getName){const m=new Map();for(const r of rows){const n=getN
 function table(headers,rows){return '<div class="table-wrap"><table class="compare ev3-perf-table"><thead><tr>'+headers.map(h=>'<th>'+h+'</th>').join("")+'</tr></thead><tbody>'+rows.join("")+'</tbody></table></div>'}
 function tableGroups(groups,kind="team"){
  return table([kind==="team"?"Mannschaft":kind==="league"?"Wettbewerb":"Markt","Spiele","HIT","MISS","PUSH","Trefferquote"],groups.map(x=>
- '<tr><td>'+entity(x.name,kind==="league"?"competition":"team")+'</td><td>'+x.items.length+'</td><td>'+chip("HIT")+' '+x.s.hit+'</td><td>'+chip("MISS")+' '+x.s.miss+'</td><td>'+x.s.push+'</td><td><b>'+rate(x.s)+'</b></td></tr>'))}
+ '<tr><td>'+(kind==="league"?entity(x.name,"competition"):kind==="team"?entity(x.name,"team"):escape(x.name))+'</td><td>'+x.items.length+'</td><td>'+chip("HIT")+' '+x.s.hit+'</td><td>'+chip("MISS")+' '+x.s.miss+'</td><td>'+x.s.push+'</td><td><b>'+rate(x.s)+'</b></td></tr>'))}
 function kpi(label,value,colour="blue",description=""){return '<article class="stat-tile panel kpi-'+colour+'"><small>'+label+'</small><strong>'+value+'</strong><span>'+description+'</span></article>'}
 function hitOverview(rows){
  const s=scores(rows,settings.path+"_result");
@@ -132,7 +132,7 @@ async function loadTeamForm(names){
  const sorted=index.slice().sort((a,b)=>b.date.localeCompare(a.date));
  const selected=new Map();
  for(const row of sorted){let k=key(row.name);if(!selected.has(k))selected.set(k,row)}
- const needed=names.map(n=>({name:n,id:key(n)})).filter(x=>!formCache.has(x.id)&&!formLoading.has(x.id)).slice(0,28);
+ const needed=names.map(n=>({name:n,id:key(n)})).filter(x=>!formCache.has(x.id)&&!formLoading.has(x.id));
  for(let i=0;i<needed.length;i+=7)await Promise.all(needed.slice(i,i+7).map(async x=>{
   const rec=selected.get(x.id);
   if(!rec){formCache.set(x.id,{none:true});return}
