@@ -487,7 +487,7 @@
           "PENDING": 0,
           "PUSH": 0,
           "denominator": 4,
-          "hit_rate": 1.0
+          "hit_rate": 1
         },
         "run_id": "2026-10-14_0008"
       },
@@ -503,7 +503,7 @@
           "PENDING": 0,
           "PUSH": 0,
           "denominator": 4,
-          "hit_rate": 1.0
+          "hit_rate": 1
         },
         "run_id": "2026-10-14_0008"
       }
@@ -811,7 +811,7 @@
           "UNMAPPABLE": 0,
           "VOID": 0,
           "denominator": 2,
-          "hit_rate": 1.0
+          "hit_rate": 1
         },
         "run_id": "2026-10-21_1025"
       }
@@ -829,7 +829,7 @@
           "PENDING": 0,
           "PUSH": 0,
           "denominator": 2,
-          "hit_rate": 1.0
+          "hit_rate": 1
         },
         "run_id": "2026-10-23_1511"
       }
@@ -1073,7 +1073,7 @@
           "UNMAPPABLE": 0,
           "VOID": 0,
           "denominator": 2,
-          "hit_rate": 1.0
+          "hit_rate": 1
         },
         "run_id": "2026-10-26_0720"
       }
@@ -1094,7 +1094,7 @@
           "UNMAPPABLE": 0,
           "VOID": 0,
           "denominator": 3,
-          "hit_rate": 1.0
+          "hit_rate": 1
         },
         "run_id": "2026-10-27_0218"
       }
@@ -1260,13 +1260,32 @@
           "UNMAPPABLE": 0,
           "VOID": 0,
           "denominator": 3,
-          "hit_rate": 1.0
+          "hit_rate": 1
+        },
+        "run_id": "2026-11-03_0913"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-11-03_RESULT_AUDIT_V24_REV_UEFA_MANUAL_20261104.json",
+        "generated_at": "2026-11-04T08:00:00Z",
+        "id": "2026-11-03_2026-11-03_0913_V24_REV_UEFA_MANUAL_20261104",
+        "kpi": {
+          "HIT": 7,
+          "MISS": 1,
+          "NOT_APPLICABLE": 1,
+          "NSP": 0,
+          "PENDING": 0,
+          "PUSH": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 8,
+          "hit_rate": 0.875
         },
         "run_id": "2026-11-03_0913"
       }
     ]
   },
-  "generated_at": "2026-11-03T22:30:10Z",
+  "generated_at": "2026-11-04T08:00:00Z",
   "record_type": "audit_index",
   "schema_version": "1.0"
 }
