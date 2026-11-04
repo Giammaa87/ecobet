@@ -574,8 +574,8 @@ showAudit=function(){
 const ev3OldPerformance=renderPerformance;
 renderPerformance=function(){
  if(!window.EV3||!S.performance){ev3OldPerformance();return}
- const rows=EV3.records(S.performance.audits);
- EV3.renderPerformance($("performance-body"),rows,S.perfTab,()=>renderPerformance());
+ const rows=window.EV3.records(S.performance.audits);
+ window.EV3.renderPerformance($("performance-body"),rows,S.perfTab,()=>renderPerformance());
 };
 const ev3OldMatch= openReport;
 openReport=async function(id,quiet=false){
@@ -583,32 +583,32 @@ openReport=async function(id,quiet=false){
  const root=$("report");if(!root||S.detail!==id||!window.EV3)return;
  const m=arr(S.run?.matches).find(x=>x.fixture_id===id);if(!m)return;
  const heading=root.querySelector(".report-title h2");
- if(heading)heading.innerHTML='<span class="ev3-report-match">'+EV3.entity(m.home,"team","lg")+'<span class="ev3-vs">GEGEN</span>'+EV3.entity(m.away,"team","lg")+'</span>';
+ if(heading)heading.innerHTML='<span class="ev3-report-match">'+window.EV3.entity(m.home,"team","lg")+'<span class="ev3-vs">GEGEN</span>'+window.EV3.entity(m.away,"team","lg")+'</span>';
  const league=root.querySelector(".report-title .eyebrow");
- if(league)league.innerHTML=EV3.entity(m.competition||"Wettbewerb","competition","sm")+' <span class="small muted"> · '+safe(S.run?.run?.date||"")+'</span>';
+ if(league)league.innerHTML=window.EV3.entity(m.competition||"Wettbewerb","competition","sm")+' <span class="small muted"> · '+safe(S.run?.run?.date||"")+'</span>';
  const section=root.querySelector("#teams .opposite");
- if(section){const sides=section.querySelectorAll(":scope > .inset h4");for(let i=0;i<sides.length;i++){sides[i].innerHTML=EV3.entity(i===0?m.home:m.away,"team","sm")}}
+ if(section){const sides=section.querySelectorAll(":scope > .inset h4");for(let i=0;i<sides.length;i++){sides[i].innerHTML=window.EV3.entity(i===0?m.home:m.away,"team","sm")}}
 };
 const ev3OldMomentum=renderReportMomentum;
 renderReportMomentum=function(m){
  if(!window.EV3||!S.performance){ev3OldMomentum(m);return}
  const root=$("report-momentum");if(!root)return;
- const rows=EV3.records(S.performance.audits);
+ const rows=window.EV3.records(S.performance.audits);
  const team=name=>{
-  const subset=rows.filter(r=>[r.home,r.away].some(n=>EV3.key(n)===EV3.key(name)))
+  const subset=rows.filter(r=>[r.home,r.away].some(n=>window.EV3.key(n)===window.EV3.key(name)))
      .filter(r=>["HIT","MISS","PUSH"].includes(String(r.rs?.favourite_result||"").toUpperCase()))
      .sort((a,b)=>a.day.localeCompare(b.day));
   const last=subset.slice(-5),hits=last.filter(x=>x.rs.favourite_result==="HIT").length,miss=last.filter(x=>x.rs.favourite_result==="MISS").length;
   const cells=Array(Math.max(0,5-last.length)).fill('<span class="dot ev3-empty">·</span>').join("")+
    last.map(x=>'<span class="dot '+(x.rs.favourite_result==="HIT"?"hit":x.rs.favourite_result==="MISS"?"miss":"push")+'">'+(x.rs.favourite_result==="HIT"?"✓":x.rs.favourite_result==="MISS"?"✕":"–")+'</span>').join("");
-  return '<div class="inset ev3-report-momentum"><h4>'+EV3.entity(name)+'</h4><div class="dot-strip">'+cells+'</div><p class="small">'+hits+' HIT / '+miss+' MISS · '+(hits+miss?fmt(100*hits/(hits+miss),1)+" %":"Keine entschiedenen Wetten")+'</p><p class="small muted">'+last.length+' der letzten fünf möglichen ECOBET Favourite Settlements nachgewiesen.</p></div>';
+  return '<div class="inset ev3-report-momentum"><h4>'+window.EV3.entity(name)+'</h4><div class="dot-strip">'+cells+'</div><p class="small">'+hits+' HIT / '+miss+' MISS · '+(hits+miss?fmt(100*hits/(hits+miss),1)+" %":"Keine entschiedenen Wetten")+'</p><p class="small muted">'+last.length+' der letzten fünf möglichen ECOBET Favourite Settlements nachgewiesen.</p></div>';
  };
  root.className="opposite";
  root.innerHTML=team(m.home)+team(m.away);
 };
 const ev3OldBootstrap=bootstrap;
 bootstrap=async function(){
- await EV3.loadLogos().catch(e=>console.warn("Logo Manifest aktuell nicht geladen",e));
+ await window.EV3.loadLogos().catch(e=>console.warn("Logo Manifest aktuell nicht geladen",e));
  return ev3OldBootstrap();
 };
 
