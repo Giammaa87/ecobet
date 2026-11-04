@@ -105,16 +105,23 @@ async function loadRun(){
 const technical=m=>String(m.match_core_status||"").includes("TECHNICAL")||String(m.favourite||"").startsWith("NO_PREDICTION");
 function renderList(){
  if(!S.run)return;
- const l=$("run-league").value;
- const rows=arr(S.run.matches).filter(m=>!l||m.competition===l);
+ const league=$("run-league").value;
+ const rows=arr(S.run.matches).filter(m=>!league||m.competition===league);
+ const EV=window.EV3;
+ const badgeFor=m=>technical(m)?"Technischer Blocker":stateName(stability(m));
  $("match-list").innerHTML=rows.length?rows.map(m=>{
- const badge=technical(m)?"Technischer Blocker":stateName(stability(m));
- const color=badge==="Gelb"?"yellow":badge==="Rot"||technical(m)?"red":badge==="Grün"?"green":"";
- const summary=ECOBET_DE_20261103[matchF(m)];
- const q=S.odds.find(x=>x.fixtureId===m.fixture_id&&x.role==="FAVOURITE"&&x.available);
- return '<article class="match panel"><div class="match-top"><span>'+safe(m.competition||"Wettbewerb")+'</span><span>'+ztime(m.kickoff)+'</span></div><h3>'+safe(matchF(m))+'</h3><div class="favourite"><small>ECOBET Favourite</small><b>'+market(m.favourite)+'</b></div><div class="pills">'+pill(badge,color)+pill(stateName(m.data_readiness||"Datenstatus"))+'</div><div class="foot"><span>'+safe(summary?"Deutsche Matchanalyse vorhanden":"Statistische Analyse verfügbar")+'</span><button data-match="'+safe(m.fixture_id)+'" type="button">Spielanalyse ansehen ↗</button></div></article>';
- }).join(""):'<div class="notice">Kein Spiel für diesen Filter.</div>';
- $("match-list").querySelectorAll("[data-match]").forEach(e=>e.onclick=()=>openReport(e.dataset.match));
+  const label=badgeFor(m),colour=technical(m)?"red":stability(m)==="GREEN"?"green":stability(m)==="RED"?"red":"yellow";
+  const club=name=>EV?EV.entity(name,"team","lg"):safe(name);
+  const comp=EV?EV.entity(m.competition||"Wettbewerb","competition","sm"):safe(m.competition||"Wettbewerb");
+  const paths=[["SAFE",m.safe],["BALANCED",m.balanced],["AGGRESSIVE",m.aggressive]];
+  return '<article class="match panel ev3-match"><div class="match-top">'+comp+'<span>'+ztime(m.kickoff)+'</span></div>'+
+  '<div class="ev3-match-teams"><div>'+club(m.home)+'</div><span class="ev3-vs">VS</span><div>'+club(m.away)+'</div></div>'+
+  '<div class="favourite"><small>ECOBET Favourite</small><b>'+market(m.favourite)+'</b></div>'+
+  '<div class="pills">'+pill(label,colour)+pill(stateName(m.data_readiness||"Datenstatus"))+'</div>'+
+  '<div class="ev3-pathline">'+paths.map(([role,v])=>'<div><small>'+role+'</small><b>'+market(v)+'</b></div>').join("")+'</div>'+
+  '<div class="foot"><span>Analyse, Team Books und Scoreline</span><button data-match="'+safe(m.fixture_id)+'" type="button">Spielanalyse öffnen ↗</button></div></article>';
+ }).join(""):'<div class="notice">Keine Spiele für diesen Wettbewerb vorhanden.</div>';
+ $("match-list").querySelectorAll("[data-match]").forEach(b=>b.onclick=()=>openReport(b.dataset.match));
 }
 async function loadDaily(){
  const date=S.run?.run?.date||$("run-day").value;
@@ -560,6 +567,49 @@ showAudit=function(){
  const r=stat(matching.flatMap(a=>arr(a.match_audit_records))),n=r.hit+r.miss;
  kpi.insertAdjacentHTML("beforeend",'<div><strong class="audit-hit-rate">'+(n?fmt(100*r.hit/n,1)+" %":"—")+'</strong><small>Favourite Trefferquote</small></div><div><strong class="audit-miss-rate">'+(n?fmt(100*r.miss/n,1)+" %":"—")+'</strong><small>Favourite Fehlerquote</small></div>');
  kpi.querySelectorAll("strong").forEach((e,i)=>{if(i===2)e.style.color="var(--green)";if(i===3)e.style.color="var(--rose)"});
+};
+
+
+/* Restore all Performance filter controls and canonical data reconciliation. */
+const ev3OldPerformance=renderPerformance;
+renderPerformance=function(){
+ if(!window.EV3||!S.performance){ev3OldPerformance();return}
+ const rows=EV3.records(S.performance.audits);
+ EV3.renderPerformance($("performance-body"),rows,S.perfTab,()=>renderPerformance());
+};
+const ev3OldMatch= openReport;
+openReport=async function(id,quiet=false){
+ await ev3OldMatch(id,quiet);
+ const root=$("report");if(!root||S.detail!==id||!window.EV3)return;
+ const m=arr(S.run?.matches).find(x=>x.fixture_id===id);if(!m)return;
+ const heading=root.querySelector(".report-title h2");
+ if(heading)heading.innerHTML='<span class="ev3-report-match">'+EV3.entity(m.home,"team","lg")+'<span class="ev3-vs">GEGEN</span>'+EV3.entity(m.away,"team","lg")+'</span>';
+ const league=root.querySelector(".report-title .eyebrow");
+ if(league)league.innerHTML=EV3.entity(m.competition||"Wettbewerb","competition","sm")+' <span class="small muted"> · '+safe(S.run?.run?.date||"")+'</span>';
+ const section=root.querySelector("#teams .opposite");
+ if(section){const sides=section.querySelectorAll(":scope > .inset h4");for(let i=0;i<sides.length;i++){sides[i].innerHTML=EV3.entity(i===0?m.home:m.away,"team","sm")}}
+};
+const ev3OldMomentum=renderReportMomentum;
+renderReportMomentum=function(m){
+ if(!window.EV3||!S.performance){ev3OldMomentum(m);return}
+ const root=$("report-momentum");if(!root)return;
+ const rows=EV3.records(S.performance.audits);
+ const team=name=>{
+  const subset=rows.filter(r=>[r.home,r.away].some(n=>EV3.key(n)===EV3.key(name)))
+     .filter(r=>["HIT","MISS","PUSH"].includes(String(r.rs?.favourite_result||"").toUpperCase()))
+     .sort((a,b)=>a.day.localeCompare(b.day));
+  const last=subset.slice(-5),hits=last.filter(x=>x.rs.favourite_result==="HIT").length,miss=last.filter(x=>x.rs.favourite_result==="MISS").length;
+  const cells=Array(Math.max(0,5-last.length)).fill('<span class="dot ev3-empty">·</span>').join("")+
+   last.map(x=>'<span class="dot '+(x.rs.favourite_result==="HIT"?"hit":x.rs.favourite_result==="MISS"?"miss":"push")+'">'+(x.rs.favourite_result==="HIT"?"✓":x.rs.favourite_result==="MISS"?"✕":"–")+'</span>').join("");
+  return '<div class="inset ev3-report-momentum"><h4>'+EV3.entity(name)+'</h4><div class="dot-strip">'+cells+'</div><p class="small">'+hits+' HIT / '+miss+' MISS · '+(hits+miss?fmt(100*hits/(hits+miss),1)+" %":"Keine entschiedenen Wetten")+'</p><p class="small muted">'+last.length+' der letzten fünf möglichen ECOBET Favourite Settlements nachgewiesen.</p></div>';
+ };
+ root.className="opposite";
+ root.innerHTML=team(m.home)+team(m.away);
+};
+const ev3OldBootstrap=bootstrap;
+bootstrap=async function(){
+ await EV3.loadLogos().catch(e=>console.warn("Logo Manifest aktuell nicht geladen",e));
+ return ev3OldBootstrap();
 };
 
 bootstrap();
