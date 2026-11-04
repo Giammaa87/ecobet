@@ -168,7 +168,7 @@ function dedupedMomentum(rows){
 function momentumHTML(rows){
  const teams=dedupedMomentum(rows);
  const visible=teams.slice(0,80);
- const items=visible.map(t=>'<tr><td>'+entity(t.name)+'</td><td><span class="ev3-strong-number">'+t.items.length+'</span></td><td>'+formDots(t.name)+'</td><td>'+simpleDots(t.recent)+'</td><td>'+rate(t.s)+'</td><td>'+t.s.hit+' HIT / '+t.s.miss+' MISS</td></tr>').join("");
+ const items=visible.map(t=>'<tr><td>'+entity(t.name)+'</td><td><span class="ev3-strong-number">'+t.items.length+'</span></td><td>'+formDots(t.name)+'</td><td>'+simpleDots(t.recent)+'</td><td>'+rate(t.s)+'</td><td>'+t.s.hit+' HIT / '+t.s.miss+' MISS</td></tr>');
  return '<div class="ev3-subhead"><h3>Teamform und ECOBET Momentum</h3><p>Links die sportliche Last Five Form aus den Mannschaftssnapshots, rechts die fünf jüngsten eindeutig entschiedenen ECOBET Favourites. Offene Ergebnisse und doppelte Auditstände werden nicht als zusätzliche Treffer gezählt.</p></div>'+
  table(["Team","Historische Predictions","Sportliche Last Five","ECOBET letzte fünf","HIT Quote","Bilanz"],items)+
  (teams.length>80?'<p class="small muted">Angezeigt: 80 von '+teams.length+' Teams. Nutze die Liga und Mannschaftsfilter für weitere Vereine.</p>':"");
