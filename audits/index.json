@@ -1242,6 +1242,25 @@
           "hit_rate": 0.6666666666666666
         },
         "run_id": "2026-11-02_1307"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-11-02_RESULT_AUDIT_V24_REV_83957fc7e9650d8a.json",
+        "generated_at": "2026-11-04T22:30:07Z",
+        "id": "2026-11-02_2026-11-02_1307_V24_REV_83957fc7e9650d8a",
+        "kpi": {
+          "HIT": 2,
+          "MISS": 1,
+          "NOT_APPLICABLE": 0,
+          "NSP": 0,
+          "PENDING": 1,
+          "PUSH": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 3,
+          "hit_rate": 0.6666666666666666
+        },
+        "run_id": "2026-11-02_1307"
       }
     ],
     "2026-11-03": [
@@ -1282,10 +1301,50 @@
           "hit_rate": 0.875
         },
         "run_id": "2026-11-03_0913"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-11-03_RESULT_AUDIT_V24_REV_08b9d11a5fce0b06.json",
+        "generated_at": "2026-11-04T22:30:08Z",
+        "id": "2026-11-03_2026-11-03_0913_V24_REV_08b9d11a5fce0b06",
+        "kpi": {
+          "HIT": 3,
+          "MISS": 0,
+          "NOT_APPLICABLE": 1,
+          "NSP": 0,
+          "PENDING": 5,
+          "PUSH": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 3,
+          "hit_rate": 1.0
+        },
+        "run_id": "2026-11-03_0913"
+      }
+    ],
+    "2026-11-04": [
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-11-04_RESULT_AUDIT_V24.json",
+        "generated_at": "2026-11-04T22:30:04Z",
+        "id": "2026-11-04_2026-11-04_0250_V24",
+        "kpi": {
+          "HIT": 4,
+          "MISS": 0,
+          "NOT_APPLICABLE": 0,
+          "NSP": 0,
+          "PENDING": 6,
+          "PUSH": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 4,
+          "hit_rate": 1.0
+        },
+        "run_id": "2026-11-04_0250"
       }
     ]
   },
-  "generated_at": "2026-11-04T08:00:00Z",
+  "generated_at": "2026-11-04T22:30:09Z",
   "record_type": "audit_index",
   "schema_version": "1.0"
 }
