@@ -1,0 +1,82 @@
+
+/* ECOBET V3 restored crests, full performance filter tools and responsive momentum */
+.ev3-logo{position:relative;display:inline-grid;place-items:center;flex:none;overflow:hidden;background:rgba(16,45,58,.85);border:1px solid rgba(119,182,202,.25);border-radius:10px;width:34px;height:34px;vertical-align:middle}
+.ev3-logo.lg{width:49px;height:49px;border-radius:12px}
+.ev3-logo.league{background:rgba(26,54,70,.75)}
+.ev3-logo img{position:absolute;inset:2px;width:calc(100% - 4px);height:calc(100% - 4px);object-fit:contain}
+.ev3-logo-initials{font-size:.64rem;font-weight:850;letter-spacing:.01em;color:#97b7c5;line-height:1}
+.ev3-logo.lg .ev3-logo-initials{font-size:.77rem}
+.ev3-entity{display:inline-flex;align-items:center;gap:8px;min-width:0;vertical-align:middle}
+.ev3-entity>span:last-child{overflow-wrap:anywhere;min-width:0}
+.match .ev3-entity{font-size:.83rem}
+.ev3-match{display:flex;flex-direction:column;gap:0;min-width:0}
+.ev3-match-teams{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);align-items:center;gap:12px;margin:17px 0 12px}
+.ev3-match-teams .ev3-entity{font-size:clamp(.91rem,1.4vw,1.08rem);font-weight:850;line-height:1.25}
+.ev3-match-teams>div:last-child .ev3-entity{flex-direction:row-reverse;text-align:right;width:100%}
+.ev3-vs{color:#6f9eaf;text-align:center;font-size:.68rem;font-weight:800;letter-spacing:.1em;flex:none}
+.ev3-pathline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:8px 0 12px}
+.ev3-pathline>div{padding:9px 10px;background:rgba(10,40,53,.64);border:1px solid rgba(116,175,195,.27);border-radius:10px;min-width:0;overflow-wrap:anywhere}
+.ev3-pathline>div small{font-size:.62rem;display:block;color:#81bed1;letter-spacing:.08em;margin-bottom:5px;font-weight:850}
+.ev3-pathline>div b{display:block;font-size:.74rem;line-height:1.4;color:#ddeff3;font-weight:760}
+.ev3-match .match-top .ev3-entity{font-size:.78rem;color:#bbd4df;font-weight:740}
+.ev3-report-match{display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap}
+.report-title .ev3-entity{font-size:clamp(1.1rem,3.4vw,2rem);font-weight:900}
+.report-title .eyebrow .ev3-entity{font-size:.75rem}
+.report-title .ev3-logo.lg{width:57px;height:57px}
+#teams .opposite h4 .ev3-entity{font-size:1.03rem}
+.ev3-performance-filters{padding:18px 19px;margin:12px 0 18px}
+.ev3-filter-heading{display:flex;justify-content:space-between;align-items:start;gap:15px;margin-bottom:13px}
+.ev3-filter-heading strong{font-size:1rem;color:#d8f3f4}
+.ev3-filter-heading p{font-size:.76rem;margin:4px 0 0;color:#9bb7be}
+.ev3-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ev3-filter-grid label{font-size:.72rem;font-weight:780;color:#aec6cf;display:flex;flex-direction:column;gap:5px;min-width:0}
+.ev3-filter-grid select,.ev3-filter-grid input{min-width:0;width:100%;min-height:41px;background:#0d2b39;border:1px solid #4b7280;border-radius:9px;padding:9px 10px;color:#e7f8fa;font-size:.83rem}
+.ev3-filter-grid input[type=date]{color-scheme:dark}
+.ev3-filter-info{padding:11px 15px;border:1px solid rgba(98,178,211,.25);background:rgba(17,54,66,.66);border-radius:10px;color:#b5d8e1;font-size:.77rem;margin:10px 0 16px}
+.ev3-subhead{margin:14px 0 18px}
+.ev3-subhead h3{font-size:1.38rem;margin-bottom:5px}
+.ev3-subhead p{font-size:.82rem;color:#b9d3de}
+.ev3-perf-table{font-size:.81rem}
+.ev3-perf-table th{white-space:nowrap}
+.ev3-perf-table td{vertical-align:middle;line-height:1.4}
+.ev3-perf-table td:first-child{min-width:180px}
+.ev3-perf-table td .ev3-entity{font-weight:750;font-size:.79rem}
+.ev3-perf-table .ev3-logo{width:31px;height:31px}
+.ev3-perf-table .ev3-momentum-dots{white-space:nowrap;display:flex;gap:4px}
+.ev3-perf-table .dot{width:23px;height:23px;border-radius:6px;font-size:.72rem}
+.ev3-empty{background:rgba(90,120,135,.13)!important;color:#7892a0!important;border-color:#325363!important}
+.ev3-team-form{display:inline-flex;align-items:center;gap:5px}
+.ev3-team-form>small{margin-left:3px;font-size:.68rem}
+.ev3-strong-number{font:820 .84rem var(--mono);color:#dcebf1}
+.ev3-report-momentum{min-width:0}
+.ev3-report-momentum h4{margin-bottom:14px}
+.ev3-report-momentum .dot-strip{margin:9px 0 12px}
+.ev3-report-momentum .ev3-entity{font-weight:830}
+.ev3-perf-table .hit-chip,.ev3-perf-table .miss-chip{margin-right:6px}
+@media(max-width:1070px){
+ .ev3-filter-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .ev3-pathline{grid-template-columns:1fr;gap:6px}
+ .ev3-pathline>div{display:grid;grid-template-columns:87px minmax(0,1fr);align-items:start;gap:7px}
+ .ev3-pathline>div small{margin:0}
+}
+@media(max-width:750px){
+ .ev3-match-teams{gap:6px;grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr)}
+ .ev3-match-teams .ev3-entity{flex-direction:column;align-items:flex-start;gap:6px;font-size:.92rem}
+ .ev3-match-teams>div:last-child .ev3-entity{flex-direction:column;align-items:flex-end;text-align:right}
+ .ev3-logo.lg{width:45px;height:45px}
+ .ev3-pathline{grid-template-columns:1fr}
+ .ev3-filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .ev3-filter-heading{align-items:stretch;flex-direction:column}
+ .ev3-perf-table{font-size:.75rem}
+ .ev3-perf-table td{padding:9px 7px}
+ .ev3-report-match{gap:8px}
+ .report-title .ev3-logo.lg{width:43px;height:43px}
+ .report-title .ev3-entity{font-size:1.07rem}
+}
+@media(max-width:460px){
+ .ev3-filter-grid{grid-template-columns:1fr}
+ .ev3-match-teams .ev3-entity{font-size:.83rem}
+ .ev3-pathline>div{grid-template-columns:78px minmax(0,1fr)}
+ .ev3-pathline>div b{font-size:.73rem}
+ .ev3-match .match-top .ev3-entity{font-size:.72rem}
+}
