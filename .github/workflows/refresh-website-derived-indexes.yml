@@ -29,15 +29,38 @@ jobs:
         run: python tools/build_website_phase1_indexes.py .
       - name: Verify source bindings and settlement equivalence
         run: python tools/validate_website_phase1.py .
-      - name: Commit validated derived indexes
+      - name: Commit validated derived indexes with concurrent push recovery
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name 'ecobet-website-index-bot'
           git config user.email 'ecobet-website-index-bot@users.noreply.github.com'
-          git add -- performance team-form
-          if git diff --cached --quiet; then
-            echo 'No derived index update required.'
-            exit 0
-          fi
-          git commit -m 'website: refresh derived indexes'
-          git push origin HEAD:main
+
+          # Multiple publishers may advance main while the index job is running.
+          # Always rebuild against the newest published sources; never force push.
+          for attempt in 1 2 3 4 5; do
+            echo "Index publish attempt ${attempt}/5"
+            git fetch --no-tags origin main
+            git reset --hard origin/main
+
+            # The runner is disposable. Remove only untracked derived outputs
+            # from earlier attempts before rebuilding content-addressed indexes.
+            git clean -fd -- performance team-form
+            python tools/build_website_phase1_indexes.py .
+            python tools/validate_website_phase1.py .
+            git add -- performance team-form
+
+            if git diff --cached --quiet; then
+              echo 'Derived indexes already current on main.'
+              exit 0
+            fi
+            git commit -m 'website: refresh derived indexes'
+            if git push origin HEAD:main; then
+              echo 'Derived indexes published successfully.'
+              exit 0
+            fi
+            echo "::warning::main changed during index publication; retrying with fresh sources"
+            sleep "$((attempt * 2))"
+          done
+          echo "::error::Unable to publish derived indexes after 5 attempts"
+          exit 1
