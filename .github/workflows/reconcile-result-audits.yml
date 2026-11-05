@@ -1,0 +1,53 @@
+name: ECOBET automatic result audit recovery
+
+on:
+  schedule:
+    - cron: '20 1,5,10 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'audits/ECOBET_*_RESULT_AUDIT_V24.json'
+      - 'audits/index.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ecobet-website-derived-indexes-main
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate recovery script
+        run: |
+          python -m py_compile tools/reconcile_result_audits.py
+          python -m unittest discover -s tools/tests -p 'test_result_audit_recovery.py' -v
+      - name: Reconcile finished results without changing predictions
+        run: python tools/reconcile_result_audits.py . --lookback-days 7
+      - name: Rebuild website derived performance and form indexes
+        run: python tools/build_website_phase1_indexes.py .
+      - name: Verify all published source bindings
+        run: python tools/validate_website_phase1.py .
+      - name: Publish append-only audit revisions and validated website indexes
+        shell: bash
+        run: |
+          git config user.name 'ecobet-audit-recovery-bot'
+          git config user.email 'ecobet-audit-recovery-bot@users.noreply.github.com'
+          git add -- audits performance team-form
+          if git diff --cached --quiet; then
+            echo 'No changes to publish.'
+            exit 0
+          fi
+          git commit -m 'audit: reconcile completed results and refresh indexes'
+          git pull --rebase origin main
+          git push origin HEAD:main
