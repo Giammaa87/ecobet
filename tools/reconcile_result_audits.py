@@ -15,6 +15,9 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+import provider_identity_v1 as identity
+
 LEAGUES={"UCL":"uefa.champions","UEL":"uefa.europa","UEC":"uefa.europa.conf",
 "ENG":"eng.1","GER":"ger.1","ESP":"esp.1","ITA":"ita.1","FRA":"fra.1",
 "POR":"por.1","TUR":"tur.1"}
@@ -65,7 +68,12 @@ def resolve(fx,events):
   t=timestamp(event.get("date"))
   if not t or abs((t-kickoff).total_seconds())>21600:continue
   matches.append(event)
- return matches[0] if len(matches)==1 else None
+ if len(matches)==1:return matches[0]
+ if matches:return None
+ # 05.11.2026: deterministic tolerant fallback (shared with the local audit): same kickoff instant (+-30 min), token-compatible names on BOTH sides, unique-or-pending.
+ near=[e for e in events if (timestamp(e.get("date")) and abs((timestamp(e.get("date"))-kickoff).total_seconds())<=1800)]
+ event,_=identity.unique_match(fx.get("home"),fx.get("away"),near,lambda e:(e["names"]["home"],e["names"]["away"]))
+ return event
 def market(expr,fx,sc):
  if not expr or str(expr).upper() in {"NOT_AVAILABLE","ORIGINAL_PREDICTION_HASH_REFERENCE","NO_PREDICTION_TECHNICAL_BLOCKER"}:return "NOT_APPLICABLE"
  s=str(expr).lower().strip()
@@ -92,6 +100,11 @@ def market(expr,fx,sc):
   if side is None:raise ValueError("Ambiguous DNB team "+s)
   if sc["home"]==sc["away"]:return "PUSH"
   return "HIT" if sc[side]>sc["away" if side=="home" else "home"] else "MISS"
+ m=re.fullmatch(r"(.+?) or draw",s) or re.fullmatch(r"draw or (.+)",s)
+ if m:
+  side=next((x for x in sc if name(m[1])==name(fx[x])),None)
+  if side is None:raise ValueError("Ambiguous double-chance team "+s)
+  return "HIT" if sc[side]>=sc["away" if side=="home" else "home"] else "MISS"
  m=re.fullmatch(r"(.+?) to win",s)
  if m:
   side=next((x for x in sc if name(m[1])==name(fx[x])),None)
@@ -181,6 +194,11 @@ def reconcile(site,days,dry):
    totals["denominator"]=totals["HIT"]+totals["MISS"]
    totals["hit_rate"]=totals["HIT"]/totals["denominator"] if totals["denominator"] else None
    revision["run_audit_record"]["model_kpis"][role]=totals
+  statuses=[x["result_settlement"].get("status") for x in revision["match_audit_records"]]
+  settled,pending=statuses.count("SETTLED"),statuses.count("PENDING_RESULT")
+  revision["run_audit_record"]["audit_coverage"]={"version":"ECOBET_AUDIT_COVERAGE_V1","predictions_total":len(statuses),"settlement_due":settled+pending,
+   "settled":settled,"pending":pending,"nsp_no_settlement_required":statuses.count("NSP_NO_SETTLEMENT_REQUIRED"),
+   "coverage_pct":(round(100.0*settled/(settled+pending),1) if settled+pending else None),"complete":pending==0,"timezone_day_basis":"Europe/Zurich"}
   revision["audit_generated_at"]=now.isoformat()
   revision["audit_id"]=str(base["audit_id"])+"_AUTO_RECONCILED"
   revision["revision_of"]=base["audit_id"]
