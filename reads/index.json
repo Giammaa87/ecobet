@@ -1,0 +1,14 @@
+{
+ "entries": {
+  "2026-11-05_0347": {
+   "bytes_sha256": "c01c13bac49cfe9c08b9f70f9db33d899f30a2b7f1692e18865c9fe386e5ada3",
+   "data_status": "EXPLORATORY_DEVELOPMENT",
+   "file": "reads/2026-11-05_0347.json",
+   "fixtures": 26,
+   "generated_at_utc": "2026-11-05T19:13:11.731008+00:00",
+   "run_date": "2026-11-05",
+   "schema": "ECOBET_READS_PUBLIC_V1"
+  }
+ },
+ "schema": "ECOBET_READS_PUBLIC_INDEX_V1"
+}
