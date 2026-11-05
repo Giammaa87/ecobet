@@ -1317,7 +1317,7 @@
           "UNMAPPABLE": 0,
           "VOID": 0,
           "denominator": 3,
-          "hit_rate": 1.0
+          "hit_rate": 1
         },
         "run_id": "2026-11-03_0913"
       }
@@ -1338,13 +1338,32 @@
           "UNMAPPABLE": 0,
           "VOID": 0,
           "denominator": 4,
-          "hit_rate": 1.0
+          "hit_rate": 1
+        },
+        "run_id": "2026-11-04_0250"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-11-04_RESULT_AUDIT_V24_REV_VERIFIED_20261105.json",
+        "generated_at": "2026-11-05T09:30:00Z",
+        "id": "2026-11-04_2026-11-04_0250_V24_REV_VERIFIED_20261105",
+        "kpi": {
+          "HIT": 8,
+          "MISS": 2,
+          "NOT_APPLICABLE": 0,
+          "NSP": 0,
+          "PENDING": 0,
+          "PUSH": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 10,
+          "hit_rate": 0.8
         },
         "run_id": "2026-11-04_0250"
       }
     ]
   },
-  "generated_at": "2026-11-04T22:30:09Z",
+  "generated_at": "2026-11-05T09:30:00Z",
   "record_type": "audit_index",
   "schema_version": "1.0"
 }
