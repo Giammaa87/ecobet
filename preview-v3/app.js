@@ -588,6 +588,21 @@ openReport=async function(id,quiet=false){
  if(league)league.innerHTML=window.EV3.entity(m.competition||"Wettbewerb","competition","sm")+' <span class="small muted"> · '+safe(S.run?.run?.date||"")+'</span>';
  const section=root.querySelector("#teams .opposite");
  if(section){const sides=section.querySelectorAll(":scope > .inset h4");for(let i=0;i<sides.length;i++){sides[i].innerHTML=window.EV3.entity(i===0?m.home:m.away,"team","sm")}}
+ const teamSection=root.querySelector("#teams");
+ const source=S.stageMap.get(m.fixture_id)?.prediction?.structural_strength||{};
+ const unavailable=[];
+ for(const side of ["home","away"]){
+   const team=side==="home"?m.home:m.away;
+   const state=source[side]||{};
+   const base=state.base_elo,adjusted=state.adjusted_elo;
+   if(base?.status!=="AVAILABLE")unavailable.push("<b>"+safe(team)+" · ClubElo Basis:</b> Kein verifizierter Basiswert im eingefrorenen Stage12 Record ("+safe(base?.reason_code||"Quelle nicht geliefert")+").");
+   if(adjusted?.status!=="AVAILABLE")unavailable.push("<b>"+safe(team)+" · Adjustment Elo:</b> Nicht verfügbar ("+safe(adjusted?.reason_code||"Adjustment Datensatz fehlt")+").");
+ }
+ if(teamSection&&unavailable.length){
+   const element=document.createElement("div");element.className="notice warn";
+   element.innerHTML="<strong>ClubElo Datenabdeckung</strong><p class='small'>"+unavailable.join("<br>")+"</p><p class='small'>ClubElo Basis und Adjustment Elo sind unterschiedliche Datensätze. Der fehlende Wert wird nicht erfunden oder mit einem anderen Stärkeindikator gleichgesetzt. Ein separater Quelldaten Korrekturlauf ist erforderlich.</p>";
+   teamSection.appendChild(element);
+ }
 };
 const ev3OldMomentum=renderReportMomentum;
 renderReportMomentum=function(m){
