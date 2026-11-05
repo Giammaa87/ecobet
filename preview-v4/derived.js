@@ -35,7 +35,7 @@ async function selectRun(){
  await Promise.all(["stability","reads"].map(async t=>{
   try{const d=await loadExtra(t,id);if(st.id!==id)return;st[t]=d}
   catch(err){if(st.id!==id)return;st.failed[t]=err.message}
-  if(st.id===id){renderRanking();decorateCards();decorateReport()}
+  if(st.id===id){renderRanking();decorateCards();decorateReport();window.EV41?.refresh?.()}
  }));
 }
 function topMatch(id){
@@ -62,6 +62,7 @@ function rankRow(r){
  '<button class="btn secondary small v4-open" data-v4-match="'+esc(r.fixture_id)+'" type="button" '+(matched(r.fixture_id)?"":"disabled")+'>'+(matched(r.fixture_id)?"Matchanalyse öffnen":"Spiel nicht zuordenbar")+'</button></article>';
 }
 function renderRanking(){
+ if(window.EV41?.ranking)return window.EV41.ranking({root:$("v4-ranking"),st,onOpen:topMatch});
  const root=$("v4-ranking");if(!root)return;
  if(!st.id){root.innerHTML='<div class="notice">Lade Run Auswahl …</div>';return}
  if(!st.stability){root.innerHTML='<div class="notice">'+(st.failed.stability?"Ranking nicht ladbar: "+esc(st.failed.stability):"Für diesen Run noch keine Stabilitätsrangliste verfügbar.")+'</div>';return}
@@ -87,7 +88,7 @@ function decorateCards(){
   const info=document.createElement("div");info.className="v4-card-info";
   const pill=s=>'<span class="v4-chip">'+esc(s)+'</span>';
   info.innerHTML=(r?pill("Rang #"+r.rank+" · "+label(r.stability?.tier)):"")+
-  (d?.direction?.status==="READ"?pill("Richtung: "+(d.direction.read_text||d.direction.read)):"")+
+  (d?.direction?.status==="READ"?pill("Richtung: "+(d.direction.read)):"")+
   (d?.goal_range?.status==="READ"?pill("Torbereich: "+d.goal_range.read):"")+
   (d?.owner_favourite?.selected?pill("Zusatz Favourite: "+d.owner_favourite.selected.read):"")+
   (after(d?.timing?.status)||after(st.stability?.fixture_timing?.[id])?pill("Nach Anpfiff"):"");
@@ -102,7 +103,7 @@ function contentFor(id){
  if(!d&&!r)return '<div class="notice">Für dieses Spiel noch keine Zusatzanalyse verfügbar.</div>';
  const dir=d?.direction,goal=d?.goal_range,owner=d?.owner_favourite;
  const body=d?'<div class="v4-reads">'+
- readCard("Direction Read",dir?.status==="READ"?(dir.read_text||dir.read):"Keine Richtungslesart",dir?.status,dir?.coverage_status,dir?.evidence,dir?.covered_by?"Bereits von "+arr(dir.covered_by.roles).join(", ")+" abgedeckt: "+dir.covered_by.expression:"")+
+ readCard("Direction Read",dir?.status==="READ"?dir.read:"Keine Richtungslesart",dir?.status,dir?.coverage_status,dir?.evidence,dir?.covered_by?"Bereits von "+arr(dir.covered_by.roles).join(", ")+" abgedeckt: "+dir.covered_by.expression:"")+
  readCard("Goal Range Read",goal?.status==="READ"?goal.read:"Kein Torbereich",goal?.status,goal?.coverage_status,goal?.evidence,goal?.covered_by?"Abgedeckt durch "+arr(goal.covered_by.roles).join(", ")+": "+goal.covered_by.expression:"")+
  readCard("Owner Favourite (zusätzlich)",owner?.selected?.read||"Kein zusätzlicher Owner Favourite",owner?.status,null,owner?.selected?.evidence,(owner?.selected?.source?"Herkunft: "+(owner.selected.source==="DIRECTION"?"Direction Read":"Goal Range Read")+". ":"")+(owner?.reason||""))+
  '</div>':"";
@@ -114,6 +115,7 @@ function contentFor(id){
 function decorateReport(){
  const root=$("report"),nav=root?.querySelector(".report-tabs"),article=root?.querySelector(".report-article"),id=st.detail;
  if(!id||!nav||!article||!st.run||!matched(id))return;
+ window.EV41?.overview?.({root,st,id});
  const signature=st.id+"|"+id+"|"+!!st.reads+"|"+!!st.stability;
  let section=root.querySelector("#v4-reads-section");
  if(section?.dataset.signature===signature)return;
