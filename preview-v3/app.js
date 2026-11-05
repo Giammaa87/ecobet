@@ -612,5 +612,55 @@ bootstrap=async function(){
  return ev3OldBootstrap();
 };
 
+
+/* Audit V3 repair: fixture date in Europe/Zurich, canonical match deduplication, verified latest settlements. */
+function auditRowsCorrected(){
+ if(!window.EV3||!S.performance)return[];
+ return window.EV3.records(S.performance.audits);
+}
+auditDays=function(){
+ return [...new Set(auditRowsCorrected().map(r=>r.day).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)))].sort().reverse();
+};
+showAudit=function(){
+ const day=$("audit-date").value||S.auditDate;
+ if(!day||!S.performance)return;
+ S.auditDate=day;
+ $("audit-days").querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.day===day));
+ const rows=auditRowsCorrected().filter(r=>r.day===day);
+ const target=$("audit-body");
+ if(!rows.length){
+  target.className="notice warn";
+  target.textContent="Für den "+day+" sind im veröffentlichten Performance Index keine Spiele mit diesem tatsächlichen Anpfiffdatum (Europe/Zurich) vorhanden.";
+  return;
+ }
+ const statFor=path=>{
+  const v=rows.map(r=>String(r.rs?.[path+"_result"]||"").toUpperCase());
+  const hit=v.filter(x=>x==="HIT").length,miss=v.filter(x=>x==="MISS").length,push=v.filter(x=>x==="PUSH").length;
+  return {hit,miss,push,open:rows.length-hit-miss-push};
+ };
+ const x=statFor("favourite"),decided=x.hit+x.miss,percent=decided?fmt(x.hit/decided*100,1)+" %":"—",missRate=decided?fmt(x.miss/decided*100,1)+" %":"—";
+ const renderStatus=value=>{
+  const v=String(value||"").toUpperCase();
+  const cls=v==="HIT"?"hit-chip":v==="MISS"?"miss-chip":v==="PUSH"?"push-chip":"unsettled-chip";
+  const label=({HIT:"HIT",MISS:"MISS",PUSH:"PUSH",PENDING:"Offen",NOT_APPLICABLE:"Nicht anwendbar",UNMAPPABLE:"Nicht zuordenbar"})[v]||v||"—";
+  return '<span class="'+cls+'">'+safe(label)+'</span>';
+ };
+ const rowsSorted=rows.slice().sort((a,b)=>a.kickoff-b.kickoff||a.home.localeCompare(b.home,"de"));
+ const sources=[...new Set(rowsSorted.map(r=>r.auditDate))].filter(Boolean);
+ target.className="";
+ target.innerHTML='<div class="notice">Spieldatum: <b>'+safe(day)+'</b> (Schweiz). Die Prüfung verwendet das tatsächliche Anpfiffdatum, nicht das Erstellungsdatum des Audit. Mehrere Prüfstände einer Partie werden zu einem Fixture zusammengeführt. Quelle: veröffentlichter Performance Index.</div>'+
+ '<div class="kpi-line ev3-audit-summary">'+
+ '<div><strong>'+rows.length+'</strong><small>Partien</small></div>'+
+ '<div><strong>'+x.hit+'</strong><small>Favourite HIT</small></div>'+
+ '<div><strong>'+x.miss+'</strong><small>Favourite MISS</small></div>'+
+ '<div><strong>'+x.open+'</strong><small>Offen / nicht anwendbar</small></div>'+
+ '<div><strong class="audit-hit-rate">'+percent+'</strong><small>Trefferquote</small></div>'+
+ '<div><strong class="audit-miss-rate">'+missRate+'</strong><small>Fehlerquote</small></div></div>'+
+ '<div class="table-wrap"><table class="compare ev3-perf-table"><thead><tr><th>Spiel</th><th>Favourite</th><th>SAFE</th><th>BALANCED</th><th>AGGRESSIVE</th></tr></thead><tbody>'+
+ rowsSorted.map(r=>'<tr><td>'+(window.EV3?window.EV3.entity(r.home):safe(r.home))+' – '+(window.EV3?window.EV3.entity(r.away):safe(r.away))+'<div class="small dim">'+safe(r.competition)+' · '+safe(r.day)+'</div></td>'+
+ ["favourite","safe","balanced","aggressive"].map(p=>'<td>'+renderStatus(r.rs?.[p+"_result"])+'</td>').join("")+'</tr>').join("")+'</tbody></table></div>'+
+ '<p class="small dim">Quellenprüfung(en): '+safe(sources.join(", ")||"Nicht angegeben")+'. HIT-Quote = HIT / (HIT + MISS). Offene Ergebnisse werden nicht als MISS gewertet.</p>';
+};
+
 bootstrap();
 })();
