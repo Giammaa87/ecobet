@@ -14,7 +14,7 @@ const rank=(st,id)=>arr(st?.stability?.ranked).find(x=>x.fixture_id===id)||null;
 const code=x=>x?.status==="READ" && x.read?text(x.read):"—";
 const extra=(st,id)=>{const d=read(st,id);return {direction:code(d?.direction),range:code(d?.goal_range),owner:text(d?.owner_favourite?.selected?.read)||"—",timing:d?.timing?.status}};
 const after=(st,id)=>read(st,id)?.timing?.status==="AFTER_KICKOFF"||st?.stability?.fixture_timing?.[id]==="AFTER_KICKOFF";
-let rankId="",reasons=new Set(),boardRefresh=null;
+let rankId="",reasons=new Set(),boardRefresh=null,boardRunId="",openedBoardRows=new Set();
 function option(items,sel,placeholder){return '<option value="ALL">'+esc(placeholder)+'</option>'+items.map(([v,n])=>'<option value="'+esc(v)+'" '+(v===sel?"selected":"")+'>'+esc(n)+'</option>').join("")}
 function ranking({root,st,onOpen}){
  if(!root)return;
@@ -65,18 +65,21 @@ function quoteCell(q,opts){
 }
 function quoteTable(opts){
  const root=opts.root;if(!root)return;boardRefresh=opts.refresh;
+ const currentRun=opts.run?.run?.publication_id||"";
+ if(currentRun!==boardRunId){openedBoardRows.clear();boardRunId=currentRun;}
  const by=new Map();arr(opts.rows).forEach(q=>{if(!by.has(q.fixtureId))by.set(q.fixtureId,[]);by.get(q.fixtureId).push(q)});
  const matches=arr(opts.run?.matches).filter(m=>by.has(m.fixture_id));
  const row=m=>{
   const q=by.get(m.fixture_id),role=x=>q.find(v=>v.role===x),x=extra(opts.context,m.fixture_id),amp=text(m.ampel||"YELLOW").toUpperCase();
   const reads='<div class="v41-reads"><span><b>D</b> '+esc(x.direction)+'</span><span><b>Range</b> '+esc(x.range)+'</span><span><b>Owner</b> '+esc(x.owner)+'</span></div>';
-  return '<tr class="v41-board-row" data-v41-fixture="'+esc(m.fixture_id)+'"><td data-label="Spiel" class="v41-game"><div class="v41-game-name"><span class="v41-ampel v41-ampel-'+esc(amp.toLowerCase())+'">'+esc(label(amp))+'</span><b>'+entity(m.home)+' <span>–</span> '+entity(m.away)+'</b></div><small>'+esc(m.competition||"")+" · "+esc(ztime(m.kickoff))+'</small><button class="v41-mobile-expand" type="button" data-v41-toggle="'+esc(m.fixture_id)+'" aria-expanded="false">Weitere Pfade anzeigen</button></td>'+
-  '<td data-path="SAFE" data-label="SAFE">'+quoteCell(role("SAFE"),opts)+'</td><td data-path="BALANCED" data-label="BALANCED">'+quoteCell(role("BALANCED"),opts)+'</td><td data-path="AGGRESSIVE" data-label="AGGRESSIVE">'+quoteCell(role("AGGRESSIVE"),opts)+'</td><td data-path="FAVOURITE" data-label="FAVOURITE">'+quoteCell(role("FAVOURITE"),opts)+'</td><td data-path="READS" data-label="Zusatz Reads">'+reads+'<small class="v41-read-pricing">Keine separate Read Quote im aktuellen Datensatz</small></td></tr>';
+  const isOpen=openedBoardRows.has(m.fixture_id);
+  return '<tr class="v41-board-row '+(isOpen?"v41-expanded":"")+'" data-v41-fixture="'+esc(m.fixture_id)+'"><td data-label="Spiel" class="v41-game"><div class="v41-game-name"><span class="v41-ampel v41-ampel-'+esc(amp.toLowerCase())+'">'+esc(label(amp))+'</span><b>'+entity(m.home)+' <span>–</span> '+entity(m.away)+'</b></div><small>'+esc(m.competition||"")+" · "+esc(ztime(m.kickoff))+'</small><button class="v41-mobile-expand" type="button" data-v41-toggle="'+esc(m.fixture_id)+'" aria-expanded="'+isOpen+'">'+(isOpen?"Weitere Pfade schliessen":"Weitere Pfade anzeigen")+'</button></td>'+
+  '<td data-path="SAFE" data-label="SAFE">'+quoteCell(role("SAFE"),opts)+'</td><td data-path="BALANCED" data-label="BALANCED">'+quoteCell(role("BALANCED"),opts)+'</td><td data-path="AGGRESSIVE" data-label="AGGRESSIVE">'+quoteCell(role("AGGRESSIVE"),opts)+'</td><td data-path="FAVOURITE" data-label="FAVOURITE">'+quoteCell(role("FAVOURITE"),opts)+'</td><td data-path="READS" data-label="Zusatz Reads">'+reads+(x.timing==="AFTER_KICKOFF"?'<small class="v41-read-pricing">Nach Anpfiff berechnet · Entwicklungsdaten</small>':'')+'<small class="v41-read-pricing">Keine separate Read Quote im aktuellen Datensatz</small></td></tr>';
  };
  root.classList.add("v41-board");
  root.innerHTML=matches.length?'<p class="v41-board-help">Eine Partie pro Zeile. <b>+</b> fügt die angezeigte Quote deinem Wettschein hinzu. Maximal ein Markt pro Spiel.</p><div class="v41-board-wrap"><table class="v41-board-table"><thead><tr><th>Spiel & Ampel</th><th>SAFE</th><th>BALANCED</th><th>AGGRESSIVE</th><th>FAVOURITE</th><th>Zusatz Reads</th></tr></thead><tbody>'+matches.map(row).join("")+'</tbody></table></div><p class="small muted">Für Direction, Range und Owner Reads werden keine Quoten geschätzt. Eine spätere Odds Erweiterung muss jeden Zusatzmarkt exakt prüfen.</p>':'<div class="notice">Keine Partien für die gewählten Filter.</div>';
  root.querySelectorAll("[data-v41-pick]").forEach(el=>el.onclick=()=>{const q=arr(opts.full).find(v=>v.key===el.dataset.v41Pick);if(q?.available)opts.toggle(q)});
- root.querySelectorAll("[data-v41-toggle]").forEach(el=>el.onclick=()=>{const tr=el.closest("tr"),isOpen=tr.classList.toggle("v41-expanded");el.setAttribute("aria-expanded",String(isOpen));el.textContent=isOpen?"Weitere Pfade schliessen":"Weitere Pfade anzeigen"});
+ root.querySelectorAll("[data-v41-toggle]").forEach(el=>el.onclick=()=>{const tr=el.closest("tr"),isOpen=tr.classList.toggle("v41-expanded");isOpen?openedBoardRows.add(el.dataset.v41Toggle):openedBoardRows.delete(el.dataset.v41Toggle);el.setAttribute("aria-expanded",String(isOpen));el.textContent=isOpen?"Weitere Pfade schliessen":"Weitere Pfade anzeigen"});
 }
 function refresh(){if(document.querySelector("#page-board.active"))boardRefresh?.()}
 window.EV41={ranking,overview,quoteTable,extra,refresh};
