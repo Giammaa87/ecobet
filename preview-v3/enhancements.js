@@ -48,7 +48,8 @@ function scores(rows,field="favourite_result"){let x={hit:0,miss:0,push:0,other:
 function rowOfAudit(a,r){
  const f=r.fixture||{},ts=Date.parse(f.kickoff_utc||f.kickoff||"");
  const auditDate=a.run_audit_record?.date_range?.from||a.audit_generated_at?.slice(0,10)||"";
- const kickoffDay=Number.isFinite(ts)?new Date(ts).toISOString().slice(0,10):auditDate;
+ const runDate=String(a.run_audit_record?.run_id||"").match(/20\d{2}-\d{2}-\d{2}/)?.[0]||auditDate;
+ const kickoffDay=Number.isFinite(ts)?new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Zurich",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date(ts)):runDate;
  const day=kickoffDay||auditDate;
  const home=f.home||"",away=f.away||"";
  const fixtureId=r.match_id||"";
@@ -108,11 +109,11 @@ function group(rows,getName){const m=new Map();for(const r of rows){const n=getN
 function table(headers,rows){return '<div class="table-wrap"><table class="compare ev3-perf-table"><thead><tr>'+headers.map(h=>'<th>'+h+'</th>').join("")+'</tr></thead><tbody>'+rows.join("")+'</tbody></table></div>'}
 function tableGroups(groups,kind="team"){
  return table([kind==="team"?"Mannschaft":kind==="league"?"Wettbewerb":"Markt","Spiele","HIT","MISS","PUSH","Trefferquote"],groups.map(x=>
- '<tr><td>'+(kind==="league"?entity(x.name,"competition"):kind==="team"?entity(x.name,"team"):escape(x.name))+'</td><td>'+x.items.length+'</td><td>'+chip("HIT")+' '+x.s.hit+'</td><td>'+chip("MISS")+' '+x.s.miss+'</td><td>'+x.s.push+'</td><td><b>'+rate(x.s)+'</b></td></tr>'))}
+ '<tr><td>'+(kind==="league"?entity(x.name,"competition"):kind==="team"?entity(x.name,"team"):escape(x.name))+'</td><td>'+x.items.length+'</td><td class="ev3-number-neutral">'+x.s.hit+'</td><td class="ev3-number-neutral">'+x.s.miss+'</td><td class="ev3-number-neutral">'+x.s.push+'</td><td><b class="ev3-rate '+((x.s.hit+x.s.miss)&&x.s.hit/(x.s.hit+x.s.miss)<0.5?"bad":"good")+'">'+rate(x.s)+'</b></td></tr>'))}
 function kpi(label,value,colour="blue",description=""){return '<article class="stat-tile panel kpi-'+colour+'"><small>'+label+'</small><strong>'+value+'</strong><span>'+description+'</span></article>'}
 function hitOverview(rows){
  const s=scores(rows,settings.path+"_result");
- return '<div class="stat-tiles">'+kpi("HIT",String(s.hit),"hit")+kpi("MISS",String(s.miss),"miss")+kpi("Trefferquote",rate(s),"blue")+kpi("Entscheidungen",String(s.hit+s.miss+s.push),"amber")+'</div>';
+ return '<div class="stat-tiles">'+kpi("HIT",String(s.hit),"neutral")+kpi("MISS",String(s.miss),"neutral")+kpi("Trefferquote",rate(s),"hit")+kpi("Fehlerquote",s.hit+s.miss?num(100*s.miss/(s.hit+s.miss),1)+" %":"—","miss")+'</div>';
 }
 function trendChart(rows){
  const days=group(rows,x=>x.day).sort((a,b)=>a.name.localeCompare(b.name)).slice(-28);
@@ -129,18 +130,34 @@ function simpleDots(rows){
 async function loadFormIndex(){if(!formIndexTask)formIndexTask=(async()=>{const p=await (await fetch("team-form/latest.json")).json();const r=await fetch("team-form/"+p.index_file);if(!r.ok)throw Error("Team-Form Index");return (await r.json()).records||[]})();return formIndexTask}
 async function loadTeamForm(names){
  const index=await loadFormIndex();
- const sorted=index.slice().sort((a,b)=>b.date.localeCompare(a.date));
- const selected=new Map();
- for(const row of sorted){let k=key(row.name);if(!selected.has(k))selected.set(k,row)}
- const needed=names.map(n=>({name:n,id:key(n)})).filter(x=>!formCache.has(x.id)&&!formLoading.has(x.id));
- for(let i=0;i<needed.length;i+=7)await Promise.all(needed.slice(i,i+7).map(async x=>{
-  const rec=selected.get(x.id);
-  if(!rec){formCache.set(x.id,{none:true});return}
-  formLoading.add(x.id);
-  try{const r=await fetch(rec.ref);if(!r.ok)throw Error("HTTP "+r.status);const data=await r.json();const f=data.feature_state||{};
-  const history=(data.match_history?.matches||[]).filter(x=>x.d&&x.res).sort((a,b)=>a.d.localeCompare(b.d)).slice(-5);
-  formCache.set(x.id,{date:rec.date,n:f.last5_all_competitions_n??history.length,history});
-  }catch(e){formCache.set(x.id,{none:true})}finally{formLoading.delete(x.id)}
+ const byName=new Map();
+ for(const row of index){
+   const id=key(row.name);
+   if(!byName.has(id))byName.set(id,[]);
+   byName.get(id).push(row);
+ }
+ for(const options of byName.values())options.sort((a,b)=>b.date.localeCompare(a.date));
+ const needed=[...new Map(names.map(n=>[key(n),n])).values()].map(name=>({name,id:key(name)})).filter(x=>!formCache.has(x.id)&&!formLoading.has(x.id));
+ for(let i=0;i<needed.length;i+=6)await Promise.all(needed.slice(i,i+6).map(async x=>{
+   const candidates=(byName.get(x.id)||[]).slice(0,5);
+   if(!candidates.length){formCache.set(x.id,{none:true,reason:"NO_INDEX_REFERENCE"});return;}
+   formLoading.add(x.id);let fallback=null,selected=null;
+   try{
+    for(const rec of candidates){
+      try{
+       const response=await fetch(rec.ref);
+       if(!response.ok)continue;
+       const doc=await response.json();
+       const history=(doc.match_history?.matches||[]).filter(r=>r.d&&["W","D","L"].includes(r.res)).sort((a,b)=>a.d.localeCompare(b.d)).slice(-5);
+       const state=doc.feature_state||{};
+       const candidate={date:rec.date,ref:rec.ref,n:state.last5_all_competitions_n??history.length,history,reported:history.length,older:rec.date!==candidates[0].date};
+       if(!fallback||history.length>fallback.reported)fallback=candidate;
+       if(history.length===5){selected=candidate;break;}
+      }catch(e){/* older indexed record might have been archived; try next candidate */}
+    }
+    const chosen=selected||fallback;
+    formCache.set(x.id,chosen||{none:true,reason:"NO_READABLE_MATCH_HISTORY"});
+   }finally{formLoading.delete(x.id);}
  }));
 }
 function formDots(name){
@@ -148,7 +165,7 @@ function formDots(name){
  if(f.none)return '<span class="small muted">Keine verifizierte L5 Form</span>';
  const rows=f.history||[];
  return '<span class="ev3-momentum-dots">'+Array(Math.max(0,5-rows.length)).fill('<span class="dot ev3-empty">·</span>').join("")+
- rows.map(r=>'<span class="dot '+(r.res==="W"?"hit":r.res==="L"?"miss":"push")+'" title="'+escape(r.d+" · "+r.gf+":"+r.ga)+'">'+(r.res==="W"?"S":r.res==="L"?"N":"U")+'</span>').join("")+'</span><small class="dim">Formstand '+escape(f.date)+'</small>';
+ rows.map(r=>'<span class="dot '+(r.res==="W"?"hit":r.res==="L"?"miss":"push")+'" title="'+escape(r.d+" · "+r.gf+":"+r.ga)+'">'+(r.res==="W"?"S":r.res==="L"?"N":"U")+'</span>').join("")+'</span><small class="dim">Formstand '+escape(f.date)+(f.older?" · älterer vollständiger Snapshot":"")+(rows.length<5?" · "+rows.length+"/5 verfügbar":"")+'</small>';
 }
 function dedupedMomentum(rows){
  const teams=new Map();
@@ -175,10 +192,10 @@ function momentumHTML(rows){
 }
 function renderPerformance(root,origRows,tab,change){
  setPerfContext(origRows,tab,change);
- const rows=selectedRows(),groupStatus=settings.path+"_result";
  const t=tab||"cockpit";
+ const rows=t==="momentum"?selectedRows(false):selectedRows(),groupStatus=settings.path+"_result";
  let html='<div class="ev3-filter-info">'+rows.length+' eindeutige Fixture Records im aktuellen Filter. Mehrfach publizierte Prüfstände sind bereinigt. Pfad: '+settings.path.toUpperCase()+'.</div>';
- if(t==="cockpit"){const pf=["favourite","safe","balanced","aggressive"];const breakdown=pf.map(path=>{const x=scores(rows,path+"_result");return kpi(path.toUpperCase(),rate(x),"blue",x.hit+" HIT · "+x.miss+" MISS · "+x.push+" PUSH")}).join("");html+=hitOverview(rows)+'<div class="ev3-subhead"><h3>Alle vier Modellpfade im Vergleich</h3><p>SAFE, BALANCED, AGGRESSIVE und FAVOURITE werden aus demselben gefilterten Spielbestand berechnet.</p></div><div class="stat-tiles">'+breakdown+'</div><div class="performance-grid">'+trendChart(rows)+'<div class="panel analytics-panel"><h3>Trefferquote nach Wettbewerb</h3>'+tableGroups(group(rows,x=>x.competition).slice(0,10),"league")+'</div></div>';}
+ if(t==="cockpit"){const pf=["favourite","safe","balanced","aggressive"];const breakdown=pf.map(path=>{const x=scores(rows,path+"_result");return kpi(path.toUpperCase(),rate(x),(x.hit+x.miss)&&x.hit<x.miss?"miss":"hit",x.hit+" HIT · "+x.miss+" MISS · "+x.push+" PUSH")}).join("");html+=hitOverview(rows)+'<div class="ev3-subhead"><h3>Alle vier Modellpfade im Vergleich</h3><p>SAFE, BALANCED, AGGRESSIVE und FAVOURITE werden aus demselben gefilterten Spielbestand berechnet.</p></div><div class="stat-tiles">'+breakdown+'</div><div class="performance-grid">'+trendChart(rows)+'<div class="panel analytics-panel"><h3>Trefferquote nach Wettbewerb</h3>'+tableGroups(group(rows,x=>x.competition).slice(0,10),"league")+'</div></div>';}
  else if(t==="trends")html+=hitOverview(rows)+trendChart(rows)+table(["Datum","Spiele","HIT","MISS","PUSH","Quote"],group(rows,x=>x.day).sort((a,b)=>b.name.localeCompare(a.name)).map(g=>'<tr><td>'+escape(g.name)+'</td><td>'+g.items.length+'</td><td>'+g.s.hit+'</td><td>'+g.s.miss+'</td><td>'+g.s.push+'</td><td>'+rate(g.s)+'</td></tr>'));
  else if(t==="markets")html+=hitOverview(rows)+tableGroups(group(rows,x=>x.model?.[settings.path==="favourite"?"favourite_prediction":settings.path]||"Markt nicht im Audit"),"market");
  else if(t==="leagues")html+=hitOverview(rows)+tableGroups(group(rows,x=>x.competition),"league");
