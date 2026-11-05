@@ -1,0 +1,14 @@
+{
+ "entries": {
+  "2026-11-05_0347": {
+   "bytes_sha256": "5b3b4521b1e09cb69e5c348be10cca041063eecb2c90e24dd7c69be42eb540e4",
+   "data_status": "EXPLORATORY_DEVELOPMENT",
+   "file": "stability/2026-11-05_0347.json",
+   "fixtures": 26,
+   "generated_at_utc": "2026-11-05T20:08:13.881633+00:00",
+   "run_date": "2026-11-05",
+   "schema": "ECOBET_FAVOURITE_STABILITY_V1"
+  }
+ },
+ "schema": "ECOBET_FAVOURITE_STABILITY_PUBLIC_INDEX_V1"
+}
