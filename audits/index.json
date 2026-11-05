@@ -1457,10 +1457,29 @@
           "hit_rate": 0.7727272727272727
         },
         "run_id": "2026-11-05_0347"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-11-05_RESULT_AUDIT_V24_AUTO_REV_5b77f1b1b84dc7ae.json",
+        "generated_at": "2026-11-05T22:30:28.752642+00:00",
+        "id": "2026-11-05_2026-11-05_0347_V24_AUTO_RECONCILED",
+        "kpi": {
+          "HIT": 17,
+          "MISS": 6,
+          "PENDING": 3,
+          "PUSH": 0,
+          "NOT_APPLICABLE": 0,
+          "NSP": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 23,
+          "hit_rate": 0.7391304347826086
+        },
+        "run_id": "2026-11-05_0347"
       }
     ]
   },
-  "generated_at": "2026-11-05T22:30:07Z",
+  "generated_at": "2026-11-05T22:30:28.752642+00:00",
   "record_type": "audit_index",
   "schema_version": "1.0"
 }
