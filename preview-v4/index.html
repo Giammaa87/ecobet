@@ -2,13 +2,13 @@
 <html lang="de-CH">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#071821"><title>ECOBET · DECODE THE GAME · V4 DEV</title>
-<base href="../"><link rel="stylesheet" href="preview-v2/background.css"><link rel="stylesheet" href="preview-v2/styles.css"><link rel="stylesheet" href="preview-v3/styles.css"><link rel="stylesheet" href="preview-v3/enhancements.css"><link rel="stylesheet" href="preview-v4/derived.css">
+<meta name="theme-color" content="#071821"><title>ECOBET · DECODE THE GAME · V4.1 DEV</title>
+<base href="../"><link rel="stylesheet" href="preview-v2/background.css"><link rel="stylesheet" href="preview-v2/styles.css"><link rel="stylesheet" href="preview-v3/styles.css"><link rel="stylesheet" href="preview-v3/enhancements.css"><link rel="stylesheet" href="preview-v4/derived.css"><link rel="stylesheet" href="preview-v4/compact.css">
 </head>
 <body>
 <header class="masthead" id="top">
  <div class="wrap">
-  <div class="mast-meta"><span>ECOBET MASTER 3.0 · FOOTBALL INTELLIGENCE</span><span class="pilot">DEV V4 · ZUSATZANALYSEN</span></div>
+  <div class="mast-meta"><span>ECOBET MASTER 3.0 · FOOTBALL INTELLIGENCE</span><span class="pilot">DEV V4.1 · KOMPAKTE ANALYSEN</span></div>
   <div class="brandline"><div class="emblem" aria-label="ECOBET Logo">E</div><div><h1>ECOBET</h1><div class="motto">DECODE THE GAME</div><div class="enigma">Enigma CalciOracolo</div></div></div>
   <p class="mast-sub">Matchanalysen, Team Books und verifizierte Daten. Mit verständlichen Erklärungen und der vertrauten ECOBET Identität.</p>
  </div>
@@ -39,10 +39,10 @@
  <div id="report" hidden aria-live="polite"></div>
 </section>
 <section class="view" id="page-board">
- <div class="intro"><div><div class="eyebrow">02 · Betting Intelligence</div><h2>Betting Board</h2><p>Nur publizierte ECOBET Pfade und BSD Quoten. Fehlende Quoten bleiben sichtbar und werden niemals geschätzt oder ersetzt. Der Wettschein wird ausschliesslich manuell zusammengestellt.</p></div></div>
+ <div class="intro"><div><div class="eyebrow">02 · Betting Intelligence</div><h2>Betting Board</h2><p>Ein Spiel pro Zeile mit SAFE, BALANCED, AGGRESSIVE, FAVOURITE, zugehörigen Quoten und Zusatz Reads. Fehlende Quoten bleiben leer. Der Wettschein wird ausschliesslich manuell zusammengestellt.</p></div></div>
  <div class="filters panel">
   <label>Entscheidungspfad<select id="quote-role"><option value="ALL">Alle Pfade</option><option value="FAVOURITE">Favourite</option><option value="SAFE">SAFE</option><option value="BALANCED">BALANCED</option><option value="AGGRESSIVE">AGGRESSIVE</option></select></label>
-  <label>Quotenstatus<select id="quote-status"><option value="ALL">Alle Marktpfade</option><option value="AVAILABLE">Mit BSD Quote</option><option value="NOT_AVAILABLE">Ohne Quote</option></select></label>
+  <label>Quotenstatus<select id="quote-status"><option value="ALL">Alle Marktpfade</option><option value="AVAILABLE">Mit Quote</option><option value="NOT_AVAILABLE">Ohne Quote</option></select></label>
   <label>Wettbewerb<select id="quote-league"><option value="ALL">Alle Wettbewerbe</option></select></label>
   <label>Markt suchen<input id="quote-market" type="search" placeholder="z.B. Remis, Tore"></label>
   <label>Minimale Quote<input id="quote-min" type="number" min="1" max="100" step=".05" value="1"></label>
@@ -62,7 +62,7 @@
  </div><div id="combo-results" class="combo-grid"><p class="muted small">Klicke auf «Vorschläge erstellen», um den aktuellen Run zu prüfen.</p></div>
  </section>
 </section>
-<section class="view" id="page-topreads"><div class="intro"><div class="eyebrow">03 · Zusatzanalyse</div><h2>FAVOURITE Stabilitätsranking</h2><p>Alle FAVOURITE Prognosen des ausgewählten Runs nach modellinterner Stabilität geordnet, keine Trefferwahrscheinlichkeit.</p></div><div id="v4-ranking" class="panel v4-ranking" aria-live="polite"></div><section class="panel v4-legacy"><div class="eyebrow">Bestehende Auswertung</div><h3>Historische Top Reads</h3><p>Die ursprüngliche Auswertung im Performance Bereich bleibt vollständig erhalten.</p><button id="v4-historic" class="btn secondary" type="button">Historische Top Reads öffnen</button></section></section>
+<section class="view" id="page-topreads"><div class="intro"><div class="eyebrow">03 · Zusatzanalyse</div><h2>FAVOURITE Stabilitätsranking</h2><p>Kompaktes Ranking mit den fünf stabilsten FAVOURITE Prognosen. Alle Spiele und Begründungen lassen sich bei Bedarf aufklappen.</p></div><div id="v4-ranking" class="panel v4-ranking" aria-live="polite"></div><section class="panel v4-legacy"><div class="eyebrow">Bestehende Auswertung</div><h3>Historische Top Reads</h3><p>Die ursprüngliche Auswertung im Performance Bereich bleibt vollständig erhalten.</p><button id="v4-historic" class="btn secondary" type="button">Historische Top Reads öffnen</button></section></section>
 <section class="view" id="page-performance">
  <div class="intro"><div><div class="eyebrow">04 · Historische Qualität</div><h2>Performance Intelligence</h2><p>Alle bisherigen neun Auswertungsbereiche. Die Daten stammen aus den veröffentlichten Ergebnis Audits, nicht aus nachträglich geschätzten Trefferquoten.</p></div></div>
  <div class="performance-nav" id="performance-nav">
@@ -77,6 +77,6 @@
  <div id="audit-body" aria-live="polite" class="notice">Historische Auditdaten werden beim Öffnen geladen …</div>
 </section>
 </main>
-<footer class="footer"><div class="wrap"><span>ECOBET · DECODE THE GAME · Enigma CalciOracolo</span><span>DEV V4 · Datenquellen unverändert · Europe/Zurich</span></div></footer>
-<script src="preview-v2/translations.js"></script><script src="preview-v3/enhancements.js"></script><script src="preview-v3/app.js"></script><script src="preview-v4/derived.js"></script>
+<footer class="footer"><div class="wrap"><span>ECOBET · DECODE THE GAME · Enigma CalciOracolo</span><span>DEV V4.1 · Originaldaten unverändert · Europe/Zurich</span></div></footer>
+<script src="preview-v2/translations.js"></script><script src="preview-v3/enhancements.js"></script><script src="preview-v4/compact.js"></script><script src="preview-v4/app.js"></script><script src="preview-v4/derived.js"></script>
 </body></html>
