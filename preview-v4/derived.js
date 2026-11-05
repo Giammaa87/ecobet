@@ -83,7 +83,7 @@ function decorateCards(){
  if(!st.run)return;
  document.querySelectorAll("#match-list article.ev3-match").forEach(c=>{
   const id=c.querySelector("[data-match]")?.dataset.match,foot=c.querySelector(".foot");
-  if(!id||!foot||c.querySelector(".v4-card-info"))return;
+  if(!id||!foot)return;
   const r=rank(id),d=read(id);if(!r&&!d)return;
   const info=document.createElement("div");info.className="v4-card-info";
   const pill=s=>'<span class="v4-chip">'+esc(s)+'</span>';
@@ -92,7 +92,8 @@ function decorateCards(){
   (d?.goal_range?.status==="READ"?pill("Torbereich: "+d.goal_range.read):"")+
   (d?.owner_favourite?.selected?pill("Zusatz Favourite: "+d.owner_favourite.selected.read):"")+
   (after(d?.timing?.status)||after(st.stability?.fixture_timing?.[id])?pill("Nach Anpfiff"):"");
-  foot.before(info);
+  const prior=c.querySelector(".v4-card-info");
+  if(prior){if(prior.innerHTML!==info.innerHTML)prior.replaceWith(info)}else foot.before(info);
  });
 }
 function readCard(title,read,status,coverage,evidence,desc){
@@ -138,5 +139,6 @@ function start(){
  new MutationObserver(()=>{if(!st.id && $("run-choice")?.value && $("match-list")?.children.length)selectRun()}).observe($("run-choice"),{childList:true});
  renderRanking();if($("run-choice")?.value && $("match-list")?.children.length)selectRun();
 }
+window.EV4State=()=>st;
 start();
 })();
