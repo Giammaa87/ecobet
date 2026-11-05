@@ -1,0 +1,729 @@
+{
+  "report_type": "ECOBET_V3_SOURCE_DIAGNOSTIC_AND_CORRECTION_SPECIFICATION",
+  "as_of_date": "2026-11-05",
+  "reference_run": "2026-11-05_0347",
+  "status": "DIAGNOSIS_COMPLETED; NO SOURCE RECOVERY EXECUTED",
+  "inputs": {
+    "stage12": "stage13/source-records/2026-11-05_0347.stage12.json",
+    "odds": "odds/ODDS_2026-11-05_0347_20261105T035221Z.json",
+    "team_form_index": "team-form/index.712762c681603b4e.json",
+    "performance_index": "performance/index.a836cb2a54dd05a6.json"
+  },
+  "clubelo": {
+    "team_sides": 52,
+    "base_available": 46,
+    "adjustment_available": 36,
+    "base_missing": [
+      {
+        "team": "Trabzonspor",
+        "fixture_id": "UECL2627_025978bb62b1",
+        "side": "home",
+        "base_elo_status": "NOT_AVAILABLE",
+        "base_elo": null,
+        "base_reason": "BASE_ELO_UNAVAILABLE",
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "Union SG",
+        "fixture_id": "UEL2627_018f0698ad39",
+        "side": "away",
+        "base_elo_status": "NOT_AVAILABLE",
+        "base_elo": null,
+        "base_reason": "BASE_ELO_UNAVAILABLE",
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "NK Celje",
+        "fixture_id": "UEL2627_1f4423ae16f2",
+        "side": "away",
+        "base_elo_status": "NOT_AVAILABLE",
+        "base_elo": null,
+        "base_reason": "BASE_ELO_UNAVAILABLE",
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "Lillestrøm",
+        "fixture_id": "UEL2627_69a89c96264d",
+        "side": "home",
+        "base_elo_status": "NOT_AVAILABLE",
+        "base_elo": null,
+        "base_reason": "BASE_ELO_UNAVAILABLE",
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "OFI Crete",
+        "fixture_id": "UEL2627_768311ebb82c",
+        "side": "away",
+        "base_elo_status": "NOT_AVAILABLE",
+        "base_elo": null,
+        "base_reason": "BASE_ELO_UNAVAILABLE",
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "Torreense",
+        "fixture_id": "UEL2627_7e5221e879ce",
+        "side": "home",
+        "base_elo_status": "NOT_AVAILABLE",
+        "base_elo": null,
+        "base_reason": "BASE_ELO_UNAVAILABLE",
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      }
+    ],
+    "adjusted_missing_with_base": [
+      {
+        "team": "Freiburg",
+        "fixture_id": "UECL2627_025978bb62b1",
+        "side": "away",
+        "base_elo_status": "AVAILABLE",
+        "base_elo": 1786,
+        "base_reason": null,
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "Rīga FC",
+        "fixture_id": "UECL2627_972adbb64a2c",
+        "side": "home",
+        "base_elo_status": "AVAILABLE",
+        "base_elo": 1499,
+        "base_reason": null,
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "Jablonec",
+        "fixture_id": "UECL2627_972adbb64a2c",
+        "side": "away",
+        "base_elo_status": "AVAILABLE",
+        "base_elo": 1547,
+        "base_reason": null,
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "Celta Vigo",
+        "fixture_id": "UEL2627_018f0698ad39",
+        "side": "home",
+        "base_elo_status": "AVAILABLE",
+        "base_elo": 1747,
+        "base_reason": null,
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "Sturm Graz",
+        "fixture_id": "UEL2627_1f4423ae16f2",
+        "side": "home",
+        "base_elo_status": "AVAILABLE",
+        "base_elo": 1630,
+        "base_reason": null,
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "Viktoria Plzeň",
+        "fixture_id": "UEL2627_69a89c96264d",
+        "side": "away",
+        "base_elo_status": "AVAILABLE",
+        "base_elo": 1620,
+        "base_reason": null,
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "H. Be'er Sheva",
+        "fixture_id": "UEL2627_768311ebb82c",
+        "side": "home",
+        "base_elo_status": "AVAILABLE",
+        "base_elo": 1630,
+        "base_reason": null,
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "Ararat-Armenia",
+        "fixture_id": "UEL2627_7e5221e879ce",
+        "side": "away",
+        "base_elo_status": "AVAILABLE",
+        "base_elo": 1439,
+        "base_reason": null,
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "Celtic",
+        "fixture_id": "UEL2627_9fd198c5d5aa",
+        "side": "home",
+        "base_elo_status": "AVAILABLE",
+        "base_elo": 1650,
+        "base_reason": null,
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      },
+      {
+        "team": "Beşiktaş",
+        "fixture_id": "UEL2627_9fd198c5d5aa",
+        "side": "away",
+        "base_elo_status": "AVAILABLE",
+        "base_elo": 1706,
+        "base_reason": null,
+        "adjusted_elo_status": "NOT_AVAILABLE",
+        "adjusted_elo": null,
+        "adjusted_reason": "ADJUSTED_ELO_UNAVAILABLE"
+      }
+    ],
+    "actions": [
+      "Identify canonical ID alias mapping and timestamp of ClubElo provider history at or before run cutoff",
+      "Resolve BASE_ELO_UNAVAILABLE independently of adjustment; do not assume adjustment of zero",
+      "Check status of ClubElo official feed and accepted historically frozen source",
+      "Validate player-context and XI strength inputs needed for adjustment when base is available",
+      "Publish verified additive data-enrichment artifact with provenance; do not rewrite the frozen football prediction"
+    ]
+  },
+  "odds": {
+    "role_markets": 104,
+    "available": 54,
+    "missing": 50,
+    "missing_list": [
+      {
+        "fixture_id": "UECL2627_025978bb62b1",
+        "fixture": "Trabzonspor – Freiburg",
+        "role": "BALANCED",
+        "family": "TEAM_GOALS",
+        "exact_market": "Trabzonspor Team Goals Over 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_025978bb62b1",
+        "fixture": "Trabzonspor – Freiburg",
+        "role": "FAVOURITE",
+        "family": "TEAM_GOALS",
+        "exact_market": "Trabzonspor Team Goals Over 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_025978bb62b1",
+        "fixture": "Trabzonspor – Freiburg",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_2cf62d616d19",
+        "fixture": "Atalanta – FC Kairat",
+        "role": "AGGRESSIVE",
+        "family": "TEAM_GOALS",
+        "exact_market": "Atalanta Team Goals Over 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_2cf62d616d19",
+        "fixture": "Atalanta – FC Kairat",
+        "role": "FAVOURITE",
+        "family": "TEAM_GOALS",
+        "exact_market": "FC Kairat Team Goals Under 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_2cf62d616d19",
+        "fixture": "Atalanta – FC Kairat",
+        "role": "SAFE",
+        "family": "TEAM_GOALS",
+        "exact_market": "FC Kairat Team Goals Under 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_482789cf52cb",
+        "fixture": "Panathinaikos – CSKA Sofia",
+        "role": "AGGRESSIVE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Over 2.5",
+        "reason": "PROVIDER_QUOTE_ABSENT",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_482789cf52cb",
+        "fixture": "Panathinaikos – CSKA Sofia",
+        "role": "BALANCED",
+        "family": "TEAM_GOALS",
+        "exact_market": "Panathinaikos Team Goals Over 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_482789cf52cb",
+        "fixture": "Panathinaikos – CSKA Sofia",
+        "role": "FAVOURITE",
+        "family": "TEAM_GOALS",
+        "exact_market": "Panathinaikos Team Goals Over 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_482789cf52cb",
+        "fixture": "Panathinaikos – CSKA Sofia",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Over 1.5",
+        "reason": "PROVIDER_QUOTE_ABSENT",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_622d3065ba49",
+        "fixture": "Monaco – Nordsjælland",
+        "role": "BALANCED",
+        "family": "TEAM_GOALS",
+        "exact_market": "Nordsjælland Team Goals Under 2.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_622d3065ba49",
+        "fixture": "Monaco – Nordsjælland",
+        "role": "FAVOURITE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_622d3065ba49",
+        "fixture": "Monaco – Nordsjælland",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_972adbb64a2c",
+        "fixture": "Rīga FC – Jablonec",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_9df3b98dd8bb",
+        "fixture": "Midtjylland – Ajax",
+        "role": "BALANCED",
+        "family": "TEAM_GOALS",
+        "exact_market": "Ajax Team Goals Over 0.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_e258294f6dc6",
+        "fixture": "Twente – Pafos FC",
+        "role": "BALANCED",
+        "family": "RANGE",
+        "exact_market": "Twente Team Goals 1-3",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_e258294f6dc6",
+        "fixture": "Twente – Pafos FC",
+        "role": "FAVOURITE",
+        "family": "RANGE",
+        "exact_market": "Twente Team Goals 1-3",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UECL2627_e258294f6dc6",
+        "fixture": "Twente – Pafos FC",
+        "role": "SAFE",
+        "family": "TEAM_GOALS",
+        "exact_market": "Twente Team Goals Under 3.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_018f0698ad39",
+        "fixture": "Celta Vigo – Union SG",
+        "role": "AGGRESSIVE",
+        "family": "PHASE",
+        "exact_market": "First Half Under 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_018f0698ad39",
+        "fixture": "Celta Vigo – Union SG",
+        "role": "BALANCED",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Over 1.5",
+        "reason": "PROVIDER_QUOTE_ABSENT",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_018f0698ad39",
+        "fixture": "Celta Vigo – Union SG",
+        "role": "FAVOURITE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_018f0698ad39",
+        "fixture": "Celta Vigo – Union SG",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_13ec60b21eca",
+        "fixture": "Anderlecht – RB Salzburg",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_1f4423ae16f2",
+        "fixture": "Sturm Graz – NK Celje",
+        "role": "AGGRESSIVE",
+        "family": "TEAM_GOALS",
+        "exact_market": "Sturm Graz Team Goals Under 2.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_1f4423ae16f2",
+        "fixture": "Sturm Graz – NK Celje",
+        "role": "SAFE",
+        "family": "TEAM_GOALS",
+        "exact_market": "Sturm Graz Team Goals Under 3.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_1fb10f581491",
+        "fixture": "NEC Nijmegen – AC Omonia",
+        "role": "SAFE",
+        "family": "TEAM_GOALS",
+        "exact_market": "NEC Nijmegen Team Goals Under 3.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_34e20257eacf",
+        "fixture": "Leverkusen – Marseille",
+        "role": "BALANCED",
+        "family": "TEAM_GOALS",
+        "exact_market": "Leverkusen Team Goals Over 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_53cb633b5801",
+        "fixture": "Benfica – Lech Poznań",
+        "role": "AGGRESSIVE",
+        "family": "TEAM_GOALS",
+        "exact_market": "Benfica Team Goals Over 2.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_53cb633b5801",
+        "fixture": "Benfica – Lech Poznań",
+        "role": "BALANCED",
+        "family": "TEAM_GOALS",
+        "exact_market": "Benfica Team Goals Over 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_53cb633b5801",
+        "fixture": "Benfica – Lech Poznań",
+        "role": "FAVOURITE",
+        "family": "TEAM_GOALS",
+        "exact_market": "Benfica Team Goals Over 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_53cb633b5801",
+        "fixture": "Benfica – Lech Poznań",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_69a89c96264d",
+        "fixture": "Lillestrøm – Viktoria Plzeň",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_768311ebb82c",
+        "fixture": "H. Be'er Sheva – OFI Crete",
+        "role": "FAVOURITE",
+        "family": "TEAM_GOALS",
+        "exact_market": "OFI Crete Team Goals Under 2.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_768311ebb82c",
+        "fixture": "H. Be'er Sheva – OFI Crete",
+        "role": "SAFE",
+        "family": "TEAM_GOALS",
+        "exact_market": "OFI Crete Team Goals Under 2.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_78835267c5de",
+        "fixture": "Crystal Palace – Hoffenheim",
+        "role": "BALANCED",
+        "family": "TEAM_GOALS",
+        "exact_market": "Hoffenheim Team Goals Over 0.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_78835267c5de",
+        "fixture": "Crystal Palace – Hoffenheim",
+        "role": "FAVOURITE",
+        "family": "TEAM_GOALS",
+        "exact_market": "Hoffenheim Team Goals Over 0.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_7e5221e879ce",
+        "fixture": "Torreense – Ararat-Armenia",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_91275909a5c9",
+        "fixture": "Sparta Prague – Bournemouth",
+        "role": "FAVOURITE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_91275909a5c9",
+        "fixture": "Sparta Prague – Bournemouth",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_9fd198c5d5aa",
+        "fixture": "Celtic – Beşiktaş",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_aad0b8ebde44",
+        "fixture": "Real Sociedad – Lyon",
+        "role": "AGGRESSIVE",
+        "family": "TEAM_GOALS",
+        "exact_market": "Real Sociedad Team Goals Over 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_aad0b8ebde44",
+        "fixture": "Real Sociedad – Lyon",
+        "role": "FAVOURITE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_aad0b8ebde44",
+        "fixture": "Real Sociedad – Lyon",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 4.5",
+        "reason": "PROVIDER_LINE_NOT_OFFERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_c79c81f3045d",
+        "fixture": "Sunderland – Dinamo Zagreb",
+        "role": "BALANCED",
+        "family": "TEAM_GOALS",
+        "exact_market": "Sunderland Team Goals Under 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_c9e2c1d50326",
+        "fixture": "Levski Sofia – Jagiellonia",
+        "role": "BALANCED",
+        "family": "TEAM_GOALS",
+        "exact_market": "Levski Sofia Team Goals Under 2.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_c9e2c1d50326",
+        "fixture": "Levski Sofia – Jagiellonia",
+        "role": "FAVOURITE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 3.5",
+        "reason": "PROVIDER_QUOTE_ABSENT",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_c9e2c1d50326",
+        "fixture": "Levski Sofia – Jagiellonia",
+        "role": "SAFE",
+        "family": "FULL_TIME_TOTALS",
+        "exact_market": "Match Total Under 3.5",
+        "reason": "PROVIDER_QUOTE_ABSENT",
+        "kickoff_utc": "2026-11-05T17:45:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_ed75b028d21c",
+        "fixture": "AZ Alkmaar – Juventus",
+        "role": "AGGRESSIVE",
+        "family": "PHASE",
+        "exact_market": "First Half Under 1.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_ed75b028d21c",
+        "fixture": "AZ Alkmaar – Juventus",
+        "role": "BALANCED",
+        "family": "TEAM_GOALS",
+        "exact_market": "Juventus Team Goals Under 2.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      },
+      {
+        "fixture_id": "UEL2627_ed75b028d21c",
+        "fixture": "AZ Alkmaar – Juventus",
+        "role": "FAVOURITE",
+        "family": "TEAM_GOALS",
+        "exact_market": "Juventus Team Goals Under 2.5",
+        "reason": "PROVIDER_MARKET_NOT_COVERED",
+        "kickoff_utc": "2026-11-05T20:00:00+00:00"
+      }
+    ],
+    "actions": [
+      "Check BSD event/fixture mapping, cutoff and exact market representation from raw provider response",
+      "Confirm BSD supported markets against complete event odds payload; do not equate total goals to team goals",
+      "Evaluate API-FOOTBALL pre-match /odds/bets and /odds for each missing exact market using authorized key and authenticated request",
+      "Separate team goals totals by team side and exact line, including 0.5, 1.5, 2.5, 3.5",
+      "Use pre-kickoff provider timestamps, preserve historical consensus BSD odds, and never interpolate or infer absent prices",
+      "If supplemental provider covers exact market, publish new additive dataset and provider ID, bookmaker, time, line and confidence mapping",
+      "If provider cannot cover, keep explicit NO_SOURCE_QUOTE; do not alter existing ECOBET favourites"
+    ]
+  },
+  "team_form": {
+    "index_records": 1393,
+    "examples": {
+      "Bayern Munich": {
+        "snapshots": 7,
+        "latest": "2026-11-03",
+        "ref": "data/2026-11-03/snap_20261103_094901/teams/bundesliga_bayern_munich.json"
+      },
+      "PSV Eindhoven": {
+        "snapshots": 2,
+        "latest": "2026-10-20",
+        "ref": "data/2026-10-20/snap_20261020_030413/teams/uefa_psv.json"
+      },
+      "Club Brugge": {
+        "snapshots": 4,
+        "latest": "2026-11-04",
+        "ref": "data/2026-11-04/snap_20261104_031945/teams/uefa_club_brugge.json"
+      },
+      "Galatasaray": {
+        "snapshots": 4,
+        "latest": "2026-11-03",
+        "ref": "data/2026-11-03/snap_20261103_094901/teams/uefa_galatasaray.json"
+      },
+      "Roma": {
+        "snapshots": 10,
+        "latest": "2026-11-03",
+        "ref": "data/2026-11-03/snap_20261103_094901/teams/serie_a_roma.json"
+      },
+      "Manchester City": {
+        "snapshots": 13,
+        "latest": "2026-11-04",
+        "ref": "data/2026-11-04/snap_20261104_031945/teams/manchester_city.json"
+      }
+    },
+    "actions": [
+      "For every club choose latest eligible team snapshot as of the report run cutoff",
+      "If latest snapshot has incomplete Last Five, look up older eligible indexed snapshots and label chosen cutoff",
+      "Distinguish sporting last five result history from the most recent five ECOBET favourite settlements",
+      "Unify canonical team IDs across display names and aliases",
+      "Do not count repeated historical audit revisions as separate predictions",
+      "Mark fewer than five actual eligible matches and percentage coverage instead of manufacturing history"
+    ]
+  },
+  "audit": {
+    "status": "frontend date and dedupe fixes deployed in preview-v3; raw audits untouched",
+    "actions": [
+      "Use fixture kickoff local time Europe/Zurich, not audit_generation_time",
+      "Group all revisions per canonical fixture and kickoff",
+      "Prefer latest verifiably decided settlement over pending revisions while retaining audit lineage",
+      "Include pending and not-applicable distinct from HIT and MISS",
+      "Auditable percentage = HIT / (HIT + MISS)"
+    ]
+  },
+  "source_preservation": {
+    "frozen_predictions_modified": false,
+    "source_odds_modified": false,
+    "audit_sources_modified": false,
+    "production_index_modified": false
+  }
+}
