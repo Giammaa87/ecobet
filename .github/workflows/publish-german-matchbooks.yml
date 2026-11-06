@@ -52,7 +52,8 @@ jobs:
           from tools.publish_german_matchbooks import translated, translator_model
           source = "Everton create 1.65 xG but score only 0.6 goals. One or two goals remain possible."
           german = translated(source, translator_model())
-          assert "1.65" in german and "0.6" in german, german
+          german_digits = german.replace(",", ".")
+          assert "1.65" in german_digits and "0.6" in german_digits, german
           assert german != source, "The translator did not return German text"
           print("Translation verified with immutable original numerals:", german)
           PY
