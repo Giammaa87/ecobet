@@ -70,6 +70,35 @@ class GermanMatchbooksTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             module.translated("Team has 1.5 xG", lambda text: text)
 
+    def test_written_english_numbers_become_german_digits(self):
+        source = "Everton can score one or two goals."
+        def model(text):
+            if text == source:
+                return "Everton kann 1 oder 2 Tore erzielen."
+            return "Everton kann 1 oder 2 Tore erzielen."
+        self.assertEqual(module.translated(source, model),
+                         "Everton kann 1 oder 2 Tore erzielen.")
+
+    def test_original_numeric_values_and_written_words_together(self):
+        source = "Everton has 1.65 xG but can score one or two goals."
+        def model(text):
+            if text == source:
+                return "Everton hat 1.75 xG, trifft aber 1 oder 2 Mal."
+            if text.startswith("Everton has"):
+                return "Everton hat"
+            if "one or two" in text:
+                return "xG, trifft aber 1 oder 2 Mal."
+            return text
+        output = module.translated(source, model)
+        self.assertIn("1.65", output)
+        self.assertNotIn("1.75", output)
+        self.assertIn("1 oder 2", output)
+
+    def test_reject_unsupported_numbers_even_with_word_numbers(self):
+        source = "Everton can score one or two goals."
+        with self.assertRaises(ValueError):
+            module.translated(source, lambda text: "Everton trifft 99 Tore.")
+
     def test_fail_closed_if_wrong_run(self):
         with self.assertRaises(ValueError):
             module.prepare(self.stage(), "2026-11-08_0300", self.fake_translate)
