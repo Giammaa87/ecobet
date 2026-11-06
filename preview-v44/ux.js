@@ -13,7 +13,7 @@ function init({S,get,fillIds,loadRun,navigate}){
  const picker=$("global-run-date"),msg=$("global-date-status"),analysis=$("analysis-run-calendar");
  if(analysis)analysis.onchange=()=>{if(picker){picker.value=analysis.value;picker.dispatchEvent(new Event("change",{bubbles:true}))}};
  if(picker){
-  picker.onchange=()=>{
+  picker.onchange=async()=>{
    const day=picker.value,days=S.index?.dates||{};
    if(!days[day]){
     msg.textContent="Für dieses Datum ist kein veröffentlichter Run vorhanden.";
@@ -21,11 +21,25 @@ function init({S,get,fillIds,loadRun,navigate}){
     if(analysis)analysis.value=picker.value;
     return;
    }
-   msg.textContent="Run vom "+day;
+   msg.textContent="Lade Run vom "+day+" …";
+   const active=document.querySelector(".view.active")?.id;
    const runDay=$("run-day");runDay.value=day;
    fillIds();
-   loadRun();
    const audit=$("audit-date");if(audit){audit.value=day;S.auditDate=day;}
+   try{
+    await loadRun();
+    if(S.id!==$("run-choice").value)return;
+    if(active==="page-board")navigate("board",false);
+    else if(active==="page-audit")navigate("audit",false);
+    else if(active==="page-performance"){
+     const settings=window.EV3?.settings;
+     if(settings){settings.from=day;settings.to=day;}
+     navigate("performance",false);
+    }
+    msg.textContent="Run Datum: "+day;
+   }catch(error){
+    msg.textContent="Run konnte nicht geladen werden: "+error.message;
+   }
   };
  }
  for(const node of document.querySelectorAll(".navlogo,.brandline")){
