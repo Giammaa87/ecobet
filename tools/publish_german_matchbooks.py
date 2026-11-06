@@ -151,9 +151,9 @@ def prepare(stage: dict, run_id: str, translator) -> dict:
     }
 
 
-def scan(repository: Path, lookback_days: int, max_runs: int) -> list:
+def scan(repository: Path, lookback_days: int, max_runs: int, since_date: str = "") -> list:
     idx = json.loads((repository / "runs/index.json").read_text(encoding="utf-8"))
-    cutoff = (date.today() - timedelta(days=lookback_days)).isoformat()
+    cutoff = max((date.today() - timedelta(days=lookback_days)).isoformat(), since_date)
     candidates = []
     for day, ids in (idx.get("dates") or {}).items():
         if day < cutoff:
@@ -168,8 +168,8 @@ def scan(repository: Path, lookback_days: int, max_runs: int) -> list:
     return sorted(candidates, reverse=True)[:max_runs]
 
 
-def run(repository: Path, lookback_days: int, max_runs: int, translator=None) -> list[str]:
-    items = scan(repository, lookback_days, max_runs)
+def run(repository: Path, lookback_days: int, max_runs: int, translator=None, since_date: str = "") -> list[str]:
+    items = scan(repository, lookback_days, max_runs, since_date)
     if not items:
         print("No untranslated published Stage12 records.")
         return []
@@ -191,10 +191,13 @@ def main():
     p.add_argument("repository", type=Path, nargs="?", default=Path("."))
     p.add_argument("--lookback-days", type=int, default=7)
     p.add_argument("--max-runs", type=int, default=10)
+    p.add_argument("--since-date", default="", help="Only new run dates on or after YYYY-MM-DD")
     args = p.parse_args()
     if args.lookback_days < 0 or args.max_runs < 1:
         p.error("Invalid scan bounds")
-    created = run(args.repository, args.lookback_days, args.max_runs)
+    if args.since_date and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", args.since_date):
+        p.error("--since-date must be YYYY-MM-DD")
+    created = run(args.repository, args.lookback_days, args.max_runs, since_date=args.since_date)
     print(f"Published {len(created)} German translated run artifacts.")
 
 
