@@ -72,8 +72,31 @@ def translated(source: str, translator) -> str:
         left = fragment[:len(fragment) - len(fragment.lstrip())]
         right = fragment[len(fragment.rstrip()):]
         body = str(translator(fragment.strip())).strip()
-        if not body or number.search(body):
-            raise ValueError("German translator introduced a number in a protected fragment")
+        if not body:
+            raise ValueError("German translator returned an empty protected fragment")
+        # English written numerals legitimately become Arabic digits in German.
+        # Accept only digit values supported by explicit English numeral words in
+        # this exact source fragment. Unexpected values are still rejected.
+        generated = [v.replace(",", ".") for v in number.findall(body)]
+        number_words = {
+            "zero": "0", "none": "0", "one": "1", "single": "1",
+            "first": "1", "once": "1", "two": "2", "both": "2",
+            "second": "2", "twice": "2", "three": "3", "third": "3",
+            "four": "4", "fourth": "4", "five": "5", "fifth": "5",
+            "six": "6", "seventh": "7", "seven": "7", "eight": "8",
+            "ninth": "9", "nine": "9", "ten": "10", "tenth": "10"
+        }
+        allowed = []
+        for word in re.findall(r"\b[a-zA-Z]+\b", fragment.lower()):
+            if word in number_words:
+                allowed.append(number_words[word])
+        for value in generated:
+            if value not in allowed:
+                raise ValueError(
+                    "German translator introduced an unsupported numerical value "
+                    + repr(value) + " in source fragment " + repr(fragment[:110])
+                )
+            allowed.remove(value)
         return left + body + right
 
     chunks = []
