@@ -51,16 +51,43 @@ def translator_model():
 
 
 def translated(source: str, translator) -> str:
+    """Translate English prose while guaranteeing every source numeral is unchanged.
+
+    Most model outputs preserve numbers. On a numerical mismatch we translate
+    the surrounding text fragments independently, reinserting the exact
+    original numerical tokens. No prediction or numerical estimate is changed.
+    """
+    number = re.compile(r"(?<![\w])\d+(?:[.,]\d+)*(?:%)?")
+    original_numbers = [x.replace(",", ".") for x in number.findall(source)]
     result = str(translator(source)).strip()
     if not result or result == source:
         raise ValueError("Translation missing or unchanged")
-    # Avoid a translated narrative that silently changes probability/goal numbers.
-    number = re.compile(r"(?<![\w])\d+(?:[.,]\d+)*(?:%)?")
-    before = [x.replace(",", ".") for x in number.findall(source)]
-    after = [x.replace(",", ".") for x in number.findall(result)]
-    if before != after:
-        raise ValueError("Translated text changed a numerical value")
-    return result
+    result_numbers = [x.replace(",", ".") for x in number.findall(result)]
+    if original_numbers == result_numbers:
+        return result
+
+    def translate_fragment(fragment: str) -> str:
+        if not fragment.strip():
+            return fragment
+        left = fragment[:len(fragment) - len(fragment.lstrip())]
+        right = fragment[len(fragment.rstrip()):]
+        body = str(translator(fragment.strip())).strip()
+        if not body or number.search(body):
+            raise ValueError("German translator introduced a number in a protected fragment")
+        return left + body + right
+
+    chunks = []
+    previous = 0
+    for match in number.finditer(source):
+        chunks.append(translate_fragment(source[previous:match.start()]))
+        chunks.append(match.group(0))
+        previous = match.end()
+    chunks.append(translate_fragment(source[previous:]))
+    guarded = "".join(chunks).strip()
+    after = [x.replace(",", ".") for x in number.findall(guarded)]
+    if after != original_numbers or guarded == source:
+        raise ValueError("Unable to preserve numerical values in German translation")
+    return guarded
 
 
 def prepare(stage: dict, run_id: str, translator) -> dict:

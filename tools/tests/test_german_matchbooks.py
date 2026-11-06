@@ -53,11 +53,22 @@ class GermanMatchbooksTest(unittest.TestCase):
         self.assertIn("1.5", out["fixtures"]["ENG2627_TEST"]["thesis"])
         self.assertEqual(len(out["fixtures"]["ENG2627_TEST"]["risks"]), 1)
 
-    def test_reject_numerical_changes_and_english_passthrough(self):
+    def test_correct_numerical_changes_without_changing_source(self):
+        def model(text):
+            if "1.5" in text:
+                return "Mannschaft hat 2.5 xG"
+            if "Team has" in text:
+                return "Mannschaft hat"
+            return text
+        result = module.translated("Team has 1.5 xG", model)
+        self.assertIn("Mannschaft hat 1.5 xG", result)
+        self.assertNotIn("2.5", result)
+
+    def test_fail_closed_for_numeric_invention_and_passthrough(self):
         with self.assertRaises(ValueError):
-            module.translated("Team has 1.5 xG", lambda x: "Mannschaft hat 2.5 xG")
+            module.translated("Team has 1.5 xG", lambda text: "Falsch 99")
         with self.assertRaises(ValueError):
-            module.translated("Team has 1.5 xG", lambda x: x)
+            module.translated("Team has 1.5 xG", lambda text: text)
 
     def test_fail_closed_if_wrong_run(self):
         with self.assertRaises(ValueError):
