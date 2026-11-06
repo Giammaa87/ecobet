@@ -9,6 +9,9 @@ on:
     paths:
       - 'stage13/source-records/*.stage12.json'
       - 'runs/index.json'
+      - '.github/workflows/publish-german-matchbooks.yml'
+      - 'tools/publish_german_matchbooks.py'
+      - 'tools/tests/test_german_matchbooks.py'
 
 permissions:
   contents: write
