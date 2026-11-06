@@ -1,0 +1,88 @@
+"""Regression checks for the automatic, immutable-source-bound German publisher."""
+import importlib.util
+import json
+import tempfile
+import unittest
+from datetime import date
+from pathlib import Path
+
+SCRIPT = Path(__file__).resolve().parents[1] / "publish_german_matchbooks.py"
+spec = importlib.util.spec_from_file_location("german_matchbooks", SCRIPT)
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+
+
+class GermanMatchbooksTest(unittest.TestCase):
+    def fixture(self):
+        return {
+            "fixture_identity": {"fixture_id": "ENG2627_TEST"},
+            "prediction": {
+                "match_thesis": {"summary": "Team scores 1.5 expected goals."},
+                "match_book": {"summary": "Home advantage is expected."},
+                "team_books": {"home": {"state_summary": "Home attack has 2 goals."},
+                               "away": {"state_summary": "Away attack has 1 goal."}},
+                "worlds": {
+                    "primary": {"description": "Home team scores 2 goals."},
+                    "competing": {"description": "Away side scores 1 goal."},
+                    "tail_breaks": [{"description": "A draw remains possible."}]
+                },
+                "decision_explanation": {"cluster_summary": "From 1 to 3 goals."}
+            }
+        }
+
+    def stage(self):
+        return {
+            "publication_identity": {
+                "publication_id": "2026-11-07_0300",
+                "publication_status": "PUBLISHED",
+                "content_hash": "sha256:" + "a" * 64
+            },
+            "fixtures": [self.fixture()]
+        }
+
+    @staticmethod
+    def fake_translate(source):
+        return "Deutsche Fassung: " + source
+
+    def test_complete_translation_and_identity(self):
+        out = module.prepare(self.stage(), "2026-11-07_0300", self.fake_translate)
+        self.assertEqual(out["translation_status"], module.STATUS)
+        self.assertEqual(out["publication_id"], "2026-11-07_0300")
+        self.assertEqual(out["source_stage12_content_hash"], "sha256:" + "a" * 64)
+        self.assertEqual(len(out["fixtures"]), 1)
+        self.assertIn("1.5", out["fixtures"]["ENG2627_TEST"]["thesis"])
+        self.assertEqual(len(out["fixtures"]["ENG2627_TEST"]["risks"]), 1)
+
+    def test_reject_numerical_changes_and_english_passthrough(self):
+        with self.assertRaises(ValueError):
+            module.translated("Team has 1.5 xG", lambda x: "Mannschaft hat 2.5 xG")
+        with self.assertRaises(ValueError):
+            module.translated("Team has 1.5 xG", lambda x: x)
+
+    def test_fail_closed_if_wrong_run(self):
+        with self.assertRaises(ValueError):
+            module.prepare(self.stage(), "2026-11-08_0300", self.fake_translate)
+
+    def test_creates_once_without_overwriting(self):
+        with tempfile.TemporaryDirectory() as t:
+            root = Path(t)
+            (root / "runs").mkdir()
+            (root / "stage13/source-records").mkdir(parents=True)
+            rid = "2026-11-07_0300"
+            day = date.today().isoformat()
+            (root / "runs/index.json").write_text(
+                json.dumps({"dates": {day: [rid]}}), encoding="utf-8"
+            )
+            (root / "stage13/source-records" / (rid + ".stage12.json")).write_text(
+                json.dumps(self.stage()), encoding="utf-8"
+            )
+            result = module.run(root, 0, 10, self.fake_translate)
+            self.assertEqual(result, [rid])
+            path = root / "translations/matchbooks" / (rid + ".json")
+            before = path.read_text(encoding="utf-8")
+            self.assertEqual(module.run(root, 0, 10, self.fake_translate), [])
+            self.assertEqual(path.read_text(encoding="utf-8"), before)
+
+
+if __name__ == "__main__":
+    unittest.main()
