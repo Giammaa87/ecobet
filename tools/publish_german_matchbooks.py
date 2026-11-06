@@ -72,8 +72,31 @@ def translated(source: str, translator) -> str:
         left = fragment[:len(fragment) - len(fragment.lstrip())]
         right = fragment[len(fragment.rstrip()):]
         body = str(translator(fragment.strip())).strip()
-        if not body or number.search(body):
-            raise ValueError("German translator introduced a number in a protected fragment")
+        if not body:
+            raise ValueError("German translator returned an empty protected fragment")
+        # English written numerals legitimately become Arabic digits in German.
+        # Accept only digit values supported by explicit English numeral words in
+        # this exact source fragment. Unexpected values are still rejected.
+        generated = [v.replace(",", ".") for v in number.findall(body)]
+        number_words = {
+            "zero": "0", "none": "0", "one": "1", "single": "1",
+            "first": "1", "once": "1", "two": "2", "both": "2",
+            "second": "2", "twice": "2", "three": "3", "third": "3",
+            "four": "4", "fourth": "4", "five": "5", "fifth": "5",
+            "six": "6", "sixth": "6", "seventh": "7", "seven": "7", "eight": "8",
+            "ninth": "9", "nine": "9", "ten": "10", "tenth": "10"
+        }
+        allowed = []
+        for word in re.findall(r"\b[a-zA-Z]+\b", fragment.lower()):
+            if word in number_words:
+                allowed.append(number_words[word])
+        for value in generated:
+            if value not in allowed:
+                raise ValueError(
+                    "German translator introduced an unsupported numerical value "
+                    + repr(value) + " in source fragment " + repr(fragment[:110])
+                )
+            allowed.remove(value)
         return left + body + right
 
     chunks = []
@@ -85,7 +108,13 @@ def translated(source: str, translator) -> str:
     chunks.append(translate_fragment(source[previous:]))
     guarded = "".join(chunks).strip()
     after = [x.replace(",", ".") for x in number.findall(guarded)]
-    if after != original_numbers or guarded == source:
+    # Every explicit source numeral was reinserted literally. Other digits may
+    # originate from legitimate English number words checked in each fragment.
+    cursor = 0
+    for actual in after:
+        if cursor < len(original_numbers) and actual == original_numbers[cursor]:
+            cursor += 1
+    if cursor != len(original_numbers) or guarded == source:
         raise ValueError("Unable to preserve numerical values in German translation")
     return guarded
 
@@ -122,9 +151,9 @@ def prepare(stage: dict, run_id: str, translator) -> dict:
     }
 
 
-def scan(repository: Path, lookback_days: int, max_runs: int) -> list:
+def scan(repository: Path, lookback_days: int, max_runs: int, since_date: str = "") -> list:
     idx = json.loads((repository / "runs/index.json").read_text(encoding="utf-8"))
-    cutoff = (date.today() - timedelta(days=lookback_days)).isoformat()
+    cutoff = max((date.today() - timedelta(days=lookback_days)).isoformat(), since_date)
     candidates = []
     for day, ids in (idx.get("dates") or {}).items():
         if day < cutoff:
@@ -139,8 +168,8 @@ def scan(repository: Path, lookback_days: int, max_runs: int) -> list:
     return sorted(candidates, reverse=True)[:max_runs]
 
 
-def run(repository: Path, lookback_days: int, max_runs: int, translator=None) -> list[str]:
-    items = scan(repository, lookback_days, max_runs)
+def run(repository: Path, lookback_days: int, max_runs: int, translator=None, since_date: str = "") -> list[str]:
+    items = scan(repository, lookback_days, max_runs, since_date)
     if not items:
         print("No untranslated published Stage12 records.")
         return []
@@ -162,10 +191,13 @@ def main():
     p.add_argument("repository", type=Path, nargs="?", default=Path("."))
     p.add_argument("--lookback-days", type=int, default=7)
     p.add_argument("--max-runs", type=int, default=10)
+    p.add_argument("--since-date", default="", help="Only new run dates on or after YYYY-MM-DD")
     args = p.parse_args()
     if args.lookback_days < 0 or args.max_runs < 1:
         p.error("Invalid scan bounds")
-    created = run(args.repository, args.lookback_days, args.max_runs)
+    if args.since_date and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", args.since_date):
+        p.error("--since-date must be YYYY-MM-DD")
+    created = run(args.repository, args.lookback_days, args.max_runs, since_date=args.since_date)
     print(f"Published {len(created)} German translated run artifacts.")
 
 
