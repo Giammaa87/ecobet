@@ -25,10 +25,10 @@
     const text=doc?.fixtures?.[fixtureId];
     if(doc?.schema_version==="ECOBET_MATCHBOOK_TRANSLATION_V1"&&
        doc.publication_id===runId&&doc.language==="de-CH"&&
-       doc.translation_status==="EDITORIALLY_TRANSLATED_FROM_FROZEN_SOURCE"&&
+       ["EDITORIALLY_TRANSLATED_FROM_FROZEN_SOURCE","AUTOMATIC_TRANSLATED_FROM_FROZEN_SOURCE"].includes(doc.translation_status)&&
        doc.source_stage12_content_hash===hash&&
        text&&fields.every(key=>asText(text[key]).trim().length>0)){
-      return {...text,__language:"de",__source:"FROZEN_STAGE12_TRANSLATION"};
+      return {...text,__language:"de",__source:"FROZEN_STAGE12_TRANSLATION",__automatic:doc.translation_status==="AUTOMATIC_TRANSLATED_FROM_FROZEN_SOURCE"};
     }
    }catch(err){/* Not every historical run has a translated artifact. */}
   }
