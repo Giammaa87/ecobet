@@ -1,0 +1,315 @@
+{
+ "counts": {
+  "derived": 5,
+  "fixtures": 5,
+  "owner_favourite": {
+   "SELECTED": 3,
+   "TIE": 2
+  }
+ },
+ "data_status": "AUTOMATIC_UNVALIDATED",
+ "data_status_note": null,
+ "disclaimer": "Modellinterne Einschaetzung, abgeleitet aus bereits veroeffentlichten ECOBET V2.4 Prediction-Ergebnissen. Keine Wahrscheinlichkeit, keine Quote, keine Erfolgsgarantie. Noch nicht validiert.",
+ "fixtures": [
+  {
+   "away": "Coventry City",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Coventry City Team Goals Under 1.5",
+    "balanced": "Match Total Under 3.5",
+    "favourite": "First Half Under 1.5",
+    "favourite_source": "SAFE",
+    "safe": "First Half Under 1.5"
+   },
+   "fixture_id": "ENG2627_5814f7348d5c",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Everton 1-2",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Everton"
+   },
+   "home": "Everton",
+   "kickoff_utc": "2026-11-06T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "STRONG",
+      "read": "Everton 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "gleiche Evidenzstufe (STRONG), keine Rangfolge erzwungen",
+    "selected": null,
+    "status": "TIE"
+   },
+   "run_id": "2026-11-06_0225",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-06T11:21:20.679998+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Alaves",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Both Teams To Score: Yes",
+    "balanced": "Sevilla Draw No Bet",
+    "favourite": "Match Total Under 3.5",
+    "favourite_source": "SAFE",
+    "safe": "Match Total Under 3.5"
+   },
+   "fixture_id": "ESP2627_1791054ea4e3",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 1,
+    "goals_min": 0,
+    "read": "Alaves 0-1",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Alaves"
+   },
+   "home": "Sevilla",
+   "kickoff_utc": "2026-11-06T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Alaves 0-1",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "1X",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-06_0225",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-06T11:21:20.679998+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Strasbourg",
+   "direction": {
+    "coverage_status": null,
+    "covered_by": null,
+    "evidence": null,
+    "read": null,
+    "status": "NO_READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Toulouse Team Goals Over 1.5",
+    "balanced": "Toulouse Draw No Bet",
+    "favourite": "Toulouse Draw No Bet",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "FRA2627_ec1801cd9b3e",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-3",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Toulouse",
+   "kickoff_utc": "2026-11-06T19:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Gesamtspiel 2-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Gesamtspiel 2-3",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-06_0225",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-06T11:21:20.679998+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Borussia Monchengladbach",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Total Over 2.5",
+    "balanced": "Both Teams To Score: Yes",
+    "favourite": "Both Teams To Score: Yes",
+    "favourite_source": "BALANCED",
+    "safe": "Hamburger SV Team Goals Over 0.5"
+   },
+   "fixture_id": "GER2627_3656753950f7",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Borussia Monchengladbach 1-2",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Borussia Monchengladbach"
+   },
+   "home": "Hamburger SV",
+   "kickoff_utc": "2026-11-06T19:30:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "STRONG",
+      "read": "Borussia Monchengladbach 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "gleiche Evidenzstufe (STRONG), keine Rangfolge erzwungen",
+    "selected": null,
+    "status": "TIE"
+   },
+   "run_id": "2026-11-06_0225",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-06T11:21:20.679998+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Udinese",
+   "direction": {
+    "coverage_status": null,
+    "covered_by": null,
+    "evidence": null,
+    "read": null,
+    "status": "NO_READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Venezia Team Goals Under 1.5",
+    "balanced": "Match Total Under 3.5",
+    "favourite": "Venezia Team Goals Under 2.5",
+    "favourite_source": "SAFE",
+    "safe": "Venezia Team Goals Under 2.5"
+   },
+   "fixture_id": "ITA2627_d5d1985a6bfb",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Udinese 1-2",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Udinese"
+   },
+   "home": "Venezia",
+   "kickoff_utc": "2026-11-06T19:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Udinese 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Udinese 1-2",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-06_0225",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-06T11:21:20.679998+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  }
+ ],
+ "generated_at_utc": "2026-11-06T11:21:20.679998+00:00",
+ "logical_run_id": "ECOBET_LRUN_17b38d16b31248149562ecfde84b4ee1",
+ "publication_id": "2026-11-06_0225",
+ "rules": {
+  "coverage_and_owner_favourite": "RULES_COVERAGE_OWNERFAV_v1",
+  "direction": "DIRECTION_READ_SCENARIO_V1",
+  "goal_range": "GOAL_RANGE_EXT_V1_V2_STAB_MIN_0.67",
+  "imported_pins": {
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105\\RULES_COVERAGE_OWNERFAV_v1.md": "646b9b144e2d4bb88e1e91a61fbce0b2a57b961908abfbe1c67ff663a6ffa497",
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105\\coverage_ownerfav.py": "9af22a43803db0a6b21987ff216358f3d1f5451e0a605d7851216cd9be079158",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1\\RULES_READS_v1.md": "13dfcde3b206f858bbd41f1a5f62dc7625576c6ea9fd816a5402c3da2484bc60",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1\\reads_runner.py": "c025df64a96c1b46c62937528767bc03a96fc4d10a65f08b38a5da5f4b057089"
+  },
+  "rules_sha256": "7484a1a98baf3905f255f1ba65955ea4580b2fdaa84d9eb495c90f2aa505bf75",
+  "runner": "READS_RUNNER_V2_1"
+ },
+ "run_date": "2026-11-06",
+ "run_id": "2026-11-06_0225",
+ "schema": "ECOBET_READS_PUBLIC_V1",
+ "source": {
+  "derived_file_sha256": "cb044c817d714290929493c359f0c0c339b9bdf8b7f3699c2b80201cae59bbeb",
+  "published_at_utc": "2026-11-06T02:25:32.689073+00:00",
+  "record_content_hash": "sha256:de9b397bd6dbd0f3ea902c6760f7790c55ec7ca8f401ea01f36aec0621daed3e",
+  "source_file_sha256": "f2c2721f9f7d7f5a652e13a77f0cbbb335f943122571918344ba08cf3b0da4ae"
+ }
+}
