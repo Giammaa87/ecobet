@@ -10,13 +10,15 @@ let initialized=false;
 function init({S,get,fillIds,loadRun,navigate}){
  if(initialized)return;
  initialized=true;
- const picker=$("global-run-date"),msg=$("global-date-status");
+ const picker=$("global-run-date"),msg=$("global-date-status"),analysis=$("analysis-run-calendar");
+ if(analysis)analysis.onchange=()=>{if(picker){picker.value=analysis.value;picker.dispatchEvent(new Event("change",{bubbles:true}))}};
  if(picker){
   picker.onchange=()=>{
    const day=picker.value,days=S.index?.dates||{};
    if(!days[day]){
     msg.textContent="Für dieses Datum ist kein veröffentlichter Run vorhanden.";
     picker.value=$("run-day")?.value||"";
+    if(analysis)analysis.value=picker.value;
     return;
    }
    msg.textContent="Run vom "+day;
@@ -40,6 +42,7 @@ function calendarSync(S){
  const dates=Object.keys(S.index.dates||{}).sort();
  if(dates.length){picker.min=dates[0];picker.max=dates.at(-1);}
  picker.value=$("run-day")?.value||dates.at(-1)||"";
+ const analysis=$("analysis-run-calendar");if(analysis){analysis.value=picker.value;analysis.min=picker.min;analysis.max=picker.max;}
  const label=$("global-date-status");if(label)label.textContent=picker.value?"Run Datum: "+picker.value:"Kein Lauf ausgewählt";
 }
 function attachNativePickers(){
