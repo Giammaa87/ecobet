@@ -83,7 +83,7 @@ def translated(source: str, translator) -> str:
             "first": "1", "once": "1", "two": "2", "both": "2",
             "second": "2", "twice": "2", "three": "3", "third": "3",
             "four": "4", "fourth": "4", "five": "5", "fifth": "5",
-            "six": "6", "seventh": "7", "seven": "7", "eight": "8",
+            "six": "6", "sixth": "6", "seventh": "7", "seven": "7", "eight": "8",
             "ninth": "9", "nine": "9", "ten": "10", "tenth": "10"
         }
         allowed = []
@@ -108,7 +108,13 @@ def translated(source: str, translator) -> str:
     chunks.append(translate_fragment(source[previous:]))
     guarded = "".join(chunks).strip()
     after = [x.replace(",", ".") for x in number.findall(guarded)]
-    if after != original_numbers or guarded == source:
+    # Every explicit source numeral was reinserted literally. Other digits may
+    # originate from legitimate English number words checked in each fragment.
+    cursor = 0
+    for actual in after:
+        if cursor < len(original_numbers) and actual == original_numbers[cursor]:
+            cursor += 1
+    if cursor != len(original_numbers) or guarded == source:
         raise ValueError("Unable to preserve numerical values in German translation")
     return guarded
 
