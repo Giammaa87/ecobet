@@ -23,7 +23,7 @@ let teamMap=new Map(),leagueMap=new Map(),initTask=null,formIndexTask=null;const
 function loadLogos(){
  if(initTask)return initTask;
  initTask=(async()=>{
- const urls=["logos/assets/team-logos/manifest.json","logos/assets/competition-logos/manifest.json"];
+ const urls=["logos/assets/team-logos/manifest.json?v=20261106","logos/assets/competition-logos/manifest.json?v=20261106"];
  const data=await Promise.all(urls.map(async u=>{const r=await fetch(u);if(!r.ok)throw Error("Logo Manifest HTTP "+r.status);return r.json()}));
  for(const x of data[0].teams||[])for(const name of [x.name,...(x.aliases||[])])if(name)teamMap.set(key(name),x.file);
  for(const x of data[1].competitions||[])for(const name of [x.name,x.id,...(x.aliases||[])])if(name)leagueMap.set(key(canonComp(name)),x.path);
