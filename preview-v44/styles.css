@@ -1,0 +1,25 @@
+/* ECOBET V4.4 - retain existing visual language, add connected history controls. */
+.nav .navlogo,.brandline{cursor:pointer}
+.nav .navlogo:focus-visible,.brandline:focus-visible{outline:2px solid #69c9da;outline-offset:4px;border-radius:7px}
+.v44-nav-date{display:flex;align-items:center;gap:7px;margin-left:auto;white-space:nowrap;color:#b6d3dc;font-size:.71rem;font-weight:750}
+.v44-nav-date input{width:143px;min-width:0;background:rgba(10,40,55,.86);border:1px solid rgba(122,187,205,.45);border-radius:7px;padding:7px 5px;color:#e8f7fa;font:inherit;cursor:pointer;color-scheme:dark}
+.v44-nav-date-status{display:none}
+.nav .nav-right{margin-left:0}
+.v44-calendar-open{border:1px solid rgba(122,190,205,.45);border-radius:8px;background:rgba(16,63,78,.56);color:#bfebf3;cursor:pointer;font-size:1rem;margin-left:5px;padding:4px 8px;vertical-align:middle}
+.v44-calendar-open:hover{background:rgba(35,109,132,.65)}
+.v44-outcome{display:inline-flex;align-items:center;align-self:flex-start;border-radius:6px;padding:3px 7px;font-size:.68rem;font-weight:850;letter-spacing:.03em;border:1px solid rgba(113,164,179,.3)}
+.v44-hit{color:#89f2c3;border-color:rgba(68,213,153,.5);background:rgba(27,133,89,.23)}
+.v44-miss{color:#ff97a8;border-color:rgba(221,93,110,.47);background:rgba(170,55,75,.19)}
+.v44-push{color:#f9db91;border-color:rgba(212,173,81,.42);background:rgba(127,92,25,.23)}
+.v44-open{color:#b4cfd7}
+.v44-final{display:block;margin-top:7px;color:#9ff5cb;font-size:.8rem;font-weight:830}
+.v44-audit-source{color:#a7ccd8;font-size:.78rem;line-height:1.45;margin:-2px 0 10px}
+.v44-slip-status{border-left:3px solid #4bcaac;background:rgba(19,78,78,.27);border-radius:7px;padding:13px;margin:13px 0;display:grid;gap:5px}
+.v44-slip-status strong{color:#a0f1d0;font-size:.94rem}
+.v44-slip-status small,.v44-slip-status span{font-size:.76rem;color:#d0e8e7}
+.v44-drill{background:transparent;border:1px solid rgba(233,96,113,.48);border-radius:7px;padding:5px 8px;color:#ff9fac;font-weight:800;cursor:pointer}
+.v44-drill:hover,.v44-drill:focus-visible{background:rgba(197,67,88,.25);outline-offset:2px}
+.combo-controls select#combo-source{min-width:175px}
+#slip-simulation:empty{display:none}
+@media(max-width:1100px){.nav .nav-right{display:none}.v44-nav-date{margin-left:0}}
+@media(max-width:720px){.nav{flex-wrap:wrap;gap:7px}.v44-nav-date{width:100%;order:20;justify-content:flex-start}.v44-nav-date input{min-width:157px}.v44-nav-date-status{display:inline;font-size:.68rem;color:#b1d0db;order:21}.brandline:focus-visible{outline-offset:2px}}
