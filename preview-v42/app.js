@@ -699,6 +699,8 @@ showAudit=function(){
   return {hit,miss,push,open:rows.length-hit-miss-push};
  };
  const x=statFor("favourite"),decided=x.hit+x.miss,percent=decided?fmt(x.hit/decided*100,1)+" %":"—",missRate=decided?fmt(x.miss/decided*100,1)+" %":"—";
+ const due=rows.filter(r=>!["NSP_NO_SETTLEMENT_REQUIRED"].includes(String(r.rs?.status||""))),settled=due.filter(r=>r.rs?.status==="SETTLED").length;
+ const coverage=due.length?fmt(100*settled/due.length,1)+" %":"—";
  const renderStatus=value=>{
   const v=String(value||"").toUpperCase();
   const cls=v==="HIT"?"hit-chip":v==="MISS"?"miss-chip":v==="PUSH"?"push-chip":"unsettled-chip";
@@ -713,7 +715,8 @@ showAudit=function(){
  '<div><strong>'+rows.length+'</strong><small>Partien</small></div>'+
  '<div><strong>'+x.hit+'</strong><small>Favourite HIT</small></div>'+
  '<div><strong>'+x.miss+'</strong><small>Favourite MISS</small></div>'+
- '<div><strong>'+x.open+'</strong><small>Offen / nicht anwendbar</small></div>'+
+ '<div><strong>'+x.open+'</strong><small>Offen / nicht anwendbar</small></div>'+ 
+  '<div><strong>'+coverage+'</strong><small>Resultatabdeckung</small></div>'+
  '<div><strong class="audit-hit-rate">'+percent+'</strong><small>Trefferquote</small></div>'+
  '<div><strong class="audit-miss-rate">'+missRate+'</strong><small>Fehlerquote</small></div></div>'+
  '<div class="table-wrap"><table class="compare ev3-perf-table"><thead><tr><th>Spiel</th><th>Favourite</th><th>SAFE</th><th>BALANCED</th><th>AGGRESSIVE</th></tr></thead><tbody>'+
