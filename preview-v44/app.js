@@ -231,7 +231,7 @@ async function openReport(fixture,quiet=false){
  const lead=tr?.thesis||"Im Originalrecord liegt keine Spielthese vor.";
  const intro=tr?.match||"Im Originalrecord liegt kein Match Book Text vor.";
  const sourceTag=tr?.__language==="de"?
-  '<div class="time-note">Deutsche Fassung der veröffentlichten ECOBET Matchanalyse. Die englischen Originaltexte und sämtliche Prognosen bleiben unverändert im versiegelten Stage12 Record.</div>':
+  (tr.__automatic?'<div class="time-note">Automatisch auf Deutsch übersetzt, noch nicht redaktionell geprüft. Der eingefrorene Stage12 Originalrecord bleibt massgebend.</div>':'<div class="time-note">Deutsche Fassung der veröffentlichten ECOBET Matchanalyse. Die englischen Originaltexte und sämtliche Prognosen bleiben unverändert im versiegelten Stage12 Record.</div>'):
   '<div class="notice warn"><b>Englischer Originaltext:</b> Für diesen historischen Run ist noch keine geprüfte deutsche Übersetzung hinterlegt. Die vorhandene Analyse wird im Original gezeigt, nicht durch Platzhalter ersetzt.</div>';
  const sec=(id,num,title,body)=>'<section class="report-section" id="'+id+'"><div class="eyebrow">'+num+'</div><h3>'+title+'</h3>'+body+'</section>';
  const report=reportHeader(m,p)+
@@ -355,7 +355,7 @@ function renderQuotes(){
  const reasonText=[missing.get("PROVIDER_MARKET_NOT_COVERED")?missing.get("PROVIDER_MARKET_NOT_COVERED")+" Märkte nicht abgedeckt":null,missing.get("PROVIDER_LINE_NOT_OFFERED")?missing.get("PROVIDER_LINE_NOT_OFFERED")+" Torlinie nicht angeboten":null].filter(Boolean).join(" · ");
  const bsd=S.odds.filter(x=>x.available&&x.source_provider==="BSD").length;
  const api=S.odds.filter(x=>x.available&&x.source_provider==="API Football").length;
- feedback("board-status",S.id+" · "+rows.length+" Pfade im aktuellen Filter, "+a.length+" mit Quote. Gesamter Run: "+(bsd+api)+" von "+S.odds.length+" Marktrollen ("+bsd+" BSD + "+api+" API Football); "+favAvail+" von "+fav.length+" Favourites bepreist. "+(reasonText?"Noch offen: "+reasonText+". ":"")+"Historische Anbieterquoten, keine Live Quoten.");
+ feedback("board-status",S.id+" · "+rows.length+" Pfade im aktuellen Filter, "+a.length+" mit Quote. Gesamter Run: "+(bsd+api)+" von "+S.odds.length+" Marktrollen ("+bsd+" BSD + "+api+" API Football); "+favAvail+" von "+fav.length+" Favourites bepreist. "+(reasonText?"Noch offen: "+reasonText+". ":"")+"Historische Anbieterquoten, keine Live Quoten. Audit: "+(S.auditNote||"Nicht geprüft")+".");
  if(window.EV41?.quoteTable){
   window.EV41.quoteTable({
    root:$("quotes"),rows,full:S.odds,run:S.run,context:window.EV4State?.()||null,selection:S.selection,refresh:renderQuotes,
@@ -433,9 +433,15 @@ function combos(){
   return;
  }
  const stake=Math.max(0,N($("stake").value)??10);
+ const historical=ticket=>{
+  const values=ticket.list,failed=values.some(q=>q.auditResult==="MISS"),open=values.some(q=>!["HIT","MISS","PUSH"].includes(q.auditResult));
+  if(open&&!failed)return '<p class="small muted">Historischer Ausgang: noch nicht vollständig abgerechnet.</p>';
+  const x=values.reduce((product,q)=>product*(q.auditResult==="MISS"?0:q.auditResult==="PUSH"?1:q.odds),1);
+  return '<p class="small">Historische Auszahlung: CHF '+fmt(stake*x,2)+' · '+(failed?"mindestens ein MISS":"abgerechnet, PUSH als Quote 1")+'</p>';
+ };
  $("combo-results").innerHTML=tickets.map((ticket,i)=>'<div class="combo-ticket inset"><div class="eyebrow">Wettschein '+(i+1)+' · '+ticket.list.length+' Tipps</div><ol>'+
   ticket.list.map(q=>'<li><b>'+safe(matchF(q.match))+'</b><div>'+market(q.market)+' · '+fmt(q.odds,3)+(q.auditResult?" · "+safe(q.auditResult):"")+'</div></li>').join("")+
-  '</ol><b class="num" style="color:var(--green)">Gesamtquote '+fmt(ticket.odds,3)+'</b><p class="small muted">CHF '+fmt(stake,2)+' Einsatz · mögliche Auszahlung CHF '+fmt(stake*ticket.odds,2)+'</p>'+
+  '</ol><b class="num" style="color:var(--green)">Gesamtquote '+fmt(ticket.odds,3)+'</b><p class="small muted">CHF '+fmt(stake,2)+' Einsatz · mögliche Auszahlung CHF '+fmt(stake*ticket.odds,2)+'</p>'+historical(ticket)+
   '<button type="button" class="btn small" data-combo="'+i+'">In Wettschein übernehmen</button></div>').join("");
  $("combo-results").querySelectorAll("[data-combo]").forEach(b=>b.onclick=()=>{
   S.selection.clear();tickets[Number(b.dataset.combo)].list.forEach(x=>S.selection.set(x.fixtureId,x));
@@ -774,6 +780,7 @@ const v43OldPerf=renderPerformance;
 renderPerformance=function(){
  v43OldPerf();
  window.EV44?.performanceDrill?.(S);
+ window.EV44?.attachNativePickers?.();
  if(S.perfTab==="topreads"&&S.performance&&window.EV43?.renderTopReadsPerformance){
   window.EV43.renderTopReadsPerformance({
    root:$("performance-body"),rows:window.EV3.records(S.performance.audits),get,
