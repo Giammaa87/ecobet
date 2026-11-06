@@ -10,7 +10,7 @@ const fmt=(x,n=2)=>N(x)===null?"Nicht verfügbar":N(x).toLocaleString("de-CH",{m
 const CHF=x=>"CHF "+fmt(x,2);
 const known=x=>x!==null&&x!==undefined&&x!==""&&!["NOT_AVAILABLE","NOT_APPLICABLE","NO_PREDICTION_TECHNICAL_BLOCKER"].includes(String(x).toUpperCase());
 const val=x=>known(x)?safe(x):"Nicht verfügbar";
-const S={index:null,id:null,run:null,stage:null,stageMap:new Map(),board:null,odds:[],daily:null,teamCache:new Map(),selection:new Map(),detail:null,performance:null,perfTab:"cockpit",auditDate:null};
+const S={index:null,id:null,run:null,stage:null,stageMap:new Map(),board:null,odds:[],daily:null,teamCache:new Map(),selection:new Map(),detail:null,germanTexts:new Map(),performance:null,perfTab:"cockpit",auditDate:null};
 const dataCache=new Map();
 async function get(path,cache=true){
  if(cache&&dataCache.has(path))return dataCache.get(path);
@@ -82,7 +82,7 @@ async function loadRun(){
  feedback("run-message","Run, Stage12 und Tages Snapshot werden verbunden …");
  $("match-list").innerHTML="";
  $("run-kpis").innerHTML="";
- S.id=id;S.run=null;S.stage=null;S.stageMap.clear();S.daily=null;S.board=null;S.odds=[];S.teamCache.clear();S.selection.clear();S.detail=null;
+ S.id=id;S.run=null;S.stage=null;S.stageMap.clear();S.daily=null;S.board=null;S.odds=[];S.teamCache.clear();S.selection.clear();S.germanTexts.clear();S.detail=null;
  $("report").hidden=true;$("analysis-home").hidden=false;
  try{
   const [run,stage,board]=await Promise.all([
@@ -191,7 +191,7 @@ function reportPaths(m,p,quotes){
   const path=role==="FAVOURITE"?m.favourite:m[role.toLowerCase()];
   const f=obj(p?.final_paths?.[role.toLowerCase()]);
   const breaks=arr(p?.fragility?.path_bindings).find(x=>x.path_id===f?.path?.path_id);
-  const trans=ECOBET_DE_20261103[matchF(m)];
+  const sourceText=S.germanTexts.get(m.fixture_id);const trans=sourceText?.__source==="FROZEN_STAGE12_TRANSLATION"?null:(sourceText||ECOBET_DE_20261103[matchF(m)]);
   const r=({SAFE:0,BALANCED:1,AGGRESSIVE:2})[role];
   return '<div class="path inset"><small>'+role+'</small><b>'+market(path)+'</b><div>'+pill(x?.available?(x.source_provider||"BSD")+" "+fmt(x.odds,3):"Keine Anbieterquote",x?.available?"green":"yellow")+'</div>'+
   (r!==undefined&&trans?.risks?.[r]?'<p class="small" style="margin:9px 0 0">Bruchbedingung: '+safe(trans.risks[r])+'</p>':breaks?'<p class="small" style="margin:9px 0 0">Bruchbedingungen im Originalrecord vorhanden, aber noch nicht als geprüfte deutsche Fassung veröffentlicht.</p>':'')+
@@ -214,22 +214,29 @@ async function openReport(fixture,quiet=false){
  if(!quiet)window.scrollTo({top:240,behavior:"smooth"});
  const stage=S.stageMap.get(fixture);
  const p=stage?.prediction;
- const tr=ECOBET_DE_20261103[matchF(m)];
- const [day,odds]=await Promise.all([loadDaily().catch(()=>null),loadOdds().catch(()=>[])]);
+ const priorDE=ECOBET_DE_20261103[matchF(m)];
+ const [day,odds,tr]=await Promise.all([
+  loadDaily().catch(()=>null),
+  loadOdds().catch(()=>[]),
+  window.ECOBET_DE_ADAPTER.resolve({runId:S.id,fixtureId:fixture,stage:S.stage,prediction:p,get,legacy:priorDE})
+ ]);
  if(S.detail!==fixture)return;
+ S.germanTexts.set(fixture,tr);
  const [home,away]=day?await Promise.all([loadTeam(m,"home"),loadTeam(m,"away")]):[null,null];
  if(S.detail!==fixture)return;
  const str=obj(p?.structural_strength),h=obj(str.home),a=obj(str.away);
  const n=(x)=>x?.status==="AVAILABLE"?x.value:null;
  const quote=odds.filter(x=>x.fixtureId===fixture);
- const lead=tr?.thesis||"Für diesen historischen Run liegt noch keine geprüfte deutsche Langtextfassung vor. Die folgenden Angaben basieren auf den tatsächlich veröffentlichten Teamkennzahlen, Entscheidungspfaden und Szenarien.";
- const intro=tr?.match||"Die technischen Prognosedaten und vorhandenen Teamstatistiken werden angezeigt. Englische Originaltexte werden nicht automatisch als ungesicherte deutsche Übersetzung ausgegeben.";
- const sourceTag=!tr?'<div class="notice warn">Die Langtextübersetzung für diesen älteren Run ist noch nicht freigegeben. Keine englischen Texte in der Analyse und keine erfundenen Zusammenfassungen.</div>':"";
+ const lead=tr?.thesis||"Im Originalrecord liegt keine Spielthese vor.";
+ const intro=tr?.match||"Im Originalrecord liegt kein Match Book Text vor.";
+ const sourceTag=tr?.__language==="de"?
+  '<div class="time-note">Deutsche Fassung der veröffentlichten ECOBET Matchanalyse. Die englischen Originaltexte und sämtliche Prognosen bleiben unverändert im versiegelten Stage12 Record.</div>':
+  '<div class="notice warn"><b>Englischer Originaltext:</b> Für diesen historischen Run ist noch keine geprüfte deutsche Übersetzung hinterlegt. Die vorhandene Analyse wird im Original gezeigt, nicht durch Platzhalter ersetzt.</div>';
  const sec=(id,num,title,body)=>'<section class="report-section" id="'+id+'"><div class="eyebrow">'+num+'</div><h3>'+title+'</h3>'+body+'</section>';
  const report=reportHeader(m,p)+
  '<div class="report-highlights"><div><div class="eyebrow">ECOBET Favourite</div><strong>'+market(m.favourite)+'</strong><p class="small muted">Wettentscheidung des veröffentlichten ECOBET Runs. Die Spielthese steht in der Übersicht und die vertiefte Begründung im Match Book.</p></div><aside><div><span class="muted">Stabilität</span><b>'+stateName(stability(m))+'</b></div><div><span class="muted">Quotenstatus</span><b>'+(quote.find(x=>x.role==="FAVOURITE")?.available?(quote.find(x=>x.role==="FAVOURITE").source_provider||"BSD")+" "+fmt(quote.find(x=>x.role==="FAVOURITE").odds,3):"Keine Anbieterquote")+'</b></div><div><span class="muted">Datenbasis</span><b>'+safe(day?.pointer?.snapshot_id||"Nicht verfügbar")+'</b></div></aside></div>'+
  '<div class="report-body"><article class="report-article">'+sourceTag+
- sec("spielthese","01 · Match Book","Detaillierte Matchanalyse",'<p class="lead">'+safe(intro)+'</p>')+
+ sec("spielthese","01 · Match Book","Detaillierte Matchanalyse",'<h4>Spielthese</h4><p class="lead">'+safe(lead)+'</p><h4>Match Book</h4><p>'+safe(intro)+'</p>')+
  sec("teams","02 · Team Intelligence","Team Books und objektive Leistungswerte",
  '<div class="opposite"><div class="inset"><h4>'+safe(m.home)+'</h4><p>'+(tr?safe(tr.home):'Keine geprüfte deutsche Team Book Langfassung vorhanden.')+'</p></div><div class="inset"><h4>'+safe(m.away)+'</h4><p>'+(tr?safe(tr.away):'Keine geprüfte deutsche Team Book Langfassung vorhanden.')+'</p></div></div>'+
  '<div class="figure"><h4>Strukturelle Spielstärke und Adjustment Elo</h4><div class="metric-table-wrap"><table class="compare"><thead><tr><th>Kennzahl</th><th>'+safe(m.home)+'</th><th>'+safe(m.away)+'</th></tr></thead><tbody>'+
@@ -244,7 +251,7 @@ async function openReport(fixture,quiet=false){
  sec("momentum","04 · ECOBET Performance","Team Momentum: ECOBET Trefferbilanz",
  '<p>Team Momentum misst ausschliesslich die Treffer und Fehler der historischen ECOBET Favourites. Es ist keine sportliche Last Five Form und wird getrennt von den Mannschaftsresultaten ausgewertet.</p>'+
  '<div id="report-momentum" class="notice">Historische ECOBET Treffer werden aus den veröffentlichten Performance Audits geladen.</div>')+
- sec("welten","04 · Match Worlds","Spielverlauf und Gegenwelten",'<div class="opposite"><div class="inset"><h4>Hauptszenario</h4><p>'+safe(tr?.prime||"Das Szenario ist im Originalrecord dokumentiert. Eine geprüfte deutsche Fassung ist noch nicht verfügbar.")+'</p></div><div class="inset"><h4>Gegenszenario</h4><p>'+safe(tr?.counter||"Die Gegenwelt ist im Originalrecord dokumentiert. Eine geprüfte deutsche Fassung ist noch nicht verfügbar.")+'</p></div></div><h4>Scoreline Szenarien</h4><div class="score-row">'+arr(p?.score_state_cluster?.score_scenarios).map(x=>'<span class="score">'+safe(x.score)+'</span>').join("")+'</div><p>'+safe(tr?.cluster||"Die statistischen Scoreline Ergebnisse sind dem veröffentlichten Record entnommen.")+'</p>')+
+ sec("welten","04 · Match Worlds","Spielverlauf und Gegenwelten",'<div class="opposite"><div class="inset"><h4>Hauptszenario</h4><p>'+safe(tr?.prime||"Das Szenario ist im Originalrecord dokumentiert. Eine geprüfte deutsche Fassung ist noch nicht verfügbar.")+'</p></div><div class="inset"><h4>Gegenszenario</h4><p>'+safe(tr?.counter||"Die Gegenwelt ist im Originalrecord dokumentiert. Eine geprüfte deutsche Fassung ist noch nicht verfügbar.")+'</p></div></div><h4>Scoreline Szenarien</h4><div class="score-row">'+arr(p?.score_state_cluster?.score_scenarios).map(x=>'<span class="score">'+safe(x.score)+'</span>').join("")+'</div><p>'+safe(tr?.cluster||"Keine Scoreline Zusammenfassung im Originalrecord.")+'</p>'+(arr(tr?.risks).length?'<div class="inset"><h4>Alternative Spielverläufe und Bruchbedingungen</h4><ul>'+arr(tr.risks).map(x=>'<li>'+safe(x)+'</li>').join("")+'</ul></div>':''))+
  sec("aufstellungen","05 · Spieler und Aufstellungen","Prognostizierte Formationen",'<p>Die prognostizierte Aufstellung ist keine bestätigte Startelf. Es werden nur die im Record verfügbaren Informationen dargestellt.</p><div class="opposite">'+xi(p,m.home,"home")+xi(p,m.away,"away")+'</div>')+
  sec("betting","06 · Betting Book","Entscheidungswege und Fragility",'<p>Diese Pfade stammen unverändert aus dem veröffentlichten ECOBET Run. Das Betting Board ergänzt nur verifizierte, publizierte Anbieterquoten.</p>'+reportPaths(m,p,quote)+
  '<p class="time-note">Fragility bedeutet: Unter welchen Bedingungen kann die jeweilige Prognose trotz plausibler Ausgangslage scheitern?</p>')+
@@ -546,7 +553,7 @@ openReport=async function(id,quiet=false){
  const root=$("report"),body=root.querySelector(".report-body"),article=root.querySelector(".report-article");
  if(!body||!article||root.querySelector(".report-tabs"))return;
  const m=arr(S.run?.matches).find(x=>x.fixture_id===id);if(!m)return;
- const p=S.stageMap.get(id)?.prediction||{},t=ECOBET_DE_20261103[matchF(m)];
+ const p=S.stageMap.get(id)?.prediction||{},t=S.germanTexts.get(id)||ECOBET_DE_20261103[matchF(m)];
  const q=S.odds.find(x=>x.fixtureId===id&&x.role==="FAVOURITE");
  const statX=(side,key)=>{const x=p.structural_strength?.[side]?.[key];return x?.status==="AVAILABLE"?fmt(x.value,1):"—"};
  const scores=arr(p.score_state_cluster?.score_scenarios).slice(0,5).map(x=>safe(x.score)).join(" · ")||"Nicht verfügbar";
