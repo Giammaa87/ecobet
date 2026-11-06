@@ -10,7 +10,7 @@ const fmt=(x,n=2)=>N(x)===null?"Nicht verfügbar":N(x).toLocaleString("de-CH",{m
 const CHF=x=>"CHF "+fmt(x,2);
 const known=x=>x!==null&&x!==undefined&&x!==""&&!["NOT_AVAILABLE","NOT_APPLICABLE","NO_PREDICTION_TECHNICAL_BLOCKER"].includes(String(x).toUpperCase());
 const val=x=>known(x)?safe(x):"Nicht verfügbar";
-const S={index:null,id:null,run:null,stage:null,stageMap:new Map(),board:null,odds:[],daily:null,teamCache:new Map(),selection:new Map(),detail:null,performance:null,perfTab:"cockpit",auditDate:null};
+const S={index:null,id:null,run:null,stage:null,stageMap:new Map(),board:null,odds:[],daily:null,teamCache:new Map(),selection:new Map(),detail:null,germanTexts:new Map(),performance:null,perfTab:"cockpit",auditDate:null};
 const dataCache=new Map();
 async function get(path,cache=true){
  if(cache&&dataCache.has(path))return dataCache.get(path);
@@ -82,7 +82,7 @@ async function loadRun(){
  feedback("run-message","Run, Stage12 und Tages Snapshot werden verbunden …");
  $("match-list").innerHTML="";
  $("run-kpis").innerHTML="";
- S.id=id;S.run=null;S.stage=null;S.stageMap.clear();S.daily=null;S.board=null;S.odds=[];S.teamCache.clear();S.selection.clear();S.detail=null;
+ S.id=id;S.run=null;S.stage=null;S.stageMap.clear();S.daily=null;S.board=null;S.odds=[];S.teamCache.clear();S.selection.clear();S.germanTexts.clear();S.detail=null;
  $("report").hidden=true;$("analysis-home").hidden=false;
  try{
   const [run,stage,board]=await Promise.all([
@@ -191,7 +191,7 @@ function reportPaths(m,p,quotes){
   const path=role==="FAVOURITE"?m.favourite:m[role.toLowerCase()];
   const f=obj(p?.final_paths?.[role.toLowerCase()]);
   const breaks=arr(p?.fragility?.path_bindings).find(x=>x.path_id===f?.path?.path_id);
-  const trans=ECOBET_DE_20261103[matchF(m)];
+  const trans=S.germanTexts.get(m.fixture_id)||ECOBET_DE_20261103[matchF(m)];
   const r=({SAFE:0,BALANCED:1,AGGRESSIVE:2})[role];
   return '<div class="path inset"><small>'+role+'</small><b>'+market(path)+'</b><div>'+pill(x?.available?(x.source_provider||"BSD")+" "+fmt(x.odds,3):"Keine Anbieterquote",x?.available?"green":"yellow")+'</div>'+
   (r!==undefined&&trans?.risks?.[r]?'<p class="small" style="margin:9px 0 0">Bruchbedingung: '+safe(trans.risks[r])+'</p>':breaks?'<p class="small" style="margin:9px 0 0">Bruchbedingungen im Originalrecord vorhanden, aber noch nicht als geprüfte deutsche Fassung veröffentlicht.</p>':'')+
@@ -546,7 +546,7 @@ openReport=async function(id,quiet=false){
  const root=$("report"),body=root.querySelector(".report-body"),article=root.querySelector(".report-article");
  if(!body||!article||root.querySelector(".report-tabs"))return;
  const m=arr(S.run?.matches).find(x=>x.fixture_id===id);if(!m)return;
- const p=S.stageMap.get(id)?.prediction||{},t=ECOBET_DE_20261103[matchF(m)];
+ const p=S.stageMap.get(id)?.prediction||{},t=S.germanTexts.get(id)||ECOBET_DE_20261103[matchF(m)];
  const q=S.odds.find(x=>x.fixtureId===id&&x.role==="FAVOURITE");
  const statX=(side,key)=>{const x=p.structural_strength?.[side]?.[key];return x?.status==="AVAILABLE"?fmt(x.value,1):"—"};
  const scores=arr(p.score_state_cluster?.score_scenarios).slice(0,5).map(x=>safe(x.score)).join(" · ")||"Nicht verfügbar";
