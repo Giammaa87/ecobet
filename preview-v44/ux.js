@@ -16,6 +16,7 @@ function init({S,get,fillIds,loadRun,navigate}){
    const day=picker.value,days=S.index?.dates||{};
    if(!days[day]){
     msg.textContent="Für dieses Datum ist kein veröffentlichter Run vorhanden.";
+    picker.value=$("run-day")?.value||"";
     return;
    }
    msg.textContent="Run vom "+day;
@@ -45,7 +46,7 @@ function attachNativePickers(){
  document.querySelectorAll('input[type="date"]').forEach(input=>{
   if(input.dataset.nativeCalendarAttached)return;
   input.dataset.nativeCalendarAttached="true";
-  if(input.id==="global-run-date")return;
+  if(input.id==="global-run-date"||input.id==="audit-date")return;
   const button=document.createElement("button");button.type="button";button.className="v44-calendar-open";
   button.title="Kalender öffnen";button.setAttribute("aria-label","Kalender öffnen");
   button.innerHTML="&#128197;";
