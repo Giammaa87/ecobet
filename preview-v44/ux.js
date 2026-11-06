@@ -60,7 +60,7 @@ async function hydrateAudit(S,get){
  for(const q of S.odds){delete q.auditResult;delete q.matchScore;delete q.auditSource;}
  try{
   const idx=await get("audits/index.json",false);
-  const matches=Object.values(idx?.dates||{}).flatMap(arr).filter(x=>x.id===runId);
+  const matches=Object.values(idx?.dates||{}).flatMap(arr).filter(x=>x.run_id===runId);
   matches.sort((a,b)=>String(b.generated_at||"").localeCompare(String(a.generated_at||"")));
   if(!matches.length){S.auditNote="Kein Resultataudit für diesen Run veröffentlicht.";return}
   const pointer=matches[0];
