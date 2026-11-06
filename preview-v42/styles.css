@@ -1,0 +1,90 @@
+/* ECOBET V4.2: real tables on phones, tablets and desktop. No mobile card transformation. */
+#page-board .board-layout{display:block!important;min-width:0}
+#page-board .quote-list{display:block!important;min-width:0;max-width:100%}
+#page-board .quote-list.v41-board{width:100%}
+.v42-table-guide{font-size:.79rem;line-height:1.55;color:#b7dfe7;background:rgba(13,51,65,.58);border-left:3px solid #43bff0;padding:10px 14px;border-radius:8px;margin:4px 0 14px}
+.v42-table-guide b{color:#e7fbff}
+.v41-board-wrap,.v41-rank-wrap{
+ display:block!important;position:relative;width:100%;max-width:100%;overflow-x:auto!important;overflow-y:visible!important;
+ -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#5da6ba rgba(6,29,40,.7);
+ border:1px solid rgba(109,171,193,.4)!important;border-radius:11px!important;
+}
+.v41-board-wrap:focus-visible,.v41-rank-wrap:focus-visible{outline:2px solid #55cce5;outline-offset:3px}
+.v41-board-table,.v41-rank-table{
+ display:table!important;width:100%!important;min-width:1120px!important;table-layout:fixed!important;
+ border-collapse:separate!important;border-spacing:0!important;
+}
+.v41-rank-table{min-width:1080px!important}
+.v41-board-table thead,.v41-rank-table thead{display:table-header-group!important}
+.v41-board-table tbody,.v41-rank-table tbody{display:table-row-group!important}
+.v41-board-table tr,.v41-rank-table tr{display:table-row!important;background:transparent}
+.v41-board-table td,.v41-rank-table td{
+ display:table-cell!important;padding:10px 9px!important;border:0!important;border-bottom:1px solid rgba(123,177,198,.24)!important;
+ vertical-align:top!important;background:rgba(11,35,47,.88);border-radius:0!important;
+}
+.v41-board-table th,.v41-rank-table th{display:table-cell!important;padding:11px 9px!important;vertical-align:middle}
+.v41-board-table td:before,.v41-rank-table td:before{display:none!important;content:none!important}
+.v41-board-table tr:hover td,.v41-rank-table tr.v41-rank-main:hover td{background:rgba(20,57,72,.95)}
+.v41-board-table td[data-path="SAFE"],.v41-board-table td[data-path="BALANCED"],.v41-board-table td[data-path="AGGRESSIVE"]{display:table-cell!important}
+.v41-board-table tr.v41-board-row,.v41-rank-table tr.v41-rank-main{padding:0!important}
+.v41-rank-table tr.v41-reason[hidden]{display:none!important}
+.v41-rank-table tr.v41-reason td{display:table-cell!important;position:static!important;background:rgba(25,68,83,.94)!important}
+.v41-rank-table tr.v41-reason:not([hidden]){display:table-row!important}
+.v41-board-table .v41-mobile-expand{display:none!important}
+.v41-board-table .v41-quote{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:6px}
+.v41-board-table .v41-quote>small{grid-column:auto}
+.v41-board-table .v41-quote-control{align-items:center}
+.v41-board-table th:first-child{width:22%!important}
+.v41-board-table th:nth-child(n+2):nth-child(-n+5){width:15%!important}
+.v41-board-table th:last-child{width:18%!important}
+.v41-rank-table th:first-child{width:6%!important}
+.v41-rank-table th:nth-child(2){width:25%!important}
+.v41-rank-table th:nth-child(3){width:20%!important}
+.v41-rank-table th:nth-child(4){width:13%!important}
+.v41-rank-table th:nth-child(5){width:25%!important}
+.v41-rank-table th:last-child{width:11%!important}
+.v41-board-table td:first-child,.v41-board-table th:first-child{
+ position:sticky!important;left:0!important;z-index:3;background:#103243!important;
+ box-shadow:3px 0 8px rgba(0,0,0,.18);border-right:1px solid rgba(96,162,178,.4)!important;
+}
+.v41-board-table th:first-child{z-index:5;background:#153d4e!important}
+.v41-rank-table tr.v41-rank-main td:first-child,.v41-rank-table th:first-child{
+ position:sticky!important;left:0!important;z-index:4;background:#103243!important;
+}
+.v41-rank-table tr.v41-rank-main td:nth-child(2),.v41-rank-table th:nth-child(2){
+ position:sticky!important;left:65px!important;z-index:3;background:#103243!important;
+ box-shadow:3px 0 8px rgba(0,0,0,.16);border-right:1px solid rgba(96,162,178,.35)!important;
+}
+.v41-rank-table th:first-child,.v41-rank-table th:nth-child(2){z-index:6;background:#153d4e!important}
+.v41-rank-table tr.v41-reason td:first-child{position:static!important;left:auto!important;box-shadow:none!important}
+.v41-rank-table .v41-row-actions{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.v41-rank-table .v41-row-actions:before{display:none!important}
+.v41-rank-table .v41-clubs{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.v41-board-table .v41-game-name{display:flex;gap:7px}
+.v41-board-table .v41-game-name b{font-size:.77rem}
+.v41-board-table .v41-game-name .ev3-entity{display:inline-flex}
+.v41-board-table .v41-read-pricing{font-size:.68rem}
+.v41-board-table .v41-quote-market{line-height:1.3}
+.v41-board-table .v41-quote-control{justify-content:flex-start;gap:13px}
+.v41-pick{min-width:28px;min-height:28px}
+.v41-board-table td[data-path="FAVOURITE"]{background:rgba(23,70,67,.92)!important}
+.v41-board-table tbody tr:hover td[data-path="FAVOURITE"]{background:rgba(27,88,80,.96)!important}
+.v41-rank-table td small{line-height:1.5}
+@media(max-width:720px){
+ .v41-board-table{min-width:1150px!important}
+ .v41-rank-table{min-width:1020px!important}
+ .v41-board-table td:first-child,.v41-board-table th:first-child{width:192px!important;max-width:192px}
+ .v41-rank-table td:first-child,.v41-rank-table th:first-child{width:65px!important}
+ .v41-rank-table td:nth-child(2),.v41-rank-table th:nth-child(2){width:190px!important}
+ .v41-rank-table tr.v41-rank-main td:nth-child(2),.v41-rank-table th:nth-child(2){left:65px!important}
+ .v41-filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .v41-overview-items{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .v41-board-table td,.v41-rank-table td{font-size:.76rem!important}
+ .v41-board-wrap,.v41-rank-wrap{touch-action:pan-x pan-y}
+}
+@media(max-width:420px){
+ .v41-filters{grid-template-columns:1fr}
+ .v41-board-table td:first-child,.v41-board-table th:first-child{width:164px!important;max-width:164px}
+ .v41-rank-table td:nth-child(2),.v41-rank-table th:nth-child(2){width:175px!important}
+ .v41-overview-items{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
