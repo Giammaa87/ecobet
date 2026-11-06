@@ -760,9 +760,10 @@ showAudit=function(){
 renderAuditDates=function(){
  const days=auditDays(),sel=$("v43-audit-select"),old=S.auditDate;
  $("audit-days").innerHTML="";
- if(!S.auditDate||!days.includes(S.auditDate))S.auditDate=days[0]||today();
+ if(!S.auditDate)S.auditDate=days[0]||today();
+ const options=days.includes(S.auditDate)?days:[S.auditDate,...days].filter(Boolean).sort().reverse();
  if(sel){
-  sel.innerHTML=days.map(day=>'<option value="'+safe(day)+'">'+safe(day)+'</option>').join("");
+  sel.innerHTML=options.map(day=>'<option value="'+safe(day)+'">'+safe(day)+'</option>').join("");
   sel.value=S.auditDate;
   sel.onchange=()=>{S.auditDate=sel.value;$("audit-date").value=sel.value;showAudit()};
  }
