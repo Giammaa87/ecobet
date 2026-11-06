@@ -1,0 +1,51 @@
+name: ECOBET German Match Book publisher
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '35 3,6,10,15,20 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'stage13/source-records/*.stage12.json'
+      - 'runs/index.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ecobet-website-derived-indexes-main
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check publishing script
+        run: |
+          python -m py_compile tools/publish_german_matchbooks.py
+          python -m unittest discover -s tools/tests -p 'test_german_matchbooks.py' -v
+      - name: Install local English German translation engine
+        run: python -m pip install 'argostranslate>=1.9,<2'
+      - name: Generate translated narratives from frozen Stage12 records
+        run: python tools/publish_german_matchbooks.py . --lookback-days 7 --max-runs 10
+      - name: Publish generated German narratives without changing predictions
+        shell: bash
+        run: |
+          git config user.name "ecobet-matchbook-translation-bot"
+          git config user.email "ecobet-matchbook-translation-bot@users.noreply.github.com"
+          git add -- translations/matchbooks
+          if git diff --cached --quiet; then
+            echo "No translations to publish"
+            exit 0
+          fi
+          git commit -m "website: publish automatic German Match Books"
+          git pull --rebase origin main
+          git push origin HEAD:main
