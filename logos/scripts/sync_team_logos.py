@@ -54,6 +54,74 @@ ALIASES={
  'iberia 1999':['Iberia Tbilisi'],
  'koln':['Cologne','1. FC Köln'],
 }
+PUBLIC_DISPLAY_ALIASES = {
+  "Everton FC": [
+    "Everton"
+  ],
+  "Sevilla FC": [
+    "Sevilla"
+  ],
+  "FC Toulouse": [
+    "Toulouse"
+  ],
+  "RC Strasbourg Alsace": [
+    "Strasbourg"
+  ],
+  "Deportivo Alavés": [
+    "Alaves",
+    "Deportivo Alaves"
+  ],
+  "Venezia FC": [
+    "Venezia"
+  ],
+  "Udinese Calcio": [
+    "Udinese"
+  ],
+  "Borussia Mönchengladbach": [
+    "Borussia Monchengladbach"
+  ],
+  "Brighton & Hove Albion": [
+    "Brighton"
+  ],
+  "Riga": [
+    "Rīga FC",
+    "Riga FC"
+  ],
+  "Pafos": [
+    "Pafos FC"
+  ],
+  "Union Saint-Gilloise": [
+    "Union SG"
+  ],
+  "Red Bull Salzburg": [
+    "RB Salzburg"
+  ],
+  "Celje": [
+    "NK Celje"
+  ],
+  "Omonia": [
+    "AC Omonia"
+  ],
+  "Bayer 04 Leverkusen": [
+    "Leverkusen"
+  ],
+  "Hapoel Beer-Sheva": [
+    "H. Be'er Sheva"
+  ],
+  "Sparta Praha": [
+    "Sparta Prague"
+  ],
+  "Jagiellonia Białystok": [
+    "Jagiellonia"
+  ],
+  "AC Milan": [
+    "Milan"
+  ],
+  "Kairat Almaty": [
+    "FC Kairat"
+  ]
+}
+
 COUNTRY={'Czechia':['czech_republic','czechia'],'Bosnia and Herzegovina':['bosnia_and_herzegovina','bosnia'],'Turkey':['turkey','turkiye']}
 
 def get(url):
@@ -123,7 +191,7 @@ def main():
   dest=OUT/(slug(t['name'])+'.svg'); raw='https://raw.githubusercontent.com/JoseArroyave/football-logos/main/'+quote(best[2],safe='/'); data=get(raw)
   if b'<svg' not in data[:600].lower() and b'<?xml' not in data[:600].lower(): unresolved.append({'name':t['name'],'error':'not_svg','source':best[2]}); continue
   dest.write_bytes(data)
-  manifest.append({'name':t['name'],'country':t['country'],'competitions':sorted(t['competitions']),'aliases':sorted(t['aliases']),'file':str(dest).replace('\\','/'),'source_path':best[2],'match_score':round(bests,4)})
+  manifest.append({'name':t['name'],'country':t['country'],'competitions':sorted(t['competitions']),'aliases':sorted(set(t['aliases']) | set(PUBLIC_DISPLAY_ALIASES.get(t['name'], []))),'file':str(dest).replace('\\','/'),'source_path':best[2],'match_score':round(bests,4)})
  out={'schema_version':'1.0','record_type':'ecobet_team_logo_manifest','season':'2026/27','counts':{'requested_unique_teams':len(teams),'resolved':len(manifest),'unresolved':len(unresolved)},'teams':manifest}
  (OUT/'manifest.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8'); (OUT/'unresolved.json').write_text(json.dumps(unresolved,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  print(json.dumps(out['counts']))

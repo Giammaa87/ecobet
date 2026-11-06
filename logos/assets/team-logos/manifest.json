@@ -67,6 +67,7 @@
         "UEFA-Europa League"
       ],
       "aliases": [
+        "RB Salzburg",
         "Red Bull Salzburg"
       ],
       "file": "logos/assets/team-logos/red_bull_salzburg.svg",
@@ -158,6 +159,7 @@
         "UEFA-Europa League"
       ],
       "aliases": [
+        "Union SG",
         "Union Saint-Gilloise"
       ],
       "file": "logos/assets/team-logos/union_saint_gilloise.svg",
@@ -236,6 +238,7 @@
         "UEFA-Europa League"
       ],
       "aliases": [
+        "AC Omonia",
         "Omonia"
       ],
       "file": "logos/assets/team-logos/omonia.svg",
@@ -249,7 +252,8 @@
         "UEFA-Conference League"
       ],
       "aliases": [
-        "Pafos"
+        "Pafos",
+        "Pafos FC"
       ],
       "file": "logos/assets/team-logos/pafos.svg",
       "source_path": "logos/cyprus/Pafos.svg",
@@ -288,6 +292,7 @@
         "UEFA-Europa League"
       ],
       "aliases": [
+        "Sparta Prague",
         "Sparta Praha"
       ],
       "file": "logos/assets/team-logos/sparta_praha.svg",
@@ -424,6 +429,7 @@
         "UEFA-Conference League"
       ],
       "aliases": [
+        "Brighton",
         "Brighton & Hove Albion"
       ],
       "file": "logos/assets/team-logos/brighton_hove_albion.svg",
@@ -477,6 +483,7 @@
         "ENG-Premier League"
       ],
       "aliases": [
+        "Everton",
         "Everton FC"
       ],
       "file": "logos/assets/team-logos/everton.svg",
@@ -719,7 +726,8 @@
         "FRA-Ligue 1"
       ],
       "aliases": [
-        "FC Toulouse"
+        "FC Toulouse",
+        "Toulouse"
       ],
       "file": "logos/assets/team-logos/toulouse.svg",
       "source_path": "logos/france/Toulouse.svg",
@@ -880,7 +888,8 @@
         "FRA-Ligue 1"
       ],
       "aliases": [
-        "RC Strasbourg Alsace"
+        "RC Strasbourg Alsace",
+        "Strasbourg"
       ],
       "file": "logos/assets/team-logos/strasbourg_alsace.svg",
       "source_path": "logos/france/RC_Strasbourg_Alsace.svg",
@@ -973,7 +982,8 @@
         "GER-Bundesliga"
       ],
       "aliases": [
-        "Bayer 04 Leverkusen"
+        "Bayer 04 Leverkusen",
+        "Leverkusen"
       ],
       "file": "logos/assets/team-logos/bayer_04_leverkusen.svg",
       "source_path": "logos/germany/Bayer_Leverkusen.svg",
@@ -1028,6 +1038,7 @@
         "GER-Bundesliga"
       ],
       "aliases": [
+        "Borussia Monchengladbach",
         "Borussia Mönchengladbach"
       ],
       "file": "logos/assets/team-logos/borussia_monchengladbach.svg",
@@ -1279,6 +1290,7 @@
         "UEFA-Europa League"
       ],
       "aliases": [
+        "H. Be'er Sheva",
         "Hapoel Beer-Sheva"
       ],
       "file": "logos/assets/team-logos/hapoel_beer_sheva.svg",
@@ -1293,7 +1305,8 @@
         "UEFA-Europa League"
       ],
       "aliases": [
-        "AC Milan"
+        "AC Milan",
+        "Milan"
       ],
       "file": "logos/assets/team-logos/milan.svg",
       "source_path": "logos/italy/Milan.svg",
@@ -1561,6 +1574,7 @@
         "ITA-Serie A"
       ],
       "aliases": [
+        "Udinese",
         "Udinese Calcio"
       ],
       "file": "logos/assets/team-logos/udinese_calcio.svg",
@@ -1574,6 +1588,7 @@
         "ITA-Serie A"
       ],
       "aliases": [
+        "Venezia",
         "Venezia FC"
       ],
       "file": "logos/assets/team-logos/venezia.svg",
@@ -1587,6 +1602,7 @@
         "UEFA-Conference League"
       ],
       "aliases": [
+        "FC Kairat",
         "Kairat Almaty"
       ],
       "file": "logos/assets/team-logos/kairat_almaty.svg",
@@ -1600,7 +1616,9 @@
         "UEFA-Conference League"
       ],
       "aliases": [
-        "Riga"
+        "Riga",
+        "Riga FC",
+        "Rīga FC"
       ],
       "file": "logos/assets/team-logos/riga.svg",
       "source_path": "logos/latvia/Riga.svg",
@@ -1756,6 +1774,7 @@
         "UEFA-Europa League"
       ],
       "aliases": [
+        "Jagiellonia",
         "Jagiellonia Białystok"
       ],
       "file": "logos/assets/team-logos/jagiellonia_bia_ystok.svg",
@@ -1912,7 +1931,8 @@
         "UEFA-Europa League"
       ],
       "aliases": [
-        "Celje"
+        "Celje",
+        "NK Celje"
       ],
       "file": "logos/assets/team-logos/celje.svg",
       "source_path": "logos/slovenia/Celje.svg",
@@ -2004,6 +2024,8 @@
         "ESP-La Liga"
       ],
       "aliases": [
+        "Alaves",
+        "Deportivo Alaves",
         "Deportivo Alavés"
       ],
       "file": "logos/assets/team-logos/deportivo_alaves.svg",
@@ -2179,6 +2201,7 @@
         "ESP-La Liga"
       ],
       "aliases": [
+        "Sevilla",
         "Sevilla FC"
       ],
       "file": "logos/assets/team-logos/sevilla.svg",

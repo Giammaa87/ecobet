@@ -1,0 +1,31 @@
+/* ECOBET V4.3: live candidate refinements, deliberately preserving V4.2 theme. */
+.v43-unranked-tag{display:inline-block;color:#b5d2dd;border:1px dashed rgba(147,193,208,.46);padding:4px 7px;border-radius:6px;font-size:.7rem;font-weight:800}
+.v43-unranked td{background:rgba(15,36,49,.9)!important;color:#b7cdd8}
+.v43-unranked td:nth-child(2){background:#102b3a!important}
+.v43-unranked td:first-child{background:#102b3a!important}
+#page-audit .audit-tools{display:flex;align-items:flex-end;flex-wrap:wrap;gap:13px}
+#page-audit .audit-tools label{min-width:170px;flex:1 1 200px;max-width:320px}
+#page-audit #v43-audit-select{width:100%;min-height:42px;padding:9px 10px;border-radius:9px;border:1px solid rgba(129,183,197,.4);background:#102f3d;color:#eaf7fa;font:inherit}
+#page-audit #audit-days[hidden]{display:none!important}
+.v43-perf-report{margin-top:16px;min-width:0}
+.v43-perf-title h3{margin:0 0 7px}
+.v43-perf-title p{margin:0 0 12px;color:#afced7;font-size:.85rem}
+.v43-perf-summary{display:flex;flex-wrap:wrap;gap:9px;margin:11px 0 18px}
+.v43-perf-summary span{display:flex;gap:8px;align-items:baseline;border:1px solid rgba(114,176,196,.3);border-radius:9px;padding:9px 11px;background:rgba(15,47,59,.57);color:#afceda;font-size:.77rem}
+.v43-perf-summary b{color:#f1fbff;font-size:1.03rem}
+.v43-perf-table{border:1px solid rgba(119,177,195,.32);border-radius:11px;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.v43-perf-table table{width:100%;min-width:610px;border-collapse:collapse;font-size:.81rem}
+.v43-perf-table th{background:#173e4d;color:#c9e6ed;text-align:left;padding:11px 10px;font-size:.74rem}
+.v43-perf-table td{padding:11px 10px;border-top:1px solid rgba(119,177,195,.2);background:rgba(14,43,57,.57)}
+.v43-perf-table tr:hover td{background:rgba(34,83,96,.6)}
+.v43-hit{color:#6beeb9;font-weight:800}.v43-miss{color:#ff849b;font-weight:800}
+.v43-rate{color:#76eec0}
+.v43-detail{margin-top:13px}
+.v43-detail summary{cursor:pointer;color:#a6dff1;font-weight:750}
+.v43-detail .v43-perf-table{margin-top:10px}
+@media(max-width:650px){
+ .v43-perf-table table{min-width:620px}
+ .v43-perf-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .v43-perf-summary span{min-width:0;flex-wrap:wrap}
+ #page-audit .audit-tools label{max-width:none;min-width:0;flex-basis:100%}
+}

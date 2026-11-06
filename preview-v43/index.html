@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071821"><title>ECOBET · DECODE THE GAME · V4.3 DEV</title>
+<base href="../"><link rel="stylesheet" href="preview-v2/background.css"><link rel="stylesheet" href="preview-v2/styles.css"><link rel="stylesheet" href="preview-v3/styles.css"><link rel="stylesheet" href="preview-v3/enhancements.css"><link rel="stylesheet" href="preview-v4/derived.css"><link rel="stylesheet" href="preview-v4/compact.css"><link rel="stylesheet" href="preview-v42/styles.css?v=42"><link rel="stylesheet" href="preview-v43/styles.css?v=43">
+</head>
+<body>
+<header class="masthead" id="top">
+ <div class="wrap">
+  <div class="mast-meta"><span>ECOBET MASTER 3.0 · FOOTBALL INTELLIGENCE</span><span class="pilot">DEV V4.3 · LIVE KANDIDAT</span></div>
+  <div class="brandline"><div class="emblem" aria-label="ECOBET Logo">E</div><div><h1>ECOBET</h1><div class="motto">DECODE THE GAME</div><div class="enigma">Enigma CalciOracolo</div></div></div>
+  <p class="mast-sub">Matchanalysen, Team Books und verifizierte Daten. Mit verständlichen Erklärungen und der vertrauten ECOBET Identität.</p>
+ </div>
+</header>
+<div class="nav-shell"><nav class="nav wrap" aria-label="Hauptnavigation">
+ <span class="navlogo">ECOBET</span>
+ <button type="button" data-page="analysen" class="active">Analysen</button>
+ <button type="button" data-page="board">Betting Board</button>
+ <button type="button" data-page="topreads">Top Reads</button>
+ <button type="button" data-page="performance">Performance</button>
+ <button type="button" data-page="audit">Audit</button>
+ <span class="nav-right" id="connection">GitHub Daten verbinden …</span>
+</nav></div>
+<main class="wrap">
+<section class="view active" id="page-analysen">
+ <div id="analysis-home">
+  <div class="intro"><div><div class="eyebrow">01 · Football Intelligence</div><h2>Spielanalysen</h2><p>Deine Matchübersicht mit ECOBET Favourites und Stabilität. Öffne eine Partie und wähle anschliessend gezielt aus, welche Analysedetails du sehen möchtest.</p></div></div>
+  <div class="tools">
+   <label>Datum<select id="run-day"><option>Lade Runs …</option></select></label>
+   <label>Veröffentlichter Lauf<select id="run-choice"><option>Bitte Datum auswählen</option></select></label>
+   <label>Wettbewerb<select id="run-league"><option value="">Alle Wettbewerbe</option></select></label>
+   <button type="button" class="btn secondary" id="reload-run">Neu laden</button>
+  </div>
+  <div class="kpi-line" id="run-kpis"></div>
+  <div class="notice" id="run-message">Aktuelle ECOBET Runs werden geladen …</div>
+  <div class="match-list" id="match-list"></div>
+ </div>
+ <div id="report" hidden aria-live="polite"></div>
+</section>
+<section class="view" id="page-board">
+ <div class="intro"><div><div class="eyebrow">02 · Betting Intelligence</div><h2>Betting Board</h2><p>Ein Spiel pro Zeile mit SAFE, BALANCED, AGGRESSIVE, FAVOURITE, zugehörigen Quoten und Zusatz Reads. Fehlende Quoten bleiben leer. Der Wettschein wird ausschliesslich manuell zusammengestellt.</p></div></div>
+ <div class="filters panel">
+  <label>Entscheidungspfad<select id="quote-role"><option value="ALL">Alle Pfade</option><option value="FAVOURITE">Favourite</option><option value="SAFE">SAFE</option><option value="BALANCED">BALANCED</option><option value="AGGRESSIVE">AGGRESSIVE</option></select></label>
+  <label>Quotenstatus<select id="quote-status"><option value="ALL">Alle Marktpfade</option><option value="AVAILABLE">Mit Quote</option><option value="NOT_AVAILABLE">Ohne Quote</option></select></label>
+  <label>Wettbewerb<select id="quote-league"><option value="ALL">Alle Wettbewerbe</option></select></label>
+  <label>Markt suchen<input id="quote-market" type="search" placeholder="z.B. Remis, Tore"></label>
+  <label>Minimale Quote<input id="quote-min" type="number" min="1" max="100" step=".05" value="1"></label>
+  <label>Maximale Quote<input id="quote-max" type="number" min="1" max="100" step=".05" value="100"></label>
+  <label>Stabilität<select id="quote-risk"><option value="ALL">Alle</option><option value="GREEN">Nur Grün</option><option value="GREEN_YELLOW">Grün und Gelb</option></select></label>
+  <label>Mindestquote Regler<span id="quote-slider-value">1.00</span><input type="range" class="range" id="quote-slider" min="1" max="10" step=".05" value="1"></label>
+ </div>
+ <div id="board-status" class="notice">Wähle einen veröffentlichten ECOBET Lauf.</div>
+ <div class="v42-table-guide"><b>Tabellenansicht</b> · Eine Zeile je Partie. Auf dem iPhone seitlich wischen, um alle Märkte zu sehen. Die Spielspalte bleibt sichtbar.</div>
+ <div class="board-layout"><div class="quote-list" id="quotes"></div><aside class="slip panel"><h3>Mein Wettschein</h3><div id="slip-list" class="small muted">Keine Auswahl</div><label class="formlabel" style="margin:15px 0">Einsatz CHF<input type="number" min="0" step=".5" value="10" id="stake"></label><div class="slip-totals"><div class="slip-total"><span>Gesamtquote</span><b id="slip-quote">–</b></div><div class="slip-total"><span>Mögliche Auszahlung</span><b id="slip-payout">CHF 0.00</b></div><div class="slip-total"><span>Möglicher Nettogewinn</span><b id="slip-profit">CHF 0.00</b></div></div><button class="btn secondary small" id="slip-clear" type="button">Auswahl leeren</button><p class="small muted" style="margin-top:12px">Historische Anbieterquoten von BSD und gegebenenfalls API Football. Keine Live Quoten und keine automatische Wettabgabe.</p></aside></div>
+ <section class="combo panel"><div class="eyebrow">ECOBET Favourite Combos</div><h2 style="margin:8px 0">Gruppierte Favourite Vorschläge</h2><p class="muted">Die Football Engine bleibt unverändert. Es werden ausschliesslich tatsächlich bepreiste Favourites kombiniert. Ungeeignete Kombinationen werden nicht erzwungen.</p>
+ <div class="combo-controls">
+  <label>Wettscheine<select id="combo-count"><option>1</option><option selected>2</option><option>3</option></select></label>
+  <label>Spiele mindestens<input id="combo-min" type="number" min="3" max="5" value="3"></label>
+  <label>Spiele höchstens<input id="combo-max" type="number" min="3" max="5" value="5"></label>
+  <label>Mindestgesamtquote<input id="combo-odds" type="number" min="1" step=".1" value="3"></label>
+  <button class="btn" type="button" id="combo-create">Vorschläge erstellen</button>
+ </div><div id="combo-results" class="combo-grid"><p class="muted small">Klicke auf «Vorschläge erstellen», um den aktuellen Run zu prüfen.</p></div>
+ </section>
+</section>
+<section class="view" id="page-topreads"><div class="intro"><div class="eyebrow">03 · Zusatzanalyse</div><h2>FAVOURITE Stabilitätsranking</h2><p>Kompaktes Ranking mit den fünf stabilsten FAVOURITE Prognosen. Alle Spiele und Begründungen lassen sich bei Bedarf aufklappen.</p></div><div class="v42-table-guide"><b>Tabellenansicht</b> · Auch auf dem iPhone bleiben alle Partien Tabellenzeilen. Seitlich wischen für Stabilität, Zusatz Reads und Details.</div><div id="v4-ranking" class="panel v4-ranking" aria-live="polite"></div><section class="panel v4-legacy"><div class="eyebrow">Bestehende Auswertung</div><h3>Historische Top Reads</h3><p>Die ursprüngliche Auswertung im Performance Bereich bleibt vollständig erhalten.</p><button id="v4-historic" class="btn secondary" type="button">Historische Top Reads öffnen</button></section></section>
+<section class="view" id="page-performance">
+ <div class="intro"><div><div class="eyebrow">04 · Historische Qualität</div><h2>Performance Intelligence</h2><p>Alle bisherigen neun Auswertungsbereiche. Die Daten stammen aus den veröffentlichten Ergebnis Audits, nicht aus nachträglich geschätzten Trefferquoten.</p></div></div>
+ <div class="performance-nav" id="performance-nav">
+ <button class="active" data-perf="cockpit">Cockpit</button><button data-perf="trends">Trends</button><button data-perf="markets">Märkte</button><button data-perf="leagues">Ligen</button><button data-perf="hitmiss">HIT / MISS</button><button data-perf="momentum">Team Momentum</button><button data-perf="topreads">Top Reads</button><button data-perf="nsp">NSP</button><button data-perf="scores">Scores</button>
+ </div>
+ <div id="performance-body" aria-live="polite" class="notice">Performance Index wird beim Öffnen geladen …</div>
+</section>
+<section class="view" id="page-audit">
+ <div class="intro"><div><div class="eyebrow">05 · Unveränderte Nachweise</div><h2>Audit und Daten</h2><p>Alle veröffentlichten historischen Settlements und zugehörigen Metadaten. Das Quelldatum wird nicht aus der heutigen Spielprognose abgeleitet.</p></div></div>
+ <div class="audit-tools panel"><label class="formlabel">Datum im Kalender auswählen<input id="audit-date" type="date" aria-label="Audit Datum im Kalender öffnen"></label><label class="formlabel">Audit Tag auswählen<select id="v43-audit-select" aria-label="Historisches Auditdatum auswählen"></select></label><button id="audit-calendar" type="button" class="btn secondary" aria-label="Kalender öffnen">Kalender öffnen</button><button class="btn" id="audit-open" type="button">Audit anzeigen</button></div>
+ <div class="audit-list" id="audit-days" hidden></div>
+ <div id="audit-body" aria-live="polite" class="notice">Historische Auditdaten werden beim Öffnen geladen …</div>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><span>ECOBET · DECODE THE GAME · Enigma CalciOracolo</span><span>DEV V4.3 · Originaldaten unverändert · Europe/Zurich</span></div></footer>
+<script src="preview-v2/translations.js"></script><script src="preview-v3/enhancements.js"></script><script src="preview-v43/compact.js?v=43"></script><script src="preview-v43/metrics.js?v=43"></script><script src="preview-v43/app.js?v=43"></script><script src="preview-v43/derived.js?v=43"></script>
+</body></html>
