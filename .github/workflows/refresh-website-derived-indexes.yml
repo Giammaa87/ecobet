@@ -7,6 +7,9 @@ on:
       - 'audits/**'
       - 'corrections/audits/**'
       - 'data/**'
+      - 'tools/build_website_phase1_indexes.py'
+      - 'tools/validate_website_phase1.py'
+      - 'tools/tests/test_performance_competitions.py'
 
 permissions:
   contents: write
@@ -25,6 +28,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Regression test exact football competition binding
+        run: python -m unittest discover -s tools/tests -p 'test_performance_competitions.py' -v
       - name: Build immutable indexes from published evidence
         run: python tools/build_website_phase1_indexes.py .
       - name: Verify source bindings and settlement equivalence
@@ -40,4 +45,5 @@ jobs:
             exit 0
           fi
           git commit -m 'website: refresh derived indexes'
+          git pull --rebase origin main
           git push origin HEAD:main

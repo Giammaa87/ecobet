@@ -43,6 +43,7 @@ def main(site: Path):
     assert len(document["audits"]) == pointer["source_audit_count"]
     assert len(document["sources"]) == pointer["source_audit_count"]
 
+    run_cache = {}
     by_file = {source["file"].removeprefix("audits/"): source for source in document["sources"]}
     indexed = {source["file"].removeprefix("audits/"): audit for source, audit in zip(document["sources"], document["audits"])}
     for filename, source in by_file.items():
@@ -53,10 +54,14 @@ def main(site: Path):
             overlay_path = site / correction["file"]
             assert sha(overlay_path) == correction["sha256"], f"Overlay hash mismatch: {filename}"
             raw = builder.apply_overlay(raw, read(overlay_path))
+        run_id = (raw.get("run_audit_record") or {}).get("run_id")
+        if run_id not in run_cache:
+            run_path = site / "runs" / (str(run_id) + ".json") if run_id else None
+            run_cache[run_id] = (read(run_path).get("matches") or []) if run_path and run_path.is_file() else []
         expected = {
             "audit_generated_at": raw.get("audit_generated_at") or source.get("entry_generated_at"),
             "run_audit_record": builder.selected(raw.get("run_audit_record") or {}, ["run_id", "id", "date", "date_range", "audit_generated_at", "generated_at"]),
-            "match_audit_records": [builder.project_match(match) for match in raw.get("match_audit_records") or []],
+            "match_audit_records": [builder.project_match(match, run_cache[run_id]) for match in raw.get("match_audit_records") or []],
         }
         assert indexed[filename] == expected, f"Projection mismatch: {filename}"
 
