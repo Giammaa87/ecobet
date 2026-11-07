@@ -148,16 +148,36 @@ const metricName={
 "last5_all_competitions_n":"Spiele", "last5_all_competitions_wins":"Siege","last5_all_competitions_draws":"Remis","last5_all_competitions_losses":"Niederlagen",
 "last5_all_competitions_goals_for_avg":"Tore pro Spiel","last5_all_competitions_goals_against_avg":"Gegentore pro Spiel",
 "last5_all_competitions_xg_for_avg":"xG pro Spiel","last5_all_competitions_xg_against_avg":"xGA pro Spiel",
+"last5_all_competitions_corners_for_avg":"Eckbälle / Spiel","last5_all_competitions_corners_against_avg":"Eckbälle Gegner / Spiel",
+"last5_all_competitions_yellow_cards_for_avg":"Gelbe Karten / Spiel","last5_all_competitions_yellow_cards_against_avg":"Gelbe Karten Gegner / Spiel",
+"last5_all_competitions_red_cards_for_avg":"Rote Karten / Spiel","last5_all_competitions_red_cards_against_avg":"Rote Karten Gegner / Spiel",
+"last5_all_competitions_total_cards_for_avg":"Karten insgesamt / Spiel","last5_all_competitions_total_cards_against_avg":"Karten Gegner insgesamt / Spiel",
+"last5_cross_season_fouls_for_avg":"Fouls begangen / Spiel","last5_cross_season_fouls_against_avg":"Fouls des Gegners / Spiel",
 "last5_all_competitions_shots_for_avg":"Schüsse pro Spiel","last5_all_competitions_shots_on_target_for_avg":"Schüsse aufs Tor",
 "last5_all_competitions_shots_against_avg":"Gegnerische Schüsse","last5_all_competitions_ppg":"Punkte pro Spiel",
 "last10_all_competitions_goals_for_avg":"Tore pro Spiel (letzte 10)","last10_all_competitions_goals_against_avg":"Gegentore pro Spiel (letzte 10)",
 "last10_all_competitions_xg_for_avg":"xG pro Spiel (letzte 10)","last10_all_competitions_xg_against_avg":"xGA pro Spiel (letzte 10)"
 };
 const metrics=Object.keys(metricName);
+const extendedTeamMetrics=new Set([
+ "last5_all_competitions_corners_for_avg","last5_all_competitions_corners_against_avg",
+ "last5_all_competitions_yellow_cards_for_avg","last5_all_competitions_yellow_cards_against_avg",
+ "last5_all_competitions_red_cards_for_avg","last5_all_competitions_red_cards_against_avg",
+ "last5_all_competitions_total_cards_for_avg","last5_all_competitions_total_cards_against_avg",
+ "last5_cross_season_fouls_for_avg","last5_cross_season_fouls_against_avg"
+]);
+function teamMetricCell(f,k){
+ const digits=k.includes("_n")||k.endsWith("wins")||k.endsWith("draws")||k.endsWith("losses")?0:2;
+ const rendered=fmt(f[k],digits);
+ if(!extendedTeamMetrics.has(k)||N(f[k])===null||!k.startsWith("last5_all_competitions_"))return rendered;
+ const observed=N(f[k.replace(/_avg$/,"_n_available")]),total=N(f.last5_all_competitions_n);
+ return rendered+(observed!==null&&total!==null&&observed<total?'<small class="muted"> ('+observed+'/'+total+' Spiele)</small>':"");
+}
 function compareTable(h,a){
  const f=obj(h?.feature_state),g=obj(a?.feature_state);
  return '<div class="metric-table-wrap"><table class="compare metric-table"><thead><tr><th>Kennzahl</th><th>Heim</th><th>Auswärts</th></tr></thead><tbody>'+
- metrics.map(k=>'<tr><td>'+safe(metricName[k])+'</td><td>'+fmt(f[k],k.includes("_n")||k.endsWith("wins")||k.endsWith("draws")||k.endsWith("losses")?0:2)+'</td><td>'+fmt(g[k],k.includes("_n")||k.endsWith("wins")||k.endsWith("draws")||k.endsWith("losses")?0:2)+'</td></tr>').join("")+'</tbody></table></div>';
+ metrics.map(k=>'<tr><td>'+safe(metricName[k])+'</td><td>'+teamMetricCell(f,k)+'</td><td>'+teamMetricCell(g,k)+'</td></tr>').join("")+'</tbody></table></div>'+
+ '<p class="small muted">Eckbälle und Karten: letzte fünf dokumentierte Spiele aller Wettbewerbe. Fouls: letztes saisonübergreifendes Fünferfenster aus der bestehenden Teamstatistik. Bei Teildaten wird die verfügbare Spielanzahl angezeigt. Fehlende Werte werden nicht geschätzt.</p>';
 }
 function formCoverage(t){
  const f=obj(t?.feature_state);
