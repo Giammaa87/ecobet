@@ -12,9 +12,9 @@
   (!includeStatus||s.status==="ALL"||String(r.rs?.[s.path+"_result"]||"").toUpperCase()===s.status));
  const selectedStatus=(r,path)=>String(r.rs?.[path+"_result"]||"").toUpperCase();
  const textMarket=x=>{
-  if(typeof x==="string")return x.trim();
-  if(x&&typeof x==="object")return String(x.expression||x.pick||"").trim();
-  return "";
+  const value=typeof x==="string"?x.trim():x&&typeof x==="object"?String(x.expression||x.pick||"").trim():"";
+  if(!value||["NOT_AVAILABLE","UNSETTLED","NOT_APPLICABLE","NO_STABLE_PREDICTION","NONE","NULL","NA","—","-"].includes(value.toUpperCase()))return "";
+  return value;
  };
  const expression=(r,role)=>{
   const model=r.model||{},path=model.paths?.[role];
