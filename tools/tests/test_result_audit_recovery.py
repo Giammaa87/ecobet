@@ -23,6 +23,11 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(mod.market("Roma to win",fixture,score),"MISS")
         self.assertEqual(mod.market("Roma Team Goals 1-3",fixture,score),"HIT")
         self.assertEqual(mod.market("Match Total Under 5",fixture,score),"PUSH")
+    def test_double_chance_or_draw(self):
+        fx={"home":"Lorient","away":"Brest"}
+        self.assertEqual(mod.market("Lorient or Draw",fx,{"home":1,"away":1}),"HIT")
+        self.assertEqual(mod.market("Lorient or Draw",fx,{"home":0,"away":1}),"MISS")
+        self.assertEqual(mod.market("Brest or Draw",fx,{"home":2,"away":1}),"MISS")
     def test_unsupported_market_stays_open(self):
         with self.assertRaises(ValueError):
             mod.market("Winning Margin 3+",{"home":"PSV","away":"Club Brugge"},{"home":1,"away":2})
@@ -44,6 +49,27 @@ class RecoveryTests(unittest.TestCase):
         completed=audit(9,0,"2026-11-04T08:00:00Z")
         regression=audit(4,5,"2026-11-05T08:00:00Z")
         self.assertGreater(mod.quality(completed),mod.quality(regression))
+
+class IdentityToleranceTests(unittest.TestCase):
+    def test_provider_display_names_resolve_but_wrong_opponent_does_not(self):
+        fx={"home":"Porto","away":"Napoli","kickoff_utc":"2026-11-04T20:00:00Z"}
+        ok={"names":{"home":"FC Porto","away":"Napoli"},"score":{"home":4,"away":1},"date":"2026-11-04T20:00:00Z","id":"2"}
+        self.assertIsNotNone(mod.resolve(fx,[ok]))
+        self.assertIsNone(mod.resolve(fx,[dict(ok,names={"home":"FC Porto","away":"Arsenal"})]))
+        fx2={"home":"Viking","away":"Sabah FK","kickoff_utc":"2026-11-04T20:00:00Z"}
+        ev2={"names":{"home":"Viking","away":"Sabah FA"},"score":{"home":4,"away":1},"date":"2026-11-04T22:00:00Z","id":"6"}
+        self.assertIsNone(mod.resolve(fx2,[ev2]))                                      # tolerant tier needs the same kickoff instant (+-30 min)
+        self.assertIsNotNone(mod.resolve(fx2,[dict(ev2,date="2026-11-04T20:00:00Z")]))
+    def test_psv_and_slavia_resolve(self):
+        for h,a,eh,ea in (("PSV","Club Brugge","PSV Eindhoven","Club Brugge KV"),("Slavia Prague","Arsenal","SK Slavia Praha","Arsenal"),("Dortmund","Real Betis","Borussia Dortmund","Real Betis")):
+            fx={"home":h,"away":a,"kickoff_utc":"2026-11-04T20:00:00Z"}
+            ev={"names":{"home":eh,"away":ea},"score":{"home":1,"away":0},"date":"2026-11-04T20:00:00Z","id":"3"}
+            self.assertIsNotNone(mod.resolve(fx,[ev]),(h,a))
+    def test_two_candidates_stay_pending(self):
+        fx={"home":"Real Madrid","away":"Sevilla","kickoff_utc":"2026-11-04T20:00:00Z"}
+        e1={"names":{"home":"Real Madrid CF","away":"Sevilla FC"},"score":{"home":1,"away":0},"date":"2026-11-04T20:00:00Z","id":"4"}
+        e2=dict(e1,id="5",names={"home":"Real Madrid C.F.","away":"Sevilla F.C."})
+        self.assertIsNone(mod.resolve(fx,[e1,e2]))
 
 if __name__=="__main__":
     unittest.main()
