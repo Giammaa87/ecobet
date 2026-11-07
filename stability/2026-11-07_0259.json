@@ -1,0 +1,2020 @@
+{
+ "content_sha256": "d5b2f01f95dc97992c73bed62eff54ef757450949b4290893b1cdb1eda2ed675",
+ "counts": {
+  "excluded": 1,
+  "fixtures": 19,
+  "not_evaluable": 2,
+  "ranked": 16,
+  "tiers": {
+   "HOCH": 4,
+   "MITTEL": 10,
+   "NIEDRIG": 2
+  }
+ },
+ "data_status": "AUTOMATIC_UNVALIDATED",
+ "data_status_note": null,
+ "disclaimer": "Modellinterne Stabilitaet der bestehenden FAVOURITE Prediction. Keine Trefferwahrscheinlichkeit, keine Quote, keine Erfolgsaussage. Punkte sind Ordnungspunkte, keine Prozent.",
+ "excluded": [
+  {
+   "away": "Paris FC",
+   "competition": "Ligue 1",
+   "detail": [
+    "CANDIDATE_CONTRACT_TECHNICAL_FAILURE",
+    "REQUIRED_PATH_FAILURE_TECHNICAL_CAUSE"
+   ],
+   "fixture_id": "FRA2627_6be08094459d",
+   "home": "Auxerre",
+   "kickoff_utc": "2026-11-07T18:00:00+00:00",
+   "reason": "TECHNICAL_BLOCKER"
+  }
+ ],
+ "fixture_timing": {
+  "ENG2627_03ba28a8daf0": "PRE_KICKOFF",
+  "ENG2627_26b1e07e480d": "PRE_KICKOFF",
+  "ENG2627_3c0f7dd22426": "PRE_KICKOFF",
+  "ENG2627_b1b34f76d289": "PRE_KICKOFF",
+  "ESP2627_2cfebd83ac98": "PRE_KICKOFF",
+  "ESP2627_437ebf16b684": "PRE_KICKOFF",
+  "ESP2627_442ed245ee9a": "PRE_KICKOFF",
+  "ESP2627_cea9bfeb6e7d": "PRE_KICKOFF",
+  "FRA2627_5518ba5ae81e": "PRE_KICKOFF",
+  "FRA2627_6be08094459d": "PRE_KICKOFF",
+  "GER2627_058168645221": "PRE_KICKOFF",
+  "GER2627_649a4ec4852f": "PRE_KICKOFF",
+  "GER2627_85e564d0a989": "PRE_KICKOFF",
+  "GER2627_a0ef7f7208ad": "PRE_KICKOFF",
+  "GER2627_bd0beb0b5454": "PRE_KICKOFF",
+  "ITA2627_569c8c29de37": "PRE_KICKOFF",
+  "ITA2627_62bc6c69cda5": "PRE_KICKOFF",
+  "ITA2627_b330da318a13": "PRE_KICKOFF",
+  "ITA2627_ec85d84e0c8c": "PRE_KICKOFF"
+ },
+ "generated_at_utc": "2026-11-07T11:12:04.983061+00:00",
+ "module_sha256": "64e10d38fcde0bc307671b8e51d74c72509457650c6fc2dd46a355f47c580eb0",
+ "not_evaluable": [
+  {
+   "away": "Newcastle United",
+   "competition": "Premier League",
+   "favourite": "Match Goals 1-3",
+   "favourite_source": "BALANCED",
+   "fixture_id": "ENG2627_26b1e07e480d",
+   "home": "Fulham",
+   "kickoff_utc": "2026-11-07T15:00:00+00:00",
+   "reason": "FAVOURITE_AUSDRUCK_NICHT_AUSWERTBAR"
+  },
+  {
+   "away": "Tottenham Hotspur",
+   "competition": "Premier League",
+   "favourite": "First Half Under 1.5",
+   "favourite_source": "BALANCED",
+   "fixture_id": "ENG2627_3c0f7dd22426",
+   "home": "Leeds United",
+   "kickoff_utc": "2026-11-07T12:30:00+00:00",
+   "reason": "FAVOURITE_AUSDRUCK_NICHT_AUSWERTBAR"
+  }
+ ],
+ "publication": {
+  "derived_file_sha256": "dacd3c52adc80b96c3f8da2466a0af1aaaf2fb835317b8bddbd4a00597d834d2",
+  "logical_run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+  "publication_id": "2026-11-07_0259",
+  "run_date": "2026-11-07"
+ },
+ "publication_id": "2026-11-07_0259",
+ "ranked": [
+  {
+   "away": "Manchester City",
+   "competition": "Premier League",
+   "coverage": {
+    "all": {
+     "confirmed": 4,
+     "of": 4
+    },
+    "four": {
+     "confirmed": 4,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "0-2"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "0-1"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "1-2"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "1-1"
+      }
+     ],
+     "text": "4/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -8,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Nottingham Forest Team Goals Under 1.5",
+   "favourite_source": "SAFE",
+   "fixture_id": "ENG2627_b1b34f76d289",
+   "home": "Nottingham Forest",
+   "kickoff_utc": "2026-11-07T17:30:00+00:00",
+   "market_class": "SPEZIFISCH",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "Manchester City or Draw",
+     "relation": "UEBERLAPPT",
+     "role": "BALANCED"
+    },
+    {
+     "expression": "Manchester City Team Goals Over 1.5",
+     "relation": "UEBERLAPPT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 1,
+   "reason": "4/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 2/2; Tail 1/1. Pfade: BALANCED ueberlappt, AGGRESSIVE ueberlappt. Markt SPEZIFISCH. Datenlage 8 Abzug. Punkte 64.0 -> HOCH.",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 20.0,
+     "C_paths": 2,
+     "D_penalty": -8,
+     "E_market": 20.0,
+     "contradictions_penalty": 0
+    },
+    "score": 64.0,
+    "tier": "HOCH"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "s_alt_narrow_away",
+     "s_primary_controlled_away"
+    ],
+    "competing_scenarios": {
+     "confirmed": 2,
+     "of": 2
+    },
+    "competing_supports": true,
+    "competing_world": "s_alt_narrow_away",
+    "primary_supports": true,
+    "primary_world": "s_primary_controlled_away",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": false,
+    "tail_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Bologna",
+   "competition": "Serie A",
+   "coverage": {
+    "all": {
+     "confirmed": 4,
+     "of": 4
+    },
+    "four": {
+     "confirmed": 4,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "0-1"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "0-2"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "1-1"
+      },
+      {
+       "confirms": true,
+       "role": "TAIL",
+       "score": "1-2"
+      }
+     ],
+     "text": "4/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -8,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Parma Team Goals Under 1.5",
+   "favourite_source": "BALANCED",
+   "fixture_id": "ITA2627_b330da318a13",
+   "home": "Parma",
+   "kickoff_utc": "2026-11-07T17:00:00+00:00",
+   "market_class": "SPEZIFISCH",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "Bologna Draw No Bet",
+     "relation": "UNBEKANNT",
+     "role": "SAFE"
+    },
+    {
+     "expression": "Match Total Under 3.5",
+     "relation": "UEBERLAPPT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 2,
+   "reason": "4/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 1/1; Tail 1/1. Pfade: SAFE unbekannt, AGGRESSIVE ueberlappt. Markt SPEZIFISCH. Datenlage 8 Abzug. Punkte 63.0 -> HOCH.",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 20.0,
+     "C_paths": 1,
+     "D_penalty": -8,
+     "E_market": 20.0,
+     "contradictions_penalty": 0
+    },
+    "score": 63.0,
+    "tier": "HOCH"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "ST1_PRIMARY",
+     "ST2_ALTERNATIVE"
+    ],
+    "competing_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    },
+    "competing_supports": true,
+    "competing_world": "ST2_ALTERNATIVE",
+    "primary_supports": true,
+    "primary_world": "ST1_PRIMARY",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": false,
+    "tail_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Werder Bremen",
+   "competition": "Bundesliga",
+   "coverage": {
+    "all": {
+     "confirmed": 4,
+     "of": 5
+    },
+    "four": {
+     "confirmed": 4,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "2-1"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "3-1"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-2"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "1-2"
+      }
+     ],
+     "text": "4/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -8,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Both Teams To Score: Yes",
+   "favourite_source": "BALANCED",
+   "fixture_id": "GER2627_649a4ec4852f",
+   "home": "VfB Stuttgart",
+   "kickoff_utc": "2026-11-07T17:30:00+00:00",
+   "market_class": "SPEZIFISCH",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "VfB Stuttgart Team Goals Over 0.5",
+     "relation": "UEBERLAPPT",
+     "role": "SAFE"
+    },
+    {
+     "expression": "Match Total Over 2.5",
+     "relation": "UEBERLAPPT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 3,
+   "reason": "4/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 2/2; Tail 0/1; Tail-Widerspruch aufgezeichnet. Pfade: SAFE ueberlappt, AGGRESSIVE ueberlappt. Markt SPEZIFISCH. Datenlage 8 Abzug. Punkte 58.0 -> HOCH. Punktgleich mit Nachbarplatz, Reihenfolge nach Tie-Break (A, E, B, Anpfiff).",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 14.0,
+     "C_paths": 2,
+     "D_penalty": -8,
+     "E_market": 20.0,
+     "contradictions_penalty": 0
+    },
+    "score": 58.0,
+    "tier": "HOCH"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "s_away_reply",
+     "s_primary"
+    ],
+    "competing_scenarios": {
+     "confirmed": 2,
+     "of": 2
+    },
+    "competing_supports": true,
+    "competing_world": "s_away_reply",
+    "primary_supports": true,
+    "primary_world": "s_primary",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": true,
+    "tail_scenarios": {
+     "confirmed": 0,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Athletic Club",
+   "competition": "La Liga",
+   "coverage": {
+    "all": {
+     "confirmed": 4,
+     "of": 4
+    },
+    "four": {
+     "confirmed": 4,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "1-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "1-1"
+      },
+      {
+       "confirms": true,
+       "role": "TAIL",
+       "score": "1-2"
+      }
+     ],
+     "text": "4/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "match_context PARTIAL",
+      "points": -1
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -9,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Match Total Under 3.5",
+   "favourite_source": "SAFE",
+   "fixture_id": "ESP2627_442ed245ee9a",
+   "home": "Osasuna",
+   "kickoff_utc": "2026-11-07T17:30:00+00:00",
+   "market_class": "MITTEL",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "Osasuna Team Goals Over 0.5",
+     "relation": "UEBERLAPPT",
+     "role": "BALANCED"
+    },
+    {
+     "expression": "Match Total Under 2.5",
+     "relation": "STUETZT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 4,
+   "reason": "4/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 1/1; Tail 1/1. Pfade: BALANCED ueberlappt, AGGRESSIVE stuetzt. Markt MITTEL. Datenlage 9 Abzug. Punkte 58.0 -> HOCH. Punktgleich mit Nachbarplatz, Reihenfolge nach Tie-Break (A, E, B, Anpfiff).",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 20.0,
+     "C_paths": 7,
+     "D_penalty": -9,
+     "E_market": 10.0,
+     "contradictions_penalty": 0
+    },
+    "score": 58.0,
+    "tier": "HOCH"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "s_draw",
+     "s_primary"
+    ],
+    "competing_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    },
+    "competing_supports": true,
+    "competing_world": "s_draw",
+    "primary_supports": true,
+    "primary_world": "s_primary",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": false,
+    "tail_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Deportivo La Coruna",
+   "competition": "La Liga",
+   "coverage": {
+    "all": {
+     "confirmed": 3,
+     "of": 3
+    },
+    "four": {
+     "confirmed": 3,
+     "of": 3,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "1-1"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "1-2"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-1"
+      }
+     ],
+     "text": "3/3"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "match_context PARTIAL",
+      "points": -1
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -9,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Match Total Under 3.5",
+   "favourite_source": "SAFE",
+   "fixture_id": "ESP2627_2cfebd83ac98",
+   "home": "Espanyol",
+   "kickoff_utc": "2026-11-07T15:15:00+00:00",
+   "market_class": "MITTEL",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "Both Teams To Score: Yes",
+     "relation": "UEBERLAPPT",
+     "role": "BALANCED"
+    },
+    {
+     "expression": "Deportivo La Coruna or Draw",
+     "relation": "UEBERLAPPT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 5,
+   "reason": "3/3 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 1/1; Tail 1/1. Pfade: BALANCED ueberlappt, AGGRESSIVE ueberlappt. Markt MITTEL. Datenlage 9 Abzug. Punkte 53.0 -> MITTEL. Punktgleich mit Nachbarplatz, Reihenfolge nach Tie-Break (A, E, B, Anpfiff).",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 20.0,
+     "C_paths": 2,
+     "D_penalty": -9,
+     "E_market": 10.0,
+     "contradictions_penalty": 0
+    },
+    "score": 53.0,
+    "tier": "MITTEL"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "s_away_edge",
+     "s_primary"
+    ],
+    "competing_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    },
+    "competing_supports": true,
+    "competing_world": "s_away_edge",
+    "primary_supports": true,
+    "primary_world": "s_primary",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": false,
+    "tail_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Real Madrid",
+   "competition": "La Liga",
+   "coverage": {
+    "all": {
+     "confirmed": 4,
+     "of": 4
+    },
+    "four": {
+     "confirmed": 4,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "0-2"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "0-3"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "1-2"
+      },
+      {
+       "confirms": true,
+       "role": "TAIL",
+       "score": "1-1"
+      }
+     ],
+     "text": "4/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "match_context PARTIAL",
+      "points": -1
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -9,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Real Madrid or Draw",
+   "favourite_source": "SAFE",
+   "fixture_id": "ESP2627_cea9bfeb6e7d",
+   "home": "Valencia",
+   "kickoff_utc": "2026-11-07T20:00:00+00:00",
+   "market_class": "MITTEL",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "Valencia Team Goals Under 1.5",
+     "relation": "UEBERLAPPT",
+     "role": "BALANCED"
+    },
+    {
+     "expression": "Real Madrid Team Goals Over 1.5",
+     "relation": "UEBERLAPPT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 6,
+   "reason": "4/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 1/1; Tail 1/1. Pfade: BALANCED ueberlappt, AGGRESSIVE ueberlappt. Markt MITTEL. Datenlage 9 Abzug. Punkte 53.0 -> MITTEL. Punktgleich mit Nachbarplatz, Reihenfolge nach Tie-Break (A, E, B, Anpfiff).",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 20.0,
+     "C_paths": 2,
+     "D_penalty": -9,
+     "E_market": 10.0,
+     "contradictions_penalty": 0
+    },
+    "score": 53.0,
+    "tier": "MITTEL"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "story_home_goal_but_away_edge",
+     "story_primary_away_control"
+    ],
+    "competing_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    },
+    "competing_supports": true,
+    "competing_world": "story_home_goal_but_away_edge",
+    "primary_supports": true,
+    "primary_world": "story_primary_away_control",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": false,
+    "tail_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Eintracht Frankfurt",
+   "competition": "Bundesliga",
+   "coverage": {
+    "all": {
+     "confirmed": 4,
+     "of": 5
+    },
+    "four": {
+     "confirmed": 4,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "1-1"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "0-1"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "1-2"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-1"
+      }
+     ],
+     "text": "4/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -8,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Match Total Under 3.5",
+   "favourite_source": "BALANCED",
+   "fixture_id": "GER2627_bd0beb0b5454",
+   "home": "SC Paderborn",
+   "kickoff_utc": "2026-11-07T14:30:00+00:00",
+   "market_class": "MITTEL",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "Match Total Under 4.5",
+     "relation": "UEBERLAPPT",
+     "role": "SAFE"
+    },
+    {
+     "expression": "Match Total Under 2.5",
+     "relation": "STUETZT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 7,
+   "reason": "4/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 2/2; Tail 0/1; Tail-Widerspruch aufgezeichnet. Pfade: SAFE ueberlappt, AGGRESSIVE stuetzt. Markt MITTEL. Datenlage 8 Abzug. Punkte 53.0 -> MITTEL. Punktgleich mit Nachbarplatz, Reihenfolge nach Tie-Break (A, E, B, Anpfiff).",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 14.0,
+     "C_paths": 7,
+     "D_penalty": -8,
+     "E_market": 10.0,
+     "contradictions_penalty": 0
+    },
+    "score": 53.0,
+    "tier": "MITTEL"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "S1",
+     "S2"
+    ],
+    "competing_scenarios": {
+     "confirmed": 2,
+     "of": 2
+    },
+    "competing_supports": true,
+    "competing_world": "S2",
+    "primary_supports": true,
+    "primary_world": "S1",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": true,
+    "tail_scenarios": {
+     "confirmed": 0,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Troyes",
+   "competition": "Ligue 1",
+   "coverage": {
+    "all": {
+     "confirmed": 4,
+     "of": 5
+    },
+    "four": {
+     "confirmed": 4,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "3-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "3-1"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-1"
+      }
+     ],
+     "text": "4/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -8,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Paris Saint-Germain Team Goals Over 1.5",
+   "favourite_source": "BALANCED",
+   "fixture_id": "FRA2627_5518ba5ae81e",
+   "home": "Paris Saint-Germain",
+   "kickoff_utc": "2026-11-07T20:05:00+00:00",
+   "market_class": "MITTEL",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "Troyes Team Goals Under 1.5",
+     "relation": "UEBERLAPPT",
+     "role": "SAFE"
+    },
+    {
+     "expression": "Paris Saint-Germain Team Goals Over 2.5",
+     "relation": "STUETZT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 8,
+   "reason": "4/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 2/2; Tail 0/1; Tail-Widerspruch aufgezeichnet. Pfade: SAFE ueberlappt, AGGRESSIVE stuetzt. Markt MITTEL. Datenlage 8 Abzug. Punkte 53.0 -> MITTEL. Punktgleich mit Nachbarplatz, Reihenfolge nach Tie-Break (A, E, B, Anpfiff).",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 14.0,
+     "C_paths": 7,
+     "D_penalty": -8,
+     "E_market": 10.0,
+     "contradictions_penalty": 0
+    },
+    "score": 53.0,
+    "tier": "MITTEL"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "S1",
+     "S2"
+    ],
+    "competing_scenarios": {
+     "confirmed": 2,
+     "of": 2
+    },
+    "competing_supports": true,
+    "competing_world": "S2",
+    "primary_supports": true,
+    "primary_world": "S1",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": true,
+    "tail_scenarios": {
+     "confirmed": 0,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Augsburg",
+   "competition": "Bundesliga",
+   "coverage": {
+    "all": {
+     "confirmed": 4,
+     "of": 4
+    },
+    "four": {
+     "confirmed": 4,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "2-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "3-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "3-1"
+      },
+      {
+       "confirms": true,
+       "role": "TAIL",
+       "score": "3-2"
+      }
+     ],
+     "text": "4/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "match_context PARTIAL",
+      "points": -1
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -9,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "RB Leipzig Team Goals Over 1.5",
+   "favourite_source": "BALANCED",
+   "fixture_id": "GER2627_a0ef7f7208ad",
+   "home": "RB Leipzig",
+   "kickoff_utc": "2026-11-07T14:30:00+00:00",
+   "market_class": "MITTEL",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "RB Leipzig Draw No Bet",
+     "relation": "UNBEKANNT",
+     "role": "SAFE"
+    },
+    {
+     "expression": "RB Leipzig to win",
+     "relation": "UEBERLAPPT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 9,
+   "reason": "4/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 1/1; Tail 1/1. Pfade: SAFE unbekannt, AGGRESSIVE ueberlappt. Markt MITTEL. Datenlage 9 Abzug. Punkte 52.0 -> MITTEL.",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 20.0,
+     "C_paths": 1,
+     "D_penalty": -9,
+     "E_market": 10.0,
+     "contradictions_penalty": 0
+    },
+    "score": 52.0,
+    "tier": "MITTEL"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "s_open_home_win",
+     "s_primary"
+    ],
+    "competing_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    },
+    "competing_supports": true,
+    "competing_world": "s_open_home_win",
+    "primary_supports": true,
+    "primary_world": "s_primary",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": false,
+    "tail_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Racing Santander",
+   "competition": "La Liga",
+   "coverage": {
+    "all": {
+     "confirmed": 5,
+     "of": 5
+    },
+    "four": {
+     "confirmed": 4,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "2-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "1-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-1"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "1-1"
+      }
+     ],
+     "text": "4/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "match_context PARTIAL",
+      "points": -1
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -9,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Malaga Team Goals Over 0.5",
+   "favourite_source": "BALANCED",
+   "fixture_id": "ESP2627_437ebf16b684",
+   "home": "Malaga",
+   "kickoff_utc": "2026-11-07T13:00:00+00:00",
+   "market_class": "BREIT",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "Racing Santander Team Goals Under 2.5",
+     "relation": "UEBERLAPPT",
+     "role": "SAFE"
+    },
+    {
+     "expression": "Malaga Team Goals Over 1.5",
+     "relation": "STUETZT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 10,
+   "reason": "4/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 2/2; Tail 1/1. Pfade: SAFE ueberlappt, AGGRESSIVE stuetzt. Markt BREIT (kein Zusatz). Datenlage 9 Abzug. Punkte 48.0 -> MITTEL. Punktgleich mit Nachbarplatz, Reihenfolge nach Tie-Break (A, E, B, Anpfiff).",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 20.0,
+     "C_paths": 7,
+     "D_penalty": -9,
+     "E_market": 0.0,
+     "contradictions_penalty": 0
+    },
+    "score": 48.0,
+    "tier": "MITTEL"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "s_alternative",
+     "s_primary"
+    ],
+    "competing_scenarios": {
+     "confirmed": 2,
+     "of": 2
+    },
+    "competing_supports": true,
+    "competing_world": "s_alternative",
+    "primary_supports": true,
+    "primary_world": "s_primary",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": false,
+    "tail_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Lecce",
+   "competition": "Serie A",
+   "coverage": {
+    "all": {
+     "confirmed": 4,
+     "of": 4
+    },
+    "four": {
+     "confirmed": 4,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "2-1"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "1-1"
+      },
+      {
+       "confirms": true,
+       "role": "TAIL",
+       "score": "1-2"
+      }
+     ],
+     "text": "4/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -8,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Torino Team Goals Over 0.5",
+   "favourite_source": "SAFE",
+   "fixture_id": "ITA2627_62bc6c69cda5",
+   "home": "Torino",
+   "kickoff_utc": "2026-11-07T14:00:00+00:00",
+   "market_class": "BREIT",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "Torino Draw No Bet",
+     "relation": "UNBEKANNT",
+     "role": "BALANCED"
+    },
+    {
+     "expression": "Torino Team Goals Over 1.5",
+     "relation": "STUETZT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 11,
+   "reason": "4/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 1/1; Tail 1/1. Pfade: BALANCED unbekannt, AGGRESSIVE stuetzt. Markt BREIT (kein Zusatz). Datenlage 8 Abzug. Punkte 48.0 -> MITTEL. Punktgleich mit Nachbarplatz, Reihenfolge nach Tie-Break (A, E, B, Anpfiff).",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 20.0,
+     "C_paths": 6,
+     "D_penalty": -8,
+     "E_market": 0.0,
+     "contradictions_penalty": 0
+    },
+    "score": 48.0,
+    "tier": "MITTEL"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "ST1",
+     "ST2"
+    ],
+    "competing_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    },
+    "competing_supports": true,
+    "competing_world": "ST2",
+    "primary_supports": true,
+    "primary_world": "ST1",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": false,
+    "tail_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Bayern Munich",
+   "competition": "Bundesliga",
+   "coverage": {
+    "all": {
+     "confirmed": 4,
+     "of": 5
+    },
+    "four": {
+     "confirmed": 4,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "1-3"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "1-2"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-3"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-2"
+      }
+     ],
+     "text": "4/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "match_context PARTIAL",
+      "points": -1
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -9,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Bayern Munich Team Goals Over 1.5",
+   "favourite_source": "BALANCED",
+   "fixture_id": "GER2627_85e564d0a989",
+   "home": "Mainz 05",
+   "kickoff_utc": "2026-11-07T14:30:00+00:00",
+   "market_class": "MITTEL",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "Bayern Munich or Draw",
+     "relation": "UEBERLAPPT",
+     "role": "SAFE"
+    },
+    {
+     "expression": "Match Total Over 2.5",
+     "relation": "UEBERLAPPT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 12,
+   "reason": "4/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 1/1; Tail 0/1; Tail-Widerspruch aufgezeichnet. Pfade: SAFE ueberlappt, AGGRESSIVE ueberlappt. Markt MITTEL. Datenlage 9 Abzug. Punkte 47.0 -> MITTEL.",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 14.0,
+     "C_paths": 2,
+     "D_penalty": -9,
+     "E_market": 10.0,
+     "contradictions_penalty": 0
+    },
+    "score": 47.0,
+    "tier": "MITTEL"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "s_alt_open_draw",
+     "s_primary_away_control"
+    ],
+    "competing_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    },
+    "competing_supports": true,
+    "competing_world": "s_alt_open_draw",
+    "primary_supports": true,
+    "primary_world": "s_primary_away_control",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": true,
+    "tail_scenarios": {
+     "confirmed": 0,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Sassuolo",
+   "competition": "Serie A",
+   "coverage": {
+    "all": {
+     "confirmed": 3,
+     "of": 4
+    },
+    "four": {
+     "confirmed": 3,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "2-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "3-1"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-1"
+      },
+      {
+       "confirms": false,
+       "role": "TAIL",
+       "score": "1-1"
+      }
+     ],
+     "text": "3/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -8,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Roma to win",
+   "favourite_source": "BALANCED",
+   "fixture_id": "ITA2627_ec85d84e0c8c",
+   "home": "Roma",
+   "kickoff_utc": "2026-11-07T19:45:00+00:00",
+   "market_class": "SPEZIFISCH",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "Roma or Draw",
+     "relation": "UEBERLAPPT",
+     "role": "SAFE"
+    },
+    {
+     "expression": "Roma Team Goals Over 1.5",
+     "relation": "UEBERLAPPT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 13,
+   "reason": "3/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 2/2; Tail 0/1; Tail-Widerspruch aufgezeichnet. Pfade: SAFE ueberlappt, AGGRESSIVE ueberlappt. Markt SPEZIFISCH. Datenlage 8 Abzug. Punkte 45.5 -> MITTEL.",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 22.5,
+     "B_worlds": 14.0,
+     "C_paths": 2,
+     "D_penalty": -8,
+     "E_market": 15.0,
+     "contradictions_penalty": 0
+    },
+    "score": 45.5,
+    "tier": "MITTEL"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "st_alternative_open",
+     "st_primary_control"
+    ],
+    "competing_scenarios": {
+     "confirmed": 2,
+     "of": 2
+    },
+    "competing_supports": true,
+    "competing_world": "st_alternative_open",
+    "primary_supports": true,
+    "primary_world": "st_primary_control",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": true,
+    "tail_scenarios": {
+     "confirmed": 0,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "Frosinone",
+   "competition": "Serie A",
+   "coverage": {
+    "all": {
+     "confirmed": 4,
+     "of": 5,
+     "push": 1
+    },
+    "four": {
+     "confirmed": 3,
+     "of": 3,
+     "scores": [
+      {
+       "confirms": true,
+       "result": "HIT",
+       "role": "MODAL",
+       "score": "0-1"
+      },
+      {
+       "confirms": true,
+       "result": "HIT",
+       "role": "ALTERNATIVE",
+       "score": "0-2"
+      },
+      {
+       "confirms": true,
+       "result": "HIT",
+       "role": "ALTERNATIVE",
+       "score": "1-2"
+      },
+      {
+       "confirms": null,
+       "result": "PUSH",
+       "role": "ALTERNATIVE",
+       "score": "1-1"
+      }
+     ],
+     "text": "3/3"
+    },
+    "modal_confirms": true,
+    "push_scenarios_four": 1
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -8,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Frosinone Draw No Bet",
+   "favourite_source": "BALANCED",
+   "fixture_id": "ITA2627_569c8c29de37",
+   "home": "Cagliari",
+   "kickoff_utc": "2026-11-07T14:00:00+00:00",
+   "market_class": "MITTEL",
+   "notes": [
+    "DNB_PUSH_SZENARIEN_NEUTRAL_1",
+    "KEINE_GEGENWELT_SZENARIEN"
+   ],
+   "path_support": [
+    {
+     "expression": "Frosinone Team Goals Over 0.5",
+     "relation": "UEBERLAPPT",
+     "role": "SAFE"
+    },
+    {
+     "expression": "Frosinone Team Goals Over 1.5",
+     "relation": "UEBERLAPPT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 14,
+   "reason": "3/3 Szenarien bestaetigen (modales Szenario bestaetigt), 1 Remis-Szenario(s) als PUSH neutral (weder HIT noch MISS). Hauptwelt traegt; Gegenwelt traegt mit; Tail 1/2; Tail-Widerspruch aufgezeichnet. Pfade: SAFE ueberlappt, AGGRESSIVE ueberlappt. Markt MITTEL. Datenlage 8 Abzug. Punkte 42.0 -> MITTEL.",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 30.0,
+     "B_worlds": 8.0,
+     "C_paths": 2,
+     "D_penalty": -8,
+     "E_market": 10.0,
+     "contradictions_penalty": 0
+    },
+    "score": 42.0,
+    "tier": "MITTEL"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "s1_primary",
+     "s2_draw"
+    ],
+    "competing_scenarios": {
+     "confirmed": 0,
+     "of": 0
+    },
+    "competing_supports": true,
+    "competing_world": "s2_draw",
+    "primary_supports": true,
+    "primary_world": "s1_primary",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": true,
+    "tail_scenarios": {
+     "confirmed": 1,
+     "of": 2
+    }
+   }
+  },
+  {
+   "away": "Hull City",
+   "competition": "Premier League",
+   "coverage": {
+    "all": {
+     "confirmed": 3,
+     "of": 4
+    },
+    "four": {
+     "confirmed": 3,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "2-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "3-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-1"
+      },
+      {
+       "confirms": false,
+       "role": "TAIL",
+       "score": "1-1"
+      }
+     ],
+     "text": "3/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -8,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Arsenal Team Goals Over 1.5",
+   "favourite_source": "BALANCED",
+   "fixture_id": "ENG2627_03ba28a8daf0",
+   "home": "Arsenal",
+   "kickoff_utc": "2026-11-07T15:00:00+00:00",
+   "market_class": "MITTEL",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "Arsenal Team Goals Over 0.5",
+     "relation": "UEBERLAPPT",
+     "role": "SAFE"
+    },
+    {
+     "expression": "Arsenal to win",
+     "relation": "UEBERLAPPT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 15,
+   "reason": "3/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 1/1; Tail 0/1; Tail-Widerspruch aufgezeichnet. Pfade: SAFE ueberlappt, AGGRESSIVE ueberlappt. Markt MITTEL. Datenlage 8 Abzug. Punkte 38.0 -> NIEDRIG.",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 22.5,
+     "B_worlds": 14.0,
+     "C_paths": 2,
+     "D_penalty": -8,
+     "E_market": 7.5,
+     "contradictions_penalty": 0
+    },
+    "score": 38.0,
+    "tier": "NIEDRIG"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "s_alternative_hull_counter",
+     "s_primary_control"
+    ],
+    "competing_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    },
+    "competing_supports": true,
+    "competing_world": "s_alternative_hull_counter",
+    "primary_supports": true,
+    "primary_world": "s_primary_control",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": true,
+    "tail_scenarios": {
+     "confirmed": 0,
+     "of": 1
+    }
+   }
+  },
+  {
+   "away": "SV Elversberg",
+   "competition": "Bundesliga",
+   "coverage": {
+    "all": {
+     "confirmed": 3,
+     "of": 4
+    },
+    "four": {
+     "confirmed": 3,
+     "of": 4,
+     "scores": [
+      {
+       "confirms": true,
+       "role": "MODAL",
+       "score": "2-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "3-0"
+      },
+      {
+       "confirms": true,
+       "role": "ALTERNATIVE",
+       "score": "2-1"
+      },
+      {
+       "confirms": false,
+       "role": "TAIL",
+       "score": "1-1"
+      }
+     ],
+     "text": "3/4"
+    },
+    "modal_confirms": true
+   },
+   "data_quality": {
+    "flags": [],
+    "items": [
+     {
+      "item": "strength_model PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "structural_strength PARTIAL",
+      "points": -1
+     },
+     {
+      "item": "player_context_home NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "player_context_away NOT_AVAILABLE",
+      "points": -3
+     },
+     {
+      "item": "match_context PARTIAL",
+      "points": -1
+     }
+    ],
+    "missing_families": 0,
+    "penalty": -9,
+    "stability_light": "YELLOW"
+   },
+   "date": "2026-11-07",
+   "favourite": "Borussia Dortmund Team Goals Over 1.5",
+   "favourite_source": "BALANCED",
+   "fixture_id": "GER2627_058168645221",
+   "home": "Borussia Dortmund",
+   "kickoff_utc": "2026-11-07T14:30:00+00:00",
+   "market_class": "MITTEL",
+   "notes": [],
+   "path_support": [
+    {
+     "expression": "SV Elversberg Team Goals Under 1.5",
+     "relation": "UEBERLAPPT",
+     "role": "SAFE"
+    },
+    {
+     "expression": "Borussia Dortmund to win",
+     "relation": "UEBERLAPPT",
+     "role": "AGGRESSIVE"
+    }
+   ],
+   "publication_id": "2026-11-07_0259",
+   "rank": 16,
+   "reason": "3/4 Szenarien bestaetigen (modales Szenario bestaetigt). Hauptwelt traegt; Gegenwelt traegt mit; Gegenwelt-Szenarien 1/1; Tail 0/1; Tail-Widerspruch aufgezeichnet. Pfade: SAFE ueberlappt, AGGRESSIVE ueberlappt. Markt MITTEL. Datenlage 9 Abzug. Punkte 37.0 -> NIEDRIG.",
+   "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+   "stability": {
+    "components": {
+     "A_scenarios": 22.5,
+     "B_worlds": 14.0,
+     "C_paths": 2,
+     "D_penalty": -9,
+     "E_market": 7.5,
+     "contradictions_penalty": 0
+    },
+    "score": 37.0,
+    "tier": "NIEDRIG"
+   },
+   "world_support": {
+    "candidate_worlds": [
+     "s_alternative_opening",
+     "s_primary_control"
+    ],
+    "competing_scenarios": {
+     "confirmed": 1,
+     "of": 1
+    },
+    "competing_supports": true,
+    "competing_world": "s_alternative_opening",
+    "primary_supports": true,
+    "primary_world": "s_primary_control",
+    "recorded_competing_world_dependency": false,
+    "recorded_tail_contradiction": true,
+    "tail_scenarios": {
+     "confirmed": 0,
+     "of": 1
+    }
+   }
+  }
+ ],
+ "rules_sha256": "b5fa5148eac44f77651648ea67a209953c71cc973874f47d90bdeca498c296d9",
+ "rules_version": "FAVOURITE_STABILITY_V1_1",
+ "run_date": "2026-11-07",
+ "run_id": "ECOBET_LRUN_854b0caa20f0418c8862221cc5da2797",
+ "run_status": "RUN_PARTIAL",
+ "schema": "ECOBET_FAVOURITE_STABILITY_V1",
+ "source": {
+  "record_content_hash": "sha256:4fbe3ba9bdaac184253b480788edb582e24015c352664f96c602005d36e8944f",
+  "source_file_sha256": "11f7d552774770e438e91b9d616280335eb00610a2d11f59094bae65d7f0850c",
+  "source_schema": "2.1"
+ },
+ "tier_thresholds": {
+  "HOCH": 55,
+  "MITTEL": 40
+ }
+}
