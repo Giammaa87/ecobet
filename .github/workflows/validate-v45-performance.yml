@@ -1,0 +1,47 @@
+name: Validate ECOBET V4.5 performance competition recovery
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/build_website_phase1_indexes.py'
+      - 'tools/validate_website_phase1.py'
+      - 'tools/tests/test_performance_competitions.py'
+      - 'preview-v45/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check exact fixture identity resolution
+        run: |
+          python -m py_compile tools/build_website_phase1_indexes.py tools/validate_website_phase1.py
+          python -m unittest discover -s tools/tests -p 'test_performance_competitions.py' -v
+      - name: Rebuild competition-enriched immutable performance index
+        run: python tools/build_website_phase1_indexes.py .
+      - name: Validate every indexed settlement against unchanged source audit evidence
+        run: python tools/validate_website_phase1.py .
+      - name: Summarize unknown competition evidence after recovery
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          ptr=json.loads(Path('performance/latest.json').read_text())
+          perf=json.loads((Path('performance')/ptr['index_file']).read_text())
+          matches=[(a.get('run_audit_record',{}).get('run_id'),r) for a in perf['audits'] for r in a['match_audit_records']]
+          valid=[r for run,r in matches if r.get('fixture',{}).get('home') and r.get('fixture',{}).get('away')]
+          unknown=[r for r in valid if not (r.get('fixture',{}).get('competition') or r.get('fixture',{}).get('competition_name') or r.get('competition_metadata',{}).get('competition_name'))]
+          print(f'Valid raw audit rows: {len(valid)}, still missing competition: {len(unknown)}')
+          print('First unresolved:', [(r.get('fixture_id'),r.get('fixture',{}).get('home'),r.get('fixture',{}).get('away')) for r in unknown[:15]])
+          PY
