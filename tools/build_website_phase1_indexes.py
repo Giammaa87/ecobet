@@ -44,18 +44,56 @@ def selected(mapping, keys):
     return {key: mapping[key] for key in keys if key in mapping}
 
 
-def project_match(record: dict) -> dict:
+def resolve_published_match(record: dict, published_matches: list | None) -> dict | None:
+    """Resolve competition only against the *same run's* published match identity.
+
+    No guessing from team names, competition prefixes, or the audit date alone.
+    """
+    if not published_matches:
+        return None
+    fixture = record.get("fixture") or {}
+    candidates = [m for m in published_matches if isinstance(m, dict)]
+    fixture_id = record.get("fixture_id") or record.get("match_id") or fixture.get("fixture_id")
+    if fixture_id:
+        matches = [m for m in candidates if m.get("fixture_id") == fixture_id]
+        if len(matches) != 1:
+            return None
+        match = matches[0]
+        # Optional source identity fields must not contradict a published match.
+        if any(fixture.get(k) and fixture[k] != match.get(k) for k in ("home", "away")):
+            return None
+        if fixture.get("kickoff_utc") and match.get("kickoff") != fixture["kickoff_utc"]:
+            return None
+        return match
+    home, away = fixture.get("home"), fixture.get("away")
+    if not home or not away:
+        return None
+    matches = [m for m in candidates if m.get("home") == home and m.get("away") == away]
+    kickoff = fixture.get("kickoff_utc") or fixture.get("kickoff")
+    if kickoff:
+        matches = [m for m in matches if m.get("kickoff") == kickoff]
+    return matches[0] if len(matches) == 1 else None
+
+
+def project_match(record: dict, published_matches: list | None = None) -> dict:
+
     committed = record.get("committed_model") or {}
+    published_match = resolve_published_match(record, published_matches)
+    fixture = selected(record.get("fixture") or {}, [
+        "fixture_id", "home", "away", "competition", "competition_name", "kickoff", "kickoff_utc",
+    ])
+    if published_match:
+        fixture.setdefault("fixture_id", published_match.get("fixture_id"))
+        if not (fixture.get("competition") or fixture.get("competition_name")):
+            fixture["competition"] = published_match.get("competition")
     return {
         **selected(record, [
-            "match_id", "snapshot_id", "data_snapshot_id", "data_snapshot_coverage",
+            "match_id", "fixture_id", "snapshot_id", "data_snapshot_id", "data_snapshot_coverage",
             "data_source_mode", "snapshot_fixture_missing", "failure_cluster", "failure_tags",
             "audit_failure_tags", "audit_flags", "top_read", "top_read_rank", "top_read_tier",
             "selection",
         ]),
-        "fixture": selected(record.get("fixture") or {}, [
-            "fixture_id", "home", "away", "competition", "competition_name", "kickoff", "kickoff_utc",
-        ]),
+        "fixture": fixture,
         "competition_metadata": selected(record.get("competition_metadata") or {}, [
             "competition_id", "competition_name", "competition_group", "competition_type",
         ]),
@@ -124,6 +162,7 @@ def build_performance(site: Path):
             entries.append((date, record))
 
     projected, sources = [], []
+    run_cache = {}
     raw_bytes = 0
     for date, entry in entries:
         rel = entry["file"]
@@ -135,10 +174,15 @@ def build_performance(site: Path):
         for _, overlay in applied_overlays:
             corrected = apply_overlay(corrected, overlay)
         run = corrected.get("run_audit_record") or {}
+        run_id = run.get("run_id")
+        if run_id not in run_cache:
+            run_path = site / "runs" / (str(run_id) + ".json") if run_id else None
+            run_cache[run_id] = (read_json(run_path).get("matches") or []) if run_path and run_path.is_file() else []
+        published_matches = run_cache[run_id]
         projected.append({
             "audit_generated_at": corrected.get("audit_generated_at") or entry.get("generated_at"),
             "run_audit_record": selected(run, ["run_id", "id", "date", "date_range", "audit_generated_at", "generated_at"]),
-            "match_audit_records": [project_match(match) for match in corrected.get("match_audit_records") or []],
+            "match_audit_records": [project_match(match, published_matches) for match in corrected.get("match_audit_records") or []],
         })
         source = {"date": date, "file": f"audits/{rel}", "sha256": digest(path), "bytes": path.stat().st_size, "entry_generated_at": entry.get("generated_at")}
         if applied_overlays:
@@ -147,7 +191,7 @@ def build_performance(site: Path):
 
     document = {
         "schema_version": "website-performance-index/1.0",
-        "derivation": "display-only projection of published result audits; correction overlays applied before projection",
+        "derivation": "display-only projection of published result audits; correction overlays applied before projection; missing competition resolved only from exact matches in the same published run",
         "source_audit_count": len(sources),
         "source_audit_bytes": raw_bytes,
         "sources": sources,
