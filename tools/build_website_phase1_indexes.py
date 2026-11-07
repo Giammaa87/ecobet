@@ -102,7 +102,7 @@ def project_match(record: dict, published_matches: list | None = None) -> dict:
             "aggressive", "favourite", "favourite_pick", "favourite_prediction", "favourite_robustness",
             "robustness", "favourite_specificity", "flags", "nsp_codes", "ampel", "top_read",
             "top_reads", "top_read_rank", "top_read_tier", "selection", "team_score_bands",
-            "home_score_band", "away_score_band",
+            "home_score_band", "away_score_band", "paths", "favourite_meta", "selected_path",
         ]),
         "result_settlement": selected(record.get("result_settlement") or {}, [
             "safe_result", "balanced_result", "aggressive_result", "favourite_result",
