@@ -1,0 +1,402 @@
+{
+  "append_only": true,
+  "audit_generated_at": "2026-11-07T22:30:04Z",
+  "audit_id": "2026-11-02_2026-11-02_1307_V24_REV_0f5ee3057b712253",
+  "authority": {
+    "publication_admission": "C:\\ECOBET\\ecobet_v24_release\\authority\\ECOBET_RESULT_AUDIT_PUBLICATION_APPROVAL_V1.md",
+    "sha256": "sha256:63d5e1cdf4c5fce5363d882e84002d86e6f7eeb4581d05eff2daa6480d7935cd"
+  },
+  "match_audit_records": [
+    {
+      "committed_model": {
+        "aggressive": "Deportivo La Coruna to win",
+        "balanced": "Deportivo La Coruna Draw No Bet",
+        "favourite": "Deportivo La Coruna Team Goals Over 0.5",
+        "favourite_meta": {
+          "expression": "Deportivo La Coruna Team Goals Over 0.5",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Deportivo La Coruna Team Goals Over 0.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Deportivo La Coruna to win",
+            "outcome": "HIT",
+            "path_id": "aggressive:C4_HOME_WIN"
+          },
+          "balanced": {
+            "expression": "Deportivo La Coruna Draw No Bet",
+            "outcome": "HIT",
+            "path_id": "balanced:C3_HOME_DNB"
+          },
+          "safe": {
+            "expression": "Deportivo La Coruna Team Goals Over 0.5",
+            "outcome": "HIT",
+            "path_id": "safe:C1_HOME_OVER_0_5"
+          }
+        },
+        "safe": "Deportivo La Coruna Team Goals Over 0.5"
+      },
+      "fixture": {
+        "away": "Osasuna",
+        "competition": null,
+        "home": "Deportivo La Coruna",
+        "kickoff": "2026-11-02T20:00:00+00:00",
+        "kickoff_utc": "2026-11-02T20:00:00+00:00"
+      },
+      "fixture_id": "ESP2627_524c90d292b6",
+      "immutable_prediction_core_hash": "sha256:ea53543c92aeb6463c56094c0861166fb62b26277cc10f19bc68fd3078f297c2",
+      "immutable_prediction_core_hash_basis": "DERIVED_SHA256_OF_IMMUTABLE_ORIGINAL_PREDICTION_CORE",
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1570436,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 1,
+            "home": 2
+          },
+          "fixture_id": "ESP2627_524c90d292b6",
+          "fresh_provider_response_sha256": "sha256:52d8b1ffe1f29a0a4a12080e72a1abdc101d83e8b5e8b9535a2d3b652434306d",
+          "half_time": {
+            "away": 1,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-11-02\\201a8d42e72ef7b1071e4d724a148a7e5d1463f1831bc44ce2c097a15868e68f.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-11-02&timezone=UTC",
+          "raw_sha256": "sha256:201a8d42e72ef7b1071e4d724a148a7e5d1463f1831bc44ce2c097a15868e68f",
+          "result_status": "FT",
+          "retrieved_at": "2026-11-03T22:30:07.917268Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 1,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-1",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:6a9ca628789a8a92bfb8e240187af085b0dea94769e43bb679addb9514659b2f"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Lorient or Draw",
+        "balanced": "Match Total Under 3.5",
+        "favourite": "Lorient Team Goals Over 0.5",
+        "favourite_meta": {
+          "expression": "Lorient Team Goals Over 0.5",
+          "nsp_reason": null,
+          "result": "PENDING",
+          "state": null
+        },
+        "favourite_prediction": "Lorient Team Goals Over 0.5",
+        "paths": {
+          "aggressive": {
+            "expression": "Lorient or Draw",
+            "outcome": "PENDING",
+            "path_id": "aggressive:c_home_1x"
+          },
+          "balanced": {
+            "expression": "Match Total Under 3.5",
+            "outcome": "PENDING",
+            "path_id": "balanced:c_under_3_5"
+          },
+          "safe": {
+            "expression": "Lorient Team Goals Over 0.5",
+            "outcome": "PENDING",
+            "path_id": "safe:c_home_over_0_5"
+          }
+        },
+        "safe": "Lorient Team Goals Over 0.5"
+      },
+      "fixture": {
+        "away": "Brest",
+        "competition": null,
+        "home": "Lorient",
+        "kickoff": "2026-11-02T19:45:00+00:00",
+        "kickoff_utc": "2026-11-02T19:45:00+00:00"
+      },
+      "fixture_id": "FRA2627_8baf47cf2543",
+      "immutable_prediction_core_hash": "sha256:b58cbde5b0a3f92739e87d1c0d7b8c40ca800dba090ebc2dbfc36de58d08167b",
+      "immutable_prediction_core_hash_basis": "DERIVED_SHA256_OF_IMMUTABLE_ORIGINAL_PREDICTION_CORE",
+      "result_settlement": {
+        "aggressive_result": "PENDING",
+        "balanced_result": "PENDING",
+        "evidence": {
+          "candidate_count": 0,
+          "evidence_status": "BSD_FALLBACK_ACQUIRED",
+          "fixture_id": "FRA2627_8baf47cf2543",
+          "identity_status": "UNMAPPABLE",
+          "provider": "BSD_EVENTS",
+          "query": "https://sports.bzzoiro.com/api/v2/events/",
+          "raw_sha256": [
+            "sha256:2fc385805fcd319ddfb40daf3d74e4b8b9a7e2c570d6a6177e757006fe716cb5"
+          ],
+          "retrieved_at": "2026-11-07T22:30:04Z"
+        },
+        "favourite_result": "PENDING",
+        "result_sources": [
+          {
+            "name": "BSD_EVENTS",
+            "status": "BSD_FALLBACK_ACQUIRED"
+          }
+        ],
+        "safe_result": "PENDING",
+        "score_90_plus_stoppage": null,
+        "status": "PENDING_RESULT"
+      },
+      "settlement_scope_id": "sha256:d2165a1b5094e320b0560e301add103f21d5c6d8f033d6897b25eb3ddd18abec"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Atalanta Team Goals Over 1.5",
+        "balanced": "Atalanta Draw No Bet",
+        "favourite": "Atalanta Draw No Bet",
+        "favourite_meta": {
+          "expression": "Atalanta Draw No Bet",
+          "nsp_reason": null,
+          "result": "MISS",
+          "state": null
+        },
+        "favourite_prediction": "Atalanta Draw No Bet",
+        "paths": {
+          "aggressive": {
+            "expression": "Atalanta Team Goals Over 1.5",
+            "outcome": "MISS",
+            "path_id": "aggressive:c_home_over15"
+          },
+          "balanced": {
+            "expression": "Atalanta Draw No Bet",
+            "outcome": "MISS",
+            "path_id": "balanced:c_home_dnb"
+          },
+          "safe": {
+            "expression": "Parma Team Goals Under 1.5",
+            "outcome": "MISS",
+            "path_id": "safe:c_away_under15"
+          }
+        },
+        "safe": "Parma Team Goals Under 1.5"
+      },
+      "fixture": {
+        "away": "Parma",
+        "competition": null,
+        "home": "Atalanta",
+        "kickoff": "2026-11-02T19:45:00+00:00",
+        "kickoff_utc": "2026-11-02T19:45:00+00:00"
+      },
+      "fixture_id": "ITA2627_4584400d9212",
+      "immutable_prediction_core_hash": "sha256:40df857fab47162391e33ef7a0728c7a55efb0fb0a31b007be6b7f9a3e4d79ac",
+      "immutable_prediction_core_hash_basis": "DERIVED_SHA256_OF_IMMUTABLE_ORIGINAL_PREDICTION_CORE",
+      "result_settlement": {
+        "aggressive_result": "MISS",
+        "balanced_result": "MISS",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1550178,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 3,
+            "home": 0
+          },
+          "fixture_id": "ITA2627_4584400d9212",
+          "fresh_provider_response_sha256": "sha256:52d8b1ffe1f29a0a4a12080e72a1abdc101d83e8b5e8b9535a2d3b652434306d",
+          "half_time": {
+            "away": 1,
+            "home": 0
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-11-02\\201a8d42e72ef7b1071e4d724a148a7e5d1463f1831bc44ce2c097a15868e68f.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-11-02&timezone=UTC",
+          "raw_sha256": "sha256:201a8d42e72ef7b1071e4d724a148a7e5d1463f1831bc44ce2c097a15868e68f",
+          "result_status": "FT",
+          "retrieved_at": "2026-11-03T22:30:07.917268Z"
+        },
+        "favourite_result": "MISS",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "MISS",
+        "score_90_detail": {
+          "away": 3,
+          "home": 0
+        },
+        "score_90_plus_stoppage": "0-3",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:00571b66b2826b972a689c14d5c4dcecd0942e19fe518e2deb23f5a516997b5e"
+    },
+    {
+      "committed_model": {
+        "aggressive": "Sassuolo Team Goals Over 1.5",
+        "balanced": "Both Teams To Score: Yes",
+        "favourite": "Both Teams To Score: Yes",
+        "favourite_meta": {
+          "expression": "Both Teams To Score: Yes",
+          "nsp_reason": null,
+          "result": "HIT",
+          "state": null
+        },
+        "favourite_prediction": "Both Teams To Score: Yes",
+        "paths": {
+          "aggressive": {
+            "expression": "Sassuolo Team Goals Over 1.5",
+            "outcome": "HIT",
+            "path_id": "aggressive:c_home_over15"
+          },
+          "balanced": {
+            "expression": "Both Teams To Score: Yes",
+            "outcome": "HIT",
+            "path_id": "balanced:c_btts_yes"
+          },
+          "safe": {
+            "expression": "Match Total Over 1.5",
+            "outcome": "HIT",
+            "path_id": "safe:c_over15"
+          }
+        },
+        "safe": "Match Total Over 1.5"
+      },
+      "fixture": {
+        "away": "Fiorentina",
+        "competition": null,
+        "home": "Sassuolo",
+        "kickoff": "2026-11-02T17:30:00+00:00",
+        "kickoff_utc": "2026-11-02T17:30:00+00:00"
+      },
+      "fixture_id": "ITA2627_ddd7fca5db9d",
+      "immutable_prediction_core_hash": "sha256:a3f55b699a60a743bd3fa60471cd1fe044c619cfae5098bb0e8b646d19090dfe",
+      "immutable_prediction_core_hash_basis": "DERIVED_SHA256_OF_IMMUTABLE_ORIGINAL_PREDICTION_CORE",
+      "result_settlement": {
+        "aggressive_result": "HIT",
+        "balanced_result": "HIT",
+        "evidence": {
+          "acquisition_status": "REUSED_PERSISTED_API_FOOTBALL_EVIDENCE",
+          "api_fixture_id": 1550185,
+          "evidence_status": "CONFIRMED_API_FOOTBALL",
+          "final_90": {
+            "away": 4,
+            "home": 2
+          },
+          "fixture_id": "ITA2627_ddd7fca5db9d",
+          "fresh_provider_response_sha256": "sha256:52d8b1ffe1f29a0a4a12080e72a1abdc101d83e8b5e8b9535a2d3b652434306d",
+          "half_time": {
+            "away": 1,
+            "home": 1
+          },
+          "identity_status": "MATCHED",
+          "internal_raw_path": "C:\\ECOBET\\ecobet_v24_release\\state\\result_audit_v2_4\\evidence\\api_football\\2026-11-02\\201a8d42e72ef7b1071e4d724a148a7e5d1463f1831bc44ce2c097a15868e68f.json",
+          "provider": "API_FOOTBALL",
+          "query": "https://v3.football.api-sports.io/fixtures?date=2026-11-02&timezone=UTC",
+          "raw_sha256": "sha256:201a8d42e72ef7b1071e4d724a148a7e5d1463f1831bc44ce2c097a15868e68f",
+          "result_status": "FT",
+          "retrieved_at": "2026-11-03T22:30:07.917268Z"
+        },
+        "favourite_result": "HIT",
+        "result_sources": [
+          {
+            "name": "API_FOOTBALL",
+            "status": "CONFIRMED_API_FOOTBALL"
+          }
+        ],
+        "safe_result": "HIT",
+        "score_90_detail": {
+          "away": 4,
+          "home": 2
+        },
+        "score_90_plus_stoppage": "2-4",
+        "status": "SETTLED"
+      },
+      "settlement_scope_id": "sha256:59ed94c5925fbd279af49915c80018644cb02f6ecfd25b74f22d581bddda81b3"
+    }
+  ],
+  "record_type": "result_audit",
+  "revision_of": "ECOBET_2026-11-02_RESULT_AUDIT_V24.json",
+  "run_audit_record": {
+    "audit_coverage": {
+      "complete": false,
+      "coverage_pct": 75.0,
+      "nsp_no_settlement_required": 0,
+      "pending": 1,
+      "predictions_total": 4,
+      "settled": 3,
+      "settlement_due": 4,
+      "timezone_day_basis": "Europe/Zurich",
+      "version": "ECOBET_AUDIT_COVERAGE_V1"
+    },
+    "match_coverage": 4,
+    "mode": "DAILY_PRODUCTION",
+    "model_kpis": {
+      "aggressive": {
+        "HIT": 2,
+        "MISS": 1,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 1,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 3,
+        "hit_rate": 0.6666666666666666
+      },
+      "balanced": {
+        "HIT": 2,
+        "MISS": 1,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 1,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 3,
+        "hit_rate": 0.6666666666666666
+      },
+      "favourite": {
+        "HIT": 2,
+        "MISS": 1,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 1,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 3,
+        "hit_rate": 0.6666666666666666
+      },
+      "safe": {
+        "HIT": 2,
+        "MISS": 1,
+        "NOT_APPLICABLE": 0,
+        "NSP": 0,
+        "PENDING": 1,
+        "PUSH": 0,
+        "UNMAPPABLE": 0,
+        "VOID": 0,
+        "denominator": 3,
+        "hit_rate": 0.6666666666666666
+      }
+    },
+    "original_record_path": "C:\\ECOBET\\ecobet_v2\\state\\daily_runs_operational_final\\2026-11-02\\published\\ECOBET_LRUN_d13f99187c44497e860ddd54e14a95d2\\2026-11-02_1307.json",
+    "original_record_sha256": "sha256:ab5e0b2404cea11dad509f55d22e124aa364e210e7fee32ceb520aae5392540a",
+    "publication_based_admission": true,
+    "regular_prediction_count": 4,
+    "run_id": "2026-11-02_1307"
+  },
+  "schema_version": "ECOBET_RESULT_AUDIT_V2_4"
+}
