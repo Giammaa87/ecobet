@@ -27,3 +27,45 @@
  .v45-title p{font-size:.77rem}
  .v45-drill{padding:5px 7px}
 }
+
+/* ECOBET V4.6.2 · Confirmed zero-fixture day hero, no change to model data. */
+.v45-zero-day-card{grid-column:1/-1;position:relative;display:flex;isolation:isolate;align-items:stretch;min-height:280px;overflow:hidden;border:1px solid rgba(111,219,211,.31);border-radius:22px;background:linear-gradient(115deg,rgba(16,58,69,.98) 0%,rgba(11,40,54,.98) 52%,rgba(7,29,43,.96) 100%);box-shadow:0 22px 50px rgba(0,12,20,.23),inset 0 1px rgba(186,248,228,.08)}
+.v45-zero-day-card:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 80% 48%,rgba(88,224,187,.14),transparent 46%),linear-gradient(90deg,rgba(3,22,31,.1),transparent 66%)}
+.v45-zero-content{z-index:1;position:relative;flex:1;min-width:0;padding:36px 12px 30px 38px;display:flex;flex-direction:column;align-items:flex-start}
+.v45-zero-eyebrow{display:flex;align-items:center;gap:9px;color:#8de7d0;letter-spacing:.13em;font-size:.69rem;font-weight:800;text-transform:uppercase}
+.v45-zero-dot{width:7px;height:7px;border-radius:50%;background:#78e7be;box-shadow:0 0 0 4px rgba(120,231,190,.12)}
+.v45-zero-separator{opacity:.48}
+.v45-zero-date{margin-top:18px;color:#b6d6da;font-size:.87rem;font-weight:540}
+.v45-zero-day-card h3{margin:8px 0 0;color:#f2fffa;font-size:clamp(1.65rem,3.2vw,2.65rem);line-height:1.12;letter-spacing:-.035em;font-weight:820}
+.v45-zero-day-card p{margin:13px 0 0;max-width:520px;color:#bdd8df;font-size:.91rem;line-height:1.65}
+.v45-zero-footer{display:flex;align-items:center;gap:14px 22px;flex-wrap:wrap;margin-top:auto;padding-top:24px}
+.v45-zero-confirm{display:inline-flex;align-items:center;gap:7px;color:#a6f3d5;background:rgba(77,189,139,.12);border:1px solid rgba(129,223,180,.29);padding:7px 10px;border-radius:999px;font-size:.72rem;font-weight:750}
+.v45-zero-confirm svg{width:15px;height:15px;flex:none}
+.v45-zero-history{color:#a8c7d0;font-size:.74rem}
+.v45-zero-art{position:relative;display:flex;align-items:center;justify-content:center;width:min(36%,330px);flex-shrink:0;min-height:250px;color:rgba(134,232,213,.58)}
+.v45-zero-halo{position:absolute;width:245px;height:245px;border-radius:50%;border:1px solid rgba(140,231,218,.15);background:radial-gradient(circle,rgba(87,183,170,.13),rgba(87,183,170,.025) 55%,transparent 71%);box-shadow:0 0 0 20px rgba(135,230,198,.015),0 0 0 46px rgba(135,230,198,.014)}
+.v45-zero-field{position:relative;width:245px;max-width:100%;transform:rotate(-12deg);filter:drop-shadow(0 6px 12px rgba(5,17,21,.3))}
+.v45-zero-ball{position:absolute;right:18%;bottom:19%;display:grid;place-items:center;width:48px;height:48px;padding:9px;background:linear-gradient(140deg,#c7fbe8,#84d9c7);color:#15464a;border:5px solid #163d47;border-radius:50%;box-shadow:0 8px 20px rgba(0,9,18,.3)}
+.v45-zero-ball svg{width:100%;height:100%}
+@media(max-width:700px){
+ .v45-zero-day-card{min-height:0;border-radius:18px}
+ .v45-zero-content{padding:28px 23px 28px;max-width:none}
+ .v45-zero-art{width:78px;min-height:0;align-self:flex-start;margin:26px 16px 0 -12px}
+ .v45-zero-halo{width:110px;height:110px}
+ .v45-zero-field{width:115px}
+ .v45-zero-ball{width:30px;height:30px;padding:4px;border-width:3px;right:-8px;bottom:-12px}
+ .v45-zero-day-card h3{font-size:1.65rem}
+ .v45-zero-day-card p{font-size:.83rem}
+ .v45-zero-history{max-width:200px}
+}
+@media(max-width:450px){
+ .v45-zero-content{padding:24px 17px 26px}
+ .v45-zero-art{width:53px;margin:30px 12px 0 -2px}
+ .v45-zero-field{width:82px}
+ .v45-zero-halo{width:78px;height:78px}
+ .v45-zero-ball{display:none}
+ .v45-zero-day-card h3{font-size:1.45rem}
+ .v45-zero-eyebrow{font-size:.59rem;gap:6px}
+ .v45-zero-date{font-size:.79rem}
+ .v45-zero-footer{padding-top:18px}
+}
