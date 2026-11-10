@@ -1356,6 +1356,25 @@
           "hit_rate": 0.6666666666666666
         },
         "run_id": "2026-11-02_1307"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-11-02_RESULT_AUDIT_V24_REV_a416c792962026f1.json",
+        "generated_at": "2026-11-10T22:30:04Z",
+        "id": "2026-11-02_2026-11-02_1307_V24_REV_a416c792962026f1",
+        "kpi": {
+          "HIT": 2,
+          "MISS": 1,
+          "NOT_APPLICABLE": 0,
+          "NSP": 0,
+          "PENDING": 1,
+          "PUSH": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 3,
+          "hit_rate": 0.6666666666666666
+        },
+        "run_id": "2026-11-02_1307"
       }
     ],
     "2026-11-03": [
@@ -1590,6 +1609,25 @@
           "hit_rate": 0.76
         },
         "run_id": "2026-11-05_0347"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-11-05_RESULT_AUDIT_V24_REV_2281c51c03b3d577.json",
+        "generated_at": "2026-11-10T22:30:04Z",
+        "id": "2026-11-05_2026-11-05_0347_V24_REV_2281c51c03b3d577",
+        "kpi": {
+          "HIT": 19,
+          "MISS": 6,
+          "NOT_APPLICABLE": 0,
+          "NSP": 0,
+          "PENDING": 1,
+          "PUSH": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 25,
+          "hit_rate": 0.76
+        },
+        "run_id": "2026-11-05_0347"
       }
     ],
     "2026-11-06": [
@@ -1662,20 +1700,39 @@
         "kpi": {
           "HIT": 20,
           "MISS": 4,
-          "PENDING": 0,
-          "PUSH": 0,
           "NOT_APPLICABLE": 0,
           "NSP": 0,
+          "PENDING": 0,
+          "PUSH": 0,
           "UNMAPPABLE": 0,
           "VOID": 0,
           "denominator": 24,
           "hit_rate": 0.8333333333333334
         },
         "run_id": "2026-11-08_0325"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-11-08_RESULT_AUDIT_V24_REV_2344d4071767fed0.json",
+        "generated_at": "2026-11-10T22:30:07Z",
+        "id": "2026-11-08_2026-11-08_0325_V24_REV_2344d4071767fed0",
+        "kpi": {
+          "HIT": 19,
+          "MISS": 4,
+          "NOT_APPLICABLE": 0,
+          "NSP": 0,
+          "PENDING": 1,
+          "PUSH": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 23,
+          "hit_rate": 0.8260869565217391
+        },
+        "run_id": "2026-11-08_0325"
       }
     ]
   },
-  "generated_at": "2026-11-08T22:30:27.414117+00:00",
+  "generated_at": "2026-11-10T22:30:08Z",
   "record_type": "audit_index",
   "schema_version": "1.0"
 }
