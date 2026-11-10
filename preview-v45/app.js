@@ -10,7 +10,7 @@ const fmt=(x,n=2)=>N(x)===null?"Nicht verfügbar":N(x).toLocaleString("de-CH",{m
 const CHF=x=>"CHF "+fmt(x,2);
 const known=x=>x!==null&&x!==undefined&&x!==""&&!["NOT_AVAILABLE","NOT_APPLICABLE","NO_PREDICTION_TECHNICAL_BLOCKER"].includes(String(x).toUpperCase());
 const val=x=>known(x)?safe(x):"Nicht verfügbar";
-const S={index:null,id:null,run:null,stage:null,stageMap:new Map(),board:null,odds:[],daily:null,teamCache:new Map(),selection:new Map(),detail:null,germanTexts:new Map(),performance:null,perfTab:"cockpit",auditDate:null};
+const S={index:null,id:null,run:null,stage:null,stageMap:new Map(),board:null,odds:[],daily:null,teamCache:new Map(),selection:new Map(),detail:null,germanTexts:new Map(),performance:null,perfTab:"cockpit",auditDate:null,noFixturesDate:null};
 const dataCache=new Map();
 async function get(path,cache=true){
  if(cache&&dataCache.has(path))return dataCache.get(path);
@@ -44,6 +44,23 @@ const stability=m=>m.ampel||S.stageMap.get(m.fixture_id)?.prediction?.prediction
 const pill=(label,c="")=>'<span class="pill '+c+'">'+safe(label)+'</span>';
 const positive=x=>x==="HIT",negative=x=>x==="MISS";
 const today=()=>new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Zurich",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+const dayLabel=d=>String(d||"").split("-").reverse().join(".");
+function selectRunDay(day){
+ const select=$("run-day");
+ if(day&&![...select.options].some(option=>option.value===day)){
+  const option=document.createElement("option");option.value=day;option.textContent=day;select.add(option);
+ }
+ select.value=day;
+}
+async function latestDailyAfterRun(lastRun){
+ let date=today();
+ for(let n=0;n<7&&date>lastRun;n++){
+  try{const pointer=await get("data/"+date+"/latest.json",false);if(pointer?.date===date)return date}
+  catch(e){/* No snapshot for this day yet. */}
+  date=new Date(Date.parse(date+"T00:00:00Z")-86400000).toISOString().slice(0,10);
+ }
+ return null;
+}
 const ztime=x=>{if(!x)return"Zeit nicht angegeben";let d=new Date(x);return isNaN(d.getTime())?"Zeit nicht angegeben":new Intl.DateTimeFormat("de-CH",{timeZone:"Europe/Zurich",day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}).format(d)};
 function feedback(id,text,type=""){$(id).className="notice "+type;$(id).textContent=text}
 function navigate(page,hash=true){
@@ -59,6 +76,8 @@ async function bootstrap(){
   S.index=await get("runs/index.json",false);
   const days=Object.keys(obj(S.index.dates)).sort().reverse();
   $("run-day").innerHTML=days.map(d=>'<option value="'+safe(d)+'">'+safe(d)+'</option>').join("");
+  const latestSnapshotDay=await latestDailyAfterRun(days[0]||"");
+  if(latestSnapshotDay)selectRunDay(latestSnapshotDay);
   $("run-day").onchange=()=>{fillIds();loadRun()};
   $("run-choice").onchange=loadRun;
   $("run-league").onchange=renderList;
@@ -74,16 +93,46 @@ function fillIds(){
  window.EV44?.calendarSync?.(S);
  const d=$("run-day").value;
  const ids=arr(S.index?.dates?.[d]);
- $("run-choice").innerHTML=ids.map(i=>'<option value="'+safe(typeof i==="string"?i:i.id)+'">'+safe(typeof i==="string"?i:i.id)+'</option>').join("");
+ $("run-choice").innerHTML=ids.length?ids.map(i=>'<option value="'+safe(typeof i==="string"?i:i.id)+'">'+safe(typeof i==="string"?i:i.id)+'</option>').join(""):'<option value="">Kein Prediction Run</option>';
+}
+async function loadDayWithoutRun(date){
+ S.id=null;S.run=null;S.stage=null;S.board=null;S.daily=null;S.odds=[];S.noFixturesDate=null;
+ S.stageMap.clear();S.teamCache.clear();S.selection.clear();S.detail=null;
+ $("report").hidden=true;$("analysis-home").hidden=false;
+ $("run-kpis").innerHTML="";$("match-list").innerHTML="";
+ $("run-league").innerHTML='<option value="">Alle Wettbewerbe</option>';
+ feedback("run-message","Tagesdaten vom "+dayLabel(date)+" werden geprüft …");
+ try{
+  const pointer=await get("data/"+date+"/latest.json",false);
+  if($("run-day").value!==date)return;
+  if(pointer?.n_fixtures===0&&pointer?.zero_fixture_basis==="CONFIRMED_ZERO"){
+   S.noFixturesDate=date;
+   S.daily={date,pointer,root:"data/"+date+"/"+pointer.snapshot_id+"/",doc:{fixtures:[]}};
+   $("run-choice").innerHTML='<option value="">Keine Spiele</option>';
+   $("run-kpis").innerHTML='<div><strong>0</strong><small>Spiele</small></div><div><strong>0</strong><small>Prognosen</small></div><div><strong>'+safe(dayLabel(date))+'</strong><small>Tagesdatum</small></div>';
+   feedback("run-message","Keine Spiele am "+dayLabel(date)+". Der veröffentlichte Tages-Snapshot bestätigt 0 Spiele.");
+   $("match-list").innerHTML='<div class="notice">Keine Spiele am '+safe(dayLabel(date))+'.</div>';
+  }else if(Number(pointer?.n_fixtures)>0){
+   feedback("run-message","Für den "+dayLabel(date)+" sind "+pointer.n_fixtures+" Spiele erfasst, aber noch kein Prediction Run veröffentlicht.","warn");
+   $("match-list").innerHTML='<div class="notice">Der Prediction Run für diesen Tag ist noch nicht veröffentlicht.</div>';
+  }else{
+   feedback("run-message","Für den "+dayLabel(date)+" liegt noch kein bestätigter Null-Spiele-Abschluss vor.","warn");
+   $("match-list").innerHTML='<div class="notice">Tagesstatus noch nicht bestätigt.</div>';
+  }
+ }catch(e){
+  if($("run-day").value!==date)return;
+  feedback("run-message","Für den "+dayLabel(date)+" sind noch keine abgeschlossenen Tagesdaten veröffentlicht.","warn");
+  $("match-list").innerHTML='<div class="notice">Tageslauf noch nicht veröffentlicht.</div>';
+ }
 }
 async function loadRun(){
  const id=$("run-choice").value;
- if(!id)return;
+ if(!id){await loadDayWithoutRun($("run-day").value);return;}
  const previous=id===S.id;
  feedback("run-message","Run, Stage12 und Tages Snapshot werden verbunden …");
  $("match-list").innerHTML="";
  $("run-kpis").innerHTML="";
- S.id=id;S.run=null;S.stage=null;S.stageMap.clear();S.daily=null;S.board=null;S.odds=[];S.teamCache.clear();S.selection.clear();S.germanTexts.clear();S.auditLoadedRun=null;S.auditNote="";S.detail=null;
+ S.id=id;S.run=null;S.stage=null;S.noFixturesDate=null;S.stageMap.clear();S.daily=null;S.board=null;S.odds=[];S.teamCache.clear();S.selection.clear();S.germanTexts.clear();S.auditLoadedRun=null;S.auditNote="";S.detail=null;
  $("report").hidden=true;$("analysis-home").hidden=false;
  try{
   const [run,stage,board]=await Promise.all([
@@ -337,7 +386,13 @@ async function loadOdds(){
  return rows;
 }
 async function loadBoard(){
- if(!S.run)return;
+ if(!S.run){
+  const msg=S.noFixturesDate?"Keine Spiele am "+dayLabel(S.noFixturesDate)+".":"Für dieses Datum ist noch kein Prediction Run veröffentlicht.";
+  feedback("board-status",msg);
+  $("quotes").innerHTML='<div class="notice">'+safe(msg)+'</div>';
+  $("slip-simulation").innerHTML="";
+  return;
+ }
  feedback("board-status","BSD und API Football Quoten werden geladen …");
  try{
   const q=await loadOdds();
@@ -811,6 +866,6 @@ renderPerformance=function(){
  }
 };
 
-window.EV44?.init?.({S,get,fillIds,loadRun,navigate});
+window.EV44?.init?.({S,get,fillIds,loadRun,navigate,selectRunDay});
 bootstrap();
 })();
