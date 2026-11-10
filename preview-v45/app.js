@@ -95,6 +95,21 @@ function fillIds(){
  const ids=arr(S.index?.dates?.[d]);
  $("run-choice").innerHTML=ids.length?ids.map(i=>'<option value="'+safe(typeof i==="string"?i:i.id)+'">'+safe(typeof i==="string"?i:i.id)+'</option>').join(""):'<option value="">Kein Prediction Run</option>';
 }
+const emptyDayCard=date=>{
+ const isToday=date===today();
+ const longDate=new Intl.DateTimeFormat("de-CH",{timeZone:"Europe/Zurich",weekday:"long",day:"numeric",month:"long",year:"numeric"}).format(new Date(date+"T12:00:00Z"));
+ const title=isToday?"Heute keine Spiele":"Keine Spiele an diesem Tag";
+ return '<section class="v45-zero-day-card" role="status" aria-label="'+safe(title)+'">'+
+  '<div class="v45-zero-content">'+
+   '<div class="v45-zero-eyebrow"><span class="v45-zero-dot"></span>ECOBET SPIELPLAN <span class="v45-zero-separator">/</span> '+(isToday?"HEUTE":"TAGESÜBERSICHT")+'</div>'+
+   '<div class="v45-zero-date">'+safe(longDate)+'</div>'+
+   '<h3>'+title+'</h3>'+
+   '<p>Für diesen Spieltag sind in den berücksichtigten Wettbewerben keine Begegnungen angesetzt. Morgen geht es vielleicht schon weiter.</p>'+
+   '<div class="v45-zero-footer"><span class="v45-zero-confirm"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4.5 10 3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Spielplan bestätigt</span><span class="v45-zero-history">Ältere Spieltage im Kalender öffnen</span></div>'+
+  '</div>'+
+  '<div class="v45-zero-art" aria-hidden="true"><div class="v45-zero-halo"></div><svg class="v45-zero-field" viewBox="0 0 240 240" fill="none"><rect x="38" y="54" width="164" height="132" rx="12" stroke="currentColor" stroke-width="2"/><path d="M120 54v132" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="120" r="25" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="120" r="3" fill="currentColor"/><path d="M38 91h25v58H38M202 91h-25v58h25" stroke="currentColor" stroke-width="2"/><path d="M38 107H26v26h12M202 107h12v26h-12" stroke="currentColor" stroke-width="2"/></svg><div class="v45-zero-ball"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.25" stroke="currentColor" stroke-width="1.5"/><path d="m12 7-4 3 1.5 4.5h5L16 10l-4-3ZM8 10 5.5 8.5m10.5 1.5 2.5-1.5m-9 6-1 3m6-3 1 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>'+
+ '</section>';
+};
 async function loadDayWithoutRun(date){
  S.id=null;S.run=null;S.stage=null;S.board=null;S.daily=null;S.odds=[];S.noFixturesDate=null;
  S.stageMap.clear();S.teamCache.clear();S.selection.clear();S.detail=null;
@@ -111,7 +126,7 @@ async function loadDayWithoutRun(date){
    $("run-choice").innerHTML='<option value="">Keine Spiele</option>';
    $("run-kpis").innerHTML='<div><strong>0</strong><small>Spiele</small></div><div><strong>0</strong><small>Prognosen</small></div><div><strong>'+safe(dayLabel(date))+'</strong><small>Tagesdatum</small></div>';
    feedback("run-message","Keine Spiele am "+dayLabel(date)+". Der veröffentlichte Tages-Snapshot bestätigt 0 Spiele.");
-   $("match-list").innerHTML='<div class="notice">Keine Spiele am '+safe(dayLabel(date))+'.</div>';
+   $("match-list").innerHTML=emptyDayCard(date);
   }else if(Number(pointer?.n_fixtures)>0){
    feedback("run-message","Für den "+dayLabel(date)+" sind "+pointer.n_fixtures+" Spiele erfasst, aber noch kein Prediction Run veröffentlicht.","warn");
    $("match-list").innerHTML='<div class="notice">Der Prediction Run für diesen Tag ist noch nicht veröffentlicht.</div>';
