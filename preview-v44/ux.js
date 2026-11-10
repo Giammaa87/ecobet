@@ -7,28 +7,23 @@ const arr=x=>Array.isArray(x)?x:[];
 const statuses=new Set(["HIT","MISS","PUSH"]);
 let initialized=false;
 
-function init({S,get,fillIds,loadRun,navigate}){
+function init({S,get,fillIds,loadRun,navigate,selectRunDay}){
  if(initialized)return;
  initialized=true;
  const picker=$("global-run-date"),msg=$("global-date-status"),analysis=$("analysis-run-calendar");
  if(analysis)analysis.onchange=()=>{if(picker){picker.value=analysis.value;picker.dispatchEvent(new Event("change",{bubbles:true}))}};
  if(picker){
   picker.onchange=async()=>{
-   const day=picker.value,days=S.index?.dates||{};
-   if(!days[day]){
-    msg.textContent="Für dieses Datum ist kein veröffentlichter Run vorhanden.";
-    picker.value=$("run-day")?.value||"";
-    if(analysis)analysis.value=picker.value;
-    return;
-   }
-   msg.textContent="Lade Run vom "+day+" …";
+   const day=picker.value;
+   if(!day)return;
+   msg.textContent="Lade Tagesdaten vom "+day+" …";
    const active=document.querySelector(".view.active")?.id;
-   const runDay=$("run-day");runDay.value=day;
+   selectRunDay(day);
    fillIds();
    const audit=$("audit-date");if(audit){audit.value=day;S.auditDate=day;}
    try{
     await loadRun();
-    if(S.id!==$("run-choice").value)return;
+    if((S.id||"")!==($("run-choice").value||""))return;
     if(active==="page-board")navigate("board",false);
     else if(active==="page-audit")navigate("audit",false);
     else if(active==="page-performance"){
@@ -36,7 +31,7 @@ function init({S,get,fillIds,loadRun,navigate}){
      if(settings){settings.from=day;settings.to=day;}
      navigate("performance",false);
     }
-    msg.textContent="Run Datum: "+day;
+    msg.textContent=S.noFixturesDate===day?"Keine Spiele am "+day:"Datum: "+day;
    }catch(error){
     msg.textContent="Run konnte nicht geladen werden: "+error.message;
    }
@@ -54,7 +49,11 @@ function init({S,get,fillIds,loadRun,navigate}){
 function calendarSync(S){
  const picker=$("global-run-date");if(!picker||!S.index)return;
  const dates=Object.keys(S.index.dates||{}).sort();
- if(dates.length){picker.min=dates[0];picker.max=dates.at(-1);}
+ if(dates.length){
+  picker.min=dates[0];
+  const now=new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Zurich",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+  picker.max=now>dates.at(-1)?now:dates.at(-1);
+}
  picker.value=$("run-day")?.value||dates.at(-1)||"";
  const analysis=$("analysis-run-calendar");if(analysis){analysis.value=picker.value;analysis.min=picker.min;analysis.max=picker.max;}
  const label=$("global-date-status");if(label)label.textContent=picker.value?"Run Datum: "+picker.value:"Kein Lauf ausgewählt";
