@@ -270,6 +270,26 @@
     "2026-11-08T03:32:18Z"
    ],
    "run_date": "2026-11-08"
+  },
+  "ODDS_2026-11-20_0217_20261120T021755Z": {
+   "bytes_sha256": "sha256:c9ddf84d7cf4561359acab2c078007c60edb835b4883a0acb920af97c5bdddd9",
+   "content_hash": "sha256:ce6efe11eb078d40eb3d8194d3b5e81eed932d97a43415f82c658c64a826e5a3",
+   "coverage": {
+    "available": 5,
+    "by_reason": {
+     "PROVIDER_MARKET_NOT_COVERED": 7
+    },
+    "fixtures": 3,
+    "not_available": 7,
+    "role_markets": 12
+   },
+   "file": "odds/ODDS_2026-11-20_0217_20261120T021755Z.json",
+   "logical_run_id": "ECOBET_LRUN_2b615c5fcece412da2ee081794478add",
+   "publication_id": "2026-11-20_0217",
+   "retrieved_at": [
+    "2026-11-20T02:17:54Z"
+   ],
+   "run_date": "2026-11-20"
   }
  },
  "schema_version": "ECOBET_ODDS_ENRICHMENT_INDEX_V1"
