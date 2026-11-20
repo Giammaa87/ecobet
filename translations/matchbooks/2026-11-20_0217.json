@@ -1,0 +1,48 @@
+{
+  "schema_version": "ECOBET_MATCHBOOK_TRANSLATION_V1",
+  "publication_id": "2026-11-20_0217",
+  "language": "de-CH",
+  "translation_status": "AUTOMATIC_TRANSLATED_FROM_FROZEN_SOURCE",
+  "source_stage12_content_hash": "sha256:bfd9f3886561ce3cb356da0e89c2ac04996abbfb097611bffb91943862073d3f",
+  "source_stage12_path": "stage13/source-records/2026-11-20_0217.stage12.json",
+  "notes": "Automatische deutsche Übersetzung, nicht redaktionell geprüft. Originaldaten unverändert.",
+  "fixtures": {
+    "ESP2627_c084ded495bb": {
+      "thesis": "Der Heimrollenprozess von Athletic - mehr Kreation, weniger Chancen und stärkeres Drücken - trifft auf ein Espanyol-Wegprofil mit negativem XG-Unterschied und bescheidener Chance. Das deutet zunächst auf eine kontrollierte athletische Kante hin, während Espanyol eine realistische Einzelziel-Gegenroute behält.",
+      "match": "Athletisch bringen die stärkere Heimchance und defensives Rollenprofil, plus intensiveres Heimdrücken; Espanyols Wegprozess hat weniger geschaffen, während er mehr erlaubt. Die erwartete Wechselwirkung ist athletisches Territorium und Druck, mit Espanyols lebensfähiger Reaktion hauptsächlich ein Übergang mit geringerem Volumen oder set-piece-ähnliche Scoring-Route anstatt nachhaltige Dominanz.",
+      "home": "Der aktuelle Saisonprozess von Athletic ist positiv, wobei mehr xG erzeugt als eingeräumt wird; Das Heimrollenfenster ist auf beiden Seiten des Balls noch stärker. Zu Hause zeigt das Rollenfenster eine hohe Schuss- und xG-Produktion bei gleichzeitig geringer Konzession, die mit Druck und territorialer Kontrolle übereinstimmt. Ein niedrigerer PPDA zu Hause als der PPDA von Espanyol zeigt das intensivere verfügbare Pressprofil an. Die Ergebnisse sind weniger sauber als der Prozess, da das kürzliche Heim-Scoring Unentschieden und Ergebnisse ohne Punkte enthält, so dass der Angriff nicht als automatisch behandelt werden sollte.",
+      "away": "Der aktuelle Ligaprozess ist negativ: xG for liegt unter xG gegen, und das Auswärtsspielfenster zeigt ebenfalls eine bescheidene Kreation mit erheblichen Chancen. Der letzte Fünf-Match-Prozess verbesserte sich defensiv im Vergleich zum breiteren jüngsten Fenster, aber sein xG-für-Level bleibt bescheiden. Das Auswärtsdrücken ist weniger intensiv als das Heimdrücken von Athletic auf die verfügbaren Rollenfenster. Die Verteilung der letzten Punkte konzentriert sich auf ein Ziel und nicht auf null oder mehrere Ziele.",
+      "prime": "Athleten nutzen ihre stärkere Heimkreation, defensive Unterdrückung und Drückprofil, um den größten Teil des Spiels zu kontrollieren. Espanyols Weg-Prozess erlaubt immer noch einen einzigen Gegenweg, so dass 2-0 und 2-1 kohärenter sind als ein unqualifizierter Shutout-Anspruch.",
+      "counter": "Athletisch schaffen die besseren Öffnungen, aber nicht drehen Kontrolle in Trennung; Espanyol regelmäßige Ein-Ziel-Ausgabe liefert ein 1-1 Unentschieden.",
+      "cluster": "Athletische 1-2 Tore; Espanyol 0-1 Tore, mit 1-1 die Hauptalternative.",
+      "risks": [
+        "Ein früher Austausch verhindert, dass Athletic das Spiel verwaltet und erzeugt einen offeneren 2-2-Typ-Wettbewerb."
+      ]
+    },
+    "FRA2627_fd0638a4daa4": {
+      "thesis": "Beide Seiten haben brauchbare Angriffsrouten gegen die Verteidigung, deren jüngster Prozess und die Ergebnisse des Veranstaltungsortes Chancen offen lassen; der wahrscheinlichste Ausdruck ist ein wettbewerbsfähiger Zwei- oder Drei-Ziel-Austausch.",
+      "match": "Die Heimchancenproduktion von Troyes trifft auf eine Le Havre-Verteidigung, die eine erhebliche jüngste xG ermöglicht, während Le Havres aktive Chance auf eine Heimverteidigung von Troyes trifft, die stark nachgegeben hat. Das Gegengewicht ist Troyes schlechtes Finishing und häufige punktlose Ergebnisse, so dass ein gegenseitiger Austausch zentral, aber nicht sicher ist.",
+      "home": "Troyes schafft mehr zu Hause, als seine realisierten Ziele bedeuten, aber seine aktuelle Saison ist ein materielles Gegensignal. Home Defense hat in einem Fünf-Match-Sample stark nachgegeben, obwohl die zugrunde liegende Heimat-XG-Gegenzahl niedriger ist als die realisierte Konzessionsrate. Seine geringe eigene PPDA-Intensität ist weniger aggressiv als Le Havres breiteres jüngstes Profil; aus den spärlichen Besitzdaten wird kein Besitzschluss gezogen. Erste Hälften sind relativ zurückhaltend; Die zweite Hälfte der Heimseite ist begrenzt.",
+      "away": "Der aktuelle Saisonprozess von Le Havre zeigt eine nützliche Chance, aber eine negative xG-Bilanz. Seine realisierte aktuelle Saison Scoring ist unterhalb seiner Chance Output, während die jüngsten Ziele eingeräumt sind höher als die zugrunde liegenden defensiven Prozess. Die Geschichte der Auswärtsrollen ist breiter, kreuzt jedoch die Jahreszeiten; sie unterstützt eine schmale Wegstrecke, keine entscheidende Richtung. Seine erste Hälfte Scoring-Rekord ist schwach, mit mehr von seiner nutzbaren Scoring-Route erscheint nach dem Intervall.",
+      "prime": "Troyes 'Heimchancenschaffung und Le Havres aktuelle Angriffsleistung treffen jeweils auf eine Verteidigung mit klarer jüngster Exposition und erzeugen einen wettbewerbsfähigen Austausch, der sich auf zwei oder drei Gesamtziele konzentriert.",
+      "counter": "Troyes wiederum gelingt es nicht, trotz einiger Kreationen zu konvertieren, so dass Le Havre eine enthaltene 0-1 Art wegnimmt.",
+      "cluster": "Zwei oder drei gesamtziele, angeführt von einem 1 1 austausch; ein schmaler wegrand und eine heimantwort bleiben live-alternativen.",
+      "risks": [
+        "Troyes konvertiert sein heimchancenvolumen zweimal gegen den verletzlichen defensiven prozess von le havre, während er immer noch eine auswärtsantwort erlaubt.",
+        "Le Havre nutzt wiederholt die Hauskonzessionen von Troyes, während Troyes torlos bleibt und einen schmalen 0-3-Typ-Schwanz produziert."
+      ]
+    },
+    "GER2627_f7da5d4b72e6": {
+      "thesis": "Bayerns Gleichliga-Stärke, intensives Pressing und die außergewöhnliche Schaffung von Heimchancen in letzter Zeit sollten die territoriale Kontrolle etablieren; Kölns weniger sichere Auswärtsverteidigung ist der Hauptweg, um die Bayern immer wieder zu treffen.",
+      "match": "Bayerns niedriger eigener PPDA und der viel stärkere jüngste Chancesprozess deuten auf einen anhaltenden Heimdruck gegen eine Auswärtsseite hin, deren Auswärtsverteidigungsprozess aufgedeckt wurde. Köln hat immer noch einen One-Goal-Route durch die eigene Chance Schöpfung, so dass die erwartete Haussteuerung erfordert kein sauberes Blatt.",
+      "home": "Bayerns jüngster Heimprozess ist ungewöhnlich kraftvoll: Hohes xG-für, hohes Schussvolumen und niedriger eigener PPDA zeigen wiederholten Druck an. Die Ergebnisse stimmen weitgehend mit dem Prozess überein: Das aktuelle Heimprofil enthält eine produktive Bewertung, während das aktuelle xG-Profil niedrig ist. Die Halbzeit in der Heimat deutet auf einen frühen Bayern-Vorteil hin, wobei nach dem Intervall häufig weitere Punkte erzielt werden. Die verfügbaren Hausdaten sind nach dem mitgelieferten Frischestatus aktuell, obwohl der Zeitplankontext unvollständig bleibt.",
+      "away": "Kölns jüngster Cross-Season-Angriff hat Chancen geschaffen, aber die Ziele sind xG über das Auswärtsrollenprofil hinweggegangen. Ihr Auswärts-Verteidigungsprofil ist anfällig: Das jüngste Auswärtsfenster zeigt 2,3 Tore und 1,971 xG pro Spiel. Ihre eigene Pressung ist weniger intensiv als die jüngste Heimpressung der Bayern; Sie können immer noch eine einzige Transition-basierte Scoring-Route erstellen. Die neueste gelieferte Übereinstimmung ist 27 Tage vor dem Kickoff, so dass dieses Formularsignal explizit abgestanden ist.",
+      "prime": "Bayern schafft Kontrolle durch ein deutlich stärkeres Pressing- und Chancegenerierungsprofil, schafft wiederholt Heimchancen und gewinnt mit klarem Vorsprung; Kölns wahrscheinlichster Beitrag ist kein Ziel.",
+      "counter": "Köln konvertiert eine glaubwürdige Ein-Tor-Route, die das Spiel eröffnet, aber der überlegene Angriff der Bayern führt immer noch zu einem Drei- oder Vier-Tor-Heimsieg.",
+      "cluster": "Bayern 2-4 Tore; Köln 0-1 Tore; Spiel insgesamt hauptsächlich 2-5.",
+      "risks": [
+        "Die Bayern führen und kontrollieren das Spiel, ziehen sich aber in ein niedrigeres Ziel ein, so dass eine Scoreline mit 2: 0 übrig bleibt."
+      ]
+    }
+  }
+}
