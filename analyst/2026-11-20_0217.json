@@ -1,0 +1,919 @@
+{
+ "schema": "ECOBET_AI_ANALYST_DAY_V1",
+ "status": "OK",
+ "date": "2026-11-20",
+ "publication_id": "2026-11-20_0217",
+ "master_run": {
+  "logical_run_id": "ECOBET_LRUN_2b615c5fcece412da2ee081794478add",
+  "publication_id": "2026-11-20_0217",
+  "fixture_count": 3,
+  "first_kickoff_utc": "2026-11-20T19:30:00Z"
+ },
+ "analyst": {
+  "assignment_version": "ANALYST_ASSIGNMENT_V1",
+  "assignment_sha256": "a728419cffec08fe07ce222ff958e02c31d8336dd3f4d3dd0236008464f06374",
+  "package_sha256": "38861c4d98cdd04741cb25863f68b2a0686a5e459116aec0260135c66dea26b9",
+  "execution_path": "MANUAL_CLAUDE_SESSION_ON_REQUEST_NOT_AUTOMATED"
+ },
+ "fixtures_total": 3,
+ "fixtures_reviewed": 3,
+ "fixtures_not_eligible": 0,
+ "original_ranking_rules": "RANKING_RULES_V1",
+ "reviewed_ranking_basis": "Reihenfolge des Pilot-05-Originalrangs bleibt bestehen, weil keine Befundkette eine Rangwirkung (UP/DOWN/SKIP) begruendet; die Beurteilung bezieht sich auf den tatsaechlich bevorzugten Markt je Spiel.",
+ "no_result_knowledge_statement": "Keine Resultate bekannt; Recherche nur mit Vorberichten vor Anpfiff; Anstoesse 19:30–20:00 UTC am 20.11.2026.",
+ "games": [
+  {
+   "fixture_id": "FRA2627_fd0638a4daa4",
+   "match": "Troyes – Le Havre",
+   "competition": "FRA_LIGUE_1",
+   "kickoff_utc": "2026-11-20T19:45:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 431 min (>= 30)"
+   },
+   "original": {
+    "rank": 1,
+    "score": 0.611,
+    "best_path": "BALANCED",
+    "best_market": "Match Total Over 1.5",
+    "fixture_category": "STRONG_FAMILY_AGREEMENT",
+    "published_odds": 1.272
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Match Total Over 1.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": 1.272
+    },
+    "SAFE": {
+     "market": "Le Havre Team Goals Under 2.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "BALANCED": {
+     "market": "Match Total Over 1.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": 1.272
+    },
+    "AGGRESSIVE": {
+     "market": "Match Goals 2-3",
+     "pilot05_category": "INSUFFICIENT_EVIDENCE",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Match Total Under 4.5",
+    "p_low": 0.75,
+    "p_high": 0.9,
+    "worst_case_p": 0.7,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Troyes or Draw",
+    "confidence": "LOW_MEDIUM",
+    "reasoning": "Eigene Schaetzung: Troyes ca. 1.35, Le Havre ca. 1.10 Tore; Le Havre ist als einziges Team ohne Saisonsieg, mit sechs Ligaspielen in Folge verloren, nur einem Auswaertspunkt und ca. 2.0 Gegentoren/Spiel, aber mit neuem Trainer und weitgehend vergleichbarer Elo (21 Punkte). P(Troyes gewinnt oder Remis) ca. 70 % (bei 0.4 weniger Troyes-Toren noch ca. 62 %). Torlinien sind wegen beider schwacher Defensiven unklar und werden nicht bevorzugt.",
+    "differs_from_computational": true,
+    "difference_explanation": "Der rechnerische KI TOP (Pilot 05) waehlt Match Total Unter 4.5 (schlechtester Fall 70 %), eine Torlinie. Die qualitative Analyse sieht in der Form- und Tabellenlage von Le Havre mehr Substanz fuer Troyes oder Remis als in einer Torlinie, weil beide Defensiven schwach sind und das Totalrisiko nach oben liegt.",
+    "q_seal_sha256": "ce293c6617c37bf19565afa05ee845c42e334b51118e756f794c06bb0daf9ff1"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-20T12:36:03Z",
+    "result_sha256": "31da64c55018a7da8baf7a88c9a00e4dbf0904fa8f15a3321da54b8f069dd16d",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "Troyes Elo-Anpassung +10.0, Le Havre +1.8, Luecke 21 -> 29 (teilweise gated, geringe Spielerwert-Abdeckung); Richtung plausibel. Unklar: ECOBET fuehrt Michel Diaz als gesperrt, ein externer Vorbericht nennt einen Diaz in der erwarteten Troyes-Elf (anderer Spieler oder Datenfehler nicht aufloesbar)."
+    },
+    "research_log": [
+     {
+      "source_id": "R1",
+      "source": "https://www.sportsmole.co.uk/football/troyes/preview/troyes-vs-le-havre-prediction-team-news-lineups_609296.html",
+      "retrieved_utc": "2026-11-20T12:35:57Z",
+      "claim": "Vorbericht Ligue 1 Spieltag 11: Troyes 17., Le Havre ohne Saisonsieg, sechs Ligaspiele in Folge verloren, neuer Trainer Valerien Ismael; Troyes ohne Ouzenadji, Kone fraglich; Le Havre: Mpasi und Mambimbi out, Ndiaye und Jelert fraglich, Pembele unwahrscheinlich."
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "COMPATIBLE",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Torlinie, Phase Q bevorzugt Troyes oder Remis; kein Widerspruch"
+    },
+    "SAFE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Le Havre schwach, wenig Tore erwartet"
+    },
+    "BALANCED": {
+     "market_agreement": "COMPATIBLE",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "wie FAVOURITE"
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "NOT_ASSESSABLE",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "2–3 Tore plausibel, aber Spanne eng"
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "F1",
+     "finding": {
+      "text": "Le Havre Krisenlage: kein Saisonsieg, sechs Ligaspiele in Folge verloren, nur ein Auswaertspunkt, neuer Trainer; Ausfaelle u. a. Mpasi, Mambimbi, Zagadou.",
+      "origin": "externer Vorbericht",
+      "source_ids": [
+       "R1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Spricht fuer Troyes; Effekt des Trainerwechsels nicht quantifizierbar.",
+     "materiality": {
+      "area": "FORM",
+      "level": "M2"
+     },
+     "affected_markets_neutral": [
+      {
+       "market": "Troyes to win",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Troyes or Draw",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Le Havre to win",
+       "effect": "geschwaecht"
+      }
+     ],
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "SAFE",
+       "market_text": "Le Havre Team Goals Under 2.5",
+       "effect": "gestuetzt",
+       "why": "Le Havre ohne Saisonsieg, sechs Niederlagen in Folge, wenig Auswaertspunkte"
+      },
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "unveraendert",
+       "why": "Krisenlage sagt nichts ueber die Torlinie"
+      }
+     ],
+     "decision_effect": "stuetzt den Wechsel auf den SAFE-Pfad Le Havre Team Goals Under 2.5",
+     "rank_effect": {
+      "value": "NONE",
+      "why": ""
+     }
+    },
+    {
+     "finding_id": "F2",
+     "finding": {
+      "text": "Troyes mit duenner Abwehr laut ECOBET (Ouzenadji out, Gozzi out, Michel Diaz gesperrt); externe erwartete Elf nennt einen Diaz.",
+      "origin": "ECOBET availability vs. externer Vorbericht",
+      "source_ids": [
+       "R1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Zusaetzliche Gegentorgefahr fuer Troyes, Wirkung auf weisse Weste und Unter-Linien.",
+     "materiality": {
+      "area": "XI",
+      "level": "M1"
+     },
+     "affected_markets_neutral": [
+      {
+       "market": "Troyes Clean Sheet (Le Havre Team Goals Under 0.5)",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Match Total Under 2.5",
+       "effect": "geschwaecht"
+      }
+     ],
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "leicht gestuetzt",
+       "why": "duenne Troyes-Abwehr erhoeht Torchancen fuer beide Seiten"
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Le Havre Team Goals Under 2.5",
+       "effect": "leicht geschwaecht",
+       "why": "mehr Gegentorgefahr fuer Troyes"
+      }
+     ],
+     "decision_effect": "relativiert die Sicherheit der SAFE-Wahl, bleibt aber unter 3 Gegentoren",
+     "rank_effect": {
+      "value": "NONE",
+      "why": ""
+     }
+    },
+    {
+     "finding_id": "F3",
+     "finding": {
+      "text": "Adjusted-Elo-Anpassung klein (+10/+2), Luecke 21 -> 29; Staerkerelation bleibt nahe ausgeglichen.",
+      "origin": "ECOBET Adjusted-Elo-Reproduktion",
+      "source_ids": []
+     },
+     "material": false,
+     "sporting_effect": "Keine Aenderung der Grundeinschaetzung.",
+     "not_material_reason": "Anpassung unter 15 Elo-Punkten je Team.",
+     "phase": "Q"
+    },
+    {
+     "finding_id": "P1",
+     "phase": "POST_DISCLOSURE",
+     "finding": {
+      "text": "FAVOURITE/BALANCED Match Total Over 1.5 zur publizierten Konsensquote 1.272 (implizit ca. 79 %), eigene Schaetzung ca. 70 % (Pilot-05-KI 65–85 %, schlechtester Fall 65 %); wahrscheinlichstes Ergebnis laut externem Modell 1-0.",
+      "origin": "ECOBET-Quote vs. Phase-Q-Schaetzung",
+      "source_ids": []
+     },
+     "material": true,
+     "materiality": {
+      "area": "ODDS_CONSISTENCY",
+      "level": "M2"
+     },
+     "sporting_effect": "Zwei Tore koennen verfehlt werden, wenn Troyes (ca. 0.8 Tore/Spiel) ein 1-0 verwaltet.",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "geschwaecht",
+       "why": "Preis ueber der eigenen Schaetzung, 1-0 ist ein plausibles Ergebnis"
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Over 1.5",
+       "effect": "geschwaecht",
+       "why": "identisch mit FAVOURITE"
+      }
+     ],
+     "decision_effect": "FAVOURITE wird nicht bestaetigt; Wechsel auf SAFE Le Havre Team Goals Under 2.5",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Rang bleibt: der gewaehlte Markt ist mit ca. 88–90 % mindestens so robust wie die Bevorzugten der anderen Spiele; kein Befund begruendet eine Umsortierung."
+     }
+    }
+   ],
+   "decision": {
+    "value": "OTHER_ECOBET_PATH",
+    "preferred_market": {
+     "source": "SAFE",
+     "market_text": "Le Havre Team Goals Under 2.5"
+    },
+    "reasoning": "Der FAVOURITE (Match Total Ueber 1.5 bei 1.272) steht auf einer Torlinie, die bei 1-0-Ergebnissen scheitert und deren Preis ueber der eigenen Schaetzung liegt. Der SAFE-Pfad Le Havre Team Goals Unter 2.5 ist mit ca. 88–90 % robust: Le Havre ist sieglos, hat sechs Ligaspiele in Folge verloren und erzielt ca. 1.1 Tore. Fuer diesen Markt gibt es keine publizierte Quote; die Empfehlung ist eine Sicherheitswahl, kein Value-Hinweis.",
+    "chain_refs": [
+     "F1",
+     "F2",
+     "P1"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Le Havre Team Goals Unter 2.5: Fragil nur bei Gegentor-Haeufung Troyes' (duenne Abwehr: Ouzenadji, Gozzi out, Diaz-Status unklar) oder einem Trainerwechsel-Effekt bei Le Havre; Torabnahme bei Le Havre-Ausfaellen. Keine publizierte Quote vorhanden."
+   },
+   "detail_md": "**Spiel:** Troyes – Le Havre (Ligue 1, Spieltag 11), Anstoss 19:45 UTC.\n\n**Pilot-05-Original:** Rang 1, bester Pfad BALANCED (Match Total Ueber 1.5, Quote 1.272); rechnerischer KI TOP: Match Total Unter 4.5.\n\n**Qualitative KI (Phase Q, vor Offenlegung):** Troyes oder Remis, Vertrauen niedrig bis mittel. Begruendung: Le Havre ohne Saisonsieg, sechs Niederlagen in Folge, nur ein Auswaertspunkt, ca. 2.0 Gegentore/Spiel; aber neuer Trainer und fast gleiche Elo (Luecke 21).\n\n**Spieler/XI/Elo:** Troyes ohne Ouzenadji (Sprunggelenk), Koné fraglich; Gozzi out; ECOBET fuehrt Michel Diaz als gesperrt, ein externer Vorbericht nennt einen Diaz in der erwarteten Elf (nicht aufloesbar). Le Havre ohne Mpasi und Mambimbi (Achillessehne), Ndiaye/Jelert fraglich, Pembélé unwahrscheinlich. Adjusted Elo +10 (Troyes) und +2 (Le Havre), Luecke 21→29.\n\n**Gegenpruefung:**\n- FAVOURITE Over 1.5 ist nicht verworfen, aber zu teuer fuer den Unsicherheitsgrad (1-0 plausibel).\n- Gewaehlt: SAFE Le Havre Team Goals Unter 2.5 (ca. 88–90 %).\n\n**Rang:** unveraendert 1, weil kein Befund eine Umsortierung begruendet.",
+   "rank": {
+    "original": 1,
+    "reviewed": 1,
+    "change": 0,
+    "reason": "Der FAVOURITE (Match Total Ueber 1.5 bei 1.272) steht auf einer Torlinie, die bei 1-0-Ergebnissen scheitert und deren Preis ueber der eigenen Schaetzung liegt. Der SAFE-Pfad Le Havre Team Goals Unter 2.5 ist mit ca. 88–90 % robust: Le Havre ist sieglos, hat sechs Ligaspiele in Folge verloren und erz",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 1
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "GER2627_f7da5d4b72e6",
+   "match": "Bayern Munich – FC Cologne",
+   "competition": "GER_BUNDESLIGA",
+   "kickoff_utc": "2026-11-20T19:30:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 416 min (>= 30)"
+   },
+   "original": {
+    "rank": 2,
+    "score": 0.5625,
+    "best_path": "BALANCED",
+    "best_market": "Bayern Munich Team Goals Over 1.5",
+    "fixture_category": "STRONG_FAMILY_AGREEMENT",
+    "published_odds": null
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Bayern Munich Team Goals Over 1.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": null
+    },
+    "SAFE": {
+     "market": "Bayern Munich to win",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.074
+    },
+    "BALANCED": {
+     "market": "Bayern Munich Team Goals Over 1.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": null
+    },
+    "AGGRESSIVE": {
+     "market": "Bayern Munich Team Goals Over 2.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Bayern Munich Team Goals Over 0.5",
+    "p_low": 0.9,
+    "p_high": 1.0,
+    "worst_case_p": 0.9,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Match Total Over 1.5",
+    "confidence": "MEDIUM_HIGH",
+    "reasoning": "Eigene Schaetzung (Phase Q, ohne ECOBET-Marktkenntnis): Bayern erwartet ca. 2.8 Tore (npxG der letzten 10 ca. 3.2, Gegner Koeln mit 2.1 Gegentoren/Spiel und Elo-Luecke ueber 350), Koeln ca. 0.95. Daraus ca. 89 % fuer mindestens 2 Tore im Spiel; auch bei vorsichtigeren Erwartungswerten (Gesamt 2.8) bleiben ueber 75 %. Die moeglichen Offensivausfaelle (Musiala/Diaz noch nicht gesichert zurueck) senken das Total nur moderat, weil Kane/Olise/Karl verfuegbar sind.",
+    "differs_from_computational": true,
+    "difference_explanation": "Der rechnerische KI TOP (Pilot 05) waehlt mit Bayern-Team-Goals-Ueber-0.5 die Linie mit dem hoechsten schlechtesten Fall (90 %), die kaum Informationsgehalt hat. Die qualitative Analyse bevorzugt mit Match Total Ueber 1.5 eine Linie, die vom Spielverlauf abhaengt, aber auch unter vorsichtigen Annahmen robust bleibt.",
+    "q_seal_sha256": "ce293c6617c37bf19565afa05ee845c42e334b51118e756f794c06bb0daf9ff1"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-20T12:36:03Z",
+    "result_sha256": "6f69014f6d936bfd8d954451fb0bf8f98dec485bd21ebeb194384fd0cfa72f04",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "ECOBET fuehrt Neuer, Davies, Gnabry, Musiala, Diaz u. a. als OUT; externe Berichte (Nov 2026) nennen Musiala und Diaz kurz vor der Rueckkehr. Die Elo-Anpassung ist fuer Bayern inaktiv (BASE_FALLBACK, geringe Spielerwert-Abdeckung); rechnerische Anpassung -44 (Bayern) / -12 (Koeln) wuerde die Luecke von 385 nur auf ca. 353 senken."
+    },
+    "research_log": [
+     {
+      "source_id": "R1",
+      "source": "https://www.90min.de/bayern-trio-vor-comeback-so-stehen-die-chancen-bei-kompany-musiala-diaz",
+      "retrieved_utc": "2026-11-20T12:35:57Z",
+      "claim": "Bericht vor dem Koeln-Spiel: Musiala und Diaz stehen vor der Rueckkehr, Kompany koennte erstmals nach seinem Zusammenbruch wieder an der Seitenlinie stehen."
+     },
+     {
+      "source_id": "R2",
+      "source": "https://fcbayern.com/de/news/2026/11/ticker-pressetalk-des-fc-bayern-vor-dem-bundesliga-spiel-gegen-den-1.-fc-koeln",
+      "retrieved_utc": "2026-11-20T12:35:57Z",
+      "claim": "Pressetalk Kompany/Eberl am 19.11.2026 vor dem Heimspiel gegen Koeln (Freitag 20:30); Inhalt zu Ausfaellen auf der Seite nicht abrufbar."
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "COMPATIBLE",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Phase Q erwartet ca. 2.8 Bayern-Tore"
+    },
+    "SAFE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Sieg wahrscheinlich, aber weniger an Toren gebunden"
+    },
+    "BALANCED": {
+     "market_agreement": "COMPATIBLE",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "wie FAVOURITE"
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Ueber 2.5 Bayern-Tore nur ca. 52 %"
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "F1",
+     "finding": {
+      "text": "Verfuegbarkeit Musiala/Diaz: ECOBET-Daten fuehren beide als OUT, ein externer Vorbericht nennt beide kurz vor der Rueckkehr (Status ungeklaert, nicht bestaetigt).",
+      "origin": "ECOBET-Daten vs. externer Bericht",
+      "source_ids": [
+       "R1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Offensivbreite Bayerns koennte groesser sein als die Daten zeigen; bei Nicht-Rueckkehr bleiben Kane, Olise, Karl, Pavlovic.",
+     "materiality": {
+      "area": "XI",
+      "level": "M1"
+     },
+     "affected_markets_neutral": [
+      {
+       "market": "Bayern Munich Team Goals Over 1.5",
+       "effect": "leicht gestuetzt bei Rueckkehr, sonst unveraendert"
+      },
+      {
+       "market": "Bayern Munich to win",
+       "effect": "kaum betroffen"
+      }
+     ],
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Bayern Munich Team Goals Over 1.5",
+       "effect": "leicht gestuetzt bei Rueckkehr",
+       "why": "Offensivbreite Bayerns"
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Bayern Munich to win",
+       "effect": "kaum betroffen",
+       "why": "Staerkeluecke bleibt gross"
+      }
+     ],
+     "decision_effect": "FAVOURITE bleibt bestaetigt; Offensivstatus als dokumentierte Unsicherheit",
+     "rank_effect": {
+      "value": "NONE",
+      "why": ""
+     }
+    },
+    {
+     "finding_id": "F2",
+     "finding": {
+      "text": "Adjusted Elo Bayern inaktiv (BASE_FALLBACK_BOTH, Spielerwert-Abdeckung gering, Ersatzpool 0.5); Rechenanpassung waere klein gegenueber der Luecke von 385.",
+      "origin": "ECOBET Adjusted-Elo-Reproduktion",
+      "source_ids": []
+     },
+     "material": false,
+     "sporting_effect": "Keine Veraenderung der Staerkerelation; Bayern bleibt klarer Favorit.",
+     "not_material_reason": "Selbst die ungated Anpassung (-44/-12) laesst die Elo-Luecke bei ca. 353.",
+     "phase": "Q"
+    },
+    {
+     "finding_id": "F3",
+     "finding": {
+      "text": "Koeln: Gegentore 2.1/Spiel und BTTS in 8 von 10 Spielen, Clean Sheets 1 von 10; npxG-Bilanz ausgeglichen.",
+      "origin": "ECOBET current_v2 (letzte 10)",
+      "source_ids": []
+     },
+     "material": true,
+     "sporting_effect": "Koeln trifft regelmaessig, auch gegen staerkere Gegner sind Gegentore Bayerns wahrscheinlich.",
+     "materiality": {
+      "area": "FORM",
+      "level": "M1"
+     },
+     "affected_markets_neutral": [
+      {
+       "market": "Beide Teams treffen: Nein",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "FC Cologne Team Goals Under 0.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "gestuetzt"
+      }
+     ],
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Bayern Munich Team Goals Over 2.5",
+       "effect": "gestuetzt",
+       "why": "Koeln kassiert ca. 2.1 Gegentore/Spiel"
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "Match Total Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Koeln trifft in 8 von 10 Spielen"
+      }
+     ],
+     "decision_effect": "keine Aenderung der Entscheidung",
+     "rank_effect": {
+      "value": "NONE",
+      "why": ""
+     }
+    },
+    {
+     "finding_id": "P1",
+     "phase": "POST_DISCLOSURE",
+     "finding": {
+      "text": "FAVOURITE/BALANCED Bayern Team Goals Over 1.5 ohne publizierte Quote (Anbieter deckt den Markt nicht ab); SAFE Bayern to win zur Quote 1.074; Pilot-05-KI 65–80 % fuer den FAVOURITE, eigene Schaetzung ca. 77 %.",
+      "origin": "ECOBET-Pfade",
+      "source_ids": []
+     },
+     "material": false,
+     "not_material_reason": "Eigene Schaetzung (ca. 77 %) liegt innerhalb der Pilot-05-Spanne; keine Quote zum Abgleich, daher keine Preisaussage.",
+     "sporting_effect": "Keine sportliche Wirkung: Bayern-Torerwartung (ca. 2.8) und Spanne der Pilot-05-KI stimmen ueberein; Quote fehlt."
+    }
+   ],
+   "decision": {
+    "value": "CONFIRM_FAVOURITE",
+    "preferred_market": {
+     "source": "FAVOURITE",
+     "market_text": "Bayern Munich Team Goals Over 1.5"
+    },
+    "reasoning": "Der FAVOURITE Bayern Team Goals Ueber 1.5 deckt sich mit der Phase-Q-Einschaetzung (Bayern ca. 2.8 Tore, Elo-Luecke ueber 350, Koeln mit 2.1 Gegentoren/Spiel). Eigene Wahrscheinlichkeit ca. 77 % (Spanne 70–85 %). Die Verfuegbarkeit von Musiala und Diaz ist ungeklaert, schwaecht die Aussage aber nur moderat, da Kane, Olise und Karl verfuegbar sind.",
+    "chain_refs": [
+     "F1",
+     "F3",
+     "P1"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Bayern Team Goals Ueber 1.5: ca. 23 % Restrisiko fuer ein 0-1-Tor-Spiel Bayerns; Offensivstatus (Musiala/Diaz/Gnabry laut ECOBET OUT, extern teils vor Rueckkehr) und Torwartwechsel (Neuer out) sind die Unsicherheiten. Keine publizierte Quote fuer den Markt."
+   },
+   "detail_md": "**Spiel:** Bayern Muenchen – 1. FC Koeln (Bundesliga), Anstoss 19:30 UTC.\n\n**Pilot-05-Original:** Rang 2, bester Pfad BALANCED = FAVOURITE (Bayern Team Goals Ueber 1.5); rechnerischer KI TOP: Bayern Team Goals Ueber 0.5.\n\n**Qualitative KI (Phase Q):** Match Total Ueber 1.5 (ca. 89 %), Vertrauen mittel bis hoch.\n\n**Spieler/XI/Elo:** ECOBET fuehrt Neuer, Davies, Gnabry, Musiala, Diaz als OUT; ein externer Bericht nennt Musiala und Diaz kurz vor der Rueckkehr (unbestaetigt). Adjusted Elo inaktiv (BASE_FALLBACK), Luecke 385; selbst die ungated Anpassung ergaebe ca. 353.\n\n**Gegenpruefung:** FAVOURITE bestaetigt; kein Befund mit Rangwirkung.\n\n**Rang:** unveraendert 2.",
+   "rank": {
+    "original": 2,
+    "reviewed": 2,
+    "change": 0,
+    "reason": "Der FAVOURITE Bayern Team Goals Ueber 1.5 deckt sich mit der Phase-Q-Einschaetzung (Bayern ca. 2.8 Tore, Elo-Luecke ueber 350, Koeln mit 2.1 Gegentoren/Spiel). Eigene Wahrscheinlichkeit ca. 77 % (Spanne 70–85 %). Die Verfuegbarkeit von Musiala und Diaz ist ungeklaert, schwaecht die Aussage aber nur ",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 2
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "ESP2627_c084ded495bb",
+   "match": "Athletic Club – Espanyol",
+   "competition": "ESP_LA_LIGA",
+   "kickoff_utc": "2026-11-20T20:00:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 446 min (>= 30)"
+   },
+   "original": {
+    "rank": 3,
+    "score": 0.4175,
+    "best_path": "SAFE",
+    "best_market": "Espanyol Team Goals Under 2.5",
+    "fixture_category": "PARTIAL_AGREEMENT",
+    "published_odds": null
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Athletic Club Draw No Bet",
+     "pilot05_category": "DIVERGENT",
+     "published_odds": 1.161
+    },
+    "SAFE": {
+     "market": "Espanyol Team Goals Under 2.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "BALANCED": {
+     "market": "Athletic Club Draw No Bet",
+     "pilot05_category": "DIVERGENT",
+     "published_odds": 1.161
+    },
+    "AGGRESSIVE": {
+     "market": "Athletic Club Team Goals Over 1.5",
+     "pilot05_category": "DIVERGENT",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Match Total Under 4.5",
+    "p_low": 0.8,
+    "p_high": 0.95,
+    "worst_case_p": 0.75,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Match Total Under 3.5",
+    "confidence": "MEDIUM",
+    "reasoning": "Eigene Schaetzung: Athletic ca. 1.45, Espanyol ca. 1.05 Tore (Athletic npxG 1.42/1.33, Espanyol npxG 1.04/1.60 mit negativer Bilanz). Beide Seiten dezimiert (Athletic Defensive und Angriff, Espanyol ohne Kike Garcia/Urko Gonzalez), die Torerwartung liegt nahe 2.5. P(hoechstens 3 Tore) ca. 76 %, bei erhoehter Gegentorgefahr (Gesamt 2.9) noch ca. 70 %. Ein 1X2-Markt wird wegen der unsicheren Innenverteidigung und fehlender Stuermer nicht bevorzugt.",
+    "differs_from_computational": true,
+    "difference_explanation": "Der rechnerische KI TOP (Pilot 05) waehlt Match Total Unter 4.5 (schlechtester Fall 75 %), die weiteste Linie. Die qualitative Analyse verengt auf Unter 3.5, weil die Torerwartung (ca. 2.5) und die Ausfaelle diese Linie tragen, und der Informationsgehalt hoeher ist.",
+    "q_seal_sha256": "ce293c6617c37bf19565afa05ee845c42e334b51118e756f794c06bb0daf9ff1"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-20T12:36:03Z",
+    "result_sha256": "7d8f3e911430d53e994b41e32bed34bcce5e09dc6902d3610a47749a2780cddb",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "Athletic: Elo-Anpassung aktiv, Rohanpassung -103.5 durch Ausfaelle (Vivian, Paredes, Eguiluz, Guruzeta, Sannadi, Djalo), Espanyol -2.8; Luecke wird von +79 auf -21.7 gedreht. Die Richtung deckt sich mit den externen Berichten (Vivian 2-3 Wochen, Paredes/Guruzeta/Sannadi verletzt, Yeray fraglich); die Groesse ist durch geringe Spielerwert-Abdeckung (LOW_PLAYER_VALUE_COVERAGE) unsicher."
+    },
+    "research_log": [
+     {
+      "source_id": "R1",
+      "source": "https://www.elgoldigital.com/futbol/athletic-club/yeray-vivian-paredes-athletic-espanyol/",
+      "retrieved_utc": "2026-11-20T12:35:57Z",
+      "claim": "Trainingsbericht Mittwoch: Vivian (Soleus links, 2 bis 3 Wochen), Paredes, Guruzeta, Sannadi, Djalo und Padilla fehlen; Yeray unter Belastungssteuerung fraglich; Laporte und Unai Simon zurueck von der Nationalmannschaft; Berenguer und Yuri mit reduzierter Last."
+     },
+     {
+      "source_id": "R2",
+      "source": "https://www.comuniate.com/noticias/39042/parte-medico-oficial-y-tiempo-estimado-de-baja-de-dani-vivian",
+      "retrieved_utc": "2026-11-20T12:35:57Z",
+      "claim": "Offizieller Medizinbericht vom 17.11.2026: Vivian mit mittelschwerer Soleus-Verletzung, verpasst das Heimspiel gegen Espanyol am Freitag 21:00."
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "CONTRADICTORY",
+     "assumption_agreement": "CONTRADICTORY",
+     "assumption_comment": "Phase Q sieht Athletic beidseitig geschwaecht"
+    },
+    "SAFE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Espanyol-Angriff schwach, Phase Q bevorzugt Unter 3.5"
+    },
+    "BALANCED": {
+     "market_agreement": "CONTRADICTORY",
+     "assumption_agreement": "CONTRADICTORY",
+     "assumption_comment": "wie FAVOURITE"
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "CONTRADICTORY",
+     "assumption_agreement": "CONTRADICTORY",
+     "assumption_comment": "Athletic-Torerwartung nur ca. 1.45"
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "F1",
+     "finding": {
+      "text": "Athletic-Innenverteidigung stark geschwaecht: Vivian und Paredes fehlen, Yeray fraglich, nur Laporte verlaesslich.",
+      "origin": "externe Berichte + ECOBET availability",
+      "source_ids": [
+       "R1",
+       "R2"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Mehr Gegentorgefahr gegen Espanyol, geringere defensive Stabilitaet; Sieg und weisse Weste Athletics unsicherer.",
+     "materiality": {
+      "area": "XI",
+      "level": "M3"
+     },
+     "affected_markets_neutral": [
+      {
+       "market": "Athletic Club to win",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Athletic Club or Draw",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Beide Teams treffen: Nein",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Espanyol Team Goals Over 0.5",
+       "effect": "gestuetzt"
+      }
+     ],
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Athletic Club Draw No Bet",
+       "effect": "geschwaecht",
+       "why": "Innenverteidigung Vivian/Paredes out, Yeray fraglich"
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Athletic Club Team Goals Over 1.5",
+       "effect": "geschwaecht",
+       "why": "Ausfaelle in Abwehr und Angriff"
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Espanyol Team Goals Under 2.5",
+       "effect": "leicht geschwaecht",
+       "why": "mehr Espanyol-Chancen, aber Auswaertsangriff schwach"
+      }
+     ],
+     "decision_effect": "FAVOURITE wird herausgefordert; Wechsel auf SAFE",
+     "rank_effect": {
+      "value": "NONE",
+      "why": ""
+     }
+    },
+    {
+     "finding_id": "F2",
+     "finding": {
+      "text": "Angriff Athletics ohne Guruzeta, Sannadi, Djalo; Nico Williams zurueck.",
+      "origin": "externe Berichte",
+      "source_ids": [
+       "R1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Weniger Strafraumpraesenz, Torerwartung Athletics eher unter dem Formmodell.",
+     "materiality": {
+      "area": "XI",
+      "level": "M2"
+     },
+     "affected_markets_neutral": [
+      {
+       "market": "Athletic Club Team Goals Over 1.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "geschwaecht"
+      }
+     ],
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Athletic Club Team Goals Over 1.5",
+       "effect": "geschwaecht",
+       "why": "Guruzeta, Sannadi, Djalo fehlen"
+      },
+      {
+       "path": "FAVOURITE",
+       "market_text": "Athletic Club Draw No Bet",
+       "effect": "geschwaecht",
+       "why": "weniger Torgefahr"
+      }
+     ],
+     "decision_effect": "stuetzt den Wechsel auf SAFE",
+     "rank_effect": {
+      "value": "NONE",
+      "why": ""
+     }
+    },
+    {
+     "finding_id": "F3",
+     "finding": {
+      "text": "Espanyol Auswaertsangriff schwach (npxG 1.04, Bilanz -0.56, 2 Siege aus 10), Kike Garcia und Urko Gonzalez fehlen.",
+      "origin": "ECOBET current_v2 + availability",
+      "source_ids": []
+     },
+     "material": true,
+     "sporting_effect": "Espanyol erzeugt wenig Gefahr, begrenzt aber nicht Athletics Defensivprobleme voll.",
+     "materiality": {
+      "area": "FORM",
+      "level": "M1"
+     },
+     "affected_markets_neutral": [
+      {
+       "market": "Espanyol Team Goals Over 1.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Match Total Under 3.5",
+       "effect": "gestuetzt"
+      }
+     ],
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "SAFE",
+       "market_text": "Espanyol Team Goals Under 2.5",
+       "effect": "gestuetzt",
+       "why": "Espanyol-Auswaertsangriff schwach (npxG 1.04), Kike Garcia out"
+      }
+     ],
+     "decision_effect": "stuetzt die gewaehlte SAFE-Wahl",
+     "rank_effect": {
+      "value": "NONE",
+      "why": ""
+     }
+    },
+    {
+     "finding_id": "P1",
+     "phase": "POST_DISCLOSURE",
+     "finding": {
+      "text": "Publizierte Konsensquote 1.161 fuer Athletic Draw No Bet (implizit ca. 86 %) passt weder zur Pilot-05-KI (40–50 %) noch zur eigenen Schaetzung (ca. 63 %); Zuordnung der Quote zum Markt verdaechtig.",
+      "origin": "ECOBET-Quote vs. Phase-Q-Schaetzung",
+      "source_ids": []
+     },
+     "material": true,
+     "materiality": {
+      "area": "ODDS_CONSISTENCY",
+      "level": "M2"
+     },
+     "sporting_effect": "Die Quote darf nicht als Hinweis auf eine hohe Siegchance gelesen werden.",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Athletic Club Draw No Bet",
+       "effect": "geschwaecht",
+       "why": "Quote nicht belastbar, Pilot-05-Kategorie DIVERGENT"
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Athletic Club Draw No Bet",
+       "effect": "geschwaecht",
+       "why": "identisch mit FAVOURITE"
+      }
+     ],
+     "decision_effect": "FAVOURITE wird nicht bestaetigt; Wechsel auf SAFE Espanyol Team Goals Under 2.5",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Rang 3 bleibt; ein Verschieben nach unten ist nicht moeglich (letzter Platz), nach oben begruenden die Befunde nichts."
+     }
+    }
+   ],
+   "decision": {
+    "value": "OTHER_ECOBET_PATH",
+    "preferred_market": {
+     "source": "SAFE",
+     "market_text": "Espanyol Team Goals Under 2.5"
+    },
+    "reasoning": "Der FAVOURITE Athletic Draw No Bet ist laut Pilot 05 DIVERGENT und wird durch die Phase-Q-Befunde (Innenverteidigung und Angriff dezimiert) zusaetzlich geschwaecht; die publizierte Quote ist nicht plausibel. Der SAFE-Pfad Espanyol Team Goals Unter 2.5 hat mit ca. 86–91 % die breiteste Stuetze: Espanyol erzielt auswaerts wenig (npxG 1.04), Kike Garcia und Urko Gonzalez fehlen. Hauptrisiko ist Athletics geschwaechte Abwehr.",
+    "chain_refs": [
+     "F1",
+     "F2",
+     "F3",
+     "P1"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Espanyol Team Goals Unter 2.5: Fragil bei Zusammenbruch der Athletic-Abwehr (Vivian, Paredes out, Yeray fraglich); keine publizierte Quote. Gute Uebereinstimmung des SAFE-Pfads darf diese Fragilitaet nicht verdecken – Restrisiko ca. 9–14 %."
+   },
+   "detail_md": "**Spiel:** Athletic Club – Espanyol (La Liga, Spieltag 13), Anstoss 20:00 UTC.\n\n**Pilot-05-Original:** Rang 3, bester Pfad SAFE (Espanyol Team Goals Unter 2.5); FAVOURITE Athletic Draw No Bet (DIVERGENT); rechnerischer KI TOP: Match Total Unter 4.5.\n\n**Qualitative KI (Phase Q):** Match Total Unter 3.5 (ca. 76 %), Vertrauen mittel.\n\n**Spieler/XI/Elo:** Athletic ohne Vivian (Soleus, 2–3 Wochen), Paredes, Guruzeta, Sannadi, Djalo; Yeray fraglich; Elo-Anpassung aktiv: Luecke +79 → −21.7 (Rohanpassung −103.5), Groesse wegen Spielerwert-Abdeckung unsicher. Espanyol ohne Kike Garcia, Urko Gonzalez.\n\n**Gegenpruefung:** FAVOURITE nicht bestaetigt (DIVERGENT, Befunde F1/F2, Quote unplausibel); gewaehlt SAFE Espanyol Team Goals Unter 2.5.\n\n**Rang:** unveraendert 3.",
+   "rank": {
+    "original": 3,
+    "reviewed": 3,
+    "change": 0,
+    "reason": "Der FAVOURITE Athletic Draw No Bet ist laut Pilot 05 DIVERGENT und wird durch die Phase-Q-Befunde (Innenverteidigung und Angriff dezimiert) zusaetzlich geschwaecht; die publizierte Quote ist nicht plausibel. Der SAFE-Pfad Espanyol Team Goals Unter 2.5 hat mit ca. 86–91 % die breiteste Stuetze: Espan",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 3
+   },
+   "playable_top": true
+  }
+ ],
+ "summary": {
+  "playable_count": 3,
+  "skip_count": 0,
+  "top5": [
+   {
+    "rank": 1,
+    "fixture_id": "FRA2627_fd0638a4daa4",
+    "match": "Troyes – Le Havre",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Le Havre Team Goals Under 2.5"
+   },
+   {
+    "rank": 2,
+    "fixture_id": "GER2627_f7da5d4b72e6",
+    "match": "Bayern Munich – FC Cologne",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Bayern Munich Team Goals Over 1.5"
+   },
+   {
+    "rank": 3,
+    "fixture_id": "ESP2627_c084ded495bb",
+    "match": "Athletic Club – Espanyol",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Espanyol Team Goals Under 2.5"
+   }
+  ],
+  "top8": [
+   {
+    "rank": 1,
+    "fixture_id": "FRA2627_fd0638a4daa4",
+    "match": "Troyes – Le Havre",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Le Havre Team Goals Under 2.5"
+   },
+   {
+    "rank": 2,
+    "fixture_id": "GER2627_f7da5d4b72e6",
+    "match": "Bayern Munich – FC Cologne",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Bayern Munich Team Goals Over 1.5"
+   },
+   {
+    "rank": 3,
+    "fixture_id": "ESP2627_c084ded495bb",
+    "match": "Athletic Club – Espanyol",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Espanyol Team Goals Under 2.5"
+   }
+  ],
+  "top10": [
+   {
+    "rank": 1,
+    "fixture_id": "FRA2627_fd0638a4daa4",
+    "match": "Troyes – Le Havre",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Le Havre Team Goals Under 2.5"
+   },
+   {
+    "rank": 2,
+    "fixture_id": "GER2627_f7da5d4b72e6",
+    "match": "Bayern Munich – FC Cologne",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Bayern Munich Team Goals Over 1.5"
+   },
+   {
+    "rank": 3,
+    "fixture_id": "ESP2627_c084ded495bb",
+    "match": "Athletic Club – Espanyol",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Espanyol Team Goals Under 2.5"
+   }
+  ]
+ },
+ "evaluation": {
+  "status": "NOT_EVALUATED",
+  "results": null
+ },
+ "compiled_utc": "2026-11-20T12:39:20Z"
+}

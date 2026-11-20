@@ -1,1 +1,16 @@
-{"schema":"ECOBET_AI_ANALYST_INDEX_V1","entries":{}}
+{
+ "entries": {
+  "2026-11-20_0217": {
+   "bytes_sha256": "ae6bd2d59749adf6c106d8fb35bdf3052bb52b941f0def6930364f331e190ce7",
+   "date": "2026-11-20",
+   "file": "analyst/2026-11-20_0217.json",
+   "fixtures": 3,
+   "generated_at_utc": "2026-11-20T12:39:20Z",
+   "reviewed": 3,
+   "schema": "ECOBET_AI_ANALYST_DAY_V1",
+   "seal_sha256": "2a5749072342f5965f84e78b24c3531845bc87042d8f0d5e5f5f193bdf5a0048",
+   "status": "OK"
+  }
+ },
+ "schema": "ECOBET_AI_ANALYST_INDEX_V1"
+}
