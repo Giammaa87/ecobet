@@ -1,0 +1,207 @@
+{
+ "counts": {
+  "derived": 3,
+  "fixtures": 3,
+  "owner_favourite": {
+   "SELECTED": 2,
+   "TIE": 1
+  }
+ },
+ "data_status": "AUTOMATIC_UNVALIDATED",
+ "data_status_note": null,
+ "disclaimer": "Modellinterne Einschaetzung, abgeleitet aus bereits veroeffentlichten ECOBET V2.4 Prediction-Ergebnissen. Keine Wahrscheinlichkeit, keine Quote, keine Erfolgsgarantie. Noch nicht validiert.",
+ "fixtures": [
+  {
+   "away": "Espanyol",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Athletic Club Team Goals Over 1.5",
+    "balanced": "Athletic Club Draw No Bet",
+    "favourite": "Athletic Club Draw No Bet",
+    "favourite_source": "BALANCED",
+    "safe": "Espanyol Team Goals Under 2.5"
+   },
+   "fixture_id": "ESP2627_c084ded495bb",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 1,
+    "goals_min": 0,
+    "read": "Espanyol 0-1",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Espanyol"
+   },
+   "home": "Athletic Club",
+   "kickoff_utc": "2026-11-20T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "STRONG",
+      "read": "Espanyol 0-1",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "gleiche Evidenzstufe (STRONG), keine Rangfolge erzwungen",
+    "selected": null,
+    "status": "TIE"
+   },
+   "run_id": "2026-11-20_0217",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-20T04:05:01.552153+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Le Havre",
+   "direction": {
+    "coverage_status": null,
+    "covered_by": null,
+    "evidence": null,
+    "read": null,
+    "status": "NO_READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Goals 2-3",
+    "balanced": "Match Total Over 1.5",
+    "favourite": "Match Total Over 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Le Havre Team Goals Under 2.5"
+   },
+   "fixture_id": "FRA2627_fd0638a4daa4",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Le Havre 1-2",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Le Havre"
+   },
+   "home": "Troyes",
+   "kickoff_utc": "2026-11-20T19:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Le Havre 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Le Havre 1-2",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-20_0217",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-20T04:05:01.552153+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "FC Cologne",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Bayern Munich to win",
+     "roles": [
+      "SAFE"
+     ]
+    },
+    "evidence": "STRONG",
+    "read": "1",
+    "read_text": "Heimsieg",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Bayern Munich Team Goals Over 2.5",
+    "balanced": "Bayern Munich Team Goals Over 1.5",
+    "favourite": "Bayern Munich Team Goals Over 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Bayern Munich to win"
+   },
+   "fixture_id": "GER2627_f7da5d4b72e6",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 4,
+    "goals_min": 3,
+    "read": "Bayern Munich 3-4",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Bayern Munich"
+   },
+   "home": "Bayern Munich",
+   "kickoff_utc": "2026-11-20T19:30:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "Bayern Munich 3-4",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "Bayern Munich 3-4",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-20_0217",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-20T04:05:01.552153+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  }
+ ],
+ "generated_at_utc": "2026-11-20T04:05:01.552153+00:00",
+ "logical_run_id": "ECOBET_LRUN_2b615c5fcece412da2ee081794478add",
+ "publication_id": "2026-11-20_0217",
+ "rules": {
+  "coverage_and_owner_favourite": "RULES_COVERAGE_OWNERFAV_v1",
+  "direction": "DIRECTION_READ_SCENARIO_V1",
+  "goal_range": "GOAL_RANGE_EXT_V1_V2_STAB_MIN_0.67",
+  "imported_pins": {
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105\\RULES_COVERAGE_OWNERFAV_v1.md": "646b9b144e2d4bb88e1e91a61fbce0b2a57b961908abfbe1c67ff663a6ffa497",
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105\\coverage_ownerfav.py": "9af22a43803db0a6b21987ff216358f3d1f5451e0a605d7851216cd9be079158",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1\\RULES_READS_v1.md": "13dfcde3b206f858bbd41f1a5f62dc7625576c6ea9fd816a5402c3da2484bc60",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1\\reads_runner.py": "c025df64a96c1b46c62937528767bc03a96fc4d10a65f08b38a5da5f4b057089"
+  },
+  "rules_sha256": "7484a1a98baf3905f255f1ba65955ea4580b2fdaa84d9eb495c90f2aa505bf75",
+  "runner": "READS_RUNNER_V2_1"
+ },
+ "run_date": "2026-11-20",
+ "run_id": "2026-11-20_0217",
+ "schema": "ECOBET_READS_PUBLIC_V1",
+ "source": {
+  "derived_file_sha256": "d5c560c3383f9a8829e9c9bc440fa94d49af24bab3b90e89422492054633b770",
+  "published_at_utc": "2026-11-20T02:17:46.886509+00:00",
+  "record_content_hash": "sha256:bfd9f3886561ce3cb356da0e89c2ac04996abbfb097611bffb91943862073d3f",
+  "source_file_sha256": "8433c211cdc00d4270335b35a5d4e4f8a5b9ba06563ce62ea9368d2f84a4da96"
+ }
+}
