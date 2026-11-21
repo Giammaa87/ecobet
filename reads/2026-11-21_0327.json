@@ -1,0 +1,1537 @@
+{
+ "counts": {
+  "derived": 26,
+  "fixtures": 26,
+  "owner_favourite": {
+   "NO_READ": 2,
+   "SELECTED": 21,
+   "TIE": 3
+  }
+ },
+ "data_status": "AUTOMATIC_UNVALIDATED",
+ "data_status_note": null,
+ "disclaimer": "Modellinterne Einschaetzung, abgeleitet aus bereits veroeffentlichten ECOBET V2.4 Prediction-Ergebnissen. Keine Wahrscheinlichkeit, keine Quote, keine Erfolgsgarantie. Noch nicht validiert.",
+ "fixtures": [
+  {
+   "away": "Nottingham Forest",
+   "direction": {
+    "coverage_status": "STAERKER_ABGEDECKT",
+    "covered_by": {
+     "expression": "Bournemouth to win",
+     "roles": [
+      "BALANCED"
+     ]
+    },
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Bournemouth Team Goals Over 1.5",
+    "balanced": "Bournemouth to win",
+    "favourite": "Bournemouth to win",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "ENG2627_02a2ac2070d9",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Bournemouth 1-2",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Bournemouth"
+   },
+   "home": "Bournemouth",
+   "kickoff_utc": "2026-11-21T15:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Bournemouth 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Bournemouth 1-2",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Arsenal",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "X2",
+    "read_text": "Auswaertssieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Arsenal Team Goals Over 1.5",
+    "balanced": "Arsenal Draw No Bet",
+    "favourite": "Arsenal Draw No Bet",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "ENG2627_20e24730bbe1",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-3",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Newcastle United",
+   "kickoff_utc": "2026-11-21T17:30:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "X2",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 2-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "X2",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Fulham",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Manchester City or Draw",
+     "roles": [
+      "SAFE"
+     ]
+    },
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Manchester City Team Goals Over 1.5",
+    "balanced": "Manchester City to win",
+    "favourite": "Manchester City to win",
+    "favourite_source": "BALANCED",
+    "safe": "Manchester City or Draw"
+   },
+   "fixture_id": "ENG2627_6f1c4ee925a8",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 4,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-4",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Manchester City",
+   "kickoff_utc": "2026-11-21T12:30:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Gesamtspiel 2-4",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Gesamtspiel 2-4",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Ipswich Town",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Goals 2-3",
+    "balanced": "Tottenham Hotspur Draw No Bet",
+    "favourite": "Tottenham Hotspur Draw No Bet",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "ENG2627_917b2217234b",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 1,
+    "goals_min": 0,
+    "read": "Ipswich Town 0-1",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Ipswich Town"
+   },
+   "home": "Tottenham Hotspur",
+   "kickoff_utc": "2026-11-21T15:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Ipswich Town 0-1",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "gleiche Evidenzstufe (MEDIUM), keine Rangfolge erzwungen",
+    "selected": null,
+    "status": "TIE"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Leeds United",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Chelsea or Draw",
+     "roles": [
+      "BALANCED"
+     ]
+    },
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Leeds United Team Goals Under 1.5",
+    "balanced": "Chelsea or Draw",
+    "favourite": "Match Total Under 4.5",
+    "favourite_source": "SAFE",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "ENG2627_ba3ccaac894b",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Chelsea 1-2",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Chelsea"
+   },
+   "home": "Chelsea",
+   "kickoff_utc": "2026-11-21T15:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Chelsea 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Chelsea 1-2",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Crystal Palace",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Both Teams To Score: No",
+    "balanced": "Coventry City Team Goals Over 0.5",
+    "favourite": "Coventry City Team Goals Over 0.5",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "ENG2627_e201a8877356",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Coventry City 1-2",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Coventry City"
+   },
+   "home": "Coventry City",
+   "kickoff_utc": "2026-11-21T15:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "STRONG",
+      "read": "Coventry City 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "gleiche Evidenzstufe (STRONG), keine Rangfolge erzwungen",
+    "selected": null,
+    "status": "TIE"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Sunderland",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Total Under 3.5",
+    "balanced": "Sunderland Team Goals Under 1.5",
+    "favourite": "Sunderland Team Goals Under 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Aston Villa Team Goals Over 0.5"
+   },
+   "fixture_id": "ENG2627_f6d04c98a262",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 2,
+    "goals_min": 2,
+    "read": "Aston Villa 2-2",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Aston Villa"
+   },
+   "home": "Aston Villa",
+   "kickoff_utc": "2026-11-21T15:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Aston Villa 2-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "gleiche Evidenzstufe (MEDIUM), keine Rangfolge erzwungen",
+    "selected": null,
+    "status": "TIE"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Deportivo La Coruna",
+   "direction": {
+    "coverage_status": null,
+    "covered_by": null,
+    "evidence": null,
+    "read": null,
+    "status": "NO_READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Both Teams To Score: Yes",
+    "balanced": "Match Total Under 3.5",
+    "favourite": "Match Total Under 3.5",
+    "favourite_source": "BALANCED",
+    "safe": "Alaves Team Goals Over 0.5"
+   },
+   "fixture_id": "ESP2627_499fbfde0809",
+   "goal_range": {
+    "coverage_status": "KOMBINATION",
+    "covered_by": {
+     "expression": "Both Teams To Score: Yes + Match Total Under 3.5",
+     "roles": [
+      "AGGRESSIVE",
+      "BALANCED"
+     ]
+    },
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-3",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Alaves",
+   "kickoff_utc": "2026-11-21T13:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [],
+    "reason": "Rohreads fehlen oder bereits abgedeckt",
+    "selected": null,
+    "status": "NO_READ"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Valencia",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Rayo Vallecano or Draw",
+     "roles": [
+      "FAVOURITE"
+     ]
+    },
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Rayo Vallecano Team Goals Over 1.5",
+    "balanced": "Rayo Vallecano or Draw",
+    "favourite": "Rayo Vallecano or Draw",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 3.5"
+   },
+   "fixture_id": "ESP2627_5d6ddef15a06",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Rayo Vallecano 1-2",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Rayo Vallecano"
+   },
+   "home": "Rayo Vallecano",
+   "kickoff_utc": "2026-11-21T15:15:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Rayo Vallecano 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Rayo Vallecano 1-2",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Real Betis",
+   "direction": {
+    "coverage_status": null,
+    "covered_by": null,
+    "evidence": null,
+    "read": null,
+    "status": "NO_READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Real Betis or Draw",
+    "balanced": "Both Teams To Score: Yes",
+    "favourite": "Real Betis Team Goals Over 0.5",
+    "favourite_source": "SAFE",
+    "safe": "Real Betis Team Goals Over 0.5"
+   },
+   "fixture_id": "ESP2627_9a84bfd8d3bd",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-3",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Sevilla",
+   "kickoff_utc": "2026-11-21T17:30:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 2-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "Gesamtspiel 2-3",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Celta Vigo",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Real Madrid to win",
+     "roles": [
+      "FAVOURITE"
+     ]
+    },
+    "evidence": "STRONG",
+    "read": "1",
+    "read_text": "Heimsieg",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Real Madrid Team Goals Over 2.5",
+    "balanced": "Real Madrid Team Goals Over 1.5",
+    "favourite": "Real Madrid to win",
+    "favourite_source": "SAFE",
+    "safe": "Real Madrid to win"
+   },
+   "fixture_id": "ESP2627_9df9d01747fb",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Real Madrid 2-3",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Real Madrid"
+   },
+   "home": "Real Madrid",
+   "kickoff_utc": "2026-11-21T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "Real Madrid 2-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "Real Madrid 2-3",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Toulouse",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Lens Team Goals Over 1.5",
+    "balanced": "Lens Draw No Bet",
+    "favourite": "Lens Draw No Bet",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "FRA2627_5cbf7f7d8f47",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Lens 2-3",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Lens"
+   },
+   "home": "Lens",
+   "kickoff_utc": "2026-11-21T19:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "STRONG",
+      "read": "Lens 2-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Lens 2-3",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Brest",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "read": "X2",
+    "read_text": "Auswaertssieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Total Over 2.5",
+    "balanced": "Both Teams To Score: Yes",
+    "favourite": "Both Teams To Score: Yes",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "FRA2627_7740b071d309",
+   "goal_range": {
+    "coverage_status": "KOMBINATION",
+    "covered_by": {
+     "expression": "Match Total Over 2.5 + Match Total Under 4.5",
+     "roles": [
+      "AGGRESSIVE",
+      "SAFE"
+     ]
+    },
+    "evidence": "STRONG",
+    "goals_max": 4,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-4",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Strasbourg",
+   "kickoff_utc": "2026-11-21T19:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "X2",
+      "source": "DIRECTION"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "X2",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Auxerre",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Monaco or Draw",
+     "roles": [
+      "FAVOURITE"
+     ]
+    },
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Monaco Team Goals Over 1.5",
+    "balanced": "Monaco or Draw",
+    "favourite": "Monaco or Draw",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "FRA2627_93d7a5531c72",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 1,
+    "goals_min": 0,
+    "read": "Auxerre 0-1",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Auxerre"
+   },
+   "home": "Monaco",
+   "kickoff_utc": "2026-11-21T19:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "Auxerre 0-1",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "Auxerre 0-1",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Lyon",
+   "direction": {
+    "coverage_status": "STAERKER_ABGEDECKT",
+    "covered_by": {
+     "expression": "Lille to win",
+     "roles": [
+      "AGGRESSIVE"
+     ]
+    },
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Lille to win",
+    "balanced": "Match Total Under 3.5",
+    "favourite": "Lyon Team Goals Under 1.5",
+    "favourite_source": "SAFE",
+    "safe": "Lyon Team Goals Under 1.5"
+   },
+   "fixture_id": "FRA2627_c31eb8d0e23e",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Gesamtspiel 1-2",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Lille",
+   "kickoff_utc": "2026-11-21T19:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "Gesamtspiel 1-2",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Paris Saint-Germain",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Paris Saint-Germain to win",
+     "roles": [
+      "FAVOURITE"
+     ]
+    },
+    "evidence": "STRONG",
+    "read": "2",
+    "read_text": "Auswaertssieg",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Paris Saint-Germain Team Goals Over 1.5",
+    "balanced": "Paris Saint-Germain to win",
+    "favourite": "Paris Saint-Germain to win",
+    "favourite_source": "BALANCED",
+    "safe": "Paris Saint-Germain Draw No Bet"
+   },
+   "fixture_id": "FRA2627_c323952232fd",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Paris Saint-Germain 2-3",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Paris Saint-Germain"
+   },
+   "home": "Nice",
+   "kickoff_utc": "2026-11-21T16:15:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "Paris Saint-Germain 2-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "Paris Saint-Germain 2-3",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "RB Leipzig",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "RB Leipzig or Draw",
+     "roles": [
+      "BALANCED"
+     ]
+    },
+    "evidence": "MEDIUM",
+    "read": "X2",
+    "read_text": "Auswaertssieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "RB Leipzig Team Goals Over 1.5",
+    "balanced": "RB Leipzig or Draw",
+    "favourite": "RB Leipzig Team Goals Over 0.5",
+    "favourite_source": "SAFE",
+    "safe": "RB Leipzig Team Goals Over 0.5"
+   },
+   "fixture_id": "GER2627_0ede9a4c481e",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "RB Leipzig 1-2",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "RB Leipzig"
+   },
+   "home": "Union Berlin",
+   "kickoff_utc": "2026-11-21T14:30:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "RB Leipzig 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "RB Leipzig 1-2",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Freiburg",
+   "direction": {
+    "coverage_status": null,
+    "covered_by": null,
+    "evidence": null,
+    "read": null,
+    "status": "NO_READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Total Over 2.5",
+    "balanced": "Both Teams To Score: Yes",
+    "favourite": "Both Teams To Score: Yes",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "GER2627_152a6e1cda46",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "SV Elversberg 1-2",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "SV Elversberg"
+   },
+   "home": "SV Elversberg",
+   "kickoff_utc": "2026-11-21T14:30:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "SV Elversberg 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "SV Elversberg 1-2",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Hoffenheim",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "X2",
+    "read_text": "Auswaertssieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Total Over 2.5",
+    "balanced": "Both Teams To Score: Yes",
+    "favourite": "Both Teams To Score: Yes",
+    "favourite_source": "BALANCED",
+    "safe": "Hoffenheim Team Goals Over 0.5"
+   },
+   "fixture_id": "GER2627_4f483cbe6886",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Eintracht Frankfurt 1-2",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Eintracht Frankfurt"
+   },
+   "home": "Eintracht Frankfurt",
+   "kickoff_utc": "2026-11-21T14:30:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "X2",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Eintracht Frankfurt 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "X2",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "SC Paderborn",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Bayer Leverkusen to win",
+     "roles": [
+      "FAVOURITE"
+     ]
+    },
+    "evidence": "STRONG",
+    "read": "1",
+    "read_text": "Heimsieg",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Bayer Leverkusen Team Goals Over 1.5",
+    "balanced": "Bayer Leverkusen to win",
+    "favourite": "Bayer Leverkusen to win",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "GER2627_96f5f2ad8983",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-3",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Bayer Leverkusen",
+   "kickoff_utc": "2026-11-21T14:30:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 2-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "Gesamtspiel 2-3",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Borussia Dortmund",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Borussia Dortmund or Draw",
+     "roles": [
+      "FAVOURITE"
+     ]
+    },
+    "evidence": "MEDIUM",
+    "read": "X2",
+    "read_text": "Auswaertssieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Borussia Dortmund Team Goals Over 1.5",
+    "balanced": "Match Total Over 2.5",
+    "favourite": "Borussia Dortmund or Draw",
+    "favourite_source": "SAFE",
+    "safe": "Borussia Dortmund or Draw"
+   },
+   "fixture_id": "GER2627_9be96ad987d4",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 4,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-4",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Borussia Monchengladbach",
+   "kickoff_utc": "2026-11-21T14:30:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Gesamtspiel 2-4",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Gesamtspiel 2-4",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "VfB Stuttgart",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "VfB Stuttgart or Draw",
+     "roles": [
+      "FAVOURITE"
+     ]
+    },
+    "evidence": "STRONG",
+    "read": "X2",
+    "read_text": "Auswaertssieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "VfB Stuttgart to win",
+    "balanced": "VfB Stuttgart or Draw",
+    "favourite": "VfB Stuttgart or Draw",
+    "favourite_source": "BALANCED",
+    "safe": "Schalke 04 Team Goals Under 1.5"
+   },
+   "fixture_id": "GER2627_cb23975f7435",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Gesamtspiel 1-2",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Schalke 04",
+   "kickoff_utc": "2026-11-21T17:30:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "Gesamtspiel 1-2",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Roma",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Roma to win",
+     "roles": [
+      "AGGRESSIVE"
+     ]
+    },
+    "evidence": "STRONG",
+    "read": "2",
+    "read_text": "Auswaertssieg",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Roma to win",
+    "balanced": "Roma Team Goals Over 1.5",
+    "favourite": "Roma Team Goals Over 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Roma or Draw"
+   },
+   "fixture_id": "ITA2627_ae2d18d4fa48",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 1,
+    "read": "Gesamtspiel 1-3",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Parma",
+   "kickoff_utc": "2026-11-21T17:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 1-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "Gesamtspiel 1-3",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Lecce",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Lazio to win",
+     "roles": [
+      "AGGRESSIVE"
+     ]
+    },
+    "evidence": "STRONG",
+    "read": "1",
+    "read_text": "Heimsieg",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Lazio to win",
+    "balanced": "Lazio Team Goals Over 1.5",
+    "favourite": "Lecce Team Goals Under 2.5",
+    "favourite_source": "SAFE",
+    "safe": "Lecce Team Goals Under 2.5"
+   },
+   "fixture_id": "ITA2627_c47d537ec370",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Lazio 2-3",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Lazio"
+   },
+   "home": "Lazio",
+   "kickoff_utc": "2026-11-21T14:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "Lazio 2-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "Lazio 2-3",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Torino",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Napoli Team Goals Over 1.5",
+    "balanced": "Napoli Draw No Bet",
+    "favourite": "Napoli Draw No Bet",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "ITA2627_f92a160497ef",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 2,
+    "goals_min": 2,
+    "read": "Napoli 2-2",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Napoli"
+   },
+   "home": "Napoli",
+   "kickoff_utc": "2026-11-21T19:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Napoli 2-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "1X",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Cagliari",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Como or Draw",
+     "roles": [
+      "SAFE"
+     ]
+    },
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Goals 1-3",
+    "balanced": "Cagliari Team Goals Under 1.5",
+    "favourite": "Cagliari Team Goals Under 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Como or Draw"
+   },
+   "fixture_id": "ITA2627_fc21022dee78",
+   "goal_range": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Cagliari Team Goals Under 1.5",
+     "roles": [
+      "FAVOURITE"
+     ]
+    },
+    "evidence": "STRONG",
+    "goals_max": 1,
+    "goals_min": 0,
+    "read": "Cagliari 0-1",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Cagliari"
+   },
+   "home": "Como",
+   "kickoff_utc": "2026-11-21T14:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [],
+    "reason": "Rohreads fehlen oder bereits abgedeckt",
+    "selected": null,
+    "status": "NO_READ"
+   },
+   "run_id": "2026-11-21_0327",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  }
+ ],
+ "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
+ "logical_run_id": "ECOBET_LRUN_a97b92f728bc4a5b9fa0d342c5776282",
+ "publication_id": "2026-11-21_0327",
+ "rules": {
+  "coverage_and_owner_favourite": "RULES_COVERAGE_OWNERFAV_v1",
+  "direction": "DIRECTION_READ_SCENARIO_V1",
+  "goal_range": "GOAL_RANGE_EXT_V1_V2_STAB_MIN_0.67",
+  "imported_pins": {
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105/RULES_COVERAGE_OWNERFAV_v1.md": "646b9b144e2d4bb88e1e91a61fbce0b2a57b961908abfbe1c67ff663a6ffa497",
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105/coverage_ownerfav.py": "9af22a43803db0a6b21987ff216358f3d1f5451e0a605d7851216cd9be079158",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1/RULES_READS_v1.md": "13dfcde3b206f858bbd41f1a5f62dc7625576c6ea9fd816a5402c3da2484bc60",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1/reads_runner.py": "c025df64a96c1b46c62937528767bc03a96fc4d10a65f08b38a5da5f4b057089"
+  },
+  "rules_sha256": "7484a1a98baf3905f255f1ba65955ea4580b2fdaa84d9eb495c90f2aa505bf75",
+  "runner": "READS_RUNNER_V2_1"
+ },
+ "run_date": "2026-11-21",
+ "run_id": "2026-11-21_0327",
+ "schema": "ECOBET_READS_PUBLIC_V1",
+ "source": {
+  "derived_file_sha256": "7348c3a9c57a091e6d79cd243bd15566947b3c0b9b5e364b8e6ee5d126929352",
+  "published_at_utc": "2026-11-21T03:32:12.202053+00:00",
+  "record_content_hash": "sha256:12cd63370992bbfe0435a4145d55cd22bb21fab240723ce720cd009187080058",
+  "source_file_sha256": "333e037bba7497b347352df07c92a14a4b51bbe4c485bbfdc313052e4cdf48a3"
+ }
+}
