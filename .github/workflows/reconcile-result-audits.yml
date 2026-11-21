@@ -32,22 +32,37 @@ jobs:
         run: |
           python -m py_compile tools/reconcile_result_audits.py
           python -m unittest discover -s tools/tests -p 'test_result_audit_recovery.py' -v
-      - name: Reconcile finished results without changing predictions
-        run: python tools/reconcile_result_audits.py . --lookback-days 7
-      - name: Rebuild website derived performance and form indexes
-        run: python tools/build_website_phase1_indexes.py .
-      - name: Verify all published source bindings
-        run: python tools/validate_website_phase1.py .
-      - name: Publish append-only audit revisions and validated website indexes
+      - name: Reconcile, rebuild indexes and publish with concurrent push recovery
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name 'ecobet-audit-recovery-bot'
           git config user.email 'ecobet-audit-recovery-bot@users.noreply.github.com'
-          git add -- audits performance team-form
-          if git diff --cached --quiet; then
-            echo 'No changes to publish.'
-            exit 0
-          fi
-          git commit -m 'audit: reconcile completed results and refresh indexes'
-          git pull --rebase origin main
-          git push origin HEAD:main
+
+          # Other publishers (run, odds, audit, extension tasks) advance main at any time.  Every attempt
+          # starts from the newest main, recomputes the append-only revision against it and never force pushes.
+          for attempt in 1 2 3 4 5; do
+            echo "Audit recovery publish attempt ${attempt}/5"
+            git fetch --no-tags origin main
+            git reset --hard origin/main
+            git clean -fd -- audits performance team-form
+
+            python tools/reconcile_result_audits.py . --lookback-days 7
+            python tools/build_website_phase1_indexes.py .
+            python tools/validate_website_phase1.py .
+            git add -- audits performance team-form
+
+            if git diff --cached --quiet; then
+              echo 'No changes to publish.'
+              exit 0
+            fi
+            git commit -m 'audit: reconcile completed results and refresh indexes'
+            if git push origin HEAD:main; then
+              echo 'Audit revisions and indexes published.'
+              exit 0
+            fi
+            echo "::warning::main changed during audit recovery; recomputing from the newest main"
+            sleep "$((attempt * 2))"
+          done
+          echo "::error::Unable to publish audit recovery after 5 attempts"
+          exit 1
