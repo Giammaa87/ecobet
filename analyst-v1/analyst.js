@@ -33,18 +33,24 @@ function game(g,i){
   var shortReason=fullReason.length>195?fullReason.slice(0,190).replace(/\s+\S*$/,"")+"…":fullReason;
   var quoted=preferredSource==="NONE"?null:(eco[preferredSource]&&eco[preferredSource].published_odds);
   var quote=quoted!=null&&Number(quoted)>0?Number(quoted).toFixed(3):null;
+  var favQuoted=eco.FAVOURITE&&eco.FAVOURITE.published_odds;
+  var favQuote=favQuoted!=null&&Number(favQuoted)>0?Number(favQuoted).toFixed(3):null;
+  var favState=!value?"NICHT GEPRÜFT":value==="CONFIRM_FAVOURITE"?"✓ BESTÄTIGT":"✕ NICHT BESTÄTIGT";
+  var favClass=value==="CONFIRM_FAVOURITE"?"an-fav-yes":"an-fav-no";
+  var favQuoteWarning=/Quote (ist )?(nicht plausibel|unplausibel)|Zuordnung der Quote/i.test(g.decision&&g.decision.reasoning||"");
   var status=value==="SKIP"?"SKIP":!value?"NICHT PRÜFBAR":preferredSource==="FAVOURITE"?"FAVOURITE":preferredSource==="KI_TOP"?"KI TOP":preferredSource;
   var tagClass=value==="SKIP"?"an-judgement-skip":value==="CONFIRM_FAVOURITE"?"an-judgement-ok":"an-judgement-alt";
   var row='<tr class="an-game-row'+(g.playable_top===false?' an-notplayable':'')+'">'+
-    '<td class="an-rank"><strong>'+esc(rk)+'</strong><small>alt '+esc(or)+'</small></td>'+
+    '<td class="an-rank"><strong>'+esc(rk)+'</strong><small>Pilot 05: '+esc(or)+'</small></td>'+
     '<td class="an-match"><b>'+esc(g.match||"Unbekannte Begegnung")+'</b><small>'+esc(g.competition||"")+" · "+esc(timeCH(g.kickoff_utc))+'</small></td>'+
     '<td>'+esc(fav)+'</td>'+
-    '<td>'+esc(q.market||"Nicht verfügbar")+'</td>'+
+    '<td><strong class="an-fav-result '+favClass+'">'+esc(favState)+'</strong></td>'+
     '<td><b>'+esc(preferredText)+'</b><small class="an-judgement '+tagClass+'">'+esc(dec)+'</small></td>'+
-    '<td><span class="an-tag '+tagClass+'">'+esc(status)+'</span></td>'+
-    '<td>'+(quote?'<b>'+esc(quote)+'</b>':'<span class="an-no-quote">Keine Quote</span>')+'</td>'+
+    '<td>'+esc(q.market||"Nicht verfügbar")+'</td>'+
+    '<td>'+(favQuote?'<b>'+esc(favQuote)+(favQuoteWarning?' †':'')+'</b>':'<span class="an-no-quote">Nicht publiziert</span>')+'</td>'+
+    '<td>'+(quote?'<b>'+esc(quote)+'</b>':'<span class="an-no-quote">Nicht publiziert</span>')+'</td>'+
     '<td><button type="button" class="an-expand" data-an-expand="'+esc(id)+'" aria-controls="'+esc(id)+'" aria-expanded="false">Details öffnen</button></td></tr>';
-  var why='<tr class="an-why"><td colspan="8"><b>Warum?</b> '+esc(shortReason)+'</td></tr>';
+  var why='<tr class="an-why"><td colspan="9"><b>Warum?</b> '+esc(shortReason)+'</td></tr>';
   var detail='<div class="an-review">';
   detail+='<div class="an-review-head"><h4>Analyse und Marktentscheidung</h4><p><b>Endentscheidung:</b> '+esc(dec)+' · '+esc(preferredText)+'</p><p>'+esc(fullReason)+'</p></div>';
   detail+='<div class="an-review-cards"><div><b>Ursprünglicher Pilot 05</b><p>Rang '+esc(or)+' · '+esc(g.original&&g.original.best_market||"–")+'</p><small>Agreement: '+esc(g.original&&g.original.fixture_category||"–")+'</small></div>'+
@@ -53,19 +59,20 @@ function game(g,i){
   if(q.reasoning)detail+='<p><b>Unabhängige KI-Spielanalyse:</b> '+esc(q.reasoning)+'</p>';
   if(q.differs_from_computational&&q.difference_explanation)detail+='<p><b>Warum die KI-TOP-Stände abweichen:</b> '+esc(q.difference_explanation)+'</p>';
   if(g.preferred_market_fragility_assessment&&g.preferred_market_fragility_assessment.text)detail+='<p><b>Fragilität des gewählten Marktes:</b> '+esc(g.preferred_market_fragility_assessment.text)+'</p>';
-  if(g.rank&&g.rank.reason)detail+='<p><b>Begründung der Rangposition:</b> '+esc(g.rank.reason)+'</p>';
+  if(g.rank&&g.rank.original!==g.rank.reviewed&&g.rank.reason)detail+='<p><b>Begründung der Rangänderung:</b> '+esc(g.rank.reason)+'</p>';
   detail+='<div class="an-table-scroll"><table class="an-markets"><thead><tr><th>ECOBET-Pfad</th><th>Markt</th><th>Quote</th><th>Markt-Übereinstimmung</th><th>Spielannahme</th></tr></thead><tbody>';
   PATHS.forEach(function(p){var e=eco[p]||{},a=g.ecobet_agreement&&g.ecobet_agreement[p]||{};detail+='<tr><th>'+esc(p)+'</th><td>'+esc(e.market||"–")+'</td><td>'+esc(e.published_odds==null?"–":e.published_odds)+'</td><td>'+esc(AG[a.market_agreement]||a.market_agreement||"–")+'</td><td>'+esc(AG[a.assumption_agreement]||a.assumption_agreement||"–")+(a.assumption_comment?'<small>'+esc(a.assumption_comment)+'</small>':'')+'</td></tr>'});
   detail+='</tbody></table></div>';
   if(g.phase_q&&g.phase_q.xi_elo_check)detail+='<p><b>Aufstellung und Adjusted Elo:</b> '+esc(g.phase_q.xi_elo_check.summary||g.phase_q.xi_elo_check.status)+'</p>';
   if(g.findings&&g.findings.length)detail+='<details class="an-nested"><summary>Fragilitäten und Befundketten ('+g.findings.length+')</summary>'+g.findings.map(chain).join("")+'</details>';
-  if(g.detail_md)detail+='<details class="an-nested"><summary>Vollständige Spielanalyse</summary><div class="an-detail-text">'+md(g.detail_md)+'</div></details>';
+  // Der gespeicherte detail_md-Bericht wiederholt die Entscheidung, Phase Q und XI.
+  // Das Original bleibt unverändert im veröffentlichten JSON; UI zeigt die Primärabschnitte nur einmal.
   if(g.phase_q&&g.phase_q.research_log&&g.phase_q.research_log.length){detail+='<details class="an-nested"><summary>Recherchequellen ('+g.phase_q.research_log.length+')</summary><ul>';
     g.phase_q.research_log.forEach(function(x){var u=x.source||"";detail+='<li>'+( /^https:\/\//i.test(u)?'<a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">'+esc(u)+'</a>':esc(u))+(x.claim?' – '+esc(x.claim):'')+'</li>'});
     detail+='</ul></details>';
   }
   detail+='</div>';
-  var expanded='<tr class="an-detail-row" id="'+esc(id)+'" hidden><td colspan="8">'+detail+'</td></tr>';
+  var expanded='<tr class="an-detail-row" id="'+esc(id)+'" hidden><td colspan="9">'+detail+'</td></tr>';
   return row+why+expanded;
 }
 function timeCH(iso){
@@ -85,9 +92,9 @@ function render(root,doc){
   var skipped=games.filter(function(g){return g.decision&&g.decision.value==="SKIP"}).length;
   var unpriced=games.filter(function(g){var d=g.decision,p=d&&d.preferred_market,source=p&&p.source;return d&&d.value!=="SKIP"&&!(g.ecobet&&g.ecobet[source]&&g.ecobet[source].published_odds!=null)}).length;
   root.insertAdjacentHTML("beforeend",'<div class="an-kpis"><span><b>'+games.length+'</b> Spiele</span><span><b>'+confirmed+'</b> FAVOURITE bestätigt</span><span><b>'+changed+'</b> Pfadwechsel</span><span><b>'+skipped+'</b> SKIP</span><span><b>'+unpriced+'</b> ohne publizierte Quote</span></div>');
-  root.insertAdjacentHTML("beforeend",'<p class="an-notice">Hinweis: Sportliche Stabilität ist nicht gleich Wettwert. Ohne verifizierte Quote wird kein Wettwert behauptet. Die ursprünglichen ECOBET-Prognosen bleiben unverändert.</p>');
+  root.insertAdjacentHTML("beforeend",'<p class="an-notice">Hinweis: Der KI-Rang stammt aus Pilot 05 und wurde heute trotz Marktwechsel nicht umsortiert. Ein Platz 1 bestätigt deshalb nicht automatisch den ursprünglichen FAVOURITE. FAV-Quote gehört zum ECOBET FAVOURITE; Wahl-Quote zum vom KI-Analysten bevorzugten Markt. „Nicht publiziert“ bedeutet fehlende ECOBET-Quotenabdeckung, nicht nachgewiesene Unverfügbarkeit bei Wettanbietern. † Quote laut Analystenbericht möglicherweise falsch zugeordnet. Sportliche Stabilität ist nicht gleich Wettwert.</p>');
   if(!games.length){root.insertAdjacentHTML("beforeend",'<p class="an-status">Für diesen Lauf liegen keine geprüften Begegnungen vor.</p>');return;}
-  root.insertAdjacentHTML("beforeend",'<div class="an-scroll" role="region" aria-label="KI-Gegencheck Rangliste" tabindex="0"><table class="an-rank-table"><thead><tr><th>Rang</th><th>Begegnung</th><th>ECOBET FAVOURITE</th><th>KI TOP</th><th>Bevorzugter Markt</th><th>Urteil</th><th>Quote</th><th>Analyse</th></tr></thead><tbody>'+games.map(game).join("")+'</tbody></table></div>');
+  root.insertAdjacentHTML("beforeend",'<div class="an-scroll" role="region" aria-label="KI-Gegencheck Rangliste" tabindex="0"><table class="an-rank-table"><thead><tr><th>KI-Rang</th><th>Begegnung</th><th>ECOBET FAVOURITE</th><th>FAVOURITE bestätigt?</th><th>Bevorzugter Markt</th><th>KI TOP (qualitativ)</th><th>FAV-Quote</th><th>Wahl-Quote</th><th>Analyse</th></tr></thead><tbody>'+games.map(game).join("")+'</tbody></table></div>');
   root.insertAdjacentHTML("beforeend",'<p class="an-footer-note">Stand '+esc(doc.compiled_utc?timeCH(doc.compiled_utc):doc.date)+' · '+esc(doc.analyst&&doc.analyst.assignment_version||"")+' · '+esc(doc.analyst&&doc.analyst.execution_path==="MANUAL_CLAUDE_SESSION_ON_REQUEST_NOT_AUTOMATED"?"Manuell erstellt":"")+'</p>');
 }
 
@@ -107,6 +114,7 @@ function css(){
  '.an-tag{display:inline-block;padding:3px 7px;border-radius:6px;background:rgba(122,147,156,.2);font-size:.73rem}.an-judgement-ok{color:#9ed8c5}.an-judgement-alt{color:#9edbe7}.an-judgement-skip{color:#f6bfac}'+
  '.an-expand{cursor:pointer;background:rgba(75,151,168,.19);border:1px solid rgba(93,169,185,.39);border-radius:7px;color:inherit;padding:7px 9px;font:inherit;font-size:.78rem;white-space:nowrap}.an-expand:hover{background:rgba(75,151,168,.32)}'+
  '.an-review{padding:14px 5px 10px;line-height:1.55}.an-review-head h4{margin:0 0 5px}.an-review p{margin:8px 0}.an-review-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:14px 0}.an-review-cards>div{padding:12px;background:rgba(88,133,150,.12);border-radius:8px}.an-review-cards p{margin:4px 0}.an-review-cards small{opacity:.78}.an-markets{border-collapse:collapse;width:100%;min-width:690px;font-size:.82rem}.an-markets td,.an-markets th{text-align:left;padding:9px;border-bottom:1px solid rgba(102,151,160,.24);vertical-align:top}.an-markets small{display:block;opacity:.7}.an-nested{margin:12px 0;padding:10px;border:1px solid rgba(102,151,160,.23);border-radius:8px}.an-nested summary{cursor:pointer;font-weight:600}.an-chain{margin:10px 0;padding:10px;border-left:3px solid #67c8fa;background:rgba(255,255,255,.03)}.an-mat{background:rgba(66,231,170,.18)}.an-detail-text p{margin:8px 0}.an-footer-note{margin:12px 0 0;opacity:.65;font-size:.76rem}.an-status{padding:12px;border:1px dashed rgba(102,151,160,.5);border-radius:10px}'+
+ '.an-rank-table{min-width:1250px}.an-rank-table th:nth-child(1){width:72px}.an-rank-table th:nth-child(2){width:170px}.an-rank-table th:nth-child(3){width:168px}.an-rank-table th:nth-child(4){width:155px}.an-rank-table th:nth-child(5){width:177px}.an-rank-table th:nth-child(6){width:153px}.an-rank-table th:nth-child(7){width:83px}.an-rank-table th:nth-child(8){width:83px}.an-rank-table th:nth-child(9){width:122px}.an-fav-result{display:inline-block;padding:6px 8px;border-radius:7px;font-size:.75rem;letter-spacing:.01em}.an-fav-yes{background:rgba(40,170,113,.2);color:#a8ebc9}.an-fav-no{background:rgba(214,119,87,.2);color:#ffd0b7}.an-rank small{font-size:.72rem}.an-why td{padding-top:9px}.an-notice{border-left:3px solid rgba(98,187,194,.65);padding:8px 10px;background:rgba(60,109,127,.10)}'+
  '@media(max-width:700px){.an-tab{flex:1 1 130px;text-align:center;padding:11px 10px}.an-panel{padding:10px}.an-review-cards{grid-template-columns:1fr}.an-toolbar select{width:100%}}';
  document.head.appendChild(s);
 }
