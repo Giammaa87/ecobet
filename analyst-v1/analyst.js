@@ -115,17 +115,21 @@ function css(){
  '.an-expand{cursor:pointer;background:rgba(75,151,168,.19);border:1px solid rgba(93,169,185,.39);border-radius:7px;color:inherit;padding:7px 9px;font:inherit;font-size:.78rem;white-space:nowrap}.an-expand:hover{background:rgba(75,151,168,.32)}'+
  '.an-review{padding:14px 5px 10px;line-height:1.55}.an-review-head h4{margin:0 0 5px}.an-review p{margin:8px 0}.an-review-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:14px 0}.an-review-cards>div{padding:12px;background:rgba(88,133,150,.12);border-radius:8px}.an-review-cards p{margin:4px 0}.an-review-cards small{opacity:.78}.an-markets{border-collapse:collapse;width:100%;min-width:690px;font-size:.82rem}.an-markets td,.an-markets th{text-align:left;padding:9px;border-bottom:1px solid rgba(102,151,160,.24);vertical-align:top}.an-markets small{display:block;opacity:.7}.an-nested{margin:12px 0;padding:10px;border:1px solid rgba(102,151,160,.23);border-radius:8px}.an-nested summary{cursor:pointer;font-weight:600}.an-chain{margin:10px 0;padding:10px;border-left:3px solid #67c8fa;background:rgba(255,255,255,.03)}.an-mat{background:rgba(66,231,170,.18)}.an-detail-text p{margin:8px 0}.an-footer-note{margin:12px 0 0;opacity:.65;font-size:.76rem}.an-status{padding:12px;border:1px dashed rgba(102,151,160,.5);border-radius:10px}'+
  '.an-rank-table{min-width:1250px}.an-rank-table th:nth-child(1){width:72px}.an-rank-table th:nth-child(2){width:170px}.an-rank-table th:nth-child(3){width:168px}.an-rank-table th:nth-child(4){width:155px}.an-rank-table th:nth-child(5){width:177px}.an-rank-table th:nth-child(6){width:153px}.an-rank-table th:nth-child(7){width:83px}.an-rank-table th:nth-child(8){width:83px}.an-rank-table th:nth-child(9){width:122px}.an-fav-result{display:inline-block;padding:6px 8px;border-radius:7px;font-size:.75rem;letter-spacing:.01em}.an-fav-yes{background:rgba(40,170,113,.2);color:#a8ebc9}.an-fav-no{background:rgba(214,119,87,.2);color:#ffd0b7}.an-rank small{font-size:.72rem}.an-why td{padding-top:9px}.an-notice{border-left:3px solid rgba(98,187,194,.65);padding:8px 10px;background:rgba(60,109,127,.10)}'+
+ '.an-availability{padding:13px 15px;margin:10px 0 14px;border:1px solid rgba(214,165,77,.50);border-left:4px solid #c9a460;border-radius:9px;background:rgba(146,109,45,.1);font-size:.9rem;line-height:1.55}.an-availability p{margin:7px 0}.an-availability button{margin:6px 0}.an-availability.an-current{border-color:rgba(85,179,154,.55);border-left-color:#76cbaa;background:rgba(70,145,125,.1)}'+
  '@media(max-width:700px){.an-tab{flex:1 1 130px;text-align:center;padding:11px 10px}.an-panel{padding:10px}.an-review-cards{grid-template-columns:1fr}.an-toolbar select{width:100%}}';
  document.head.appendChild(s);
 }
 
 
+
 function boot(){
- var host=document.getElementById("page-topreads");if(!host||document.getElementById("ai-analyst-panel"))return;css();
- var intro=host.querySelector(".intro");if(intro){
-  var head=intro.querySelector("h2"),p=intro.querySelector("p");
-  if(head)head.textContent="Top Reads";if(p)p.textContent="FAVOURITE-Stabilität und unabhängiger KI-Gegencheck – zwei eigenständige Ranglisten für denselben Spieltag.";
- }
+ var host=document.getElementById("page-topreads");
+ if(!host||document.getElementById("ai-analyst-panel"))return;
+ css();
+ var intro=host.querySelector(".intro");
+ if(intro){var h=intro.querySelector("h2"),p=intro.querySelector("p");
+   if(h)h.textContent="Top Reads";
+   if(p)p.textContent="Zwei unabhängige Auswertungen. Es werden nur Analysen des ausgewählten Spieltags angezeigt; ältere Tage sind separat abrufbar.";}
  var guide=host.querySelector(".v42-table-guide"),ranking=host.querySelector("#v4-ranking"),legacy=host.querySelector(".v4-legacy");
  var tabs=el("div","an-tabs");tabs.setAttribute("role","tablist");tabs.setAttribute("aria-label","Top Reads Auswertungen");
  var favTab=el("button","an-tab","FAVOURITE-Stabilität"),kiTab=el("button","an-tab","KI-Gegencheck");
@@ -138,40 +142,105 @@ function boot(){
  fav.setAttribute("aria-labelledby",favTab.id);ai.setAttribute("aria-labelledby",kiTab.id);
  if(intro&&intro.parentNode)intro.parentNode.insertBefore(tabs,intro.nextSibling);else host.appendChild(tabs);
  host.insertBefore(fav,tabs.nextSibling);host.insertBefore(ai,fav.nextSibling);
- var fh=el("div","an-intro",'<h3>FAVOURITE-Stabilitätsranking</h3><p>Das bisherige modellinterne Ranking bleibt unverändert erhalten.</p>');
- fav.appendChild(fh);if(guide)fav.appendChild(guide);if(ranking)fav.appendChild(ranking);if(legacy)fav.appendChild(legacy);
+ fav.appendChild(el("div","an-intro",'<h3>FAVOURITE-Stabilitätsranking</h3><p>Das ursprüngliche Ranking bleibt unverändert. Die Anzeige ist an den ausgewählten ECOBET-Lauf gebunden.</p>'));
+ if(guide)fav.appendChild(guide);
+ var favNotice=el("div","an-availability");favNotice.id="an-favourite-availability";favNotice.setAttribute("role","status");fav.appendChild(favNotice);
+ if(ranking)fav.appendChild(ranking);
+ if(legacy)fav.appendChild(legacy);
  var panel=el("section","panel an-panel");panel.id="ai-analyst-panel";panel.setAttribute("aria-live","polite");
- panel.innerHTML='<p class="muted">KI-Gegencheck wird geladen …</p>';ai.appendChild(panel);
+ panel.innerHTML='<p class="muted">Aktuellen KI-Gegencheck prüfen …</p>';ai.appendChild(panel);
+ var analystIndex=null,stabilityIndex=null,runsIndex=null,indexErrors={};
+ var loadedId=null,requestSerial=0,shownDay=null;
+ function todayCH(){return new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Zurich",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date())}
+ function validDay(s){return /^\d{4}-\d{2}-\d{2}$/.test(s||"")}
+ function currentDay(){
+   var picker=document.getElementById("global-run-date"),runDay=document.getElementById("run-day");
+   return (picker&&validDay(picker.value)?picker.value:runDay&&validDay(runDay.value)?runDay.value:todayCH());
+ }
+ function localDate(s){if(!validDay(s))return s||"unbekannt";var parts=s.split("-");return parts[2]+"."+parts[1]+"."+parts[0]}
+ function entries(ix){return ix&&ix.entries||{}}
+ function candidates(ix,day){return Object.keys(entries(ix)).filter(function(id){return (entries(ix)[id].date||entries(ix)[id].run_date||id.slice(0,10))===day}).sort()}
+ function latestDay(ix){var all=Object.keys(entries(ix)).map(function(id){return entries(ix)[id].date||entries(ix)[id].run_date||id.slice(0,10)}).filter(validDay).sort();return all.length?all[all.length-1]:null}
+ function masterKnown(day){return !!(runsIndex&&runsIndex.dates&&runsIndex.dates[day]&&runsIndex.dates[day].length)}
+ function setGlobalDay(day){
+   var picker=document.getElementById("global-run-date");
+   if(picker){picker.value=day;picker.dispatchEvent(new Event("change",{bubbles:true}))}
+   else {var rp=document.getElementById("run-day");if(rp){rp.value=day;rp.dispatchEvent(new Event("change",{bubbles:true}))} refresh()}
+ }
+ function historyButton(day,title){var b=el("button","an-expand",title||"Letzten archivierten Tag öffnen");
+   b.type="button";b.onclick=function(){setGlobalDay(day)};return b}
+ function updateFavourite(day){
+   favNotice.innerHTML="";favNotice.hidden=true;
+   if(!stabilityIndex){favNotice.hidden=false;favNotice.textContent=indexErrors.stability?"Stabilitätsindex nicht ladbar: "+indexErrors.stability:"Prüfe FAVOURITE-Veröffentlichung …";return}
+   if(candidates(stabilityIndex,day).length)return;
+   favNotice.hidden=false;
+   favNotice.appendChild(el("strong",null,"Für den "+localDate(day)+" ist kein FAVOURITE-Stabilitätsranking veröffentlicht."));
+   favNotice.appendChild(el("p",null,masterKnown(day)?"Der ECOBET-Masterlauf ist vorhanden. Die nachgelagerte Stabilitätsberechnung bzw. Veröffentlichung fehlt für diesen Tag.":"Für dieses Datum liegt noch keine zugehörige Stabilitätsveröffentlichung vor."));
+   var previous=latestDay(stabilityIndex);
+   if(previous){favNotice.appendChild(el("p",null,"Die letzte archivierte Stabilität stammt vom "+localDate(previous)+". Sie wird nicht als heutige Analyse ausgegeben."));
+     favNotice.appendChild(historyButton(previous,"Stabilität vom "+localDate(previous)+" öffnen"))}
+ }
+ function showMissingAnalyst(day){
+   loadedId=null;requestSerial++;
+   panel.innerHTML="";
+   var n=el("div","an-availability");n.setAttribute("role","status");
+   n.appendChild(el("strong",null,"Keine KI-Analyse für den "+localDate(day)+" veröffentlicht."));
+   n.appendChild(el("p",null,masterKnown(day)?
+     "Die ECOBET-Spiele für diesen Tag sind vorhanden, aber der unabhängige Analystenlauf fehlt. Es werden ausdrücklich keine Analysen des Vortags als aktuelle Ergebnisse angezeigt.":
+     "Für diesen Tag ist kein unabhängiger KI-Lauf verfügbar. Ältere Ergebnisse werden nur nach ausdrücklicher Auswahl gezeigt."));
+   var previous=latestDay(analystIndex);
+   if(previous){n.appendChild(el("p",null,"Letzter archivierter KI-Gegencheck: "+localDate(previous)+"."));
+     n.appendChild(historyButton(previous,"KI-Analyse vom "+localDate(previous)+" öffnen"))}
+   panel.appendChild(n);
+ }
+ function renderAnalyst(day){
+   if(!analystIndex){loadedId=null;panel.innerHTML='<div class="an-availability" role="status">KI-Veröffentlichungsindex nicht ladbar: '+esc(indexErrors.analyst||"wird geladen")+'</div>';return}
+   var ids=candidates(analystIndex,day);
+   if(!ids.length){showMissingAnalyst(day);return}
+   var chosen=ids[ids.length-1],runChoice=document.getElementById("run-choice");
+   if(runChoice&&ids.indexOf(runChoice.value)!==-1)chosen=runChoice.value;
+   if(loadedId===chosen)return;
+   loadedId=chosen;
+   var token=++requestSerial,entry=entries(analystIndex)[chosen];
+   panel.innerHTML='<div class="an-availability an-current">KI-Analyse vom '+esc(localDate(day))+' · Lauf '+esc(chosen)+'</div><p class="muted">Lade heutige KI-Analyse …</p>';
+   get(entry.file).then(function(doc){
+     if(token!==requestSerial||currentDay()!==day)return;
+     if(doc.schema!==SCHEMA||doc.publication_id!==chosen||doc.date!==day)throw Error("Datum, Lauf-ID oder Schema stimmen nicht überein");
+     panel.innerHTML="";
+     render(panel,doc);
+   }).catch(function(err){
+     if(token!==requestSerial)return;
+     loadedId=null;panel.innerHTML='<div class="an-availability" role="status">KI-Analyse '+esc(day)+' nicht lesbar: '+esc(err.message)+'</div>';
+   });
+ }
+ function refresh(){
+   var day=currentDay();
+   if(shownDay!==day){shownDay=day;loadedId=null}
+   updateFavourite(day);renderAnalyst(day);
+ }
  function chooseTab(which){
-  var isKi=which==="ki";fav.hidden=isKi;ai.hidden=!isKi;
-  favTab.setAttribute("aria-selected",isKi?"false":"true");kiTab.setAttribute("aria-selected",isKi?"true":"false");
-  favTab.tabIndex=isKi?-1:0;kiTab.tabIndex=isKi?0:-1;
+   var isKi=which==="ki";fav.hidden=isKi;ai.hidden=!isKi;
+   favTab.setAttribute("aria-selected",isKi?"false":"true");kiTab.setAttribute("aria-selected",isKi?"true":"false");
+   favTab.tabIndex=isKi?-1:0;kiTab.tabIndex=isKi?0:-1;
  }
  favTab.onclick=function(){chooseTab("fav")};kiTab.onclick=function(){chooseTab("ki")};chooseTab("fav");
- tabs.addEventListener("keydown",function(e){if(e.key!=="ArrowLeft"&&e.key!=="ArrowRight")return;e.preventDefault();var to=ai.hidden?"ki":"fav";chooseTab(to);(to==="ki"?kiTab:favTab).focus()});
- panel.addEventListener("click",function(e){var btn=e.target.closest&&e.target.closest("[data-an-expand]");if(!btn)return;var target=document.getElementById(btn.getAttribute("data-an-expand"));if(!target)return;target.hidden=!target.hidden;btn.setAttribute("aria-expanded",target.hidden?"false":"true");btn.textContent=target.hidden?"Details öffnen":"Details schliessen"});
- get("analyst/index.json").then(function(ix){
-  var ids=Object.keys(ix.entries||{}).sort();if(!ids.length)throw new Error("Keine Analyse veröffentlicht");
-  var bar=el("div","an-toolbar"),select=el("select","an-select");select.setAttribute("aria-label","KI-Analyst Tageslauf");
-  ids.slice().reverse().forEach(function(id){var o=el("option",null,esc(id)+" · "+esc(ix.entries[id].status||""));o.value=id;select.appendChild(o)});
-  var label=el("label",null,"KI-Lauf auswählen: ");label.appendChild(select);bar.appendChild(label);
-  var content=el("div","an-content");panel.innerHTML="";panel.appendChild(bar);panel.appendChild(content);
-  function load(id){var entry=ix.entries[id];if(!entry)return;select.value=id;content.innerHTML='<p class="muted">Lade KI-Analyse …</p>';
-    get(entry.file).then(function(doc){if(doc.schema!==SCHEMA)throw new Error("Unbekanntes Analyse-Schema: "+doc.schema);if(doc.publication_id!==id)throw new Error("Lauf-ID passt nicht zum Index");if(select.value===id)render(content,doc)})
-    .catch(function(e){content.innerHTML='<p class="an-status">KI-Analyse konnte nicht geladen werden: '+esc(e.message)+'</p>'})}
-  function selectDay(day){
-   if(!day){load(ids[ids.length-1]);return}
-   var matched=ids.filter(function(id){return (ix.entries[id].date||id.slice(0,10))===day});
-   if(matched.length)load(matched[matched.length-1]);else{
-     select.selectedIndex=-1;content.innerHTML='<p class="an-status">Für '+esc(day)+' ist noch kein unabhängiger KI-Gegencheck veröffentlicht. Das bisherige FAVOURITE-Ranking kann trotzdem verfügbar sein.</p>';
-   }
-  }
-  select.onchange=function(){load(select.value)};
-  var picker=document.getElementById("global-run-date");
-  if(picker)picker.addEventListener("change",function(){selectDay(picker.value)});
-  selectDay(picker&&picker.value||"");
- }).catch(function(e){panel.innerHTML='<div class="an-status">KI-Gegencheck noch nicht verfügbar: '+esc(e.message)+'</div>'});
- // Vorhandene #topreads-Links auch bei Direktaufruf korrekt öffnen.
+ tabs.addEventListener("keydown",function(e){if(e.key!=="ArrowLeft"&&e.key!=="ArrowRight")return;e.preventDefault();var next=ai.hidden?"ki":"fav";chooseTab(next);(next==="ki"?kiTab:favTab).focus()});
+ panel.addEventListener("click",function(e){var btn=e.target.closest&&e.target.closest("[data-an-expand]");if(!btn)return;
+   var row=document.getElementById(btn.getAttribute("data-an-expand"));if(!row)return;
+   row.hidden=!row.hidden;btn.setAttribute("aria-expanded",row.hidden?"false":"true");btn.textContent=row.hidden?"Details öffnen":"Details schliessen"});
+ var picker=document.getElementById("global-run-date"),runDay=document.getElementById("run-day"),runChoice=document.getElementById("run-choice");
+ if(picker)picker.addEventListener("change",refresh);
+ if(runDay){runDay.addEventListener("change",refresh);
+   new MutationObserver(function(){refresh()}).observe(runDay,{childList:true,subtree:true});
+ }
+ if(runChoice)runChoice.addEventListener("change",refresh);
+ Promise.allSettled([get("runs/index.json"),get("stability/index.json"),get("analyst/index.json")]).then(function(results){
+   if(results[0].status==="fulfilled")runsIndex=results[0].value;else indexErrors.runs=String(results[0].reason);
+   if(results[1].status==="fulfilled")stabilityIndex=results[1].value;else indexErrors.stability=String(results[1].reason);
+   if(results[2].status==="fulfilled")analystIndex=results[2].value;else indexErrors.analyst=String(results[2].reason);
+   refresh();
+ });
+ refresh();
  if(location.hash==="#topreads")document.querySelector('[data-page="topreads"]')?.click();
 }
 
