@@ -39,7 +39,7 @@ function market(x){
   .replace(/\bMatch\b/gi,"Spiel"));
 }
 const stateName=x=>({"YELLOW":"Gelb","GREEN":"Grün","RED":"Rot","STABLE":"Stabil","CONDITIONAL":"Eingeschränkt","READY":"Bereit","PARTIAL":"Teilweise","FULL":"Vollständig","NOT_READY":"Nicht bereit","NOT_APPLICABLE":"Nicht anwendbar","AVAILABLE":"Verfügbar","NOT_AVAILABLE":"Nicht verfügbar"}[String(x)]||val(x));
-const reasonName=x=>({"PROVIDER_MARKET_NOT_COVERED":"Wettmarkt beim Datenanbieter nicht abgedeckt","PROVIDER_LINE_NOT_OFFERED":"Gewünschte Torlinie nicht angeboten","PROVIDER_EVENT_NOT_FOUND":"Spiel beim Anbieter nicht gefunden","PROVIDER_QUOTE_NOT_AVAILABLE":"Keine Quote vom Anbieter","NO_PROVIDER_QUOTE":"Keine Anbieterquote","EVENT_NOT_PRE_MATCH":"Kein gültiger Quotenstand vor Spielbeginn"}[String(x)]||"Keine verfügbare Anbieterquote");
+const reasonName=x=>({"PROVIDER_MARKET_NOT_COVERED":"Wettmarkt beim Datenanbieter nicht abgedeckt","PROVIDER_LINE_NOT_OFFERED":"Gewünschte Torlinie nicht angeboten","PROVIDER_EVENT_NOT_FOUND":"Spiel beim Anbieter nicht gefunden","PROVIDER_QUOTE_NOT_AVAILABLE":"Keine Quote vom Anbieter","NO_PROVIDER_QUOTE":"Keine Anbieterquote","EVENT_NOT_PRE_MATCH":"Kein gültiger Quotenstand vor Spielbeginn","ODDS_ARTIFACT_MISSING":"Quotendatensatz für diesen ECOBET-Lauf nicht veröffentlicht"}[String(x)]||"Keine verfügbare Anbieterquote");
 const stability=m=>m.ampel||S.stageMap.get(m.fixture_id)?.prediction?.prediction_stability_light||"Nicht klassifiziert";
 const pill=(label,c="")=>'<span class="pill '+c+'">'+safe(label)+'</span>';
 const positive=x=>x==="HIT",negative=x=>x==="MISS";
@@ -350,7 +350,22 @@ async function openReport(fixture,quiet=false){
 async function loadOdds(){
  if(S.board?.__oddsLoaded===S.id)return S.odds;
  const id=S.id,bi=await get("odds/index.json",false),bp=Object.values(obj(bi.entries)).filter(x=>x.publication_id===id).at(-1);
- if(!bp){S.odds=[];return[]}
+ if(!bp){
+  // Bei fehlender Quotenveröffentlichung bleiben alle unveränderten Master-Marktpfade sichtbar.
+  // Dies ist ausschliesslich ein UI-Fallback: keine Ersatzquote und keine neue Prognose.
+  S.odds=arr(S.run?.matches).filter(m=>!technical(m)).flatMap(m=>
+   ["FAVOURITE","SAFE","BALANCED","AGGRESSIVE"].map(role=>({
+    key:m.fixture_id+":"+role,fixtureId:m.fixture_id,match:m,role,
+    market:role==="FAVOURITE"?m.favourite:m[role.toLowerCase()],
+    marketId:null,marketSide:null,marketLine:null,marketLow:null,marketHigh:null,
+    odds:null,available:false,reason:"ODDS_ARTIFACT_MISSING",
+    updated:null,bookmaker_count:0,source:null,source_provider:null,
+    retrieved_after_kickoff:false
+   }))
+  );
+  if(S.board){S.board.__oddsLoaded=id;S.board.__oddsMissing=true}
+  return S.odds;
+ }
  const base=await get(bp.file);if(id!==S.id)return[];
  const byId=new Map(arr(S.run?.matches).map(m=>[m.fixture_id,m])),rows=[],lookup=new Map();
  for(const f of arr(base.fixtures)){const m=byId.get(f.fixture_id);if(!m||technical(m))continue;
@@ -446,7 +461,11 @@ function renderQuotes(){
  const reasonText=[missing.get("PROVIDER_MARKET_NOT_COVERED")?missing.get("PROVIDER_MARKET_NOT_COVERED")+" Märkte nicht abgedeckt":null,missing.get("PROVIDER_LINE_NOT_OFFERED")?missing.get("PROVIDER_LINE_NOT_OFFERED")+" Torlinie nicht angeboten":null].filter(Boolean).join(" · ");
  const bsd=S.odds.filter(x=>x.available&&x.source_provider==="BSD").length;
  const api=S.odds.filter(x=>x.available&&x.source_provider==="API Football").length;
- feedback("board-status",S.id+" · "+rows.length+" Pfade im aktuellen Filter, "+a.length+" mit Quote. Gesamter Run: "+(bsd+api)+" von "+S.odds.length+" Marktrollen ("+bsd+" BSD + "+api+" API Football); "+favAvail+" von "+fav.length+" Favourites bepreist. "+(reasonText?"Noch offen: "+reasonText+". ":"")+"Historische Anbieterquoten, keine Live Quoten. Audit: "+(S.auditNote||"Nicht geprüft")+".");
+ if(S.board?.__oddsMissing){
+  feedback("board-status","Achtung: Der Quoten-Datensatz für "+S.id+" wurde nicht veröffentlicht. "+S.odds.length+" ECOBET-Marktpfade aus dem Master sind trotzdem sichtbar; sämtliche Anbieterquoten fehlen. Keine Quoten oder Wettwerte werden geschätzt.","warn");
+ }else{
+  feedback("board-status",S.id+" · "+rows.length+" Pfade im aktuellen Filter, "+a.length+" mit Quote. Gesamter Run: "+(bsd+api)+" von "+S.odds.length+" Marktrollen ("+bsd+" BSD + "+api+" API Football); "+favAvail+" von "+fav.length+" Favourites bepreist. "+(reasonText?"Noch offen: "+reasonText+". ":"")+"Historische Anbieterquoten, keine Live Quoten. Audit: "+(S.auditNote||"Nicht geprüft")+".");
+ }
  if(window.EV41?.quoteTable){
   window.EV41.quoteTable({
    root:$("quotes"),rows,full:S.odds,run:S.run,context:window.EV4State?.()||null,selection:S.selection,refresh:renderQuotes,
