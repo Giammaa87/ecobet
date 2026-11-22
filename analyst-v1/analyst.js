@@ -116,6 +116,7 @@ function css(){
  '.an-review{padding:14px 5px 10px;line-height:1.55}.an-review-head h4{margin:0 0 5px}.an-review p{margin:8px 0}.an-review-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:14px 0}.an-review-cards>div{padding:12px;background:rgba(88,133,150,.12);border-radius:8px}.an-review-cards p{margin:4px 0}.an-review-cards small{opacity:.78}.an-markets{border-collapse:collapse;width:100%;min-width:690px;font-size:.82rem}.an-markets td,.an-markets th{text-align:left;padding:9px;border-bottom:1px solid rgba(102,151,160,.24);vertical-align:top}.an-markets small{display:block;opacity:.7}.an-nested{margin:12px 0;padding:10px;border:1px solid rgba(102,151,160,.23);border-radius:8px}.an-nested summary{cursor:pointer;font-weight:600}.an-chain{margin:10px 0;padding:10px;border-left:3px solid #67c8fa;background:rgba(255,255,255,.03)}.an-mat{background:rgba(66,231,170,.18)}.an-detail-text p{margin:8px 0}.an-footer-note{margin:12px 0 0;opacity:.65;font-size:.76rem}.an-status{padding:12px;border:1px dashed rgba(102,151,160,.5);border-radius:10px}'+
  '.an-rank-table{min-width:1250px}.an-rank-table th:nth-child(1){width:72px}.an-rank-table th:nth-child(2){width:170px}.an-rank-table th:nth-child(3){width:168px}.an-rank-table th:nth-child(4){width:155px}.an-rank-table th:nth-child(5){width:177px}.an-rank-table th:nth-child(6){width:153px}.an-rank-table th:nth-child(7){width:83px}.an-rank-table th:nth-child(8){width:83px}.an-rank-table th:nth-child(9){width:122px}.an-fav-result{display:inline-block;padding:6px 8px;border-radius:7px;font-size:.75rem;letter-spacing:.01em}.an-fav-yes{background:rgba(40,170,113,.2);color:#a8ebc9}.an-fav-no{background:rgba(214,119,87,.2);color:#ffd0b7}.an-rank small{font-size:.72rem}.an-why td{padding-top:9px}.an-notice{border-left:3px solid rgba(98,187,194,.65);padding:8px 10px;background:rgba(60,109,127,.10)}'+
  '.an-availability{padding:13px 15px;margin:10px 0 14px;border:1px solid rgba(214,165,77,.50);border-left:4px solid #c9a460;border-radius:9px;background:rgba(146,109,45,.1);font-size:.9rem;line-height:1.55}.an-availability p{margin:7px 0}.an-availability button{margin:6px 0}.an-availability.an-current{border-color:rgba(85,179,154,.55);border-left-color:#76cbaa;background:rgba(70,145,125,.1)}'+
+ '.an-master-fallback{margin-top:16px;border-top:1px solid rgba(135,175,190,.3);padding-top:12px}.an-fallback-head p{font-weight:400;margin:7px 0 12px}.an-master-table{min-width:600px}.an-master-table td:first-child{min-width:170px}.an-master-table td:last-child{white-space:nowrap}'+
  '@media(max-width:700px){.an-tab{flex:1 1 130px;text-align:center;padding:11px 10px}.an-panel{padding:10px}.an-review-cards{grid-template-columns:1fr}.an-toolbar select{width:100%}}';
  document.head.appendChild(s);
 }
@@ -150,7 +151,7 @@ function boot(){
  var panel=el("section","panel an-panel");panel.id="ai-analyst-panel";panel.setAttribute("aria-live","polite");
  panel.innerHTML='<p class="muted">Aktuellen KI-Gegencheck prüfen …</p>';ai.appendChild(panel);
  var analystIndex=null,stabilityIndex=null,runsIndex=null,indexErrors={};
- var loadedId=null,requestSerial=0,shownDay=null;
+ var loadedId=null,requestSerial=0,shownDay=null,favLoadSerial=0;
  function todayCH(){return new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Zurich",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date())}
  function validDay(s){return /^\d{4}-\d{2}-\d{2}$/.test(s||"")}
  function currentDay(){
@@ -170,6 +171,7 @@ function boot(){
  function historyButton(day,title){var b=el("button","an-expand",title||"Letzten archivierten Tag öffnen");
    b.type="button";b.onclick=function(){setGlobalDay(day)};return b}
  function updateFavourite(day){
+   var favouriteRequest=++favLoadSerial;
    favNotice.innerHTML="";favNotice.hidden=true;
    if(!stabilityIndex){favNotice.hidden=false;favNotice.textContent=indexErrors.stability?"Stabilitätsindex nicht ladbar: "+indexErrors.stability:"Prüfe FAVOURITE-Veröffentlichung …";return}
    if(candidates(stabilityIndex,day).length)return;
@@ -179,6 +181,25 @@ function boot(){
    var previous=latestDay(stabilityIndex);
    if(previous){favNotice.appendChild(el("p",null,"Die letzte archivierte Stabilität stammt vom "+localDate(previous)+". Sie wird nicht als heutige Analyse ausgegeben."));
      favNotice.appendChild(historyButton(previous,"Stabilität vom "+localDate(previous)+" öffnen"))}
+   // Der Original-Master bleibt nutzbar, obwohl der unabhängige Stabilitäts-Lauf fehlt.
+   // Niemals die Master-FAVOURITES als Stabilitätsranking oder validierte Top-Tipps ausgeben.
+   var dayRuns=runsIndex&&runsIndex.dates&&runsIndex.dates[day]||[];
+   var ids=dayRuns.map(function(v){return typeof v==="string"?v:v&&v.id}).filter(Boolean);
+   var chosen=document.getElementById("run-choice")?.value;
+   var id=ids.indexOf(chosen)>=0?chosen:ids[ids.length-1];
+   if(!id)return;
+   var preview=el("div","an-master-fallback");
+   preview.innerHTML='<div class="an-fallback-head"><strong>ECOBET-Master-FAVOURITES – ohne Stabilitätsranking</strong><p>Diese Märkte stammen unverändert aus dem heutigen Master. Es gibt noch keine Stabilitätsscores und keine geprüfte Rangfolge. Die Anzeige ist ausdrücklich kein Ersatz für den fehlenden Stabilitätscheck.</p></div>';
+   favNotice.appendChild(preview);
+   get("runs/"+encodeURIComponent(id)+".json").then(function(doc){
+     if(favouriteRequest!==favLoadSerial||currentDay()!==day||candidates(stabilityIndex,day).length)return;
+     if(doc.run?.publication_id!==id||doc.run?.date!==day)throw Error("Run-ID oder Datum stimmen nicht überein");
+     var games=(doc.matches||[]).filter(function(m){return m.favourite&&!String(m.favourite).startsWith("NO_PREDICTION")});
+     if(!games.length){preview.appendChild(el("p",null,"Keine regulären Master-FAVOURITES vorhanden."));return}
+     var html='<div class="an-table-scroll"><table class="an-markets an-master-table"><thead><tr><th>Spiel</th><th>ECOBET FAVOURITE (unverändert)</th><th>Anpfiff CH</th></tr></thead><tbody>';
+     games.forEach(function(m){html+='<tr><td>'+esc(m.home||"")+" – "+esc(m.away||"")+'</td><td><b>'+esc(m.favourite)+'</b></td><td>'+esc(timeCH(m.kickoff))+'</td></tr>'});
+     preview.insertAdjacentHTML("beforeend",html+"</tbody></table></div>");
+   }).catch(function(err){if(favouriteRequest===favLoadSerial)preview.appendChild(el("p","an-status","Master-FAVOURITES nicht abrufbar: "+esc(err.message)))});
  }
  function showMissingAnalyst(day){
    loadedId=null;requestSerial++;
