@@ -53,6 +53,15 @@
    "generated_at_utc": "2026-11-21T10:28:05.571084+00:00",
    "run_date": "2026-11-21",
    "schema": "ECOBET_READS_PUBLIC_V1"
+  },
+  "2026-11-22_0257": {
+   "bytes_sha256": "cf9aee2eacc421965874d5b51686a56c62ae143c6f05070b81d3984f3e8073ba",
+   "data_status": "AUTOMATIC_UNVALIDATED",
+   "file": "reads/2026-11-22_0257.json",
+   "fixtures": 16,
+   "generated_at_utc": "2026-11-22T04:05:01.581086+00:00",
+   "run_date": "2026-11-22",
+   "schema": "ECOBET_READS_PUBLIC_V1"
   }
  },
  "schema": "ECOBET_READS_PUBLIC_INDEX_V1"
