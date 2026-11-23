@@ -1,0 +1,204 @@
+{
+ "counts": {
+  "derived": 3,
+  "fixtures": 3,
+  "owner_favourite": {
+   "NO_READ": 1,
+   "SELECTED": 1,
+   "TIE": 1
+  }
+ },
+ "data_status": "AUTOMATIC_UNVALIDATED",
+ "data_status_note": null,
+ "disclaimer": "Modellinterne Einschaetzung, abgeleitet aus bereits veroeffentlichten ECOBET V2.4 Prediction-Ergebnissen. Keine Wahrscheinlichkeit, keine Quote, keine Erfolgsgarantie. Noch nicht validiert.",
+ "fixtures": [
+  {
+   "away": "Everton",
+   "direction": {
+    "coverage_status": "STAERKER_ABGEDECKT",
+    "covered_by": {
+     "expression": "Brentford to win",
+     "roles": [
+      "AGGRESSIVE"
+     ]
+    },
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Brentford to win",
+    "balanced": "Brentford Team Goals Over 1.5",
+    "favourite": "Brentford Team Goals Over 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 3.5"
+   },
+   "fixture_id": "ENG2627_44f6629a21b1",
+   "goal_range": {
+    "coverage_status": "KOMBINATION",
+    "covered_by": {
+     "expression": "Brentford Team Goals Over 1.5 + Match Total Under 3.5",
+     "roles": [
+      "BALANCED",
+      "SAFE"
+     ]
+    },
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-3",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Brentford",
+   "kickoff_utc": "2026-11-23T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [],
+    "reason": "Rohreads fehlen oder bereits abgedeckt",
+    "selected": null,
+    "status": "NO_READ"
+   },
+   "run_id": "2026-11-23_0217",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-23T04:05:01.599370+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Elche",
+   "direction": {
+    "coverage_status": null,
+    "covered_by": null,
+    "evidence": null,
+    "read": null,
+    "status": "NO_READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Goals 2-4",
+    "balanced": "Match Total Over 2.5",
+    "favourite": "Match Total Over 2.5",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "ESP2627_3be31fff29cf",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Levante 1-2",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Levante"
+   },
+   "home": "Levante",
+   "kickoff_utc": "2026-11-23T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Levante 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Levante 1-2",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-23_0217",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-23T04:05:01.599370+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Fiorentina",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Total Over 2.5",
+    "balanced": "Both Teams To Score: Yes",
+    "favourite": "Both Teams To Score: Yes",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "ITA2627_448cfd2bd4de",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 4,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-4",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Monza",
+   "kickoff_utc": "2026-11-23T19:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 2-4",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "gleiche Evidenzstufe (MEDIUM), keine Rangfolge erzwungen",
+    "selected": null,
+    "status": "TIE"
+   },
+   "run_id": "2026-11-23_0217",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-23T04:05:01.599370+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  }
+ ],
+ "generated_at_utc": "2026-11-23T04:05:01.599370+00:00",
+ "logical_run_id": "ECOBET_LRUN_1e066ef6a9db4fc2b773f59b71d20a9d",
+ "publication_id": "2026-11-23_0217",
+ "rules": {
+  "coverage_and_owner_favourite": "RULES_COVERAGE_OWNERFAV_v1",
+  "direction": "DIRECTION_READ_SCENARIO_V1",
+  "goal_range": "GOAL_RANGE_EXT_V1_V2_STAB_MIN_0.67",
+  "imported_pins": {
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105\\RULES_COVERAGE_OWNERFAV_v1.md": "646b9b144e2d4bb88e1e91a61fbce0b2a57b961908abfbe1c67ff663a6ffa497",
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105\\coverage_ownerfav.py": "9af22a43803db0a6b21987ff216358f3d1f5451e0a605d7851216cd9be079158",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1\\RULES_READS_v1.md": "13dfcde3b206f858bbd41f1a5f62dc7625576c6ea9fd816a5402c3da2484bc60",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1\\reads_runner.py": "c025df64a96c1b46c62937528767bc03a96fc4d10a65f08b38a5da5f4b057089"
+  },
+  "rules_sha256": "7484a1a98baf3905f255f1ba65955ea4580b2fdaa84d9eb495c90f2aa505bf75",
+  "runner": "READS_RUNNER_V2_1"
+ },
+ "run_date": "2026-11-23",
+ "run_id": "2026-11-23_0217",
+ "schema": "ECOBET_READS_PUBLIC_V1",
+ "source": {
+  "derived_file_sha256": "700d1305d9d14105484caf877c940b977b9f9765faf904a2748510b19e8542fd",
+  "published_at_utc": "2026-11-23T02:17:58.758807+00:00",
+  "record_content_hash": "sha256:f3fea2b7860c4cbfcbd2b063661cf2b7e0a50045bba4c370f01ddb857dd085a7",
+  "source_file_sha256": "f75579c730202684191f4ea6e82d157a5a21f3883c6240b1395b1c2996002ad9"
+ }
+}
