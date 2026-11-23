@@ -23,7 +23,8 @@
    "status": "OK"
   },
   "2026-11-23_0217": {
-   "bytes_sha256": "5d3946c0f6b9297d1b4f4a15dbac6cc28782b187a61dff3df52f19dfcd40a6f5",
+   "bytes_sha256": "935cea6d60000481a13a02e19d238cc2472a2b4b0d23d0fc5044582e0a6a875c",
+   "bytes_sha256_sealed_file": "5d3946c0f6b9297d1b4f4a15dbac6cc28782b187a61dff3df52f19dfcd40a6f5",
    "date": "2026-11-23",
    "file": "analyst/2026-11-23_0217.json",
    "fixtures": 3,
