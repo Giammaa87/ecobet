@@ -33,18 +33,6 @@
    "schema": "ECOBET_AI_ANALYST_DAY_V1",
    "seal_sha256": "123a7e8224d1726bc1d87a82eaf90df6736a5aae92bc097fcf85b4cda47f18f4",
    "status": "OK"
-  },
-  "2026-11-30_MASTER_MISSING": {
-   "bytes_sha256": "71f654a51716156636dee718ef17ea60831ac273af4ce9e2b50c4bcd94229fac",
-   "bytes_sha256_sealed_file": "71f654a51716156636dee718ef17ea60831ac273af4ce9e2b50c4bcd94229fac",
-   "date": "2026-11-30",
-   "file": "analyst/2026-11-30_MASTER_MISSING.json",
-   "fixtures": 0,
-   "generated_at_utc": "2026-11-23T12:00:53Z",
-   "reviewed": 0,
-   "schema": "ECOBET_AI_ANALYST_DAY_V1",
-   "seal_sha256": "712b3f30ad55b97f4770a141a50fc4e407d6de1beddaa8e84b985ddbacada30c",
-   "status": "MASTER_MISSING"
   }
  },
  "schema": "ECOBET_AI_ANALYST_INDEX_V1"
