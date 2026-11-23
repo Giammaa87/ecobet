@@ -1976,6 +1976,25 @@
           "hit_rate": 0.8260869565217391
         },
         "run_id": "2026-11-08_0325"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-11-08_RESULT_AUDIT_V24_REV_31fb980bb0f87233.json",
+        "generated_at": "2026-11-23T22:30:05Z",
+        "id": "2026-11-08_2026-11-08_0325_V24_REV_31fb980bb0f87233",
+        "kpi": {
+          "HIT": 19,
+          "MISS": 4,
+          "NOT_APPLICABLE": 0,
+          "NSP": 0,
+          "PENDING": 1,
+          "PUSH": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 23,
+          "hit_rate": 0.8260869565217391
+        },
+        "run_id": "2026-11-08_0325"
       }
     ],
     "2026-11-21": [
@@ -2006,14 +2025,33 @@
         "kpi": {
           "HIT": 16,
           "MISS": 7,
-          "PENDING": 0,
-          "PUSH": 2,
           "NOT_APPLICABLE": 0,
           "NSP": 0,
+          "PENDING": 0,
+          "PUSH": 2,
           "UNMAPPABLE": 1,
           "VOID": 0,
           "denominator": 23,
           "hit_rate": 0.6956521739130435
+        },
+        "run_id": "2026-11-21_0327"
+      },
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-11-21_RESULT_AUDIT_V24_REV_b0feb32c6a2dfd8f.json",
+        "generated_at": "2026-11-23T22:30:06Z",
+        "id": "2026-11-21_2026-11-21_0327_V24_REV_b0feb32c6a2dfd8f",
+        "kpi": {
+          "HIT": 16,
+          "MISS": 6,
+          "NOT_APPLICABLE": 0,
+          "NSP": 0,
+          "PENDING": 1,
+          "PUSH": 2,
+          "UNMAPPABLE": 1,
+          "VOID": 0,
+          "denominator": 22,
+          "hit_rate": 0.7272727272727273
         },
         "run_id": "2026-11-21_0327"
       }
@@ -2038,9 +2076,30 @@
         },
         "run_id": "2026-11-22_0257"
       }
+    ],
+    "2026-11-23": [
+      {
+        "append_only": true,
+        "file": "ECOBET_2026-11-23_RESULT_AUDIT_V24.json",
+        "generated_at": "2026-11-23T22:30:03Z",
+        "id": "2026-11-23_2026-11-23_0217_V24",
+        "kpi": {
+          "HIT": 1,
+          "MISS": 2,
+          "NOT_APPLICABLE": 0,
+          "NSP": 0,
+          "PENDING": 0,
+          "PUSH": 0,
+          "UNMAPPABLE": 0,
+          "VOID": 0,
+          "denominator": 3,
+          "hit_rate": 0.3333333333333333
+        },
+        "run_id": "2026-11-23_0217"
+      }
     ]
   },
-  "generated_at": "2026-11-22T22:30:27.670290+00:00",
+  "generated_at": "2026-11-23T22:30:08Z",
   "record_type": "audit_index",
   "schema_version": "1.0"
 }
