@@ -1,0 +1,48 @@
+{
+  "schema_version": "ECOBET_MATCHBOOK_TRANSLATION_V1",
+  "publication_id": "2026-11-23_0217",
+  "language": "de-CH",
+  "translation_status": "AUTOMATIC_TRANSLATED_FROM_FROZEN_SOURCE",
+  "source_stage12_content_hash": "sha256:f3fea2b7860c4cbfcbd2b063661cf2b7e0a50045bba4c370f01ddb857dd085a7",
+  "source_stage12_path": "stage13/source-records/2026-11-23_0217.stage12.json",
+  "notes": "Automatische deutsche Übersetzung, nicht redaktionell geprüft. Originaldaten unverändert.",
+  "fixtures": {
+    "ENG2627_44f6629a21b1": {
+      "thesis": "Brentfords Heimangriffsprozess steht vor Evertons anfälligem Fernkonzessionsprofil und schafft den klarsten Weg zu zwei Heimzielen; Evertons eigener chancenprozess bewahrt eine engere ziehungsreaktion.",
+      "match": "Brentfords starke jüngste Heimchancen und niedrigere Heim-XG-Gegenstände treffen auf ein Everton-Auswärtsprofil, das erhebliches Zufallsvolumen eingeräumt hat und nur 1,1 Tore pro Auswärts-Last-10 erzielt hat. Everton behält dennoch eine glaubwürdige Antwortroute durch ihre kürzliche Chance, so dass der Heimatrand die Auslosung nicht entfernt.",
+      "home": "Home-last-10-Output ist 1,9 Tore erzielt und 0,9 kassiert, mit xG für 2.101 und xG gegen 1.304; Scoring wird von einer starken Chance Plattform unterstützt, während die niedrigen Ziele kassiert sind stärker als die zugrunde liegenden xG gegen. Brentfords Heim-PPDA ist 11.103, intensiver als Evertons Auswärtsfigur, und ihr Heimprofil hat eine konstruktive erste Hälfte, gefolgt von weiteren zweiten Hälften. Das letzte Heimfenster erstreckt sich über Jahreszeiten und das neueste bekannte Spiel ist 23 Tage vor dem Kickoff.",
+      "away": "Away-last-10-Ausgabe ist 1,1 Tore erzielt und 1,6 kassiert, während xG für 1,542 und xG gegen 1,863 ist; der Angriff hat mehr als seine Ziele generiert, aber der defensive Prozess bleibt ausgesetzt. Evertons eigener PPDA von 12,988 in den letzten 10 Jahren ist weniger intensiv als Brentfords Heimatfigur, während ihre Spiele ein niedriges Profil in der ersten Hälfte und mehr Beteiligung in der zweiten Hälfte zeigen. Das Rollenfenster hat nur zehn saisonübergreifende Auswärtsreihen und die neueste Spielhistorie ist 30 Tage alt.",
+      "prime": "Brentford schafft die stärkere Heim-Scoring-Plattform und erreicht zwei Ziele, während Evertons niedriges Auswärts-Scoring ihre Antwort bei null oder eins lässt.",
+      "counter": "Evertons jüngster chancenprozess findet eine antwort und brentfords hauskontrolle reicht nicht aus, um die seiten zu trennen, was zu einem geschlossenen unentschieden führt.",
+      "cluster": "Brentford ein bis zwei Tore am häufigsten, Everton null bis eins, mit drei Gesamtziele als die praktische obere zentrale Kante.",
+      "risks": [
+        "Brentford gelingt es nicht, die Heimschaffung in ein Ziel zu verwandeln, und Everton nimmt ein knappes Ergebnis von einer einzigen Scoring-Route."
+      ]
+    },
+    "ESP2627_3be31fff29cf": {
+      "thesis": "Zwei defensiv permissive aktuelle Profile schaffen ein wettbewerbsfähiges, chancenreiches Spiel; Levante hat eine Heimangriffsroute, während Elche trotz schwächerer zugrunde liegender Kreation eine Auswärtstorsionsroute behält.",
+      "match": "Die jüngste Verteidigung von Levante hat ein hohes Wahrscheinlichkeitsvolumen ermöglicht, während Elches Saisonprozess ebenfalls negativ ist, aber ihre jüngsten Ergebnisse beinhalten Ziele. Elches passives Pressprofil kann Levante-Angriffe ermöglichen; Levantes eigenes hohes Konzessionsprofil gibt Elche eine Gegenroute. Die Interaktion unterstützt Ziele klarer als ein Gewinner.",
+      "home": "Levante ist die aktuelle Saison insgesamt xG-Bilanz negativ, weil ihre Verteidigung mehr erlaubt hat, als ihr Angriff geschaffen hat. Ihr saisonübergreifendes Heimrollenprofil enthält eine viel stärkere angreifende xG-Route und eine niedrigere xG-Gegenwart, enthält jedoch ältere Matches und ist kein aktueller Beweis. Ihre jüngsten spiele haben an beiden enden ziele hervorgebracht; die aktuelle fünf-match-stichprobe ist besonders volatil. Ihre aktuelle Presszahl ist relativ hoch, so dass die Beweise keine nachhaltige defensive Kontrolle durch Pressen unterstützen.",
+      "away": "Elches aktueller saisonprozess ist negativ: ihr xg für liegt unter xg gegen, obwohl ihre neuesten fünf-match-ergebnisse mehr ziele enthalten, als die zugrunde liegende kreation vermuten lässt. Die Geschichte der Auswärtsrollen zeigt eine begrenzte angreifende xG und eine wesentlich negative xG-Balance ohne Strafe, so dass ein Auswärtsziel eher glaubwürdig als sicher ist. Ihr eigener PPDA ist im aktuellen Fenster relativ hoch, was einem weniger intensiven Pressprofil entspricht. Jüngste Scoring-Ergebnisse und ihre schwache Chance Prozesskonflikt; letzteres begrenzt das Vertrauen in eine Team-Ziel-Obergrenze.",
+      "prime": "Beide Seiten haben kürzlich hohe xG eingeräumt. Die Heimangriffsroute von Levante entspricht Elches passivem Verteidigungsprofil, während die Zugeständnisse von Levante Elche einen Weg zum Tor lassen; die natürlichen zentralen Ergebnisse sind 2-1 und 2-2.",
+      "counter": "Die Heimangriffsroute von Levante wird entscheidend, aber Elches niedrige Wahrscheinlichkeit kann nicht konvertiert werden, was zu einem kontrollierten 2-0-Typ-Heimergebnis führt.",
+      "cluster": "2-4 Match-Ziele, mit 2-1 und 2-2 die zentralen Ausdrücke.",
+      "risks": [
+        "Die jüngsten Scoring-Ergebnisse von Elche fließen in die Fixture ein und nutzen das jüngste Konzessionsprofil von Levante aus, was zu einem engen, entfernten Ergebnis wie 1-2 führt.",
+        "Eine frühe gegenseitige Punktzahl verhindert defensive Kontrolle und erzeugt ein Fünf-Tor-Spiel wie 3-2."
+      ]
+    },
+    "ITA2627_448cfd2bd4de": {
+      "thesis": "Monzas verfügbarer stärkevorteil und heimathintergrund treffen auf fiorentinas schwaches aktuelles auswärtsprofil, aber die aktuelle saison-verteidigungsbelichtung beider teams hält fiorentina am leben; die zentrale entwicklung ist ein wettbewerbsfähiges, beiderseitiges spiel mit einem schmalen monza-rand.",
+      "match": "Beide Teams bringen eine glaubwürdige Scoring-Route in einen Gegner, der in der aktuellen Saisonsicht stark nachgegeben hat. Monza hat die stärkere verfügbare Basislinie und den Hintergrund der gleichen Liga, aber ihr eigener defensiver Prozess ist zu schwach, um eine saubere Tabelle oder eine einfache Heimsieg-Geschichte stabil zu machen. Fiorentinas Profil des langsamen Pressens und der schlechte Hintergrund der Auswärtsrollen lassen Monza Raum zum Erstellen, während Monzas ähnlich passives Pressen und schlechte Konzessionsdaten Fiorentina einen Reaktionsweg geben.",
+      "home": "Der aktuelle Saisonprozess von Monza ist zweiseitig: 1,62 xG für, aber 1,91 xG dagegen, wobei die Tore übertroffen wurden. Ihre aktuellen Saison-Matches haben ein hohes BTTS und über 2,5 Profil; Ergebnisse sind besser als das negative xG-Differential allein vermuten lässt, so dass der angreifende Output nicht als defensive Kontrolle gelesen werden sollte. Die verfügbare Basisstärke und der frühere Heimathintergrund bevorzugen Monza gegenüber Fiorentina, aber der defensive Prozess der aktuellen Saison macht diesen Rand fragil. Das Pressprofil ist relativ passiv, was Fiorentina Zeit für den Aufbau von Angriffen lassen kann; aktuelle Phasendaten unterstützen auch die zweite Hälfte der Zielaktivität.",
+      "away": "Der aktuelle Saisonprozess zeigt 1,49 xG für und 1,89 xG gegen pro Spiel: Fiorentina kann punkten, räumt aber mehr Chancesqualität ein, als sie schaffen. Der aktuelle Saisonrekord hat keine sauberen Blätter und einen hohen BTTS-Anteil, während der verfügbare Auswärtsrollen-Split schwach ist und nur auf vier Spielen basiert. Ihr eigenes drücken ist weniger intensiv als monzas gegnerisches druckprofil andeutet, so dass ein plausibler monza-erstellungsweg verbleibt. Das Scoring in der ersten Hälfte ist in der aktuellen Saisonansicht bescheiden, während das Zielprofil in der zweiten Hälfte aktiver ist.",
+      "prime": "Monza trägt den verfügbaren Basislinienrand zu Hause, aber keine Verteidigung hat einen zuverlässigen Mechanismus zum Stoppen der aktuellen Saison geliefert. Monza schafft den engen Vorteil, während Fiorentina eine Antwort findet, die am natürlichsten zu 2-1 führt.",
+      "counter": "Die Teams tauschen Ziele, aber Monzas verfügbarer Stärkevorteil wird nicht entscheidend; 1-1 ist die zurückhaltende Version und 2-2 die offenere Version.",
+      "cluster": "Beide Teams punkten; zwei bis vier Gesamttore, mit einem schmalen Hausrand zentral, aber nicht sicher.",
+      "risks": [
+        "Fiorentina nutzt Monzas aktuelle defensive Exposition effizienter und verwandelt ein frühes oder Level-Spiel in ein 1-2 Auswärtsergebnis, trotz ihrer schwachen verfügbaren Auswärtsrollen- und Basisindikatoren."
+      ]
+    }
+  }
+}
