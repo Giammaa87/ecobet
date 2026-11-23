@@ -1,0 +1,1609 @@
+{
+ "schema": "ECOBET_AI_ANALYST_DAY_V1",
+ "status": "OK",
+ "date": "2026-11-23",
+ "publication_id": "2026-11-23_0217",
+ "master_run": {
+  "logical_run_id": "ECOBET_LRUN_1e066ef6a9db4fc2b773f59b71d20a9d",
+  "publication_id": "2026-11-23_0217",
+  "fixture_count": 3,
+  "first_kickoff_utc": "2026-11-23T19:45:00Z"
+ },
+ "analyst": {
+  "assignment_version": "ANALYST_ASSIGNMENT_V1",
+  "assignment_sha256": "a728419cffec08fe07ce222ff958e02c31d8336dd3f4d3dd0236008464f06374",
+  "package_sha256": "36d968b43a7dfd1969581df1f79ff8abfc05999e4c24255ce11e5c48b7928e53",
+  "execution_path": "MANUAL_CLAUDE_SESSION_WIN_LOCAL_NOT_AUTOMATED"
+ },
+ "fixtures_total": 3,
+ "fixtures_reviewed": 3,
+ "fixtures_not_eligible": 0,
+ "original_ranking_rules": "RANKING_RULES_V1",
+ "reviewed_ranking_basis": "Tatsaechlich ausgewaehlter Markt je Spiel (Entscheidung); Ausgangspunkt Originalrang Pilot 05 (RANKING_RULES_V1), Aenderung nur ueber Befundkette (B1 in Levante-Elche abwaerts, B1 in Brentford-Everton aufwaerts).",
+ "no_result_knowledge_statement": "Alle Informationen stammen aus dem ECOBET-Datenstand vom 23.11.2026 (Vormittag) und Vorberichten vom 22./23.11.2026 vor Anpfiff; keine Resultatskenntnis, keine Suchtreffer mit Spielergebnissen verwendet.",
+ "games": [
+  {
+   "fixture_id": "ITA2627_448cfd2bd4de",
+   "match": "Monza – Fiorentina",
+   "competition": "ITA_SERIE_A",
+   "kickoff_utc": "2026-11-23T19:45:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 478 min (>= 30)"
+   },
+   "original": {
+    "rank": 1,
+    "score": 0.7093,
+    "best_path": "SAFE",
+    "best_market": "Match Total Over 1.5",
+    "fixture_category": "EXACT_AGREEMENT",
+    "published_odds": 1.19
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Both Teams To Score: Yes",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.513
+    },
+    "SAFE": {
+     "market": "Match Total Over 1.5",
+     "pilot05_category": "EXACT_AGREEMENT",
+     "published_odds": 1.19
+    },
+    "BALANCED": {
+     "market": "Both Teams To Score: Yes",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.513
+    },
+    "AGGRESSIVE": {
+     "market": "Match Total Over 2.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.6
+    }
+   },
+   "ki_top_computational": {
+    "market": "Match Total Over 1.5",
+    "p_low": 0.8,
+    "p_high": 0.9,
+    "worst_case_p": 0.75,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Match Total Over 1.5",
+    "confidence": "HIGH",
+    "reasoning": "Beide Mannschaften sind in schlechter Form und defensiv offen: Monza 2.4 Gegentore bei 1.9 xGA, nur 10 Prozent Zu-Null-Spiele; Fiorentina 2.2 Gegentore bei 1.9 xGA, kein Zu-Null in zehn Spielen; Over 1.5 in allen der letzten zehn Spiele beider Teams, Over 2.5 bei 90 beziehungsweise 80 Prozent. Erwartete Gesamttore ca. 3.2 bis 3.4, P(mindestens zwei Tore) ca. 0.85 bis 0.90. Die Ausfall- und Trainerwidersprueche beruehren die Gesamttorlinie 1.5 kaum.",
+    "differs_from_computational": false,
+    "difference_explanation": null,
+    "difference_explanation_origin": null,
+    "q_seal_sha256": "0ddf5c4ee1e02ed9dda9329c59121c38caa35dbd554ded1210885d905dd47ecf"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-23T11:53:19Z",
+    "result_sha256": "15606c6130b449e7d6f6fbdddb4c459a36d4b10940d439c55c2c3ee24a0fd0cb",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "Reproduktion: Fiorentina strength_ratio 1.012 -> +4.3 Elo (Steigung 351.1 x ln), Monza strength_ratio 1.052 -> +17.9; Rechnung stimmt. Fiorentina-Wertabdeckung nur 0.715 (Gate PARTIAL): Moise Kean, Albert Gudmundsson und Rolando Mandragora haben in den Spielerwerten hohe Werte, fehlen aber im vorhergesagten XI-Kader; die Vorberichte nennen keinen dieser Spieler, ihr Status ist nicht pruefbar. Der angepasste Abstand -73.4 (Basis -87) ist fuer die Seitenfrage damit nicht belastbar. Monza: Folorunsho OUT (konsistent); ECOBET fuehrt Yvan Maye als gesunde Bank, Vorberichte als verletzt."
+    },
+    "research_log": [
+     {
+      "source": "https://sport.sky.it/calcio/serie-a/2026/11/22/monza-fiorentina-probabili-formazioni-12-giornata",
+      "retrieved_utc": "2026-11-23T11:41:19Z",
+      "claim": "12. Spieltag, Montag 23.11. 20:45 Ortszeit; Folorunsho fehlt; Pongracic und Parisi bei Fiorentina out."
+     },
+     {
+      "source": "https://www.lapresse.it/calcio/2026/11/23/monza-fiorentina-oggi-in-serie-a-orario-probabili-formazioni-e-dove-vederla-in-tv/",
+      "retrieved_utc": "2026-11-23T11:41:19Z",
+      "claim": "Spieltagsvorbericht mit wahrscheinlichen Aufstellungen; beide Teams nur zwei Punkte auseinander."
+     },
+     {
+      "source": "https://www.violanews.com/formazioni/monza-fiorentina-probabili-formazioni-si-ranieri-occasione-per-gnonto/",
+      "retrieved_utc": "2026-11-23T11:41:19Z",
+      "claim": "Fiorentina: Ranieri spielt, Gnonto als Chance; Njie fraglich; 4-2-3-1 mit Pellegrino als Spitze."
+     },
+     {
+      "source": "https://www.goal.com/it/notizie/monza-fiorentina-pre-partita-ultime-notizie-infortuni-assenti/blt9783736f4ddc9228",
+      "retrieved_utc": "2026-11-23T11:41:19Z",
+      "claim": "Monza-Ausfaelle Maye und Folorunsho; Trainername widerspricht anderen Quellen (fuer diesen Punkt unzuverlaessig)."
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Annahme: beide Mannschaften treffen. Das eigene Bild ist offen, aber die Fiorentina-Angriffsbesetzung und die Monza-Aufstellung sind nicht belastbar bestimmt."
+    },
+    "SAFE": {
+     "market_agreement": "EXACT",
+     "assumption_agreement": "EXACT",
+     "assumption_comment": "Annahme offenes Spiel mit mindestens zwei Toren; entspricht dem KI TOP."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Annahme mindestens drei Tore; vereinbar mit der Erwartung ca. 3.3, aber enger."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Beide Mannschaften sind in schlechter Form und defensiv offen: Monza 0.7 Punkte, 2.4 Gegentore, Zu-Null in 10 Prozent; Fiorentina 0.6 Punkte, 2.2 Gegentore, Zu-Null in keinem der letzten zehn Spiele; Over 2.5 in 90 beziehungsweise 80 Prozent.",
+      "origin": "REPRODUCED",
+      "source_ids": [
+       "S3"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Die sehr hohen Torraten stuetzen Torannahmen; sie sind aber teilweise Ergebnis der Gegnerauswahl und kein eigener Risikobefund.",
+     "affected_markets_neutral": [
+      {
+       "market": "Match Total Over 1.5",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "gestuetzt"
+      }
+     ],
+     "not_material_reason": "Eine Auffaelligkeit zugunsten der Annahme (viele Tore), keine Gefaehrdung; die Torrate liegt weit ueber der Linie 1.5.",
+     "phase": "Q"
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Fiorentina-Kader: hohe Werte fuer Moise Kean (12.5), Albert Gudmundsson (9.2), Rolando Mandragora (7.7) in den Spielerwerten, aber nicht im vorhergesagten XI-Kader; die Vorberichte nennen keinen dieser Spieler. Wertabdeckung des XI nur 0.715.",
+      "origin": "INFERRED",
+      "source_ids": [
+       "S1",
+       "S2",
+       "S3"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Fiorentinas Angriffsstaerke ist entweder real geschwaecht (Spieler abwesend) oder in den Daten unterbewertet; die Auswirkung betrifft Fiorentinas Torerwartung und die Seitenfrage, aber nicht die Gesamtlinie 1.5.",
+     "affected_markets_neutral": [
+      {
+       "market": "Fiorentina to win",
+       "effect": "unsicher"
+      },
+      {
+       "market": "Fiorentina Team Goals Over 1.5",
+       "effect": "unsicher"
+      },
+      {
+       "market": "Match Total Over 1.5",
+       "effect": "kaum betroffen"
+      }
+     ],
+     "materiality": {
+      "area": "AUSFALL_DATENLAGE",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "geschwaecht",
+       "why": "Beide-Teams-treffen-Ja verlangt ein Fiorentina-Tor; Fiorentinas Angriffsbesetzung (Kean, Gudmundsson fehlen in den Daten, Njie fraglich) ist unklar."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "geschwaecht",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "kaum betroffen",
+       "why": "Over 1.5 benoetigt nur zwei Tore insgesamt, Monza allein genuegt weitgehend."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "leicht geschwaecht",
+       "why": "Over 2.5 haengt teilweise an Fiorentina-Toren."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "kaum betroffen",
+       "why": "Over 1.5."
+      }
+     ],
+     "decision_effect": "Wechsel von FAVOURITE (Beide Teams treffen: Ja) auf den SAFE-Pfad Match Total Over 1.5.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Rang 1 bleibt; die empfohlene Prognose ist der Rangbasis-Markt."
+     }
+    },
+    {
+     "finding_id": "Q3",
+     "finding": {
+      "text": "Fiorentina-Ausfaelle: Pongracic (Abwehr, 5 Einsaetze) und Parisi out, Croci out; Atta unsicher, Njie fraglich; Fiorentina-Abwehr ohne Pongracic mit Viery, Dragusin, Valdepenas/Jimenez.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1",
+       "S3",
+       "S4"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Weitere Schwaechung einer ohnehin offenen Abwehr (2.2 Gegentore im Schnitt) erhoeht die Chancen fuer Monza.",
+     "affected_markets_neutral": [
+      {
+       "market": "Monza Team Goals Over 0.5",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Monza Team Goals Over 1.5",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Fiorentina Team Goals Under 0.5",
+       "effect": "unbeeinflusst"
+      },
+      {
+       "market": "Match Total Over 1.5",
+       "effect": "gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "ambivalent",
+       "why": "Monza-Tor gestuetzt, Fiorentina-Tor-Teil unveraendert."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "ambivalent",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Geschwaechte offene Abwehr erhoeht die Torerwartung."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "gestuetzt",
+       "why": "Mehr Tore wahrscheinlicher."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Over 1.5."
+      }
+     ],
+     "decision_effect": "Bestaetigt SAFE als stabilsten Markt.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein Rangwechsel."
+     }
+    },
+    {
+     "finding_id": "Q4",
+     "finding": {
+      "text": "Monza-Informationen widersprechen sich: Folorunsho OUT (konsistent); Yvan Maye laut Vorberichten verletzt (ECOBET: gesunde Bank); Birindelli/Ngonge teils als Ausfaelle genannt; Trainer-/Sperrenangaben widerspruechlich, Formation 3-4-2-1 oder 3-5-2; Jay Robinson laut ECOBET fraglich.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1",
+       "S4"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Monzas Aufstellung ist nicht belastbar bestimmt; eine Angriffsschwaeche in der Seitenfrage kann nicht ausgeschlossen werden. Auf die Gesamttore wirkt es gering.",
+     "affected_markets_neutral": [
+      {
+       "market": "Monza Team Goals Over 1.5",
+       "effect": "unsicher"
+      },
+      {
+       "market": "Match Total Over 1.5",
+       "effect": "kaum betroffen"
+      },
+      {
+       "market": "Monza to win",
+       "effect": "unsicher"
+      }
+     ],
+     "materiality": {
+      "area": "AUSFALL_DATENLAGE",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "geschwaecht",
+       "why": "Monzas Aufstellung unklar; das Monza-Tor-Bein von Beide-Teams-treffen ist weniger belastbar."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "geschwaecht",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "kaum betroffen",
+       "why": "Fiorentina-Defensive und beide Offensiven tragen zwei Tore auch bei Monza-Umstellung."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "leicht geschwaecht",
+       "why": "Over 2.5 braucht ein offenes Spiel beider Seiten."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "kaum betroffen",
+       "why": "Over 1.5."
+      }
+     ],
+     "decision_effect": "Bestaetigt den Wechsel auf SAFE.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein Rangwechsel."
+     }
+    },
+    {
+     "finding_id": "Q5",
+     "finding": {
+      "text": "Basis-Elo spricht fuer Fiorentina (-87), die Form (0.4 Punkte pro Spiel in den letzten fuenf, 0.6 in zehn) widerspricht; angepasster Abstand -73.4 mit Coverage 0.715 (PARTIAL).",
+      "origin": "REPRODUCED",
+      "source_ids": [
+       "S3",
+       "S1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Die Elo-Ueberlegenheit Fiorentinas ist durch die aktuelle Form und die Ausfaelle nicht gedeckt; Seitenmaerkte auf Fiorentina sind fragil, Doppelchance fuer Monza plausibel, aber ebenfalls nicht stabil.",
+     "affected_markets_neutral": [
+      {
+       "market": "Fiorentina to win",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Monza or Draw",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Fiorentina Draw No Bet",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Match Total Over 1.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "materiality": {
+      "area": "ELO_ADJUSTMENT",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "nicht betroffen",
+       "why": "Kein Seitenmarkt."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "nicht betroffen",
+       "why": "Kein Seitenmarkt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung; Elo-Anomalie dokumentiert.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein ECOBET-Seitenpfad im Spiel."
+     }
+    }
+   ],
+   "decision": {
+    "value": "OTHER_ECOBET_PATH",
+    "preferred_market": {
+     "source": "SAFE",
+     "market_text": "Match Total Over 1.5"
+    },
+    "reasoning": "FAVOURITE (Both Teams To Score: Yes) setzt Tore beider Seiten voraus. Q2 (Fiorentina: Kean/Gudmundsson/Mandragora im XI-Kader nicht auffindbar, Abdeckung 0.715, Njie fraglich) und Q4 (Monza: Aufstellung, Ausfaelle, Trainerangaben widerspruechlich) treffen genau diese Annahme. Marktspezifische Evidenz fuer Match Total Over 1.5: Over 1.5 in 10 von 10 letzten Spielen beider Teams, xG-Summe ca. 3.3, Zu-Null-Quote 10 Prozent beziehungsweise 0; P ca. 0.88. Beide Befunde beruehren die Gesamtlinie kaum. Der Wechsel folgt aus Befunden, nicht aus der niedrigeren Linie.",
+    "chain_refs": [
+     "Q2",
+     "Q3",
+     "Q4"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Match Total Over 1.5 ist gering fragil: das Risiko (hoechstens ein Tor, ca. 12 Prozent) braucht ein ungewoehnlich torarmes Spiel (frueher Platzverweis, extreme Vorsicht). Die Datenwidersprueche zu Kader und Trainer koennen nur die Verteilung der Tore, nicht ihre Zahl wesentlich verschieben. Die exakte Uebereinstimmung mit dem KI TOP bestaetigt den Markt, deckt aber nicht auf, dass die Annahme beider Torschuetzen (FAVOURITE) fragil bleibt - diese Annahme wird nicht empfohlen."
+   },
+   "detail_md": "**Monza - Fiorentina (Serie A, Montag 19:45 UTC)**\n\n**Spielbild.** Zwei formschwache, defensiv offene Mannschaften: Monza L10 0.7 Punkte, 1.7 Tore bei 1.62 xG, 2.4 Gegentore bei 1.9 xGA; Fiorentina 0.6 Punkte, 1.2 Tore bei 1.46 xG, 2.2 Gegentore bei 1.86 xGA; Over 1.5 in jeweils allen zehn Spielen. Erwartete Gesamttore ca. 3.3.\n\n**Befunde.** (Q1, nicht wesentlich) Hohe Torraten stuetzen die Annahme. (Q2) Fiorentina-Spieler mit hohen Werten (Kean 12.5, Gudmundsson 9.2, Mandragora 7.7) fehlen im XI-Kader; Abdeckung 0.715. (Q3) Pongracic, Parisi, Croci out, Atta/Njie unsicher: Abwehr schwaecher. (Q4) Monza: Folorunsho out; Maye, Birindelli, Ngonge widerspruechlich; Trainerangaben widerspruechlich. (Q5) Basis-Elo Fiorentina -87 gegen Formwerte: kein belastbarer Seitenvorteil, ECOBET hat keinen Seitenpfad.\n\n**Entscheidung.** FAVOURITE (BTTS Ja) wird durch Q2/Q4 geschwaecht; SAFE Over 1.5 stuetzt sich auf 10/10 Spiele und die Gesamterwartung und wird bevorzugt.\n\n**Rang.** Original 1, geprueft 1: die empfohlene Prognose ist der Markt der Rangbasis und die stabilste des Tages.",
+   "rank": {
+    "original": 1,
+    "reviewed": 1,
+    "change": 0,
+    "reason": "FAVOURITE (Both Teams To Score: Yes) setzt Tore beider Seiten voraus. Q2 (Fiorentina: Kean/Gudmundsson/Mandragora im XI-Kader nicht auffindbar, Abdeckung 0.715, Njie fraglich) und Q4 (Monza: Aufstellung, Ausfaelle, Trainerangaben widerspruechlich) treffen genau diese Annahme. Marktspezifische Eviden",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 1
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "ENG2627_44f6629a21b1",
+   "match": "Brentford – Everton",
+   "competition": "ENG_PREMIER_LEAGUE",
+   "kickoff_utc": "2026-11-23T20:00:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 493 min (>= 30)"
+   },
+   "original": {
+    "rank": 3,
+    "score": 0.5824,
+    "best_path": "SAFE",
+    "best_market": "Match Total Under 3.5",
+    "fixture_category": "STRONG_FAMILY_AGREEMENT",
+    "published_odds": 1.38
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Brentford Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "SAFE": {
+     "market": "Match Total Under 3.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": 1.38
+    },
+    "BALANCED": {
+     "market": "Brentford Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "AGGRESSIVE": {
+     "market": "Brentford to win",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 2.26
+    }
+   },
+   "ki_top_computational": {
+    "market": "Match Total Under 4.5",
+    "p_low": 0.8,
+    "p_high": 0.9,
+    "worst_case_p": 0.7,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Match Total Under 4.5",
+    "confidence": "HIGH",
+    "reasoning": "Erwartete Tore ca. 2.6 bis 2.9 (Brentford xG 1.4-1.7 gegen Everton-xGA 1.5-1.6, aber ohne Stuermer Thiago und mit Wilson ohne Spielrhythmus; Everton xG 1.4-1.65 bei nur 0.6-1.0 Toren, passives Gaestepressing PPDA 14-15). Hoechstens 4 Tore ist in beiden Mannschaftsprofilen sehr robust (Over 3.5 in 22 bis 30 Prozent der letzten Spiele, Over 4.5 in keinem der letzten fuenf). Seitenmaerkte tragen wegen der unsicheren Elo-/XI-Lage mehr Unsicherheit. Eigene Poisson-Ueberschlagsrechnung (Mittel 2.7: P(<=4) ca. 0.90) und Formraten.",
+    "differs_from_computational": false,
+    "difference_explanation": null,
+    "difference_explanation_origin": null,
+    "q_seal_sha256": "0ddf5c4ee1e02ed9dda9329c59121c38caa35dbd554ded1210885d905dd47ecf"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-23T11:53:19Z",
+    "result_sha256": "e1b25177b33c32e5918f684f977214fa7d709e1a9d88842499c37e31ace0db2a",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "Reproduktion des angepassten Elo: Everton strength_ratio 0.7908 -> -82.4 Elo (Steigung 351.1 x ln(ratio)), Brentford strength_ratio 1.0236 -> 8.2. Rechnung stimmt, die Eingabe ist aber fraglich: Evertons XI-Staerke 8.72 (Referenz 11.02) sinkt, obwohl laut mehreren Vorberichten kein Everton-Ausfall vorliegt; Ursache sind Spieler ohne Saisonminuten (O'Brien, Mykolenko u. a.) und Coverage 0.897 (Gate PARTIAL). Brentford +8 trotz Ausfall von Thiago (Sperre), Collins, Hickey, Henry: Thiago erscheint doppelt (Igor Thiago, Wert 8.5 LOW, ohne Statistik; 'Thiago', Wert 10.5 HIGH) und ist damit vermutlich unterbewertet. Der angepasste Elo-Abstand (+107.6) ueberzeichnet den Brentford-Vorteil gegenueber dem Basis-Abstand (+17)."
+    },
+    "research_log": [
+     {
+      "source": "https://www.brentfordfc.com/en/news/match-previews-brentford-v-everton-premier-league-23-11-2026",
+      "retrieved_utc": "2026-11-23T11:41:19Z",
+      "claim": "Vereinsvorschau: Anstoss 20:00 GMT am 23.11.; Thiago gesperrt, Hickey und Collins verletzt (paraphrasiert)."
+     },
+     {
+      "source": "https://www.sportsmole.co.uk/football/brentford/injury-news/team-news/brentford-vs-everton-injury-suspension-list-predicted-xis_609565.html",
+      "retrieved_utc": "2026-11-23T11:41:19Z",
+      "claim": "Fehlen: Thiago (Sperre), Hickey, Collins, Henry, Furo verletzt; Milambo/Dasilva angeschlagen; Carvalho fraglich; Wilson vermutlich Startelf."
+     },
+     {
+      "source": "https://thefalse9.com/2026/11/brentford-vs-everton-predicted-lineup-team-news-23-november.html",
+      "retrieved_utc": "2026-11-23T11:41:19Z",
+      "claim": "Wilson muss starten; Grealish zurueck im Training und in der Startelf-Diskussion."
+     },
+     {
+      "source": "https://www.3addedminutes.com/sport/football/everton/everton-predicted-xi-brentford-key-changes-moyes-grealish-9365430",
+      "retrieved_utc": "2026-11-23T11:41:19Z",
+      "claim": "Everton ohne Ausfaelle; Grealish-Startelfplatz offen; Dibling/George aussen, Barry Spitze, O'Brien oder Roehl rechts hinten."
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Annahme: Brentford erzielt mindestens zwei Tore; die Torerwartung ca. 1.3-1.4 nach Thiago-Ausfall traegt das nur teilweise."
+    },
+    "SAFE": {
+     "market_agreement": "COMPATIBLE",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Annahme gemaessigter Gesamttorzahl; deckt sich mit der eigenen Erwartung ca. 2.7 (Marktebene: Obergrenze 3.5 enger als KI TOP 4.5)."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Sieg Brentfords setzt die ueberzeichnete Elo-Ueberlegenheit voraus; widerspricht nicht dem KI-TOP, wird von ihm aber nicht getragen."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Igor Thiago (Brentfords Stuermer mit dem hoechsten Torwert) ist wegen einer Drei-Spiele-Sperre nicht spielberechtigt; Callum Wilson (5 Saisoneinsaetze, 19 Minuten) soll erstmals in der Liga starten.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1",
+       "S2"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Brentford verliert den wichtigsten Abschlussspieler und Zielspieler; Wilson ist ohne Spielrhythmus, Tordruck und Zahl guter Abschluesse sinken leicht. Richtung: weniger Brentford-Tore, Groessenordnung eher 0.1 bis 0.25 Tore.",
+     "affected_markets_neutral": [
+      {
+       "market": "Brentford Team Goals Over 1.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "leicht geschwaecht"
+      },
+      {
+       "market": "Match Total Under 4.5",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Brentford Team Goals Over 0.5",
+       "effect": "kaum betroffen (Schade, Ouattara, Lewis-Potter treffen)"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Brentford Team Goals Over 1.5",
+       "effect": "geschwaecht",
+       "why": "Ohne Thiago und mit Wilson ohne Rhythmus sinkt die Brentford-Torerwartung auf ca. 1.3-1.4; P(mindestens 2 Brentford-Tore) liegt dann bei ca. 0.40 und darunter."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Brentford Team Goals Over 1.5",
+       "effect": "geschwaecht",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 3.5",
+       "effect": "gestuetzt",
+       "why": "Weniger Brentford-Tore stuetzen die Obergrenze 3.5."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Brentford to win",
+       "effect": "geschwaecht",
+       "why": "Ein Brentford-Sieg braucht Tore; Stuermerausfall schwaecht ihn."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Obergrenze 4.5 wird noch robuster."
+      }
+     ],
+     "decision_effect": "Wechsel von FAVOURITE (Brentford Team Goals Over 1.5) auf den SAFE-Pfad Match Total Under 3.5, gemeinsam mit Q3 und Q4.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Das Spiel bleibt hinter dem Monza-Spiel; die Rangverschiebung gegenueber Levante-Elche begruendet B1, nicht dieser Befund."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Brentford fehlen zudem die Abwehrspieler Collins und Hickey (verletzt), dazu Henry; die Innenverteidigung bilden Ajer und van den Berg, links Diouf oder Lewis-Potter.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1",
+       "S2"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Brentfords Abwehr ist ungewohnt zusammengesetzt; mehr Raum und Abschluesse fuer Everton moeglich. Die Bilanz 1.0 Gegentore bei 1.5 bis 1.7 xGA zeigt zugleich eine Ueberperformance (Kelleher), die zu mehr Gegentoren regressieren kann.",
+     "affected_markets_neutral": [
+      {
+       "market": "Everton Team Goals Over 0.5",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Everton Team Goals Under 0.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Beide Teams treffen: Ja",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Match Total Under 1.5",
+       "effect": "geschwaecht"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Brentford Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Die Abwehrluecken betreffen die Brentford-Gegentore, nicht die Brentford-Tore."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Brentford Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 3.5",
+       "effect": "leicht geschwaecht",
+       "why": "Schwaechere Brentford-Abwehr und Regression der Everton-Abschlussschwaeche koennen die Torerwartung auf ca. 2.9 heben; Obergrenze 3.5 bleibt trotzdem plausibel."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Brentford to win",
+       "effect": "geschwaecht",
+       "why": "Mehr Gegentore machen den Sieg weniger sicher."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Obergrenze 4 wird auch im pessimistischen Fall nicht erreicht (Over 4.5 in 0 von 10)."
+      }
+     ],
+     "decision_effect": "SAFE bleibt bevorzugt; die Fragilitaet des bevorzugten Marktes steigt leicht und wird in der Bewertung ausgewiesen.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein Rangwechsel; Wirkung ist bereits in der Bewertung des bevorzugten Marktes enthalten."
+     }
+    },
+    {
+     "finding_id": "Q3",
+     "finding": {
+      "text": "Der angepasste Elo-Abstand von +107.6 (Basis +17) beruht auf Evertons Abzug von -82.4 Elo. Reproduziert: 351.1 x ln(0.7908). Der Abzug entsteht aus fehlenden Saisonstatistiken (u. a. O'Brien, Mykolenko, Johnson) und 89.7 Prozent Wertabdeckung (Gate PARTIAL), nicht aus bekannten Ausfaellen: laut Vorberichten ist Everton verletzungsfrei, Grealish zurueck.",
+      "origin": "REPRODUCED",
+      "source_ids": [
+       "S1",
+       "S3",
+       "S4"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Der Brentford-Vorteil in der Datenlage ist ueberzeichnet; sportlich ist das Spiel naeher an ausgeglichen (Basis +17, mit Thiago-/Abwehr-Ausfaellen eher darunter). Jede seitenabhaengige Annahme (Sieg, DNB, Doppelchance Brentford) ist daher fragiler, als der angepasste Elo nahelegt.",
+     "affected_markets_neutral": [
+      {
+       "market": "Brentford to win",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Brentford Draw No Bet",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Brentford or Draw",
+       "effect": "leicht geschwaecht"
+      },
+      {
+       "market": "Everton Team Goals Under 1.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Match Total Under 4.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "materiality": {
+      "area": "ELO_ADJUSTMENT",
+      "level": "M3"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Brentford Team Goals Over 1.5",
+       "effect": "geschwaecht",
+       "why": "Der Brentford-Vorteil im angepassten Elo (+107.6) ist ueberzeichnet; das Zwei-Tore-Szenario Brentfords stuetzt sich auf diese Ueberlegenheit."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Brentford Team Goals Over 1.5",
+       "effect": "geschwaecht",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 3.5",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt ohne Seitenannahme."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Brentford to win",
+       "effect": "stark geschwaecht",
+       "why": "Der Sieg haengt direkt an der ueberzeichneten Heimueberlegenheit."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      }
+     ],
+     "decision_effect": "Abwendung von FAVOURITE und AGGRESSIVE; SAFE bleibt.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Rang bleibt zunaechst; die Marktverschiebung selbst aendert die Rangbasis nicht (SAFE war schon Rangbasis)."
+     }
+    },
+    {
+     "finding_id": "Q4",
+     "finding": {
+      "text": "Doppelte Spieleridentitaet in den ECOBET-Spielerwerten: 'Igor Thiago' (Wert 8.5, Konfidenz LOW, ohne Statistik, gesperrt) und 'Thiago' (Wert 10.5, Konfidenz HIGH, ohne Position). Der angepasste Elo Brentfords steigt (+8.2) trotz Wegfall von Thiago, Collins, Hickey, Henry.",
+      "origin": "INFERRED",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Der Wegfall des Stuermers ist im Brentford-XI-Wert vermutlich zu klein bewertet; die Brentford-Staerke ist eher ueberschaetzt. Wirkung wie Q3: Seitenmaerkte zugunsten Brentfords fragiler.",
+     "affected_markets_neutral": [
+      {
+       "market": "Brentford to win",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Brentford Team Goals Over 1.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Match Total Under 4.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Brentford Team Goals Over 1.5",
+       "effect": "geschwaecht",
+       "why": "Unterbewertete Thiago-Abwesenheit ueberhoeht Brentfords Angriffsstaerke."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Brentford Team Goals Over 1.5",
+       "effect": "geschwaecht",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 3.5",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Brentford to win",
+       "effect": "geschwaecht",
+       "why": "Sieg haengt an der Staerke, die ueberzeichnet ist."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      }
+     ],
+     "decision_effect": "Bestaetigt den Wechsel auf SAFE.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein eigener Rangeffekt."
+     }
+    },
+    {
+     "finding_id": "Q5",
+     "finding": {
+      "text": "Everton erzielte in den letzten fuenf Spielen 0.6 Tore je Spiel bei 1.65 xG (torlos in 60 Prozent); L10 0.9 Tore bei 1.4 xG.",
+      "origin": "REPRODUCED",
+      "source_ids": [
+       "S3"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Abschlussschwaeche ist teilweise Zufall; Rueckkehr zum xG-Niveau wuerde Evertons Torerwartung auf ca. 1.2 bis 1.4 heben und Under-Annahmen fuer Everton verteuern, nicht aber die Gesamt-Obergrenze 4 gefaehrden.",
+     "affected_markets_neutral": [
+      {
+       "market": "Everton Team Goals Under 0.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Everton Team Goals Under 1.5",
+       "effect": "leicht geschwaecht"
+      },
+      {
+       "market": "Match Total Under 4.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "materiality": {
+      "area": "FORM_STATISTIK",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Brentford Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Betrifft die Everton-Tore."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Brentford Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 3.5",
+       "effect": "leicht geschwaecht",
+       "why": "Everton-Torerwartung steigt Richtung 1.2-1.4; Gesamterwartung ca. 2.8."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Brentford to win",
+       "effect": "leicht geschwaecht",
+       "why": "Mehr Everton-Tore verringern die Siegsicherheit."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Obergrenze 4."
+      }
+     ],
+     "decision_effect": "SAFE bleibt bevorzugt; in der Fragilitaetsbewertung beruecksichtigt.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein Rangeffekt."
+     }
+    },
+    {
+     "finding_id": "Q6",
+     "finding": {
+      "text": "Jack Grealish ist zurueck; Quellen sind uneins, ob er startet (Everton-Vorberichte).",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S3",
+       "S4"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Evertons Offensive hat auch ohne ihn Tiefe (Dewsbury-Hall, Barry, George, Dibling); sein Startplatz aendert die Torerwartung hoechstens um Zehntel.",
+     "affected_markets_neutral": [
+      {
+       "market": "Match Total Under 4.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "not_material_reason": "Startelf-Frage offen, Grealish nur 302 Saisonminuten; Effekt auf Marktaussagen im Rahmen der normalen Streuung, keine Aenderung der Spielverlaufserwartung.",
+     "phase": "Q"
+    },
+    {
+     "finding_id": "B1",
+     "finding": {
+      "text": "Der Originalrang 3 beruht auf dem SAFE-Markt Match Total Under 3.5 (publizierte Stabilitaetsrechnung: p 0.60-0.80, schlechtester Fall 0.55). Genau dieser Markt ist die tatsaechliche Empfehlung. Der Konkurrenzfall Levante-Elche wird dagegen mit dem FAVOURITE-Markt Over 2.5 empfohlen (schlechtester Fall 0.45).",
+      "origin": "ORIGINAL",
+      "source_ids": [
+       "P05-RANK"
+      ]
+     },
+     "material": true,
+     "materiality": {
+      "area": "MARKTSTABILITAET",
+      "level": "M2"
+     },
+     "sporting_effect": "Die empfohlene Brentford-Everton-Prognose ist stabiler als die empfohlene Levante-Elche-Prognose, obwohl der Originalrang beide umgekehrt ordnet.",
+     "affected_markets": [
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 3.5",
+       "effect": "gestuetzt",
+       "why": "Empfohlener Markt; Untergrenze 0.55 hoeher als die des Levante-Elche-Marktes."
+      },
+      {
+       "path": "FAVOURITE",
+       "market_text": "Brentford Team Goals Over 1.5",
+       "effect": "nicht empfohlen",
+       "why": "Wegen Q1, Q3, Q4 nicht bevorzugt."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Brentford Team Goals Over 1.5",
+       "effect": "nicht empfohlen",
+       "why": "Wie FAVOURITE."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Brentford to win",
+       "effect": "nicht empfohlen",
+       "why": "Wegen Q3 und Q4."
+      }
+     ],
+     "decision_effect": "Entscheidung bleibt OTHER_ECOBET_PATH (SAFE).",
+     "rank_effect": {
+      "value": "UP",
+      "why": "Die tatsaechlich empfohlene Prognose liegt stabil ueber der empfohlenen Prognose von Levante-Elche und rueckt auf den zweiten Platz."
+     },
+     "phase": "POST_DISCLOSURE"
+    }
+   ],
+   "decision": {
+    "value": "OTHER_ECOBET_PATH",
+    "preferred_market": {
+     "source": "SAFE",
+     "market_text": "Match Total Under 3.5"
+    },
+    "reasoning": "FAVOURITE (Brentford Team Goals Over 1.5) und AGGRESSIVE (Brentford to win) stuetzen sich auf einen Brentford-Vorteil, den Q1 (Thiago gesperrt), Q3 (Elo-Abzug Everton aus Datenluecken) und Q4 (Thiago-Doppelidentitaet) schwaechen. Marktspezifische Evidenz fuer Match Total Under 3.5: erwartete Gesamttore ca. 2.7, Over 3.5 in 20-30 Prozent der letzten Spiele, Over 4.5 nie; kein Befund hebt die Gesamttorerwartung ueber 3.0. Der SAFE-Markt wird nicht wegen der niedrigeren Linie allein gewaehlt, sondern weil mehrere wesentliche Befunde nur die FAVOURITE-Annahme, nicht die Gesamttorannahme treffen.",
+    "chain_refs": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4",
+     "Q5",
+     "B1"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Match Total Under 3.5 ist maessig fragil: Q2 (Brentford-Abwehr ohne Collins/Hickey/Henry, Regression der Everton-Abschlussschwaeche) kann die Gesamterwartung auf ca. 2.9-3.0 heben; dann sinkt P(hoechstens 3 Tore) von ca. 0.75 auf ca. 0.65-0.70. Ein frueher Rueckstand Everton oder offenes Spiel nach Platzverweis bleibt das Hauptrisiko. Die gute Uebereinstimmung des SAFE-Markts mit dem KI TOP (Under 4.5) verdeckt diese engere Linie nicht: Under 4.5 hat Puffer, Under 3.5 nicht."
+   },
+   "detail_md": "**Brentford - Everton (Premier League, Montag 20:00 GMT)**\n\n**Spielbild.** Brentford: L10 1.7 Tore bei 1.67 xG, 1.0 Gegentore bei 1.68 xGA (Torwart Kelleher ueberperformt); Everton: L10 0.9 Tore bei 1.4 xG, passives Pressing (PPDA 14), 1.3 Gegentore bei 1.53 xGA. Erwartete Gesamttore ca. 2.6-2.9.\n\n**Befunde.** (Q1) Thiago gesperrt, Wilson ohne Rhythmus: weniger Brentford-Tore. (Q2) Collins, Hickey, Henry fehlen: mehr Raum fuer Everton. (Q3) Angepasster Elo +107.6 gegen Basis +17: Evertons Abzug -82.4 (351.1 x ln 0.7908) entsteht aus fehlenden Saisonstatistiken und 89.7 Prozent Abdeckung, nicht aus bekannten Ausfaellen - die Brentford-Ueberlegenheit ist ueberzeichnet. (Q4) Doppelte Thiago-Identitaet; Brentford-XI vermutlich zu hoch bewertet. (Q5) Evertons Abschlussschwaeche (0.6 Tore bei 1.65 xG) regressiert teilweise. (Q6, nicht wesentlich) Grealish-Startelf offen.\n\n**Entscheidung.** FAVOURITE und AGGRESSIVE haengen an der Brentford-Ueberlegenheit; SAFE (Match Total Under 3.5) haengt nur an der Gesamttorzahl und wird bevorzugt. Gegenueber dem KI TOP (Under 4.5) ist die Linie enger und deshalb weniger stabil.\n\n**Rang.** Original 3, geprueft 2 (B1): die empfohlene Prognose ist stabiler als die empfohlene Levante-Elche-Prognose.",
+   "rank": {
+    "original": 3,
+    "reviewed": 2,
+    "change": 1,
+    "reason": "FAVOURITE (Brentford Team Goals Over 1.5) und AGGRESSIVE (Brentford to win) stuetzen sich auf einen Brentford-Vorteil, den Q1 (Thiago gesperrt), Q3 (Elo-Abzug Everton aus Datenluecken) und Q4 (Thiago-Doppelidentitaet) schwaechen. Marktspezifische Evidenz fuer Match Total Under 3.5: erwartete Gesamtt",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 3
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "ESP2627_3be31fff29cf",
+   "match": "Levante – Elche",
+   "competition": "ESP_LA_LIGA",
+   "kickoff_utc": "2026-11-23T20:00:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 493 min (>= 30)"
+   },
+   "original": {
+    "rank": 2,
+    "score": 0.704,
+    "best_path": "SAFE",
+    "best_market": "Match Total Over 1.5",
+    "fixture_category": "EXACT_AGREEMENT",
+    "published_odds": 1.21
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Match Total Over 2.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.68
+    },
+    "SAFE": {
+     "market": "Match Total Over 1.5",
+     "pilot05_category": "EXACT_AGREEMENT",
+     "published_odds": 1.21
+    },
+    "BALANCED": {
+     "market": "Match Total Over 2.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.68
+    },
+    "AGGRESSIVE": {
+     "market": "Match Goals 2-4",
+     "pilot05_category": "INSUFFICIENT_EVIDENCE",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Match Total Over 1.5",
+    "p_low": 0.8,
+    "p_high": 0.9,
+    "worst_case_p": 0.75,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Match Total Over 1.5",
+    "confidence": "HIGH",
+    "reasoning": "Beide Abwehrreihen sind schwach (Levante xGA 2.1 bei 1.8 Gegentoren, Elche xGA 2.0 bei 1.7 in den letzten zehn Spielen), beide Angriffe liefern 1.3 bis 1.6 xG; erwartete Gesamttore ca. 3.0. Mindestens zwei Tore: Poisson-Ueberschlag 0.80, Formraten (Over 1.5 in 80 Prozent bei beiden Teams) stimmen ueberein; selbst bei Torverknappung durch den Abstiegsdruck bleibt die Linie 1.5 weit unter der Erwartung. Seitenmaerkte sind wegen des ausgeglichenen Basis-Elo (+4) und widerspruechlicher Ausfallinformationen fragil.",
+    "differs_from_computational": false,
+    "difference_explanation": null,
+    "difference_explanation_origin": null,
+    "q_seal_sha256": "0ddf5c4ee1e02ed9dda9329c59121c38caa35dbd554ded1210885d905dd47ecf"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-23T11:53:19Z",
+    "result_sha256": "4cf6f6aa9470fca3bd8adcfd8a12b77a2ee78c1702239dcdcbee3acee82b5990",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "Reproduktion: Elche strength_ratio 1.069 -> +23.4 Elo (Steigung 351.1 x ln), Levante strength_ratio 0.992 -> -2.7; Rechnung stimmt. Der Basis-Abstand +4 (Levante) kippt durch die Anpassung auf -22. Der Elche-Aufschlag haengt an Coverage 0.913 (Gate PARTIAL) und an widerspruechlichen Ausfalldaten: ECOBET fuehrt Aguado, Lemar, Houary als OUT beim Elche, Vorberichte nennen Aguado teils beim Levante, Lemar widerspruechlich, Boayar und Yago Santiago als Elche-Ausfaelle (in ECOBET Bank bzw. Restkader). Die Seitenrichtung des angepassten Elo ist daher nicht belastbar."
+    },
+    "research_log": [
+     {
+      "source": "https://www.infobae.com/america/agencias/2026/11/22/previa-levante-y-elche-pugnan-por-un-triunfo-en-el-derbi-valenciano-para-abandonar-el-descenso/",
+      "retrieved_utc": "2026-11-23T11:41:19Z",
+      "claim": "Derbi der Jornada 13 am 23.11.; beide Klubs wollen die Abstiegszone verlassen; Aguado als Elche-Ausfall genannt."
+     },
+     {
+      "source": "https://www.futbolfantasy.com/laliga/noticias/155058-posibles-alineaciones-y-previa-fantasy-del-levante-elche",
+      "retrieved_utc": "2026-11-23T11:41:19Z",
+      "claim": "Wahrscheinliche Aufstellungen; Aguado hier als Levante-Ausfall (Knoechel) gefuehrt, Brugue verfuegbar."
+     },
+     {
+      "source": "https://diariofranjiverde.com/el-elche-busca-dar-un-golpe-sobre-la-mesa-ante-el-levante",
+      "retrieved_utc": "2026-11-23T11:41:19Z",
+      "claim": "Elche-Lokalquelle: Revivo und Lemar trainierten normal; Ausfaelle Aguado, Yago Santiago, Boayar, Houary fraglich."
+     },
+     {
+      "source": "https://www.tufutbolero.com/partido/levante-elche-laliga-2026-27-jornada-13",
+      "retrieved_utc": "2026-11-23T11:41:19Z",
+      "claim": "Anstoss Montag 23.11. 21:00 Ortszeit (20:00 UTC)."
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Annahme offenes Spiel mit mindestens drei Toren; deckt sich mit der eigenen Erwartung ca. 3.0, aber enger als der KI TOP."
+    },
+    "SAFE": {
+     "market_agreement": "EXACT",
+     "assumption_agreement": "EXACT",
+     "assumption_comment": "Annahme offenes Spiel mit mindestens zwei Toren; entspricht dem KI TOP."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "NOT_ASSESSABLE",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Annahme zwei bis vier Tore; sachlich vereinbar, Markt nicht pruefbar."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Beide Abwehrreihen liegen deutlich ueber ihren Gegentoren-Erwartungswerten: Levante 1.8 Gegentore bei 2.1 xGA, Elche 1.7 bei 2.0 xGA (L10); Elche kassierte in den letzten fuenf nur 0.8 bei 1.7 xGA.",
+      "origin": "REPRODUCED",
+      "source_ids": [
+       "S3"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Elches juengste Defensivserie ist durch Glueck gestuetzt und regressiert voraussichtlich; die Gesamttorerwartung bleibt ca. 3.0.",
+     "affected_markets_neutral": [
+      {
+       "market": "Match Total Over 1.5",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Elche Team Goals Under 0.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Elche Team Goals Under 1.5",
+       "effect": "geschwaecht"
+      }
+     ],
+     "materiality": {
+      "area": "FORM_STATISTIK",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "gestuetzt",
+       "why": "Torerwartung ca. 3.0 stuetzt Over 2.5, die Regression von Elches Defensivserie erhoeht sie."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Over 2.5",
+       "effect": "gestuetzt",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Over 1.5 weit unter der Erwartung."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Goals 2-4",
+       "effect": "nicht bewertbar",
+       "why": "Anbieter deckt Match Goals 2-4 nicht ab; sachlich ebenfalls gestuetzt."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Over 1.5."
+      }
+     ],
+     "decision_effect": "Entscheidung bleibt FAVOURITE.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Der Befund stuetzt die Annahme; Rang unveraendert durch diesen Befund."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Ausfalldaten widersprechen sich: ECOBET fuehrt Marc Aguado, Thomas Lemar und Ali Houary als OUT beim Elche; Vorberichte nennen Aguado teils beim Levante, Lemar widerspruechlich, Boayar/Yago Santiago als Elche-Ausfaelle, die ECOBET als Bank/Restkader fuehrt.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1",
+       "S2",
+       "S3"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Die Elche-Mittelfeldstaerke ist nicht belastbar bestimmt; die Richtung des angepassten Elo (Elche +23) kann nicht bestaetigt werden. Auf Gesamttore wirkt es kaum, auf Seitenmaerkte deutlich.",
+     "affected_markets_neutral": [
+      {
+       "market": "Elche to win",
+       "effect": "unsicher"
+      },
+      {
+       "market": "Levante or Draw",
+       "effect": "unsicher"
+      },
+      {
+       "market": "Elche Draw No Bet",
+       "effect": "unsicher"
+      },
+      {
+       "market": "Match Total Over 1.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "materiality": {
+      "area": "AUSFALL_DATENLAGE",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "nicht betroffen",
+       "why": "Ausfalldaten betreffen die Seitenstaerke, nicht die Gesamttore."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Over 2.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Goals 2-4",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung; Datenwiderspruch wird als Anomalie dokumentiert.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein ECOBET-Pfad ist ein Seitenmarkt."
+     }
+    },
+    {
+     "finding_id": "Q3",
+     "finding": {
+      "text": "Angepasster Elo kippt den Basis-Abstand +4 (Levante) auf -22: Elche +23.4 aus strength_ratio 1.069 (351.1 x ln), Levante -2.7; Elche-Coverage 0.913 (Gate PARTIAL).",
+      "origin": "REPRODUCED",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Zwischen den Mannschaften liegt kein belastbarer Staerkeunterschied; ein Vorteil fuer eine Seite ist durch die Daten nicht gedeckt.",
+     "affected_markets_neutral": [
+      {
+       "market": "Elche to win",
+       "effect": "nicht belastbar"
+      },
+      {
+       "market": "Levante to win",
+       "effect": "nicht belastbar"
+      },
+      {
+       "market": "Levante or Draw",
+       "effect": "neutral"
+      },
+      {
+       "market": "Match Total Over 1.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "materiality": {
+      "area": "ELO_ADJUSTMENT",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Over 2.5",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Goals 2-4",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung; Seitenmaerkte wuerden entfallen, existieren in ECOBET aber nicht.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein Seitenmarkt im Spiel."
+     }
+    },
+    {
+     "finding_id": "Q4",
+     "finding": {
+      "text": "Levante: Roger Brugue (5 Saisontore, Wert 11.6) verfuegbar laut Vorberichten; Manuel Sanchez (10 Einsaetze) laut ECOBET OUT, in den Vorberichten nicht bestaetigt.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S2",
+       "S1"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Kernspieler des Levante-Angriffs steht zur Verfuegung; die Abwehrluecke Sanchez ist bereits in den Gegentorwerten enthalten.",
+     "affected_markets_neutral": [
+      {
+       "market": "Levante Team Goals Over 0.5",
+       "effect": "gestuetzt"
+      }
+     ],
+     "not_material_reason": "Brugue verfuegbar bestaetigt die Datenlage, kein Befund gegen eine Marktannahme; Sanchez-Status unbestaetigt, aber wirkungsgering fuer Gesamttore.",
+     "phase": "Q"
+    },
+    {
+     "finding_id": "Q5",
+     "finding": {
+      "text": "Derbi im Abstiegskampf: beide Klubs wollen die Abstiegszone verlassen (Vorbericht).",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Hoher Druck kann zu vorsichtigerem Spiel und weniger Torchancen fuehren; die Grundrate von 3.0 erwarteten Toren wird dadurch eher auf 2.6 bis 2.8 gedrueckt, bleibt aber weit ueber der Linie 1.5.",
+     "affected_markets_neutral": [
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "leicht geschwaecht"
+      },
+      {
+       "market": "Match Total Over 3.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Match Total Over 1.5",
+       "effect": "kaum betroffen"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELKONTEXT",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "leicht geschwaecht",
+       "why": "Abstiegsdruck kann die Torerwartung auf ca. 2.6-2.8 druecken; Over 2.5 liegt damit nahe der Erwartung (P ca. 0.52-0.58)."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Over 2.5",
+       "effect": "leicht geschwaecht",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "kaum betroffen",
+       "why": "Over 1.5 weit unter der Erwartung."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Goals 2-4",
+       "effect": "neutral",
+       "why": "Match Goals 2-4 nicht modelliert."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "kaum betroffen",
+       "why": "Over 1.5."
+      }
+     ],
+     "decision_effect": "FAVOURITE bleibt bestaetigt; die Fragilitaet des Over-2.5-Marktes wird hoch ausgewiesen; zusammen mit B1 Rang abwaerts.",
+     "rank_effect": {
+      "value": "DOWN",
+      "why": "Die tatsaechlich empfohlene Over-2.5-Prognose ist klar weniger stabil als der Markt, auf dem der Originalrang beruht (siehe B1)."
+     }
+    },
+    {
+     "finding_id": "B1",
+     "finding": {
+      "text": "Der Originalrang 2 beruht auf dem SAFE-Markt Match Total Over 1.5 (p 0.80-0.90, schlechtester Fall 0.75). Die tatsaechliche Empfehlung ist der FAVOURITE-Markt Match Total Over 2.5 (p 0.55-0.70, schlechtester Fall 0.45). Die gute Uebereinstimmung des SAFE-Markts mit dem KI TOP darf die Fragilitaet der tatsaechlich empfohlenen Prognose nicht verdecken.",
+      "origin": "ORIGINAL",
+      "source_ids": [
+       "P05-RANK"
+      ]
+     },
+     "material": true,
+     "materiality": {
+      "area": "MARKTSTABILITAET",
+      "level": "M2"
+     },
+     "sporting_effect": "Die empfohlene Prognose haengt an einem Spielverlauf mit mindestens drei Toren; bei Derby-Vorsicht und ausgeglichenen Mannschaften ist sie deutlich unsicherer als die Obergrenzen-/Untergrenzenmaerkte der anderen Spiele.",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "empfohlen, aber fragil",
+       "why": "Schlechtester Fall 0.45, eigene Schaetzung ca. 0.58."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Over 2.5",
+       "effect": "wie FAVOURITE",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "stabil, aber nicht empfohlen",
+       "why": "Die Stabilitaet von Over 1.5 darf nicht auf die Empfehlung uebertragen werden."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Goals 2-4",
+       "effect": "nicht bewertbar",
+       "why": "Kein Anbieter."
+      }
+     ],
+     "decision_effect": "Entscheidung bleibt CONFIRM_FAVOURITE; Rang sinkt.",
+     "rank_effect": {
+      "value": "DOWN",
+      "why": "Rangbasis ist die tatsaechlich empfohlene Prognose; ihre Stabilitaet liegt unter der des Brentford-Everton-Marktes."
+     },
+     "phase": "POST_DISCLOSURE"
+    }
+   ],
+   "decision": {
+    "value": "CONFIRM_FAVOURITE",
+    "preferred_market": {
+     "source": "FAVOURITE",
+     "market_text": "Match Total Over 2.5"
+    },
+    "reasoning": "Kein wesentlicher Befund widerspricht Match Total Over 2.5: Beide Abwehrreihen liegen ueber ihren xGA (2.1 und 2.0), die Torerwartung betraegt ca. 3.0 (Poisson-Ueberschlag P(mindestens 3 Tore) ca. 0.58; Over 2.5 in 60 Prozent der L10 beider Teams). Q5 (Derby-Vorsicht) schwaecht leicht. Der eigene KI TOP (Over 1.5) ist ein anderer, sicherer Markt; ein Wechsel allein wegen der niedrigeren Linie waere nach Regel B nicht begruendet. Die Fragilitaet wird deshalb im Rang abgebildet (B1) und nicht durch Marktwechsel.",
+    "chain_refs": [
+     "Q1",
+     "Q5",
+     "B1"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Match Total Over 2.5 ist hoch fragil. Eigene Schaetzung P ca. 0.55-0.60 (ECOBET-Untergrenze 0.45): bei Torerwartung 2.6-2.8 durch Derby-Vorsicht faellt sie Richtung 0.50. Zwei Tore genuegen nicht. Die starke Uebereinstimmung des SAFE-Markts (Over 1.5, EXACT zum KI TOP) bezieht sich auf einen anderen Markt und verdeckt diese Fragilitaet nicht; sie ist der Grund fuer den Rangabstieg."
+   },
+   "detail_md": "**Levante - Elche (LaLiga, Montag 20:00 UTC)**\n\n**Spielbild.** Valencianisches Derby im Abstiegskampf. Levante L10 1.6 Tore bei 1.57 xG, 1.8 Gegentore bei 2.16 xGA; Elche 1.4 Tore bei 1.32 xG, 1.7 Gegentore bei 1.97 xGA. Beide Abwehrreihen offen, Elches L5 (0.8 Gegentore bei 1.7 xGA) glueckbehaftet. Erwartete Gesamttore ca. 3.0.\n\n**Befunde.** (Q1) Abwehrschwaeche beider: stuetzt Tormaerkte. (Q2) Ausfalldaten widersprechen sich (Aguado, Lemar, Boayar, Yago Santiago, Houary): Datenanomalie ohne Wirkung auf Totalmaerkte. (Q3) Angepasster Elo kippt Basis +4 auf -22 bei Elche-Abdeckung 0.913: kein belastbarer Staerkeunterschied, ECOBET hat keinen Seitenpfad. (Q5) Derby-Vorsicht schwaecht Over 2.5 leicht. (Q4, nicht wesentlich) Brugue verfuegbar.\n\n**Entscheidung.** FAVOURITE Over 2.5 bleibt: kein Befund widerspricht, Wechsel nur wegen niedrigerer Linie waere unbegruendet. KI TOP (Over 1.5) ist stabiler, aber ein anderer Markt.\n\n**Rang.** Original 2, geprueft 3 (B1): Die Originalrang-Basis (SAFE Over 1.5) ist nicht die Empfehlung; die tatsaechliche Prognose ist weniger stabil.",
+   "rank": {
+    "original": 2,
+    "reviewed": 3,
+    "change": -1,
+    "reason": "Kein wesentlicher Befund widerspricht Match Total Over 2.5: Beide Abwehrreihen liegen ueber ihren xGA (2.1 und 2.0), die Torerwartung betraegt ca. 3.0 (Poisson-Ueberschlag P(mindestens 3 Tore) ca. 0.58; Over 2.5 in 60 Prozent der L10 beider Teams). Q5 (Derby-Vorsicht) schwaecht leicht. Der eigene KI",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 2
+   },
+   "playable_top": true
+  }
+ ],
+ "summary": {
+  "playable_count": 3,
+  "skip_count": 0,
+  "top5": [
+   {
+    "rank": 1,
+    "fixture_id": "ITA2627_448cfd2bd4de",
+    "match": "Monza – Fiorentina",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Over 1.5"
+   },
+   {
+    "rank": 2,
+    "fixture_id": "ENG2627_44f6629a21b1",
+    "match": "Brentford – Everton",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Under 3.5"
+   },
+   {
+    "rank": 3,
+    "fixture_id": "ESP2627_3be31fff29cf",
+    "match": "Levante – Elche",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Match Total Over 2.5"
+   }
+  ],
+  "top8": [
+   {
+    "rank": 1,
+    "fixture_id": "ITA2627_448cfd2bd4de",
+    "match": "Monza – Fiorentina",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Over 1.5"
+   },
+   {
+    "rank": 2,
+    "fixture_id": "ENG2627_44f6629a21b1",
+    "match": "Brentford – Everton",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Under 3.5"
+   },
+   {
+    "rank": 3,
+    "fixture_id": "ESP2627_3be31fff29cf",
+    "match": "Levante – Elche",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Match Total Over 2.5"
+   }
+  ],
+  "top10": [
+   {
+    "rank": 1,
+    "fixture_id": "ITA2627_448cfd2bd4de",
+    "match": "Monza – Fiorentina",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Over 1.5"
+   },
+   {
+    "rank": 2,
+    "fixture_id": "ENG2627_44f6629a21b1",
+    "match": "Brentford – Everton",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Under 3.5"
+   },
+   {
+    "rank": 3,
+    "fixture_id": "ESP2627_3be31fff29cf",
+    "match": "Levante – Elche",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Match Total Over 2.5"
+   }
+  ]
+ },
+ "evaluation": {
+  "status": "NOT_EVALUATED",
+  "results": null
+ },
+ "compiled_utc": "2026-11-23T11:56:19Z"
+}
