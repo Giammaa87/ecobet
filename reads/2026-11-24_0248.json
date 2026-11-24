@@ -1,0 +1,555 @@
+{
+ "counts": {
+  "derived": 9,
+  "fixtures": 9,
+  "owner_favourite": {
+   "NO_READ": 1,
+   "SELECTED": 6,
+   "TIE": 2
+  }
+ },
+ "data_status": "AUTOMATIC_UNVALIDATED",
+ "data_status_note": null,
+ "disclaimer": "Modellinterne Einschaetzung, abgeleitet aus bereits veroeffentlichten ECOBET V2.4 Prediction-Ergebnissen. Keine Wahrscheinlichkeit, keine Quote, keine Erfolgsgarantie. Noch nicht validiert.",
+ "fixtures": [
+  {
+   "away": "AEK Athens",
+   "direction": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Como to win",
+     "roles": [
+      "AGGRESSIVE"
+     ]
+    },
+    "evidence": "STRONG",
+    "read": "1",
+    "read_text": "Heimsieg",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Como to win",
+    "balanced": "Como Team Goals Over 1.5",
+    "favourite": "Como Team Goals Over 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "UCL2627_115cf628592a",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Como 2-3",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Como"
+   },
+   "home": "Como",
+   "kickoff_utc": "2026-11-24T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Como 2-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Como 2-3",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-24_0248",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-24T04:05:01.603715+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Porto",
+   "direction": {
+    "coverage_status": null,
+    "covered_by": null,
+    "evidence": null,
+    "read": null,
+    "status": "NO_READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Total Over 2.5",
+    "balanced": "Both Teams To Score: Yes",
+    "favourite": "Both Teams To Score: Yes",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "UCL2627_1f33cc5c34a2",
+   "goal_range": {
+    "coverage_status": "KOMBINATION",
+    "covered_by": {
+     "expression": "Match Total Over 2.5 + Match Total Under 4.5",
+     "roles": [
+      "AGGRESSIVE",
+      "SAFE"
+     ]
+    },
+    "evidence": "MEDIUM",
+    "goals_max": 4,
+    "goals_min": 3,
+    "read": "Gesamtspiel 3-4",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Feyenoord",
+   "kickoff_utc": "2026-11-24T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [],
+    "reason": "Rohreads fehlen oder bereits abgedeckt",
+    "selected": null,
+    "status": "NO_READ"
+   },
+   "run_id": "2026-11-24_0248",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-24T04:05:01.603715+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Real Betis",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "X2",
+    "read_text": "Auswaertssieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Real Betis Team Goals Over 1.5",
+    "balanced": "Slovan Bratislava Team Goals Under 1.5",
+    "favourite": "Slovan Bratislava Team Goals Under 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "UCL2627_2a9927b7e177",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Real Betis 1-2",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Real Betis"
+   },
+   "home": "Slovan Bratislava",
+   "kickoff_utc": "2026-11-24T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "X2",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Real Betis 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "X2",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-24_0248",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-24T04:05:01.603715+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "LASK",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Total Over 2.5",
+    "balanced": "Bodø/Glimt Team Goals Over 0.5",
+    "favourite": "Bodø/Glimt Team Goals Over 0.5",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "UCL2627_2e5c3728d848",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 4,
+    "goals_min": 3,
+    "read": "Gesamtspiel 3-4",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Bodø/Glimt",
+   "kickoff_utc": "2026-11-24T17:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 3-4",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "1X",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-24_0248",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-24T04:05:01.603715+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Dortmund",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Total Under 3.5",
+    "balanced": "Arsenal Team Goals Over 1.5",
+    "favourite": "Arsenal Team Goals Over 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "UCL2627_4246836abc8d",
+   "goal_range": {
+    "coverage_status": "KOMBINATION",
+    "covered_by": {
+     "expression": "Match Total Under 3.5 + Arsenal Team Goals Over 1.5",
+     "roles": [
+      "AGGRESSIVE",
+      "BALANCED"
+     ]
+    },
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-3",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Arsenal",
+   "kickoff_utc": "2026-11-24T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "1X",
+      "source": "DIRECTION"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "1X",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-24_0248",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-24T04:05:01.603715+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Lens",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "RB Leipzig Team Goals Over 1.5",
+    "balanced": "RB Leipzig Draw No Bet",
+    "favourite": "RB Leipzig Draw No Bet",
+    "favourite_source": "BALANCED",
+    "safe": "Lens Team Goals Under 2.5"
+   },
+   "fixture_id": "UCL2627_527a8b3562be",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 1,
+    "goals_min": 0,
+    "read": "Lens 0-1",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Lens"
+   },
+   "home": "RB Leipzig",
+   "kickoff_utc": "2026-11-24T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "STRONG",
+      "read": "Lens 0-1",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Lens 0-1",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-24_0248",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-24T04:05:01.603715+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "PSV",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Total Over 2.5",
+    "balanced": "Real Madrid Team Goals Over 1.5",
+    "favourite": "Real Madrid Team Goals Over 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "UCL2627_8ff822b9a325",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 1,
+    "goals_min": 0,
+    "read": "PSV 0-1",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "PSV"
+   },
+   "home": "Real Madrid",
+   "kickoff_utc": "2026-11-24T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "STRONG",
+      "read": "PSV 0-1",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "PSV 0-1",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-24_0248",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-24T04:05:01.603715+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Napoli",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Manchester City Team Goals Over 1.5",
+    "balanced": "Match Goals 2-4",
+    "favourite": "Match Goals 2-4",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "UCL2627_f19fe8528893",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Napoli 1-2",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Napoli"
+   },
+   "home": "Manchester City",
+   "kickoff_utc": "2026-11-24T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "STRONG",
+      "read": "Napoli 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "gleiche Evidenzstufe (STRONG), keine Rangfolge erzwungen",
+    "selected": null,
+    "status": "TIE"
+   },
+   "run_id": "2026-11-24_0248",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-24T04:05:01.603715+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Aston Villa",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Both Teams To Score: Yes",
+    "balanced": "Galatasaray Team Goals Over 1.5",
+    "favourite": "Match Total Over 1.5",
+    "favourite_source": "SAFE",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "UCL2627_faa61873517b",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 1,
+    "goals_min": 0,
+    "read": "Aston Villa 0-1",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Aston Villa"
+   },
+   "home": "Galatasaray",
+   "kickoff_utc": "2026-11-24T17:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Aston Villa 0-1",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "gleiche Evidenzstufe (MEDIUM), keine Rangfolge erzwungen",
+    "selected": null,
+    "status": "TIE"
+   },
+   "run_id": "2026-11-24_0248",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-24T04:05:01.603715+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  }
+ ],
+ "generated_at_utc": "2026-11-24T04:05:01.603715+00:00",
+ "logical_run_id": "ECOBET_LRUN_e452926adeb94e0e9dab934e2e606917",
+ "publication_id": "2026-11-24_0248",
+ "rules": {
+  "coverage_and_owner_favourite": "RULES_COVERAGE_OWNERFAV_v1",
+  "direction": "DIRECTION_READ_SCENARIO_V1",
+  "goal_range": "GOAL_RANGE_EXT_V1_V2_STAB_MIN_0.67",
+  "imported_pins": {
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105\\RULES_COVERAGE_OWNERFAV_v1.md": "646b9b144e2d4bb88e1e91a61fbce0b2a57b961908abfbe1c67ff663a6ffa497",
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105\\coverage_ownerfav.py": "9af22a43803db0a6b21987ff216358f3d1f5451e0a605d7851216cd9be079158",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1\\RULES_READS_v1.md": "13dfcde3b206f858bbd41f1a5f62dc7625576c6ea9fd816a5402c3da2484bc60",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1\\reads_runner.py": "c025df64a96c1b46c62937528767bc03a96fc4d10a65f08b38a5da5f4b057089"
+  },
+  "rules_sha256": "7484a1a98baf3905f255f1ba65955ea4580b2fdaa84d9eb495c90f2aa505bf75",
+  "runner": "READS_RUNNER_V2_1"
+ },
+ "run_date": "2026-11-24",
+ "run_id": "2026-11-24_0248",
+ "schema": "ECOBET_READS_PUBLIC_V1",
+ "source": {
+  "derived_file_sha256": "2fcf707c80a3619eea509809154b6a4bc440a8cf92cf063ace0310a67cf23d6a",
+  "published_at_utc": "2026-11-24T02:49:11.630521+00:00",
+  "record_content_hash": "sha256:fffa412066385bff8dfe1095e57a3bb4179325b17ffbb9757c2a3382aeb6d8bf",
+  "source_file_sha256": "b5715ce849c7874743e98b4b52d0649bb845b27ef49dcb7f5d88184c0a2a4cf9"
+ }
+}
