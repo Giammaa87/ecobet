@@ -1,0 +1,3112 @@
+{
+ "schema": "ECOBET_AI_ANALYST_DAY_V1",
+ "status": "OK",
+ "date": "2026-11-25",
+ "publication_id": "2026-11-25_0247",
+ "master_run": {
+  "logical_run_id": "ECOBET_LRUN_2083af29f71e40618ec3d182329df263",
+  "publication_id": "2026-11-25_0247",
+  "fixture_count": 9,
+  "first_kickoff_utc": "2026-11-25T17:45:00Z"
+ },
+ "analyst": {
+  "assignment_version": "ANALYST_ASSIGNMENT_V1",
+  "assignment_sha256": "a728419cffec08fe07ce222ff958e02c31d8336dd3f4d3dd0236008464f06374",
+  "package_sha256": "9be003c6bbce9f928bb51125e1d617144a448fb853c225bc30730864e77db2d0",
+  "execution_path": "MANUAL_CATCHUP_CLAUDE_CLI"
+ },
+ "fixtures_total": 9,
+ "fixtures_reviewed": 9,
+ "fixtures_not_eligible": 0,
+ "original_ranking_rules": "RANKING_RULES_V1",
+ "reviewed_ranking_basis": "Tatsaechlich ausgewaehlter Markt je Spiel (Entscheidung); Ausgangspunkt ist je Spiel zunaechst der FAVOURITE-Pfad, Abweichung nur mit Befundkette. Originalrang Pilot 05 (RANKING_RULES_V1) bleibt Referenz; Aenderung der Reihenfolge nur ueber Befundkette (B1 in Shakhtar D. - Fenerbahce und Paris SG - Roma: Tausch Rang 1/2, da nahezu identischer Originalscore und die tatsaechlich bevorzugte Fenerbahce-Prognose im Paarvergleich leicht weniger stabil ist als die PSG-Roma-Prognose). Alle anderen Spiele behalten ihre relative Originalreihenfolge, auch wo die tatsaechliche Entscheidung von Pilot 05s bestem Pfad abweicht (dokumentiert je Spiel).",
+ "no_result_knowledge_statement": "Alle Informationen stammen aus dem ECOBET-Datenstand vom 25.11.2026 (Vormittag, enrichment.json 02:46Z) und Vorberichten vom 24./25.11.2026 vor Anpfiff; keine Resultatskenntnis, keine Suchtreffer mit Spielergebnissen verwendet.",
+ "games": [
+  {
+   "fixture_id": "UCL2627_b84818f7481d",
+   "match": "Paris SG – Roma",
+   "competition": "UEFA_CHAMPIONS_LEAGUE",
+   "kickoff_utc": "2026-11-25T20:00:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 537 min (>= 30)"
+   },
+   "original": {
+    "rank": 2,
+    "score": 0.6972,
+    "best_path": "SAFE",
+    "best_market": "Match Total Over 1.5",
+    "fixture_category": "EXACT_AGREEMENT",
+    "published_odds": 1.063
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Match Total Over 2.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": 1.306
+    },
+    "SAFE": {
+     "market": "Match Total Over 1.5",
+     "pilot05_category": "EXACT_AGREEMENT",
+     "published_odds": 1.063
+    },
+    "BALANCED": {
+     "market": "Match Total Over 2.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": 1.306
+    },
+    "AGGRESSIVE": {
+     "market": "Paris SG Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Match Total Over 1.5",
+    "p_low": 0.85,
+    "p_high": 0.95,
+    "worst_case_p": 0.85,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Match Total Over 2.5",
+    "confidence": "HIGH",
+    "reasoning": "Der angepasste Elo-Abstand (+117.7, Basis +120) favorisiert PSG klar, beide Teams werden sogar ueber ihre Referenz-XI-Staerke hinaus bewertet (ratio 1.193 bzw. 1.201), was fuer eine starke effektive Kaderaufstellung auf beiden Seiten trotz Ausfaellen spricht. PSG (over_2.5 0.78 Saison) und Roma (over_2.5 0.7, Malen/Dybala in starker Form) haben beide hohe Torquoten; ein torreiches Spiel ist wahrscheinlicher als ein kontrollierter PSG-Sieg ohne Gegentor.",
+    "differs_from_computational": true,
+    "difference_explanation": "Der Elo-Abstand wuerde mechanisch 'Paris SG to win' nahelegen; Romas starke Offensivform (Malen 7 Tore in 525 Minuten, Dybala 4 Assists) macht Gegentore fuer PSG wahrscheinlich, weshalb die torbezogene Marktwahl robuster erscheint als ein reiner Favoriten-Sieg.",
+    "difference_explanation_origin": "PHASE_Q",
+    "q_seal_sha256": "8b4459687816f1bf1805882026734443e01e60972c094c3012494c3db528a881"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-25T11:12:06Z",
+    "result_sha256": "ec3659d4035b6010c2262ab8863a9908f4474b8c02700b56864aabe1c62297a6",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "Reproduktion: PSG strength_ratio 1.193 -> ln(1.193)=0.1766 x Steigung ca. 351 = +62.0 (Master: +61.945, passt). Roma strength_ratio 1.201 -> ln(1.201)=0.1832 x 351 = +64.3 (Master: +64.291, passt). Beide Gate PARTIAL (Coverage 0.786/0.898), EMPIRICAL_BOTH ACTIVE. Die Ausfaelle (PSG: Doue und Kvaratskhelia, beide Kreuzbandriss; Roma: Balerdi, Pellegrini, Rensch) sind im Master korrekt als UNAVAILABLE gefuehrt. Ein Bericht (WhoScored) deutet an, Pellegrini und Rensch seien naeher an einer Rueckkehr als vom Master (hart als UNAVAILABLE) angenommen - moegliche leichte Unterschaetzung von Romas Verfuegbarkeit."
+    },
+    "research_log": [
+     {
+      "source": "https://sports.yahoo.com/articles/champions-league-preview-psg-vs-154500506.html",
+      "retrieved_utc": "2026-11-25T11:03:52.066Z",
+      "claim": "Doue und Kvaratskhelia fehlen PSG beide mit Kreuzbandrissen; Doues Saison sei vorzeitig beendet.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01UKpxJxrQZTBR9iuaC38Rn6",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:46.900Z"
+      }
+     },
+     {
+      "source": "https://www.whoscored.com/matches/2029111/preview/europe-champions-league-2026-2027-paris-saint-germain-roma",
+      "retrieved_utc": "2026-11-25T11:03:52.066Z",
+      "claim": "Pellegrini und Rensch seien zwar angeschlagen, aber nahe an einer Rueckkehr und koennten bald wieder zur Verfuegung stehen.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01UKpxJxrQZTBR9iuaC38Rn6",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:46.900Z"
+      }
+     },
+     {
+      "source": "https://www.sportsmole.co.uk/football/psg/champions-league/preview/psg-vs-roma-prediction-team-news-lineups_609703.html",
+      "retrieved_utc": "2026-11-25T11:03:52.066Z",
+      "claim": "Rensch (Adduktoren), Balerdi (Knoechel) und Kapitaen Pellegrini (Oberschenkel) werden als ausfallend gelistet.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01UKpxJxrQZTBR9iuaC38Rn6",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:46.900Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Eigene Schaetzung ca. 3.0 Gesamttore, vereinbar mit Over 2.5; PSG und Roma behalten trotz Ausfaellen Offensivtiefe."
+    },
+    "SAFE": {
+     "market_agreement": "EXACT",
+     "assumption_agreement": "EXACT",
+     "assumption_comment": "Deckt sich exakt mit dem rechnerischen KI TOP; sehr hohe eigene Zuversicht."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "PSGs eigene zwei Tore plausibel, aber PSG kann das Spiel bei fruehem Vorsprung auch kontrollierter zu Ende spielen."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "PSG fehlen Doue und Kvaratskhelia (beide Kreuzbandriss, saisonbeendend), Dembele ist dagegen wieder fit und im Master korrekt als Starter gefuehrt.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "PSGs Offensivtiefe bleibt trotz der Ausfaelle hoch (Dembele, Ferran Torres, Akliouche); die XI-Ueberbewertung (ratio 1.193) erscheint angesichts der Kaderbreite plausibel.",
+     "affected_markets_neutral": [
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Paris SG Team Goals Over 1.5",
+       "effect": "gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "gestuetzt",
+       "why": "PSGs Offensivtiefe (Dembele, Ferran Torres, Akliouche) bleibt trotz Doue/Kvaratskhelia-Ausfaellen hoch und stuetzt die Gesamttorzahl."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Noch deutlicher gestuetzt durch die niedrigere Linie."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Over 2.5",
+       "effect": "gestuetzt",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Paris SG Team Goals Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Direkt betroffen: PSGs Offensivtiefe stuetzt zwei oder mehr eigene Tore."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Match Total Over 1.5 (rechnerischer KI TOP) wird durch PSGs intakte Offensive zusaetzlich gestuetzt."
+      }
+     ],
+     "decision_effect": "FAVOURITE (Match Total Over 2.5) bleibt die Ausgangswahl und wird bestaetigt.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Einzelbefund ohne eigenstaendige Rangwirkung."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Romas Offensive um Malen (7 Tore in 525 Minuten) und Dybala (4 Assists in 503 Minuten) ist trotz Ausfaellen in der Abwehr (Balerdi, Rensch) in starker Form; ein Bericht deutet eine baldige Rueckkehr von Pellegrini/Rensch an, waehrend der Master sie hart als UNAVAILABLE fuehrt.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S2",
+       "S3"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Romas tatsaechliche Offensivgefahr duerfte den reinen Elo-Abstand zugunsten PSGs relativieren; ein torloses PSG-Spiel defensiv ist unwahrscheinlich.",
+     "affected_markets_neutral": [
+      {
+       "market": "Beide Teams treffen: Ja",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Roma Team Goals Over 0.5",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Paris SG Draw No Bet",
+       "effect": "leicht geschwaecht"
+      }
+     ],
+     "materiality": {
+      "area": "FORM_STATISTIK",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "gestuetzt",
+       "why": "Romas starke Offensivform (Malen, Dybala) trotz Abwehrausfaellen stuetzt eine hohe Gesamttorzahl."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Noch deutlicher gestuetzt."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Over 2.5",
+       "effect": "gestuetzt",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Paris SG Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Betrifft Romas eigene Torchancen, nicht PSGs."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Roma-Tore stuetzen die Gesamttorzahl zusaetzlich."
+      }
+     ],
+     "decision_effect": "FAVOURITE bleibt bestaetigt; die moegliche Pellegrini/Rensch-Rueckkehr wird als zusaetzliche, die Offensiventwicklung nicht bremsende Information dokumentiert.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein eigener Rangeffekt; Rangvergleich erfolgt ueber B1."
+     }
+    },
+    {
+     "finding_id": "B1",
+     "finding": {
+      "text": "Der Originalrang 2 wurde ueber den SAFE-Pfad gebildet (Match Total Over 1.5, EXACT_AGREEMENT, schlechtester Fall 0.85). Kein Q-Befund widerspricht dem FAVOURITE-Pfad (Match Total Over 2.5, STRONG_FAMILY_AGREEMENT, schlechtester Fall 0.65); die Entscheidung bestaetigt deshalb FAVOURITE, eine Stufe unter dem Rangbasis-Markt, bleibt aber die bevorzugte Wahl.",
+      "origin": "ORIGINAL",
+      "source_ids": [
+       "P05-RANK"
+      ]
+     },
+     "material": true,
+     "materiality": {
+      "area": "MARKTSTABILITAET",
+      "level": "M2"
+     },
+     "sporting_effect": "Im direkten Paarvergleich mit Shakhtar D. - Fenerbahce (Originalrang 1, score praktisch identisch: 0.6972 vs 0.6975) ist die tatsaechlich bevorzugte Paris SG - Roma-Prognose (0.65, STRONG_FAMILY_AGREEMENT) stabiler als die Fenerbahce-Prognose (0.6, PARTIAL_AGREEMENT/LOOSE).",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "empfohlen und im Paarvergleich leicht ueberlegen",
+       "why": "Schlechtester Fall 0.65 gegenueber 0.6 bei Shakhtar - Fenerbahce."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "nicht empfohlen (Rangbasis-Markt)",
+       "why": "Stabiler, aber andere, konservativere Marktwahl; kein Befund zwingt dazu."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Over 2.5",
+       "effect": "wie FAVOURITE",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Paris SG Team Goals Over 1.5",
+       "effect": "nicht empfohlen",
+       "why": "Engere Annahme, nicht erforderlich."
+      }
+     ],
+     "decision_effect": "Entscheidung bleibt CONFIRM_FAVOURITE; Rang steigt im Paarvergleich mit Shakhtar D. - Fenerbahce.",
+     "rank_effect": {
+      "value": "UP",
+      "why": "Im Paarvergleich mit Shakhtar D. - Fenerbahce (nahezu identischer Originalscore) ist die tatsaechlich bevorzugte PSG-Roma-Prognose stabiler (0.65 vs 0.6, STRONG_FAMILY vs PARTIAL); der Rang steigt auf Platz 1."
+     },
+     "phase": "POST_DISCLOSURE"
+    }
+   ],
+   "decision": {
+    "value": "CONFIRM_FAVOURITE",
+    "preferred_market": {
+     "source": "FAVOURITE",
+     "market_text": "Match Total Over 2.5"
+    },
+    "reasoning": "Ausgangspunkt ist der FAVOURITE-Pfad. Q1 (PSGs Offensivtiefe trotz Doue/Kvaratskhelia-Ausfaellen hoch) und Q2 (Romas Offensivform um Malen/Dybala stark trotz Abwehrausfaellen) stuetzen beide eine hohe Gesamttorzahl und widersprechen Over 2.5 nicht. Ein Wechsel zum stabileren SAFE-Pfad (Over 1.5) allein wegen der niedrigeren Linie waere ohne eigenstaendigen Befund nicht begruendet.",
+    "chain_refs": [
+     "Q1",
+     "Q2",
+     "B1"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Match Total Over 2.5 ist moderat fragil: beide Abwehrreihen liegen ueber ihrer xGA, was fuer Tore spricht, aber ein frueher 2-0-Vorsprung fuer PSG koennte zu einem kontrollierten, torarmen Schlussabschnitt fuehren (2-0 oder 2-1 Endstand liegt genau an der Linie). Die exakte Uebereinstimmung des SAFE-Pfads mit dem KI TOP (schlechtester Fall 0.85) darf nicht ueber die deutlich engere Spanne von Over 2.5 (schlechtester Fall 0.65) hinwegtaeuschen."
+   },
+   "detail_md": "**Paris SG - Roma (Champions League, Mittwoch 20:00 UTC)**\n\n**Spielbild.** Angepasster Elo-Abstand +117.7 favorisiert PSG klar; beide Teams werden sogar oberhalb ihrer Referenz-XI-Staerke bewertet (ratio 1.193/1.201), was auf effektiv starke Kaderaufstellungen trotz Ausfaellen hindeutet. PSG fehlen Doue und Kvaratskhelia (beide saisonbeendend), Roma fehlen Balerdi, Pellegrini, Rensch.\n\n**Befunde.** (Q1) PSGs verbleibende Offensive (Dembele, Ferran Torres, Akliouche) traegt die hohe Torerwartung weiter. (Q2) Romas Offensivform um Malen und Dybala bleibt stark, ein Bericht deutet eine baldige Pellegrini/Rensch-Rueckkehr an.\n\n**Entscheidung.** FAVOURITE (Match Total Over 2.5) wird durch beide Befunde gestuetzt und bleibt bevorzugt; SAFE (Over 1.5) ist stabiler und deckt sich exakt mit dem KI TOP, bildet aber eine konservativere, andere Marktwahl.\n\n**Rang.** Original 2, geprueft 1 (B1): im Paarvergleich mit Shakhtar D. - Fenerbahce (nahezu identischer Originalscore) ist die tatsaechlich bevorzugte Prognose stabiler.",
+   "rank": {
+    "original": 2,
+    "reviewed": 1,
+    "change": 1,
+    "reason": "Ausgangspunkt ist der FAVOURITE-Pfad. Q1 (PSGs Offensivtiefe trotz Doue/Kvaratskhelia-Ausfaellen hoch) und Q2 (Romas Offensivform um Malen/Dybala stark trotz Abwehrausfaellen) stuetzen beide eine hohe Gesamttorzahl und widersprechen Over 2.5 nicht. Ein Wechsel zum stabileren SAFE-Pfad (Over 1.5) all",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 2
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "UCL2627_92aa782ff595",
+   "match": "Shakhtar D. – Fenerbahçe",
+   "competition": "UEFA_CHAMPIONS_LEAGUE",
+   "kickoff_utc": "2026-11-25T20:00:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 537 min (>= 30)"
+   },
+   "original": {
+    "rank": 1,
+    "score": 0.6975,
+    "best_path": "AGGRESSIVE",
+    "best_market": "Fenerbahçe Team Goals Over 0.5",
+    "fixture_category": "EXACT_AGREEMENT",
+    "published_odds": null
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Match Total Under 4.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "SAFE": {
+     "market": "Match Total Under 4.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "BALANCED": {
+     "market": "Match Total Under 3.5",
+     "pilot05_category": "DIVERGENT",
+     "published_odds": 1.413
+    },
+    "AGGRESSIVE": {
+     "market": "Fenerbahçe Team Goals Over 0.5",
+     "pilot05_category": "EXACT_AGREEMENT",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Fenerbahçe Team Goals Over 0.5",
+    "p_low": 0.8,
+    "p_high": 0.9,
+    "worst_case_p": 0.75,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Fenerbahçe to win",
+    "confidence": "MEDIUM",
+    "reasoning": "Der Basis-Elo-Abstand (-101, unveraendert da Fallback) favorisiert Fenerbahce bereits leicht. Shakhtar fehlen mit Kaua Elias und Eguinaldo beide etablierten Angreifer sowie Pedrinho im Mittelfeld, was die Offensivtiefe deutlich reduziert. Fenerbahce bleibt trotz Ausfaellen (Ake, Asensio, Oosterwolde) mit Lukaku, Kerem und Greenwood/Guendouzi ausreichend stark besetzt, um den knappen Vorteil in einen Sieg umzusetzen.",
+    "differs_from_computational": true,
+    "difference_explanation": "Die rechnerische KI TOP (Fenerbahçe Team Goals Over 0.5) ist eine enge Team-Tor-Wette; die qualitative Einschaetzung bezieht sich mit 'Fenerbahçe to win' direkt auf den Sieg: der knappe Basis-Elo-Vorteil und die durch Kaua Elias/Eguinaldo/Pedrinho geschwaechte Shakhtar-Offensive lassen eher einen Fenerbahce-Erfolg im Endergebnis erwarten als nur ein eigenes Tor. Die qualitative Wahl bildet damit die sportliche Gesamtlage direkter ab als die engere Team-Tor-Formulierung, ohne dass ein eigenstaendiger Befund dem rechnerischen KI TOP widerspricht.",
+    "difference_explanation_origin": "POST_DISCLOSURE_REVIEW",
+    "q_seal_sha256": "8b4459687816f1bf1805882026734443e01e60972c094c3012494c3db528a881"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-25T11:12:06Z",
+    "result_sha256": "c43894b9866a5d6bd796b32e06510689c2a6211955347ccea9444c45ad6064af",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "ELO-Engine: BASE_FALLBACK_BOTH, adjusted_gap=base_gap=-101 (Shakhtar 1680 vs Fenerbahce 1781). Beide Teams haben coverage 0.0 (keine Spielerwerte verfuegbar), daher komplett deaktivierter XI-Mechanismus auf beiden Seiten unabhaengig voneinander (kein symmetrischer Spezialfall notwendig). Die im Master gefuehrten Ausfaelle (Shakhtar: Marlon, Eguinaldo, Kaua Elias, Pedrinho, Gleiker Mendoza; Fenerbahce: Ake, Asensio, Oosterwolde) stimmen mit den Vorberichten ueberein; eine Quelle (Squawka) widerspricht mit der Aussage, es gebe keine Ausfaelle, wirkt aber im Vergleich zu mehreren uebereinstimmenden Berichten veraltet/unzuverlaessig."
+    },
+    "research_log": [
+     {
+      "source": "https://www.sportsmole.co.uk/football/shakhtar-donetsk/champions-league/preview/shakhtar-vs-fenerbahce-prediction-team-news-lineups_609711.html",
+      "retrieved_utc": "2026-11-25T11:03:51.413Z",
+      "claim": "Kaua Elias und Pedrinho fehlen Shakhtar; Marlon ist fraglich, Gleiker Mendoza-Status wird uneinheitlich berichtet.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01X86ApjMY6C1vemfkhF3Jun",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:45.671Z"
+      }
+     },
+     {
+      "source": "https://www.squawka.com/us/news/champions-league/match-preview-shakhtar-donetsk-vs-fenerbahce-25-11-26-champions-league/",
+      "retrieved_utc": "2026-11-25T11:03:51.413Z",
+      "claim": "Diese Quelle meldet keine Fitness- oder Sperrenprobleme fuer beide Mannschaften, widerspricht damit anderen aktuelleren Berichten.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01X86ApjMY6C1vemfkhF3Jun",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:45.671Z"
+      }
+     },
+     {
+      "source": "https://tips.gg/article/fc-shakhtar-donetsk-vs-fenerbahce-predicted-lineups-team-news-2026/",
+      "retrieved_utc": "2026-11-25T11:03:51.413Z",
+      "claim": "Ake, Asensio und Oosterwolde fehlen Fenerbahce; Riznyk, Bondar, Matviienko als typische Shakhtar-Abwehr genannt.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01X86ApjMY6C1vemfkhF3Jun",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:45.671Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Eigene Schaetzung ca. 2.5-3 Gesamttore durch geschwaechte Shakhtar-Offensive; vereinbar mit Under 4.5, aber andere Marktform als die KI-Team-Tore-Referenz."
+    },
+    "SAFE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "BALANCED": {
+     "market_agreement": "CONTRADICTORY",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Engere Obergrenze (Under 3.5) liegt nahe der eigenen Torerwartung (3.41); nicht verlaesslich genug fuer eine klare Bestaetigung."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "EXACT",
+     "assumption_agreement": "EXACT",
+     "assumption_comment": "Deckt sich exakt mit dem rechnerischen KI-TOP-Markt; Fenerbahces Offensivtiefe (Lukaku, Kerem, Greenwood/Guendouzi) stuetzt mindestens ein eigenes Tor deutlich."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Shakhtar fehlen mit Kaua Elias und Eguinaldo beide etablierten Stuermer sowie Pedrinho im Mittelfeld; der Master fuehrt alle drei korrekt als UNAVAILABLE.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Shakhtars Offensive ist strukturell geschwaecht, was den Basis-Elo-Vorteil Fenerbahces zusaetzlich sportlich untermauert, auch wenn der Elo-Mechanismus dies wegen fehlender Wertabdeckung nicht quantifiziert.",
+     "affected_markets_neutral": [
+      {
+       "market": "Shakhtar D. Team Goals Over 0.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Fenerbahçe to win",
+       "effect": "gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Under 4.5",
+       "effect": "gestuetzt",
+       "why": "Weniger Shakhtar-Torgefahr (Kaua Elias, Eguinaldo, Pedrinho fehlen) stuetzt die hohe Gesamttor-Obergrenze."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 4.5",
+       "effect": "gestuetzt",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Under 3.5",
+       "effect": "gestuetzt",
+       "why": "Engere Obergrenze wird durch die schwaechere Shakhtar-Offensive zusaetzlich gestuetzt, bleibt aber nahe der Torerwartung (3.41 vs 3.5, GOAL_EXPECTATION_CLOSE_TO_LINE)."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Fenerbahçe Team Goals Over 0.5",
+       "effect": "nicht betroffen",
+       "why": "Betrifft Shakhtars Offensive, nicht Fenerbahces eigene Torchancen."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Schwaechere Shakhtar-Offensive untermauert die qualitative KI-Einschaetzung 'Fenerbahce to win' zusaetzlich."
+      }
+     ],
+     "decision_effect": "FAVOURITE (Match Total Under 4.5) bleibt die Ausgangswahl und wird bestaetigt; AGGRESSIVE (Fenerbahce Team Goals Over 0.5) ist von diesem Befund unberuehrt und bleibt eine unabhaengig stabile, aber andere Marktwahl.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Einzelbefund ohne eigenstaendige Rangwirkung; der Rangvergleich mit Paris SG - Roma erfolgt gesammelt ueber B1."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Eine Quelle (Squawka) meldet keine Ausfaelle fuer beide Teams, im Widerspruch zu mehreren anderen, inhaltlich uebereinstimmenden Vorberichten.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S2"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Die Mehrheit der Quellen und der Master stimmen ueberein; der Einzelbericht wird als veraltet/unzuverlaessig eingestuft.",
+     "affected_markets_neutral": [
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "not_material_reason": "Widerspruch durch Mehrheitsabgleich aufgeloest; keine eigenstaendige Marktwirkung.",
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Under 4.5",
+       "effect": "nicht betroffen",
+       "why": "Nicht materiell; Mehrheitsabgleich loest den Widerspruch auf."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 4.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Under 3.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Fenerbahçe Team Goals Over 0.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung; Datenwiderspruch dokumentiert, nicht wirksam.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Nicht materieller Befund."
+     }
+    },
+    {
+     "finding_id": "B1",
+     "finding": {
+      "text": "Der Originalrang 1 wurde ueber den AGGRESSIVE-Pfad gebildet (Fenerbahce Team Goals Over 0.5, EXACT_AGREEMENT, schlechtester Fall 0.75). Kein Q-Befund widerspricht stattdessen dem FAVOURITE-Pfad (Match Total Under 4.5, PARTIAL_AGREEMENT/LOOSE, schlechtester Fall 0.6); ein Wechsel weg von FAVOURITE allein wegen der hoeheren Stabilitaet von AGGRESSIVE waere nicht begruendet. Die tatsaechliche Entscheidung bestaetigt deshalb FAVOURITE, eine Stufe unter dem Rangbasis-Markt.",
+      "origin": "ORIGINAL",
+      "source_ids": [
+       "P05-RANK"
+      ]
+     },
+     "material": true,
+     "materiality": {
+      "area": "MARKTSTABILITAET",
+      "level": "M2"
+     },
+     "sporting_effect": "Die tatsaechlich bevorzugte Prognose ist spuerbar weniger stabil als die Prognose, auf der Originalrang 1 beruht, und faellt im direkten Paarvergleich mit Paris SG - Roma (Originalrang 2, score praktisch identisch: 0.6975 vs 0.6972) knapp dahinter zurueck: Paris SG - Roma bestaetigt ebenfalls FAVOURITE, aber mit hoeherem schlechtestem Fall (0.65) und besserer Kategorie (STRONG_FAMILY_AGREEMENT statt PARTIAL_AGREEMENT/LOOSE).",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Match Total Under 4.5",
+       "effect": "empfohlen, aber im Paarvergleich leicht unterlegen",
+       "why": "Schlechtester Fall 0.6 gegenueber 0.65 bei Paris SG - Roma."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Fenerbahçe Team Goals Over 0.5",
+       "effect": "nicht empfohlen",
+       "why": "Kein Befund zwingt zum Wechsel weg von FAVOURITE; AGGRESSIVE bleibt eine unabhaengige Alternative."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 4.5",
+       "effect": "wie FAVOURITE",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Under 3.5",
+       "effect": "nicht empfohlen",
+       "why": "DIVERGENT, Torerwartung nahe der Linie."
+      }
+     ],
+     "decision_effect": "Entscheidung bleibt CONFIRM_FAVOURITE; Rang sinkt im Paarvergleich mit Paris SG - Roma.",
+     "rank_effect": {
+      "value": "DOWN",
+      "why": "Im Paarvergleich mit Paris SG - Roma (nahezu identischer Originalscore) ist die tatsaechlich bevorzugte Fenerbahce-Prognose der PSG-Roma-Prognose leicht unterlegen (0.6 vs 0.65, PARTIAL vs STRONG_FAMILY); der Rang faellt auf Platz 2."
+     },
+     "phase": "POST_DISCLOSURE"
+    }
+   ],
+   "decision": {
+    "value": "CONFIRM_FAVOURITE",
+    "preferred_market": {
+     "source": "FAVOURITE",
+     "market_text": "Match Total Under 4.5"
+    },
+    "reasoning": "Ausgangspunkt ist der FAVOURITE-Pfad. Q1 (Shakhtar fehlen beide etablierten Stuermer und Pedrinho) stuetzt eine moderate Gesamttorzahl, widerspricht Under 4.5 nicht. Q2 ist nicht materiell. Kein Befund macht die hohe Obergrenze fragil; ein Wechsel zu AGGRESSIVE (Fenerbahce Team Goals Over 0.5, hoehere Stabilitaet) allein wegen besserer Pfadstabilitaet waere ohne eigenstaendigen Befund nicht begruendet, da FAVOURITE durch keinen Befund infrage gestellt wird.",
+    "chain_refs": [
+     "Q1",
+     "Q2",
+     "B1"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Match Total Under 4.5 ist moderat fragil trotz der hohen Linie: Fenerbahce verfuegt selbst mit Ake/Asensio/Oosterwolde-Ausfaellen (vorwiegend Abwehr/Fluegel) ueber eine intakte Offensive (Lukaku, Kerem, Greenwood/Guendouzi) und koennte gegen eine geschwaechte Shakhtar-Abwehr mehrfach treffen; gleichzeitig bleibt Shakhtar trotz fehlender Stuermer nicht chancenlos. Die exakte Uebereinstimmung des AGGRESSIVE-Pfads mit dem rechnerischen KI TOP (schlechtester Fall 0.75) darf nicht ueber die naturgemaess engere Spanne von FAVOURITE (schlechtester Fall 0.6) hinwegtaeuschen: ein offenes, einseitig fuer Fenerbahce verlaufendes Spiel mit 5 oder mehr Toren bleibt das Hauptrisiko, auch wenn es laut aktueller Lage eher unwahrscheinlich ist."
+   },
+   "detail_md": "**Shakhtar Donetsk - Fenerbahce (Champions League, Mittwoch 20:00 UTC)**\n\n**Spielbild.** Basis-Elo-Abstand -101 (Fallback, keine Spielerwertabdeckung bei beiden Teams) favorisiert Fenerbahce bereits knapp. Shakhtar fehlen Kaua Elias, Eguinaldo und Pedrinho; Fenerbahce fehlen Ake, Asensio und Oosterwolde, bleibt aber mit Lukaku, Kerem und Greenwood/Guendouzi offensiv intakt.\n\n**Befunde.** (Q1) Shakhtars Offensivausfaelle schwaechen die Gesamttorzahl-Obergrenze zusaetzlich, ohne Fenerbahces eigene Torchancen zu beruehren. (Q2, nicht materiell) Eine veraltete Quelle widerspricht der Ausfallliste, wird durch Mehrheitsabgleich aufgeloest.\n\n**Entscheidung.** FAVOURITE (Match Total Under 4.5) wird durch keinen Befund infrage gestellt und bleibt bevorzugt; AGGRESSIVE (Fenerbahce Team Goals Over 0.5) ist stabiler und deckt sich exakt mit dem KI TOP, bildet aber einen anderen Markt und wird nicht automatisch bevorzugt.\n\n**Rang.** Original 1, geprueft 2 (B1): im Paarvergleich mit Paris SG - Roma (nahezu identischer Originalscore) ist die tatsaechlich bevorzugte Prognose leicht weniger stabil.",
+   "rank": {
+    "original": 1,
+    "reviewed": 2,
+    "change": -1,
+    "reason": "Ausgangspunkt ist der FAVOURITE-Pfad. Q1 (Shakhtar fehlen beide etablierten Stuermer und Pedrinho) stuetzt eine moderate Gesamttorzahl, widerspricht Under 4.5 nicht. Q2 ist nicht materiell. Kein Befund macht die hohe Obergrenze fragil; ein Wechsel zu AGGRESSIVE (Fenerbahce Team Goals Over 0.5, hoehe",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 1
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "UCL2627_7c2acd0f0c1f",
+   "match": "Club Brugge – Liverpool",
+   "competition": "UEFA_CHAMPIONS_LEAGUE",
+   "kickoff_utc": "2026-11-25T20:00:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 537 min (>= 30)"
+   },
+   "original": {
+    "rank": 3,
+    "score": 0.6482,
+    "best_path": "SAFE",
+    "best_market": "Match Total Over 1.5",
+    "fixture_category": "EXACT_AGREEMENT",
+    "published_odds": 1.063
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Both Teams To Score: Yes",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.346
+    },
+    "SAFE": {
+     "market": "Match Total Over 1.5",
+     "pilot05_category": "EXACT_AGREEMENT",
+     "published_odds": 1.063
+    },
+    "BALANCED": {
+     "market": "Both Teams To Score: Yes",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.346
+    },
+    "AGGRESSIVE": {
+     "market": "Club Brugge Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Match Total Over 1.5",
+    "p_low": 0.8,
+    "p_high": 0.9,
+    "worst_case_p": 0.75,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Liverpool Draw No Bet",
+    "confidence": "MEDIUM",
+    "reasoning": "Liverpool ist Basis-Favorit (Elo +100), aber mit fuenf Stammkraeften (Gakpo, Gravenberch, Leoni, Bradley, Ekitike) deutlich geschwaecht; Club Brugge ist in Europa zuhause traditionell unangenehm. Die Formdaten Liverpools (scoreless_avg 0.25 in den letzten 8, over_2.5 nur 0.5) sprechen eher fuer ein knappes Spiel als fuer einen klaren Auswaertssieg, DNB bildet den Favoritenstatus robuster ab als der reine Sieg.",
+    "differs_from_computational": true,
+    "difference_explanation": "Der reine Basis-Elo-Abstand (+100, unveraendert durch den Fallback) wuerde mechanisch 'Liverpool to win' nahelegen; die Materialitaet der fuenf Ausfaelle inklusive zweier Offensivspieler (Gakpo, Ekitike) und zweier Defensivspieler (Leoni, Bradley) macht den klaren Sieg fragiler als der Elo-Abstand suggeriert.",
+    "difference_explanation_origin": "PHASE_Q",
+    "q_seal_sha256": "8b4459687816f1bf1805882026734443e01e60972c094c3012494c3db528a881"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-25T11:12:06Z",
+    "result_sha256": "1e90eb2b59fbfcb1e0c543b91066d10119ea19a8f8defd1d53ff6238c524201f",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "ELO-Engine: BASE_FALLBACK_BOTH, adjusted_gap=base_gap=-100 (Club Brugge 1842 vs Liverpool 1942). Club Brugge hat coverage 0.0 (keine Spielerwerte), Liverpool coverage 0.902 wird wegen 'MATCH_LEVEL_SYMMETRIC_FALLBACK_OTHER_SIDE_SKIPPED' neutralisiert. Liverpools reale Ausfaelle (Gakpo, Gravenberch, Leoni, Bradley, Ekitike) sind im Master korrekt als UNAVAILABLE gefuehrt und durch Vorberichte bestaetigt, flieszen aber wegen des Fallbacks nicht in den Zahlenabstand ein. Club Brugges Ordonez ist entgegen einem Vorbericht (als 'out' bezeichnet) im Master nur als SQUAD_OTHER (nicht als Starter/Bankspieler) gefuehrt, was praktisch gleichwertig ist, da ohnehin keine Elo-Wirkung entsteht."
+    },
+    "research_log": [
+     {
+      "source": "https://www.sportsmole.co.uk/football/club-brugge/champions-league/team-news/brugge-vs-liverpool-injury-suspension-list-predicted-xis_609719.html",
+      "retrieved_utc": "2026-11-25T11:03:50.060Z",
+      "claim": "Liverpool fehlen Leoni, Bradley, Ekitike; Gakpo wird dort als fraglich statt sicher ausgeschlossen gefuehrt.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_0117GgQQowwPpr187EphHS6T",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:44.395Z"
+      }
+     },
+     {
+      "source": "https://www.liverpool.com/liverpool-fc-news/features/liverpool-team-predicted-club-brugge-34959060",
+      "retrieved_utc": "2026-11-25T11:03:50.060Z",
+      "claim": "Iraola beschreibt Gakpos muskulaeres Problem im Wadenbereich; Gravenberch habe weiterhin Schmerzen.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_0117GgQQowwPpr187EphHS6T",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:44.395Z"
+      }
+     },
+     {
+      "source": "https://www.goal.com/en-gb/news/club-brugge-v-liverpool-preview-team-news-injury-latest/blt4277bbc916155b7c",
+      "retrieved_utc": "2026-11-25T11:03:50.060Z",
+      "claim": "Ein aelterer Bericht listet fuer keine der beiden Mannschaften Ausfaelle; wirkt im Vergleich zu neueren Quellen veraltet.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_0117GgQQowwPpr187EphHS6T",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:44.395Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Die Annahme, dass Liverpool trifft, ist durch die Gakpo/Ekitike-Ausfaelle real unsicherer als vom Markt angenommen."
+    },
+    "SAFE": {
+     "market_agreement": "EXACT",
+     "assumption_agreement": "EXACT",
+     "assumption_comment": "Deckt sich exakt mit dem rechnerischen KI TOP; niedrige Schwelle bleibt robust."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Brugges zwei eigene Tore sind angesichts der geschwaechten Liverpool-Abwehr plausibel, aber nicht sicher."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Liverpool fehlen funf Stammkraefte (Gakpo, Gravenberch, Leoni, Bradley, Ekitike); der symmetrische Fallback-Mechanismus verhindert, dass diese reale Schwaechung den Elo-Abstand beeinflusst.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1",
+       "S2"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Liverpools Offensiv- und Defensivtiefe ist reduziert; der ausgewiesene Abstand von 100 Elo zugunsten Liverpools duerfte die tatsaechliche Form-/Kaderlage leicht ueberschaetzen.",
+     "affected_markets_neutral": [
+      {
+       "market": "Liverpool to win",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Liverpool Draw No Bet",
+       "effect": "leicht geschwaecht"
+      },
+      {
+       "market": "Match Total Under 2.5",
+       "effect": "gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "ELO_ADJUSTMENT",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "geschwaecht",
+       "why": "Liverpool fehlen mit Gakpo und Ekitike zwei Offensivkraefte; das Liverpool-Tor-Bein von BTTS wird dadurch unsicherer."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "kaum betroffen",
+       "why": "Die niedrige Gesamttor-Schwelle (zwei Tore insgesamt) wird durch die Liverpool-Offensivschwaeche kaum beruehrt; Club Brugge allein kann sie weitgehend tragen, zumal auch Liverpools Abwehr (Leoni, Bradley fehlen) mehr Raum fuer Brugge laesst."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "geschwaecht",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Club Brugge Team Goals Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Liverpools geschwaechte Abwehr (Leoni, Bradley fehlen) erleichtert Brugge zwei eigene Tore."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Match Total Over 1.5 (rechnerischer KI TOP) bleibt durch die niedrige Schwelle unberuehrt."
+      }
+     ],
+     "decision_effect": "Wechsel von FAVOURITE (Both Teams To Score: Yes) auf den SAFE-Pfad Match Total Over 1.5, da die Liverpool-Offensivausfaelle gezielt die BTTS-Annahme (Liverpool trifft) treffen, nicht aber die niedrige Gesamttorschwelle.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Rang 3 bleibt; die empfohlene Prognose ist bereits der Rangbasis-Markt."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Fuer Club Brugge liegt keine Spielerwert-Abdeckung vor; ein Vorbericht nennt Joel Ordonez als Ausfall, der Master fuehrt ihn als SQUAD_OTHER.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Da Club Brugges XI-Anpassung ohnehin komplett deaktiviert ist (coverage 0.0), hat diese Einstufung keine numerische Auswirkung auf den Elo-Abstand.",
+     "affected_markets_neutral": [
+      {
+       "market": "Match Total Under 3.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "not_material_reason": "Kein Elo-Effekt, da Fallback ohnehin greift; Ordonez wird in keiner Prognose-Aufstellung als Starter gefuehrt.",
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "nicht betroffen",
+       "why": "Nicht materiell; kein Elo-Effekt wegen Fallback."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Club Brugge Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Nicht materieller Befund."
+     }
+    }
+   ],
+   "decision": {
+    "value": "OTHER_ECOBET_PATH",
+    "preferred_market": {
+     "source": "SAFE",
+     "market_text": "Match Total Over 1.5"
+    },
+    "reasoning": "FAVOURITE (Both Teams To Score: Yes) setzt voraus, dass auch Liverpool trifft. Q1 (Gakpo und Ekitike fehlen, Liverpools einzige etablierten Angriffsoptionen neben Salah-Nachfolgern) trifft genau dieses Bein der Annahme und macht es fragiler, waehrend die niedrige Gesamttorschwelle von SAFE (Match Total Over 1.5) durch Brugges intakte Offensive und Liverpools zusaetzlich geschwaechte Abwehr (Leoni, Bradley fehlen) kaum beruehrt wird. Der Wechsel folgt aus dem Befund, nicht aus der niedrigeren Linie allein.",
+    "chain_refs": [
+     "Q1",
+     "Q2"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Match Total Over 1.5 ist moderat-gering fragil. Hauptrisiko laut eigener Einschaetzung: eine fruehe Fuehrung (fuer Brugge oder ein geschwaechtes Liverpool) wird defensiv verwaltet, das Spiel bleibt bei genau einem Tor stehen. Die Liverpool-Personalkrise (fuenf Stammkraefte) erhoeht tendenziell eher die Chance auf mehr Gegentore als auf weniger Gesamttore, stuetzt die Linie also eher zusaetzlich; dennoch bleibt ein kontrolliertes 1-0 das plausibelste Risikoszenario."
+   },
+   "detail_md": "**Club Brugge - Liverpool (Champions League, Mittwoch 20:00 UTC)**\n\n**Spielbild.** Basis-Elo-Abstand -100 (Fallback) favorisiert Liverpool. Liverpool fehlen fuenf Stammkraefte (Gakpo, Gravenberch, Leoni, Bradley, Ekitike); Club Brugges Spielerwertabdeckung liegt bei 0.0, daher keine XI-Verfeinerung moeglich.\n\n**Befunde.** (Q1) Liverpools Offensiv- und Defensivausfaelle schwaechen gezielt die BTTS-Annahme (Liverpool trifft), stuetzen aber indirekt Brugges eigene Torchancen und beruehren die niedrige Gesamttorschwelle kaum. (Q2, nicht materiell) Ordonez-Status ohne Elo-Wirkung.\n\n**Entscheidung.** FAVOURITE (BTTS Ja) wird durch Q1 geschwaecht; SAFE (Match Total Over 1.5) bleibt robust und wird bevorzugt.\n\n**Rang.** Original 3, geprueft 3: die empfohlene Prognose ist bereits der Rangbasis-Markt.",
+   "rank": {
+    "original": 3,
+    "reviewed": 3,
+    "change": 0,
+    "reason": "FAVOURITE (Both Teams To Score: Yes) setzt voraus, dass auch Liverpool trifft. Q1 (Gakpo und Ekitike fehlen, Liverpools einzige etablierten Angriffsoptionen neben Salah-Nachfolgern) trifft genau dieses Bein der Annahme und macht es fragiler, waehrend die niedrige Gesamttorschwelle von SAFE (Match To",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 3
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "UCL2627_432bc6c59234",
+   "match": "Lille – Bayern Munich",
+   "competition": "UEFA_CHAMPIONS_LEAGUE",
+   "kickoff_utc": "2026-11-25T20:00:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 537 min (>= 30)"
+   },
+   "original": {
+    "rank": 4,
+    "score": 0.63,
+    "best_path": "SAFE",
+    "best_market": "Bayern Munich Team Goals Over 0.5",
+    "fixture_category": "EXACT_AGREEMENT",
+    "published_odds": null
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Bayern Munich Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "SAFE": {
+     "market": "Bayern Munich Team Goals Over 0.5",
+     "pilot05_category": "EXACT_AGREEMENT",
+     "published_odds": null
+    },
+    "BALANCED": {
+     "market": "Bayern Munich Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "AGGRESSIVE": {
+     "market": "Match Total Over 2.5",
+     "pilot05_category": "EXACT_AGREEMENT",
+     "published_odds": 1.612
+    }
+   },
+   "ki_top_computational": {
+    "market": "Bayern Munich Team Goals Over 0.5",
+    "p_low": 0.85,
+    "p_high": 0.95,
+    "worst_case_p": 0.8,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Bayern Munich Draw No Bet",
+    "confidence": "MEDIUM",
+    "reasoning": "Reproduzierter angepasster Elo-Abstand -179 (Basis -267) favorisiert Bayern trotz massiver Personalkrise weiterhin deutlich. Lilles aktuelle Form (1 Punkt aus 4 Ligaphasenspielen, Rang 35) stuetzt die Annahme, dass Bayern selbst geschwaecht Favorit bleibt; die fehlenden Offensivkraefte (Kane, Olise, Gnabry, Diaz) senken aber die Wahrscheinlichkeit eines klaren, torreichen Sieges, weshalb DNB robuster ist als der reine Sieg.",
+    "differs_from_computational": true,
+    "difference_explanation": "Eine rein am angepassten Elo-Abstand orientierte Marktwahl wuerde eher 'Bayern Munich to win' nahelegen; die Materialitaet der Bayern-Ausfaelle (sieben Stammkraefte, davon mehrere Offensivspieler) macht einen glatten Sieg fragiler, daher DNB statt direktem Sieg.",
+    "difference_explanation_origin": "PHASE_Q",
+    "q_seal_sha256": "8b4459687816f1bf1805882026734443e01e60972c094c3012494c3db528a881"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-25T11:12:06Z",
+    "result_sha256": "31738f17ef971b561fe1f16f4a80b8ee6a41bc305f640798a021adf96c5dd92e",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "Reproduktion: Lille strength_ratio 0.94 -> ln(0.94)=-0.0619 x Steigung ca. 351 = -21.7 (Master: -21.622, passt). Bayern strength_ratio 0.732 -> ln(0.732)=-0.3124 x 351 = -109.7 (Master: -109.601, passt). Beide Gate PARTIAL (Coverage 0.9 / 0.85). Die Bayern-Abwertung deckt sich mit der Realitaet: Kane (Syndesmosebandriss, 3-4 Monate), Neuer, Davies, Gnabry, Diaz, Olise und Saibari sind laut Vorberichten tatsaechlich nicht spielberechtigt/fit und im Master korrekt als UNAVAILABLE gefuehrt; Musiala ist laut Training-Rueckkehr korrekt als Starter gefuehrt. Lilles Abwertung (6%) beruht auf Nianzou/Tiago Santos/Igamane, ebenfalls bestaetigt. Die Elo-Abbildung ist also plausibel, erfasst aber nicht Lilles sportliche Formschwaeche (1 Punkt aus 4 Spielen), die zusaetzlich fuer Bayern spricht."
+    },
+    "research_log": [
+     {
+      "source": "https://fcbayern.com/en/news/matchpreviews/2026/11/preview-losc-lille-vs.-fc-bayern-champions-league",
+      "retrieved_utc": "2026-11-25T11:03:49.977Z",
+      "claim": "Offizielle Bayern-Vorschau bestaetigt umfangreiche Ausfallliste vor dem Lille-Spiel.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01GuLuYu52Uh6DidzkfJFrcs",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:43.069Z"
+      }
+     },
+     {
+      "source": "https://www.flashscore.com/news/soccer-champions-league-olise-ruled-out-of-clash-against-lille-as-bayern-munich-s-injury-woes-deepen/INRzn1Cs/",
+      "retrieved_utc": "2026-11-25T11:03:49.977Z",
+      "claim": "Olise faellt gegen Lille aus; Kane wird laut einem Bericht 3-4 Monate wegen Syndesmoseriss fehlen.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01GuLuYu52Uh6DidzkfJFrcs",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:43.069Z"
+      }
+     },
+     {
+      "source": "https://thefootballfaithful.com/lille-vs-bayern-munich-match-preview/",
+      "retrieved_utc": "2026-11-25T11:03:49.977Z",
+      "claim": "Lille-Trainer bestaetigt Nianzou-Ausfall (Muskelverletzung); Tiago Santos und Igamane fehlen mit Kreuzband-/Knieverletzungen.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01GuLuYu52Uh6DidzkfJFrcs",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:43.069Z"
+      }
+     },
+     {
+      "source": "https://onefootball.com/en/news/lille-vs-bayern-munich-preview-team-news-and-predicted-lineups-43824086",
+      "retrieved_utc": "2026-11-25T11:03:49.977Z",
+      "claim": "Musiala und Diaz trainierten am Dienstag wieder; Prognose-Elf fuer Bayern ohne Diaz, mit Musiala.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01GuLuYu52Uh6DidzkfJFrcs",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:43.069Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Sieben fehlende Stammkraefte, davon mehrere Offensivspieler, machen zwei eigene Bayern-Tore unsicherer als der Markt annimmt."
+    },
+    "SAFE": {
+     "market_agreement": "EXACT",
+     "assumption_agreement": "EXACT",
+     "assumption_comment": "Deckt sich exakt mit dem rechnerischen KI TOP; ein Bayern-Tor gegen den abstiegsnahen Tabellen-35. bleibt sehr wahrscheinlich."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "EXACT",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Deckt sich textlich mit der indikativen KI-Wahl; drei Gesamttore sind angesichts Bayerns Personalkrise plausibel, aber nicht sicher."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Bayern fehlen gleich sieben Stammkraefte (Kane, Neuer, Davies, Gnabry, Diaz, Olise, Saibari); Kanes Syndesmoseriss bedeutet eine mehrmonatige Pause, kein kurzfristiges Risiko.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1",
+       "S2"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Die Offensivtiefe Bayerns ist stark reduziert; der im Master bereits beruecksichtigte XI-Abschlag (-109.6 Elo) ist durch die Realitaet bestaetigt, nicht uebertrieben.",
+     "affected_markets_neutral": [
+      {
+       "market": "Bayern Munich Team Goals Over 1.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Match Total Over 3.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Bayern Munich Draw No Bet",
+       "effect": "gestuetzt (Markt bereits korrekt diskontiert)"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Bayern Munich Team Goals Over 1.5",
+       "effect": "geschwaecht",
+       "why": "Sieben fehlende Stammkraefte, darunter Kane (mehrmonatig), Olise, Gnabry, Diaz, treffen direkt die Annahme von zwei oder mehr eigenen Bayern-Toren."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Bayern Munich Team Goals Over 0.5",
+       "effect": "kaum betroffen",
+       "why": "Ein einziges Tor bleibt angesichts Musialas Rueckkehr und Lilles Formschwaeche weitgehend gesichert."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Bayern Munich Team Goals Over 1.5",
+       "effect": "geschwaecht",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "leicht geschwaecht",
+       "why": "Haengt teilweise an Bayerns eigener Torausbeute, die durch die Personalkrise gedaempft wird."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Bayern Munich Team Goals Over 0.5 (rechnerischer KI TOP) bleibt von der niedrigen Schwelle her robust."
+      }
+     ],
+     "decision_effect": "Wechsel von FAVOURITE (Bayern Munich Team Goals Over 1.5) auf den SAFE-Pfad Bayern Munich Team Goals Over 0.5, da die Personalkrise gezielt die Zwei-Tore-Annahme, nicht aber die Ein-Tor-Annahme trifft.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Rang 4 bleibt; die empfohlene Prognose ist bereits der Rangbasis-Markt."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Lille belegt in der Ligaphase Rang 35 mit nur einem Punkt aus vier Spielen; die XI-Elo-Abwertung Lilles betraegt dennoch nur 6 Prozent (ratio 0.94), da nur drei Spieler (Nianzou, Tiago Santos, Igamane) fehlen.",
+      "origin": "REPRODUCED",
+      "source_ids": [
+       "S3"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Die Formschwaeche Lilles ist sportlich gravierender als der reine XI-Verfuegbarkeits-Abschlag; der tatsaechliche Qualitaetsabstand zu Bayern ist eher am oberen Rand des Modellbereichs oder darueber anzusetzen.",
+     "affected_markets_neutral": [
+      {
+       "market": "Lille to win",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Lille Draw No Bet",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "leicht gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "FORM_STATISTIK",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Bayern Munich Team Goals Over 1.5",
+       "effect": "leicht gestuetzt",
+       "why": "Lilles schwache Form (1 Punkt aus 4 Spielen) koennte Bayerns Torausbeute trotz Personalkrise etwas anheben."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Bayern Munich Team Goals Over 0.5",
+       "effect": "gestuetzt",
+       "why": "Lilles Formschwaeche stuetzt ein einzelnes Bayern-Tor zusaetzlich."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Bayern Munich Team Goals Over 1.5",
+       "effect": "leicht gestuetzt",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "leicht gestuetzt",
+       "why": "Lilles schwache Abwehr stuetzt mehr Gesamttore."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Lilles Formschwaeche untermauert die niedrige Schwelle zusaetzlich."
+      }
+     ],
+     "decision_effect": "Bestaetigt SAFE als robustesten Markt; die Reproduktion der XI-Elo-Abwertung ist korrekt, bildet Lilles tatsaechliche Formschwaeche aber nicht vollstaendig ab.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein eigener Rangeffekt; reine Bestaetigung."
+     }
+    },
+    {
+     "finding_id": "Q3",
+     "finding": {
+      "text": "Jamal Musiala ist laut Trainingsrueckkehr und Prognose-Aufstellungen wieder einsatzbereit und wird im Master korrekt als Starter gefuehrt.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S4"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Bestaetigung ohne Abweichung vom Master; keine zusaetzliche Korrektur notwendig.",
+     "affected_markets_neutral": [
+      {
+       "market": "Match Total Under 4.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "not_material_reason": "Datenlage des Masters bereits korrekt; reine Bestaetigung ohne neue Information.",
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Bayern Munich Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Reine Bestaetigung des Masters ohne neue Information."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Bayern Munich Team Goals Over 0.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Bayern Munich Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Nicht materieller Befund."
+     }
+    }
+   ],
+   "decision": {
+    "value": "OTHER_ECOBET_PATH",
+    "preferred_market": {
+     "source": "SAFE",
+     "market_text": "Bayern Munich Team Goals Over 0.5"
+    },
+    "reasoning": "FAVOURITE (Bayern Munich Team Goals Over 1.5) verlangt zwei eigene Bayern-Tore. Q1 (sieben fehlende Stammkraefte, darunter Kane mehrmonatig sowie Olise, Gnabry, Diaz) trifft genau diese Annahme, waehrend die Ein-Tor-Schwelle von SAFE durch Musialas Rueckkehr und Lilles dokumentierte Formschwaeche (Q2: 1 Punkt aus 4 Spielen) kaum gefaehrdet ist. Der Wechsel folgt aus den Befunden, nicht aus der niedrigeren Linie allein.",
+    "chain_refs": [
+     "Q1",
+     "Q2",
+     "Q3"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Bayern Munich Team Goals Over 0.5 ist gering fragil: selbst eine stark dezimierte Bayern-Offensive (nur Musiala als bestaetigte Rueckkehr) sollte gegen Lille (1 Punkt aus 4 Ligaphasenspielen) mindestens ein Tor erzielen. Die exakte Uebereinstimmung mit dem KI TOP bestaetigt den Markt, deckt aber nicht auf, dass die hoehere FAVOURITE-Linie (zwei Tore) wegen der Personalkrise deutlich fragiler bleibt - diese Annahme wird nicht empfohlen. Hauptrisiko: eine ungewoehnlich defensive Bayern-Aufstellung bei Rotation wegen Spielkongestion (nicht belegt, aber plausibel)."
+   },
+   "detail_md": "**Lille - Bayern Munich (Champions League, Mittwoch 20:00 UTC)**\n\n**Spielbild.** Angepasster Elo-Abstand -179 (Basis -267) favorisiert Bayern trotz Personalkrise weiterhin deutlich. Bayern fehlen sieben Stammkraefte (Kane, Neuer, Davies, Gnabry, Diaz, Olise, Saibari); Lille belegt Rang 35 der Ligaphase mit nur einem Punkt aus vier Spielen.\n\n**Befunde.** (Q1) Bayerns Offensivausfaelle treffen die Zwei-Tore-Annahme von FAVOURITE direkt. (Q2) Lilles Formschwaeche ist sportlich gravierender als der reine XI-Abschlag und stuetzt eher mehr als weniger Bayern-Tore. (Q3, nicht materiell) Musialas Rueckkehr bestaetigt den Master.\n\n**Entscheidung.** FAVOURITE (Bayern Team Goals Over 1.5) wird durch Q1 geschwaecht; SAFE (Over 0.5) bleibt robust und wird bevorzugt.\n\n**Rang.** Original 4, geprueft 4: die empfohlene Prognose ist bereits der Rangbasis-Markt.",
+   "rank": {
+    "original": 4,
+    "reviewed": 4,
+    "change": 0,
+    "reason": "FAVOURITE (Bayern Munich Team Goals Over 1.5) verlangt zwei eigene Bayern-Tore. Q1 (sieben fehlende Stammkraefte, darunter Kane mehrmonatig sowie Olise, Gnabry, Diaz) trifft genau diese Annahme, waehrend die Ein-Tor-Schwelle von SAFE durch Musialas Rueckkehr und Lilles dokumentierte Formschwaeche (Q",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 4
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "UCL2627_8291988ac0d0",
+   "match": "Slavia Prague – Villarreal",
+   "competition": "UEFA_CHAMPIONS_LEAGUE",
+   "kickoff_utc": "2026-11-25T17:45:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 402 min (>= 30)"
+   },
+   "original": {
+    "rank": 5,
+    "score": 0.6153,
+    "best_path": "SAFE",
+    "best_market": "Match Total Over 1.5",
+    "fixture_category": "EXACT_AGREEMENT",
+    "published_odds": 1.13
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Both Teams To Score: Yes",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.436
+    },
+    "SAFE": {
+     "market": "Match Total Over 1.5",
+     "pilot05_category": "EXACT_AGREEMENT",
+     "published_odds": 1.13
+    },
+    "BALANCED": {
+     "market": "Both Teams To Score: Yes",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.436
+    },
+    "AGGRESSIVE": {
+     "market": "Match Total Over 2.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.474
+    }
+   },
+   "ki_top_computational": {
+    "market": "Match Total Over 1.5",
+    "p_low": 0.75,
+    "p_high": 0.9,
+    "worst_case_p": 0.7,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Match Total Over 2.5",
+    "confidence": "MEDIUM",
+    "reasoning": "Der angepasste Elo-Abstand von nur -39 (Basis, da Fallback) bildet eine sehr knappe Partie ab. Villarreal verlor laut Vorbericht zuletzt sieben Auswaertsspiele in der Champions League in Folge (Rekordserie), waehrend Slavia zuhause um den ersten Ligaphasensieg kaempft (0 Siege in 23 Champions-League-Spielen, aber Heimvorteil). Beide Mannschaften verfuegen ueber Offensivqualitaet (Slavia Nowak/Chytil je 7 Saisontore, Villarreal Mikautadze/Oluwaseyi/Moleiro) und keine belastbare Defensivstatistik liegt vor; ein torreiches, offenes Spiel ist plausibler als ein kontrollierter Sieg einer Seite.",
+    "differs_from_computational": true,
+    "difference_explanation": "Ein rein am knappen Elo-Abstand orientierter Pfad wuerde eher eine seitenbezogene Wahl (Doppelte Chance) nahelegen; angesichts der widerspruechlichen Kontextlage (Villarreals Auswaerts-Negativserie vs. Slavias Heimnot) und der Aufstellungsunsicherheiten erscheint eine torbezogene, seitenunabhaengige Marktwahl robuster.",
+    "difference_explanation_origin": "PHASE_Q",
+    "q_seal_sha256": "8b4459687816f1bf1805882026734443e01e60972c094c3012494c3db528a881"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-25T11:12:06Z",
+    "result_sha256": "0aec34c009d377900f5694dd9d118ea9f418ea561b871eb48c5a285395d52dac",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "ELO-Engine: BASE_FALLBACK_BOTH, adjusted_gap=base_gap=-39 (Slavia 1750 vs Villarreal 1789). Slavia coverage 0.0, Villarreal coverage 0.903 wird durch 'MATCH_LEVEL_SYMMETRIC_FALLBACK_OTHER_SIDE_SKIPPED' neutralisiert. Zwei Abweichungen zur Realitaet gefunden: (1) Ein EFE-zitierender Vorbericht nennt Juan Foyth als in Prag fehlend, der Master fuehrt ihn aber als PREDICTED_STARTER; (2) Alberto Moleiro wird in einer Prognose-Aufstellung als Stammspieler gefuehrt, im Master jedoch nur als PREDICTED_BENCH. Beide Punkte haetten bei aktivem XI-Mechanismus Elo-Relevanz, wirken sich wegen des Fallbacks aber nicht numerisch aus."
+    },
+    "research_log": [
+     {
+      "source": "https://sports.yahoo.com/soccer/articles/villarreal-record-away-losing-run-080800065.html",
+      "retrieved_utc": "2026-11-25T11:03:51.068Z",
+      "claim": "Villarreal reist mit einer Rekord-Serie von Auswaertsniederlagen in der Champions League nach Prag; Slavia ist seit 23 Spielen ohne Sieg in dem Wettbewerb.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01TE8Sq3pzsEvL7TEyNEASVN",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:44.987Z"
+      }
+     },
+     {
+      "source": "https://www.sportsmole.co.uk/football/villarreal/champions-league/preview/slavia-prague-vs-villarreal-prediction-team-news-lineups_609704.html",
+      "retrieved_utc": "2026-11-25T11:03:51.068Z",
+      "claim": "Nach EFE fehlen Villarreal in Prag Saliba, Foyth und Akhomach; Prognose-Elf listet trotzdem Mourino/Costa/Veiga/Cardona in der Abwehr.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01TE8Sq3pzsEvL7TEyNEASVN",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:44.987Z"
+      }
+     },
+     {
+      "source": "https://footballwhispers.com/blog/slavia-prague-vs-villarreal-prediction-25-11-2026/",
+      "retrieved_utc": "2026-11-25T11:03:51.068Z",
+      "claim": "Slavia fehlen Pitak und Ouanda; Provod hat weiterhin eine zu beobachtende Sehnenproblematik, Nowak/Chytil mit je sieben Saisontoren als Schluesselspieler erwartet.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01TE8Sq3pzsEvL7TEyNEASVN",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:44.987Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Villarreals dokumentierte Auswaertsschwaeche (sieben Niederlagen in Folge) stuetzt tendenziell ein offenes Spiel, koennte aber auch das eigene Torschuetzen-Bein von Villarreal treffen."
+    },
+    "SAFE": {
+     "market_agreement": "EXACT",
+     "assumption_agreement": "EXACT",
+     "assumption_comment": "Deckt sich exakt mit dem rechnerischen KI TOP."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Drei Gesamttore sind in einem offenen Spiel plausibel, aber nicht sicher."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Villarreal hat laut Vorbericht eine Rekordserie von sieben aufeinanderfolgenden Auswaertsniederlagen in der Champions League; Slavia ist seit 23 Spielen im Wettbewerb sieglos, spielt aber zuhause.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Der knappe Elo-Vorteil Villarreals (+39) wird durch eine ausgepraegte Auswaertsschwaeche relativiert; das Spiel ist offener als der nominelle Abstand suggeriert.",
+     "affected_markets_neutral": [
+      {
+       "market": "Villarreal to win",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Slavia Prague or Draw",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Beide Teams treffen: Ja",
+       "effect": "gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "FORM_STATISTIK",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "gestuetzt",
+       "why": "Ein offenes, fuer beide Seiten wichtiges Spiel (Villarreals Negativserie, Slavias Heimnot) spricht fuer Tore auf beiden Seiten."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Offenes Spiel stuetzt die niedrige Gesamttorschwelle zusaetzlich."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "gestuetzt",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "gestuetzt",
+       "why": "Offenes Spiel stuetzt auch die hoehere Gesamttorschwelle."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Match Total Over 1.5 (rechnerischer KI TOP) wird durch die Kontextlage zusaetzlich gestuetzt."
+      }
+     ],
+     "decision_effect": "FAVOURITE (Both Teams To Score: Yes) bleibt die Ausgangswahl und wird bestaetigt.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Einzelbefund ohne eigenstaendige Rangwirkung."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Eine EFE-zitierende Quelle fuehrt Juan Foyth als in Prag fehlend; der Master listet ihn als PREDICTED_STARTER in Villarreals Abwehr.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S2"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Sollte Foyth tatsaechlich fehlen, ist Villarreals Abwehr duenner besetzt als vom Master angenommen, was mehr Freiraum fuer Slavia bedeuten wuerde.",
+     "affected_markets_neutral": [
+      {
+       "market": "Villarreal Team Goals Under 0.5",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Beide Teams treffen: Ja",
+       "effect": "leicht gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "gestuetzt",
+       "why": "Sollte Foyth tatsaechlich fehlen, ist Villarreals Abwehr duenner besetzt, was Slavias Torchance erhoeht, ohne Villarreals eigene Offensive zu beruehren."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Mehr Freiraum fuer Slavia stuetzt die Gesamttorschwelle."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "gestuetzt",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "leicht gestuetzt",
+       "why": "Mehr Freiraum fuer Slavia stuetzt auch die hoehere Schwelle."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "leicht gestuetzt",
+       "why": "Gleicher Grund."
+      }
+     ],
+     "decision_effect": "FAVOURITE bleibt bestaetigt; der moegliche Foyth-Ausfall wird als stuetzender, nicht widersprechender Befund dokumentiert.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein eigener Rangeffekt."
+     }
+    },
+    {
+     "finding_id": "Q3",
+     "finding": {
+      "text": "Alberto Moleiro wird in einer unabhaengigen Prognose-Aufstellung als Stammspieler erwartet, der Master fuehrt ihn als PREDICTED_BENCH.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S2"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Da der XI-Mechanismus fuer dieses Spiel ohnehin per Fallback deaktiviert ist, hat eine moegliche Fehleinschaetzung der Startelf keinen numerischen Effekt auf den Elo-Abstand.",
+     "affected_markets_neutral": [
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "leicht gestuetzt, falls Moleiro startet"
+      }
+     ],
+     "not_material_reason": "Kein Elo-Effekt durch Fallback; Unsicherheit bereits in Konfidenzstufe MEDIUM beruecksichtigt.",
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "nicht betroffen",
+       "why": "Nicht materiell; kein Elo-Effekt wegen Fallback."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Nicht materieller Befund."
+     }
+    },
+    {
+     "finding_id": "B1",
+     "finding": {
+      "text": "Der Originalrang 5 wurde ueber den SAFE-Pfad gebildet (Match Total Over 1.5, EXACT_AGREEMENT, schlechtester Fall 0.7). Kein Q-Befund widerspricht dem FAVOURITE-Pfad (Both Teams To Score: Yes, PARTIAL_AGREEMENT, schlechtester Fall 0.5); die Entscheidung bestaetigt FAVOURITE, eine spuerbare Stufe unter dem Rangbasis-Markt.",
+      "origin": "ORIGINAL",
+      "source_ids": [
+       "P05-RANK"
+      ]
+     },
+     "material": true,
+     "materiality": {
+      "area": "MARKTSTABILITAET",
+      "level": "M2"
+     },
+     "sporting_effect": "Die tatsaechlich bevorzugte Prognose (schlechtester Fall 0.5) ist im Vergleich zu Sporting CP - Manchester Utd (Originalrang 6, ebenfalls FAVOURITE-Entscheidung, schlechtester Fall 0.5) zahlenmaessig gleich fragil, aber kategorisch schwaecher eingestuft (PARTIAL_AGREEMENT statt STRONG_FAMILY_AGREEMENT).",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "empfohlen, aber fragil",
+       "why": "Schlechtester Fall nur 0.5; Villarreals Auswaertsschwaeche koennte auch das eigene Torschuetzen-Bein treffen, auch wenn der Befund es als eher offenes Spiel interpretiert."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "stabil, aber nicht empfohlen",
+       "why": "Die Stabilitaet von Over 1.5 darf nicht auf BTTS uebertragen werden."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "wie FAVOURITE",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Total Over 2.5",
+       "effect": "nicht empfohlen",
+       "why": "Kein Befund zwingt zum Wechsel."
+      }
+     ],
+     "decision_effect": "Entscheidung bleibt CONFIRM_FAVOURITE; kein Rangwechsel, da der Paarvergleich mit Sporting CP - Manchester Utd (Originalscore-Abstand 0.043, nicht nahezu identisch) nicht stark genug fuer einen Tausch ist.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Der Paarvergleich mit Sporting CP - Manchester Utd zeigt zwar eine gleich hohe Fragilitaet (beide 0.5) und eine schwaechere Kategorie fuer Slavia - Villarreal, doch der Originalscore-Abstand (0.6153 vs 0.5725) ist deutlich groesser als bei den getauschten Spielen (Shakhtar/PSG, Abstand 0.0003) und wird von anderen, unveraenderten Komponenten getragen; ein Tausch ist deshalb nicht hinreichend begruendet."
+     },
+     "phase": "POST_DISCLOSURE"
+    }
+   ],
+   "decision": {
+    "value": "CONFIRM_FAVOURITE",
+    "preferred_market": {
+     "source": "FAVOURITE",
+     "market_text": "Both Teams To Score: Yes"
+    },
+    "reasoning": "Ausgangspunkt ist der FAVOURITE-Pfad. Q1 (Kontext: Villarreals Auswaertsnegativserie, Slavias Heimnot) und Q2 (moeglicher Foyth-Ausfall in Villarreals Abwehr) werden beide als stuetzend fuer ein offenes, torreiches Spiel eingeordnet und widersprechen BTTS Ja nicht. Ein Wechsel zum stabileren SAFE-Pfad allein wegen der niedrigeren Linie waere ohne eigenstaendigen Befund nicht begruendet.",
+    "chain_refs": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "B1"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Both Teams To Score: Yes ist deutlich fragil (schlechtester Fall nur 0.5, praktisch eine Zufallschance). Die exakte Uebereinstimmung des SAFE-Pfads mit dem KI TOP (schlechtester Fall 0.7) darf diese Fragilitaet nicht verdecken: SAFE braucht nur zwei Tore insgesamt (z. B. 2-0), waehrend FAVOURITE zwingend ein Villarreal-Tor voraussetzt. Villarreals dokumentierte Serie von sieben Auswaertsniederlagen in der Champions League in Folge laesst offen, ob das Team ueberhaupt trifft - dies bleibt das zentrale, nicht abschliessend aufgeloeste Risiko dieser Empfehlung."
+   },
+   "detail_md": "**Slavia Prague - Villarreal (Champions League, Mittwoch 17:45 UTC)**\n\n**Spielbild.** Knapper Basis-Elo-Abstand von nur -39 (Fallback). Villarreal reist mit einer Rekordserie von sieben Auswaertsniederlagen in Folge in der Champions League an; Slavia ist zuhause seit 23 Spielen im Wettbewerb sieglos, hat aber Heimvorteil.\n\n**Befunde.** (Q1) Die Kontextlage (Villarreals Auswaertsschwaeche, Slavias Heimnot) wird als stuetzend fuer ein offenes Spiel eingeordnet. (Q2) Ein moeglicher Foyth-Ausfall schwaecht Villarreals Abwehr zusaetzlich zugunsten Slavias Torchance. (Q3, nicht materiell) Moleiro-Aufstellungsfrage ohne Elo-Wirkung.\n\n**Entscheidung.** FAVOURITE (BTTS Ja) wird durch beide Befunde gestuetzt und bleibt bevorzugt, trotz hoher inhaerenter Fragilitaet (schlechtester Fall 0.5).\n\n**Rang.** Original 5, geprueft 5 (B1 dokumentiert die Abweichung von der Rangbasis ohne Rangwechsel): der Paarvergleich mit Sporting CP - Manchester Utd ist nicht hinreichend fuer einen Tausch.",
+   "rank": {
+    "original": 5,
+    "reviewed": 5,
+    "change": 0,
+    "reason": "Ausgangspunkt ist der FAVOURITE-Pfad. Q1 (Kontext: Villarreals Auswaertsnegativserie, Slavias Heimnot) und Q2 (moeglicher Foyth-Ausfall in Villarreals Abwehr) werden beide als stuetzend fuer ein offenes, torreiches Spiel eingeordnet und widersprechen BTTS Ja nicht. Ein Wechsel zum stabileren SAFE-Pf",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 5
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "UCL2627_a63780fea7cb",
+   "match": "Sporting CP – Manchester Utd",
+   "competition": "UEFA_CHAMPIONS_LEAGUE",
+   "kickoff_utc": "2026-11-25T20:00:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 537 min (>= 30)"
+   },
+   "original": {
+    "rank": 6,
+    "score": 0.5725,
+    "best_path": "FAVOURITE",
+    "best_market": "Manchester Utd Team Goals Under 1.5",
+    "fixture_category": "STRONG_FAMILY_AGREEMENT",
+    "published_odds": null
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Manchester Utd Team Goals Under 1.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": null
+    },
+    "SAFE": {
+     "market": "Manchester Utd Team Goals Under 1.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": null
+    },
+    "BALANCED": {
+     "market": "Sporting CP Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "AGGRESSIVE": {
+     "market": "First Half Under 1.5",
+     "pilot05_category": "INSUFFICIENT_EVIDENCE",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Sporting CP Team Goals Over 0.5",
+    "p_low": 0.75,
+    "p_high": 0.9,
+    "worst_case_p": 0.75,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Sporting CP or Draw",
+    "confidence": "MEDIUM",
+    "reasoning": "Der Basis-Elo-Abstand ist mit +18 praktisch ausgeglichen (Opta-Modell: Sporting 38.4%, Remis 25.2%, United 36.4%). Manchester United fehlen fuenf Stammkraefte (Cunha gesperrt, Baleba, Ugarte, Rashford, Sesko verletzt), Sporting hat dagegen keine gravierenden Fitnessprobleme und Heimvorteil im Estadio Jose Alvalade. Eine Doppelte Chance auf Sporting bildet den leichten Vorteil robuster ab als ein direkter Sieg.",
+    "differs_from_computational": true,
+    "difference_explanation": "Bei einem derart knappen Elo-Abstand (+18) wuerde eine mechanische Interpretation kaum eine klare Seite favorisieren; die Haeufung der United-Ausfaelle rechtfertigt eine leichte Praeferenz fuer Sporting, jedoch nur ueber eine abgesicherte Doppelte-Chance-Wahl statt eines direkten Siegs.",
+    "difference_explanation_origin": "PHASE_Q",
+    "q_seal_sha256": "8b4459687816f1bf1805882026734443e01e60972c094c3012494c3db528a881"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-25T11:12:06Z",
+    "result_sha256": "7d1417c8413629560ab2c68b024550acf24353b3d095ff7130a2d11dfc59b60a",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "ELO-Engine: BASE_FALLBACK_BOTH, adjusted_gap=base_gap=18 (Sporting 1863 vs Man Utd 1845). Sporting coverage 0.0, United coverage 1.0 wird durch 'MATCH_LEVEL_SYMMETRIC_FALLBACK_OTHER_SIDE_SKIPPED' neutralisiert. Auffaelligkeit: Leny Yoro ist im Master gleichzeitig als SUSPENDED UND als PREDICTED_STARTER gefuehrt; ein Vorbericht behauptet, die Rote Karte sei zurueckgenommen worden und er sei verfuegbar, eine andere Quelle widerspricht. Dieser interne Widerspruch im Master hat wegen des Fallbacks keine numerische Auswirkung, zeigt aber eine Unsicherheit in der United-Abwehrplanung."
+    },
+    "research_log": [
+     {
+      "source": "https://www.memesita.com/man-utd-vs-sporting-cp-team-news-predicted-lineups-for-ucl-match/",
+      "retrieved_utc": "2026-11-25T11:03:53.401Z",
+      "claim": "Cunha gesperrt; Baleba, Ugarte, Rashford und Sesko verletzt bei United; Yoro-Verfuegbarkeit nach angeblich zurueckgenommener Roter Karte unklar.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01DsBxrrpbaDQLLXB3ph1gK6",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:46.307Z"
+      }
+     },
+     {
+      "source": "https://blog.ke.sportpesa.com/2026/11/25/sporting-cp-vs-man-united-prediction-uefa-champions-league-preview-team-news-lineups-h2h/",
+      "retrieved_utc": "2026-11-25T11:03:53.401Z",
+      "claim": "Sporting erwartet in Standardaufstellung Silva; Fresneda, Quaresma, Inacio, Araujo; Altimira, Doumbia; Catamo, Zalazar, Goncalves; Suarez.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01DsBxrrpbaDQLLXB3ph1gK6",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:46.307Z"
+      }
+     },
+     {
+      "source": "https://www.squawka.com/us/news/champions-league/match-preview-sporting-cp-vs-manchester-united-25-11-26-champions-league/",
+      "retrieved_utc": "2026-11-25T11:03:53.401Z",
+      "claim": "Sporting habe keine Fitnessprobleme; Luis Suarez soll nach Schonung am Wochenende wieder starten.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01DsBxrrpbaDQLLXB3ph1gK6",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:46.307Z"
+      }
+     },
+     {
+      "source": "https://www.si.com/soccer/sporting-cp-vs-man-utd-predictions-mauricio-pochettino-forget-nightmare-debut-11-25-26",
+      "retrieved_utc": "2026-11-25T11:03:53.401Z",
+      "claim": "Opta-Modell gibt Sporting 38.4 Prozent, Remis 25.2 Prozent, United 36.4 Prozent.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01DsBxrrpbaDQLLXB3ph1gK6",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:46.307Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Uniteds Personalkrise (fuenf Stammkraefte, davon zwei Offensivspieler) stuetzt eine niedrige eigene Torausbeute; vereinbar mit der qualitativen Praeferenz fuer eine abgesicherte Sporting-Wahl, aber andere Marktform."
+    },
+    "SAFE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Zwei Sporting-Tore sind beim praktisch ausgeglichenen Basis-Elo-Abstand (+18) nicht gesichert."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "NOT_ASSESSABLE",
+     "assumption_agreement": "NOT_ASSESSABLE",
+     "assumption_comment": "Halbzeitmarkt nicht auf dem Spielstandsraster pruefbar; Q-Befunde adressieren die erste Halbzeit nicht spezifisch."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Manchester United fehlen fuenf Stammkraefte: Cunha (gesperrt), Baleba, Ugarte, Rashford und Sesko (alle verletzt); der Master fuehrt alle korrekt als UNAVAILABLE/SUSPENDED.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "United fehlt Offensiv- wie Mittelfeldtiefe; bei einem ohnehin knappen Basis-Elo-Abstand verschiebt dies die sportliche Erwartung leicht Richtung Sporting, ohne den Elo-Mechanismus zahlenmaessig zu beeinflussen (Fallback).",
+     "affected_markets_neutral": [
+      {
+       "market": "Manchester Utd to win",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Sporting CP or Draw",
+       "effect": "gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Manchester Utd Team Goals Under 1.5",
+       "effect": "gestuetzt",
+       "why": "Fehlende Offensiv- und Mittelfeldkraefte (Cunha gesperrt, Rashford, Sesko, Baleba, Ugarte verletzt) senken Uniteds eigene Torausbeute direkt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Manchester Utd Team Goals Under 1.5",
+       "effect": "gestuetzt",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Sporting CP Team Goals Over 1.5",
+       "effect": "leicht gestuetzt",
+       "why": "Uniteds geschwaechtes Mittelfeld koennte Sporting mehr Raum fuer eigene Tore geben."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "First Half Under 1.5",
+       "effect": "leicht gestuetzt",
+       "why": "Weniger United-Offensivgefahr stuetzt tendenziell auch eine torarme erste Halbzeit, auf dem Spielstandsraster aber nicht validierbar."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Die qualitative Einschaetzung 'Sporting CP or Draw' wird durch Uniteds Personalkrise zusaetzlich untermauert."
+      }
+     ],
+     "decision_effect": "FAVOURITE (Manchester Utd Team Goals Under 1.5) bleibt die Ausgangswahl und wird bestaetigt.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Einzelbefund ohne eigenstaendige Rangwirkung; kein Pfadwechsel notwendig."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Leny Yoro wird im Master widerspruechlich als SUSPENDED und gleichzeitig PREDICTED_STARTER gefuehrt; Quellen sind sich uneinig, ob seine Sperre tatsaechlich aufgehoben wurde.",
+      "origin": "INFERRED",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Da der XI-Mechanismus fuer dieses Spiel per Fallback ohnehin deaktiviert ist, hat die Unklarheit keine numerische Auswirkung auf den Elo-Abstand.",
+     "affected_markets_neutral": [
+      {
+       "market": "Match Total Under 3.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "not_material_reason": "Kein Elo-Effekt durch Fallback; Unsicherheit bereits in Konfidenzstufe MEDIUM beruecksichtigt.",
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Manchester Utd Team Goals Under 1.5",
+       "effect": "nicht betroffen",
+       "why": "Nicht materiell; kein Elo-Effekt wegen Fallback."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Manchester Utd Team Goals Under 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Sporting CP Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "First Half Under 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung; Widerspruch zum Yoro-Status dokumentiert, nicht wirksam.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Nicht materieller Befund."
+     }
+    }
+   ],
+   "decision": {
+    "value": "CONFIRM_FAVOURITE",
+    "preferred_market": {
+     "source": "FAVOURITE",
+     "market_text": "Manchester Utd Team Goals Under 1.5"
+    },
+    "reasoning": "Ausgangspunkt ist der FAVOURITE-Pfad. Q1 (United fehlen Cunha gesperrt sowie Baleba, Ugarte, Rashford, Sesko verletzt, darunter zwei direkte Offensivoptionen) trifft die Annahme direkt und stuetzt sie. Q2 ist nicht materiell. Kein Befund widerspricht Under 1.5; die Entscheidung bleibt bei FAVOURITE.",
+    "chain_refs": [
+     "Q1",
+     "Q2"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Manchester Utd Team Goals Under 1.5 ist deutlich fragil (schlechtester Fall nur 0.5). Die STRONG_FAMILY_AGREEMENT mit der qualitativen Pick-Wahl 'Doppelte Chance 1X' (schlechtester Fall 0.65) darf diese Fragilitaet nicht verdecken: Doppelte Chance 1X ist bereits erfuellt, wenn United verliert oder Remis spielt, unabhaengig davon, wie viele Tore United dabei selbst erzielt (z. B. 1-2 verletzt Under 1.5 trotz Sporting-Sieg). Die Yoro-Unklarheit (Sperre angeblich aufgehoben oder nicht) fuegt zusaetzliche Unsicherheit in Uniteds Abwehrplanung und damit indirekt in ein offeneres, torreicheres Spiel ein."
+   },
+   "detail_md": "**Sporting CP - Manchester Utd (Champions League, Mittwoch 20:00 UTC)**\n\n**Spielbild.** Praktisch ausgeglichener Basis-Elo-Abstand (+18); Opta-Modell sieht Sporting 38.4 %, Remis 25.2 %, United 36.4 %. United fehlen Cunha (gesperrt), Baleba, Ugarte, Rashford, Sesko; Sporting hat keine gravierenden Fitnessprobleme und Heimvorteil.\n\n**Befunde.** (Q1) Uniteds Personalkrise trifft direkt die eigene Torausbeute und stuetzt Under 1.5. (Q2, nicht materiell) Yoro-Status widerspruechlich, ohne Elo-Wirkung.\n\n**Entscheidung.** FAVOURITE (Manchester Utd Team Goals Under 1.5) wird durch Q1 gestuetzt und bleibt bevorzugt, trotz hoher inhaerenter Fragilitaet (schlechtester Fall 0.5).\n\n**Rang.** Original 6, geprueft 6: keine Rangwirkung; der Paarvergleich mit Slavia Prague - Villarreal (gleich fragil, aber bessere Kategorie hier) reicht angesichts des Originalscore-Abstands nicht fuer einen Tausch.",
+   "rank": {
+    "original": 6,
+    "reviewed": 6,
+    "change": 0,
+    "reason": "Ausgangspunkt ist der FAVOURITE-Pfad. Q1 (United fehlen Cunha gesperrt sowie Baleba, Ugarte, Rashford, Sesko verletzt, darunter zwei direkte Offensivoptionen) trifft die Annahme direkt und stuetzt sie. Q2 ist nicht materiell. Kein Befund widerspricht Under 1.5; die Entscheidung bleibt bei FAVOURITE.",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 6
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "UCL2627_e2a78b55070b",
+   "match": "Inter – Stuttgart",
+   "competition": "UEFA_CHAMPIONS_LEAGUE",
+   "kickoff_utc": "2026-11-25T20:00:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 537 min (>= 30)"
+   },
+   "original": {
+    "rank": 7,
+    "score": 0.5377,
+    "best_path": "BALANCED",
+    "best_market": "Match Total Over 2.5",
+    "fixture_category": "STRONG_FAMILY_AGREEMENT",
+    "published_odds": 1.23
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Inter Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "SAFE": {
+     "market": "Inter Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "BALANCED": {
+     "market": "Match Total Over 2.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": 1.23
+    },
+    "AGGRESSIVE": {
+     "market": "Inter Team Goals Over 2.5",
+     "pilot05_category": "DIVERGENT",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Inter Team Goals Over 0.5",
+    "p_low": 0.85,
+    "p_high": 0.95,
+    "worst_case_p": 0.8,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Inter Draw No Bet",
+    "confidence": "MEDIUM",
+    "reasoning": "Der angepasste Elo-Abstand (+92.6, Basis +127) favorisiert Inter zuhause im San Siro weiterhin deutlich, auch wenn Calhanoglu (Oberschenkel) und Bonny fehlen. Stuttgart wird dank einer starken Prognose-Aufstellung (u.a. Mittelstaedt, Wertstufe 16.1) ueber die Referenz-XI-Staerke hinaus bewertet (ratio 1.068), was den Abstand gegenueber der Basis verkleinert. Inter bleibt mit Thuram/Esposito/Barella/Dimarco auch ohne Calhanoglu offensiv tief genug besetzt fuer den Favoritenstatus, DNB bildet die verbleibende Unsicherheit robuster ab als der reine Sieg.",
+    "differs_from_computational": true,
+    "difference_explanation": "Die rechnerische KI TOP (Inter Team Goals Over 0.5) ist eine sehr breite, enge Team-Tor-Schwelle; die qualitative Einschaetzung waehlt mit Inter Draw No Bet bewusst eine seitenbezogene, aber durch das Unentschieden abgesicherte Marktform. Grund ist die XI-verfeinerte Annaeherung zur Basis (Calhanoglu/Bonny-Ausfaelle gegenueber Stuttgarts ueberdurchschnittlich bewerteter Prognose-Aufstellung, ratio 1.068), die Inters effektiven Vorsprung gegenueber der reinen Elo-Zahl etwas relativiert; die Entscheidung bezieht sich damit auf das Gesamtergebnis statt nur auf ein einzelnes Inter-Tor, ohne der engeren rechnerischen Schwelle zu widersprechen.",
+    "difference_explanation_origin": "POST_DISCLOSURE_REVIEW",
+    "q_seal_sha256": "8b4459687816f1bf1805882026734443e01e60972c094c3012494c3db528a881"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-25T11:12:06Z",
+    "result_sha256": "7416f642db3a74a3b8bc1a32f6812f7e4aca9822bfea344697b58b5ea9f8e1f5",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "Reproduktion: Inter strength_ratio 0.968 -> ln(0.968)=-0.0325 x Steigung ca. 351 = -11.4 (Master: -11.389, passt). Stuttgart strength_ratio 1.068 -> ln(1.068)=0.0658 x 351 = +23.1 (Master: +22.999, passt). Inter Gate READY (coverage 1.0), Stuttgart Gate PARTIAL (coverage 0.819), EMPIRICAL_BOTH ACTIVE. Calhanoglu (Oberschenkel) und Bonny sind im Master korrekt als UNAVAILABLE gefuehrt; Bastoni ist nach Sperre zurueck und korrekt als PREDICTED_STARTER gefuehrt. Lautaro Martinez ist laut Vorbericht fitnessmaessig unklar und wird im Master vorsichtig als PREDICTED_BENCH (nicht Starter) gefuehrt, was mit der Quellenlage uebereinstimmt."
+    },
+    "research_log": [
+     {
+      "source": "https://cultofcalcio.com/preview-inter-vs-stuttgart-team-news-lineups-prediction/",
+      "retrieved_utc": "2026-11-25T11:03:53.579Z",
+      "claim": "Calhanoglu zog sich beim 4-4 in Atalanta eine Oberschenkelverletzung zu; Bonny ebenfalls mit Muskelproblem ausser Gefecht.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01MUVLHMZe8CRwFFLKnvrxQs",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:47.537Z"
+      }
+     },
+     {
+      "source": "https://thehardtackle.com/round-up/2026/11/24/inter-milan-vs-vfb-stuttgart-preview-prediction-probable-lineups-tactics-team-news-key-stats/",
+      "retrieved_utc": "2026-11-25T11:03:53.579Z",
+      "claim": "Bastoni ist nach einer Champions-League-Sperre wieder verfuegbar; Lautaro Martinez kam gegen Atalanta von der Bank, Startelf-Status fuer Stuttgart-Spiel offen.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01MUVLHMZe8CRwFFLKnvrxQs",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:47.537Z"
+      }
+     },
+     {
+      "source": "https://www.squawka.com/ca/news/champions-league/match-preview-inter-milan-vs-stuttgart-25-11-26-champions-league/",
+      "retrieved_utc": "2026-11-25T11:03:53.579Z",
+      "claim": "Keine neuen Ausfaelle fuer beide Clubs gemeldet; Stuttgart-Prognose u.a. mit Mittelstaedt, Fuehrich, Undav, Demirovic.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01MUVLHMZe8CRwFFLKnvrxQs",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:47.537Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Calhanoglu/Bonny-Ausfaelle machen zwei eigene Inter-Tore unsicherer als der Markt annimmt."
+    },
+    "SAFE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Drei Gesamttore sind ueber Stuttgarts Beitrag auch bei leicht gedaempfter Inter-Offensive plausibel; STRONG_FAMILY_AGREEMENT auf der Pilot-05-Skala entspricht PARTIAL auf der einheitlichen Skala."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "CONTRADICTORY",
+     "assumption_agreement": "CONTRADICTORY",
+     "assumption_comment": "Drei eigene Inter-Tore sind ohne Calhanoglu/Bonny nicht belastbar; eigene Einschaetzung widerspricht dieser Annahme."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Calhanoglu (Oberschenkel) und Bonny fehlen Inter; Bastoni ist nach Sperre zurueck. Alle drei Punkte stimmen mit dem Master ueberein.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1",
+       "S2"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Der im Master reproduzierte leichte Abschlag fuer Inter (-11.4 Elo) ist durch die Realitaet gedeckt, aber moderat, da Thuram/Esposito/Barella/Dimarco als Kaderstamm vorhanden bleiben.",
+     "affected_markets_neutral": [
+      {
+       "market": "Inter Team Goals Over 1.5",
+       "effect": "leicht geschwaecht"
+      },
+      {
+       "market": "Inter Draw No Bet",
+       "effect": "kaum betroffen"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Inter Team Goals Over 1.5",
+       "effect": "leicht geschwaecht",
+       "why": "Calhanoglu und Bonny fehlen; beide trugen zu Inters eigener Torausbeute bei, auch wenn Thuram/Esposito/Barella/Dimarco als Kaderstamm bleiben."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Inter Team Goals Over 1.5",
+       "effect": "leicht geschwaecht",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Over 2.5",
+       "effect": "leicht geschwaecht",
+       "why": "Inters leicht reduzierte Torausbeute daempft die Gesamttorzahl, kann aber durch Stuttgarts eigene Tore kompensiert werden."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Inter Team Goals Over 2.5",
+       "effect": "geschwaecht",
+       "why": "Drei eigene Inter-Tore sind ohne Calhanoglu/Bonny schwerer zu erreichen."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "kaum betroffen",
+       "why": "Inter Team Goals Over 0.5 (rechnerischer KI TOP) bleibt durch die niedrige Schwelle robust."
+      }
+     ],
+     "decision_effect": "Wechsel von FAVOURITE (Inter Team Goals Over 1.5) auf den BALANCED-Pfad Match Total Over 2.5, da die Calhanoglu/Bonny-Ausfaelle gezielt Inters eigene Torausbeute treffen, waehrend der Gesamttormark durch Stuttgarts Beitrag abgefedert wird.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Rang 7 bleibt; die empfohlene Prognose ist bereits der Rangbasis-Markt."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Stuttgarts Prognose-Aufstellung mit hochwertigem Mittelstaedt (Wertstufe 16.1) begruendet die XI-Staerke oberhalb der Referenz (ratio 1.068), was den Elo-Abstand verengt.",
+      "origin": "REPRODUCED",
+      "source_ids": [
+       "S3"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Die Verengung ist durch die Datenlage korrekt reproduziert und bereits im Master abgebildet; keine Korrektur notwendig.",
+     "affected_markets_neutral": [
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "not_material_reason": "Reine Bestaetigung der Masterberechnung ohne neue Information.",
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Inter Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Reine Bestaetigung der Masterberechnung ohne neue Information."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Inter Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Over 2.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Inter Team Goals Over 2.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Nicht materieller Befund."
+     }
+    }
+   ],
+   "decision": {
+    "value": "OTHER_ECOBET_PATH",
+    "preferred_market": {
+     "source": "BALANCED",
+     "market_text": "Match Total Over 2.5"
+    },
+    "reasoning": "FAVOURITE (Inter Team Goals Over 1.5) verlangt zwei eigene Inter-Tore. Q1 (Calhanoglu und Bonny fehlen) trifft genau diese Annahme, waehrend der Gesamttormarkt (BALANCED, Match Total Over 2.5) auch durch Stuttgarts eigene Offensive (Fuehrich, Undav, Demirovic) erreicht werden kann und dadurch weniger von Inters individueller Torschwaeche abhaengt. Der Wechsel folgt aus dem Befund.",
+    "chain_refs": [
+     "Q1",
+     "Q2"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Match Total Over 2.5 ist moderat fragil (schlechtester Fall 0.6). Die staerkere Kategorie (STRONG_FAMILY_AGREEMENT) im Vergleich zu FAVOURITE darf nicht verdecken, dass Inter bei einer fruehen Fuehrung das Spiel kontrolliert zu Ende spielen und auf einen torarmen 1-0- oder 2-0-Sieg zusteuern koennte (vom Master selbst als Risiko mit mittlerer Wahrscheinlichkeit gefuehrt, hoeher als bei den meisten anderen Spielen dieses Tages)."
+   },
+   "detail_md": "**Inter - Stuttgart (Champions League, Mittwoch 20:00 UTC)**\n\n**Spielbild.** Angepasster Elo-Abstand +92.6 (Basis +127) favorisiert Inter zuhause deutlich; Stuttgart wird durch eine hochwertige Prognose-Aufstellung (u. a. Mittelstaedt) leicht oberhalb der Referenz bewertet. Inter fehlen Calhanoglu und Bonny, Bastoni ist nach Sperre zurueck.\n\n**Befunde.** (Q1) Calhanoglu/Bonny-Ausfaelle schwaechen Inters eigene Torausbeute und treffen damit gezielt FAVOURITE, nicht aber den Gesamttormarkt. (Q2, nicht materiell) Stuttgarts XI-Staerke ist bereits korrekt im Master abgebildet.\n\n**Entscheidung.** FAVOURITE (Inter Team Goals Over 1.5) wird durch Q1 geschwaecht; BALANCED (Match Total Over 2.5) bleibt robuster und wird bevorzugt.\n\n**Rang.** Original 7, geprueft 7: die empfohlene Prognose ist bereits der Rangbasis-Markt.",
+   "rank": {
+    "original": 7,
+    "reviewed": 7,
+    "change": 0,
+    "reason": "FAVOURITE (Inter Team Goals Over 1.5) verlangt zwei eigene Inter-Tore. Q1 (Calhanoglu und Bonny fehlen) trifft genau diese Annahme, waehrend der Gesamttormarkt (BALANCED, Match Total Over 2.5) auch durch Stuttgarts eigene Offensive (Fuehrich, Undav, Demirovic) erreicht werden kann und dadurch wenige",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 7
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "UCL2627_f0456ad15cfc",
+   "match": "Sabah FK – Barcelona",
+   "competition": "UEFA_CHAMPIONS_LEAGUE",
+   "kickoff_utc": "2026-11-25T17:45:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 402 min (>= 30)"
+   },
+   "original": {
+    "rank": 8,
+    "score": 0.4558,
+    "best_path": "SAFE",
+    "best_market": "Match Total Over 1.5",
+    "fixture_category": "PARTIAL_AGREEMENT",
+    "published_odds": 1.015
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Barcelona Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "SAFE": {
+     "market": "Match Total Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.015
+    },
+    "BALANCED": {
+     "market": "Barcelona Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "AGGRESSIVE": {
+     "market": "Barcelona Team Goals Over 2.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Barcelona Team Goals Over 0.5",
+    "p_low": 0.9,
+    "p_high": 1.0,
+    "worst_case_p": 0.85,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Barcelona Team Goals Over 2.5",
+    "confidence": "HIGH",
+    "reasoning": "Der Basis-Elo-Abstand von -474 ist extrem; Barcelona bleibt trotz mehrerer Ausfaelle (Yamal, Christensen, Rodri, Xavi Espart, Bardghji) mit Raphinha, Adeyemi, Gordon, Jesus und Pedri sehr tief besetzt, Sabah ist ein aserbaidschanischer Vertreter ohne jede Wertabdeckung. Mehrere Vorberichte erwarten einseitige Ergebnisse (u.a. 1-4, 0-5), ein klarer Barcelona-Sieg mit mehreren eigenen Toren erscheint plausibler als ein knapper Sieg.",
+    "differs_from_computational": true,
+    "difference_explanation": "Die rechnerische KI TOP (Barcelona Team Goals Over 0.5) ist die breiteste, stabilste Team-Tor-Schwelle; die qualitative Einschaetzung geht mit Over 2.5 deutlich aggressiver, da bei einem Qualitaetsgefaelle von -474 Elo mehrere Vorberichte einseitige Ergebnisse (u. a. 1-4, 0-5) erwarten lassen und Barcelonas Offensivtiefe (Raphinha, Adeyemi, Gordon, Jesus, Pedri) trotz mehrerer Ausfaelle intakt bleibt. Die engere rechnerische Schwelle wird dadurch nicht widerlegt, sondern als zu konservativ fuer die erwartete Tordifferenz eingeschaetzt.",
+    "difference_explanation_origin": "POST_DISCLOSURE_REVIEW",
+    "q_seal_sha256": "8b4459687816f1bf1805882026734443e01e60972c094c3012494c3db528a881"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-25T11:12:06Z",
+    "result_sha256": "092f4a81a221aa64f23e33c4c70a78b5f2b355328070afc279540c913209722c",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "ELO-Engine: BASE_FALLBACK_BOTH, adjusted_gap=base_gap=-474 (Sabah 1561 vs Barcelona 2035). Sabah coverage 0.0, Barcelona coverage 1.0 wird durch 'MATCH_LEVEL_SYMMETRIC_FALLBACK_OTHER_SIDE_SKIPPED' neutralisiert. Barcelonas Ausfaelle (Yamal, Christensen, Rodri, Xavi Espart, Bardghji, Koundé, de Jong, Dani Olmo) sind im Master korrekt als UNAVAILABLE gefuehrt und durch Vorberichte in den wesentlichen Punkten (Yamal, Christensen, Rodri, Espart, Bardghji) bestaetigt; zu Koundé, de Jong und Dani Olmo wurde in der Recherche keine eigenstaendige Quelle gefunden (NICHT_BELEGT), sie werden daher nicht als unabhaengig bestaetigt gefuehrt. Angesichts des extremen Basis-Abstands bleibt die fehlende XI-Verfeinerung fuer Sabah ohne praktische Relevanz fuer die Favoritenfrage."
+    },
+    "research_log": [
+     {
+      "source": "https://www.barcablaugranes.com/barcelona-uefa-champions-league/138829/sabah-barcelona-champions-league-team-news-match-preview-lineups-prediction",
+      "retrieved_utc": "2026-11-25T11:03:54.723Z",
+      "claim": "Yamal fehlt mit leichtem Knoechelproblem; Christensen, Rodri, Xavi Espart und Bardghji ebenfalls als Ausfaelle gelistet, Joan Garcia fraglich.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_018G7RzaZiazLxKEini8owzq",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:48.085Z"
+      }
+     },
+     {
+      "source": "https://khelnow.com/football/sabah-fk-vs-barcelona-preview-champions-league-202611",
+      "retrieved_utc": "2026-11-25T11:03:54.723Z",
+      "claim": "Diese Quelle beschreibt Yamals Problem als nur leichtes Unwohlsein im rechten Knoechel und erwartet einen 1-4-Auswaertssieg Barcelonas.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_018G7RzaZiazLxKEini8owzq",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:48.085Z"
+      }
+     },
+     {
+      "source": "https://www.livescore.com/en/news/football/champions-league/sabah-vs-barcelona-champions-league-preview-predictions-team-news-and-tv-info-everything-barca/",
+      "retrieved_utc": "2026-11-25T11:03:54.723Z",
+      "claim": "Prognose eines deutlichen 0-5-Auswaertssiegs fuer Barcelona.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_018G7RzaZiazLxKEini8owzq",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:48.085Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Barcelonas verbleibende Offensivtiefe (Raphinha, Adeyemi, Gordon, Jesus, Pedri) stuetzt zwei oder mehr eigene Tore deutlich, trotz mehrerer Ausfaelle."
+    },
+    "SAFE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "EXACT",
+     "assumption_comment": "Zwei Gesamttore sind beim Qualitaetsgefaelle -474 praktisch sicher; eigene Zuversicht hoeher als die strukturelle Pilot-05-Einstufung."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Drei Barcelona-Tore bleiben angesichts der Offensivtiefe plausibel, aber nicht so sicher wie zwei."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Yamal fehlt mit einem Knoechelproblem, dessen Schwere je nach Quelle unterschiedlich (leicht vs. Ausfall) beschrieben wird; Christensen, Rodri, Xavi Espart und Bardghji sind zusaetzlich bestaetigt als Ausfaelle gelistet.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1",
+       "S2"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Trotz der Ausfaelle bleibt Barcelonas Offensive (Raphinha, Adeyemi, Gordon, Jesus) qualitativ weit ueber dem Niveau Sabahs; der extreme Basis-Elo-Abstand bleibt sportlich gerechtfertigt.",
+     "affected_markets_neutral": [
+      {
+       "market": "Barcelona Team Goals Over 2.5",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Barcelona to win",
+       "effect": "gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Barcelona Team Goals Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Trotz Yamal/Christensen/Rodri/Espart/Bardghji-Ausfaellen bleibt Barcelonas Offensive (Raphinha, Adeyemi, Gordon, Jesus, Pedri) qualitativ weit ueber Sabahs Niveau."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Noch deutlicher gestuetzt durch die niedrigere Linie."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Barcelona Team Goals Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Barcelona Team Goals Over 2.5",
+       "effect": "gestuetzt",
+       "why": "Auch drei Barcelona-Tore bleiben angesichts der verbleibenden Offensivtiefe plausibel."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Barcelona Team Goals Over 0.5 (rechnerischer KI TOP) wird durch die verbleibende Offensivtiefe zusaetzlich untermauert."
+      }
+     ],
+     "decision_effect": "FAVOURITE (Barcelona Team Goals Over 1.5) bleibt die Ausgangswahl und wird bestaetigt.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Einzelbefund ohne eigenstaendige Rangwirkung."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Fuer die im Master gefuehrten Ausfaelle Koundé, de Jong und Dani Olmo wurde in der Recherche keine eigenstaendige, abgerufene Quelle gefunden.",
+      "origin": "INFERRED",
+      "source_ids": []
+     },
+     "material": false,
+     "sporting_effect": "Keine Bestaetigung, aber auch kein Widerspruch gefunden; angesichts der ueberwaeltigenden Kadertiefe Barcelonas und des extremen Basis-Abstands ohne praktische Relevanz fuer die Marktwahl.",
+     "affected_markets_neutral": [
+      {
+       "market": "Barcelona Team Goals Over 2.5",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "not_material_reason": "NICHT_BELEGT: keine abgerufene Quelle fuer diesen spezifischen Punkt; keine Marktwirkung bei extremem Basis-Abstand.",
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Barcelona Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Nicht materiell; weder Bestaetigung noch Widerspruch gefunden, ohne praktische Relevanz beim extremen Basis-Abstand (-474)."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Barcelona Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Barcelona Team Goals Over 2.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Grund."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung; fehlende eigenstaendige Quelle fuer Koundé/de Jong/Dani Olmo dokumentiert.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Nicht materieller Befund."
+     }
+    },
+    {
+     "finding_id": "B1",
+     "finding": {
+      "text": "Der Originalrang 8 wurde ueber den SAFE-Pfad gebildet (Match Total Over 1.5, PARTIAL_AGREEMENT, schlechtester Fall 0.85). Kein Q-Befund widerspricht dem FAVOURITE-Pfad (Barcelona Team Goals Over 1.5, PARTIAL_AGREEMENT, schlechtester Fall 0.65); die Entscheidung bestaetigt FAVOURITE, eine Stufe unter dem Rangbasis-Markt.",
+      "origin": "ORIGINAL",
+      "source_ids": [
+       "P05-RANK"
+      ]
+     },
+     "material": true,
+     "materiality": {
+      "area": "MARKTSTABILITAET",
+      "level": "M2"
+     },
+     "sporting_effect": "Die tatsaechlich bevorzugte Prognose bleibt trotz niedrigerem schlechtestem Fall (0.65 statt 0.85) angesichts des extremen Qualitaetsgefaelles (-474 Elo) weiterhin die rangniedrigste gut besetzte Position vor Atletico Madrid - Viking.",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Barcelona Team Goals Over 1.5",
+       "effect": "empfohlen",
+       "why": "Schlechtester Fall 0.65, durch Q1 gestuetzt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "stabil, aber nicht empfohlen",
+       "why": "Die hoehere Stabilitaet von SAFE darf die Marktauswahl nicht allein bestimmen."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Barcelona Team Goals Over 1.5",
+       "effect": "wie FAVOURITE",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Barcelona Team Goals Over 2.5",
+       "effect": "nicht empfohlen",
+       "why": "Engere Annahme, nicht erforderlich."
+      }
+     ],
+     "decision_effect": "Entscheidung bleibt CONFIRM_FAVOURITE; kein Rangwechsel.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein Nachbarspiel zeigt eine stabilere tatsaechlich bevorzugte Prognose; der Rang bleibt bei 8."
+     },
+     "phase": "POST_DISCLOSURE"
+    }
+   ],
+   "decision": {
+    "value": "CONFIRM_FAVOURITE",
+    "preferred_market": {
+     "source": "FAVOURITE",
+     "market_text": "Barcelona Team Goals Over 1.5"
+    },
+    "reasoning": "Ausgangspunkt ist der FAVOURITE-Pfad. Q1 (Barcelonas verbleibende Offensivtiefe trotz Yamal/Christensen/Rodri/Espart/Bardghji-Ausfaellen) stuetzt zwei oder mehr eigene Tore deutlich; das rechnerische KI TOP (Over 0.5) und die qualitative Einschaetzung (sogar Over 2.5) liegen beide noch aggressiver als FAVOURITE, was die Zwei-Tore-Annahme zusaetzlich untermauert. Q2 ist nicht materiell. Ein Wechsel zum stabileren SAFE-Pfad allein wegen der niedrigeren Linie waere ohne eigenstaendigen Befund nicht begruendet.",
+    "chain_refs": [
+     "Q1",
+     "Q2",
+     "B1"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Barcelona Team Goals Over 1.5 ist gering bis moderat fragil. Die nur PARTIAL_AGREEMENT-Kategorie (statt EXACT) ergibt sich aus der Markt-Form (Team-Tore statt Gesamttor- oder BTTS-Bezug zum KI TOP), nicht aus sportlicher Unsicherheit: das Qualitaetsgefaelle (-474 Elo) ist extrem, und selbst eine rotierte Barcelona-Aufstellung sollte gegen Sabah mehrfach treffen. Hauptrisiko laut eigener Einschaetzung: eine unerwartet defensive, kompakte Sabah-Ordnung verhindert zunaechst zweite Tore, oder Barcelona rotiert wegen Spielkongestion staerker als bekannt (nicht belegt, aber plausibel)."
+   },
+   "detail_md": "**Sabah FK - Barcelona (Champions League, Mittwoch 17:45 UTC)**\n\n**Spielbild.** Extremer Basis-Elo-Abstand von -474. Barcelona fehlen Yamal, Christensen, Rodri, Xavi Espart und Bardghji, bleibt aber mit Raphinha, Adeyemi, Gordon, Jesus und Pedri sehr tief besetzt; Sabah hat keine Wertabdeckung.\n\n**Befunde.** (Q1) Barcelonas verbleibende Offensivtiefe stuetzt zwei oder mehr eigene Tore trotz der Ausfaelle deutlich. (Q2, nicht materiell) Keine eigenstaendige Quelle fuer Koundé/de Jong/Dani Olmo gefunden, ohne praktische Relevanz.\n\n**Entscheidung.** FAVOURITE (Barcelona Team Goals Over 1.5) wird durch Q1 gestuetzt und bleibt bevorzugt.\n\n**Rang.** Original 8, geprueft 8 (B1 dokumentiert die Abweichung von der Rangbasis ohne Rangwechsel): kein Nachbarspiel rechtfertigt einen Tausch.",
+   "rank": {
+    "original": 8,
+    "reviewed": 8,
+    "change": 0,
+    "reason": "Ausgangspunkt ist der FAVOURITE-Pfad. Q1 (Barcelonas verbleibende Offensivtiefe trotz Yamal/Christensen/Rodri/Espart/Bardghji-Ausfaellen) stuetzt zwei oder mehr eigene Tore deutlich; das rechnerische KI TOP (Over 0.5) und die qualitative Einschaetzung (sogar Over 2.5) liegen beide noch aggressiver a",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 8
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "UCL2627_46fb2fa1461f",
+   "match": "Atlético Madrid – Viking",
+   "competition": "UEFA_CHAMPIONS_LEAGUE",
+   "kickoff_utc": "2026-11-25T20:00:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 537 min (>= 30)"
+   },
+   "original": {
+    "rank": 9,
+    "score": 0.4425,
+    "best_path": "SAFE",
+    "best_market": "Viking Team Goals Under 2.5",
+    "fixture_category": "PARTIAL_AGREEMENT",
+    "published_odds": null
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Atlético Madrid Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "SAFE": {
+     "market": "Viking Team Goals Under 2.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "BALANCED": {
+     "market": "Atlético Madrid Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "AGGRESSIVE": {
+     "market": "Both Teams To Score: No",
+     "pilot05_category": "DIVERGENT",
+     "published_odds": 1.801
+    }
+   },
+   "ki_top_computational": {
+    "market": "Atlético Madrid Team Goals Over 0.5",
+    "p_low": 0.8,
+    "p_high": 0.9,
+    "worst_case_p": 0.75,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Atlético Madrid Draw No Bet",
+    "confidence": "HIGH",
+    "reasoning": "Atletico ist bereits ohne XI-Anpassung (Basis-Abstand +212) klar favorisiert und verfuegt trotz der Ausfaelle Lookman und Pubill ueber ausreichende Kadertiefe (Alvarez, Baena, Grimaldo, Simeone). Viking ist ein europaeisch kaum erprobter Eliteserien-Vertreter ohne jede Wertabdeckung; das Qualitaetsgefaelle duerfte real eher am oberen Ende des Modellbereichs liegen. DNB statt reinem Sieg, da Unentschieden-Ausreisser in der Champions-League-Ligaphase gegen Aussenseiter nicht ungewoehnlich sind.",
+    "differs_from_computational": true,
+    "difference_explanation": "Die rechnerische KI TOP (Atlético Madrid Team Goals Over 0.5) ist eine enge Team-Tor-Wette; die qualitative Einschaetzung waehlt mit Atlético Madrid Draw No Bet eine seitenbezogene, durch das Unentschieden abgesicherte Form, da Viking ohne jede Wertabdeckung und mit kaum europaeischer Erfahrung antritt und das reale Qualitaetsgefaelle eher am oberen Modellrand liegen duerfte. Ein knappes Unentschieden bleibt in der Ligaphase gegen klare Aussenseiter dennoch nicht ausgeschlossen, weshalb DNB robuster erscheint als die reine Sieg- oder Team-Tor-Wette, ohne der engeren rechnerischen Schwelle zu widersprechen.",
+    "difference_explanation_origin": "POST_DISCLOSURE_REVIEW",
+    "q_seal_sha256": "8b4459687816f1bf1805882026734443e01e60972c094c3012494c3db528a881"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-25T11:12:06Z",
+    "result_sha256": "4cb414655c38b953e3e7ec3937b657707e007cee8ab1bfc559e6120b179db23b",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "ELO-Engine meldet BASE_FALLBACK_BOTH: Atleticos XI-Coverage ist 1.0 (ratio 0.737), wird aber wegen Vikings Coverage 0.0 durch 'MATCH_LEVEL_SYMMETRIC_FALLBACK_OTHER_SIDE_SKIPPED' neutralisiert; effective_adjustment=0 auf beiden Seiten, adjusted_gap=base_gap=212. Das bedeutet: die real bekannten Ausfaelle Lookman (Knie) und Pubill (Knoechel) auf Atletico-Seite flieszen trotz vollstaendiger Datenlage NICHT in den Abstand ein, weil der Mechanismus bei fehlenden Gegner-Daten komplett abschaltet. Der ausgewiesene Abstand ist damit eine Untergrenze, keine realistische Punktschaetzung."
+    },
+    "research_log": [
+     {
+      "source": "https://www.sportsmole.co.uk/football/atletico-madrid/champions-league/preview/atletico-vs-viking-fk-prediction-team-news-lineups_609709.html",
+      "retrieved_utc": "2026-11-25T11:03:49.166Z",
+      "claim": "Lookman (Knie) und Pubill (Knoechel) fehlen Atletico; Romero ist je nach Quelle fraglich oder ausser Frage.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_015Md83XJ5ZSidtcroCMbsZE",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:43.755Z"
+      }
+     },
+     {
+      "source": "https://khelnow.com/football/atletico-madrid-vs-viking-fk-preview-champions-league-202611",
+      "retrieved_utc": "2026-11-25T11:03:49.166Z",
+      "claim": "Viking fehlen D'Agostino, Bjorshol, Baertelsen, Roseth; Berisha/Haugen als Zweifelsfaelle genannt.",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_015Md83XJ5ZSidtcroCMbsZE",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:43.755Z"
+      }
+     },
+     {
+      "source": "https://onefootball.com/en/news/atletico-de-madrid-viking-preview-predicted-line-ups-and-how-to-watch-43833656",
+      "retrieved_utc": "2026-11-25T11:03:49.166Z",
+      "claim": "Prognose-Aufstellung Atletico 4-4-2 mit Oblak, Llorente, Le Normand, Hancko, Grimaldo, Baena; Vorhersagen einseitig fuer Atletico (u.a. 3-1).",
+      "retrieved_utc_model_value": "2026-11-25T11:03:10Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_015Md83XJ5ZSidtcroCMbsZE",
+       "session_id": "01daa99c-ddef-419b-8ef3-aaa303487726",
+       "tool_call_utc": "2026-11-25T11:03:43.755Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Zwei eigene Atletico-Tore sind trotz Kadertiefe (Alvarez, Baena, Simeone) wegen der Lookman/Pubill-Ausfaelle nicht vollstaendig gesichert."
+    },
+    "SAFE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "EXACT",
+     "assumption_comment": "Vikings eigene Torausbeute unter 3 ist angesichts des Qualitaetsgefaelles und fehlender Europa-Erfahrung praktisch sicher."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "CONTRADICTORY",
+     "assumption_agreement": "CONTRADICTORY",
+     "assumption_comment": "Dass weder Atletico noch Viking treffen, widerspricht Atleticos verbleibender Offensivqualitaet; eigene Einschaetzung stuetzt diese Annahme nicht."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Atletico fehlen Lookman (Knie) und Pubill (Knoechel); Romero ist je nach Quelle fraglich. Trotz vollstaendiger Wertabdeckung (coverage 1.0) wird dieser reale Qualitaetsverlust durch den symmetrischen Fallback-Mechanismus nicht im Elo-Abstand abgebildet.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Der ausgewiesene Abstand von +212 Elo ist moeglicherweise eine leichte Ueberschaetzung von Atleticos tatsaechlich verfuegbarer Offensivqualitaet, bleibt aber angesichts der Kadertiefe (Alvarez/Baena/Simeone) sportlich nur marginal relevant.",
+     "affected_markets_neutral": [
+      {
+       "market": "Atlético Madrid to win",
+       "effect": "leicht geschwaecht"
+      },
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "leicht geschwaecht"
+      },
+      {
+       "market": "Atlético Madrid Draw No Bet",
+       "effect": "kaum betroffen"
+      }
+     ],
+     "materiality": {
+      "area": "ELO_ADJUSTMENT",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Atlético Madrid Team Goals Over 1.5",
+       "effect": "leicht geschwaecht",
+       "why": "Lookman (Knie) und Pubill (Knoechel) fehlen; beide sind Offensiv-/Flankenoptionen, deren Ausfall zwei eigene Tore etwas unsicherer macht."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Viking Team Goals Under 2.5",
+       "effect": "kaum betroffen",
+       "why": "Betrifft primaer Atleticos eigene Offensive, nicht direkt Vikings Torausbeute, die ohnehin als sehr gering eingeschaetzt wird."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Atlético Madrid Team Goals Over 1.5",
+       "effect": "leicht geschwaecht",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Both Teams To Score: No",
+       "effect": "leicht gestuetzt",
+       "why": "Weniger Atletico-Offensivoptionen koennten die Chance erhoehen, dass Atletico selbst nicht trifft; bleibt aber angesichts der Kadertiefe unwahrscheinlich."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "kaum betroffen",
+       "why": "Die qualitative Einschaetzung 'Atlético Madrid Draw No Bet' bleibt durch die Kadertiefe (Alvarez, Baena, Simeone) weitgehend unberuehrt."
+      }
+     ],
+     "decision_effect": "FAVOURITE (Atlético Madrid Team Goals Over 1.5) bleibt die Ausgangswahl und wird trotz leichter Schwaechung bestaetigt, da die Kadertiefe (Alvarez, Baena, Grimaldo, Simeone) den Ausfall von Lookman/Pubill weitgehend auffaengt.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Einzelbefund ohne eigenstaendige Rangwirkung; letzter Rang bleibt unveraendert."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Fuer Viking liegt keinerlei Spielerwert-Abdeckung vor (coverage 0.0), wodurch der gesamte XI-Anpassungsmechanismus fuer beide Teams deaktiviert wird (BASE_FALLBACK_BOTH).",
+      "origin": "REPRODUCED",
+      "source_ids": [
+       "S2"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Der rein auf Basis-ClubElo beruhende Abstand (+212) kann nicht durch aktuelle Kaderinformationen verfeinert werden; angesichts des bekannten Qualitaetsgefaelles La Liga vs. Eliteserien ist dies eher eine konservative Untergrenze fuer Atleticos Vorteil.",
+     "affected_markets_neutral": [
+      {
+       "market": "Atlético Madrid to win",
+       "effect": "gestuetzt (sofern Abstand tatsaechlich unterschaetzt)"
+      },
+      {
+       "market": "Atlético Madrid Draw No Bet",
+       "effect": "gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "ELO_ADJUSTMENT",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Atlético Madrid Team Goals Over 1.5",
+       "effect": "gestuetzt (sofern Abstand tatsaechlich unterschaetzt)",
+       "why": "Vikings fehlende Wertabdeckung deaktiviert die XI-Verfeinerung komplett; der reine Basis-Elo-Abstand (+212) ist eher eine konservative Untergrenze fuer Atleticos tatsaechlichen Vorteil."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Viking Team Goals Under 2.5",
+       "effect": "gestuetzt",
+       "why": "Vikings geringe internationale Erfahrung stuetzt eine niedrige eigene Torausbeute zusaetzlich."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Atlético Madrid Team Goals Over 1.5",
+       "effect": "gestuetzt (sofern Abstand tatsaechlich unterschaetzt)",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Both Teams To Score: No",
+       "effect": "nicht betroffen",
+       "why": "Betrifft primaer Atleticos eigene Torchance, nicht Vikings."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Konservative Untergrenze stuetzt die Draw-No-Bet-Einschaetzung zusaetzlich."
+      }
+     ],
+     "decision_effect": "Bestaetigt FAVOURITE zusaetzlich; das Qualitaetsgefaelle La Liga vs. Eliteserien duerfte real noch groesser sein als der reine Elo-Abstand zeigt.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Kein eigener Rangeffekt."
+     }
+    },
+    {
+     "finding_id": "B1",
+     "finding": {
+      "text": "Der Originalrang 9 wurde ueber den SAFE-Pfad gebildet (Viking Team Goals Under 2.5, PARTIAL_AGREEMENT, schlechtester Fall 0.7). Kein Q-Befund widerspricht dem FAVOURITE-Pfad (Atlético Madrid Team Goals Over 1.5, PARTIAL_AGREEMENT, schlechtester Fall 0.45); die Entscheidung bestaetigt FAVOURITE, deutlich unter dem Rangbasis-Markt.",
+      "origin": "ORIGINAL",
+      "source_ids": [
+       "P05-RANK"
+      ]
+     },
+     "material": true,
+     "materiality": {
+      "area": "MARKTSTABILITAET",
+      "level": "M2"
+     },
+     "sporting_effect": "Die tatsaechlich bevorzugte Prognose hat mit schlechtestem Fall 0.45 die niedrigste Stabilitaet aller neun Spiele dieses Tages, obwohl das Spiel bereits den letzten Rang belegt.",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Atlético Madrid Team Goals Over 1.5",
+       "effect": "empfohlen, aber am fragilsten",
+       "why": "Schlechtester Fall 0.45, trotz Q1/Q2 keine volle Absicherung."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Viking Team Goals Under 2.5",
+       "effect": "stabil, aber nicht empfohlen",
+       "why": "Die hoehere Stabilitaet von SAFE darf die Marktauswahl nicht allein bestimmen."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Atlético Madrid Team Goals Over 1.5",
+       "effect": "wie FAVOURITE",
+       "why": "Gleicher Markt."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Both Teams To Score: No",
+       "effect": "nicht empfohlen",
+       "why": "DIVERGENT; eigene Einschaetzung widerspricht ebenfalls."
+      }
+     ],
+     "decision_effect": "Entscheidung bleibt CONFIRM_FAVOURITE; kein Rangwechsel moeglich, da bereits letzter Rang.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Bereits letzter Rang; kein Spiel darunter zum Vergleich."
+     },
+     "phase": "POST_DISCLOSURE"
+    }
+   ],
+   "decision": {
+    "value": "CONFIRM_FAVOURITE",
+    "preferred_market": {
+     "source": "FAVOURITE",
+     "market_text": "Atlético Madrid Team Goals Over 1.5"
+    },
+    "reasoning": "Ausgangspunkt ist der FAVOURITE-Pfad. Q1 (Lookman/Pubill fehlen) schwaecht die Annahme leicht, wird aber durch die verbleibende Kadertiefe (Alvarez, Baena, Grimaldo, Simeone) weitgehend aufgefangen. Q2 (Vikings fehlende Wertabdeckung deaktiviert die XI-Verfeinerung; der Basis-Abstand +212 ist eher eine konservative Untergrenze) stuetzt die Annahme zusaetzlich. Kein Befund widerspricht Over 1.5 grundsaetzlich; ein Wechsel zum stabileren SAFE-Pfad allein wegen der niedrigeren Stabilitaet waere ohne eigenstaendigen widersprechenden Befund nicht begruendet.",
+    "chain_refs": [
+     "Q1",
+     "Q2",
+     "B1"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Atlético Madrid Team Goals Over 1.5 ist die fragilste bestaetigte Prognose des Tages (schlechtester Fall nur 0.45, unter 50 Prozent). Die deutlich stabilere SAFE-Alternative (Viking Team Goals Under 2.5, schlechtester Fall 0.7) darf diese Fragilitaet nicht verdecken: SAFE braucht nur, dass Viking selbst wenig trifft, waehrend FAVOURITE zwingend zwei eigene Atletico-Tore voraussetzt - ein knapper 1-0-Sieg wuerde SAFE erfuellen, FAVOURITE aber verletzen. Ohne Lookman und mit Pubill-Ausfall ist nicht restlos gesichert, dass Atleticos verbleibende Offensive (Alvarez, Baena) gegen eine kompakte, defensiv eingestellte Viking-Mannschaft zwingend zweimal trifft."
+   },
+   "detail_md": "**Atlético Madrid - Viking (Champions League, Mittwoch 20:00 UTC)**\n\n**Spielbild.** Basis-Elo-Abstand +212 (Fallback) favorisiert Atletico bereits klar; Viking hat keine Wertabdeckung und kaum europaeische Erfahrung. Atletico fehlen Lookman (Knie) und Pubill (Knoechel), bleibt aber mit Alvarez, Baena, Grimaldo und Simeone tief besetzt.\n\n**Befunde.** (Q1) Lookman/Pubill-Ausfaelle schwaechen die Zwei-Tore-Annahme leicht, werden aber durch die Kadertiefe weitgehend kompensiert. (Q2) Vikings fehlende Wertabdeckung bedeutet, dass der ausgewiesene Elo-Abstand eher eine konservative Untergrenze ist.\n\n**Entscheidung.** FAVOURITE (Atlético Madrid Team Goals Over 1.5) wird durch keinen Befund grundsaetzlich widerlegt und bleibt trotz hoher inhaerenter Fragilitaet (schlechtester Fall 0.45) bevorzugt.\n\n**Rang.** Original 9, geprueft 9 (B1 dokumentiert die Abweichung von der Rangbasis ohne Rangwechsel): bereits letzter Rang, kein Vergleichsspiel darunter.",
+   "rank": {
+    "original": 9,
+    "reviewed": 9,
+    "change": 0,
+    "reason": "Ausgangspunkt ist der FAVOURITE-Pfad. Q1 (Lookman/Pubill fehlen) schwaecht die Annahme leicht, wird aber durch die verbleibende Kadertiefe (Alvarez, Baena, Grimaldo, Simeone) weitgehend aufgefangen. Q2 (Vikings fehlende Wertabdeckung deaktiviert die XI-Verfeinerung; der Basis-Abstand +212 ist eher e",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 9
+   },
+   "playable_top": true
+  }
+ ],
+ "summary": {
+  "playable_count": 9,
+  "skip_count": 0,
+  "top5": [
+   {
+    "rank": 1,
+    "fixture_id": "UCL2627_b84818f7481d",
+    "match": "Paris SG – Roma",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Match Total Over 2.5"
+   },
+   {
+    "rank": 2,
+    "fixture_id": "UCL2627_92aa782ff595",
+    "match": "Shakhtar D. – Fenerbahçe",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Match Total Under 4.5"
+   },
+   {
+    "rank": 3,
+    "fixture_id": "UCL2627_7c2acd0f0c1f",
+    "match": "Club Brugge – Liverpool",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Over 1.5"
+   },
+   {
+    "rank": 4,
+    "fixture_id": "UCL2627_432bc6c59234",
+    "match": "Lille – Bayern Munich",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Bayern Munich Team Goals Over 0.5"
+   },
+   {
+    "rank": 5,
+    "fixture_id": "UCL2627_8291988ac0d0",
+    "match": "Slavia Prague – Villarreal",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Both Teams To Score: Yes"
+   }
+  ],
+  "top8": [
+   {
+    "rank": 1,
+    "fixture_id": "UCL2627_b84818f7481d",
+    "match": "Paris SG – Roma",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Match Total Over 2.5"
+   },
+   {
+    "rank": 2,
+    "fixture_id": "UCL2627_92aa782ff595",
+    "match": "Shakhtar D. – Fenerbahçe",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Match Total Under 4.5"
+   },
+   {
+    "rank": 3,
+    "fixture_id": "UCL2627_7c2acd0f0c1f",
+    "match": "Club Brugge – Liverpool",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Over 1.5"
+   },
+   {
+    "rank": 4,
+    "fixture_id": "UCL2627_432bc6c59234",
+    "match": "Lille – Bayern Munich",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Bayern Munich Team Goals Over 0.5"
+   },
+   {
+    "rank": 5,
+    "fixture_id": "UCL2627_8291988ac0d0",
+    "match": "Slavia Prague – Villarreal",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Both Teams To Score: Yes"
+   },
+   {
+    "rank": 6,
+    "fixture_id": "UCL2627_a63780fea7cb",
+    "match": "Sporting CP – Manchester Utd",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Manchester Utd Team Goals Under 1.5"
+   },
+   {
+    "rank": 7,
+    "fixture_id": "UCL2627_e2a78b55070b",
+    "match": "Inter – Stuttgart",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Over 2.5"
+   },
+   {
+    "rank": 8,
+    "fixture_id": "UCL2627_f0456ad15cfc",
+    "match": "Sabah FK – Barcelona",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Barcelona Team Goals Over 1.5"
+   }
+  ],
+  "top10": [
+   {
+    "rank": 1,
+    "fixture_id": "UCL2627_b84818f7481d",
+    "match": "Paris SG – Roma",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Match Total Over 2.5"
+   },
+   {
+    "rank": 2,
+    "fixture_id": "UCL2627_92aa782ff595",
+    "match": "Shakhtar D. – Fenerbahçe",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Match Total Under 4.5"
+   },
+   {
+    "rank": 3,
+    "fixture_id": "UCL2627_7c2acd0f0c1f",
+    "match": "Club Brugge – Liverpool",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Over 1.5"
+   },
+   {
+    "rank": 4,
+    "fixture_id": "UCL2627_432bc6c59234",
+    "match": "Lille – Bayern Munich",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Bayern Munich Team Goals Over 0.5"
+   },
+   {
+    "rank": 5,
+    "fixture_id": "UCL2627_8291988ac0d0",
+    "match": "Slavia Prague – Villarreal",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Both Teams To Score: Yes"
+   },
+   {
+    "rank": 6,
+    "fixture_id": "UCL2627_a63780fea7cb",
+    "match": "Sporting CP – Manchester Utd",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Manchester Utd Team Goals Under 1.5"
+   },
+   {
+    "rank": 7,
+    "fixture_id": "UCL2627_e2a78b55070b",
+    "match": "Inter – Stuttgart",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Over 2.5"
+   },
+   {
+    "rank": 8,
+    "fixture_id": "UCL2627_f0456ad15cfc",
+    "match": "Sabah FK – Barcelona",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Barcelona Team Goals Over 1.5"
+   },
+   {
+    "rank": 9,
+    "fixture_id": "UCL2627_46fb2fa1461f",
+    "match": "Atlético Madrid – Viking",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Atlético Madrid Team Goals Over 1.5"
+   }
+  ]
+ },
+ "evaluation": {
+  "status": "NOT_EVALUATED",
+  "results": null
+ },
+ "compiled_utc": "2026-11-25T11:39:52Z"
+}

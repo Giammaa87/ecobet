@@ -33,6 +33,18 @@
    "schema": "ECOBET_AI_ANALYST_DAY_V1",
    "seal_sha256": "123a7e8224d1726bc1d87a82eaf90df6736a5aae92bc097fcf85b4cda47f18f4",
    "status": "OK"
+  },
+  "2026-11-25_0247": {
+   "bytes_sha256": "7717f4a1c75513f7d6189669dbc2e171920a1a0751e16c05f62f1382572946a5",
+   "bytes_sha256_sealed_file": "7717f4a1c75513f7d6189669dbc2e171920a1a0751e16c05f62f1382572946a5",
+   "date": "2026-11-25",
+   "file": "analyst/2026-11-25_0247.json",
+   "fixtures": 9,
+   "generated_at_utc": "2026-11-25T11:39:52Z",
+   "reviewed": 9,
+   "schema": "ECOBET_AI_ANALYST_DAY_V1",
+   "seal_sha256": "a1a7968f6abde754724e46a56497a473ad8a2191f10222a148eab1ae153a69bb",
+   "status": "OK"
   }
  },
  "schema": "ECOBET_AI_ANALYST_INDEX_V1"
