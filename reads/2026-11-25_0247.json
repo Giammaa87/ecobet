@@ -1,0 +1,545 @@
+{
+ "counts": {
+  "derived": 9,
+  "fixtures": 9,
+  "owner_favourite": {
+   "SELECTED": 7,
+   "TIE": 2
+  }
+ },
+ "data_status": "AUTOMATIC_UNVALIDATED",
+ "data_status_note": null,
+ "disclaimer": "Modellinterne Einschaetzung, abgeleitet aus bereits veroeffentlichten ECOBET V2.4 Prediction-Ergebnissen. Keine Wahrscheinlichkeit, keine Quote, keine Erfolgsgarantie. Noch nicht validiert.",
+ "fixtures": [
+  {
+   "away": "Bayern Munich",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "X2",
+    "read_text": "Auswaertssieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Total Over 2.5",
+    "balanced": "Bayern Munich Team Goals Over 1.5",
+    "favourite": "Bayern Munich Team Goals Over 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Bayern Munich Team Goals Over 0.5"
+   },
+   "fixture_id": "UCL2627_432bc6c59234",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-3",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Lille",
+   "kickoff_utc": "2026-11-25T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "X2",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 2-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "X2",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-25_0247",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-25T11:05:02.114703+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Viking",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Both Teams To Score: No",
+    "balanced": "Atlético Madrid Team Goals Over 1.5",
+    "favourite": "Atlético Madrid Team Goals Over 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Viking Team Goals Under 2.5"
+   },
+   "fixture_id": "UCL2627_46fb2fa1461f",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-3",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Atlético Madrid",
+   "kickoff_utc": "2026-11-25T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 2-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "1X",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-25_0247",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-25T11:05:02.114703+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Liverpool",
+   "direction": {
+    "coverage_status": null,
+    "covered_by": null,
+    "evidence": null,
+    "read": null,
+    "status": "NO_READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Club Brugge Team Goals Over 1.5",
+    "balanced": "Both Teams To Score: Yes",
+    "favourite": "Both Teams To Score: Yes",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "UCL2627_7c2acd0f0c1f",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 4,
+    "goals_min": 3,
+    "read": "Gesamtspiel 3-4",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Club Brugge",
+   "kickoff_utc": "2026-11-25T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Gesamtspiel 3-4",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Gesamtspiel 3-4",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-25_0247",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-25T11:05:02.114703+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Villarreal",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Total Over 2.5",
+    "balanced": "Both Teams To Score: Yes",
+    "favourite": "Both Teams To Score: Yes",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "UCL2627_8291988ac0d0",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 4,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-4",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Slavia Prague",
+   "kickoff_utc": "2026-11-25T17:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 2-4",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "gleiche Evidenzstufe (MEDIUM), keine Rangfolge erzwungen",
+    "selected": null,
+    "status": "TIE"
+   },
+   "run_id": "2026-11-25_0247",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-25T11:05:02.114703+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Fenerbahçe",
+   "direction": {
+    "coverage_status": null,
+    "covered_by": null,
+    "evidence": null,
+    "read": null,
+    "status": "NO_READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Fenerbahçe Team Goals Over 0.5",
+    "balanced": "Match Total Under 3.5",
+    "favourite": "Match Total Under 4.5",
+    "favourite_source": "SAFE",
+    "safe": "Match Total Under 4.5"
+   },
+   "fixture_id": "UCL2627_92aa782ff595",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Fenerbahçe 1-2",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Fenerbahçe"
+   },
+   "home": "Shakhtar D.",
+   "kickoff_utc": "2026-11-25T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Fenerbahçe 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Fenerbahçe 1-2",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-25_0247",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-25T11:05:02.114703+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Manchester Utd",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "First Half Under 1.5",
+    "balanced": "Sporting CP Team Goals Over 1.5",
+    "favourite": "Manchester Utd Team Goals Under 1.5",
+    "favourite_source": "SAFE",
+    "safe": "Manchester Utd Team Goals Under 1.5"
+   },
+   "fixture_id": "UCL2627_a63780fea7cb",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 3,
+    "goals_min": 2,
+    "read": "Gesamtspiel 2-3",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Sporting CP",
+   "kickoff_utc": "2026-11-25T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 2-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "1X",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-25_0247",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-25T11:05:02.114703+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Roma",
+   "direction": {
+    "coverage_status": null,
+    "covered_by": null,
+    "evidence": null,
+    "read": null,
+    "status": "NO_READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Paris SG Team Goals Over 1.5",
+    "balanced": "Match Total Over 2.5",
+    "favourite": "Match Total Over 2.5",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "UCL2627_b84818f7481d",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 4,
+    "goals_min": 3,
+    "read": "Gesamtspiel 3-4",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Paris SG",
+   "kickoff_utc": "2026-11-25T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Gesamtspiel 3-4",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Gesamtspiel 3-4",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-25_0247",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-25T11:05:02.114703+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Stuttgart",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "1",
+    "read_text": "Heimsieg",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Inter Team Goals Over 2.5",
+    "balanced": "Match Total Over 2.5",
+    "favourite": "Inter Team Goals Over 1.5",
+    "favourite_source": "SAFE",
+    "safe": "Inter Team Goals Over 1.5"
+   },
+   "fixture_id": "UCL2627_e2a78b55070b",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 1,
+    "goals_min": 0,
+    "read": "Stuttgart 0-1",
+    "scope": "AWAY",
+    "status": "READ",
+    "team": "Stuttgart"
+   },
+   "home": "Inter",
+   "kickoff_utc": "2026-11-25T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "1",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Stuttgart 0-1",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "1",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-25_0247",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-25T11:05:02.114703+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Barcelona",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "X2",
+    "read_text": "Auswaertssieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Barcelona Team Goals Over 2.5",
+    "balanced": "Barcelona Team Goals Over 1.5",
+    "favourite": "Barcelona Team Goals Over 1.5",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "UCL2627_f0456ad15cfc",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 4,
+    "goals_min": 3,
+    "read": "Gesamtspiel 3-4",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Sabah FK",
+   "kickoff_utc": "2026-11-25T17:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "X2",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "STRONG",
+      "read": "Gesamtspiel 3-4",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "gleiche Evidenzstufe (STRONG), keine Rangfolge erzwungen",
+    "selected": null,
+    "status": "TIE"
+   },
+   "run_id": "2026-11-25_0247",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-25T11:05:02.114703+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  }
+ ],
+ "generated_at_utc": "2026-11-25T11:05:02.114703+00:00",
+ "logical_run_id": "ECOBET_LRUN_2083af29f71e40618ec3d182329df263",
+ "publication_id": "2026-11-25_0247",
+ "rules": {
+  "coverage_and_owner_favourite": "RULES_COVERAGE_OWNERFAV_v1",
+  "direction": "DIRECTION_READ_SCENARIO_V1",
+  "goal_range": "GOAL_RANGE_EXT_V1_V2_STAB_MIN_0.67",
+  "imported_pins": {
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105\\RULES_COVERAGE_OWNERFAV_v1.md": "646b9b144e2d4bb88e1e91a61fbce0b2a57b961908abfbe1c67ff663a6ffa497",
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105\\coverage_ownerfav.py": "9af22a43803db0a6b21987ff216358f3d1f5451e0a605d7851216cd9be079158",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1\\RULES_READS_v1.md": "13dfcde3b206f858bbd41f1a5f62dc7625576c6ea9fd816a5402c3da2484bc60",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1\\reads_runner.py": "c025df64a96c1b46c62937528767bc03a96fc4d10a65f08b38a5da5f4b057089"
+  },
+  "rules_sha256": "7484a1a98baf3905f255f1ba65955ea4580b2fdaa84d9eb495c90f2aa505bf75",
+  "runner": "READS_RUNNER_V2_1"
+ },
+ "run_date": "2026-11-25",
+ "run_id": "2026-11-25_0247",
+ "schema": "ECOBET_READS_PUBLIC_V1",
+ "source": {
+  "derived_file_sha256": "f1fe55882c7f89c29337be5b7a72c245bb64f4fb7f84bb726c4c45e546a255e3",
+  "published_at_utc": "2026-11-25T02:48:19.932441+00:00",
+  "record_content_hash": "sha256:94c645b1475c3104d814e4ff37ff5d31f2bca1399d5a55702b297080f516be0a",
+  "source_file_sha256": "abfae3aa6e2feda9e8481f11c6d81d5142463b9ad2b977496ba3da4819fb0473"
+ }
+}
