@@ -210,6 +210,31 @@
    "file": "odds_supplement/ODDS_SUPPLEMENT_2026-11-25_0247_20261125T103716Z.json",
    "publication_id": "2026-11-25_0247",
    "run_date": "2026-11-25"
+  },
+  "ODDS_SUPPLEMENT_2026-11-26_0406_20261126T041647Z": {
+   "base_enrichment_id": "ODDS_2026-11-26_0406_20261126T041242Z",
+   "bytes_sha256": "sha256:44b4f9578cabd1bea3211f89208a0f91c7e729d30179d6fadc79cb83b9d8e796",
+   "content_hash": "sha256:cb4b05de739e03f82e0f98442945da9549ba541bdd068e320ba6d7d05630dab2",
+   "coverage": {
+    "api_requests_made": 24,
+    "api_requests_remaining_after": 65,
+    "available_after_supplement": 111,
+    "bsd_available": 65,
+    "bsd_missing_role_markets": 59,
+    "bsd_missing_unique_markets": 45,
+    "bsd_role_markets": 124,
+    "not_available_by_reason": {
+     "PROVIDER_FIXTURE_NOT_MAPPED": 2,
+     "PROVIDER_MARKET_NOT_COVERED": 8
+    },
+    "still_not_available_unique_markets": 10,
+    "stopped_for_api_budget": false,
+    "supplement_role_markets_available": 46,
+    "supplement_unique_markets_available": 35
+   },
+   "file": "odds_supplement/ODDS_SUPPLEMENT_2026-11-26_0406_20261126T041647Z.json",
+   "publication_id": "2026-11-26_0406",
+   "run_date": "2026-11-26"
   }
  },
  "schema_version": "ECOBET_ODDS_SUPPLEMENT_INDEX_V1"
