@@ -1,0 +1,31 @@
+{
+ "schema": "ECOBET_AI_ANALYST_DAY_V1",
+ "status": "MASTER_FAILED",
+ "date": "2026-11-26",
+ "publication_id": "2026-11-26_MASTER_FAILED",
+ "master_run": null,
+ "analyst": {
+  "assignment_version": "ANALYST_ASSIGNMENT_V1",
+  "assignment_sha256": "a728419cffec08fe07ce222ff958e02c31d8336dd3f4d3dd0236008464f06374",
+  "package_sha256": "9be003c6bbce9f928bb51125e1d617144a448fb853c225bc30730864e77db2d0",
+  "execution_path": "SCHEDULED_WINDOWS_TASK_V1"
+ },
+ "fixtures_total": 0,
+ "fixtures_reviewed": 0,
+ "fixtures_not_eligible": 0,
+ "reason": "KEIN WAEHLBARER LAUF fuer 2026-11-26 – Kandidaten: 1;   ECOBET_LRUN_515d02f5f62e48ad983a4c2185c769a3 | C5_SEALED_TARGET_COVERS_QUEUE: sealed_target kennt 33 von 36 Queue-Fixtures; C6_ALL_CORES_PRESENT: fehlende Kerne: ['UECL2627_0cc092fb6f26', 'UECL2627_a69a7f53832f', 'UECL2627_c2f2b318f6bc', 'UEL2627_87d84740db09', 'UEL2627_e03bf0cc7f7c']",
+ "games": [],
+ "summary": {
+  "playable_count": 0,
+  "skip_count": 0,
+  "top5": [],
+  "top8": [],
+  "top10": []
+ },
+ "evaluation": {
+  "status": "NOT_EVALUATED",
+  "results": null
+ },
+ "no_substitute_predictions": true,
+ "compiled_utc": "2026-11-26T05:56:05Z"
+}
