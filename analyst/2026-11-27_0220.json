@@ -1,0 +1,1764 @@
+{
+ "schema": "ECOBET_AI_ANALYST_DAY_V1",
+ "status": "OK",
+ "date": "2026-11-27",
+ "publication_id": "2026-11-27_0220",
+ "master_run": {
+  "logical_run_id": "ECOBET_LRUN_6b6a1a4d17e74d9cb89a89ea9148f23a",
+  "publication_id": "2026-11-27_0220",
+  "fixture_count": 4,
+  "first_kickoff_utc": "2026-11-27T19:30:00Z"
+ },
+ "analyst": {
+  "assignment_version": "ANALYST_ASSIGNMENT_V1",
+  "assignment_sha256": "a728419cffec08fe07ce222ff958e02c31d8336dd3f4d3dd0236008464f06374",
+  "package_sha256": "9be003c6bbce9f928bb51125e1d617144a448fb853c225bc30730864e77db2d0",
+  "execution_path": "SCHEDULED_WINDOWS_TASK_V1"
+ },
+ "fixtures_total": 4,
+ "fixtures_reviewed": 4,
+ "fixtures_not_eligible": 0,
+ "original_ranking_rules": "RANKING_RULES_V1",
+ "reviewed_ranking_basis": "Tatsaechlich ausgewaehlter Markt je Spiel (Entscheidung); Ausgangspunkt Originalrang Pilot 05 (RANKING_RULES_V1). Marktwechsel innerhalb des Spiels Venezia-Bologna (AGGRESSIVE auf FAVOURITE/BALANCED, konvergente Befunde Q1-Q3), aber kein Befund begruendet eine Umordnung zwischen den vier Spielen; relative Originalreihenfolge bleibt erhalten.",
+ "no_result_knowledge_statement": "Alle Informationen stammen aus dem ECOBET-Datenstand vom 27.11.2026 (Vormittag) und Vorberichten vom 26./27.11.2026 vor Anpfiff; keine Resultatskenntnis, keine Suchtreffer mit Spielergebnissen verwendet.",
+ "games": [
+  {
+   "fixture_id": "FRA2627_893cb82648fb",
+   "match": "Brest – Paris FC",
+   "competition": "FRA_LIGUE_1",
+   "kickoff_utc": "2026-11-27T19:45:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 855 min (>= 30)"
+   },
+   "original": {
+    "rank": 1,
+    "score": 0.672,
+    "best_path": "SAFE",
+    "best_market": "Match Total Over 1.5",
+    "fixture_category": "EXACT_AGREEMENT",
+    "published_odds": 1.287
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Both Teams To Score: Yes",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.688
+    },
+    "SAFE": {
+     "market": "Match Total Over 1.5",
+     "pilot05_category": "EXACT_AGREEMENT",
+     "published_odds": 1.287
+    },
+    "BALANCED": {
+     "market": "Both Teams To Score: Yes",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.688
+    },
+    "AGGRESSIVE": {
+     "market": "Brest Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Match Total Over 1.5",
+    "p_low": 0.75,
+    "p_high": 0.85,
+    "worst_case_p": 0.7,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Paris FC or Draw",
+    "confidence": "MEDIUM",
+    "reasoning": "Der angepasste Elo-Abstand von -14.5 (Basis -20) ist knapp und favorisiert Paris FC nur leicht. Paris FC steht laut Vorberichten auf Platz 2 der Ligue 1 mit 23 Punkten nach 11 Spielen und hat die bessere Defensivbilanz (Saison-xGA 0.94 gegen Brests Saison-xG 2.22 im Angriff). Brest fehlen zudem zwei Abwehrspieler laenger (Le Guen, Chardonnet) und Lala/Doumbia sind fraglich, was Brests Heimdefensive zusaetzlich schwaecht. Wegen des knappen Elo-Abstands und Brests weiterhin hoher eigener Torgefahr (Over-2.5-Quote 0.75 in den letzten Heimspielen) ist eine Doppelte Chance (Paris FC or Draw) das robustere Instrument als ein klarer Sieg- oder DNB-Tipp.",
+    "differs_from_computational": true,
+    "difference_explanation": "Bei einem Elo-Abstand von -14.5 waere ein rechnerischer KI TOP vermutlich ein direkter Paris-FC-Sieg oder eine Draw-No-Bet-Wette auf Paris FC. Die eigene Analyse waehlt die vorsichtigere Doppelte Chance, weil der Abstand sehr klein ist und Brests Offensivzahlen (xG 2.22, Over-2.5-Rate 0.75) ein echtes Risiko fuer Paris FC darstellen, auch wenn Form und Tabellenstand klar fuer Paris FC sprechen.",
+    "difference_explanation_origin": "PHASE_Q",
+    "q_seal_sha256": "decdf1daeaf981d71cdddf85eb13f088526316c2773e5dd980ccfda01e8185d7"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-27T06:09:27Z",
+    "result_sha256": "8d1847bac671ab7ad8b3500cad4725bd89b97d1378824244890ef0fe4c004782",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "Reproduktion des angepassten Elo bestaetigt: Brest strength_ratio 0.966 -> ca. -12.2 Elo, Paris FC strength_ratio 0.951 -> ca. -17.7 Elo (351.1135 x ln(ratio), Rundungsdifferenzen im Promille-Bereich durch Nachkommastellen); Basis-Abstand -20.0, angepasster Abstand -14.5 (1688.80 vs 1703.26) - Rechnung stimmt. Beide Gates READY (keine Datenluecken). Brests OUT-Liste im Pack (Lala, Le Guen) deckt sich nur teilweise mit der Rechercheaward: Le Guen bestaetigt langzeitverletzt, zusaetzlich aber auch Chardonnet (im Pack nur als SQUAD_OTHER, nicht als OUT gefuehrt) laut Vorberichten verletzt; Lala wird in mehreren Quellen nur als fraglich/unsicher (Knie) beschrieben, nicht als sicher ausgefallen, waehrend das Pack ihn als UNAVAILABLE wertet - die Elo-Eingabe fuer Brest ist damit tendenziell die vorsichtigere (staerker schwaechende) Annahme."
+    },
+    "research_log": [
+     {
+      "source": "https://www.butfootballclub.fr/1715998-pronostic-brest-paris-fc-27-11-prono-cotes-et-compos/",
+      "retrieved_utc": "2026-11-27T06:02:08.741Z",
+      "claim": "Brest fehlen Le Guen und Chardonnet; Doumbia und Lala sind fraglich; Paris FC ohne Ausfaelle laut dieser Quelle; beide Mannschaften mit vorhergesagter Startelf in 4-2-3-1.",
+      "retrieved_utc_model_value": "2026-11-27T06:00:01Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_WEBFETCH",
+       "tool": "WebFetch",
+       "tool_use_id": "toolu_01NGSgWDQw4jbAzESkJXScja",
+       "session_id": "09c1d2f1-f37e-473b-89e7-20f1064ef34e",
+       "tool_call_utc": "2026-11-27T06:02:08.423Z"
+      }
+     },
+     {
+      "source": "https://sports.yahoo.com/soccer/articles/preview-brest-vs-paris-fc-184500872.html",
+      "retrieved_utc": "2026-11-27T06:01:40.478Z",
+      "claim": "Nhoa Sangui (Paris FC) fehlt wegen einer Muskelverletzung (laut Suchergebnis-Zusammenfassung dieser Quelle).",
+      "retrieved_utc_model_value": "2026-11-27T06:00:01Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01XiiWyH3whdHc3GGejUjStx",
+       "session_id": "09c1d2f1-f37e-473b-89e7-20f1064ef34e",
+       "tool_call_utc": "2026-11-27T06:01:32.318Z"
+      }
+     },
+     {
+      "source": "https://www.whoscored.com/matches/1984185/preview/france-ligue-1-2026-2027-brest-paris-fc",
+      "retrieved_utc": "2026-11-27T06:01:40.478Z",
+      "claim": "Lala wird als unsicher wegen einer Knieverletzung eingestuft; Chardonnet koennte in ein bis zwei Wochen zurueckkehren.",
+      "retrieved_utc_model_value": "2026-11-27T06:00:01Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01XiiWyH3whdHc3GGejUjStx",
+       "session_id": "09c1d2f1-f37e-473b-89e7-20f1064ef34e",
+       "tool_call_utc": "2026-11-27T06:01:32.318Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Annahme beide Teams treffen: Paris-FC-Toranteil durch Brests Abwehrausfaelle (Q1) gestuetzt, Brest-Toranteil durch Paris FCs starke Defensivbilanz (Q3) geschwaecht - gemischtes Bild."
+    },
+    "SAFE": {
+     "market_agreement": "EXACT",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Erwartete Gesamttore (Lambda 1.47 + 1.52 ca. 3.0) liegen klar ueber der Linie 1.5; Q1 stuetzt, Q3 daempft nur geringfuegig."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Paris FCs Defensivstaerke (Q3) laesst Brests Zwei-Tore-Annahme eher schwaecher erscheinen, als selbst der bereits vorsichtige ECOBET-Wert (schlechtester Fall 0.3) unterstellt; Lalas moegliche Rueckkehr (Q2) daempft dies nur geringfuegig."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Brest fehlen zwei Abwehrspieler laenger (Le Guen bestaetigt, Chardonnet laut Pack nur SQUAD_OTHER aber laut Recherche verletzt); Doumbia und Lala sind zusaetzlich fraglich.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1",
+       "S3"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Brests Heimabwehr ist geschwaecht, was die ohnehin knappe Favoritenrolle von Paris FC zusaetzlich stuetzt und das Risiko von Gegentoren fuer Brest erhoeht.",
+     "affected_markets_neutral": [
+      {
+       "market": "Brest to win",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Paris FC or Draw",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "leicht gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "leicht gestuetzt",
+       "why": "Brests geschwaechte Abwehr (Le Guen bestaetigt, laut Recherche auch Chardonnet verletzt) erhoeht die Wahrscheinlichkeit, dass Paris FC trifft; der Brest-Toranteil der Annahme ist davon unabhaengig."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "leicht gestuetzt",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "gestuetzt",
+       "why": "Eine geschwaechte Brest-Abwehr erhoeht die Gesamttorerwartung und stuetzt die bereits niedrige Linie zusaetzlich."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Brest Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Betrifft Brests Gegentore, nicht Brests eigene Torerwartung."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Rechnerischer KI TOP ist ebenfalls Match Total Over 1.5; mehr erwartete Gegentore fuer Brest stuetzen diese Linie zusaetzlich."
+      }
+     ],
+     "decision_effect": "SAFE bleibt bevorzugt; FAVOURITE/BALANCED bleiben PARTIAL.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Der Befund stuetzt die ohnehin bevorzugte Linie, ohne die Rangbasis zu veraendern."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Lalas Status ist zwischen Quellen uneinheitlich (fraglich wegen Knie statt sicher ausgefallen), waehrend das Pack ihn als vollstaendig UNAVAILABLE in der Elo-Berechnung fuehrt.",
+      "origin": "INFERRED",
+      "source_ids": [
+       "S1",
+       "S3"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Falls Lala doch spielt, ist Brests Abwehr etwas staerker als die angepasste Elo unterstellt; das reduziert die Fragilitaet fuer Brest geringfuegig, aendert aber nicht die Grundrichtung zugunsten Paris FC.",
+     "affected_markets_neutral": [
+      {
+       "market": "Brest to win",
+       "effect": "potenziell leicht gestuetzt falls Einsatz"
+      },
+      {
+       "market": "Brest Draw No Bet",
+       "effect": "potenziell leicht gestuetzt falls Einsatz"
+      }
+     ],
+     "materiality": {
+      "area": "ELO_ADJUSTMENT",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "kaum betroffen",
+       "why": "Lalas moeglicher Einsatz staerkt Brests Abwehr nur geringfuegig; der BTTS-Effekt ist marginal."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "kaum betroffen",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "kaum betroffen",
+       "why": "Eine etwas staerkere Brest-Abwehr aendert die insgesamt niedrige Linie praktisch nicht."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Brest Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Lala ist Abwehrspieler; betrifft nicht Brests eigene Torerwartung."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "kaum betroffen",
+       "why": "Marginale Aenderung ohne Wirkung auf die 1.5-Linie."
+      }
+     ],
+     "decision_effect": "Keine Aenderung der Entscheidung; reduziert die Fragilitaet von Brest-bezogenen Seitenwetten geringfuegig.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Marginaler Befund ohne Einfluss auf die bevorzugte Totallinie."
+     }
+    },
+    {
+     "finding_id": "Q3",
+     "finding": {
+      "text": "Paris FC steht laut Vorberichten auf Platz 2 der Ligue 1 mit 23 Punkten nach 11 Spieltagen und hat die bessere Saison-Defensivbilanz.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Bestaetigt die Form- und Tabellenbasis fuer die leichte Favoritenrolle von Paris FC trotz des knappen Elo-Abstands.",
+     "affected_markets_neutral": [
+      {
+       "market": "Paris FC or Draw",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Paris FC to win",
+       "effect": "gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "FORM_STATISTIK",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "geschwaecht",
+       "why": "Paris FCs starke Saison-Defensivbilanz (xGA 0.94) senkt die Wahrscheinlichkeit, dass Brest trifft; der Brest-Toranteil der BTTS-Annahme wird geschwaecht."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "geschwaecht",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "kaum betroffen",
+       "why": "Die Linie von 1.5 Toren bleibt durch Paris FCs eigene Offensive (Lambda 1.52) und Brests weiterhin vorhandene Torgefahr tragfaehig; ein einzelner Defensivwert reicht nicht, die Gesamtlinie zu gefaehrden."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Brest Team Goals Over 1.5",
+       "effect": "geschwaecht",
+       "why": "Paris FCs gute Abwehr wirkt direkt auf Brests Chance, zwei eigene Tore zu erzielen."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt ohne Seitenannahme."
+      }
+     ],
+     "decision_effect": "Bestaetigt SAFE als stabilsten Markt; FAVOURITE/BALANCED und AGGRESSIVE bleiben zusaetzlich geschwaecht.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "SAFE war bereits Rangbasis und bleibt von diesem Befund nahezu unberuehrt."
+     }
+    },
+    {
+     "finding_id": "Q4",
+     "finding": {
+      "text": "Fuer Paris FC wurde ausser dem bereits im Pack als OUT gefuehrten Sangui keine zusaetzliche Ausfallliste gefunden; eine Quelle nennt sogar keine Ausfaelle.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1",
+       "S2"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Bestaetigt im Wesentlichen die bestehende Pack-Datenlage ohne neue Richtung.",
+     "affected_markets_neutral": [
+      {
+       "market": "Paris FC or Draw",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "not_material_reason": "Keine neue Information gegenueber der bestehenden Pack-Datenlage; keine Anpassung notwendig.",
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "nicht betroffen",
+       "why": "Keine neue Information gegenueber der Pack-Datenlage."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Both Teams To Score: Yes",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Keine neue Information."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Brest Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Keine neue Information."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Keine neue Information."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Nicht wesentlicher Befund."
+     }
+    }
+   ],
+   "decision": {
+    "value": "OTHER_ECOBET_PATH",
+    "preferred_market": {
+     "source": "SAFE",
+     "market_text": "Match Total Over 1.5"
+    },
+    "reasoning": "SAFE (Match Total Over 1.5) bleibt bevorzugt, weil kein Befund die Gesamttorerwartung unter die Linie druecken kann: Q1 (zwei bestaetigte Brest-Abwehrausfaelle, davon einer entgegen der Pack-Einstufung) erhoeht das Risiko von Gegentoren fuer Brest und stuetzt damit zusaetzliche Tore; Q3 (Paris FCs bessere Saison-Defensivbilanz, Tabellenplatz 2) schwaecht nur den Brest-Toranteil der FAVOURITE/BALANCED-Annahme (Both Teams To Score: Yes) und die AGGRESSIVE-Annahme (Brest Team Goals Over 1.5), nicht die Gesamtlinie. Der unabhaengig hergeleitete qualitative KI TOP (Paris FC or Draw) ist eine Seitenwette, die in keinem der vier ECOBET-Pfade abgebildet ist (alle vier sind Total- oder Team-Tor-Maerkte); er aendert daher nichts an der Marktwahl auf Totalebene, bestaetigt aber die Grundrichtung (Paris FC als leichter Favorit, siehe Q3) und erklaert, warum FAVOURITE/AGGRESSIVE schwaecher bleiben.",
+    "chain_refs": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Niedrig bis moderat fragil: Die erwartete Gesamttorzahl liegt bei ca. 3.0 (Lambda 1.47 Heim + 1.52 Auswaerts), deutlich ueber der Linie 1.5; Q1 stuetzt dies zusaetzlich durch Brests geschwaechte Abwehr, Q3 daempft nur den Brest-Toranteil, nicht die Gesamtzahl. Die EXACT-Uebereinstimmung mit dem rechnerischen KI TOP ist hier durch eigene Befunde inhaltlich untermauert, nicht nur formal. Hauptrisiko bleibt ein frueh verwaltetes 1:0 (laut Pilot05 als LOW-Wahrscheinlichkeit eingestuft); die uneinheitliche Seitenwette (rechnerisches 1X vs. eigenes Paris FC or Draw) betrifft keinen der vier Pfade und veraendert dieses Risiko nicht."
+   },
+   "detail_md": "**Brest - Paris FC (Ligue 1, 27.11.2026, 19:45 UTC)**\n\n**Spielbild.** Angepasster Elo-Abstand -14.5 (Basis -20) favorisiert Paris FC knapp; Paris FC Tabellenplatz 2 mit 23 Punkten nach 11 Spieltagen und bessere Saison-Defensivbilanz (xGA 0.94). Erwartete Gesamttore ca. 3.0 (Lambda 1.47/1.52).\n\n**Befunde.** (Q1) Brest fehlen Le Guen (bestaetigt) und laut Recherche auch Chardonnet, Doumbia/Lala fraglich - schwaecht Brests Abwehr. (Q2) Lalas Status ist uneinheitlich (fraglich statt sicher ausgefallen), waehrend das Pack ihn als vollstaendig ausgefallen wertet - die Elo-Eingabe ist die vorsichtigere Annahme. (Q3) Paris FCs Form und Defensivbilanz stuetzen die leichte Favoritenrolle. (Q4, nicht wesentlich) Keine zusaetzlichen Paris-FC-Ausfaelle gefunden.\n\n**Qualitativer KI TOP.** Paris FC or Draw (MEDIUM Konfidenz) - weicht vom rechnerischen Pick (Doppelte Chance 1X, Brest oder Remis) ab, da der knappe Elo-Vorteil und Paris FCs Form/Defensivbilanz fuer die robustere Doppelte-Chance-Variante auf der Paris-FC-Seite sprechen. Dieser Pick ist eine Seitenwette und wird von keinem der vier ECOBET-Pfade abgebildet.\n\n**Entscheidung.** SAFE (Match Total Over 1.5) bleibt bevorzugt: kein Befund gefaehrdet die Gesamtlinie, waehrend FAVOURITE/BALANCED (BTTS Ja) und AGGRESSIVE (Brest Team Goals Over 1.5) durch Q3 zusaetzlich geschwaecht werden.\n\n**Rang.** Original 1, geprueft 1: die empfohlene Prognose ist der stabilste Markt des Tages (schlechtester Fall 0.70) und bleibt an erster Stelle.",
+   "rank": {
+    "original": 1,
+    "reviewed": 1,
+    "change": 0,
+    "reason": "SAFE (Match Total Over 1.5) bleibt bevorzugt, weil kein Befund die Gesamttorerwartung unter die Linie druecken kann: Q1 (zwei bestaetigte Brest-Abwehrausfaelle, davon einer entgegen der Pack-Einstufung) erhoeht das Risiko von Gegentoren fuer Brest und stuetzt damit zusaetzliche Tore; Q3 (Paris FCs b",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 1
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "GER2627_6f2b79857b20",
+   "match": "Werder Bremen – Borussia Monchengladbach",
+   "competition": "GER_BUNDESLIGA",
+   "kickoff_utc": "2026-11-27T19:30:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 840 min (>= 30)"
+   },
+   "original": {
+    "rank": 2,
+    "score": 0.655,
+    "best_path": "FAVOURITE",
+    "best_market": "Werder Bremen Team Goals Over 0.5",
+    "fixture_category": "STRONG_FAMILY_AGREEMENT",
+    "published_odds": null
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Werder Bremen Team Goals Over 0.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": null
+    },
+    "SAFE": {
+     "market": "Werder Bremen Team Goals Over 0.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": null
+    },
+    "BALANCED": {
+     "market": "Werder Bremen Draw No Bet",
+     "pilot05_category": "DIVERGENT",
+     "published_odds": 1.314
+    },
+    "AGGRESSIVE": {
+     "market": "Werder Bremen Team Goals Over 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Match Total Over 1.5",
+    "p_low": 0.8,
+    "p_high": 0.95,
+    "worst_case_p": 0.8,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Werder Bremen to win",
+    "confidence": "MEDIUM",
+    "reasoning": "Der angepasste Elo-Abstand steigt von +53 (Basis) auf +80.6 zugunsten Bremens, weil Gladbach (Tabellenletzter mit 4 Punkten laut Vorbericht) deutlich mehr Stammkraefte fehlen (Ullrich, Leszczynski, Hashioka, Leopold langzeitverletzt, dazu aktuell Hack) als Bremen (6. Platz, 18 Punkte; vor allem Gruell und Njinmah fraglich/fehlend). Bremens Offensive bleibt mit Fuellkrug und ausreichender Flanken-Tiefe (Erevbenagie als Ersatz) funktionsfaehig, waehrend Gladbachs Angriff (Machino als einzige etablierte Spitze, Kleindienst nur ein moegliches, unsicheres Comeback) duenn besetzt ist. Das spricht fuer einen klaren Bremen-Heimsieg statt nur Draw No Bet.",
+    "differs_from_computational": true,
+    "difference_explanation": "Nachtrag zur qualitativen KI TOP (Phase Q hatte 'differs_from_computational: false' fehlerhaft gesetzt und daher keine Erklaerung geliefert; Phase-Q-Dateien sind nach Siegel nicht mehr aenderbar). Tatsaechlich weicht der qualitative KI TOP (Werder Bremen to win) vom rechnerischen KI TOP (Match Total Over 1.5) ab, weil beide eine andere Marktdimension bewerten: Der rechnerische KI TOP misst die Gesamttorerwartung (Lambda-Summe), die eigene qualitative Analyse bewertet dagegen das Spielergebnis anhand der Kaderdisparitaet (Gladbach Tabellenletzter mit 4 Punkten, durch Hacks zusaetzlichen, vom Pack nicht erfassten Ausfall (Q1) noch duenner besetzt, waehrend Bremen mit Fuellkrug und Ersatz Erevbenagie offensiv funktionsfaehig bleibt (Q3)). Beide Einschaetzungen sind inhaltlich vereinbar (beide favorisieren Bremen klar) und widersprechen sich nicht; sie betreffen aber unterschiedliche Marktebenen (Ergebnis- vs. Totalmarkt), weshalb der Markttext unterschiedlich ist. Dieser Unterschied aendert nichts an der Entscheidung, da keiner der vier ECOBET-Pfade dem rechnerischen Totalmarkt entspricht und FAVOURITE bereits die robusteste verfuegbare Annahme abbildet.",
+    "difference_explanation_origin": "POST_DISCLOSURE_REVIEW",
+    "q_seal_sha256": "decdf1daeaf981d71cdddf85eb13f088526316c2773e5dd980ccfda01e8185d7"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-27T06:09:27Z",
+    "result_sha256": "ca2c29f25babf6f018a8a641a69d1c35f39910b21c29845942a14ecf10475282",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "Reproduktion des angepassten Elo bestaetigt: Bremen strength_ratio 0.965 -> ca. -12.4 Elo, Gladbach strength_ratio 0.892 -> ca. -40.0 Elo (351.1135 x ln(ratio)); Basis-Abstand +53.0, angepasster Abstand +80.6 (1705.59 vs 1624.99) - Rechnung stimmt. Beide Gates PARTIAL wegen LOW_PLAYER_VALUE_COVERAGE (Bremen 0.886, Gladbach 0.891). Abweichung zur Realitaet: das Pack fuehrt Robin Hack als PREDICTED_STARTER trotz DOUBTFUL-Flag, waehrend eine neuere Pressekonferenz (26.11.) bestaetigt, dass Hack diese Woche wegen muskulaerer Probleme pausiert und nicht spielt - Gladbachs tatsaechliche Offensivstaerke liegt damit eher unter dem modellierten Wert. Umgekehrt trainierte der im Pack als OUT gefuehrte Kleindienst (Kapitaen) diese Woche beschwerdefrei mit und ist fuer Freitag eine offene Kaderfrage - ein moegliches, vom Modell nicht erfasstes Aufwaertsrisiko fuer Gladbach. Bremens als OUT gefuehrter Weiser ist laut Recherche wieder im Kader (Jokeroption von der Bank), was die Bremen-Tiefe geringfuegig unterschaetzt."
+    },
+    "research_log": [
+     {
+      "source": "https://www.weser-kurier.de/werder/profis/so-koennte-werders-aufstellung-gegen-gladbach-aussehen-doc88n48ir9da91286t3705",
+      "retrieved_utc": "2026-11-27T06:02:12.116Z",
+      "claim": "Njinmah ist fraglich (muskulaere Probleme, zudem erstmals Vater geworden); Trainer Thioune sieht einen Einsatz 'sehr kritisch'. Gruell fehlt weiter (Wade). Weiser ist nach Oberschenkelverletzung zurueck im Kader, eher als Joker. Stage, Topp, Musah, Agu, Alvero, Ndiaye fehlen.",
+      "retrieved_utc_model_value": "2026-11-27T06:00:01Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_WEBFETCH",
+       "tool": "WebFetch",
+       "tool_use_id": "toolu_018G44kaux7yzCL8onLFLgQA",
+       "session_id": "09c1d2f1-f37e-473b-89e7-20f1064ef34e",
+       "tool_call_utc": "2026-11-27T06:02:11.719Z"
+      }
+     },
+     {
+      "source": "https://www.gladbachtotal.de/werder-bremen-empfaengt-gladbach-startelf-prognose-fuer-die-borussia-am-freitag/",
+      "retrieved_utc": "2026-11-27T06:02:16.260Z",
+      "claim": "Prognose vom 23.11. sah Hack noch in der Startelf; Hashioka fehlt wegen muskulaerer Probleme weiterhin, kein Einsatz gegen Bremen in Sicht.",
+      "retrieved_utc_model_value": "2026-11-27T06:00:01Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_WEBFETCH",
+       "tool": "WebFetch",
+       "tool_use_id": "toolu_01QVcjBG6stjRXABZce89nPU",
+       "session_id": "09c1d2f1-f37e-473b-89e7-20f1064ef34e",
+       "tool_call_utc": "2026-11-27T06:02:14.905Z"
+      }
+     },
+     {
+      "source": "https://www.gladbachtotal.de/vor-werder-bremen-blessin-gibt-personal-update-zu-hack-kleindienst-und-bolin/",
+      "retrieved_utc": "2026-11-27T06:02:24.747Z",
+      "claim": "Update vom 26.11.: Hack faellt diese Woche wegen muskulaerer Beschwerden aus; Kleindienst (Kapitaen) und Bolin trainierten beschwerdefrei mit, Trainer Blessin entscheidet erst am Freitag ueber den Kader.",
+      "retrieved_utc_model_value": "2026-11-27T06:00:01Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_WEBFETCH",
+       "tool": "WebFetch",
+       "tool_use_id": "toolu_01JxkG45fGczeeEssxyyQTSi",
+       "session_id": "09c1d2f1-f37e-473b-89e7-20f1064ef34e",
+       "tool_call_utc": "2026-11-27T06:02:24.148Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "COMPATIBLE",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Werders Angriff (Fuellkrug, Erevbenagie als Ersatz) bleibt trotz Njinmahs Fraglichkeit (Q3) funktionsfaehig; schlechtester Fall 0.8 bietet grossen Puffer fuer die Ein-Tor-Schwelle."
+    },
+    "SAFE": {
+     "market_agreement": "COMPATIBLE",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "BALANCED": {
+     "market_agreement": "CONTRADICTORY",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "ECOBET stuft diesen Markt als DIVERGENT mit negativer Quotenattraktivitaet ein; die eigene qualitative Einschaetzung (Werder Bremen to win, Q1) ist hier tatsaechlich positiver als die ECOBET-Kategorie - ein Fall, in dem gute inhaltliche Uebereinstimmung nicht in eine gute Marktkategorie uebersetzt wird. Wird dennoch nicht empfohlen, da FAVOURITE die robustere Annahme bietet."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Njinmahs Fraglichkeit (Q3) daempft die hoehere Torschwelle leicht; deckt sich mit der bereits vorsichtigen ECOBET-Einstufung."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Robin Hack faellt laut Update vom 26.11. diese Woche wegen muskulaerer Probleme aus, obwohl das Pack ihn trotz DOUBTFUL-Flag als PREDICTED_STARTER fuehrt.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S3"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Gladbachs ohnehin duennes Offensivpersonal verliert einen vorgesehenen Stammspieler zusaetzlich; die tatsaechliche Gladbach-Offensivstaerke liegt damit unter dem vom Pack modellierten Wert.",
+     "affected_markets_neutral": [
+      {
+       "market": "Werder Bremen to win",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Borussia Monchengladbach to win",
+       "effect": "geschwaecht"
+      },
+      {
+       "market": "Match Total Under 3.5",
+       "effect": "leicht gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Werder Bremen Team Goals Over 0.5",
+       "effect": "nicht betroffen",
+       "why": "Hacks Ausfall betrifft Gladbachs Angriff, nicht Werders eigene Torwahrscheinlichkeit."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Werder Bremen Team Goals Over 0.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Werder Bremen Draw No Bet",
+       "effect": "gestuetzt",
+       "why": "Ein geschwaechter Gladbach-Angriff senkt das Risiko eines Gladbach-Tores und stuetzt damit, dass Bremen nicht verliert."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Werder Bremen Team Goals Over 1.5",
+       "effect": "leicht gestuetzt",
+       "why": "Ein schwaecherer Gladbach-Angriff kann Bremen mehr Ballbesitz und Raum fuer eigene Angriffe lassen, auch wenn der Effekt indirekt ist."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "kaum betroffen",
+       "why": "Rechnerischer KI TOP ist Match Total Over 1.5 (worst case 0.8); ein schwaecherer Gladbach-Angriff kann die Gesamttorzahl geringfuegig senken, der grosse Puffer bleibt aber erhalten."
+      }
+     ],
+     "decision_effect": "FAVOURITE bleibt bevorzugt; stuetzt zusaetzlich die Sieg-/DNB-Richtung (BALANCED), die aber nicht gewaehlt wird.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Betrifft primaer Gladbachs Angriff, nicht die empfohlene Werder-Torlinie."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Tim Kleindienst (Kapitaen, im Pack als OUT gefuehrt) trainierte diese Woche beschwerdefrei mit; ein Einsatz am Freitag ist eine offene Kaderfrage.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S3"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Ein moeglicher (auch nur teilweiser) Einsatz von Kleindienst waere ein vom Modell nicht erfasstes Aufwaertsrisiko fuer Gladbachs Offensive und wuerde die Fragilitaet eines klaren Bremen-Siegtipps leicht erhoehen.",
+     "affected_markets_neutral": [
+      {
+       "market": "Borussia Monchengladbach to win",
+       "effect": "potenziell leicht gestuetzt falls Einsatz"
+      },
+      {
+       "market": "Beide Teams treffen: Ja",
+       "effect": "potenziell leicht gestuetzt falls Einsatz"
+      }
+     ],
+     "materiality": {
+      "area": "ELO_ADJUSTMENT",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Werder Bremen Team Goals Over 0.5",
+       "effect": "nicht betroffen",
+       "why": "Kleindiensts moeglicher Einsatz betrifft Gladbachs Offensive, nicht Werders eigene Torwahrscheinlichkeit."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Werder Bremen Team Goals Over 0.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Werder Bremen Draw No Bet",
+       "effect": "leicht geschwaecht",
+       "why": "Ein einsatzfaehiger Kleindienst wuerde Gladbachs Offensive staerken und das Risiko eines Gladbach-Treffers leicht erhoehen."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Werder Bremen Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Betrifft Gladbachs Offensive, nicht Werders eigene Torerwartung."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Totalmarkt, vom Modell nicht granular erfasst, aber grosser Puffer vorhanden."
+      }
+     ],
+     "decision_effect": "Keine Aenderung der Entscheidung; erhoeht die Fragilitaet eines klaren Sieg-Tipps (qualitativer KI TOP), nicht der empfohlenen Torlinie.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Betrifft die Sieg-Ebene, nicht den empfohlenen Markt."
+     }
+    },
+    {
+     "finding_id": "Q3",
+     "finding": {
+      "text": "Njinmah (Bremen) ist fraglich; Trainer Thioune aeussert sich oeffentlich skeptisch zu einem Einsatz.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Bremens linker Fluegel duerfte etwas schwaecher besetzt sein als in der Bestformation, wird aber durch eine vorbereitete Ersatzloesung (Erevbenagie) weitgehend kompensiert.",
+     "affected_markets_neutral": [
+      {
+       "market": "Werder Bremen Team Goals Over 1.5",
+       "effect": "leicht geschwaecht"
+      },
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "leicht geschwaecht"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Werder Bremen Team Goals Over 0.5",
+       "effect": "leicht geschwaecht",
+       "why": "Njinmahs Fraglichkeit schwaecht Bremens linken Fluegel direkt, auch wenn Erevbenagie als Ersatz vorbereitet ist."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Werder Bremen Team Goals Over 0.5",
+       "effect": "leicht geschwaecht",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Werder Bremen Draw No Bet",
+       "effect": "leicht geschwaecht",
+       "why": "Eine etwas schwaechere Bremer Offensive mindert die Kontrolle ueber das Spiel geringfuegig."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Werder Bremen Team Goals Over 1.5",
+       "effect": "leicht geschwaecht",
+       "why": "Direkter Effekt auf die hoehere Torschwelle fuer Bremen."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "leicht geschwaecht",
+       "why": "Etwas weniger Bremer Offensivpraesenz kann die Gesamttorzahl geringfuegig senken; der Puffer (schlechtester Fall 0.8) bleibt gross."
+      }
+     ],
+     "decision_effect": "FAVOURITE bleibt bevorzugt trotz leichter Abschwaechung; in der Fragilitaetsbewertung ausgewiesen.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Geringe Abschwaechung ohne Wirkung auf den Rang."
+     }
+    },
+    {
+     "finding_id": "Q4",
+     "finding": {
+      "text": "Mitchell Weiser (im Pack als OUT gefuehrt) ist laut Recherche wieder im Spieltagskader, allerdings nur als Jokeroption von der Bank vorgesehen.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Betrifft nur die Kadertiefe von der Bank, keine Quelle erwartet einen Start.",
+     "affected_markets_neutral": [
+      {
+       "market": "Werder Bremen to win",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "not_material_reason": "Nur Joker-Option von der Bank, kein Einfluss auf die erwartete Startelf oder den Spielverlauf.",
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Werder Bremen Team Goals Over 0.5",
+       "effect": "nicht betroffen",
+       "why": "Nur Bankkadertiefe betroffen."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Werder Bremen Team Goals Over 0.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Werder Bremen Draw No Bet",
+       "effect": "nicht betroffen",
+       "why": "Keine erwartete Startelf-Aenderung."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Werder Bremen Team Goals Over 1.5",
+       "effect": "nicht betroffen",
+       "why": "Nur Joker-Option von der Bank."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Kein Einfluss auf die erwartete Startelf."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Nicht wesentlicher Befund."
+     }
+    }
+   ],
+   "decision": {
+    "value": "CONFIRM_FAVOURITE",
+    "preferred_market": {
+     "source": "FAVOURITE",
+     "market_text": "Werder Bremen Team Goals Over 0.5"
+    },
+    "reasoning": "FAVOURITE (Werder Bremen Team Goals Over 0.5) bleibt bevorzugt: Q1 (Hack faellt entgegen der Pack-Annahme aus) und Q2 (Kleindiensts moegliche Rueckkehr) betreffen Gladbachs Offensive bzw. die Sieg-/DNB-Ebene, nicht die robuste Grundannahme, dass Bremen (Fuellkrug, Tiefe durch Erevbenagie) mindestens ein eigenes Tor erzielt. Q3 (Njinmah fraglich) schwaecht Bremens eigene Torlinie nur leicht; der schlechteste Fall von 0.8 bietet weiterhin ausreichenden Puffer. Ein Wechsel auf die rechnerische KI TOP (Match Total Over 1.5) oder auf BALANCED (Werder Draw No Bet, DIVERGENT, negative Quotenattraktivitaet) ist durch keinen Befund begruendet, obwohl die eigene qualitative KI TOP (Werder Bremen to win) inhaltlich sogar staerker fuer Bremen spricht als die ECOBET-Kategorie von BALANCED.",
+    "chain_refs": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Gering fragil: Werders Angriff bleibt trotz Njinmahs Unsicherheit (Q3) funktionsfaehig; schlechtester Fall 0.8 bietet grossen Puffer fuer die Ein-Tor-Schwelle. Die gute inhaltliche Uebereinstimmung mit der eigenen Einschaetzung eines klaren Bremen-Erfolgs darf jedoch nicht verdecken, dass Kleindiensts moegliche Rueckkehr (Q2) ein vom Modell nicht erfasstes Aufwaertsrisiko fuer Gladbachs Offensive bleibt - dieses Risiko betrifft in erster Linie die Sieg-Annahme (qualitativer KI TOP) und die nicht gewaehlte BALANCED-Linie, nicht die hier empfohlene Werder-Torlinie selbst."
+   },
+   "detail_md": "**Werder Bremen - Borussia Monchengladbach (Bundesliga, 27.11.2026, 19:30 UTC)**\n\n**Spielbild.** Angepasster Elo-Abstand +80.6 (Basis +53.0) favorisiert Bremen klar, weil Gladbach (Tabellenletzter, 4 Punkte) deutlich mehr Stammkraefte fehlen als Bremen (6. Platz, 18 Punkte).\n\n**Befunde.** (Q1) Hack faellt entgegen der Pack-Annahme (PREDICTED_STARTER trotz DOUBTFUL) diese Woche aus - Gladbachs duennes Offensivpersonal wird zusaetzlich geschwaecht. (Q2) Kleindienst (Kapitaen, im Pack als OUT gefuehrt) trainierte beschwerdefrei mit - offene Kaderfrage, vom Modell nicht erfasstes Aufwaertsrisiko fuer Gladbach. (Q3) Njinmah (Bremen) fraglich, Trainer skeptisch - schwaecht Bremens linken Fluegel leicht, weitgehend kompensiert durch Erevbenagie. (Q4, nicht wesentlich) Weiser zurueck im Kader, nur Jokeroption.\n\n**Qualitativer KI TOP.** Werder Bremen to win (MEDIUM Konfidenz) - weicht vom rechnerischen KI TOP (Match Total Over 1.5) ab, weil die Kaderdisparitaet (Gladbach Tabellenletzter, zusaetzlich durch Hacks Ausfall geschwaecht) eher fuer einen klaren Ergebnis-Tipp als fuer eine reine Torlinie spricht; siehe Nachtrags-Erklaerung (difference_explanation), da Phase Q selbst keine Erklaerung lieferte.\n\n**Entscheidung.** FAVOURITE (Werder Bremen Team Goals Over 0.5) bleibt bevorzugt: robuste Annahme, grosser Puffer, kein Befund gefaehrdet sie wesentlich.\n\n**Rang.** Original 2, geprueft 2: die empfohlene Prognose bleibt die zweitstabilste des Tages.",
+   "rank": {
+    "original": 2,
+    "reviewed": 2,
+    "change": 0,
+    "reason": "FAVOURITE (Werder Bremen Team Goals Over 0.5) bleibt bevorzugt: Q1 (Hack faellt entgegen der Pack-Annahme aus) und Q2 (Kleindiensts moegliche Rueckkehr) betreffen Gladbachs Offensive bzw. die Sieg-/DNB-Ebene, nicht die robuste Grundannahme, dass Bremen (Fuellkrug, Tiefe durch Erevbenagie) mindestens",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 2
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "ENG2627_ab61237f3332",
+   "match": "Nottingham Forest – Chelsea",
+   "competition": "ENG_PREMIER_LEAGUE",
+   "kickoff_utc": "2026-11-27T20:00:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 870 min (>= 30)"
+   },
+   "original": {
+    "rank": 3,
+    "score": 0.6164,
+    "best_path": "BALANCED",
+    "best_market": "Match Total Under 3.5",
+    "fixture_category": "STRONG_FAMILY_AGREEMENT",
+    "published_odds": 1.397
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Nottingham Forest Team Goals Under 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "SAFE": {
+     "market": "Nottingham Forest Team Goals Under 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    },
+    "BALANCED": {
+     "market": "Match Total Under 3.5",
+     "pilot05_category": "STRONG_FAMILY_AGREEMENT",
+     "published_odds": 1.397
+    },
+    "AGGRESSIVE": {
+     "market": "Match Goals 1-3",
+     "pilot05_category": "INSUFFICIENT_EVIDENCE",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Match Total Under 4.5",
+    "p_low": 0.75,
+    "p_high": 0.9,
+    "worst_case_p": 0.7,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Chelsea Draw No Bet",
+    "confidence": "MEDIUM",
+    "reasoning": "Reproduzierter angepasster Elo-Abstand -71.2 (Basis -76) favorisiert Chelsea klar; Forest gewann nur 1 der letzten 7 Ligaspiele und hat mit Dominguez und Savona zwei Stammkraefte verloren. Chelsea fehlen jedoch vier Abwehr-/Mittelfeldspieler (Hato, James, Joao Pedro, Lacroix out; Caicedo, Gittens fraglich), die Abwehr duerfte aus Acheampong/Fofana/Colwill/Chavarria bestehen, deutlich unerfahrener als die Stammformation. Eine klare Siegwette erscheint angesichts dieser Haeufung von Ausfaellen in der Defensive riskanter als von der reinen Elo-Zahl suggeriert; Draw No Bet sichert gegen ein Forest-Heimunentschieden ab, ohne die Grundrichtung aufzugeben.",
+    "differs_from_computational": true,
+    "difference_explanation": "Der rechnerische KI TOP waere angesichts des deutlichen angepassten Elo-Vorteils (-71.2) vermutlich ein direkter Chelsea-Sieg. Die eigene Analyse waehlt bewusst das defensivere Instrument Draw No Bet, weil sich die Chelsea-Ausfallliste ungewoehnlich stark auf die Abwehrkette konzentriert (vier Spieler) und der Status von Caicedo je nach Quelle zwischen fit und fraglich schwankt, was das Risiko eines Forest-Punktgewinns zuhause erhoeht.",
+    "difference_explanation_origin": "PHASE_Q",
+    "q_seal_sha256": "decdf1daeaf981d71cdddf85eb13f088526316c2773e5dd980ccfda01e8185d7"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-27T06:09:27Z",
+    "result_sha256": "3db4b48f477e697699af0651cdd61a5de096109507ac45705086eb03c63d0739",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "Reproduktion des angepassten Elo bestaetigt: Forest strength_ratio 0.9488 -> -18.47 Elo (351.1135 x ln(0.9488)), Chelsea strength_ratio 0.9359 -> -23.26 Elo; Basis-Abstand -76.0, angepasster Abstand -71.21 (1779.53 vs 1850.74) - Rechnung stimmt exakt. Forest-Gate READY (volle Ersatzspieler-Abdeckung), Chelsea-Gate PARTIAL wegen LOW_PLAYER_VALUE_COVERAGE (Ersatzpool-Abdeckung nur 0.833); die vier bestaetigten Chelsea-Ausfaelle (Hato, James, Joao Pedro, Lacroix) sind in den Vorberichten identisch zur Pack-Liste, Caicedo ist im Pack als UNAVAILABLE/OUT markiert, waehrend unabhaengige Vorberichte ihn uneinheitlich als fit (Yahoo) oder fraglich (Sports Mole, Football Whispers) einstufen - die Elo-Eingabe behandelt ihn also as vollstaendig ausgefallen, was eher die vorsichtigere Annahme ist."
+    },
+    "research_log": [
+     {
+      "source": "https://sportsmole.co.uk/football/nottingham-forest/injury-news/team-news/nottingham-forest-vs-chelsea-injury-suspension-list-predicted-xis_609858.html",
+      "retrieved_utc": "2026-11-27T06:02:04.436Z",
+      "claim": "Forest fehlen Dominguez (Muskel) und Savona (Knie), keine Zweifelsfaelle; Chelsea fehlen Hato, James, Joao Pedro und Lacroix, Caicedo und Gittens fraglich; beide Mannschaften mit vorhergesagter Startelf.",
+      "retrieved_utc_model_value": "2026-11-27T06:00:01Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_WEBFETCH",
+       "tool": "WebFetch",
+       "tool_use_id": "toolu_01GgaswS7ry5kRJstRjvsiCc",
+       "session_id": "09c1d2f1-f37e-473b-89e7-20f1064ef34e",
+       "tool_call_utc": "2026-11-27T06:02:04.123Z"
+      }
+     },
+     {
+      "source": "https://sports.yahoo.com/soccer/articles/nottingham-forest-vs-chelsea-premier-174034468.html",
+      "retrieved_utc": "2026-11-27T06:01:38.770Z",
+      "claim": "Caicedo sei fuer das Spiel am Freitag fit und einsatzbereit (laut Suchergebnis-Zusammenfassung dieser Quelle).",
+      "retrieved_utc_model_value": "2026-11-27T06:00:01Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01ET8k1v58Jnh3b5HmA6HZva",
+       "session_id": "09c1d2f1-f37e-473b-89e7-20f1064ef34e",
+       "tool_call_utc": "2026-11-27T06:01:31.591Z"
+      }
+     },
+     {
+      "source": "https://footballwhispers.com/blog/nottingham-forest-vs-chelsea-prediction-27-11-2026/",
+      "retrieved_utc": "2026-11-27T06:01:38.770Z",
+      "claim": "Caicedo wird als Zweifelsfall fuer Chelsea eingestuft; Tipp der Seite ist ein 1:1-Remis.",
+      "retrieved_utc_model_value": "2026-11-27T06:00:01Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01ET8k1v58Jnh3b5HmA6HZva",
+       "session_id": "09c1d2f1-f37e-473b-89e7-20f1064ef34e",
+       "tool_call_utc": "2026-11-27T06:01:31.591Z"
+      }
+     },
+     {
+      "source": "https://www.livescore.com/en/news/football/premier-league/nottingham-forest-vs-chelsea-premier-league-preview-predictions-team-news-and-tv-info-the-pride-of-london/",
+      "retrieved_utc": "2026-11-27T06:01:38.770Z",
+      "claim": "Tipp 2:1 fuer Nottingham Forest; Forest gewann zuletzt nur 1 von 7 Ligaspielen.",
+      "retrieved_utc_model_value": "2026-11-27T06:00:01Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_SUCHTREFFER_WEBSEARCH",
+       "tool": "WebSearch",
+       "tool_use_id": "toolu_01ET8k1v58Jnh3b5HmA6HZva",
+       "session_id": "09c1d2f1-f37e-473b-89e7-20f1064ef34e",
+       "tool_call_utc": "2026-11-27T06:01:31.591Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Chelseas geschwaechte Abwehr (Q1) erhoeht das Risiko eines zweiten Forest-Tores; Caicedos moeglicher Einsatz (Q2) daempft dies nur teilweise."
+    },
+    "SAFE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "BALANCED": {
+     "market_agreement": "COMPATIBLE",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Q1 erhoeht das Risiko eines offeneren Spiels und engt die Linie 3.5 ein; die ECOBET-Kategorie STRONG_FAMILY_AGREEMENT bildet die Haeufung der vier Chelsea-Ausfaelle nicht granular ab, weshalb die eigene Einschaetzung vorsichtiger bleibt."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "NOT_ASSESSABLE",
+     "assumption_agreement": "NOT_ASSESSABLE",
+     "assumption_comment": "Kein Anbieter deckt Match Goals 1-3; sachlich mit der Gesamttorerwartung vereinbar, aber nicht unabhaengig pruefbar."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Chelsea fehlen bestaetigt vier Abwehr-/Mittelfeldspieler: Jorrel Hato, Reece James, Joao Pedro und Maxence Lacroix; dazu sind Caicedo und Gittens fraglich.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Chelseas Defensive duerfte aus weniger erfahrenen Spielern (Acheampong, Chavarria) bestehen; das erhoeht das Risiko eines Forest-Tores oder -Punktes, auch wenn die Gesamtstaerke klar bei Chelsea bleibt.",
+     "affected_markets_neutral": [
+      {
+       "market": "Chelsea to win",
+       "effect": "leicht geschwaecht"
+      },
+      {
+       "market": "Chelsea Draw No Bet",
+       "effect": "leicht geschwaecht"
+      },
+      {
+       "market": "Nottingham Forest or Draw",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Match Total Over 2.5",
+       "effect": "leicht gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Nottingham Forest Team Goals Under 1.5",
+       "effect": "geschwaecht",
+       "why": "Eine durch vier Ausfaelle geschwaechte Chelsea-Abwehr erhoeht das Risiko, dass Forest selbst mehr als ein Tor erzielt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Nottingham Forest Team Goals Under 1.5",
+       "effect": "geschwaecht",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Under 3.5",
+       "effect": "leicht geschwaecht",
+       "why": "Eine geschwaechte Chelsea-Abwehr erhoeht die Gesamttorerwartung; die breitere Linie 3.5 bleibt aber plausibel."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Goals 1-3",
+       "effect": "nicht bewertbar",
+       "why": "Kein Anbieter deckt diesen Markt ab; sachlich tendiert ein offeneres Spiel eher zum oberen Rand der Spanne."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "kaum betroffen",
+       "why": "Rechnerischer KI TOP ist Match Total Under 4.5 (schlechtester Fall 0.7); der groessere Puffer faengt das zusaetzliche Torrisiko weitgehend auf."
+      }
+     ],
+     "decision_effect": "FAVOURITE/SAFE werden deutlich geschwaecht; BALANCED bleibt bevorzugt, aber mit erhoehter Fragilitaet.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Die Fragilitaet wird in der Bewertung des bevorzugten Marktes ausgewiesen, nicht durch einen Rangwechsel."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Der Einsatz von Caicedo ist je nach Quelle widerspruechlich (fit vs. fraglich), das Pack behandelt ihn jedoch als vollstaendig ausgefallen (UNAVAILABLE) in der Elo-/XI-Berechnung.",
+      "origin": "INFERRED",
+      "source_ids": [
+       "S1",
+       "S2",
+       "S3"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Falls Caicedo doch spielt, ist Chelseas defensives Mittelfeld staerker als vom angepassten Elo unterstellt; die Rechnung unterschaetzt Chelsea in diesem Fall leicht, was die Fragilitaet einer reinen Chelsea-Siegwette weiter reduziert, aber die DNB-Wahl stuetzt.",
+     "affected_markets_neutral": [
+      {
+       "market": "Chelsea to win",
+       "effect": "potenziell gestuetzt falls Einsatz"
+      },
+      {
+       "market": "Chelsea Draw No Bet",
+       "effect": "potenziell gestuetzt falls Einsatz"
+      }
+     ],
+     "materiality": {
+      "area": "ELO_ADJUSTMENT",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Nottingham Forest Team Goals Under 1.5",
+       "effect": "potenziell gestuetzt falls Einsatz",
+       "why": "Spielt Caicedo doch, ist Chelseas defensives Mittelfeld staerker als vom Modell unterstellt, was Forests Torchancen wieder senkt."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Nottingham Forest Team Goals Under 1.5",
+       "effect": "potenziell gestuetzt falls Einsatz",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Under 3.5",
+       "effect": "potenziell gestuetzt falls Einsatz",
+       "why": "Ein einsatzfaehiger Caicedo wuerde die Gesamttorzahl eher senken und die Linie 3.5 staerker stuetzen."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Goals 1-3",
+       "effect": "nicht bewertbar",
+       "why": "Kein Anbieter; Richtung waere bei Caicedo-Einsatz eher gedaempfter."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "kaum betroffen",
+       "why": "Grosser Puffer der 4.5-Linie macht diesen Unterschied kaum spuerbar."
+      }
+     ],
+     "decision_effect": "Teilweiser Gegeneffekt zu Q1; aendert nichts an der Marktwahl, nur an der Unsicherheit der Groessenordnung.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Unsicherheit in der Hoehe, nicht in der Richtung; kein Rangeffekt."
+     }
+    },
+    {
+     "finding_id": "Q3",
+     "finding": {
+      "text": "Chelseas Gate-Status ist PARTIAL wegen LOW_PLAYER_VALUE_COVERAGE (Ersatzpool-Abdeckung 0.833), waehrend Forests Gate READY ist (volle Abdeckung).",
+      "origin": "REPRODUCED",
+      "source_ids": []
+     },
+     "material": true,
+     "sporting_effect": "Die Groessenordnung der Chelsea-Anpassung (-23.26) basiert teilweise auf unvollstaendigen Ersatzspieler-Wertdaten, zusaetzlich zu den bestaetigten Ausfaellen; das macht die exakte Hoehe der Elo-Anpassung etwas unsicherer, die Richtung (Chelsea favorisiert) bleibt aber stabil.",
+     "affected_markets_neutral": [
+      {
+       "market": "Chelsea Draw No Bet",
+       "effect": "nicht betroffen in der Richtung, Unsicherheit in der Groessenordnung"
+      }
+     ],
+     "materiality": {
+      "area": "ELO_ADJUSTMENT",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Nottingham Forest Team Goals Under 1.5",
+       "effect": "Richtung unveraendert, Unsicherheit in der Hoehe",
+       "why": "Chelseas Elo-Abzug beruht teilweise auf unvollstaendigen Ersatzwert-Daten, nicht nur auf bestaetigten Ausfaellen."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Nottingham Forest Team Goals Under 1.5",
+       "effect": "Richtung unveraendert, Unsicherheit in der Hoehe",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Under 3.5",
+       "effect": "Richtung unveraendert, Unsicherheit in der Hoehe",
+       "why": "Die genaue Groesse der Chelsea-Schwaechung ist unsicherer als die reine Zahl suggeriert; die Grundrichtung (etwas offeneres Spiel) bleibt aber stabil."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Goals 1-3",
+       "effect": "nicht bewertbar",
+       "why": "Kein Anbieter."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen in der Richtung",
+       "why": "Grosser Puffer unberuehrt von dieser Unsicherheit."
+      }
+     ],
+     "decision_effect": "Keine Aenderung der Entscheidung; dokumentiert zusaetzliche Unsicherheit in der Groessenordnung.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Betrifft nur die Praezision der Anpassung, nicht die Richtung."
+     }
+    },
+    {
+     "finding_id": "Q4",
+     "finding": {
+      "text": "Forest hat von den letzten 7 Ligaspielen nur eines gewonnen (gemaess Vorberichts-Zusammenfassung).",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S4"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Bestaetigt nur die bereits durch Elo und Saisonstatistik (ppg 0.67) nahegelegte Richtung zugunsten Chelsea, ohne neue Information zu liefern.",
+     "affected_markets_neutral": [
+      {
+       "market": "Chelsea Draw No Bet",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "not_material_reason": "Verstaerkt nur die bestehende Richtung ohne neue Erkenntnis; keine Anpassung der Einschaetzung notwendig.",
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Nottingham Forest Team Goals Under 1.5",
+       "effect": "nicht betroffen",
+       "why": "Verstaerkt nur die bestehende Richtung ohne neue Information."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Nottingham Forest Team Goals Under 1.5",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Match Total Under 3.5",
+       "effect": "nicht betroffen",
+       "why": "Keine neue Information."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Match Goals 1-3",
+       "effect": "nicht bewertbar",
+       "why": "Kein Anbieter."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Keine neue Information."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Nicht wesentlicher Befund."
+     }
+    }
+   ],
+   "decision": {
+    "value": "OTHER_ECOBET_PATH",
+    "preferred_market": {
+     "source": "BALANCED",
+     "market_text": "Match Total Under 3.5"
+    },
+    "reasoning": "BALANCED (Match Total Under 3.5) bleibt bevorzugt, da kein Befund die Richtung umkehrt: Q1 (vier bestaetigte Chelsea-Ausfaelle in Abwehr/Mittelfeld) erhoeht zwar das Risiko eines offeneren Spiels und schwaecht FAVOURITE/SAFE (Nottingham Forest Team Goals Under 1.5) deutlich staerker, laesst die breitere Totalgrenze 3.5 aber nur massig schwaecher werden. Q2 (Caicedos widerspruechlicher Status) wirkt teilweise gegenlaeufig, falls er doch spielt. Ein Wechsel auf die rechnerische KI TOP (Match Total Under 4.5) allein wegen des groesseren Puffers waere nach Regel B nicht begruendet, da kein Befund spezifisch die 3.5-Linie widerlegt; die erhoehte Fragilitaet wird deshalb in der Bewertung ausgewiesen, nicht durch einen Marktwechsel kompensiert.",
+    "chain_refs": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Moderat bis hoch fragil: Chelseas Haeufung von vier bestaetigten Abwehr-/Mittelfeldausfaellen (Q1) erhoeht das Risiko eines offeneren Spiels mit mehr Toren; der schlechteste Fall (0.5) liegt bereits nah an der Grenze und duerfte real eher Richtung 0.45-0.5 liegen. Caicedos moeglicher Einsatz (Q2) kann dies teilweise auffangen, ist aber nicht gesichert. Die STRONG_FAMILY_AGREEMENT-Einstufung von ECOBET darf diese Fragilitaet nicht verdecken, da sie aus der Pilot-05-Abbildung stammt und die konkrete Haeufung der Ausfaelle nicht granular erfasst."
+   },
+   "detail_md": "**Nottingham Forest - Chelsea (Premier League, 27.11.2026, 20:00 UTC)**\n\n**Spielbild.** Angepasster Elo-Abstand -71.2 (Basis -76.0) favorisiert Chelsea klar; Forest gewann nur 1 der letzten 7 Ligaspiele.\n\n**Befunde.** (Q1) Chelsea fehlen bestaetigt vier Abwehr-/Mittelfeldspieler (Hato, James, Joao Pedro, Lacroix); Caicedo/Gittens fraglich - schwaecht Chelseas Abwehr deutlich. (Q2) Caicedos Status ist uneinheitlich (fit vs. fraglich), waehrend das Pack ihn als vollstaendig ausgefallen wertet - vorsichtigere Annahme. (Q3) Chelseas Gate-Status PARTIAL wegen unvollstaendiger Ersatzwert-Daten - Richtung bleibt stabil, Hoehe unsicherer. (Q4, nicht wesentlich) Forest-Form bestaetigt nur die bestehende Richtung.\n\n**Qualitativer KI TOP.** Chelsea Draw No Bet (MEDIUM Konfidenz) - weicht vom rechnerischen Pick (direkter Chelsea-Sieg) ab, weil sich die Chelsea-Ausfallliste ungewoehnlich stark auf die Abwehrkette konzentriert.\n\n**Entscheidung.** BALANCED (Match Total Under 3.5) bleibt bevorzugt; FAVOURITE/SAFE (Forest Team Goals Under 1.5) werden durch Q1 staerker geschwaecht.\n\n**Rang.** Original 3, geprueft 3: die empfohlene Prognose bleibt die drittstabilste des Tages, mit erhoehter, offen ausgewiesener Fragilitaet.",
+   "rank": {
+    "original": 3,
+    "reviewed": 3,
+    "change": 0,
+    "reason": "BALANCED (Match Total Under 3.5) bleibt bevorzugt, da kein Befund die Richtung umkehrt: Q1 (vier bestaetigte Chelsea-Ausfaelle in Abwehr/Mittelfeld) erhoeht zwar das Risiko eines offeneren Spiels und schwaecht FAVOURITE/SAFE (Nottingham Forest Team Goals Under 1.5) deutlich staerker, laesst die brei",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 3
+   },
+   "playable_top": true
+  },
+  {
+   "fixture_id": "ITA2627_e09c137b4d4b",
+   "match": "Venezia – Bologna",
+   "competition": "ITA_SERIE_A",
+   "kickoff_utc": "2026-11-27T19:45:00Z",
+   "eligibility": {
+    "status": "ELIGIBLE",
+    "reason": "Anstoss in 855 min (>= 30)"
+   },
+   "original": {
+    "rank": 4,
+    "score": 0.37,
+    "best_path": "AGGRESSIVE",
+    "best_market": "Venezia Team Goals Under 1.5",
+    "fixture_category": "PARTIAL_AGREEMENT",
+    "published_odds": null
+   },
+   "ecobet": {
+    "FAVOURITE": {
+     "market": "Bologna Draw No Bet",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.559
+    },
+    "SAFE": {
+     "market": "Match Total Under 3.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.28
+    },
+    "BALANCED": {
+     "market": "Bologna Draw No Bet",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": 1.559
+    },
+    "AGGRESSIVE": {
+     "market": "Venezia Team Goals Under 1.5",
+     "pilot05_category": "PARTIAL_AGREEMENT",
+     "published_odds": null
+    }
+   },
+   "ki_top_computational": {
+    "market": "Bologna Team Goals Over 0.5",
+    "p_low": 0.8,
+    "p_high": 0.9,
+    "worst_case_p": 0.75,
+    "origin": "PILOT05_UNCHANGED"
+   },
+   "ki_top_qualitative": {
+    "market": "Bologna Draw No Bet",
+    "confidence": "MEDIUM",
+    "reasoning": "Der Basis-Elo-Abstand von -131 (klar zugunsten Bolognas) kollabiert nach Anpassung auf nur +6.8 (leicht Venezia), weil Bologna vier bestaetigte Ausfaelle hat (Holm, Miranda, El Azzouzi, Enem - zwei unabhaengige Vorberichte stimmen hier ueberein) und die Anpassung mit Gate READY (volle Datenabdeckung) als rechnerisch sauber gilt. Der Wertverlust konzentriert sich jedoch auf zwei Abwehrpositionen (beide Aussenverteidiger Holm und Miranda), waehrend Bolognas komplette Offensiv- und Mittelfeldreihe (Orsolini, Bernardeschi, Odgaard, Pobega, Ferguson) verfuegbar bleibt. Venezia dagegen hat ein strukturelles, vom Gegner unabhaengiges Torproblem (nur 0.67 Tore/Spiel in den letzten 9 Ligaspielen, Tabellenletzter). Deshalb bleibt Bologna trotz der fast ausgeglichenen Elo-Zahl der wahrscheinlichere Favorit; Draw No Bet sichert gegen Venezias Heimvorteil und Bolognas luecken behaftete Abwehr ab.",
+    "differs_from_computational": true,
+    "difference_explanation": "Der rechnerische KI TOP waere angesichts des fast ausgeglichenen angepassten Elo-Abstands (+6.8) vermutlich ein knapper Venezia-Pfad oder ein Unentschieden-naher Markt. Die eigene Analyse weicht davon ab, weil die verlorene Spielerwert-Summe bei Bologna fast vollstaendig auf zwei Abwehrpositionen entfaellt (insbesondere Miranda, dessen Einzelwert 26.7 mehr als doppelt so hoch ist wie der naechsthoechste Bologna-Wert), waehrend Venezias Torschwaeche strukturell und nicht in erster Linie gegnerabhaengig erscheint - die reine Elo-Zahl bildet diese Nuance nicht ab.",
+    "difference_explanation_origin": "PHASE_Q",
+    "q_seal_sha256": "decdf1daeaf981d71cdddf85eb13f088526316c2773e5dd980ccfda01e8185d7"
+   },
+   "phase_q": {
+    "sealed_utc": "2026-11-27T06:09:27Z",
+    "result_sha256": "e9f261a60e35c3855b74e695dc58d0eba552478e75a5877d96130d8c7accbfc6",
+    "xi_elo_check": {
+     "status": "CHECKED",
+     "summary": "Reproduktion bestaetigt: Venezia strength_ratio 1.041 -> +14.2 Elo, Gate PARTIAL (Abdeckung 0.777, LOW_PLAYER_VALUE_COVERAGE) - der positive Heimbonus selbst beruht also auf unvollstaendigen Ersatzwert-Daten. Bologna strength_ratio 0.703 -> -123.6 Elo, Gate READY (Abdeckung 1.0) - dieser grosse Abzug ist KEIN Datenluecken-Artefakt, sondern eine vollstaendig abgedeckte Rechnung. Basis-Abstand -131.0, angepasster Abstand +6.8 (1657.20 vs 1650.42) - Rechnung stimmt exakt (351.1135 x ln(ratio) fuer beide Seiten reproduziert). Auffaelligkeit: Miranda (Bologna) hat im Pack den mit Abstand hoechsten Einzelwert (26.7), mehr als doppelt so hoch wie der naechsthoechste Bologna-Wert (Zortea, 12.2) und deutlich hoeher als vergleichbare Topwerte in den anderen drei heute geprueften Spielen (z. B. Cole Palmer 17.0, Fuellkrug 11.8). Sein bestaetigter Ausfall allein erklaert vermutlich den Grossteil der -123.6-Anpassung; ob dieser Einzelwert sportlich gerechtfertigt ist oder ein Ausreisser in der Wertbasis darstellt, kann aus dem Pack allein nicht abschliessend geklaert werden - die Richtung (Bologna geschwaecht) ist aber durch zwei unabhaengige Quellen bestaetigt."
+    },
+    "research_log": [
+     {
+      "source": "https://it.headtopics.com/news/serie-a-venezia-bologna-convocazioni-orari-e-pronostico-90224062",
+      "retrieved_utc": "2026-11-27T06:02:18.095Z",
+      "claim": "Bologna fehlen Holm, Miranda, El Azzouzi und Enem; Venezia fehlen Franjic, Adorante, Mazzocchi und Sverko; keine Sperren auf beiden Seiten.",
+      "retrieved_utc_model_value": "2026-11-27T06:00:01Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_WEBFETCH",
+       "tool": "WebFetch",
+       "tool_use_id": "toolu_017cH5fqnfn3QrZ6As3rJjku",
+       "session_id": "09c1d2f1-f37e-473b-89e7-20f1064ef34e",
+       "tool_call_utc": "2026-11-27T06:02:17.741Z"
+      }
+     },
+     {
+      "source": "https://www.1000cuorirossoblu.it/bologna/venezia-bologna-probabili-formazioni-scelte-palladino-nicola-assenze-ballottaggi/",
+      "retrieved_utc": "2026-11-27T06:02:20.498Z",
+      "claim": "Bologna bestaetigt ohne Holm, Miranda und Enem; Venezias Basic, Correia und Mazzocchi kehren von einer Ausfallzeit zurueck und werden voraussichtlich zunaechst nur auf der Bank sitzen, nicht in der Startelf.",
+      "retrieved_utc_model_value": "2026-11-27T06:00:01Z",
+      "retrieval_evidence": {
+       "status": "BELEGT_WEBFETCH",
+       "tool": "WebFetch",
+       "tool_use_id": "toolu_01TqS2NiCvyRoRAqBKjzXEVa",
+       "session_id": "09c1d2f1-f37e-473b-89e7-20f1064ef34e",
+       "tool_call_utc": "2026-11-27T06:02:20.184Z"
+      }
+     }
+    ]
+   },
+   "ecobet_agreement": {
+    "FAVOURITE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Q1 (Elo-Kollaps durch Positions-Ausreisser statt Gesamtqualitaetsverlust), Q2 (bestaetigte, aber abgefederte Ausfaelle) und Q3 (Venezias strukturelle Torschwaeche) stuetzen uebereinstimmend diesen Markt; die eigene qualitative KI TOP faellt exakt auf diesen Markt."
+    },
+    "SAFE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Q3 stuetzt stark eine niedrige Gesamttorzahl, Q1/Q2 (geschwaechte Bologna-Aussenverteidiger) ziehen leicht in Richtung mehr Tore - gemischtes Bild."
+    },
+    "BALANCED": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "COMPATIBLE",
+     "assumption_comment": "Identisch mit FAVOURITE."
+    },
+    "AGGRESSIVE": {
+     "market_agreement": "PARTIAL",
+     "assumption_agreement": "PARTIAL",
+     "assumption_comment": "Q3 stuetzt stark, Q1/Q2 (geschwaechte Bologna-Aussenverteidiger, leicht gestuetzte BTTS-Annahme) schwaechen die Under-1.5-Annahme fuer Venezia leicht - die konvergente Gegenevidenz fuer FAVOURITE/BALANCED ist insgesamt staerker."
+    }
+   },
+   "findings": [
+    {
+     "finding_id": "Q1",
+     "finding": {
+      "text": "Der Umschwung von Basis-Elo -131 auf angepasst +6.8 wird fast vollstaendig durch Bolognas Auswaerts-Anpassung (-123.6, Gate READY/sauber) getragen, die wiederum stark vom Ausfall des wertmaessigen Ausreissers Juan Miranda (Einzelwert 26.7, mehr als doppelt so hoch wie Bolognas naechster Wert) abhaengt.",
+      "origin": "REPRODUCED",
+      "source_ids": [
+       "S1",
+       "S2"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Die Rechnung ist korrekt, die sportliche Lesart ist aber milder als die reine Zahl suggeriert, da der verlorene Wert auf Abwehrpositionen entfaellt und Bolognas Tor-Reihe (Orsolini, Bernardeschi, Odgaard, Pobega, Ferguson) unberuehrt bleibt.",
+     "affected_markets_neutral": [
+      {
+       "market": "Bologna to win",
+       "effect": "gestuetzt gegenueber reiner Elo-Lesart"
+      },
+      {
+       "market": "Bologna Draw No Bet",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Venezia to win",
+       "effect": "durch reine Elo gestuetzt, sportlich fragiler als die Zahl suggeriert"
+      }
+     ],
+     "materiality": {
+      "area": "ELO_ADJUSTMENT",
+      "level": "M3"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Bologna Draw No Bet",
+       "effect": "gestuetzt",
+       "why": "Der Elo-Kollaps beruht auf zwei Abwehrpositionen (vor allem dem wertmaessigen Ausreisser Miranda), waehrend Bolognas komplette Torreihe verfuegbar bleibt - die sportliche Lesart ist milder als die reine Zahl."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Bologna Draw No Bet",
+       "effect": "gestuetzt",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 3.5",
+       "effect": "leicht geschwaecht",
+       "why": "Die geschwaechten Bologna-Aussenverteidiger erhoehen das Risiko von Gegentoren, was die Gesamttorzahl tendenziell erhoeht."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Venezia Team Goals Under 1.5",
+       "effect": "geschwaecht",
+       "why": "Schwaechere Bologna-Aussenverteidiger koennen Venezia mehr Torchancen eroeffnen, was die Under-1.5-Annahme fuer Venezia direkt schwaecht."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "gestuetzt",
+       "why": "Rechnerischer KI TOP ist Bologna Team Goals Over 0.5; Bolognas intakte Offensivreihe stuetzt diesen Markt."
+      }
+     ],
+     "decision_effect": "Stuetzt den Wechsel von AGGRESSIVE auf FAVOURITE/BALANCED (Bologna Draw No Bet).",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Der Befund betrifft die Marktwahl innerhalb des Spiels, nicht die Reihenfolge gegenueber den anderen drei Spielen."
+     }
+    },
+    {
+     "finding_id": "Q2",
+     "finding": {
+      "text": "Zwei unabhaengige Vorberichte bestaetigen uebereinstimmend den Ausfall von Holm, Miranda, El Azzouzi und Enem bei Bologna; keine widersprechende Quelle gefunden.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S1",
+       "S2"
+      ]
+     },
+     "material": true,
+     "sporting_effect": "Die OUT-Flags des Packs fuer diese vier Spieler sind bestaetigt korrekt; die Ersatzspieler in der Abwehr (u. a. Darmian) sind jedoch etablierte Profis und keine Notlosungen, was den tatsaechlichen Qualitaetsverlust gegenueber dem reinen Wertmass vermutlich etwas abmildert.",
+     "affected_markets_neutral": [
+      {
+       "market": "Bologna Draw No Bet",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Beide Teams treffen: Ja",
+       "effect": "leicht gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "SPIELER_XI",
+      "level": "M2"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Bologna Draw No Bet",
+       "effect": "gestuetzt",
+       "why": "Zwei unabhaengige Quellen bestaetigen die Ausfaelle; die Abwehr-Ersatzspieler (u. a. Darmian) sind etablierte Profis, was den tatsaechlichen Qualitaetsverlust gegenueber dem reinen Wertmass abmildert."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Bologna Draw No Bet",
+       "effect": "gestuetzt",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 3.5",
+       "effect": "leicht geschwaecht",
+       "why": "Bestaetigte Ausfaelle unterstuetzen eine etwas erhoehte Gesamttorerwartung (BTTS leicht gestuetzt)."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Venezia Team Goals Under 1.5",
+       "effect": "leicht geschwaecht",
+       "why": "Eine leicht gestuetzte BTTS-Annahme impliziert eine etwas hoehere Venezia-Torchance."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen direkt",
+       "why": "Betrifft Bolognas Abwehr, nicht die eigene Torerwartung."
+      }
+     ],
+     "decision_effect": "Stuetzt zusaetzlich den Wechsel auf FAVOURITE/BALANCED; daempft aber die Qualitaet des Befunds fuer AGGRESSIVE.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Marktwahl-Effekt innerhalb des Spiels, kein Effekt auf die Reihenfolge der vier Spiele."
+     }
+    },
+    {
+     "finding_id": "Q3",
+     "finding": {
+      "text": "Venezia erzielte in den letzten 9 Ligaspielen nur 0.67 Tore pro Spiel (Tabellenletzter, 56 Prozent Spiele ohne eigenes Tor laut Pack-Digest).",
+      "origin": "REPRODUCED",
+      "source_ids": []
+     },
+     "material": true,
+     "sporting_effect": "Die Torschwaeche wirkt strukturell und nicht primaer gegnerabhaengig, was Under-Maerkte stuetzt und die Erwartung eines torreichen Bologna-Erfolgs selbst bei einem Sieg daempft.",
+     "affected_markets_neutral": [
+      {
+       "market": "Match Total Under 2.5",
+       "effect": "gestuetzt"
+      },
+      {
+       "market": "Venezia Team Goals Under 0.5",
+       "effect": "gestuetzt"
+      }
+     ],
+     "materiality": {
+      "area": "FORM_STATISTIK",
+      "level": "M1"
+     },
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Bologna Draw No Bet",
+       "effect": "gestuetzt",
+       "why": "Venezias strukturelle Torschwaeche (0.67 Tore/Spiel) stuetzt, dass Bologna nicht verliert."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Bologna Draw No Bet",
+       "effect": "gestuetzt",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 3.5",
+       "effect": "gestuetzt",
+       "why": "Direkte, starke Stuetzung einer niedrigeren Gesamttorzahl."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Venezia Team Goals Under 1.5",
+       "effect": "gestuetzt",
+       "why": "Direkte, starke Stuetzung der Annahme, dass Venezia selbst kaum trifft - die staerkste Einzelstuetze fuer diesen Markt."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen direkt",
+       "why": "Betrifft Venezias eigene Torerwartung, nicht Bolognas."
+      }
+     ],
+     "decision_effect": "Staerkste Einzelstuetze fuer AGGRESSIVE, reicht aber nicht aus, um die konvergente Stuetzung von Q1+Q2 fuer FAVOURITE/BALANCED aufzuwiegen; FAVOURITE/BALANCED bleibt die Entscheidung.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Marktwahl-Effekt innerhalb des Spiels, kein Effekt auf die Reihenfolge der vier Spiele."
+     }
+    },
+    {
+     "finding_id": "Q4",
+     "finding": {
+      "text": "Venezias Basic, Correia und Mazzocchi (im Pack als OUT/UNAVAILABLE gefuehrt) kehren laut Recherche von einer Ausfallzeit zurueck, werden aber voraussichtlich nur auf der Bank sitzen.",
+      "origin": "EXTERNAL",
+      "source_ids": [
+       "S2"
+      ]
+     },
+     "material": false,
+     "sporting_effect": "Betrifft nur die Bankkader-Tiefe; keine der Quellen erwartet einen Start dieser Spieler.",
+     "affected_markets_neutral": [
+      {
+       "market": "Venezia to win",
+       "effect": "nicht betroffen"
+      }
+     ],
+     "not_material_reason": "Nur Bankkader-Tiefe betroffen, kein Effekt auf die erwartete Startelf oder den Spielverlauf.",
+     "phase": "Q",
+     "affected_markets": [
+      {
+       "path": "FAVOURITE",
+       "market_text": "Bologna Draw No Bet",
+       "effect": "nicht betroffen",
+       "why": "Nur Bankkadertiefe bei Venezia betroffen."
+      },
+      {
+       "path": "BALANCED",
+       "market_text": "Bologna Draw No Bet",
+       "effect": "nicht betroffen",
+       "why": "Gleicher Markt wie FAVOURITE."
+      },
+      {
+       "path": "SAFE",
+       "market_text": "Match Total Under 3.5",
+       "effect": "nicht betroffen",
+       "why": "Keine erwartete Startelf-Aenderung."
+      },
+      {
+       "path": "AGGRESSIVE",
+       "market_text": "Venezia Team Goals Under 1.5",
+       "effect": "nicht betroffen",
+       "why": "Keine erwartete Startelf-Aenderung."
+      },
+      {
+       "path": "KI_TOP",
+       "market_text": "KI TOP",
+       "effect": "nicht betroffen",
+       "why": "Kein Einfluss auf die erwartete Startelf."
+      }
+     ],
+     "decision_effect": "Keine Auswirkung auf die Entscheidung.",
+     "rank_effect": {
+      "value": "NONE",
+      "why": "Nicht wesentlicher Befund."
+     }
+    }
+   ],
+   "decision": {
+    "value": "OTHER_ECOBET_PATH",
+    "preferred_market": {
+     "source": "FAVOURITE",
+     "market_text": "Bologna Draw No Bet"
+    },
+    "reasoning": "Der urspruengliche Pfad AGGRESSIVE (Venezia Team Goals Under 1.5) wird verlassen: Q1 und Q2 (bestaetigte, aber durch kompetente Ersatzspieler wie Darmian gedaempfte Bologna-Abwehrausfaelle) erhoehen Venezias Torchancen leicht und schwaechen damit genau die Under-1.5-Annahme, auf der AGGRESSIVE beruht. Gleichzeitig stuetzen Q1 (der Elo-Kollaps von Basis -131 auf angepasst +6.8 beruht fast vollstaendig auf dem wertmaessigen Ausreisser Miranda und zwei Abwehrpositionen, nicht auf einem Gesamtqualitaetsverlust - Bolognas komplette Offensivreihe bleibt verfuegbar), Q2 (zwei unabhaengige Quellen bestaetigen die Ausfaelle, aber die Ersatzspieler sind etablierte Profis) und Q3 (Venezias strukturelle Torschwaeche, nur 0.67 Tore/Spiel als Tabellenletzter) uebereinstimmend FAVOURITE/BALANCED (Bologna Draw No Bet) - exakt der Markt, auf den auch die unabhaengig hergeleitete eigene qualitative KI TOP faellt. Der Wechsel folgt aus drei konvergenten Befunden und nicht nur aus einer bequemeren Linie; FAVOURITE und BALANCED sind inhaltlich identisch (gleicher Markttext, gleiche Kategorie), FAVOURITE wird als kanonische Quelle gefuehrt.",
+    "chain_refs": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ]
+   },
+   "preferred_market_fragility_assessment": {
+    "text": "Hoch fragil trotz inhaltlicher Uebereinstimmung mit der eigenen qualitativen KI TOP: Der ECOBET-eigene schlechteste Fall liegt bei nur 0.40 - niedriger als jeder andere empfohlene Markt des Tages (SAFE 0.70 bei Brest-Paris FC, FAVOURITE 0.80 bei Werder-Gladbach, BALANCED 0.50 bei Forest-Chelsea). Venezias strukturelle Torschwaeche (Q3) spricht zwar klar fuer Bologna, doch die bestaetigten Ausfaelle zweier Stamm-Aussenverteidiger (Q1, Q2) bei gleichzeitig vollem Bologna-Angriff bleiben ein echtes Gegentor-Risiko fuer die Draw-No-Bet-Linie. Die Uebereinstimmung mit der eigenen Analyse darf diese objektiv niedrigste Stabilitaet des Tages nicht verdecken; das Spiel bleibt deshalb trotz Marktwechsel das fragilste und am Ende platzierte des Tages."
+   },
+   "detail_md": "**Venezia - Bologna (Serie A, 27.11.2026, 19:45 UTC)**\n\n**Spielbild.** Basis-Elo-Abstand -131 (klar zugunsten Bolognas) kollabiert nach Anpassung auf nur +6.8, weil Bologna vier bestaetigte Ausfaelle hat (Holm, Miranda, El Azzouzi, Enem).\n\n**Befunde.** (Q1) Der Elo-Kollaps beruht fast vollstaendig auf dem wertmaessigen Ausreisser Miranda (Einzelwert 26.7, mehr als doppelt so hoch wie Bolognas naechster Wert) und zwei Abwehrpositionen; Bolognas Torreihe (Orsolini, Bernardeschi, Odgaard, Pobega, Ferguson) bleibt vollstaendig verfuegbar - die sportliche Lesart ist milder als die reine Zahl. (Q2) Zwei unabhaengige Quellen bestaetigen die Ausfaelle uebereinstimmend; die Ersatzspieler (u. a. Darmian) sind etablierte Profis. (Q3) Venezia erzielte in den letzten 9 Ligaspielen nur 0.67 Tore/Spiel (Tabellenletzter) - strukturelle, nicht primaer gegnerabhaengige Torschwaeche. (Q4, nicht wesentlich) Venezias Rueckkehrer nur Bankkadertiefe.\n\n**Qualitativer KI TOP.** Bologna Draw No Bet (MEDIUM Konfidenz) - identisch mit FAVOURITE/BALANCED; weicht vom rechnerischen Pick (knapper Venezia-Pfad nahe dem fast ausgeglichenen angepassten Elo) ab, weil die verlorene Spielerwert-Summe bei Bologna fast vollstaendig auf zwei Abwehrpositionen entfaellt, waehrend Venezias Torschwaeche strukturell erscheint.\n\n**Entscheidung.** Wechsel von AGGRESSIVE (Venezia Team Goals Under 1.5) auf FAVOURITE/BALANCED (Bologna Draw No Bet): drei konvergente Befunde (Q1-Q3) und die unabhaengig hergeleitete qualitative KI TOP stuetzen diesen Markt staerker als AGGRESSIVE, das durch Q1/Q2 zusaetzlich geschwaecht wird.\n\n**Rang.** Original 4, geprueft 4: trotz Marktwechsel bleibt der schlechteste Fall (0.40) niedriger als bei jedem anderen Spiel des Tages; das Spiel bleibt an letzter Stelle, aber spielbar (kein SKIP).",
+   "rank": {
+    "original": 4,
+    "reviewed": 4,
+    "change": 0,
+    "reason": "Der urspruengliche Pfad AGGRESSIVE (Venezia Team Goals Under 1.5) wird verlassen: Q1 und Q2 (bestaetigte, aber durch kompetente Ersatzspieler wie Darmian gedaempfte Bologna-Abwehrausfaelle) erhoehen Venezias Torchancen leicht und schwaechen damit genau die Under-1.5-Annahme, auf der AGGRESSIVE beruh",
+    "basis": "REVIEWED_ORDER",
+    "original_relative": 4
+   },
+   "playable_top": true
+  }
+ ],
+ "summary": {
+  "playable_count": 4,
+  "skip_count": 0,
+  "top5": [
+   {
+    "rank": 1,
+    "fixture_id": "FRA2627_893cb82648fb",
+    "match": "Brest – Paris FC",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Over 1.5"
+   },
+   {
+    "rank": 2,
+    "fixture_id": "GER2627_6f2b79857b20",
+    "match": "Werder Bremen – Borussia Monchengladbach",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Werder Bremen Team Goals Over 0.5"
+   },
+   {
+    "rank": 3,
+    "fixture_id": "ENG2627_ab61237f3332",
+    "match": "Nottingham Forest – Chelsea",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Under 3.5"
+   },
+   {
+    "rank": 4,
+    "fixture_id": "ITA2627_e09c137b4d4b",
+    "match": "Venezia – Bologna",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Bologna Draw No Bet"
+   }
+  ],
+  "top8": [
+   {
+    "rank": 1,
+    "fixture_id": "FRA2627_893cb82648fb",
+    "match": "Brest – Paris FC",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Over 1.5"
+   },
+   {
+    "rank": 2,
+    "fixture_id": "GER2627_6f2b79857b20",
+    "match": "Werder Bremen – Borussia Monchengladbach",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Werder Bremen Team Goals Over 0.5"
+   },
+   {
+    "rank": 3,
+    "fixture_id": "ENG2627_ab61237f3332",
+    "match": "Nottingham Forest – Chelsea",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Under 3.5"
+   },
+   {
+    "rank": 4,
+    "fixture_id": "ITA2627_e09c137b4d4b",
+    "match": "Venezia – Bologna",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Bologna Draw No Bet"
+   }
+  ],
+  "top10": [
+   {
+    "rank": 1,
+    "fixture_id": "FRA2627_893cb82648fb",
+    "match": "Brest – Paris FC",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Over 1.5"
+   },
+   {
+    "rank": 2,
+    "fixture_id": "GER2627_6f2b79857b20",
+    "match": "Werder Bremen – Borussia Monchengladbach",
+    "decision": "CONFIRM_FAVOURITE",
+    "market": "Werder Bremen Team Goals Over 0.5"
+   },
+   {
+    "rank": 3,
+    "fixture_id": "ENG2627_ab61237f3332",
+    "match": "Nottingham Forest – Chelsea",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Match Total Under 3.5"
+   },
+   {
+    "rank": 4,
+    "fixture_id": "ITA2627_e09c137b4d4b",
+    "match": "Venezia – Bologna",
+    "decision": "OTHER_ECOBET_PATH",
+    "market": "Bologna Draw No Bet"
+   }
+  ]
+ },
+ "evaluation": {
+  "status": "NOT_EVALUATED",
+  "results": null
+ },
+ "compiled_utc": "2026-11-27T06:25:23Z"
+}
