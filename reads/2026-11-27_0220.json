@@ -1,0 +1,266 @@
+{
+ "counts": {
+  "derived": 4,
+  "fixtures": 4,
+  "owner_favourite": {
+   "SELECTED": 3,
+   "TIE": 1
+  }
+ },
+ "data_status": "AUTOMATIC_UNVALIDATED",
+ "data_status_note": null,
+ "disclaimer": "Modellinterne Einschaetzung, abgeleitet aus bereits veroeffentlichten ECOBET V2.4 Prediction-Ergebnissen. Keine Wahrscheinlichkeit, keine Quote, keine Erfolgsgarantie. Noch nicht validiert.",
+ "fixtures": [
+  {
+   "away": "Chelsea",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "read": "X2",
+    "read_text": "Auswaertssieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Match Goals 1-3",
+    "balanced": "Match Total Under 3.5",
+    "favourite": "Nottingham Forest Team Goals Under 1.5",
+    "favourite_source": "SAFE",
+    "safe": "Nottingham Forest Team Goals Under 1.5"
+   },
+   "fixture_id": "ENG2627_ab61237f3332",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Gesamtspiel 1-2",
+    "scope": "TOTAL",
+    "status": "READ",
+    "team": null
+   },
+   "home": "Nottingham Forest",
+   "kickoff_utc": "2026-11-27T20:00:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "X2",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Gesamtspiel 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "hoehere Evidenzstufe (STRONG gegen MEDIUM)",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "X2",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-27_0220",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-27T04:05:01.603347+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Paris FC",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "read": "1X",
+    "read_text": "Heimsieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Brest Team Goals Over 1.5",
+    "balanced": "Both Teams To Score: Yes",
+    "favourite": "Both Teams To Score: Yes",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Over 1.5"
+   },
+   "fixture_id": "FRA2627_893cb82648fb",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "goals_max": 2,
+    "goals_min": 1,
+    "read": "Brest 1-2",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Brest"
+   },
+   "home": "Brest",
+   "kickoff_utc": "2026-11-27T19:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "1X",
+      "source": "DIRECTION"
+     },
+     {
+      "evidence": "MEDIUM",
+      "read": "Brest 1-2",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "gleiche Evidenzstufe (MEDIUM), keine Rangfolge erzwungen",
+    "selected": null,
+    "status": "TIE"
+   },
+   "run_id": "2026-11-27_0220",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-27T04:05:01.603347+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Borussia Monchengladbach",
+   "direction": {
+    "coverage_status": null,
+    "covered_by": null,
+    "evidence": null,
+    "read": null,
+    "status": "NO_READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Werder Bremen Team Goals Over 1.5",
+    "balanced": "Werder Bremen Draw No Bet",
+    "favourite": "Werder Bremen Team Goals Over 0.5",
+    "favourite_source": "SAFE",
+    "safe": "Werder Bremen Team Goals Over 0.5"
+   },
+   "fixture_id": "GER2627_6f2b79857b20",
+   "goal_range": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "STRONG",
+    "goals_max": 3,
+    "goals_min": 1,
+    "read": "Werder Bremen 1-3",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Werder Bremen"
+   },
+   "home": "Werder Bremen",
+   "kickoff_utc": "2026-11-27T19:30:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "STRONG",
+      "read": "Werder Bremen 1-3",
+      "source": "GOAL_RANGE"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "STRONG",
+     "read": "Werder Bremen 1-3",
+     "source": "GOAL_RANGE"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-27_0220",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-27T04:05:01.603347+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  },
+  {
+   "away": "Bologna",
+   "direction": {
+    "coverage_status": "NEU",
+    "covered_by": null,
+    "evidence": "MEDIUM",
+    "read": "X2",
+    "read_text": "Auswaertssieg oder Unentschieden",
+    "status": "READ"
+   },
+   "existing_predictions": {
+    "aggressive": "Venezia Team Goals Under 1.5",
+    "balanced": "Bologna Draw No Bet",
+    "favourite": "Bologna Draw No Bet",
+    "favourite_source": "BALANCED",
+    "safe": "Match Total Under 3.5"
+   },
+   "fixture_id": "ITA2627_e09c137b4d4b",
+   "goal_range": {
+    "coverage_status": "GLEICHWERTIG",
+    "covered_by": {
+     "expression": "Venezia Team Goals Under 1.5",
+     "roles": [
+      "AGGRESSIVE"
+     ]
+    },
+    "evidence": "STRONG",
+    "goals_max": 1,
+    "goals_min": 0,
+    "read": "Venezia 0-1",
+    "scope": "HOME",
+    "status": "READ",
+    "team": "Venezia"
+   },
+   "home": "Venezia",
+   "kickoff_utc": "2026-11-27T19:45:00+00:00",
+   "owner_favourite": {
+    "candidates": [
+     {
+      "evidence": "MEDIUM",
+      "read": "X2",
+      "source": "DIRECTION"
+     }
+    ],
+    "reason": "einziger neuer Kandidat",
+    "selected": {
+     "evidence": "MEDIUM",
+     "read": "X2",
+     "source": "DIRECTION"
+    },
+    "status": "SELECTED"
+   },
+   "run_id": "2026-11-27_0220",
+   "status": "DERIVED",
+   "timing": {
+    "generated_at_utc": "2026-11-27T04:05:01.603347+00:00",
+    "status": "PRE_KICKOFF"
+   }
+  }
+ ],
+ "generated_at_utc": "2026-11-27T04:05:01.603347+00:00",
+ "logical_run_id": "ECOBET_LRUN_6b6a1a4d17e74d9cb89a89ea9148f23a",
+ "publication_id": "2026-11-27_0220",
+ "rules": {
+  "coverage_and_owner_favourite": "RULES_COVERAGE_OWNERFAV_v1",
+  "direction": "DIRECTION_READ_SCENARIO_V1",
+  "goal_range": "GOAL_RANGE_EXT_V1_V2_STAB_MIN_0.67",
+  "imported_pins": {
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105\\RULES_COVERAGE_OWNERFAV_v1.md": "646b9b144e2d4bb88e1e91a61fbce0b2a57b961908abfbe1c67ff663a6ffa497",
+   "C:\\ECOBET\\reports\\OWNERFAV_V1_20261105\\coverage_ownerfav.py": "9af22a43803db0a6b21987ff216358f3d1f5451e0a605d7851216cd9be079158",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1\\RULES_READS_v1.md": "13dfcde3b206f858bbd41f1a5f62dc7625576c6ea9fd816a5402c3da2484bc60",
+   "C:\\ECOBET\\reports\\READS_SHADOW_V1\\reads_runner.py": "c025df64a96c1b46c62937528767bc03a96fc4d10a65f08b38a5da5f4b057089"
+  },
+  "rules_sha256": "7484a1a98baf3905f255f1ba65955ea4580b2fdaa84d9eb495c90f2aa505bf75",
+  "runner": "READS_RUNNER_V2_1"
+ },
+ "run_date": "2026-11-27",
+ "run_id": "2026-11-27_0220",
+ "schema": "ECOBET_READS_PUBLIC_V1",
+ "source": {
+  "derived_file_sha256": "e1ffae101aedbf5988d9850390a48f54d9ffb376e5c4ec7d25ca4a72a5f0a57b",
+  "published_at_utc": "2026-11-27T02:20:46.030131+00:00",
+  "record_content_hash": "sha256:5224c6c1c22a852d0d20b1869b4adb6a0a1f282f16c495eca53fe548c0c86939",
+  "source_file_sha256": "9a543a2fb5bd0be30898c285d25a4340d4172489e40638d2e4b7b9938b698369"
+ }
+}
