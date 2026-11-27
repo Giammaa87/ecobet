@@ -98,6 +98,15 @@
    "generated_at_utc": "2026-11-26T04:40:02.170879+00:00",
    "run_date": "2026-11-26",
    "schema": "ECOBET_FAVOURITE_STABILITY_V1"
+  },
+  "2026-11-27_0220": {
+   "bytes_sha256": "551ab9e687837d1ad4c26a9233c7be25b92b1fb5f232a9f4d3f4c181efc4ad13",
+   "data_status": "AUTOMATIC_UNVALIDATED",
+   "file": "stability/2026-11-27_0220.json",
+   "fixtures": 4,
+   "generated_at_utc": "2026-11-27T04:10:01.648420+00:00",
+   "run_date": "2026-11-27",
+   "schema": "ECOBET_FAVOURITE_STABILITY_V1"
   }
  },
  "schema": "ECOBET_FAVOURITE_STABILITY_PUBLIC_INDEX_V1"
