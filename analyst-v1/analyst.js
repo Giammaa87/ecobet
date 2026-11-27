@@ -229,9 +229,33 @@ function boot(){
      if(doc.schema!==SCHEMA||doc.publication_id!==chosen||doc.date!==day)throw Error("Datum, Lauf-ID oder Schema stimmen nicht überein");
      panel.innerHTML="";
      render(panel,doc);
+     markUnchecked(day,doc,token);
    }).catch(function(err){
      if(token!==requestSerial)return;
      loadedId=null;panel.innerHTML='<div class="an-availability" role="status">KI-Analyse '+esc(day)+' nicht lesbar: '+esc(err.message)+'</div>';
+   });
+ }
+ // Spiele des aktiven Master-Laufs, die dieser KI-Gegencheck nicht analysiert hat (z. B. Nachpublikation), werden ausdruecklich als nicht geprueft gekennzeichnet.
+ function markUnchecked(day,doc,token){
+   var runs=runsIndex&&runsIndex.dates&&runsIndex.dates[day]||[];
+   var ids=runs.map(function(v){return typeof v==="string"?v:v&&v.id}).filter(Boolean),active=ids[ids.length-1];
+   if(!active||active===doc.publication_id)return;
+   get("runs/"+encodeURIComponent(active)+".json").then(function(run){
+     if(token!==requestSerial||currentDay()!==day||run.run?.publication_id!==active||run.run?.date!==day)return;
+     var seen={};(doc.games||[]).forEach(function(g){seen[g.fixture_id]=true});
+     var missing=(run.matches||[]).filter(function(m){return !seen[m.fixture_id]});
+     if(!missing.length)return;
+     var title=panel.querySelector(".an-intro h3");
+     if(title)title.textContent="Unabhängige Analyse – nicht alle Spiele des aktuellen Laufs geprüft";
+     var n=el("div","an-availability");n.setAttribute("role","status");
+     n.innerHTML='<strong>Nicht vom KI-Gegencheck geprüft: '+missing.map(function(m){return esc(m.home)+" – "+esc(m.away)+" ("+esc(timeCH(m.kickoff))+")"}).join(", ")+'</strong>'+
+       '<p>Die Analyse unten gehört zum Lauf '+esc(doc.publication_id)+'. Aktiv ist der später publizierte Lauf '+esc(active)+'. Für die genannten Spiele gibt es keine KI-Analyse, keinen KI-Rang und keine Bestätigung.</p>';
+     panel.insertBefore(n,panel.firstChild);
+   }).catch(function(){
+     if(token!==requestSerial||currentDay()!==day)return;
+     var n=el("div","an-availability");n.setAttribute("role","status");
+     n.textContent="Hinweis: Diese Analyse gehört zum Lauf "+doc.publication_id+". Der aktive Lauf "+active+" konnte nicht abgeglichen werden; er kann ungeprüfte Spiele enthalten.";
+     panel.insertBefore(n,panel.firstChild);
    });
  }
  function refresh(){
